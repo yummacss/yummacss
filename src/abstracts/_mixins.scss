@@ -50,16 +50,16 @@
       #{$property}: $i * $unit;
     }
 
-    @each $bp, $bp_value in $yma-breakpoints {
+    @each $bp, $bp-value in $yma-breakpoints {
       .#{$bp}\:#{$prefix}-#{$i} {
-        @include breakpoint($bp_value) {
+        @include breakpoint($bp-value) {
           #{$property}: $i * $unit;
         }
       }
 
       // Responsive hover variant
       .h\:#{$bp}\:#{$prefix}-#{$i}:hover {
-        @include breakpoint($bp_value) {
+        @include breakpoint($bp-value) {
           #{$property}: $i * $unit;
         }
       }
@@ -80,17 +80,17 @@
       width: $i * $width-unit;
     }
 
-    @each $bp, $bp_value in $yma-breakpoints {
+    @each $bp, $bp-value in $yma-breakpoints {
       .#{$bp}\:#{$prefix}-#{$i} {
-        @include breakpoint($bp_value) {
+        @include breakpoint($bp-value) {
           height: $i * $height-unit;
           width: $i * $width-unit;
         }
       }
 
       // Responsive hover variant
-      .h\:#{$bp}#{$prefix}-#{$i}:hover {
-        @include breakpoint($bp_value) {
+      .h\:#{$bp}\:#{$prefix}-#{$i}:hover {
+        @include breakpoint($bp-value) {
           height: $i * $height-unit;
           width: $i * $width-unit;
         }
@@ -112,17 +112,17 @@
       #{$property}-right: $i * $unit;
     }
 
-    @each $bp, $bp_value in $yma-breakpoints {
+    @each $bp, $bp-value in $yma-breakpoints {
       .#{$bp}\:#{$prefix}-#{$i} {
-        @include breakpoint($bp_value) {
+        @include breakpoint($bp-value) {
           #{$property}-left: $i * $unit;
           #{$property}-right: $i * $unit;
         }
       }
 
       // Responsive hover variant
-      .h\:#{$bp}#{$prefix}-#{$i}:hover {
-        @include breakpoint($bp_value) {
+      .h\:#{$bp}\:#{$prefix}-#{$i}:hover {
+        @include breakpoint($bp-value) {
           #{$property}-left: $i * $unit;
           #{$property}-right: $i * $unit;
         }
@@ -144,17 +144,17 @@
       #{$property}-bottom: $i * $unit;
     }
 
-    @each $bp, $bp_value in $yma-breakpoints {
+    @each $bp, $bp-value in $yma-breakpoints {
       .#{$bp}\:#{$prefix}-#{$i} {
-        @include breakpoint($bp_value) {
+        @include breakpoint($bp-value) {
           #{$property}-top: $i * $unit;
           #{$property}-bottom: $i * $unit;
         }
       }
 
       // Responsive hover variant
-      .h\:#{$bp}#{$prefix}-#{$i}:hover {
-        @include breakpoint($bp_value) {
+      .h\:#{$bp}\:#{$prefix}-#{$i}:hover {
+        @include breakpoint($bp-value) {
           #{$property}-top: $i * $unit;
           #{$property}-bottom: $i * $unit;
         }
@@ -178,9 +178,9 @@
       margin-right: calc(#{$i * $unit} * calc(1 - var(--yma-spacing-x)));
     }
 
-    @each $bp, $bp_value in $yma-breakpoints {
+    @each $bp, $bp-value in $yma-breakpoints {
       .#{$bp}\:#{$prefix}-#{$i} > :not([hidden]) ~ :not([hidden]) {
-        @include breakpoint($bp_value) {
+        @include breakpoint($bp-value) {
           --yma-spacing-x: 1;
           margin-left: calc(#{$i * $unit} * var(--yma-spacing-x));
           margin-right: calc(#{$i * $unit} * calc(1 - var(--yma-spacing-x)));
@@ -188,8 +188,8 @@
       }
 
       // Responsive hover variant
-      .h\:#{$bp}#{$prefix}-#{$i}:hover > :not([hidden]) ~ :not([hidden]) {
-        @include breakpoint($bp_value) {
+      .h\:#{$bp}\:#{$prefix}-#{$i}:hover > :not([hidden]) ~ :not([hidden]) {
+        @include breakpoint($bp-value) {
           --yma-spacing-x: 1;
           margin-left: calc(#{$i * $unit} * var(--yma-spacing-x));
           margin-right: calc(#{$i * $unit} * calc(1 - var(--yma-spacing-x)));
@@ -214,9 +214,9 @@
       margin-bottom: calc(#{$i * $unit} * calc(1 - var(--yma-spacing-y)));
     }
 
-    @each $bp, $bp_value in $yma-breakpoints {
+    @each $bp, $bp-value in $yma-breakpoints {
       .#{$bp}\:#{$prefix}-#{$i} > :not([hidden]) ~ :not([hidden]) {
-        @include breakpoint($bp_value) {
+        @include breakpoint($bp-value) {
           --yma-spacing-y: 1;
           margin-top: calc(#{$i * $unit} * var(--yma-spacing-y));
           margin-bottom: calc(#{$i * $unit} * calc(1 - var(--yma-spacing-y)));
@@ -224,8 +224,8 @@
       }
 
       // Responsive hover variant
-      .h\:#{$bp}#{$prefix}-#{$i}:hover > :not([hidden]) ~ :not([hidden]) {
-        @include breakpoint($bp_value) {
+      .h\:#{$bp}\:#{$prefix}-#{$i}:hover > :not([hidden]) ~ :not([hidden]) {
+        @include breakpoint($bp-value) {
           --yma-spacing-y: 1;
           margin-top: calc(#{$i * $unit} * var(--yma-spacing-y));
           margin-bottom: calc(#{$i * $unit} * calc(1 - var(--yma-spacing-y)));
@@ -248,16 +248,16 @@
         #{$property}: $v;
       }
 
-      @each $bp, $bp_value in $yma-breakpoints {
+      @each $bp, $bp-value in $yma-breakpoints {
         .#{$bp}\:#{$prefix}-#{$k} {
-          @include breakpoint($bp_value) {
+          @include breakpoint($bp-value) {
             #{$property}: $v;
           }
         }
 
         // Responsive hover variant
-        .h\:#{$bp}#{$prefix}-#{$k}:hover {
-          @include breakpoint($bp_value) {
+        .h\:#{$bp}\:#{$prefix}-#{$k}:hover {
+          @include breakpoint($bp-value) {
             #{$property}: $v;
           }
         }
@@ -298,44 +298,44 @@
       min-width: $v;
     }
 
-    @each $bp, $bp_value in $yma-breakpoints {
+    @each $bp, $bp-value in $yma-breakpoints {
       .#{$bp}\:dim-#{$k} {
-        @include breakpoint($bp_value) {
+        @include breakpoint($bp-value) {
           height: $v;
           width: $v;
         }
       }
 
       .h\:#{$bp}\:dim-#{$k}:hover {
-        @include breakpoint($bp_value) {
+        @include breakpoint($bp-value) {
           height: $v;
           width: $v;
         }
       }
 
       .#{$bp}\:max-dim-#{$k} {
-        @include breakpoint($bp_value) {
+        @include breakpoint($bp-value) {
           max-height: $v;
           max-width: $v;
         }
       }
 
       .h\:#{$bp}\:max-dim-#{$k}:hover {
-        @include breakpoint($bp_value) {
+        @include breakpoint($bp-value) {
           max-height: $v;
           max-width: $v;
         }
       }
 
       .#{$bp}\:min-dim-#{$k} {
-        @include breakpoint($bp_value) {
+        @include breakpoint($bp-value) {
           min-height: $v;
           min-width: $v;
         }
       }
 
       .h\:#{$bp}\:min-dim-#{$k}:hover {
-        @include breakpoint($bp_value) {
+        @include breakpoint($bp-value) {
           min-height: $v;
           min-width: $v;
         }
@@ -397,72 +397,72 @@
         padding-top: $v;
       }
 
-      @each $bp, $bp_value in $yma-breakpoints {
+      @each $bp, $bp-value in $yma-breakpoints {
         @each $prefix in $prefixes {
           .#{$bp}\:#{$prefix}-#{$k} {
-            @include breakpoint($bp_value) {
+            @include breakpoint($bp-value) {
               #{$property}: $v;
             }
           }
 
-          .h\:#{$bp}#{$prefix}-#{$k}:hover {
-            @include breakpoint($bp_value) {
+          .h\:#{$bp}\:#{$prefix}-#{$k}:hover {
+            @include breakpoint($bp-value) {
               #{$property}: $v;
             }
           }
         }
 
         .#{$bp}\:mx-#{$k} {
-          @include breakpoint($bp_value) {
+          @include breakpoint($bp-value) {
             margin-left: $v;
             margin-right: $v;
           }
         }
 
         .h\:#{$bp}\:mx-#{$k}:hover {
-          @include breakpoint($bp_value) {
+          @include breakpoint($bp-value) {
             margin-left: $v;
             margin-right: $v;
           }
         }
 
         .#{$bp}\:px-#{$k} {
-          @include breakpoint($bp_value) {
+          @include breakpoint($bp-value) {
             padding-left: $v;
             padding-right: $v;
           }
         }
 
         .h\:#{$bp}\:px-#{$k}:hover {
-          @include breakpoint($bp_value) {
+          @include breakpoint($bp-value) {
             padding-left: $v;
             padding-right: $v;
           }
         }
 
         .#{$bp}\:my-#{$k} {
-          @include breakpoint($bp_value) {
+          @include breakpoint($bp-value) {
             margin-bottom: $v;
             margin-top: $v;
           }
         }
 
         .h\:#{$bp}\:my-#{$k}:hover {
-          @include breakpoint($bp_value) {
+          @include breakpoint($bp-value) {
             margin-bottom: $v;
             margin-top: $v;
           }
         }
 
         .#{$bp}\:py-#{$k} {
-          @include breakpoint($bp_value) {
+          @include breakpoint($bp-value) {
             padding-bottom: $v;
             padding-top: $v;
           }
         }
 
         .h\:#{$bp}\:py-#{$k}:hover {
-          @include breakpoint($bp_value) {
+          @include breakpoint($bp-value) {
             padding-bottom: $v;
             padding-top: $v;
           }
@@ -493,34 +493,34 @@
       min-height: $v;
     }
 
-    @each $bp, $bp_value in $yma-breakpoints {
+    @each $bp, $bp-value in $yma-breakpoints {
       .#{$bp}\:h-#{$k} {
-        @include breakpoint($bp_value) {
+        @include breakpoint($bp-value) {
           height: $v;
         }
       }
       .h\:#{$bp}\:h-#{$k}:hover {
-        @include breakpoint($bp_value) {
+        @include breakpoint($bp-value) {
           height: $v;
         }
       }
       .#{$bp}\:max-h-#{$k} {
-        @include breakpoint($bp_value) {
+        @include breakpoint($bp-value) {
           max-height: $v;
         }
       }
       .h\:#{$bp}\:max-h-#{$k}:hover {
-        @include breakpoint($bp_value) {
+        @include breakpoint($bp-value) {
           max-height: $v;
         }
       }
       .#{$bp}\:min-h-#{$k} {
-        @include breakpoint($bp_value) {
+        @include breakpoint($bp-value) {
           min-height: $v;
         }
       }
       .h\:#{$bp}\:min-h-#{$k}:hover {
-        @include breakpoint($bp_value) {
+        @include breakpoint($bp-value) {
           min-height: $v;
         }
       }
@@ -549,34 +549,34 @@
       min-width: $v;
     }
 
-    @each $bp, $bp_value in $yma-breakpoints {
+    @each $bp, $bp-value in $yma-breakpoints {
       .#{$bp}\:w-#{$k} {
-        @include breakpoint($bp_value) {
+        @include breakpoint($bp-value) {
           width: $v;
         }
       }
       .h\:#{$bp}\:w-#{$k}:hover {
-        @include breakpoint($bp_value) {
+        @include breakpoint($bp-value) {
           width: $v;
         }
       }
       .#{$bp}\:max-w-#{$k} {
-        @include breakpoint($bp_value) {
+        @include breakpoint($bp-value) {
           max-width: $v;
         }
       }
       .h\:#{$bp}\:max-w-#{$k}:hover {
-        @include breakpoint($bp_value) {
+        @include breakpoint($bp-value) {
           max-width: $v;
         }
       }
       .#{$bp}\:min-w-#{$k} {
-        @include breakpoint($bp_value) {
+        @include breakpoint($bp-value) {
           min-width: $v;
         }
       }
       .h\:#{$bp}\:min-w-#{$k}:hover {
-        @include breakpoint($bp_value) {
+        @include breakpoint($bp-value) {
           min-width: $v;
         }
       }

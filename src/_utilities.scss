@@ -1041,10 +1041,10 @@ $yma-utilities: (
     }
 
     // responsive variants
-    @each $bp, $bp_value in $yma-breakpoints {
+    @each $bp, $bp-value in $yma-breakpoints {
         @each $k, $v in $values {
             .#{$bp}\:#{$prefix}-#{$k} {
-                @media (min-width: $bp_value) {
+                @media (min-width: $bp-value) {
                     #{$property}: $v;
                 }
             }
