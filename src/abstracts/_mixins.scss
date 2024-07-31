@@ -22,7 +22,7 @@
 
     .h\:#{$prefix}-l-#{$k}-#{$i} {
       &:hover {
-        #{$property}: mix(black, $v, $i * $mod);
+        #{$property}: mix(white, $v, $i * $mod);
       }
     }
 
