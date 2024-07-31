@@ -5,12 +5,6 @@ $yma-breakpoints: (
     "xl": 1280px
 );
 
-@mixin xs {
-    @media (min-width: map-get($yma-breakpoints, "xs")) {
-        @content;
-    }
-}
-
 @mixin sm {
     @media (min-width: map-get($yma-breakpoints, "sm")) {
         @content;

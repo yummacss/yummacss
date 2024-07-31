@@ -25,10 +25,10 @@
     "yummacss"
   ],
   "scripts": {
-    "all": "npm-run-all --sequential std min core mincore",
+    "std": "gulp standardFile",
     "core": "gulp coreFile",
     "min": "gulp minifiedFile",
     "mincore": "gulp minifiedCoreFile",
-    "std": "gulp standardFile"
+    "build": "npm-run-all --sequential std min core mincore"
   }
 }

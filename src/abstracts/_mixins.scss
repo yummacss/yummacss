@@ -46,7 +46,7 @@
     }
 
     // Hover variant
-    .h#{$prefix}-#{$i}:hover {
+    .h\:#{$prefix}-#{$i}:hover {
       #{$property}: $i * $unit;
     }
 
@@ -58,7 +58,7 @@
       }
 
       // Responsive hover variant
-      .h\:#{$bp}#{$prefix}-#{$i}:hover {
+      .h\:#{$bp}\:#{$prefix}-#{$i}:hover {
         @include breakpoint($bp_value) {
           #{$property}: $i * $unit;
         }
@@ -75,7 +75,7 @@
     }
 
     // Hover variant
-    .h#{$prefix}-#{$i}:hover {
+    .h\:#{$prefix}-#{$i}:hover {
       height: $i * $height-unit;
       width: $i * $width-unit;
     }
@@ -107,7 +107,7 @@
     }
 
     // Hover variant
-    .h#{$prefix}-#{$i}:hover {
+    .h\:#{$prefix}-#{$i}:hover {
       #{$property}-left: $i * $unit;
       #{$property}-right: $i * $unit;
     }
@@ -139,7 +139,7 @@
     }
 
     // Hover variant
-    .h#{$prefix}-#{$i}:hover {
+    .h\:#{$prefix}-#{$i}:hover {
       #{$property}-top: $i * $unit;
       #{$property}-bottom: $i * $unit;
     }
@@ -172,7 +172,7 @@
     }
 
     // Hover variant
-    .h#{$prefix}-#{$i}:hover > :not([hidden]) ~ :not([hidden]) {
+    .h\:#{$prefix}-#{$i}:hover > :not([hidden]) ~ :not([hidden]) {
       --yma-spacing-x: 1;
       margin-left: calc(#{$i * $unit} * var(--yma-spacing-x));
       margin-right: calc(#{$i * $unit} * calc(1 - var(--yma-spacing-x)));
@@ -208,7 +208,7 @@
     }
 
     // Hover variant
-    .h#{$prefix}-#{$i}:hover > :not([hidden]) ~ :not([hidden]) {
+    .h\:#{$prefix}-#{$i}:hover > :not([hidden]) ~ :not([hidden]) {
       --yma-spacing-y: 1;
       margin-top: calc(#{$i * $unit} * var(--yma-spacing-y));
       margin-bottom: calc(#{$i * $unit} * calc(1 - var(--yma-spacing-y)));
@@ -244,7 +244,7 @@
       }
 
       // Hover variant
-      .h#{$prefix}-#{$k}:hover {
+      .h\:#{$prefix}-#{$k}:hover {
         #{$property}: $v;
       }
 
@@ -273,7 +273,7 @@
       width: $v;
     }
 
-    .hdim-#{$k}:hover {
+    .h\:dim-#{$k}:hover {
       height: $v;
       width: $v;
     }
@@ -283,7 +283,7 @@
       max-width: $v;
     }
 
-    .hmax-dim-#{$k}:hover {
+    .h\:max-dim-#{$k}:hover {
       max-height: $v;
       max-width: $v;
     }
@@ -293,7 +293,7 @@
       min-width: $v;
     }
 
-    .hmin-dim-#{$k}:hover {
+    .h\:min-dim-#{$k}:hover {
       min-height: $v;
       min-width: $v;
     }
@@ -306,7 +306,7 @@
         }
       }
 
-      .#{$bp}\:hdim-#{$k}:hover {
+      .h\:#{$bp}\:dim-#{$k}:hover {
         @include breakpoint($bp_value) {
           height: $v;
           width: $v;
@@ -320,7 +320,7 @@
         }
       }
 
-      .#{$bp}\:hmax-dim-#{$k}:hover {
+      .h\:#{$bp}\:max-dim-#{$k}:hover {
         @include breakpoint($bp_value) {
           max-height: $v;
           max-width: $v;
@@ -334,7 +334,7 @@
         }
       }
 
-      .#{$bp}\:hmin-dim-#{$k}:hover {
+      .h\:#{$bp}\:min-dim-#{$k}:hover {
         @include breakpoint($bp_value) {
           min-height: $v;
           min-width: $v;
@@ -352,7 +352,7 @@
           #{$property}: $v;
         }
 
-        .h#{$prefix}-#{$k}:hover {
+        .h\:#{$prefix}-#{$k}:hover {
           #{$property}: $v;
         }
       }
@@ -362,7 +362,7 @@
         margin-right: $v;
       }
 
-      .hmx-#{$k}:hover {
+      .h\:mx-#{$k}:hover {
         margin-left: $v;
         margin-right: $v;
       }
@@ -372,7 +372,7 @@
         padding-right: $v;
       }
 
-      .hpx-#{$k}:hover {
+      .h\:px-#{$k}:hover {
         padding-left: $v;
         padding-right: $v;
       }
@@ -382,7 +382,7 @@
         margin-top: $v;
       }
 
-      .hmy-#{$k}:hover {
+      .h\:my-#{$k}:hover {
         margin-bottom: $v;
         margin-top: $v;
       }
@@ -392,7 +392,7 @@
         padding-top: $v;
       }
 
-      .hpy-#{$k}:hover {
+      .h\:py-#{$k}:hover {
         padding-bottom: $v;
         padding-top: $v;
       }
@@ -419,7 +419,7 @@
           }
         }
 
-        .#{$bp}\:hmx-#{$k}:hover {
+        .h\:#{$bp}\:mx-#{$k}:hover {
           @include breakpoint($bp_value) {
             margin-left: $v;
             margin-right: $v;
@@ -433,7 +433,7 @@
           }
         }
 
-        .#{$bp}\:hpx-#{$k}:hover {
+        .h\:#{$bp}\:px-#{$k}:hover {
           @include breakpoint($bp_value) {
             padding-left: $v;
             padding-right: $v;
@@ -447,7 +447,7 @@
           }
         }
 
-        .#{$bp}\:hmy-#{$k}:hover {
+        .h\:#{$bp}\:my-#{$k}:hover {
           @include breakpoint($bp_value) {
             margin-bottom: $v;
             margin-top: $v;
@@ -461,7 +461,7 @@
           }
         }
 
-        .#{$bp}\:hpy-#{$k}:hover {
+        .h\:#{$bp}\:py-#{$k}:hover {
           @include breakpoint($bp_value) {
             padding-bottom: $v;
             padding-top: $v;
@@ -477,19 +477,19 @@
     .h-#{$k} {
       height: $v;
     }
-    .hh-#{$k}:hover {
+    .h\:h-#{$k}:hover {
       height: $v;
     }
     .max-h-#{$k} {
       max-height: $v;
     }
-    .hmax-h-#{$k}:hover {
+    .h\:max-h-#{$k}:hover {
       max-height: $v;
     }
     .min-h-#{$k} {
       min-height: $v;
     }
-    .hmin-h-#{$k}:hover {
+    .h\:min-h-#{$k}:hover {
       min-height: $v;
     }
 
@@ -499,7 +499,7 @@
           height: $v;
         }
       }
-      .#{$bp}\:hh-#{$k}:hover {
+      .h\:#{$bp}\:h-#{$k}:hover {
         @include breakpoint($bp_value) {
           height: $v;
         }
@@ -509,7 +509,7 @@
           max-height: $v;
         }
       }
-      .#{$bp}\:hmax-h-#{$k}:hover {
+      .h\:#{$bp}\:max-h-#{$k}:hover {
         @include breakpoint($bp_value) {
           max-height: $v;
         }
@@ -519,7 +519,7 @@
           min-height: $v;
         }
       }
-      .#{$bp}\:hmin-h-#{$k}:hover {
+      .h\:#{$bp}\:min-h-#{$k}:hover {
         @include breakpoint($bp_value) {
           min-height: $v;
         }
@@ -533,19 +533,19 @@
     .w-#{$k} {
       width: $v;
     }
-    .hw-#{$k}:hover {
+    .h\:w-#{$k}:hover {
       width: $v;
     }
     .max-w-#{$k} {
       max-width: $v;
     }
-    .hmax-w-#{$k}:hover {
+    .h\:max-w-#{$k}:hover {
       max-width: $v;
     }
     .min-w-#{$k} {
       min-width: $v;
     }
-    .hmin-w-#{$k}:hover {
+    .h\:min-w-#{$k}:hover {
       min-width: $v;
     }
 
@@ -555,7 +555,7 @@
           width: $v;
         }
       }
-      .#{$bp}\:hw-#{$k}:hover {
+      .h\:#{$bp}\:w-#{$k}:hover {
         @include breakpoint($bp_value) {
           width: $v;
         }
@@ -565,7 +565,7 @@
           max-width: $v;
         }
       }
-      .#{$bp}\:hmax-w-#{$k}:hover {
+      .h\:#{$bp}\:max-w-#{$k}:hover {
         @include breakpoint($bp_value) {
           max-width: $v;
         }
@@ -575,7 +575,7 @@
           min-width: $v;
         }
       }
-      .#{$bp}\:hmin-w-#{$k}:hover {
+      .h\:#{$bp}\:min-w-#{$k}:hover {
         @include breakpoint($bp_value) {
           min-width: $v;
         }

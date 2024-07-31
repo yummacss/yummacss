@@ -33,12 +33,14 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Include **Silver** color to the color palette
 
 ### Changed
+
 - **Border Color** utilities no longer have `border-style` and `border-width` properties by default
 - Base styles are now optional
 - Colors now use HEX color format
 - Fix `transparent` having color variants
 - Fix conflict between `float: none;` (`f-none`) and `flex: none;` (`f-none`)
 - New **Flex Basis** utilities - `fb-full`, `fb-half`
+- New `2xl` breakpoint utilities
 - New `auto` property in **Margin** and **Padding** utilities
 - New `max-content` and `min-content` properties in **Grid Auto Columns**, **Grid Auto Rows**, **Height**, **Width**, **Dimension** and **Flex Basis**
 - Simplify **Font Family** fallbacks
@@ -52,7 +54,6 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Update `cnt` utility with new responsive utility rules
 - Update property values from `0.75rem` to `0.25rem` for **Margin** and **Padding** utilities
 - Update values in breakpoint utilities
-
 ### Removed
 - Remove **Column** utilities
 - Remove **Offset Gap** utilities
