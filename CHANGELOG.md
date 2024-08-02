@@ -40,20 +40,22 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Fix `transparent` having color variants
 - Fix conflict between `float: none;` (`f-none`) and `flex: none;` (`f-none`)
 - New **Flex Basis** utilities - `fb-full`, `fb-half`
-- New `2xl` breakpoint utilities
 - New `auto` property in **Margin** and **Padding** utilities
 - New `max-content` and `min-content` properties in **Grid Auto Columns**, **Grid Auto Rows**, **Height**, **Width**, **Dimension** and **Flex Basis**
+- New `xxl` breakpoint utilities
 - Simplify **Font Family** fallbacks
 - Stylecent now covers the `<optgroup>`
 - Update **Container** syntax from `cnn` to `cnt`
 - Update **Float** syntax from `f-*static*` to `flo-*`
 - Update **Font Family** utilitiy syntaxes from `ff-d` to `ff-s`
+- Update **Font Size** Extrea large syntax from `fs-2xl` to `fs-xxl`
 - Update **Position** syntax from `pos-*` to `p-*`
 - Update **Position** syntax from `pos-static` to `p-s`
 - Update **Position** syntax from `pos-sticky` to `p-t`
 - Update `cnt` utility with new responsive utility rules
 - Update property values from `0.75rem` to `0.25rem` for **Margin** and **Padding** utilities
 - Update values in breakpoint utilities
+
 ### Removed
 - Remove **Column** utilities
 - Remove **Offset Gap** utilities
