@@ -9,7 +9,7 @@
     @include color-variants("border-right-color", "bc-r", $k, $v);
     @include color-variants("border-top-color", "bc-t", $k, $v);
     @include color-variants("caret-color", "cc", $k, $v);
-    @include color-variants("color", "t", $k, $v);
+    @include color-variants("color", "tc", $k, $v);
     @include color-variants("outline-color", "oc", $k, $v);
     @include color-variants("text-decoration-color", "tdc", $k, $v);
 
@@ -22,7 +22,7 @@
         @include shade-variants("border-right-color", "bc-r", $k, $v, 10%);
         @include shade-variants("border-top-color", "bc-t", $k, $v, 10%);
         @include shade-variants("caret-color", "cc", $k, $v, 10%);
-        @include shade-variants("color", "t", $k, $v, 10%);
+        @include shade-variants("color", "tc", $k, $v, 10%);
         @include shade-variants("outline-color", "oc", $k, $v, 10%);
         @include shade-variants("text-decoration-color", "tdc", $k, $v, 10%);
     }
