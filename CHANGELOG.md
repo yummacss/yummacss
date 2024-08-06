@@ -47,8 +47,8 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Stylecent now covers the `<optgroup>`
 - Update **Container** syntax from `cnn` to `cnt`
 - Update **Float** syntax from `f-*static*` to `flo-*`
-- Update **Font Family** utilitiy syntaxes from `ff-d` to `ff-s`
-- Update **Font Size** Extrea large syntax from `fs-2xl` to `fs-xxl`
+- Update **Font Family** utility syntaxes from `ff-d` to `ff-s`
+- Update **Font Size** Extra large syntax from `fs-2xl` to `fs-xxl`
 - Update **Position** syntax from `pos-*` to `p-*`
 - Update **Position** syntax from `pos-static` to `p-s`
 - Update **Position** syntax from `pos-sticky` to `p-t`
@@ -66,6 +66,6 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Remove `btn-otl-*` component
 - Remove `card-*` component
 - Remove `ff-i` utility
-- Remove `nav-*` comp*onent
+- Remove `nav-*` component
 - Remove Components folder
 - Remove extra small value for breakpoint utilities
