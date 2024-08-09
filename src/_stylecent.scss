@@ -3,66 +3,66 @@
 $stylecent: true !default;
 
 @if $stylecent {
-    *,
-    *::before,
-    *::after {
-        border-width: 0;
-        border-style: solid;
-        box-sizing: border-box;
-    }
+  *,
+  *::before,
+  *::after {
+    border-width: 0;
+    border-style: solid;
+    box-sizing: border-box;
+  }
 
-    * {
-        margin: 0;
-        color: inherit;
-        font-family: $yma-font-system;
-    }
+  * {
+    margin: 0;
+    color: inherit;
+    font-family: $yma-font-system;
+  }
 
-    body {
-        line-height: 1.5;
-        font-family: inherit;
-    }
+  body {
+    line-height: 1.5;
+    font-family: inherit;
+  }
 
-    img,
-    picture,
-    video,
-    canvas,
-    svg {
-        display: block;
-        max-width: 100%;
-    }
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    display: block;
+    max-width: 100%;
+  }
 
-    button,
-    input,
-    optgroup,
-    select,
-    textarea {
-        font: inherit;
-        background-color: transparent;
-    }
+  button,
+  input,
+  optgroup,
+  select,
+  textarea {
+    font: inherit;
+    background-color: transparent;
+  }
 
-    p,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        overflow-wrap: break-word;
-    }
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    overflow-wrap: break-word;
+  }
 
-    a {
-        text-decoration: none;
-    }
+  a {
+    text-decoration: none;
+  }
 
-    ol,
-    ul {
-        padding: 0;
-        list-style: none;
-    }
+  ol,
+  ul {
+    padding: 0;
+    list-style: none;
+  }
 
-    hr {
-        border: 0;
-        margin: 1em 0;
-        border-top: $yma-colors-transparent;
-    }
+  hr {
+    border: 0;
+    margin: 1em 0;
+    border-top: $yma-colors-transparent;
+  }
 }

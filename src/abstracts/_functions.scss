@@ -1,4 +1,4 @@
 @function is-not-mono($v, $yma-colors) {
-    @return $v != map-get($yma-colors, "black") and $v != map-get($yma-colors, "white") and $v !=
-        map-get($yma-colors, "transparent");
+  @return $v != map-get($yma-colors, "black") and $v !=
+    map-get($yma-colors, "white") and $v != map-get($yma-colors, "transparent");
 }

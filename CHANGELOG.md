@@ -14,6 +14,8 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Add **Container** utilities
 - Add **Font Style** utilities
 - Add **Gap** utilities
+- Add **Grid Column** utilities
+- Add **Grid Row** utilities
 - Add **Object Fit** utilities
 - Add **Object Position** utilities
 - Add **Outline Color** utilities

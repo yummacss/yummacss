@@ -36,15 +36,11 @@ $yma-backdrop-blur: 4px;
 
 // flexbox & grid
 $yma-flex-basis: 1rem;
-$yma-flex-grow: 1;
-$yma-flex-shrink: 1;
 $yma-gap: 0.25rem;
 $yma-column-gap: 0.25rem;
-$yma-flex: 1;
 $yma-row-gap: 0.25rem;
 
 // layout
-$yma-columns: 1;
 $yma-direction: 1px;
 
 // typography
@@ -70,17 +66,17 @@ $yma-extension: (
   "full": 100%,
   "half": 50%,
   "max": max-content,
-  "min": min-content
+  "min": min-content,
 );
 
 $yma-height-extension: (
   "1\\/1": 100dvh,
-  "1\\/2": 50dvh
+  "1\\/2": 50dvh,
 );
 
 $yma-width-extension: (
   "1\\/1": 100dvw,
-  "2\\/1": 50dvw
+  "2\\/1": 50dvw,
 );
 
 // colors map
@@ -100,5 +96,5 @@ $yma-colors: (
   "lead": $yma-colors-lead,
   "black": $yma-colors-black,
   "white": $yma-colors-white,
-  "transparent": $yma-colors-transparent
+  "transparent": $yma-colors-transparent,
 );

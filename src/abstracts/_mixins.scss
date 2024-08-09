@@ -14,7 +14,6 @@
 
 @mixin shade-variants($property, $prefix, $k, $v, $mod) {
   @for $i from 1 through 6 {
-    
     // light variants
     .#{$prefix}-l-#{$k}-#{$i} {
       #{$property}: mix(white, $v, $i * $mod);

@@ -1,43 +1,43 @@
 $yma-breakpoints: (
-    "sm": 640px,
-    "md": 768px,
-    "lg": 1024px,
-    "xl": 1280px,
-    "xxl": 1536px
+  "sm": 640px,
+  "md": 768px,
+  "lg": 1024px,
+  "xl": 1280px,
+  "xxl": 1536px,
 );
 
 @mixin sm {
-    @media (min-width: map-get($yma-breakpoints, "sm")) { 
-        @content; 
-    }
+  @media (min-width: map-get($yma-breakpoints, "sm")) {
+    @content;
+  }
 }
 
 @mixin md {
-    @media (min-width: map-get($yma-breakpoints, "md")) {
-        @content;
-    }
+  @media (min-width: map-get($yma-breakpoints, "md")) {
+    @content;
+  }
 }
 
 @mixin lg {
-    @media (min-width: map-get($yma-breakpoints, "lg")) {
-        @content;
-    }
+  @media (min-width: map-get($yma-breakpoints, "lg")) {
+    @content;
+  }
 }
 
 @mixin xl {
-    @media (min-width: map-get($yma-breakpoints, "xl")) {
-        @content;
-    }
+  @media (min-width: map-get($yma-breakpoints, "xl")) {
+    @content;
+  }
 }
 
 @mixin xxl {
-    @media (min-width: map-get($yma-breakpoints, "xxl")) {
-        @content;
-    }
+  @media (min-width: map-get($yma-breakpoints, "xxl")) {
+    @content;
+  }
 }
 
 @mixin breakpoint($bp) {
-    @media (min-width: $bp) {
-        @content;
-    }
+  @media (min-width: $bp) {
+    @content;
+  }
 }
