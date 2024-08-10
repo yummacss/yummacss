@@ -22329,611 +22329,611 @@
 }
 
 .gc-s-1 {
-  grid-column-span: span 1/span 1;
+  grid-column: span 1/span 1;
 }
 
 .gc-s-2 {
-  grid-column-span: span 2/span 2;
+  grid-column: span 2/span 2;
 }
 
 .gc-s-3 {
-  grid-column-span: span 3/span 3;
+  grid-column: span 3/span 3;
 }
 
 .gc-s-4 {
-  grid-column-span: span 4/span 4;
+  grid-column: span 4/span 4;
 }
 
 .gc-s-5 {
-  grid-column-span: span 5/span 5;
+  grid-column: span 5/span 5;
 }
 
 .gc-s-6 {
-  grid-column-span: span 6/span 6;
+  grid-column: span 6/span 6;
 }
 
 .gc-s-7 {
-  grid-column-span: span 7/span 7;
+  grid-column: span 7/span 7;
 }
 
 .gc-s-8 {
-  grid-column-span: span 8/span 8;
+  grid-column: span 8/span 8;
 }
 
 .gc-s-9 {
-  grid-column-span: span 9/span 9;
+  grid-column: span 9/span 9;
 }
 
 .gc-s-10 {
-  grid-column-span: span 10/span 10;
+  grid-column: span 10/span 10;
 }
 
 .gc-s-11 {
-  grid-column-span: span 11/span 11;
+  grid-column: span 11/span 11;
 }
 
 .gc-s-12 {
-  grid-column-span: span 12/span 12;
+  grid-column: span 12/span 12;
 }
 
 .gc-s-13 {
-  grid-column-span: span 13/span 13;
+  grid-column: span 13/span 13;
 }
 
 .gc-s-14 {
-  grid-column-span: span 14/span 14;
+  grid-column: span 14/span 14;
 }
 
 .gc-s-15 {
-  grid-column-span: span 15/span 15;
+  grid-column: span 15/span 15;
 }
 
 .gc-s-16 {
-  grid-column-span: span 16/span 16;
+  grid-column: span 16/span 16;
 }
 
 @media (min-width: 640px) {
   .sm\:gc-s-1 {
-    grid-column-span: span 1/span 1;
+    grid-column: span 1/span 1;
   }
 }
 
 @media (min-width: 640px) {
   .sm\:gc-s-2 {
-    grid-column-span: span 2/span 2;
+    grid-column: span 2/span 2;
   }
 }
 
 @media (min-width: 640px) {
   .sm\:gc-s-3 {
-    grid-column-span: span 3/span 3;
+    grid-column: span 3/span 3;
   }
 }
 
 @media (min-width: 640px) {
   .sm\:gc-s-4 {
-    grid-column-span: span 4/span 4;
+    grid-column: span 4/span 4;
   }
 }
 
 @media (min-width: 640px) {
   .sm\:gc-s-5 {
-    grid-column-span: span 5/span 5;
+    grid-column: span 5/span 5;
   }
 }
 
 @media (min-width: 640px) {
   .sm\:gc-s-6 {
-    grid-column-span: span 6/span 6;
+    grid-column: span 6/span 6;
   }
 }
 
 @media (min-width: 640px) {
   .sm\:gc-s-7 {
-    grid-column-span: span 7/span 7;
+    grid-column: span 7/span 7;
   }
 }
 
 @media (min-width: 640px) {
   .sm\:gc-s-8 {
-    grid-column-span: span 8/span 8;
+    grid-column: span 8/span 8;
   }
 }
 
 @media (min-width: 640px) {
   .sm\:gc-s-9 {
-    grid-column-span: span 9/span 9;
+    grid-column: span 9/span 9;
   }
 }
 
 @media (min-width: 640px) {
   .sm\:gc-s-10 {
-    grid-column-span: span 10/span 10;
+    grid-column: span 10/span 10;
   }
 }
 
 @media (min-width: 640px) {
   .sm\:gc-s-11 {
-    grid-column-span: span 11/span 11;
+    grid-column: span 11/span 11;
   }
 }
 
 @media (min-width: 640px) {
   .sm\:gc-s-12 {
-    grid-column-span: span 12/span 12;
+    grid-column: span 12/span 12;
   }
 }
 
 @media (min-width: 640px) {
   .sm\:gc-s-13 {
-    grid-column-span: span 13/span 13;
+    grid-column: span 13/span 13;
   }
 }
 
 @media (min-width: 640px) {
   .sm\:gc-s-14 {
-    grid-column-span: span 14/span 14;
+    grid-column: span 14/span 14;
   }
 }
 
 @media (min-width: 640px) {
   .sm\:gc-s-15 {
-    grid-column-span: span 15/span 15;
+    grid-column: span 15/span 15;
   }
 }
 
 @media (min-width: 640px) {
   .sm\:gc-s-16 {
-    grid-column-span: span 16/span 16;
+    grid-column: span 16/span 16;
   }
 }
 
 @media (min-width: 768px) {
   .md\:gc-s-1 {
-    grid-column-span: span 1/span 1;
+    grid-column: span 1/span 1;
   }
 }
 
 @media (min-width: 768px) {
   .md\:gc-s-2 {
-    grid-column-span: span 2/span 2;
+    grid-column: span 2/span 2;
   }
 }
 
 @media (min-width: 768px) {
   .md\:gc-s-3 {
-    grid-column-span: span 3/span 3;
+    grid-column: span 3/span 3;
   }
 }
 
 @media (min-width: 768px) {
   .md\:gc-s-4 {
-    grid-column-span: span 4/span 4;
+    grid-column: span 4/span 4;
   }
 }
 
 @media (min-width: 768px) {
   .md\:gc-s-5 {
-    grid-column-span: span 5/span 5;
+    grid-column: span 5/span 5;
   }
 }
 
 @media (min-width: 768px) {
   .md\:gc-s-6 {
-    grid-column-span: span 6/span 6;
+    grid-column: span 6/span 6;
   }
 }
 
 @media (min-width: 768px) {
   .md\:gc-s-7 {
-    grid-column-span: span 7/span 7;
+    grid-column: span 7/span 7;
   }
 }
 
 @media (min-width: 768px) {
   .md\:gc-s-8 {
-    grid-column-span: span 8/span 8;
+    grid-column: span 8/span 8;
   }
 }
 
 @media (min-width: 768px) {
   .md\:gc-s-9 {
-    grid-column-span: span 9/span 9;
+    grid-column: span 9/span 9;
   }
 }
 
 @media (min-width: 768px) {
   .md\:gc-s-10 {
-    grid-column-span: span 10/span 10;
+    grid-column: span 10/span 10;
   }
 }
 
 @media (min-width: 768px) {
   .md\:gc-s-11 {
-    grid-column-span: span 11/span 11;
+    grid-column: span 11/span 11;
   }
 }
 
 @media (min-width: 768px) {
   .md\:gc-s-12 {
-    grid-column-span: span 12/span 12;
+    grid-column: span 12/span 12;
   }
 }
 
 @media (min-width: 768px) {
   .md\:gc-s-13 {
-    grid-column-span: span 13/span 13;
+    grid-column: span 13/span 13;
   }
 }
 
 @media (min-width: 768px) {
   .md\:gc-s-14 {
-    grid-column-span: span 14/span 14;
+    grid-column: span 14/span 14;
   }
 }
 
 @media (min-width: 768px) {
   .md\:gc-s-15 {
-    grid-column-span: span 15/span 15;
+    grid-column: span 15/span 15;
   }
 }
 
 @media (min-width: 768px) {
   .md\:gc-s-16 {
-    grid-column-span: span 16/span 16;
+    grid-column: span 16/span 16;
   }
 }
 
 @media (min-width: 1024px) {
   .lg\:gc-s-1 {
-    grid-column-span: span 1/span 1;
+    grid-column: span 1/span 1;
   }
 }
 
 @media (min-width: 1024px) {
   .lg\:gc-s-2 {
-    grid-column-span: span 2/span 2;
+    grid-column: span 2/span 2;
   }
 }
 
 @media (min-width: 1024px) {
   .lg\:gc-s-3 {
-    grid-column-span: span 3/span 3;
+    grid-column: span 3/span 3;
   }
 }
 
 @media (min-width: 1024px) {
   .lg\:gc-s-4 {
-    grid-column-span: span 4/span 4;
+    grid-column: span 4/span 4;
   }
 }
 
 @media (min-width: 1024px) {
   .lg\:gc-s-5 {
-    grid-column-span: span 5/span 5;
+    grid-column: span 5/span 5;
   }
 }
 
 @media (min-width: 1024px) {
   .lg\:gc-s-6 {
-    grid-column-span: span 6/span 6;
+    grid-column: span 6/span 6;
   }
 }
 
 @media (min-width: 1024px) {
   .lg\:gc-s-7 {
-    grid-column-span: span 7/span 7;
+    grid-column: span 7/span 7;
   }
 }
 
 @media (min-width: 1024px) {
   .lg\:gc-s-8 {
-    grid-column-span: span 8/span 8;
+    grid-column: span 8/span 8;
   }
 }
 
 @media (min-width: 1024px) {
   .lg\:gc-s-9 {
-    grid-column-span: span 9/span 9;
+    grid-column: span 9/span 9;
   }
 }
 
 @media (min-width: 1024px) {
   .lg\:gc-s-10 {
-    grid-column-span: span 10/span 10;
+    grid-column: span 10/span 10;
   }
 }
 
 @media (min-width: 1024px) {
   .lg\:gc-s-11 {
-    grid-column-span: span 11/span 11;
+    grid-column: span 11/span 11;
   }
 }
 
 @media (min-width: 1024px) {
   .lg\:gc-s-12 {
-    grid-column-span: span 12/span 12;
+    grid-column: span 12/span 12;
   }
 }
 
 @media (min-width: 1024px) {
   .lg\:gc-s-13 {
-    grid-column-span: span 13/span 13;
+    grid-column: span 13/span 13;
   }
 }
 
 @media (min-width: 1024px) {
   .lg\:gc-s-14 {
-    grid-column-span: span 14/span 14;
+    grid-column: span 14/span 14;
   }
 }
 
 @media (min-width: 1024px) {
   .lg\:gc-s-15 {
-    grid-column-span: span 15/span 15;
+    grid-column: span 15/span 15;
   }
 }
 
 @media (min-width: 1024px) {
   .lg\:gc-s-16 {
-    grid-column-span: span 16/span 16;
+    grid-column: span 16/span 16;
   }
 }
 
 @media (min-width: 1280px) {
   .xl\:gc-s-1 {
-    grid-column-span: span 1/span 1;
+    grid-column: span 1/span 1;
   }
 }
 
 @media (min-width: 1280px) {
   .xl\:gc-s-2 {
-    grid-column-span: span 2/span 2;
+    grid-column: span 2/span 2;
   }
 }
 
 @media (min-width: 1280px) {
   .xl\:gc-s-3 {
-    grid-column-span: span 3/span 3;
+    grid-column: span 3/span 3;
   }
 }
 
 @media (min-width: 1280px) {
   .xl\:gc-s-4 {
-    grid-column-span: span 4/span 4;
+    grid-column: span 4/span 4;
   }
 }
 
 @media (min-width: 1280px) {
   .xl\:gc-s-5 {
-    grid-column-span: span 5/span 5;
+    grid-column: span 5/span 5;
   }
 }
 
 @media (min-width: 1280px) {
   .xl\:gc-s-6 {
-    grid-column-span: span 6/span 6;
+    grid-column: span 6/span 6;
   }
 }
 
 @media (min-width: 1280px) {
   .xl\:gc-s-7 {
-    grid-column-span: span 7/span 7;
+    grid-column: span 7/span 7;
   }
 }
 
 @media (min-width: 1280px) {
   .xl\:gc-s-8 {
-    grid-column-span: span 8/span 8;
+    grid-column: span 8/span 8;
   }
 }
 
 @media (min-width: 1280px) {
   .xl\:gc-s-9 {
-    grid-column-span: span 9/span 9;
+    grid-column: span 9/span 9;
   }
 }
 
 @media (min-width: 1280px) {
   .xl\:gc-s-10 {
-    grid-column-span: span 10/span 10;
+    grid-column: span 10/span 10;
   }
 }
 
 @media (min-width: 1280px) {
   .xl\:gc-s-11 {
-    grid-column-span: span 11/span 11;
+    grid-column: span 11/span 11;
   }
 }
 
 @media (min-width: 1280px) {
   .xl\:gc-s-12 {
-    grid-column-span: span 12/span 12;
+    grid-column: span 12/span 12;
   }
 }
 
 @media (min-width: 1280px) {
   .xl\:gc-s-13 {
-    grid-column-span: span 13/span 13;
+    grid-column: span 13/span 13;
   }
 }
 
 @media (min-width: 1280px) {
   .xl\:gc-s-14 {
-    grid-column-span: span 14/span 14;
+    grid-column: span 14/span 14;
   }
 }
 
 @media (min-width: 1280px) {
   .xl\:gc-s-15 {
-    grid-column-span: span 15/span 15;
+    grid-column: span 15/span 15;
   }
 }
 
 @media (min-width: 1280px) {
   .xl\:gc-s-16 {
-    grid-column-span: span 16/span 16;
+    grid-column: span 16/span 16;
   }
 }
 
 @media (min-width: 1536px) {
   .xxl\:gc-s-1 {
-    grid-column-span: span 1/span 1;
+    grid-column: span 1/span 1;
   }
 }
 
 @media (min-width: 1536px) {
   .xxl\:gc-s-2 {
-    grid-column-span: span 2/span 2;
+    grid-column: span 2/span 2;
   }
 }
 
 @media (min-width: 1536px) {
   .xxl\:gc-s-3 {
-    grid-column-span: span 3/span 3;
+    grid-column: span 3/span 3;
   }
 }
 
 @media (min-width: 1536px) {
   .xxl\:gc-s-4 {
-    grid-column-span: span 4/span 4;
+    grid-column: span 4/span 4;
   }
 }
 
 @media (min-width: 1536px) {
   .xxl\:gc-s-5 {
-    grid-column-span: span 5/span 5;
+    grid-column: span 5/span 5;
   }
 }
 
 @media (min-width: 1536px) {
   .xxl\:gc-s-6 {
-    grid-column-span: span 6/span 6;
+    grid-column: span 6/span 6;
   }
 }
 
 @media (min-width: 1536px) {
   .xxl\:gc-s-7 {
-    grid-column-span: span 7/span 7;
+    grid-column: span 7/span 7;
   }
 }
 
 @media (min-width: 1536px) {
   .xxl\:gc-s-8 {
-    grid-column-span: span 8/span 8;
+    grid-column: span 8/span 8;
   }
 }
 
 @media (min-width: 1536px) {
   .xxl\:gc-s-9 {
-    grid-column-span: span 9/span 9;
+    grid-column: span 9/span 9;
   }
 }
 
 @media (min-width: 1536px) {
   .xxl\:gc-s-10 {
-    grid-column-span: span 10/span 10;
+    grid-column: span 10/span 10;
   }
 }
 
 @media (min-width: 1536px) {
   .xxl\:gc-s-11 {
-    grid-column-span: span 11/span 11;
+    grid-column: span 11/span 11;
   }
 }
 
 @media (min-width: 1536px) {
   .xxl\:gc-s-12 {
-    grid-column-span: span 12/span 12;
+    grid-column: span 12/span 12;
   }
 }
 
 @media (min-width: 1536px) {
   .xxl\:gc-s-13 {
-    grid-column-span: span 13/span 13;
+    grid-column: span 13/span 13;
   }
 }
 
 @media (min-width: 1536px) {
   .xxl\:gc-s-14 {
-    grid-column-span: span 14/span 14;
+    grid-column: span 14/span 14;
   }
 }
 
 @media (min-width: 1536px) {
   .xxl\:gc-s-15 {
-    grid-column-span: span 15/span 15;
+    grid-column: span 15/span 15;
   }
 }
 
 @media (min-width: 1536px) {
   .xxl\:gc-s-16 {
-    grid-column-span: span 16/span 16;
+    grid-column: span 16/span 16;
   }
 }
 
 .h\:gc-s-1:hover {
-  grid-column-span: span 1/span 1;
+  grid-column: span 1/span 1;
 }
 
 .h\:gc-s-2:hover {
-  grid-column-span: span 2/span 2;
+  grid-column: span 2/span 2;
 }
 
 .h\:gc-s-3:hover {
-  grid-column-span: span 3/span 3;
+  grid-column: span 3/span 3;
 }
 
 .h\:gc-s-4:hover {
-  grid-column-span: span 4/span 4;
+  grid-column: span 4/span 4;
 }
 
 .h\:gc-s-5:hover {
-  grid-column-span: span 5/span 5;
+  grid-column: span 5/span 5;
 }
 
 .h\:gc-s-6:hover {
-  grid-column-span: span 6/span 6;
+  grid-column: span 6/span 6;
 }
 
 .h\:gc-s-7:hover {
-  grid-column-span: span 7/span 7;
+  grid-column: span 7/span 7;
 }
 
 .h\:gc-s-8:hover {
-  grid-column-span: span 8/span 8;
+  grid-column: span 8/span 8;
 }
 
 .h\:gc-s-9:hover {
-  grid-column-span: span 9/span 9;
+  grid-column: span 9/span 9;
 }
 
 .h\:gc-s-10:hover {
-  grid-column-span: span 10/span 10;
+  grid-column: span 10/span 10;
 }
 
 .h\:gc-s-11:hover {
-  grid-column-span: span 11/span 11;
+  grid-column: span 11/span 11;
 }
 
 .h\:gc-s-12:hover {
-  grid-column-span: span 12/span 12;
+  grid-column: span 12/span 12;
 }
 
 .h\:gc-s-13:hover {
-  grid-column-span: span 13/span 13;
+  grid-column: span 13/span 13;
 }
 
 .h\:gc-s-14:hover {
-  grid-column-span: span 14/span 14;
+  grid-column: span 14/span 14;
 }
 
 .h\:gc-s-15:hover {
-  grid-column-span: span 15/span 15;
+  grid-column: span 15/span 15;
 }
 
 .h\:gc-s-16:hover {
-  grid-column-span: span 16/span 16;
+  grid-column: span 16/span 16;
 }
 
 .gcs-1 {
@@ -24153,611 +24153,611 @@
 }
 
 .gr-s-1 {
-  grid-row-span: span 1/span 1;
+  grid-row: span 1/span 1;
 }
 
 .gr-s-2 {
-  grid-row-span: span 2/span 2;
+  grid-row: span 2/span 2;
 }
 
 .gr-s-3 {
-  grid-row-span: span 3/span 3;
+  grid-row: span 3/span 3;
 }
 
 .gr-s-4 {
-  grid-row-span: span 4/span 4;
+  grid-row: span 4/span 4;
 }
 
 .gr-s-5 {
-  grid-row-span: span 5/span 5;
+  grid-row: span 5/span 5;
 }
 
 .gr-s-6 {
-  grid-row-span: span 6/span 6;
+  grid-row: span 6/span 6;
 }
 
 .gr-s-7 {
-  grid-row-span: span 7/span 7;
+  grid-row: span 7/span 7;
 }
 
 .gr-s-8 {
-  grid-row-span: span 8/span 8;
+  grid-row: span 8/span 8;
 }
 
 .gr-s-9 {
-  grid-row-span: span 9/span 9;
+  grid-row: span 9/span 9;
 }
 
 .gr-s-10 {
-  grid-row-span: span 10/span 10;
+  grid-row: span 10/span 10;
 }
 
 .gr-s-11 {
-  grid-row-span: span 11/span 11;
+  grid-row: span 11/span 11;
 }
 
 .gr-s-12 {
-  grid-row-span: span 12/span 12;
+  grid-row: span 12/span 12;
 }
 
 .gr-s-13 {
-  grid-row-span: span 13/span 13;
+  grid-row: span 13/span 13;
 }
 
 .gr-s-14 {
-  grid-row-span: span 14/span 14;
+  grid-row: span 14/span 14;
 }
 
 .gr-s-15 {
-  grid-row-span: span 15/span 15;
+  grid-row: span 15/span 15;
 }
 
 .gr-s-16 {
-  grid-row-span: span 16/span 16;
+  grid-row: span 16/span 16;
 }
 
 @media (min-width: 640px) {
   .sm\:gr-s-1 {
-    grid-row-span: span 1/span 1;
+    grid-row: span 1/span 1;
   }
 }
 
 @media (min-width: 640px) {
   .sm\:gr-s-2 {
-    grid-row-span: span 2/span 2;
+    grid-row: span 2/span 2;
   }
 }
 
 @media (min-width: 640px) {
   .sm\:gr-s-3 {
-    grid-row-span: span 3/span 3;
+    grid-row: span 3/span 3;
   }
 }
 
 @media (min-width: 640px) {
   .sm\:gr-s-4 {
-    grid-row-span: span 4/span 4;
+    grid-row: span 4/span 4;
   }
 }
 
 @media (min-width: 640px) {
   .sm\:gr-s-5 {
-    grid-row-span: span 5/span 5;
+    grid-row: span 5/span 5;
   }
 }
 
 @media (min-width: 640px) {
   .sm\:gr-s-6 {
-    grid-row-span: span 6/span 6;
+    grid-row: span 6/span 6;
   }
 }
 
 @media (min-width: 640px) {
   .sm\:gr-s-7 {
-    grid-row-span: span 7/span 7;
+    grid-row: span 7/span 7;
   }
 }
 
 @media (min-width: 640px) {
   .sm\:gr-s-8 {
-    grid-row-span: span 8/span 8;
+    grid-row: span 8/span 8;
   }
 }
 
 @media (min-width: 640px) {
   .sm\:gr-s-9 {
-    grid-row-span: span 9/span 9;
+    grid-row: span 9/span 9;
   }
 }
 
 @media (min-width: 640px) {
   .sm\:gr-s-10 {
-    grid-row-span: span 10/span 10;
+    grid-row: span 10/span 10;
   }
 }
 
 @media (min-width: 640px) {
   .sm\:gr-s-11 {
-    grid-row-span: span 11/span 11;
+    grid-row: span 11/span 11;
   }
 }
 
 @media (min-width: 640px) {
   .sm\:gr-s-12 {
-    grid-row-span: span 12/span 12;
+    grid-row: span 12/span 12;
   }
 }
 
 @media (min-width: 640px) {
   .sm\:gr-s-13 {
-    grid-row-span: span 13/span 13;
+    grid-row: span 13/span 13;
   }
 }
 
 @media (min-width: 640px) {
   .sm\:gr-s-14 {
-    grid-row-span: span 14/span 14;
+    grid-row: span 14/span 14;
   }
 }
 
 @media (min-width: 640px) {
   .sm\:gr-s-15 {
-    grid-row-span: span 15/span 15;
+    grid-row: span 15/span 15;
   }
 }
 
 @media (min-width: 640px) {
   .sm\:gr-s-16 {
-    grid-row-span: span 16/span 16;
+    grid-row: span 16/span 16;
   }
 }
 
 @media (min-width: 768px) {
   .md\:gr-s-1 {
-    grid-row-span: span 1/span 1;
+    grid-row: span 1/span 1;
   }
 }
 
 @media (min-width: 768px) {
   .md\:gr-s-2 {
-    grid-row-span: span 2/span 2;
+    grid-row: span 2/span 2;
   }
 }
 
 @media (min-width: 768px) {
   .md\:gr-s-3 {
-    grid-row-span: span 3/span 3;
+    grid-row: span 3/span 3;
   }
 }
 
 @media (min-width: 768px) {
   .md\:gr-s-4 {
-    grid-row-span: span 4/span 4;
+    grid-row: span 4/span 4;
   }
 }
 
 @media (min-width: 768px) {
   .md\:gr-s-5 {
-    grid-row-span: span 5/span 5;
+    grid-row: span 5/span 5;
   }
 }
 
 @media (min-width: 768px) {
   .md\:gr-s-6 {
-    grid-row-span: span 6/span 6;
+    grid-row: span 6/span 6;
   }
 }
 
 @media (min-width: 768px) {
   .md\:gr-s-7 {
-    grid-row-span: span 7/span 7;
+    grid-row: span 7/span 7;
   }
 }
 
 @media (min-width: 768px) {
   .md\:gr-s-8 {
-    grid-row-span: span 8/span 8;
+    grid-row: span 8/span 8;
   }
 }
 
 @media (min-width: 768px) {
   .md\:gr-s-9 {
-    grid-row-span: span 9/span 9;
+    grid-row: span 9/span 9;
   }
 }
 
 @media (min-width: 768px) {
   .md\:gr-s-10 {
-    grid-row-span: span 10/span 10;
+    grid-row: span 10/span 10;
   }
 }
 
 @media (min-width: 768px) {
   .md\:gr-s-11 {
-    grid-row-span: span 11/span 11;
+    grid-row: span 11/span 11;
   }
 }
 
 @media (min-width: 768px) {
   .md\:gr-s-12 {
-    grid-row-span: span 12/span 12;
+    grid-row: span 12/span 12;
   }
 }
 
 @media (min-width: 768px) {
   .md\:gr-s-13 {
-    grid-row-span: span 13/span 13;
+    grid-row: span 13/span 13;
   }
 }
 
 @media (min-width: 768px) {
   .md\:gr-s-14 {
-    grid-row-span: span 14/span 14;
+    grid-row: span 14/span 14;
   }
 }
 
 @media (min-width: 768px) {
   .md\:gr-s-15 {
-    grid-row-span: span 15/span 15;
+    grid-row: span 15/span 15;
   }
 }
 
 @media (min-width: 768px) {
   .md\:gr-s-16 {
-    grid-row-span: span 16/span 16;
+    grid-row: span 16/span 16;
   }
 }
 
 @media (min-width: 1024px) {
   .lg\:gr-s-1 {
-    grid-row-span: span 1/span 1;
+    grid-row: span 1/span 1;
   }
 }
 
 @media (min-width: 1024px) {
   .lg\:gr-s-2 {
-    grid-row-span: span 2/span 2;
+    grid-row: span 2/span 2;
   }
 }
 
 @media (min-width: 1024px) {
   .lg\:gr-s-3 {
-    grid-row-span: span 3/span 3;
+    grid-row: span 3/span 3;
   }
 }
 
 @media (min-width: 1024px) {
   .lg\:gr-s-4 {
-    grid-row-span: span 4/span 4;
+    grid-row: span 4/span 4;
   }
 }
 
 @media (min-width: 1024px) {
   .lg\:gr-s-5 {
-    grid-row-span: span 5/span 5;
+    grid-row: span 5/span 5;
   }
 }
 
 @media (min-width: 1024px) {
   .lg\:gr-s-6 {
-    grid-row-span: span 6/span 6;
+    grid-row: span 6/span 6;
   }
 }
 
 @media (min-width: 1024px) {
   .lg\:gr-s-7 {
-    grid-row-span: span 7/span 7;
+    grid-row: span 7/span 7;
   }
 }
 
 @media (min-width: 1024px) {
   .lg\:gr-s-8 {
-    grid-row-span: span 8/span 8;
+    grid-row: span 8/span 8;
   }
 }
 
 @media (min-width: 1024px) {
   .lg\:gr-s-9 {
-    grid-row-span: span 9/span 9;
+    grid-row: span 9/span 9;
   }
 }
 
 @media (min-width: 1024px) {
   .lg\:gr-s-10 {
-    grid-row-span: span 10/span 10;
+    grid-row: span 10/span 10;
   }
 }
 
 @media (min-width: 1024px) {
   .lg\:gr-s-11 {
-    grid-row-span: span 11/span 11;
+    grid-row: span 11/span 11;
   }
 }
 
 @media (min-width: 1024px) {
   .lg\:gr-s-12 {
-    grid-row-span: span 12/span 12;
+    grid-row: span 12/span 12;
   }
 }
 
 @media (min-width: 1024px) {
   .lg\:gr-s-13 {
-    grid-row-span: span 13/span 13;
+    grid-row: span 13/span 13;
   }
 }
 
 @media (min-width: 1024px) {
   .lg\:gr-s-14 {
-    grid-row-span: span 14/span 14;
+    grid-row: span 14/span 14;
   }
 }
 
 @media (min-width: 1024px) {
   .lg\:gr-s-15 {
-    grid-row-span: span 15/span 15;
+    grid-row: span 15/span 15;
   }
 }
 
 @media (min-width: 1024px) {
   .lg\:gr-s-16 {
-    grid-row-span: span 16/span 16;
+    grid-row: span 16/span 16;
   }
 }
 
 @media (min-width: 1280px) {
   .xl\:gr-s-1 {
-    grid-row-span: span 1/span 1;
+    grid-row: span 1/span 1;
   }
 }
 
 @media (min-width: 1280px) {
   .xl\:gr-s-2 {
-    grid-row-span: span 2/span 2;
+    grid-row: span 2/span 2;
   }
 }
 
 @media (min-width: 1280px) {
   .xl\:gr-s-3 {
-    grid-row-span: span 3/span 3;
+    grid-row: span 3/span 3;
   }
 }
 
 @media (min-width: 1280px) {
   .xl\:gr-s-4 {
-    grid-row-span: span 4/span 4;
+    grid-row: span 4/span 4;
   }
 }
 
 @media (min-width: 1280px) {
   .xl\:gr-s-5 {
-    grid-row-span: span 5/span 5;
+    grid-row: span 5/span 5;
   }
 }
 
 @media (min-width: 1280px) {
   .xl\:gr-s-6 {
-    grid-row-span: span 6/span 6;
+    grid-row: span 6/span 6;
   }
 }
 
 @media (min-width: 1280px) {
   .xl\:gr-s-7 {
-    grid-row-span: span 7/span 7;
+    grid-row: span 7/span 7;
   }
 }
 
 @media (min-width: 1280px) {
   .xl\:gr-s-8 {
-    grid-row-span: span 8/span 8;
+    grid-row: span 8/span 8;
   }
 }
 
 @media (min-width: 1280px) {
   .xl\:gr-s-9 {
-    grid-row-span: span 9/span 9;
+    grid-row: span 9/span 9;
   }
 }
 
 @media (min-width: 1280px) {
   .xl\:gr-s-10 {
-    grid-row-span: span 10/span 10;
+    grid-row: span 10/span 10;
   }
 }
 
 @media (min-width: 1280px) {
   .xl\:gr-s-11 {
-    grid-row-span: span 11/span 11;
+    grid-row: span 11/span 11;
   }
 }
 
 @media (min-width: 1280px) {
   .xl\:gr-s-12 {
-    grid-row-span: span 12/span 12;
+    grid-row: span 12/span 12;
   }
 }
 
 @media (min-width: 1280px) {
   .xl\:gr-s-13 {
-    grid-row-span: span 13/span 13;
+    grid-row: span 13/span 13;
   }
 }
 
 @media (min-width: 1280px) {
   .xl\:gr-s-14 {
-    grid-row-span: span 14/span 14;
+    grid-row: span 14/span 14;
   }
 }
 
 @media (min-width: 1280px) {
   .xl\:gr-s-15 {
-    grid-row-span: span 15/span 15;
+    grid-row: span 15/span 15;
   }
 }
 
 @media (min-width: 1280px) {
   .xl\:gr-s-16 {
-    grid-row-span: span 16/span 16;
+    grid-row: span 16/span 16;
   }
 }
 
 @media (min-width: 1536px) {
   .xxl\:gr-s-1 {
-    grid-row-span: span 1/span 1;
+    grid-row: span 1/span 1;
   }
 }
 
 @media (min-width: 1536px) {
   .xxl\:gr-s-2 {
-    grid-row-span: span 2/span 2;
+    grid-row: span 2/span 2;
   }
 }
 
 @media (min-width: 1536px) {
   .xxl\:gr-s-3 {
-    grid-row-span: span 3/span 3;
+    grid-row: span 3/span 3;
   }
 }
 
 @media (min-width: 1536px) {
   .xxl\:gr-s-4 {
-    grid-row-span: span 4/span 4;
+    grid-row: span 4/span 4;
   }
 }
 
 @media (min-width: 1536px) {
   .xxl\:gr-s-5 {
-    grid-row-span: span 5/span 5;
+    grid-row: span 5/span 5;
   }
 }
 
 @media (min-width: 1536px) {
   .xxl\:gr-s-6 {
-    grid-row-span: span 6/span 6;
+    grid-row: span 6/span 6;
   }
 }
 
 @media (min-width: 1536px) {
   .xxl\:gr-s-7 {
-    grid-row-span: span 7/span 7;
+    grid-row: span 7/span 7;
   }
 }
 
 @media (min-width: 1536px) {
   .xxl\:gr-s-8 {
-    grid-row-span: span 8/span 8;
+    grid-row: span 8/span 8;
   }
 }
 
 @media (min-width: 1536px) {
   .xxl\:gr-s-9 {
-    grid-row-span: span 9/span 9;
+    grid-row: span 9/span 9;
   }
 }
 
 @media (min-width: 1536px) {
   .xxl\:gr-s-10 {
-    grid-row-span: span 10/span 10;
+    grid-row: span 10/span 10;
   }
 }
 
 @media (min-width: 1536px) {
   .xxl\:gr-s-11 {
-    grid-row-span: span 11/span 11;
+    grid-row: span 11/span 11;
   }
 }
 
 @media (min-width: 1536px) {
   .xxl\:gr-s-12 {
-    grid-row-span: span 12/span 12;
+    grid-row: span 12/span 12;
   }
 }
 
 @media (min-width: 1536px) {
   .xxl\:gr-s-13 {
-    grid-row-span: span 13/span 13;
+    grid-row: span 13/span 13;
   }
 }
 
 @media (min-width: 1536px) {
   .xxl\:gr-s-14 {
-    grid-row-span: span 14/span 14;
+    grid-row: span 14/span 14;
   }
 }
 
 @media (min-width: 1536px) {
   .xxl\:gr-s-15 {
-    grid-row-span: span 15/span 15;
+    grid-row: span 15/span 15;
   }
 }
 
 @media (min-width: 1536px) {
   .xxl\:gr-s-16 {
-    grid-row-span: span 16/span 16;
+    grid-row: span 16/span 16;
   }
 }
 
 .h\:gr-s-1:hover {
-  grid-row-span: span 1/span 1;
+  grid-row: span 1/span 1;
 }
 
 .h\:gr-s-2:hover {
-  grid-row-span: span 2/span 2;
+  grid-row: span 2/span 2;
 }
 
 .h\:gr-s-3:hover {
-  grid-row-span: span 3/span 3;
+  grid-row: span 3/span 3;
 }
 
 .h\:gr-s-4:hover {
-  grid-row-span: span 4/span 4;
+  grid-row: span 4/span 4;
 }
 
 .h\:gr-s-5:hover {
-  grid-row-span: span 5/span 5;
+  grid-row: span 5/span 5;
 }
 
 .h\:gr-s-6:hover {
-  grid-row-span: span 6/span 6;
+  grid-row: span 6/span 6;
 }
 
 .h\:gr-s-7:hover {
-  grid-row-span: span 7/span 7;
+  grid-row: span 7/span 7;
 }
 
 .h\:gr-s-8:hover {
-  grid-row-span: span 8/span 8;
+  grid-row: span 8/span 8;
 }
 
 .h\:gr-s-9:hover {
-  grid-row-span: span 9/span 9;
+  grid-row: span 9/span 9;
 }
 
 .h\:gr-s-10:hover {
-  grid-row-span: span 10/span 10;
+  grid-row: span 10/span 10;
 }
 
 .h\:gr-s-11:hover {
-  grid-row-span: span 11/span 11;
+  grid-row: span 11/span 11;
 }
 
 .h\:gr-s-12:hover {
-  grid-row-span: span 12/span 12;
+  grid-row: span 12/span 12;
 }
 
 .h\:gr-s-13:hover {
-  grid-row-span: span 13/span 13;
+  grid-row: span 13/span 13;
 }
 
 .h\:gr-s-14:hover {
-  grid-row-span: span 14/span 14;
+  grid-row: span 14/span 14;
 }
 
 .h\:gr-s-15:hover {
-  grid-row-span: span 15/span 15;
+  grid-row: span 15/span 15;
 }
 
 .h\:gr-s-16:hover {
-  grid-row-span: span 16/span 16;
+  grid-row: span 16/span 16;
 }
 
 .grs-1 {
