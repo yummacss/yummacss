@@ -1,8 +1,8 @@
-# Dependencies
-/node_modules
+# dependencies
+node_modules/
 
-# Development only
-/test/
+# development
+test/
 
 # vs code
 .vscode/
