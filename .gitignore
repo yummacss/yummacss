@@ -3,3 +3,6 @@
 
 # Development only
 /test/
+
+# vs code
+.vscode/
