@@ -8,7 +8,7 @@
   <br>
   <a href="https://yummacss.com/blog">Blog</a>
   •
-  <a href="https://yummacss.com/blogintroducing-yummacss-intellisense">Intellisense</a>
+  <a href="https://yummacss.com/blog/yummacss-intellisense">Intellisense</a>
   •
   <a href="https://github.com/yumma-lib/yumma-css/issues">Issues</a>
   •
