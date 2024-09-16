@@ -16,16 +16,16 @@
 
 ---
 
-## Support
+### Support
 
 [Join our Discord server](https://discord.gg/CGw5vyqmQ6). To get support just createa post in the `#help` channel with the <kbd>yummacss</kbd> tag.
 
-## Contributing
+### Contributing
 
 I'd love your help with Yumma CSS. I've included some links below which you might find useful.
 
 - [Join us on the `#yummacss` channel on Discord](https://discord.gg/V6s5jg5TfX)
   
-## Licensing
+### Licensing
 
 MIT — Copyright (c) 2023–present [Renildo Pereira](https://github.com/yumma-lib/yumma-css/graphs/contributors).
