@@ -18,7 +18,7 @@
 
 ### Support
 
-Join our [Discord](https://discord.gg/CGw5vyqmQ6) server. To get support just createa post in the `#help` channel with the "yummacss" tag 
+[Join our Discord server](https://discord.gg/CGw5vyqmQ6). To get support just createa post in the `#help` channel with the <kbd>yummacss</kbd> tag.
 
 ### Contributing
 
@@ -28,4 +28,4 @@ I'd love your help with Yumma CSS. I've included some links below which you migh
   
 ### Licensing
 
-MIT — Copyright (c) 2023–present [Renildo Pereira](https://github.com/yumma-lib/yumma-css/graphs/contributors)
+MIT — Copyright (c) 2023–present [Renildo Pereira](https://github.com/yumma-lib/yumma-css/graphs/contributors).
