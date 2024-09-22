@@ -11,7 +11,7 @@
 <p align="center">
   All the tools you need in one package, with abbreviated utility classes — goodbye, massive codebases!
   <br>
-  <a href="https://yummacss.com"><strong>Read the documentation</strong></a>
+  <a href="https://yummacss.com"><strong>Read the documentation ↝</strong></a>
 </p>
 
 ---
