@@ -2,9 +2,14 @@
 
 All notable changes to the Yumma CSS will be documented in this file.
 
+# Changelog
+
+All notable changes to the Yumma CSS will be documented in this file.
+
 ## [2.0.0]
 
 ### Added
+
 - Add **Accent Color** utilities
 - Add **Aspect Ratio** utilities
 - Add **Backdrop Filter** utilities
@@ -59,6 +64,7 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Update values in breakpoint utilities
 
 ### Removed
+
 - Remove **Column** utilities
 - Remove **Offset Gap** utilities
 - Remove **Row** utility
@@ -71,3 +77,38 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Remove `nav-*` component
 - Remove Components folder
 - Remove extra small value for breakpoint utilities
+
+## [Unreleased]
+
+### Added
+
+- Add the `0` value to **Opacity** utilities.
+- Add the `full` and `half` values to **Flex** utilities.
+
+### Changed
+
+- New `baseline` **Align Content** utility variant.
+- New `baseline` **Align Items** utility variant.
+- New `default`, `context-menu`, `progress`, `cell`, `vertical-text`, `alias`, `copy`, `no-drop`, `grab`, `grabbing`, `all-scroll`, `col-resize`, `row-resize`, `ne-resize`, `nw-resize`, `se-resize`, `sw-resize`, `ew-resize`, `ns-resize`, `nesw-resize`, `nwse-resize`, `zoom-in`, and `zoom-out` **Cursor** utility variants.
+- New `row dense` and `dense row` **Grid Auto Flow** utility variants.
+- New `table`, `inline-table` and `inline-grid` **Display** utility variants.
+- New `text` and `all` **User Select** utility variants.
+- Rename **Align Content** utility syntax from `ac-stretch` to `ac-s`
+- Rename **Align Items** utility syntax from `ai-stretch` to `ai-s`
+- Rename **Align Self** utility syntax from `as-stretch` to `as-s`
+- Rename **Position** utility syntax from `p-t` to `p-st`
+- Update **Border Width** classes output value sequence.
+- Update **Flex** utility variants.
+- Update **Outline Offset** classes output value sequence.
+- Update **Outline Width** classes output value sequence.
+
+### Removed
+
+- Remove `end` and `start` properties from **Align Content** utilities.
+- Remove `end` and `start` properties from **Align Items** utilities.
+- Remove `end` and `start` properties from **Align Self** utilities.
+- Remove `end`, `left`, `right` and `start` properties from **Justify Content** utilities.
+- Remove `flex-end`, `flex-start`, `left`, `normal`, `right` and `stretch` properties from **Justify Items** utilities.
+- Remove `flex-end`, `flex-start`, `left`, `normal`, `right` and `stretch` properties from **Justify Self** utilities.
+- Remove `hidden` property in **Border Style** utilities.
+- Remove `hidden` property in **Outline Offset** utilities.
