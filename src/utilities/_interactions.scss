@@ -1,0 +1,121 @@
+@use "sass:math";
+
+$yma-interaction-utils: (
+  "appearance": (
+    "prefix": "a",
+    "values": (
+      "auto": auto,
+      "none": none,
+    ),
+  ),
+
+  "cursor": (
+    "prefix": "c",
+    "values": (
+      "auto": auto,
+      "d": default,
+      "p": pointer,
+      "w": wait,
+      "m": move,
+      "h": help,
+      "na": not-allowed,
+      "none": none,
+      "cm": context-menu,
+      "pr": progress,
+      "ce": cell,
+      "c": crosshair,
+      "vt": vertical-text,
+      "al": alias,
+      "co": copy,
+      "nd": no-drop,
+      "gr": grab,
+      "gg": grabbing,
+      "as": all-scroll,
+      "cr": col-resize,
+      "rr": row-resize,
+      "nr": n-resize,
+      "er": e-resize,
+      "sr": s-resize,
+      "wr": w-resize,
+      "ner": ne-resize,
+      "nwr": nw-resize,
+      "ser": se-resize,
+      "swr": sw-resize,
+      "ew": ew-resize,
+      "ns": ns-resize,
+      "nesw": nesw-resize,
+      "nwse": nwse-resize,
+      "zi": zoom-in,
+      "zo": zoom-out,
+    ),
+  ),
+
+  "pointer-events": (
+    "prefix": "pe",
+    "values": (
+      "auto": auto,
+      "none": none,
+    ),
+  ),
+
+  "resize": (
+    "prefix": "r",
+    "values": (
+      "b": both,
+      "h": horizontal,
+      "none": none,
+      "v": vertical,
+    ),
+  ),
+
+  "user-select": (
+    "prefix": "us",
+    "values": (
+      "a": all,
+      "auto": auto,
+      "none": none,
+      "t": text,
+    ),
+  ),
+);
+
+@each $property, $map in $yma-interaction-utils {
+  $prefix: map-get($map, "prefix");
+  $values: map-get($map, "values");
+
+  @each $k, $v in $values {
+    @if ($k == "default") {
+      .#{$prefix} {
+        #{$property}: $v;
+      }
+    } @else {
+      .#{$prefix}-#{$k} {
+        #{$property}: $v;
+      }
+    }
+  }
+
+  // responsive variants
+  @each $bp, $bp-value in $yma-breakpoints {
+    @each $k, $v in $values {
+      .#{$bp}\:#{$prefix}-#{$k} {
+        @media (min-width: $bp-value) {
+          #{$property}: $v;
+        }
+      }
+    }
+  }
+
+  // hover variants
+  @each $k, $v in $values {
+    @if ($k == "default") {
+      .h\:#{$prefix}:hover {
+        #{$property}: $v;
+      }
+    } @else {
+      .h\:#{$prefix}-#{$k}:hover {
+        #{$property}: $v;
+      }
+    }
+  }
+}

@@ -1,0 +1,317 @@
+@use "sass:math";
+
+$yma-grid-utils: (
+  "column-gap": (
+    "prefix": "cg",
+    "values": (
+      "1": $yma-column-gap,
+      "2": $yma-column-gap * 2,
+      "3": $yma-column-gap * 3,
+      "4": $yma-column-gap * 4,
+      "5": $yma-column-gap * 5,
+      "6": $yma-column-gap * 6,
+      "7": $yma-column-gap * 7,
+      "8": $yma-column-gap * 8,
+      "9": $yma-column-gap * 9,
+      "10": $yma-column-gap * 10,
+      "11": $yma-column-gap * 11,
+      "12": $yma-column-gap * 12,
+      "13": $yma-column-gap * 13,
+      "14": $yma-column-gap * 14,
+      "15": $yma-column-gap * 15,
+      "16": $yma-column-gap * 16,
+    ),
+  ),
+
+  "gap": (
+    "prefix": "g",
+    "values": (
+      "0": $yma-gap * 0,
+      "1": $yma-gap,
+      "2": $yma-gap * 2,
+      "3": $yma-gap * 3,
+      "4": $yma-gap * 4,
+      "5": $yma-gap * 5,
+      "6": $yma-gap * 6,
+      "7": $yma-gap * 7,
+      "8": $yma-gap * 8,
+      "9": $yma-gap * 9,
+      "10": $yma-gap * 10,
+      "11": $yma-gap * 11,
+      "12": $yma-gap * 12,
+      "13": $yma-gap * 13,
+      "14": $yma-gap * 14,
+      "15": $yma-gap * 15,
+      "16": $yma-gap * 16,
+      "none": none,
+    ),
+  ),
+
+  "grid-auto-columns": (
+    "prefix": "gac",
+    "values": (
+      "auto": auto,
+      "max": max-content,
+      "min": min-content,
+    ),
+  ),
+
+  "grid-auto-flow": (
+    "prefix": "gaf",
+    "values": (
+      "c": column,
+      "d": dense,
+      "dr": dense row,
+      "r": row,
+      "rd": row dense,
+    ),
+  ),
+
+  "grid-auto-rows": (
+    "prefix": "gar",
+    "values": (
+      "auto": auto,
+      "max": max-content,
+      "min": min-content,
+    ),
+  ),
+
+  "grid-column": (
+    "prefix": "gc-s",
+    "values": (
+      "1": span 1 / span 1,
+      "2": span 2 / span 2,
+      "3": span 3 / span 3,
+      "4": span 4 / span 4,
+      "5": span 5 / span 5,
+      "6": span 6 / span 6,
+      "7": span 7 / span 7,
+      "8": span 8 / span 8,
+      "9": span 9 / span 9,
+      "10": span 10 / span 10,
+      "11": span 11 / span 11,
+      "12": span 12 / span 12,
+      "13": span 13 / span 13,
+      "14": span 14 / span 14,
+      "15": span 15 / span 15,
+      "16": span 16 / span 16,
+    ),
+  ),
+
+  "grid-column-start": (
+    "prefix": "gcs",
+    "values": (
+      "1": 1,
+      "2": 2,
+      "3": 3,
+      "4": 4,
+      "5": 5,
+      "6": 6,
+      "7": 7,
+      "8": 8,
+      "9": 9,
+      "10": 10,
+      "11": 11,
+      "12": 12,
+      "13": 13,
+      "14": 14,
+      "15": 15,
+      "16": 16,
+    ),
+  ),
+
+  "grid-column-end": (
+    "prefix": "gce",
+    "values": (
+      "1": 1,
+      "2": 2,
+      "3": 3,
+      "4": 4,
+      "5": 5,
+      "6": 6,
+      "7": 7,
+      "8": 8,
+      "9": 9,
+      "10": 10,
+      "11": 11,
+      "12": 12,
+      "13": 13,
+      "14": 14,
+      "15": 15,
+      "16": 16,
+    ),
+  ),
+
+  "grid-row": (
+    "prefix": "gr-s",
+    "values": (
+      "1": span 1 / span 1,
+      "2": span 2 / span 2,
+      "3": span 3 / span 3,
+      "4": span 4 / span 4,
+      "5": span 5 / span 5,
+      "6": span 6 / span 6,
+      "7": span 7 / span 7,
+      "8": span 8 / span 8,
+      "9": span 9 / span 9,
+      "10": span 10 / span 10,
+      "11": span 11 / span 11,
+      "12": span 12 / span 12,
+      "13": span 13 / span 13,
+      "14": span 14 / span 14,
+      "15": span 15 / span 15,
+      "16": span 16 / span 16,
+    ),
+  ),
+
+  "grid-row-start": (
+    "prefix": "grs",
+    "values": (
+      "1": 1,
+      "2": 2,
+      "3": 3,
+      "4": 4,
+      "5": 5,
+      "6": 6,
+      "7": 7,
+      "8": 8,
+      "9": 9,
+      "10": 10,
+      "11": 11,
+      "12": 12,
+      "13": 13,
+      "14": 14,
+      "15": 15,
+      "16": 16,
+    ),
+  ),
+
+  "grid-row-end": (
+    "prefix": "gre",
+    "values": (
+      "1": 1,
+      "2": 2,
+      "3": 3,
+      "4": 4,
+      "5": 5,
+      "6": 6,
+      "7": 7,
+      "8": 8,
+      "9": 9,
+      "10": 10,
+      "11": 11,
+      "12": 12,
+      "13": 13,
+      "14": 14,
+      "15": 15,
+      "16": 16,
+    ),
+  ),
+
+  "grid-template-columns": (
+    "prefix": "gtc",
+    "values": (
+      "1": repeat(1, minmax(0, 1fr)),
+      "2": repeat(2, minmax(0, 1fr)),
+      "3": repeat(3, minmax(0, 1fr)),
+      "4": repeat(4, minmax(0, 1fr)),
+      "5": repeat(5, minmax(0, 1fr)),
+      "6": repeat(6, minmax(0, 1fr)),
+      "7": repeat(7, minmax(0, 1fr)),
+      "8": repeat(8, minmax(0, 1fr)),
+      "9": repeat(9, minmax(0, 1fr)),
+      "10": repeat(10, minmax(0, 1fr)),
+      "11": repeat(11, minmax(0, 1fr)),
+      "12": repeat(12, minmax(0, 1fr)),
+      "13": repeat(13, minmax(0, 1fr)),
+      "14": repeat(14, minmax(0, 1fr)),
+      "15": repeat(15, minmax(0, 1fr)),
+      "16": repeat(16, minmax(0, 1fr)),
+    ),
+  ),
+
+  "grid-template-rows": (
+    "prefix": "gtr",
+    "values": (
+      "1": repeat(1, minmax(0, 1fr)),
+      "2": repeat(2, minmax(0, 1fr)),
+      "3": repeat(3, minmax(0, 1fr)),
+      "4": repeat(4, minmax(0, 1fr)),
+      "5": repeat(5, minmax(0, 1fr)),
+      "6": repeat(6, minmax(0, 1fr)),
+      "7": repeat(7, minmax(0, 1fr)),
+      "8": repeat(8, minmax(0, 1fr)),
+      "9": repeat(9, minmax(0, 1fr)),
+      "10": repeat(10, minmax(0, 1fr)),
+      "11": repeat(11, minmax(0, 1fr)),
+      "12": repeat(12, minmax(0, 1fr)),
+      "13": repeat(13, minmax(0, 1fr)),
+      "14": repeat(14, minmax(0, 1fr)),
+      "15": repeat(15, minmax(0, 1fr)),
+      "16": repeat(16, minmax(0, 1fr)),
+    ),
+  ),
+
+  "row-gap": (
+    "prefix": "rg",
+    "values": (
+      "1": $yma-row-gap,
+      "2": $yma-row-gap * 2,
+      "3": $yma-row-gap * 3,
+      "4": $yma-row-gap * 4,
+      "5": $yma-row-gap * 5,
+      "6": $yma-row-gap * 6,
+      "7": $yma-row-gap * 7,
+      "8": $yma-row-gap * 8,
+      "9": $yma-row-gap * 9,
+      "10": $yma-row-gap * 10,
+      "11": $yma-row-gap * 11,
+      "12": $yma-row-gap * 12,
+      "13": $yma-row-gap * 13,
+      "14": $yma-row-gap * 14,
+      "15": $yma-row-gap * 15,
+      "16": $yma-row-gap * 16,
+    ),
+  ),
+);
+
+@each $property, $map in $yma-grid-utils {
+  $prefix: map-get($map, "prefix");
+  $values: map-get($map, "values");
+
+  @each $k, $v in $values {
+    @if ($k == "default") {
+      .#{$prefix} {
+        #{$property}: $v;
+      }
+    } @else {
+      .#{$prefix}-#{$k} {
+        #{$property}: $v;
+      }
+    }
+  }
+
+  // responsive variants
+  @each $bp, $bp-value in $yma-breakpoints {
+    @each $k, $v in $values {
+      .#{$bp}\:#{$prefix}-#{$k} {
+        @media (min-width: $bp-value) {
+          #{$property}: $v;
+        }
+      }
+    }
+  }
+
+  // hover variants
+  @each $k, $v in $values {
+    @if ($k == "default") {
+      .h\:#{$prefix}:hover {
+        #{$property}: $v;
+      }
+    } @else {
+      .h\:#{$prefix}-#{$k}:hover {
+        #{$property}: $v;
+      }
+    }
+  }
+}

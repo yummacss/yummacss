@@ -1,34 +1,31 @@
 {
   "author": "Renildo Pereira",
   "description": "Quickly build applications with less code in your markup.",
-  "homepage": "https://yummacss.com",
   "license": "MIT",
   "name": "yummacss",
-  "style": "dist/yumma.css",
   "version": "2.1.0",
   "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^6.0.0",
+    "autoprefixer": "^10.4.20",
     "gulp": "^4.0.2",
     "gulp-clean-css": "^4.3.0",
     "gulp-copy": "^4.0.1",
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^5.1.0",
     "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.47",
+    "postcss-cli": "^11.0.0",
+    "postcss-scss": "^4.0.9",
     "sass": "^1.62.1"
   },
-  "keywords": [
-    "css",
-    "css-library",
-    "functional-css",
-    "gulp-sass",
-    "responsive",
-    "utility-classes",
-    "yummacss"
-  ],
   "scripts": {
     "std": "gulp standardFile",
     "core": "gulp coreFile",
     "min": "gulp minifiedFile",
     "mincore": "gulp minifiedCoreFile",
     "build": "npm-run-all --sequential std min core mincore"
+  },
+  "bin": {
+    "yummacss": ""
   }
 }

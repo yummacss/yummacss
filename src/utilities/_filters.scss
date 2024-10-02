@@ -1,0 +1,56 @@
+@use "sass:math";
+
+$yma-filter-utils: (
+  "backdrop-filter": (
+    "prefix": "bf-b",
+    "values": (
+      "none": blur($yma-backdrop-blur * 0),
+      "xs": blur($yma-backdrop-blur),
+      "sm": blur($yma-backdrop-blur * 2),
+      "md": blur($yma-backdrop-blur * 4),
+      "lg": blur($yma-backdrop-blur * 8),
+      "xl": blur($yma-backdrop-blur * 16),
+    ),
+  ),
+);
+
+@each $property, $map in $yma-filter-utils {
+  $prefix: map-get($map, "prefix");
+  $values: map-get($map, "values");
+
+  @each $k, $v in $values {
+    @if ($k == "default") {
+      .#{$prefix} {
+        #{$property}: $v;
+      }
+    } @else {
+      .#{$prefix}-#{$k} {
+        #{$property}: $v;
+      }
+    }
+  }
+
+  // responsive variants
+  @each $bp, $bp-value in $yma-breakpoints {
+    @each $k, $v in $values {
+      .#{$bp}\:#{$prefix}-#{$k} {
+        @media (min-width: $bp-value) {
+          #{$property}: $v;
+        }
+      }
+    }
+  }
+
+  // hover variants
+  @each $k, $v in $values {
+    @if ($k == "default") {
+      .h\:#{$prefix}:hover {
+        #{$property}: $v;
+      }
+    } @else {
+      .h\:#{$prefix}-#{$k}:hover {
+        #{$property}: $v;
+      }
+    }
+  }
+}

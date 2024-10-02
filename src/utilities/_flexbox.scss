@@ -1,0 +1,189 @@
+@use "sass:math";
+
+$yma-flexbox-utils: (
+  "align-content": (
+    "prefix": "ac",
+    "values": (
+      "b": baseline,
+      "c": center,
+      "fe": flex-end,
+      "fs": flex-start,
+      "n": normal,
+      "s": stretch,
+      "sa": space-around,
+      "sb": space-between,
+      "se": space-evenly,
+    ),
+  ),
+
+  "align-items": (
+    "prefix": "ai",
+    "values": (
+      "b": baseline,
+      "c": center,
+      "fe": flex-end,
+      "fs": flex-start,
+      "s": stretch,
+    ),
+  ),
+
+  "align-self": (
+    "prefix": "as",
+    "values": (
+      "auto": auto,
+      "c": center,
+      "b": baseline,
+      "fe": flex-end,
+      "fs": flex-start,
+      "s": stretch,
+    ),
+  ),
+
+  "flex-direction": (
+    "prefix": "fd",
+    "values": (
+      "c": column,
+      "cr": column-reverse,
+      "r": row,
+      "rr": row-reverse,
+    ),
+  ),
+
+  "flex-grow": (
+    "prefix": "fg",
+    "values": (
+      "0": 0,
+      "1": 1,
+      "2": 2,
+      "3": 3,
+      "4": 4,
+      "5": 5,
+      "6": 6,
+      "7": 7,
+      "8": 8,
+    ),
+  ),
+
+  "flex-shrink": (
+    "prefix": "fs",
+    "values": (
+      "0": 0,
+      "1": 1,
+      "2": 2,
+      "3": 3,
+      "4": 4,
+      "5": 5,
+      "6": 6,
+      "7": 7,
+      "8": 8,
+    ),
+  ),
+
+  "flex-wrap": (
+    "prefix": "fw",
+    "values": (
+      "nw": nowrap,
+      "w": wrap,
+      "wr": wrap-reverse,
+    ),
+  ),
+
+  "flex": (
+    "prefix": "f",
+    "values": (
+      "1": 1 1 0%,
+      "2": 2 2 0%,
+      "3": 3 3 0%,
+      "4": 4 4 0%,
+      "5": 5 5 0%,
+      "6": 6 6 0%,
+      "auto": 1 1 auto,
+      "none": none,
+    ),
+  ),
+
+  "justify-content": (
+    "prefix": "jc",
+    "values": (
+      "c": center,
+      "fe": flex-end,
+      "fs": flex-start,
+      "n": normal,
+      "s": stretch,
+      "sa": space-around,
+      "sb": space-between,
+      "se": space-evenly,
+    ),
+  ),
+
+  "justify-items": (
+    "prefix": "ji",
+    "values": (
+      "c": center,
+      "e": end,
+      "s": start,
+    ),
+  ),
+
+  "justify-self": (
+    "prefix": "js",
+    "values": (
+      "auto": auto,
+      "c": center,
+      "e": end,
+      "s": start,
+    ),
+  ),
+);
+
+@each $property, $map in $yma-flexbox-utils {
+  $prefix: map-get($map, "prefix");
+  $values: map-get($map, "values");
+
+  @each $k, $v in $values {
+    @if ($k == "default") {
+      .#{$prefix} {
+        #{$property}: $v;
+      }
+    } @else {
+      .#{$prefix}-#{$k} {
+        #{$property}: $v;
+      }
+    }
+  }
+
+  // responsive variants
+  @each $bp, $bp-value in $yma-breakpoints {
+    @each $k, $v in $values {
+      .#{$bp}\:#{$prefix}-#{$k} {
+        @media (min-width: $bp-value) {
+          #{$property}: $v;
+        }
+      }
+    }
+  }
+
+  // hover variants
+  @each $k, $v in $values {
+    @if ($k == "default") {
+      .h\:#{$prefix}:hover {
+        #{$property}: $v;
+      }
+    } @else {
+      .h\:#{$prefix}-#{$k}:hover {
+        #{$property}: $v;
+      }
+    }
+  }
+}
+
+// variants
+@include variants("flex-basis", "fb", $yma-flex-basis);
+
+// extensions
+@include extensions(
+  $yma-extension,
+  (
+    "fb": flex-basis,
+  )
+);

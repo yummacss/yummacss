@@ -5,6 +5,18 @@
 @import "abstracts/layout";
 @import "abstracts/colors";
 
-@import "stylecent";
 @import "fonts";
-@import "utilities";
+
+@import "utilities/borders";
+@import "utilities/box-model";
+@import "utilities/effects";
+@import "utilities/filters";
+@import "utilities/flexbox";
+@import "utilities/grid";
+@import "utilities/interactions";
+@import "utilities/layout";
+@import "utilities/outlines";
+@import "utilities/tables";
+@import "utilities/typography";
+
+@import "stylecent";
