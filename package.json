@@ -3,7 +3,7 @@
   "description": "Quickly build applications with less code in your markup.",
   "license": "MIT",
   "name": "yummacss",
-  "version": "2.1.0",
+  "version": "2.0.0",
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^6.0.0",
     "autoprefixer": "^10.4.20",
