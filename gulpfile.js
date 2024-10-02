@@ -2,25 +2,11 @@ const { src, dest, series } = require("gulp");
 const sass = require("gulp-sass")(require("sass"));
 const clean = require("gulp-clean-css");
 const rename = require("gulp-rename");
-const postcss = require("gulp-postcss");
-const purgecss = require("@fullhuman/postcss-purgecss");
-const autoprefixer = require("autoprefixer");
-const config = require("./yummacss.config.js");
-
-const plugins = [
-  autoprefixer(),
-  purgecss({
-    content: config.content,
-    safelist: config.safelist,
-    defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
-  }),
-];
 
 function standardFile() {
   return src("src/**/*.scss")
     .pipe(sass().on("error", sass.logError))
     .pipe(rename("yumma.css"))
-    .pipe(postcss(plugins))
     .pipe(dest("dist"));
 }
 
@@ -35,7 +21,6 @@ function coreFile() {
   return src("src/core.scss")
     .pipe(sass().on("error", sass.logError))
     .pipe(rename("yumma-core.css"))
-    .pipe(postcss(plugins))
     .pipe(dest("dist"));
 }
 
