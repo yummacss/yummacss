@@ -1,0 +1,165 @@
+@use "sass:math";
+
+$yma-typography-utils: (
+  "font-size": (
+    "prefix": "fs",
+    "values": (
+      "xs": $yma-font-size-xs,
+      "sm": $yma-font-size-sm,
+      "md": $yma-font-size-md,
+      "lg": $yma-font-size-lg,
+      "xl": $yma-font-size-xl,
+      "xxl": $yma-font-size-xxl,
+      "3xl": $yma-font-size-3xl,
+      "6xl": $yma-font-size-6xl,
+    ),
+  ),
+
+  "font-style": (
+    "prefix": "fs",
+    "values": (
+      "i": italic,
+      "n": normal,
+    ),
+  ),
+
+  "font-weight": (
+    "prefix": "fw",
+    "values": (
+      "100": 100,
+      "200": 200,
+      "300": 300,
+      "400": 400,
+      "500": 500,
+      "600": 600,
+      "700": 700,
+      "800": 800,
+      "900": 900,
+    ),
+  ),
+
+  "line-height": (
+    "prefix": "lh",
+    "values": (
+      "1": 1,
+      "2": 1.25,
+      "3": 1.375,
+      "4": 1.5,
+      "5": 1.625,
+      "6": 2,
+    ),
+  ),
+
+  "list-style-type": (
+    "prefix": "lst",
+    "values": (
+      "c": circle,
+      "d": disc,
+      "s": square,
+    ),
+  ),
+
+  "overflow-wrap": (
+    "prefix": "ow",
+    "values": (
+      "bw": break-word,
+      "n": normal,
+    ),
+  ),
+
+  "text-align": (
+    "prefix": "ta",
+    "values": (
+      "c": center,
+      "e": end,
+      "j": justify,
+      "ja": justify-all,
+      "l": left,
+      "mp": match-parent,
+      "r": right,
+      "s": start,
+    ),
+  ),
+
+  "text-decoration-line": (
+    "prefix": "tdl",
+    "values": (
+      "none": none,
+      "u": underline,
+      "o": overline,
+      "lt": line-through,
+    ),
+  ),
+
+  "text-decoration-style": (
+    "prefix": "tds",
+    "values": (
+      "none": none,
+      "d": dashed,
+      "h": hidden,
+      "s": solid,
+    ),
+  ),
+
+  "text-decoration-thickness": (
+    "prefix": "tdt",
+    "values": (
+      "auto": auto,
+      "ff": from-font,
+      "0": $yma-decoration-thickness * 0,
+      "1": $yma-decoration-thickness,
+      "2": $yma-decoration-thickness * 2,
+      "3": $yma-decoration-thickness * 3,
+      "4": $yma-decoration-thickness * 4,
+    ),
+  ),
+
+  "text-decoration": (
+    "prefix": "td",
+    "values": (
+      "none": none,
+      "u": underline,
+    ),
+  ),
+);
+
+@each $property, $map in $yma-typography-utils {
+  $prefix: map-get($map, "prefix");
+  $values: map-get($map, "values");
+
+  @each $k, $v in $values {
+    @if ($k == "default") {
+      .#{$prefix} {
+        #{$property}: $v;
+      }
+    } @else {
+      .#{$prefix}-#{$k} {
+        #{$property}: $v;
+      }
+    }
+  }
+
+  // responsive variants
+  @each $bp, $bp-value in $yma-breakpoints {
+    @each $k, $v in $values {
+      .#{$bp}\:#{$prefix}-#{$k} {
+        @media (min-width: $bp-value) {
+          #{$property}: $v;
+        }
+      }
+    }
+  }
+
+  // hover variants
+  @each $k, $v in $values {
+    @if ($k == "default") {
+      .h\:#{$prefix}:hover {
+        #{$property}: $v;
+      }
+    } @else {
+      .h\:#{$prefix}-#{$k}:hover {
+        #{$property}: $v;
+      }
+    }
+  }
+}

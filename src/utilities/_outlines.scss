@@ -1,0 +1,75 @@
+@use "sass:math";
+
+$yma-outline-utils: (
+  "outline-offset": (
+    "prefix": "oo",
+    "values": (
+      "0": $yma-outline-offset * 0,
+      "1": $yma-outline-offset,
+      "2": $yma-outline-offset * 2,
+      "3": $yma-outline-offset * 3,
+      "4": $yma-outline-offset * 4,
+    ),
+  ),
+
+  "outline-style": (
+    "prefix": "os",
+    "values": (
+      "none": none,
+      "d": dashed,
+      "s": solid,
+    ),
+  ),
+
+  "outline-width": (
+    "prefix": "ow",
+    "values": (
+      "0": $yma-outline-width * 0,
+      "1": $yma-outline-width,
+      "2": $yma-outline-width * 2,
+      "3": $yma-outline-width * 3,
+      "4": $yma-outline-width * 4,
+    ),
+  ),
+);
+
+@each $property, $map in $yma-outline-utils {
+  $prefix: map-get($map, "prefix");
+  $values: map-get($map, "values");
+
+  @each $k, $v in $values {
+    @if ($k == "default") {
+      .#{$prefix} {
+        #{$property}: $v;
+      }
+    } @else {
+      .#{$prefix}-#{$k} {
+        #{$property}: $v;
+      }
+    }
+  }
+
+  // responsive variants
+  @each $bp, $bp-value in $yma-breakpoints {
+    @each $k, $v in $values {
+      .#{$bp}\:#{$prefix}-#{$k} {
+        @media (min-width: $bp-value) {
+          #{$property}: $v;
+        }
+      }
+    }
+  }
+
+  // hover variants
+  @each $k, $v in $values {
+    @if ($k == "default") {
+      .h\:#{$prefix}:hover {
+        #{$property}: $v;
+      }
+    } @else {
+      .h\:#{$prefix}-#{$k}:hover {
+        #{$property}: $v;
+      }
+    }
+  }
+}
