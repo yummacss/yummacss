@@ -15,10 +15,10 @@
     "sass": "^1.62.1"
   },
   "scripts": {
-    "std": "gulp standardFile",
+    "build": "npm-run-all --sequential std min core mincore",
     "core": "gulp coreFile",
     "min": "gulp minifiedFile",
     "mincore": "gulp minifiedCoreFile",
-    "build": "npm-run-all --sequential std min core mincore"
+    "std": "gulp standardFile"
   }
 }
