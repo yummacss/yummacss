@@ -45,4 +45,4 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Remove `flex-end`, `flex-start`, `left`, `normal`, `right` and `stretch` properties from **Justify Items** utilities
 - Remove `flex-end`, `flex-start`, `left`, `normal`, `right` and `stretch` properties from **Justify Self** utilities
 - Remove `hidden` property in **Border Style** utilities
-- Remove `hidden` property in **Outline Offset** utilities
+- Remove `hidden` property in **Outline Style** utilities
