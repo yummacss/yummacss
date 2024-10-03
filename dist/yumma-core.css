@@ -239712,345 +239712,345 @@
   font-style: normal;
 }
 
-.fw-1 {
+.fw-100 {
   font-weight: 100;
 }
 
-.fw-2 {
+.fw-200 {
   font-weight: 200;
 }
 
-.fw-3 {
+.fw-300 {
   font-weight: 300;
 }
 
-.fw-4 {
+.fw-400 {
   font-weight: 400;
 }
 
-.fw-5 {
+.fw-500 {
   font-weight: 500;
 }
 
-.fw-6 {
+.fw-600 {
   font-weight: 600;
 }
 
-.fw-7 {
+.fw-700 {
   font-weight: 700;
 }
 
-.fw-8 {
+.fw-800 {
   font-weight: 800;
 }
 
-.fw-9 {
+.fw-900 {
   font-weight: 900;
 }
 
 @media (min-width: 640px) {
-  .sm\:fw-1 {
+  .sm\:fw-100 {
     font-weight: 100;
   }
 }
 
 @media (min-width: 640px) {
-  .sm\:fw-2 {
+  .sm\:fw-200 {
     font-weight: 200;
   }
 }
 
 @media (min-width: 640px) {
-  .sm\:fw-3 {
+  .sm\:fw-300 {
     font-weight: 300;
   }
 }
 
 @media (min-width: 640px) {
-  .sm\:fw-4 {
+  .sm\:fw-400 {
     font-weight: 400;
   }
 }
 
 @media (min-width: 640px) {
-  .sm\:fw-5 {
+  .sm\:fw-500 {
     font-weight: 500;
   }
 }
 
 @media (min-width: 640px) {
-  .sm\:fw-6 {
+  .sm\:fw-600 {
     font-weight: 600;
   }
 }
 
 @media (min-width: 640px) {
-  .sm\:fw-7 {
+  .sm\:fw-700 {
     font-weight: 700;
   }
 }
 
 @media (min-width: 640px) {
-  .sm\:fw-8 {
+  .sm\:fw-800 {
     font-weight: 800;
   }
 }
 
 @media (min-width: 640px) {
-  .sm\:fw-9 {
+  .sm\:fw-900 {
     font-weight: 900;
   }
 }
 
 @media (min-width: 768px) {
-  .md\:fw-1 {
+  .md\:fw-100 {
     font-weight: 100;
   }
 }
 
 @media (min-width: 768px) {
-  .md\:fw-2 {
+  .md\:fw-200 {
     font-weight: 200;
   }
 }
 
 @media (min-width: 768px) {
-  .md\:fw-3 {
+  .md\:fw-300 {
     font-weight: 300;
   }
 }
 
 @media (min-width: 768px) {
-  .md\:fw-4 {
+  .md\:fw-400 {
     font-weight: 400;
   }
 }
 
 @media (min-width: 768px) {
-  .md\:fw-5 {
+  .md\:fw-500 {
     font-weight: 500;
   }
 }
 
 @media (min-width: 768px) {
-  .md\:fw-6 {
+  .md\:fw-600 {
     font-weight: 600;
   }
 }
 
 @media (min-width: 768px) {
-  .md\:fw-7 {
+  .md\:fw-700 {
     font-weight: 700;
   }
 }
 
 @media (min-width: 768px) {
-  .md\:fw-8 {
+  .md\:fw-800 {
     font-weight: 800;
   }
 }
 
 @media (min-width: 768px) {
-  .md\:fw-9 {
+  .md\:fw-900 {
     font-weight: 900;
   }
 }
 
 @media (min-width: 1024px) {
-  .lg\:fw-1 {
+  .lg\:fw-100 {
     font-weight: 100;
   }
 }
 
 @media (min-width: 1024px) {
-  .lg\:fw-2 {
+  .lg\:fw-200 {
     font-weight: 200;
   }
 }
 
 @media (min-width: 1024px) {
-  .lg\:fw-3 {
+  .lg\:fw-300 {
     font-weight: 300;
   }
 }
 
 @media (min-width: 1024px) {
-  .lg\:fw-4 {
+  .lg\:fw-400 {
     font-weight: 400;
   }
 }
 
 @media (min-width: 1024px) {
-  .lg\:fw-5 {
+  .lg\:fw-500 {
     font-weight: 500;
   }
 }
 
 @media (min-width: 1024px) {
-  .lg\:fw-6 {
+  .lg\:fw-600 {
     font-weight: 600;
   }
 }
 
 @media (min-width: 1024px) {
-  .lg\:fw-7 {
+  .lg\:fw-700 {
     font-weight: 700;
   }
 }
 
 @media (min-width: 1024px) {
-  .lg\:fw-8 {
+  .lg\:fw-800 {
     font-weight: 800;
   }
 }
 
 @media (min-width: 1024px) {
-  .lg\:fw-9 {
+  .lg\:fw-900 {
     font-weight: 900;
   }
 }
 
 @media (min-width: 1280px) {
-  .xl\:fw-1 {
+  .xl\:fw-100 {
     font-weight: 100;
   }
 }
 
 @media (min-width: 1280px) {
-  .xl\:fw-2 {
+  .xl\:fw-200 {
     font-weight: 200;
   }
 }
 
 @media (min-width: 1280px) {
-  .xl\:fw-3 {
+  .xl\:fw-300 {
     font-weight: 300;
   }
 }
 
 @media (min-width: 1280px) {
-  .xl\:fw-4 {
+  .xl\:fw-400 {
     font-weight: 400;
   }
 }
 
 @media (min-width: 1280px) {
-  .xl\:fw-5 {
+  .xl\:fw-500 {
     font-weight: 500;
   }
 }
 
 @media (min-width: 1280px) {
-  .xl\:fw-6 {
+  .xl\:fw-600 {
     font-weight: 600;
   }
 }
 
 @media (min-width: 1280px) {
-  .xl\:fw-7 {
+  .xl\:fw-700 {
     font-weight: 700;
   }
 }
 
 @media (min-width: 1280px) {
-  .xl\:fw-8 {
+  .xl\:fw-800 {
     font-weight: 800;
   }
 }
 
 @media (min-width: 1280px) {
-  .xl\:fw-9 {
+  .xl\:fw-900 {
     font-weight: 900;
   }
 }
 
 @media (min-width: 1536px) {
-  .xxl\:fw-1 {
+  .xxl\:fw-100 {
     font-weight: 100;
   }
 }
 
 @media (min-width: 1536px) {
-  .xxl\:fw-2 {
+  .xxl\:fw-200 {
     font-weight: 200;
   }
 }
 
 @media (min-width: 1536px) {
-  .xxl\:fw-3 {
+  .xxl\:fw-300 {
     font-weight: 300;
   }
 }
 
 @media (min-width: 1536px) {
-  .xxl\:fw-4 {
+  .xxl\:fw-400 {
     font-weight: 400;
   }
 }
 
 @media (min-width: 1536px) {
-  .xxl\:fw-5 {
+  .xxl\:fw-500 {
     font-weight: 500;
   }
 }
 
 @media (min-width: 1536px) {
-  .xxl\:fw-6 {
+  .xxl\:fw-600 {
     font-weight: 600;
   }
 }
 
 @media (min-width: 1536px) {
-  .xxl\:fw-7 {
+  .xxl\:fw-700 {
     font-weight: 700;
   }
 }
 
 @media (min-width: 1536px) {
-  .xxl\:fw-8 {
+  .xxl\:fw-800 {
     font-weight: 800;
   }
 }
 
 @media (min-width: 1536px) {
-  .xxl\:fw-9 {
+  .xxl\:fw-900 {
     font-weight: 900;
   }
 }
 
-.h\:fw-1:hover {
+.h\:fw-100:hover {
   font-weight: 100;
 }
 
-.h\:fw-2:hover {
+.h\:fw-200:hover {
   font-weight: 200;
 }
 
-.h\:fw-3:hover {
+.h\:fw-300:hover {
   font-weight: 300;
 }
 
-.h\:fw-4:hover {
+.h\:fw-400:hover {
   font-weight: 400;
 }
 
-.h\:fw-5:hover {
+.h\:fw-500:hover {
   font-weight: 500;
 }
 
-.h\:fw-6:hover {
+.h\:fw-600:hover {
   font-weight: 600;
 }
 
-.h\:fw-7:hover {
+.h\:fw-700:hover {
   font-weight: 700;
 }
 
-.h\:fw-8:hover {
+.h\:fw-800:hover {
   font-weight: 800;
 }
 
-.h\:fw-9:hover {
+.h\:fw-900:hover {
   font-weight: 900;
 }
 
