@@ -4,27 +4,27 @@ $base: true !default;
   *,
   *::before,
   *::after {
-    border-width: 0;
     border-style: solid;
+    border-width: 0;
     box-sizing: border-box;
   }
 
   * {
-    margin: 0;
     color: inherit;
     font-family: $yma-font-system;
+    margin: 0;
   }
 
   body {
-    line-height: 1.5;
     font-family: inherit;
+    line-height: 1.5;
   }
 
+  canvas,
   img,
   picture,
-  video,
-  canvas,
-  svg {
+  svg,
+  video {
     display: block;
     max-width: 100%;
   }
@@ -34,17 +34,23 @@ $base: true !default;
   optgroup,
   select,
   textarea {
-    font: inherit;
     background-color: transparent;
+    font: inherit;
   }
 
-  p,
+  button {
+    cursor: pointer;
+  }
+
   h1,
   h2,
   h3,
   h4,
   h5,
-  h6 {
+  h6,
+  p {
+    font-size: inherit;
+    font-weight: inherit;
     overflow-wrap: break-word;
   }
 
@@ -54,13 +60,13 @@ $base: true !default;
 
   ol,
   ul {
-    padding: 0;
     list-style: none;
+    padding: 0;
   }
 
   hr {
+    border-top: $yma-colors-transparent;
     border: 0;
     margin: 1em 0;
-    border-top: $yma-colors-transparent;
   }
 }

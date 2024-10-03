@@ -12,12 +12,14 @@ All notable changes to the Yumma CSS will be documented in this file.
 
 - Add the `0` value to **Opacity** utilities
 - Add the `full` and `half` values to **Flex** utilities
+- Add `cursor: pointer` to all `<button>` elements
 
 ### Changed
 
 - New `baseline` **Align Content** utility variant
 - New `baseline` **Align Items** utility variant
-- New `default`, `context-menu`, `progress`, `cell`, `vertical-text`, `alias`, `copy`, `no-drop`, `grab`, `grabbing`, `all-scroll`, `col-resize`, `row-resize`, `ne-resize`, `nw-resize`, `se-resize`, `sw-resize`, `ew-resize`, `ns-resize`, `nesw-resize`, `nwse-resize`, `zoom-in`, and `zoom-out` **Cursor** utility variants
+- New `col-resize`, `default`, `ne-resize`, `nesw-resize`, `none`, `nw-resize`, `nwse-resize`, `progress`, `row-resize`, `s-resize`, `se-resize`, `sw-resize`, `w-resize`, `zoom-in`, `zoom-out` **Cursor** utility properties
+- New `font-size: inherit` and `font-weight: inherit` properties for heading and paragraph elements.
 - New `row dense` and `dense row` **Grid Auto Flow** utility variants
 - New `table`, `inline-table` and `inline-grid` **Display** utility variants
 - New `text` and `all` **User Select** utility variants
@@ -28,13 +30,10 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Rename `_miscellaneous.scss` to `_interactions.scss`
 - Split the `_utilities.scss` partial into: `_borders.scss`, `_box-model.scss`, `_effects.scss`, `_filters.scss`, `_flexbox.scss`, `_grid.scss`, `_layout.scss`, `_interactions.scss`, `_outlines.scss`, `_tables.scss`, `_typography.scss`
 - Update **Border Radius** base value from `4px` to `0.25rem`
-- Update **Border Radius** classes output value sequence
-- Update **Border Width** classes output value sequence
+- Update **Border Width** base value from `4px` to `0.25rem`
 - Update **Flex** utility variants
-- Update **Font Weight** utility prefix values.
 - Update **Outline Offset** base value from `2px` to `1px`
-- Update **Outline Offset** classes output value sequence
-- Update **Outline Width** classes output value sequence
+- Update **Outline Width** base value from `2px` to `1px`
 
 ### Removed
 
@@ -46,3 +45,4 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Remove `flex-end`, `flex-start`, `left`, `normal`, `right` and `stretch` properties from **Justify Self** utilities
 - Remove `hidden` property in **Border Style** utilities
 - Remove `hidden` property in **Outline Style** utilities
+- Remove `er` **Cursor** variant
