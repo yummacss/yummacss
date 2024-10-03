@@ -31,6 +31,7 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Update **Border Radius** classes output value sequence
 - Update **Border Width** classes output value sequence
 - Update **Flex** utility variants
+- Update **Font Weight** utility prefix values.
 - Update **Outline Offset** base value from `2px` to `1px`
 - Update **Outline Offset** classes output value sequence
 - Update **Outline Width** classes output value sequence
