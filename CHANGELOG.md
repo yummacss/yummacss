@@ -10,9 +10,9 @@ All notable changes to the Yumma CSS will be documented in this file.
 
 ### Added
 
-- Add the `0` value to **Opacity** utilities
-- Add the `full` and `half` values to **Flex** utilities
-- Add `cursor: pointer` to all `<button>` elements
+- Add the `0` value to **Opacity** utility variant
+- Add the `auto` property to **Flex** utility variant
+- Add `cursor: pointer` to all `<button>` element
 
 ### Changed
 

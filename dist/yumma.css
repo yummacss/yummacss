@@ -237676,7 +237676,7 @@
   position: static;
 }
 
-.p-st {
+.p-y {
   position: sticky;
 }
 
@@ -237705,7 +237705,7 @@
 }
 
 @media (min-width: 640px) {
-  .sm\:p-st {
+  .sm\:p-y {
     position: sticky;
   }
 }
@@ -237735,7 +237735,7 @@
 }
 
 @media (min-width: 768px) {
-  .md\:p-st {
+  .md\:p-y {
     position: sticky;
   }
 }
@@ -237765,7 +237765,7 @@
 }
 
 @media (min-width: 1024px) {
-  .lg\:p-st {
+  .lg\:p-y {
     position: sticky;
   }
 }
@@ -237795,7 +237795,7 @@
 }
 
 @media (min-width: 1280px) {
-  .xl\:p-st {
+  .xl\:p-y {
     position: sticky;
   }
 }
@@ -237825,7 +237825,7 @@
 }
 
 @media (min-width: 1536px) {
-  .xxl\:p-st {
+  .xxl\:p-y {
     position: sticky;
   }
 }
@@ -237846,7 +237846,7 @@
   position: static;
 }
 
-.h\:p-st:hover {
+.h\:p-y:hover {
   position: sticky;
 }
 
