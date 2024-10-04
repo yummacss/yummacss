@@ -19,7 +19,9 @@ All notable changes to the Yumma CSS will be documented in this file.
 - New `baseline` **Align Content** utility variant
 - New `baseline` **Align Items** utility variant
 - New `col-resize`, `default`, `ne-resize`, `nesw-resize`, `none`, `nw-resize`, `nwse-resize`, `progress`, `row-resize`, `s-resize`, `se-resize`, `sw-resize`, `w-resize`, `zoom-in`, `zoom-out` **Cursor** utility properties
+- New `f-b` **Font Size** base utility
 - New `font-size: inherit` and `font-weight: inherit` properties for heading and paragraph elements.
+- New `fs-9xl` **Font Size** utiltiy variant
 - New `row dense` and `dense row` **Grid Auto Flow** utility variants
 - New `table`, `inline-table` and `inline-grid` **Display** utility variants
 - New `text` and `all` **User Select** utility variants

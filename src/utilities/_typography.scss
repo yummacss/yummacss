@@ -5,6 +5,7 @@ $yma-typography-utils: (
     "prefix": "fs",
     "values": (
       "xs": $yma-font-size-xs,
+      "b": 1rem,
       "sm": $yma-font-size-sm,
       "md": $yma-font-size-md,
       "lg": $yma-font-size-lg,
@@ -12,6 +13,7 @@ $yma-typography-utils: (
       "xxl": $yma-font-size-xxl,
       "3xl": $yma-font-size-3xl,
       "6xl": $yma-font-size-6xl,
+      "9xl": $yma-font-size-9xl,
     ),
   ),
 
