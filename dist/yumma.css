@@ -238577,19 +238577,19 @@
 }
 
 .ow-1 {
-  outline-width: 2px;
+  outline-width: 1px;
 }
 
 .ow-2 {
-  outline-width: 4px;
+  outline-width: 2px;
 }
 
 .ow-3 {
-  outline-width: 6px;
+  outline-width: 3px;
 }
 
 .ow-4 {
-  outline-width: 8px;
+  outline-width: 4px;
 }
 
 @media (min-width: 640px) {
@@ -238600,25 +238600,25 @@
 
 @media (min-width: 640px) {
   .sm\:ow-1 {
-    outline-width: 2px;
+    outline-width: 1px;
   }
 }
 
 @media (min-width: 640px) {
   .sm\:ow-2 {
-    outline-width: 4px;
+    outline-width: 2px;
   }
 }
 
 @media (min-width: 640px) {
   .sm\:ow-3 {
-    outline-width: 6px;
+    outline-width: 3px;
   }
 }
 
 @media (min-width: 640px) {
   .sm\:ow-4 {
-    outline-width: 8px;
+    outline-width: 4px;
   }
 }
 
@@ -238630,25 +238630,25 @@
 
 @media (min-width: 768px) {
   .md\:ow-1 {
-    outline-width: 2px;
+    outline-width: 1px;
   }
 }
 
 @media (min-width: 768px) {
   .md\:ow-2 {
-    outline-width: 4px;
+    outline-width: 2px;
   }
 }
 
 @media (min-width: 768px) {
   .md\:ow-3 {
-    outline-width: 6px;
+    outline-width: 3px;
   }
 }
 
 @media (min-width: 768px) {
   .md\:ow-4 {
-    outline-width: 8px;
+    outline-width: 4px;
   }
 }
 
@@ -238660,25 +238660,25 @@
 
 @media (min-width: 1024px) {
   .lg\:ow-1 {
-    outline-width: 2px;
+    outline-width: 1px;
   }
 }
 
 @media (min-width: 1024px) {
   .lg\:ow-2 {
-    outline-width: 4px;
+    outline-width: 2px;
   }
 }
 
 @media (min-width: 1024px) {
   .lg\:ow-3 {
-    outline-width: 6px;
+    outline-width: 3px;
   }
 }
 
 @media (min-width: 1024px) {
   .lg\:ow-4 {
-    outline-width: 8px;
+    outline-width: 4px;
   }
 }
 
@@ -238690,25 +238690,25 @@
 
 @media (min-width: 1280px) {
   .xl\:ow-1 {
-    outline-width: 2px;
+    outline-width: 1px;
   }
 }
 
 @media (min-width: 1280px) {
   .xl\:ow-2 {
-    outline-width: 4px;
+    outline-width: 2px;
   }
 }
 
 @media (min-width: 1280px) {
   .xl\:ow-3 {
-    outline-width: 6px;
+    outline-width: 3px;
   }
 }
 
 @media (min-width: 1280px) {
   .xl\:ow-4 {
-    outline-width: 8px;
+    outline-width: 4px;
   }
 }
 
@@ -238720,25 +238720,25 @@
 
 @media (min-width: 1536px) {
   .xxl\:ow-1 {
-    outline-width: 2px;
+    outline-width: 1px;
   }
 }
 
 @media (min-width: 1536px) {
   .xxl\:ow-2 {
-    outline-width: 4px;
+    outline-width: 2px;
   }
 }
 
 @media (min-width: 1536px) {
   .xxl\:ow-3 {
-    outline-width: 6px;
+    outline-width: 3px;
   }
 }
 
 @media (min-width: 1536px) {
   .xxl\:ow-4 {
-    outline-width: 8px;
+    outline-width: 4px;
   }
 }
 
@@ -238747,19 +238747,19 @@
 }
 
 .h\:ow-1:hover {
-  outline-width: 2px;
+  outline-width: 1px;
 }
 
 .h\:ow-2:hover {
-  outline-width: 4px;
+  outline-width: 2px;
 }
 
 .h\:ow-3:hover {
-  outline-width: 6px;
+  outline-width: 3px;
 }
 
 .h\:ow-4:hover {
-  outline-width: 8px;
+  outline-width: 4px;
 }
 
 .cs-b {

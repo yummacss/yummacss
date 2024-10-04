@@ -16,12 +16,13 @@ $yma-colors-black: black;
 $yma-colors-white: white;
 $yma-colors-transparent: transparent;
 
-// borders & outlines
+// borders
 $yma-border: 1px;
 $yma-border-radius: 0.25rem;
-$yma-box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
+
+// outlines
 $yma-outline-offset: 1px;
-$yma-outline-width: 2px;
+$yma-outline-width: 1px;
 $yma-decoration-thickness: 1px;
 
 // box model
@@ -31,11 +32,16 @@ $yma-padding: 0.25rem;
 $yma-margin: 0.25rem;
 $yma-spacing: 0.25rem;
 
-// effects & filters
+// effects
 $yma-backdrop-blur: 4px;
 
-// flexbox & grid
+// filters
+$yma-box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
+
+// flexbox
 $yma-flex-basis: 1rem;
+
+// grid
 $yma-gap: 0.25rem;
 $yma-column-gap: 0.25rem;
 $yma-row-gap: 0.25rem;
@@ -79,7 +85,7 @@ $yma-width-extension: (
   "2\\/1": 50dvw,
 );
 
-// colors map
+// color palette map
 $yma-colors: (
   "red": $yma-colors-red,
   "orange": $yma-colors-orange,

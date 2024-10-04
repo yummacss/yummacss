@@ -26,23 +26,24 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Rename **Align Content** utility syntax from `ac-stretch` to `ac-s`
 - Rename **Align Items** utility syntax from `ai-stretch` to `ai-s`
 - Rename **Align Self** utility syntax from `as-stretch` to `as-s`
-- Rename **Position** utility syntax from `p-t` to `p-st`
+- Rename **Position** utility syntax from `p-t` to `p-y`
 - Rename `_miscellaneous.scss` to `_interactions.scss`
 - Split the `_utilities.scss` partial into: `_borders.scss`, `_box-model.scss`, `_effects.scss`, `_filters.scss`, `_flexbox.scss`, `_grid.scss`, `_layout.scss`, `_interactions.scss`, `_outlines.scss`, `_tables.scss`, `_typography.scss`
 - Update **Border Radius** base value from `4px` to `0.25rem`
-- Update **Border Width** base value from `4px` to `0.25rem`
+- Update **Border Width** base value from `4px` to `1px`
 - Update **Flex** utility variants
 - Update **Outline Offset** base value from `2px` to `1px`
 - Update **Outline Width** base value from `2px` to `1px`
 
 ### Removed
 
+- Delete `_utilities.scss` partial
 - Remove `end` and `start` properties from **Align Content** utilities
 - Remove `end` and `start` properties from **Align Items** utilities
 - Remove `end` and `start` properties from **Align Self** utilities
 - Remove `end`, `left`, `right` and `start` properties from **Justify Content** utilities
+- Remove `er` **Cursor** variant
 - Remove `flex-end`, `flex-start`, `left`, `normal`, `right` and `stretch` properties from **Justify Items** utilities
 - Remove `flex-end`, `flex-start`, `left`, `normal`, `right` and `stretch` properties from **Justify Self** utilities
 - Remove `hidden` property in **Border Style** utilities
 - Remove `hidden` property in **Outline Style** utilities
-- Remove `er` **Cursor** variant
