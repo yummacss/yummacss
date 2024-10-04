@@ -10,9 +10,9 @@ All notable changes to the Yumma CSS will be documented in this file.
 
 ### Added
 
+- Add `cursor: pointer` to all `<button>` element
 - Add the `0` value to **Opacity** utility variant
 - Add the `auto` property to **Flex** utility variant
-- Add `cursor: pointer` to all `<button>` element
 
 ### Changed
 
