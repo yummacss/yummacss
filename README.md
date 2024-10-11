@@ -28,4 +28,4 @@ I'd love your help with Yumma CSS. I've included some links below which you migh
   
 ### Licensing
 
-MIT — Copyright © 2023–present [Renildo Pereira](https://github.com/yumma-lib/yumma-css/graphs/contributors).
+MIT — Copyright (c) 2023–present [Renildo Pereira](https://github.com/yumma-lib/yumma-css/graphs/contributors).
