@@ -26,6 +26,36 @@ $yma-border-utils: (
     ),
   ),
 
+  "border-bottom-left-radius": (
+    "prefix": "rad-bl",
+    "values": (
+      "0": $yma-border-radius * 0,
+      "1": $yma-border-radius,
+      "2": $yma-border-radius * 2,
+      "3": $yma-border-radius * 3,
+      "4": $yma-border-radius * 4,
+      "5": $yma-border-radius * 5,
+      "6": $yma-border-radius * 6,
+      "7": $yma-border-radius * 7,
+      "8": $yma-border-radius * 8,
+    ),
+  ),
+
+  "border-bottom-right-radius": (
+    "prefix": "rad-br",
+    "values": (
+      "0": $yma-border-radius * 0,
+      "1": $yma-border-radius,
+      "2": $yma-border-radius * 2,
+      "3": $yma-border-radius * 3,
+      "4": $yma-border-radius * 4,
+      "5": $yma-border-radius * 5,
+      "6": $yma-border-radius * 6,
+      "7": $yma-border-radius * 7,
+      "8": $yma-border-radius * 8,
+    ),
+  ),
+
   "border-top-left-radius": (
     "prefix": "rad-tl",
     "values": (
@@ -56,33 +86,27 @@ $yma-border-utils: (
     ),
   ),
 
-  "border-bottom-left-radius": (
-    "prefix": "rad-bl",
+  "border-style": (
+    "prefix": "b",
     "values": (
-      "0": $yma-border-radius * 0,
-      "1": $yma-border-radius,
-      "2": $yma-border-radius * 2,
-      "3": $yma-border-radius * 3,
-      "4": $yma-border-radius * 4,
-      "5": $yma-border-radius * 5,
-      "6": $yma-border-radius * 6,
-      "7": $yma-border-radius * 7,
-      "8": $yma-border-radius * 8,
+      "none": none,
+      "d": dashed,
+      "s": solid,
     ),
   ),
 
-  "border-bottom-right-radius": (
-    "prefix": "rad-br",
+  "border-width": (
+    "prefix": "b",
     "values": (
-      "0": $yma-border-radius * 0,
-      "1": $yma-border-radius,
-      "2": $yma-border-radius * 2,
-      "3": $yma-border-radius * 3,
-      "4": $yma-border-radius * 4,
-      "5": $yma-border-radius * 5,
-      "6": $yma-border-radius * 6,
-      "7": $yma-border-radius * 7,
-      "8": $yma-border-radius * 8,
+      "0": $yma-border * 0,
+      "1": $yma-border,
+      "2": $yma-border * 2,
+      "3": $yma-border * 3,
+      "4": $yma-border * 4,
+      "5": $yma-border * 5,
+      "6": $yma-border * 6,
+      "7": $yma-border * 7,
+      "8": $yma-border * 8,
     ),
   ),
 
@@ -145,32 +169,9 @@ $yma-border-utils: (
       "8": $yma-border * 8,
     ),
   ),
-
-  "border-style": (
-    "prefix": "b",
-    "values": (
-      "none": none,
-      "d": dashed,
-      "s": solid,
-    ),
-  ),
-
-  "border-width": (
-    "prefix": "b",
-    "values": (
-      "0": $yma-border * 0,
-      "1": $yma-border,
-      "2": $yma-border * 2,
-      "3": $yma-border * 3,
-      "4": $yma-border * 4,
-      "5": $yma-border * 5,
-      "6": $yma-border * 6,
-      "7": $yma-border * 7,
-      "8": $yma-border * 8,
-    ),
-  ),
 );
 
+// base variants
 @each $property, $map in $yma-border-utils {
   $prefix: map-get($map, "prefix");
   $values: map-get($map, "values");
@@ -187,17 +188,6 @@ $yma-border-utils: (
     }
   }
 
-  // responsive variants
-  @each $bp, $bp-value in $yma-breakpoints {
-    @each $k, $v in $values {
-      .#{$bp}\:#{$prefix}-#{$k} {
-        @media (min-width: $bp-value) {
-          #{$property}: $v;
-        }
-      }
-    }
-  }
-
   // hover variants
   @each $k, $v in $values {
     @if ($k == "default") {
@@ -207,6 +197,17 @@ $yma-border-utils: (
     } @else {
       .h\:#{$prefix}-#{$k}:hover {
         #{$property}: $v;
+      }
+    }
+  }
+
+  // responsive variants
+  @each $bp, $bp-value in $yma-breakpoints {
+    @each $k, $v in $values {
+      .#{$bp}\:#{$prefix}-#{$k} {
+        @media (min-width: $bp-value) {
+          #{$property}: $v;
+        }
       }
     }
   }

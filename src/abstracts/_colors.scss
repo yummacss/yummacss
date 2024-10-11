@@ -1,6 +1,6 @@
 @import "mixins";
 
-@each $k, $v in $yma-colors {
+@each $k, $v in $yma-theme {
   @include color-variants("accent-color", "ac", $k, $v);
   @include color-variants("background-color", "bg", $k, $v);
   @include color-variants("border-bottom-color", "bc-b", $k, $v);
@@ -13,7 +13,7 @@
   @include color-variants("outline-color", "oc", $k, $v);
   @include color-variants("text-decoration-color", "tdc", $k, $v);
 
-  @if (is-not-mono($v, $yma-colors)) {
+  @if (is-not-mono($v, $yma-theme)) {
     @include shade-variants("accent-color", "ac", $k, $v, 10%);
     @include shade-variants("background-color", "bg", $k, $v, 10%);
     @include shade-variants("border-bottom-color", "bc-b", $k, $v, 10%);

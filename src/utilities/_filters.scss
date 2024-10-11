@@ -14,6 +14,7 @@ $yma-filter-utils: (
   ),
 );
 
+// base variants
 @each $property, $map in $yma-filter-utils {
   $prefix: map-get($map, "prefix");
   $values: map-get($map, "values");
@@ -30,17 +31,6 @@ $yma-filter-utils: (
     }
   }
 
-  // responsive variants
-  @each $bp, $bp-value in $yma-breakpoints {
-    @each $k, $v in $values {
-      .#{$bp}\:#{$prefix}-#{$k} {
-        @media (min-width: $bp-value) {
-          #{$property}: $v;
-        }
-      }
-    }
-  }
-
   // hover variants
   @each $k, $v in $values {
     @if ($k == "default") {
@@ -50,6 +40,17 @@ $yma-filter-utils: (
     } @else {
       .h\:#{$prefix}-#{$k}:hover {
         #{$property}: $v;
+      }
+    }
+  }
+
+  // responsive variants
+  @each $bp, $bp-value in $yma-breakpoints {
+    @each $k, $v in $values {
+      .#{$bp}\:#{$prefix}-#{$k} {
+        @media (min-width: $bp-value) {
+          #{$property}: $v;
+        }
       }
     }
   }

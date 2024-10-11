@@ -86,19 +86,19 @@ $yma-typography-utils: (
   "text-decoration-line": (
     "prefix": "tdl",
     "values": (
-      "none": none,
-      "u": underline,
-      "o": overline,
       "lt": line-through,
+      "none": none,
+      "o": overline,
+      "u": underline,
     ),
   ),
 
   "text-decoration-style": (
     "prefix": "tds",
     "values": (
-      "none": none,
       "d": dashed,
       "h": hidden,
+      "none": none,
       "s": solid,
     ),
   ),
@@ -106,13 +106,13 @@ $yma-typography-utils: (
   "text-decoration-thickness": (
     "prefix": "tdt",
     "values": (
-      "auto": auto,
-      "ff": from-font,
       "0": $yma-decoration-thickness * 0,
       "1": $yma-decoration-thickness,
       "2": $yma-decoration-thickness * 2,
       "3": $yma-decoration-thickness * 3,
       "4": $yma-decoration-thickness * 4,
+      "auto": auto,
+      "ff": from-font,
     ),
   ),
 
@@ -125,6 +125,7 @@ $yma-typography-utils: (
   ),
 );
 
+// base variants
 @each $property, $map in $yma-typography-utils {
   $prefix: map-get($map, "prefix");
   $values: map-get($map, "values");
@@ -141,17 +142,6 @@ $yma-typography-utils: (
     }
   }
 
-  // responsive variants
-  @each $bp, $bp-value in $yma-breakpoints {
-    @each $k, $v in $values {
-      .#{$bp}\:#{$prefix}-#{$k} {
-        @media (min-width: $bp-value) {
-          #{$property}: $v;
-        }
-      }
-    }
-  }
-
   // hover variants
   @each $k, $v in $values {
     @if ($k == "default") {
@@ -161,6 +151,17 @@ $yma-typography-utils: (
     } @else {
       .h\:#{$prefix}-#{$k}:hover {
         #{$property}: $v;
+      }
+    }
+  }
+
+  // responsive variants
+  @each $bp, $bp-value in $yma-breakpoints {
+    @each $k, $v in $values {
+      .#{$bp}\:#{$prefix}-#{$k} {
+        @media (min-width: $bp-value) {
+          #{$property}: $v;
+        }
       }
     }
   }

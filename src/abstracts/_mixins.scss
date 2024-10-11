@@ -167,34 +167,27 @@
 @mixin spacing-x($prefix, $unit) {
   @for $i from 0 through 100 {
     .#{$prefix}-#{$i} > :not([hidden]) ~ :not([hidden]) {
-      --yma-spacing-x: 1;
-      margin-left: calc(#{$i * $unit} * var(--yma-spacing-x));
-      margin-right: calc(#{$i * $unit} * calc(1 - var(--yma-spacing-x)));
+      margin-left: calc(#{$i * $unit} * calc(1 - 0));
+      margin-right: calc(#{$i * $unit} * 0);
     }
 
-    // Hover variant
     .h\:#{$prefix}-#{$i}:hover > :not([hidden]) ~ :not([hidden]) {
-      --yma-spacing-x: 1;
-      margin-left: calc(#{$i * $unit} * var(--yma-spacing-x));
-      margin-right: calc(#{$i * $unit} * calc(1 - var(--yma-spacing-x)));
+      margin-left: calc(#{$i * $unit} * calc(1 - 0));
+      margin-right: calc(#{$i * $unit} * 0);
     }
 
-    // Responsive hover variant
     @each $bp, $bp-value in $yma-breakpoints {
       .#{$bp}\:#{$prefix}-#{$i} > :not([hidden]) ~ :not([hidden]) {
         @include breakpoint($bp-value) {
-          --yma-spacing-x: 1;
-          margin-left: calc(#{$i * $unit} * var(--yma-spacing-x));
-          margin-right: calc(#{$i * $unit} * calc(1 - var(--yma-spacing-x)));
+          margin-left: calc(#{$i * $unit} * calc(1 - 0));
+          margin-right: calc(#{$i * $unit} * 0);
         }
       }
 
-      // Responsive hover variant
       .h\:#{$bp}\:#{$prefix}-#{$i}:hover > :not([hidden]) ~ :not([hidden]) {
         @include breakpoint($bp-value) {
-          --yma-spacing-x: 1;
-          margin-left: calc(#{$i * $unit} * var(--yma-spacing-x));
-          margin-right: calc(#{$i * $unit} * calc(1 - var(--yma-spacing-x)));
+          margin-left: calc(#{$i * $unit} * calc(1 - 0));
+          margin-right: calc(#{$i * $unit} * 0);
         }
       }
     }
@@ -204,34 +197,27 @@
 @mixin spacing-y($prefix, $unit) {
   @for $i from 0 through 100 {
     .#{$prefix}-#{$i} > :not([hidden]) ~ :not([hidden]) {
-      --yma-spacing-y: 1;
-      margin-top: calc(#{$i * $unit} * var(--yma-spacing-y));
-      margin-bottom: calc(#{$i * $unit} * calc(1 - var(--yma-spacing-y)));
+      margin-top: calc(#{$i * $unit} * calc(1 - 0));
+      margin-bottom: calc(#{$i * $unit} * 0);
     }
 
-    // Hover variant
     .h\:#{$prefix}-#{$i}:hover > :not([hidden]) ~ :not([hidden]) {
-      --yma-spacing-y: 1;
-      margin-top: calc(#{$i * $unit} * var(--yma-spacing-y));
-      margin-bottom: calc(#{$i * $unit} * calc(1 - var(--yma-spacing-y)));
+      margin-top: calc(#{$i * $unit} * calc(1 - 0));
+      margin-bottom: calc(#{$i * $unit} * 0);
     }
 
-    // Responsive hover variant
     @each $bp, $bp-value in $yma-breakpoints {
       .#{$bp}\:#{$prefix}-#{$i} > :not([hidden]) ~ :not([hidden]) {
         @include breakpoint($bp-value) {
-          --yma-spacing-y: 1;
-          margin-top: calc(#{$i * $unit} * var(--yma-spacing-y));
-          margin-bottom: calc(#{$i * $unit} * calc(1 - var(--yma-spacing-y)));
+          margin-top: calc(#{$i * $unit} * calc(1 - 0));
+          margin-bottom: calc(#{$i * $unit} * 0);
         }
       }
 
-      // Responsive hover variant
       .h\:#{$bp}\:#{$prefix}-#{$i}:hover > :not([hidden]) ~ :not([hidden]) {
         @include breakpoint($bp-value) {
-          --yma-spacing-y: 1;
-          margin-top: calc(#{$i * $unit} * var(--yma-spacing-y));
-          margin-bottom: calc(#{$i * $unit} * calc(1 - var(--yma-spacing-y)));
+          margin-top: calc(#{$i * $unit} * calc(1 - 0));
+          margin-bottom: calc(#{$i * $unit} * 0);
         }
       }
     }
@@ -348,7 +334,7 @@
   }
 }
 
-@mixin spacing-extensions($map, $prefixes, $property) {
+@mixin box-model-extensions($map, $prefixes, $property) {
   @each $k, $v in $map {
     @if $k == "auto" {
       @each $prefix in $prefixes {
