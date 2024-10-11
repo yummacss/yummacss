@@ -1,11 +1,11 @@
 @import "abstracts/variables";
+@import "abstracts/theme";
 @import "abstracts/functions";
 @import "abstracts/mixins";
 @import "abstracts/breakpoints";
 @import "abstracts/layout";
 @import "abstracts/colors";
-
-@import "fonts";
+@import "abstracts/extensions";
 
 @import "utilities/borders";
 @import "utilities/box-model";
@@ -19,4 +19,5 @@
 @import "utilities/tables";
 @import "utilities/typography";
 
+@import "fonts";
 @import "base";

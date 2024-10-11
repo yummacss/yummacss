@@ -1,20 +1,20 @@
 // base colors
-$yma-colors-red: #d73d3d;
-$yma-colors-orange: #e06814;
-$yma-colors-yellow: #d3a107;
-$yma-colors-green: #1fb155;
-$yma-colors-teal: #12a695;
-$yma-colors-cyan: #05a4bf;
-$yma-colors-blue: #3575dd;
-$yma-colors-indigo: #595cd9;
-$yma-colors-violet: #7d53dd;
-$yma-colors-pink: #d4418a;
-$yma-colors-silver: #bfc2c7;
-$yma-colors-gray: #606773;
-$yma-colors-lead: #3f3f4e;
-$yma-colors-black: black;
-$yma-colors-white: white;
-$yma-colors-transparent: transparent;
+$yma-color-red: #d73d3d;
+$yma-color-orange: #e06814;
+$yma-color-yellow: #d3a107;
+$yma-color-green: #1fb155;
+$yma-color-teal: #12a695;
+$yma-color-cyan: #05a4bf;
+$yma-color-blue: #3575dd;
+$yma-color-indigo: #595cd9;
+$yma-color-violet: #7d53dd;
+$yma-color-pink: #d4418a;
+$yma-color-silver: #bfc2c7;
+$yma-color-gray: #606773;
+$yma-color-lead: #3f3f4e;
+$yma-color-black: black;
+$yma-color-white: white;
+$yma-color-transparent: transparent;
 
 // borders
 $yma-border: 1px;
@@ -39,7 +39,7 @@ $yma-backdrop-blur: 4px;
 $yma-box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
 
 // flexbox
-$yma-flex-basis: 1rem;
+$yma-flex-basis: 0.25rem;
 
 // grid
 $yma-gap: 0.25rem;
@@ -47,7 +47,7 @@ $yma-column-gap: 0.25rem;
 $yma-row-gap: 0.25rem;
 
 // layout
-$yma-direction: 1px;
+$yma-direction: 0.25;
 
 // typography
 $yma-font-size: 0.75rem;
@@ -66,43 +66,3 @@ $yma-font-size-9xl: $yma-font-size * 9;
 $yma-font-charter: Charter, Cambria, serif;
 $yma-font-mono: ui-monospace, Consolas, monospace;
 $yma-font-system: system-ui, sans-serif;
-
-// extensions
-$yma-extension: (
-  "auto": auto,
-  "fc": fit-content,
-  "full": 100%,
-  "half": 50%,
-  "max": max-content,
-  "min": min-content,
-);
-
-$yma-height-extension: (
-  "1\\/1": 100dvh,
-  "1\\/2": 50dvh,
-);
-
-$yma-width-extension: (
-  "1\\/1": 100dvw,
-  "2\\/1": 50dvw,
-);
-
-// color palette map
-$yma-colors: (
-  "red": $yma-colors-red,
-  "orange": $yma-colors-orange,
-  "yellow": $yma-colors-yellow,
-  "green": $yma-colors-green,
-  "teal": $yma-colors-teal,
-  "cyan": $yma-colors-cyan,
-  "blue": $yma-colors-blue,
-  "indigo": $yma-colors-indigo,
-  "violet": $yma-colors-violet,
-  "pink": $yma-colors-pink,
-  "silver": $yma-colors-silver,
-  "gray": $yma-colors-gray,
-  "lead": $yma-colors-lead,
-  "black": $yma-colors-black,
-  "white": $yma-colors-white,
-  "transparent": $yma-colors-transparent,
-);

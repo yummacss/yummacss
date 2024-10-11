@@ -4,6 +4,7 @@ $yma-grid-utils: (
   "column-gap": (
     "prefix": "cg",
     "values": (
+      "0": $yma-column-gap * 0,
       "1": $yma-column-gap,
       "2": $yma-column-gap * 2,
       "3": $yma-column-gap * 3,
@@ -98,8 +99,8 @@ $yma-grid-utils: (
     ),
   ),
 
-  "grid-column-start": (
-    "prefix": "gcs",
+  "grid-column-end": (
+    "prefix": "gce",
     "values": (
       "1": 1,
       "2": 2,
@@ -120,8 +121,8 @@ $yma-grid-utils: (
     ),
   ),
 
-  "grid-column-end": (
-    "prefix": "gce",
+  "grid-column-start": (
+    "prefix": "gcs",
     "values": (
       "1": 1,
       "2": 2,
@@ -164,8 +165,8 @@ $yma-grid-utils: (
     ),
   ),
 
-  "grid-row-start": (
-    "prefix": "grs",
+  "grid-row-end": (
+    "prefix": "gre",
     "values": (
       "1": 1,
       "2": 2,
@@ -186,8 +187,8 @@ $yma-grid-utils: (
     ),
   ),
 
-  "grid-row-end": (
-    "prefix": "gre",
+  "grid-row-start": (
+    "prefix": "grs",
     "values": (
       "1": 1,
       "2": 2,
@@ -255,6 +256,7 @@ $yma-grid-utils: (
   "row-gap": (
     "prefix": "rg",
     "values": (
+      "0": $yma-row-gap * 0,
       "1": $yma-row-gap,
       "2": $yma-row-gap * 2,
       "3": $yma-row-gap * 3,
@@ -275,6 +277,7 @@ $yma-grid-utils: (
   ),
 );
 
+// base variants
 @each $property, $map in $yma-grid-utils {
   $prefix: map-get($map, "prefix");
   $values: map-get($map, "values");
@@ -291,17 +294,6 @@ $yma-grid-utils: (
     }
   }
 
-  // responsive variants
-  @each $bp, $bp-value in $yma-breakpoints {
-    @each $k, $v in $values {
-      .#{$bp}\:#{$prefix}-#{$k} {
-        @media (min-width: $bp-value) {
-          #{$property}: $v;
-        }
-      }
-    }
-  }
-
   // hover variants
   @each $k, $v in $values {
     @if ($k == "default") {
@@ -311,6 +303,17 @@ $yma-grid-utils: (
     } @else {
       .h\:#{$prefix}-#{$k}:hover {
         #{$property}: $v;
+      }
+    }
+  }
+
+  // responsive variants
+  @each $bp, $bp-value in $yma-breakpoints {
+    @each $k, $v in $values {
+      .#{$bp}\:#{$prefix}-#{$k} {
+        @media (min-width: $bp-value) {
+          #{$property}: $v;
+        }
       }
     }
   }

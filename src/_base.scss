@@ -34,7 +34,7 @@ $base: true !default;
   optgroup,
   select,
   textarea {
-    background-color: transparent;
+    background-color: $yma-color-transparent;
     font: inherit;
   }
 
@@ -65,7 +65,7 @@ $base: true !default;
   }
 
   hr {
-    border-top: $yma-colors-transparent;
+    border-top: $yma-color-transparent;
     border: 0;
     margin: 1em 0;
   }
