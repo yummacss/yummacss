@@ -1,6 +1,6 @@
 @use "sass:math";
 
-$yma-filter-utils: (
+$yma-fx-utils: (
   "backdrop-filter": (
     "prefix": "bf-b",
     "values": (
@@ -12,10 +12,38 @@ $yma-filter-utils: (
       "xl": blur($yma-backdrop-blur * 16),
     ),
   ),
+  "box-shadow": (
+    "prefix": "bs",
+    "values": (
+      "none": none,
+      "xs": $yma-box-shadow-xs,
+      "sm": $yma-box-shadow-sm,
+      "md": $yma-box-shadow-md,
+      "lg": $yma-box-shadow-lg,
+      "xl": $yma-box-shadow-xl,
+    ),
+  ),
+
+  "opacity": (
+    "prefix": "o",
+    "values": (
+      "0": 0,
+      "10": 0.1,
+      "20": 0.2,
+      "30": 0.3,
+      "40": 0.4,
+      "50": 0.5,
+      "60": 0.6,
+      "70": 0.7,
+      "80": 0.8,
+      "90": 0.9,
+      "100": 1,
+    ),
+  ),
 );
 
 // base variants
-@each $property, $map in $yma-filter-utils {
+@each $property, $map in $yma-fx-utils {
   $prefix: map-get($map, "prefix");
   $values: map-get($map, "values");
 

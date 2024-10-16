@@ -56,3 +56,17 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Remove `hidden` property in **Border Style** utilities
 - Remove `hidden` property in **Outline Style** utilities
 - Remove variable inside **Spacing X** and **Spacing Y** utilities
+
+## [Unreleased]
+
+### Added
+
+- Add `$yma-box-shadow-*` variables
+
+### Changes
+
+- Merge **Filters** and **Effects** subcategories into a **FX** category
+
+### Removed
+
+- None
