@@ -4,5 +4,8 @@ node_modules/
 # development
 test/
 
+# tree
+project-hierarchy.txt
+
 # vs code
 .vscode/
