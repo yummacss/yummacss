@@ -3,7 +3,7 @@
   "description": "Quickly build applications with less code in your markup.",
   "license": "MIT",
   "name": "yummacss",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "devDependencies": {
     "commander": "^12.1.0",
     "gulp-clean-css": "^4.3.0",
