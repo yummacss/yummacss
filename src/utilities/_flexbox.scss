@@ -122,7 +122,7 @@ $yma-flexbox-utils: (
       "c": center,
       "e": end,
       "s": start,
-      "st": stretch
+      "st": stretch,
     ),
   ),
 
@@ -133,7 +133,7 @@ $yma-flexbox-utils: (
       "c": center,
       "e": end,
       "s": start,
-      "st": stretch
+      "st": stretch,
     ),
   ),
 );
@@ -181,7 +181,7 @@ $yma-flexbox-utils: (
 }
 
 // variants
-@include variants("flex-basis", "fb", $yma-flex-basis);
+@include scaling("flex-basis", "fb", $yma-flex-basis);
 
 // extensions
 @include extensions(

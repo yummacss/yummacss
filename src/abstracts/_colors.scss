@@ -1,29 +1,29 @@
 @import "mixins";
 
 @each $k, $v in $yma-theme {
-  @include color-variants("accent-color", "ac", $k, $v);
-  @include color-variants("background-color", "bg", $k, $v);
-  @include color-variants("border-bottom-color", "bc-b", $k, $v);
-  @include color-variants("border-color", "bc", $k, $v);
-  @include color-variants("border-left-color", "bc-l", $k, $v);
-  @include color-variants("border-right-color", "bc-r", $k, $v);
-  @include color-variants("border-top-color", "bc-t", $k, $v);
-  @include color-variants("caret-color", "cc", $k, $v);
-  @include color-variants("color", "tc", $k, $v);
-  @include color-variants("outline-color", "oc", $k, $v);
-  @include color-variants("text-decoration-color", "tdc", $k, $v);
+  @include color-scaling("accent-color", "ac", $k, $v);
+  @include color-scaling("background-color", "bg", $k, $v);
+  @include color-scaling("border-bottom-color", "bc-b", $k, $v);
+  @include color-scaling("border-color", "bc", $k, $v);
+  @include color-scaling("border-left-color", "bc-l", $k, $v);
+  @include color-scaling("border-right-color", "bc-r", $k, $v);
+  @include color-scaling("border-top-color", "bc-t", $k, $v);
+  @include color-scaling("caret-color", "cc", $k, $v);
+  @include color-scaling("color", "tc", $k, $v);
+  @include color-scaling("outline-color", "oc", $k, $v);
+  @include color-scaling("text-decoration-color", "tdc", $k, $v);
 
   @if (is-not-mono($v, $yma-theme)) {
-    @include shade-variants("accent-color", "ac", $k, $v, 10%);
-    @include shade-variants("background-color", "bg", $k, $v, 10%);
-    @include shade-variants("border-bottom-color", "bc-b", $k, $v, 10%);
-    @include shade-variants("border-color", "bc", $k, $v, 10%);
-    @include shade-variants("border-left-color", "bc-l", $k, $v, 10%);
-    @include shade-variants("border-right-color", "bc-r", $k, $v, 10%);
-    @include shade-variants("border-top-color", "bc-t", $k, $v, 10%);
-    @include shade-variants("caret-color", "cc", $k, $v, 10%);
-    @include shade-variants("color", "tc", $k, $v, 10%);
-    @include shade-variants("outline-color", "oc", $k, $v, 10%);
-    @include shade-variants("text-decoration-color", "tdc", $k, $v, 10%);
+    @include shade-scaling("accent-color", "ac", $k, $v, 10%);
+    @include shade-scaling("background-color", "bg", $k, $v, 10%);
+    @include shade-scaling("border-bottom-color", "bc-b", $k, $v, 10%);
+    @include shade-scaling("border-color", "bc", $k, $v, 10%);
+    @include shade-scaling("border-left-color", "bc-l", $k, $v, 10%);
+    @include shade-scaling("border-right-color", "bc-r", $k, $v, 10%);
+    @include shade-scaling("border-top-color", "bc-t", $k, $v, 10%);
+    @include shade-scaling("caret-color", "cc", $k, $v, 10%);
+    @include shade-scaling("color", "tc", $k, $v, 10%);
+    @include shade-scaling("outline-color", "oc", $k, $v, 10%);
+    @include shade-scaling("text-decoration-color", "tdc", $k, $v, 10%);
   }
 }

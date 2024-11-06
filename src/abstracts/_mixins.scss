@@ -1,6 +1,6 @@
 @import "breakpoints";
 
-@mixin color-variants($property, $prefix, $k, $v) {
+@mixin color-scaling($property, $prefix, $k, $v) {
   .#{$prefix}-#{$k} {
     #{$property}: $v;
   }
@@ -12,7 +12,7 @@
   }
 }
 
-@mixin shade-variants($property, $prefix, $k, $v, $mod) {
+@mixin shade-scaling($property, $prefix, $k, $v, $mod) {
   @for $i from 1 through 6 {
     // light variants
     .#{$prefix}-l-#{$k}-#{$i} {
@@ -38,7 +38,7 @@
   }
 }
 
-@mixin variants($property, $prefix, $unit) {
+@mixin scaling($property, $prefix, $unit) {
   @for $i from 0 through 100 {
     .#{$prefix}-#{$i} {
       #{$property}: $i * $unit;
@@ -66,7 +66,7 @@
   }
 }
 
-@mixin dimension-variants($prefix, $height-unit, $width-unit) {
+@mixin dimension-scaling($prefix, $height-unit, $width-unit) {
   @for $i from 0 through 100 {
     .#{$prefix}-#{$i} {
       height: $i * $height-unit;
@@ -98,7 +98,7 @@
   }
 }
 
-@mixin x-axis-variants($property, $prefix, $unit) {
+@mixin x-axis-scaling($property, $prefix, $unit) {
   @for $i from 0 through 100 {
     .#{$prefix}-#{$i} {
       #{$property}-left: $i * $unit;
@@ -131,7 +131,7 @@
   }
 }
 
-@mixin y-axis-variants($property, $prefix, $unit) {
+@mixin y-axis-scaling($property, $prefix, $unit) {
   @for $i from 0 through 100 {
     .#{$prefix}-#{$i} {
       #{$property}-top: $i * $unit;

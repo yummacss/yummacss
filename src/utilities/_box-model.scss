@@ -53,31 +53,31 @@ $yma-box-model-utils: (
 }
 
 // variants
-@include dimension-variants("dim", $yma-height, $yma-width);
-@include dimension-variants("max-dim", $yma-height, $yma-width);
-@include dimension-variants("min-dim", $yma-height, $yma-width);
+@include dimension-scaling("dim", $yma-height, $yma-width);
+@include dimension-scaling("max-dim", $yma-height, $yma-width);
+@include dimension-scaling("min-dim", $yma-height, $yma-width);
 @include spacing-x("s-x", $yma-spacing);
 @include spacing-y("s-y", $yma-spacing);
-@include variants("height", "h", $yma-height);
-@include variants("margin-bottom", "mb", $yma-margin);
-@include variants("margin-left", "ml", $yma-margin);
-@include variants("margin-right", "mr", $yma-margin);
-@include variants("margin-top", "mt", $yma-margin);
-@include variants("margin", "m", $yma-margin);
-@include variants("max-height", "max-h", $yma-height);
-@include variants("max-width", "max-w", $yma-width);
-@include variants("min-height", "min-h", $yma-height);
-@include variants("min-width", "min-w", $yma-width);
-@include variants("padding-bottom", "pb", $yma-padding);
-@include variants("padding-left", "pl", $yma-padding);
-@include variants("padding-right", "pr", $yma-padding);
-@include variants("padding-top", "pt", $yma-padding);
-@include variants("padding", "p", $yma-padding);
-@include variants("width", "w", $yma-width);
-@include x-axis-variants("margin", "mx", $yma-margin);
-@include x-axis-variants("padding", "px", $yma-padding);
-@include y-axis-variants("margin", "my", $yma-margin);
-@include y-axis-variants("padding", "py", $yma-padding);
+@include scaling("height", "h", $yma-height);
+@include scaling("margin-bottom", "mb", $yma-margin);
+@include scaling("margin-left", "ml", $yma-margin);
+@include scaling("margin-right", "mr", $yma-margin);
+@include scaling("margin-top", "mt", $yma-margin);
+@include scaling("margin", "m", $yma-margin);
+@include scaling("max-height", "max-h", $yma-height);
+@include scaling("max-width", "max-w", $yma-width);
+@include scaling("min-height", "min-h", $yma-height);
+@include scaling("min-width", "min-w", $yma-width);
+@include scaling("padding-bottom", "pb", $yma-padding);
+@include scaling("padding-left", "pl", $yma-padding);
+@include scaling("padding-right", "pr", $yma-padding);
+@include scaling("padding-top", "pt", $yma-padding);
+@include scaling("padding", "p", $yma-padding);
+@include scaling("width", "w", $yma-width);
+@include x-axis-scaling("margin", "mx", $yma-margin);
+@include x-axis-scaling("padding", "px", $yma-padding);
+@include y-axis-scaling("margin", "my", $yma-margin);
+@include y-axis-scaling("padding", "py", $yma-padding);
 
 // extensions
 @include extensions(
