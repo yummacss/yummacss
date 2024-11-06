@@ -68,6 +68,8 @@ All notable changes to the Yumma CSS will be documented in this file.
 ### Changes
 
 - Merge **Filters** and **Effects** subcategories into a **FX** category
+- Rename `core.scss` to `_core.scss`
+- Rename `_extensions.scss` to `_maps.scss`
 
 ### Removed
 

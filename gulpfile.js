@@ -18,7 +18,7 @@ function minifiedFile() {
 }
 
 function coreFile() {
-  return src("src/core.scss")
+  return src("src/_core.scss")
     .pipe(sass().on("error", sass.logError))
     .pipe(rename("yumma-core.css"))
     .pipe(dest("dist"));
