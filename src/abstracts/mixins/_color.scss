@@ -1,0 +1,37 @@
+@mixin color-scaling($property, $prefix, $k, $v) {
+  .#{$prefix}-#{$k} {
+    #{$property}: $v;
+  }
+
+  .h\:#{$prefix}-#{$k} {
+    &:hover {
+      #{$property}: $v;
+    }
+  }
+}
+
+@mixin shade-scaling($property, $prefix, $k, $v, $mod) {
+  @for $i from 1 through 6 {
+    // light variants
+    .#{$prefix}-l-#{$k}-#{$i} {
+      #{$property}: mix(white, $v, $i * $mod);
+    }
+
+    .h\:#{$prefix}-l-#{$k}-#{$i} {
+      &:hover {
+        #{$property}: mix(white, $v, $i * $mod);
+      }
+    }
+
+    // dark variants
+    .#{$prefix}-d-#{$k}-#{$i} {
+      #{$property}: mix(black, $v, $i * $mod);
+    }
+
+    .h\:#{$prefix}-d-#{$k}-#{$i} {
+      &:hover {
+        #{$property}: mix(black, $v, $i * $mod);
+      }
+    }
+  }
+}

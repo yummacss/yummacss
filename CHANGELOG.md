@@ -62,6 +62,7 @@ All notable changes to the Yumma CSS will be documented in this file.
 ### Added
 
 - Add `$yma-box-shadow-*` variables
+- Add `src\abstracts\mixins\_color.scss` partial file
 - Add `yummacss.config.js` file
 - Add Yumma CSS CLI
 
