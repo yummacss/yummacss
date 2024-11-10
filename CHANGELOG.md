@@ -2,7 +2,7 @@
 
 All notable changes to the Yumma CSS will be documented in this file.
 
-## [2.2.0-Unreleased]
+## [2.2.0]
 
 ### Added
 
@@ -15,9 +15,12 @@ All notable changes to the Yumma CSS will be documented in this file.
 
 - Merge **Filters** and **Effects** subcategories into a **FX** category
 - Rename `_extensions.scss` to `_maps.scss`
-- Rename the `*-variants()` mixins to `*-scaling()`.
-- Rename `core.scss` to `_core.scss`
+- Rename the `*-variants()` mixins to `*-scaling()`
+- Rename `_base.scss` to `_core.scss`
+- Move Core functionality to `yummacss.config.js` config file
+- Fix duplicated utility classes like: `mx-auto`, 
 
 ### Removed
 
-- None
+- Remove `yumma-core.css` and `yumma-core.min.css` from the `/dist` folder
+- Remove `_base.scss` file

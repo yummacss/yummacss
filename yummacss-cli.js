@@ -2,11 +2,12 @@
 
 const { program } = require("commander");
 const { PurgeCSS } = require("purgecss");
+const CleanCSS = require("clean-css");
 const fs = require("fs");
 const path = require("path");
 
 const configPath = path.resolve(process.cwd(), "yummacss.config.js");
-const cssFilePath = path.resolve(__dirname, "dist", "yumma.min.css");
+const cssFilePath = path.resolve(__dirname, "dist", "yumma.css");
 
 if (!fs.existsSync(configPath)) {
   console.error("Error: Your yummacss.config.js could not be found.");
@@ -17,6 +18,12 @@ const config = require(configPath);
 const contentPaths = config.content;
 const outputFilePath = config.output;
 
+const capabilities = {
+  core: true,
+  minify: false,
+  ...config.capabilities,
+};
+
 if (contentPaths.length === 0 || !outputFilePath) {
   console.error(
     "Error: Your 'yummacss.config.js' file is incomplete. See the documentation for info: https://yummacss.com/docs/configuration"
@@ -26,13 +33,23 @@ if (contentPaths.length === 0 || !outputFilePath) {
 
 async function purgeCSS() {
   try {
-    const purgeCSSRes = await new PurgeCSS().purge({
+    const purgeResult = await new PurgeCSS().purge({
       content: contentPaths,
       css: [cssFilePath],
       defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
     });
-    fs.writeFileSync(outputFilePath, purgeCSSRes[0].css, "utf-8");
+
+    let cssContent = purgeResult[0].css;
+
+    fs.writeFileSync(outputFilePath, cssContent, "utf-8");
     console.log(`Purged CSS file created at ${outputFilePath}`);
+
+    if (capabilities.minify) {
+      const minifiedCSS = new CleanCSS().minify(cssContent).styles;
+      const minifiedOutputPath = outputFilePath.replace(".css", ".min.css");
+      fs.writeFileSync(minifiedOutputPath, minifiedCSS, "utf-8");
+      console.log(`Minified CSS file created at ${minifiedOutputPath}`);
+    }
   } catch (err) {
     console.error("Error during CSS purging:", err);
   }
