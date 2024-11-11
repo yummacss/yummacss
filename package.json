@@ -20,10 +20,5 @@
   },
   "bin": {
     "yummacss": "./yummacss-cli.js"
-  },
-  "scripts": {
-    "build": "npm-run-all --sequential std min",
-    "min": "gulp minifiedFile",
-    "std": "gulp standardFile"
   }
 }

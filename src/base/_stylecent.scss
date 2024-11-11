@@ -1,0 +1,72 @@
+$core: true !default;
+
+@if $core {
+  *,
+  *::before,
+  *::after {
+    border-style: solid;
+    border-width: 0;
+    box-sizing: border-box;
+  }
+
+  * {
+    color: inherit;
+    font-family: $yma-font-system;
+    margin: 0;
+  }
+
+  body {
+    font-family: inherit;
+    line-height: 1.5;
+  }
+
+  canvas,
+  img,
+  picture,
+  svg,
+  video {
+    display: block;
+    max-width: 100%;
+  }
+
+  button,
+  input,
+  optgroup,
+  select,
+  textarea {
+    background-color: $yma-color-transparent;
+    font: inherit;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    font-size: inherit;
+    font-weight: inherit;
+    overflow-wrap: break-word;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  ol,
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  hr {
+    border-top: $yma-color-transparent;
+    border: 0;
+    margin: 1em 0;
+  }
+}

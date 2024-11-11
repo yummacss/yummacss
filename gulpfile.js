@@ -7,7 +7,7 @@ const sass = require("gulp-sass")(require("sass"));
 function standardFile() {
   const scssFiles = [
     "src/index.scss",
-    ...(config.capabilities.core ? ["./src/_core.scss"] : []),
+    ...(config.capabilities.stylecent ? ["./src/core.scss"] : []),
   ];
 
   return src(scssFiles)
@@ -23,7 +23,28 @@ function minifiedFile() {
     .pipe(dest("dist"));
 }
 
+function coreFile() {
+  return src("src/core.scss")
+    .pipe(sass().on("error", sass.logError))
+    .pipe(rename("yumma-core.css"))
+    .pipe(dest("dist"));
+}
+
+function minifiedCoreFile() {
+  return src("dist/yumma-core.css")
+    .pipe(clean())
+    .pipe(rename({ suffix: ".min" }))
+    .pipe(dest("dist"));
+}
+
 exports.standardFile = standardFile;
 exports.minifiedFile = minifiedFile;
+exports.coreFile = coreFile;
+exports.minifiedCoreFile = minifiedCoreFile;
 
-exports.default = series(standardFile, minifiedFile);
+exports.default = series(
+  standardFile,
+  minifiedFile,
+  coreFile,
+  minifiedCoreFile
+);
