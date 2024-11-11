@@ -1,16 +1,10 @@
 const { src, dest, series } = require("gulp");
 const clean = require("gulp-clean-css");
-const config = require("./yummacss.config.js");
 const rename = require("gulp-rename");
 const sass = require("gulp-sass")(require("sass"));
 
 function standardFile() {
-  const scssFiles = [
-    "src/index.scss",
-    ...(config.capabilities.stylecent ? ["./src/core.scss"] : []),
-  ];
-
-  return src(scssFiles)
+  return src("src/**/*.scss")
     .pipe(sass().on("error", sass.logError))
     .pipe(rename("yumma.css"))
     .pipe(dest("dist"));
