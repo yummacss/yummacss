@@ -37,7 +37,7 @@ async function purgeCSS() {
 
 program
   .command("build")
-  .description("Optimizes CSS for production.")
+  .description("Remove unused CSS classes from content files.")
   .action(() => {
     purgeCSS();
   });
