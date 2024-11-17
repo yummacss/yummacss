@@ -1,0 +1,27 @@
+@mixin scaling($property, $prefix, $unit) {
+  @for $i from 0 through 100 {
+    .#{$prefix}-#{$i} {
+      #{$property}: $i * $unit;
+    }
+
+    // Hover variant
+    .h\:#{$prefix}-#{$i}:hover {
+      #{$property}: $i * $unit;
+    }
+
+    @each $bp, $bp-value in $yma-breakpoints {
+      .#{$bp}\:#{$prefix}-#{$i} {
+        @include breakpoint($bp-value) {
+          #{$property}: $i * $unit;
+        }
+      }
+
+      // Media query hover variant
+      .h\:#{$bp}\:#{$prefix}-#{$i}:hover {
+        @include breakpoint($bp-value) {
+          #{$property}: $i * $unit;
+        }
+      }
+    }
+  }
+}

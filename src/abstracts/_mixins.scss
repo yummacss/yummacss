@@ -1,33 +1,5 @@
 @import "breakpoints";
 
-@mixin scaling($property, $prefix, $unit) {
-  @for $i from 0 through 100 {
-    .#{$prefix}-#{$i} {
-      #{$property}: $i * $unit;
-    }
-
-    // Hover variant
-    .h\:#{$prefix}-#{$i}:hover {
-      #{$property}: $i * $unit;
-    }
-
-    @each $bp, $bp-value in $yma-breakpoints {
-      .#{$bp}\:#{$prefix}-#{$i} {
-        @include breakpoint($bp-value) {
-          #{$property}: $i * $unit;
-        }
-      }
-
-      // Responsive hover variant
-      .h\:#{$bp}\:#{$prefix}-#{$i}:hover {
-        @include breakpoint($bp-value) {
-          #{$property}: $i * $unit;
-        }
-      }
-    }
-  }
-}
-
 @mixin dimension-scaling($prefix, $height-unit, $width-unit) {
   @for $i from 0 through 100 {
     .#{$prefix}-#{$i} {
@@ -180,38 +152,6 @@
         @include breakpoint($bp-value) {
           margin-top: calc(#{$i * $unit} * calc(1 - 0));
           margin-bottom: calc(#{$i * $unit} * 0);
-        }
-      }
-    }
-  }
-}
-
-// Utility extensions
-@mixin extensions($map, $prefixes) {
-  @each $k, $v in $map {
-    @each $prefix, $property in $prefixes {
-      .#{$prefix}-#{$k} {
-        #{$property}: $v;
-      }
-
-      // Hover variant
-      .h\:#{$prefix}-#{$k}:hover {
-        #{$property}: $v;
-      }
-
-      // Responsive hover variant
-      @each $bp, $bp-value in $yma-breakpoints {
-        .#{$bp}\:#{$prefix}-#{$k} {
-          @include breakpoint($bp-value) {
-            #{$property}: $v;
-          }
-        }
-
-        // Responsive hover variant
-        .h\:#{$bp}\:#{$prefix}-#{$k}:hover {
-          @include breakpoint($bp-value) {
-            #{$property}: $v;
-          }
         }
       }
     }

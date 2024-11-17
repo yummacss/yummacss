@@ -1,0 +1,30 @@
+@mixin extensions($map, $prefixes) {
+  @each $k, $v in $map {
+    @each $prefix, $property in $prefixes {
+      .#{$prefix}-#{$k} {
+        #{$property}: $v;
+      }
+
+      // Hover variant
+      .h\:#{$prefix}-#{$k}:hover {
+        #{$property}: $v;
+      }
+
+      // Responsive hover variant
+      @each $bp, $bp-value in $yma-breakpoints {
+        .#{$bp}\:#{$prefix}-#{$k} {
+          @include breakpoint($bp-value) {
+            #{$property}: $v;
+          }
+        }
+
+        // Responsive hover variant
+        .h\:#{$bp}\:#{$prefix}-#{$k}:hover {
+          @include breakpoint($bp-value) {
+            #{$property}: $v;
+          }
+        }
+      }
+    }
+  }
+}

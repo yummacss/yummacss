@@ -1,0 +1,42 @@
+@mixin create-utilities($map, $prefix, $property) {
+  @each $k, $v in map-get($map, "values") {
+    // Base utility variants
+    @if ($k == "default") {
+      .#{$prefix} {
+        #{$property}: $v;
+      }
+    } @else {
+      .#{$prefix}-#{$k} {
+        #{$property}: $v;
+      }
+    }
+
+    // Pseudo class variants
+    @if ($k == "default") {
+      .h\:#{$prefix}:hover {
+        #{$property}: $v;
+      }
+    } @else {
+      .h\:#{$prefix}-#{$k}:hover {
+        #{$property}: $v;
+      }
+    }
+  }
+
+  // Media query variants
+  @each $bp, $bp-value in $yma-breakpoints {
+    @media (min-width: $bp-value) {
+      @each $k, $v in map-get($map, "values") {
+        @if ($k == "default") {
+          .#{$bp}\:#{$prefix} {
+            #{$property}: $v;
+          }
+        } @else {
+          .#{$bp}\:#{$prefix}-#{$k} {
+            #{$property}: $v;
+          }
+        }
+      }
+    }
+  }
+}
