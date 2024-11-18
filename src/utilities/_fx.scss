@@ -1,27 +1,28 @@
 @use "sass:math";
-@use "abstracts/mixins/create-utilities";
+@use "../abstracts/variables" as vars;
+@use "../abstracts/mixins/" as m;
 
 $yma-fx-utils: (
   "backdrop-filter": (
     "prefix": "bf-b",
     "values": (
-      "none": blur($yma-backdrop-blur * 0),
-      "xs": blur($yma-backdrop-blur),
-      "sm": blur($yma-backdrop-blur * 2),
-      "md": blur($yma-backdrop-blur * 4),
-      "lg": blur($yma-backdrop-blur * 8),
-      "xl": blur($yma-backdrop-blur * 16),
+      "none": blur(vars.$yma-backdrop-blur * 0),
+      "xs": blur(vars.$yma-backdrop-blur),
+      "sm": blur(vars.$yma-backdrop-blur * 2),
+      "md": blur(vars.$yma-backdrop-blur * 4),
+      "lg": blur(vars.$yma-backdrop-blur * 8),
+      "xl": blur(vars.$yma-backdrop-blur * 16),
     ),
   ),
   "box-shadow": (
     "prefix": "bs",
     "values": (
       "none": none,
-      "xs": $yma-box-shadow-xs,
-      "sm": $yma-box-shadow-sm,
-      "md": $yma-box-shadow-md,
-      "lg": $yma-box-shadow-lg,
-      "xl": $yma-box-shadow-xl,
+      "xs": vars.$yma-box-shadow-xs,
+      "sm": vars.$yma-box-shadow-sm,
+      "md": vars.$yma-box-shadow-md,
+      "lg": vars.$yma-box-shadow-lg,
+      "xl": vars.$yma-box-shadow-xl,
     ),
   ),
 
@@ -46,5 +47,5 @@ $yma-fx-utils: (
 @each $property, $map in $yma-fx-utils {
   $prefix: map-get($map, "prefix");
 
-  @include create-utilities($map, $prefix, $property);
+  @include m.create-utilities($map, $prefix, $property);
 }

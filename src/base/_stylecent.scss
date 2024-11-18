@@ -1,3 +1,5 @@
+@use "../abstracts/variables" as vars;
+
 $core: true !default;
 
 @if $core {
@@ -11,7 +13,7 @@ $core: true !default;
 
   * {
     color: inherit;
-    font-family: $yma-font-system;
+    font-family: vars.$yma-font-system;
     margin: 0;
   }
 
@@ -34,7 +36,7 @@ $core: true !default;
   optgroup,
   select,
   textarea {
-    background-color: $yma-color-transparent;
+    background-color: vars.$yma-color-transparent;
     font: inherit;
   }
 
@@ -65,7 +67,7 @@ $core: true !default;
   }
 
   hr {
-    border-top: $yma-color-transparent;
+    border-top: vars.$yma-color-transparent;
     border: 0;
     margin: 1em 0;
   }

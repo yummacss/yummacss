@@ -1,20 +1,21 @@
 @use "sass:math";
-@use "abstracts/mixins/create-utilities";
+@use "../abstracts/variables" as vars;
+@use "../abstracts/mixins/" as m;
 
 $yma-typography-utils: (
   "font-size": (
     "prefix": "fs",
     "values": (
-      "xs": $yma-font-size-xs,
+      "xs": vars.$yma-font-size-xs,
       "b": 1rem,
-      "sm": $yma-font-size-sm,
-      "md": $yma-font-size-md,
-      "lg": $yma-font-size-lg,
-      "xl": $yma-font-size-xl,
-      "xxl": $yma-font-size-xxl,
-      "3xl": $yma-font-size-3xl,
-      "6xl": $yma-font-size-6xl,
-      "9xl": $yma-font-size-9xl,
+      "sm": vars.$yma-font-size-sm,
+      "md": vars.$yma-font-size-md,
+      "lg": vars.$yma-font-size-lg,
+      "xl": vars.$yma-font-size-xl,
+      "xxl": vars.$yma-font-size-xxl,
+      "3xl": vars.$yma-font-size-3xl,
+      "6xl": vars.$yma-font-size-6xl,
+      "9xl": vars.$yma-font-size-9xl,
     ),
   ),
 
@@ -107,11 +108,11 @@ $yma-typography-utils: (
   "text-decoration-thickness": (
     "prefix": "tdt",
     "values": (
-      "0": $yma-decoration-thickness * 0,
-      "1": $yma-decoration-thickness,
-      "2": $yma-decoration-thickness * 2,
-      "3": $yma-decoration-thickness * 3,
-      "4": $yma-decoration-thickness * 4,
+      "0": vars.$yma-decoration-thickness * 0,
+      "1": vars.$yma-decoration-thickness,
+      "2": vars.$yma-decoration-thickness * 2,
+      "3": vars.$yma-decoration-thickness * 3,
+      "4": vars.$yma-decoration-thickness * 4,
       "auto": auto,
       "ff": from-font,
     ),
@@ -129,5 +130,5 @@ $yma-typography-utils: (
 @each $property, $map in $yma-typography-utils {
   $prefix: map-get($map, "prefix");
 
-  @include create-utilities($map, $prefix, $property);
+  @include m.create-utilities($map, $prefix, $property);
 }

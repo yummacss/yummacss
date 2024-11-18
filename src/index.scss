@@ -1,28 +1,4 @@
-@import "abstracts/variables";
-@import "abstracts/theme";
-@import "abstracts/functions";
-
-@import "abstracts/mixins";
-@import "abstracts/mixins/create-utilities";
-@import "abstracts/mixins/color-utilities";
-@import "abstracts/mixins/scale-utilities";
-@import "abstracts/mixins/extend-utilities";
-
-@import "abstracts/breakpoints";
-@import "abstracts/layout";
-@import "abstracts/colors";
-@import "abstracts/maps";
-
-@import "utilities/borders";
-@import "utilities/box-model";
-@import "utilities/flexbox";
-@import "utilities/fx";
-@import "utilities/grid";
-@import "utilities/interactions";
-@import "utilities/layout";
-@import "utilities/outlines";
-@import "utilities/tables";
-@import "utilities/typography";
-
-@import "fonts";
-@import "base/stylecent";
+@use "abstracts" as *;
+@use "utilities" as *;
+@use "fonts";
+@use "base/stylecent";

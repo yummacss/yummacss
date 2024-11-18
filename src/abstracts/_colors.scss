@@ -1,29 +1,31 @@
-@import "mixins";
+@use "theme" as t;
+@use "mixins" as m;
+@use "functions" as f;
 
-@each $k, $v in $yma-theme {
-  @include color-scaling("accent-color", "ac", $k, $v);
-  @include color-scaling("background-color", "bg", $k, $v);
-  @include color-scaling("border-bottom-color", "bc-b", $k, $v);
-  @include color-scaling("border-color", "bc", $k, $v);
-  @include color-scaling("border-left-color", "bc-l", $k, $v);
-  @include color-scaling("border-right-color", "bc-r", $k, $v);
-  @include color-scaling("border-top-color", "bc-t", $k, $v);
-  @include color-scaling("caret-color", "cc", $k, $v);
-  @include color-scaling("color", "tc", $k, $v);
-  @include color-scaling("outline-color", "oc", $k, $v);
-  @include color-scaling("text-decoration-color", "tdc", $k, $v);
+@each $k, $v in t.$yma-theme {
+  @include m.color-scaling("accent-color", "ac", $k, $v);
+  @include m.color-scaling("background-color", "bg", $k, $v);
+  @include m.color-scaling("border-bottom-color", "bc-b", $k, $v);
+  @include m.color-scaling("border-color", "bc", $k, $v);
+  @include m.color-scaling("border-left-color", "bc-l", $k, $v);
+  @include m.color-scaling("border-right-color", "bc-r", $k, $v);
+  @include m.color-scaling("border-top-color", "bc-t", $k, $v);
+  @include m.color-scaling("caret-color", "cc", $k, $v);
+  @include m.color-scaling("color", "tc", $k, $v);
+  @include m.color-scaling("outline-color", "oc", $k, $v);
+  @include m.color-scaling("text-decoration-color", "tdc", $k, $v);
 
-  @if (is-not-mono($v, $yma-theme)) {
-    @include shade-scaling("accent-color", "ac", $k, $v, 10%);
-    @include shade-scaling("background-color", "bg", $k, $v, 10%);
-    @include shade-scaling("border-bottom-color", "bc-b", $k, $v, 10%);
-    @include shade-scaling("border-color", "bc", $k, $v, 10%);
-    @include shade-scaling("border-left-color", "bc-l", $k, $v, 10%);
-    @include shade-scaling("border-right-color", "bc-r", $k, $v, 10%);
-    @include shade-scaling("border-top-color", "bc-t", $k, $v, 10%);
-    @include shade-scaling("caret-color", "cc", $k, $v, 10%);
-    @include shade-scaling("color", "tc", $k, $v, 10%);
-    @include shade-scaling("outline-color", "oc", $k, $v, 10%);
-    @include shade-scaling("text-decoration-color", "tdc", $k, $v, 10%);
+  @if (f.is-not-mono($v, t.$yma-theme)) {
+    @include m.shade-scaling("accent-color", "ac", $k, $v, 10%);
+    @include m.shade-scaling("background-color", "bg", $k, $v, 10%);
+    @include m.shade-scaling("border-bottom-color", "bc-b", $k, $v, 10%);
+    @include m.shade-scaling("border-color", "bc", $k, $v, 10%);
+    @include m.shade-scaling("border-left-color", "bc-l", $k, $v, 10%);
+    @include m.shade-scaling("border-right-color", "bc-r", $k, $v, 10%);
+    @include m.shade-scaling("border-top-color", "bc-t", $k, $v, 10%);
+    @include m.shade-scaling("caret-color", "cc", $k, $v, 10%);
+    @include m.shade-scaling("color", "tc", $k, $v, 10%);
+    @include m.shade-scaling("outline-color", "oc", $k, $v, 10%);
+    @include m.shade-scaling("text-decoration-color", "tdc", $k, $v, 10%);
   }
 }

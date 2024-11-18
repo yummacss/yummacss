@@ -1,15 +1,16 @@
 @use "sass:math";
-@use "abstracts/mixins/create-utilities";
+@use "../abstracts/variables" as vars;
+@use "../abstracts/mixins/" as m;
 
 $yma-outline-utils: (
   "outline-offset": (
     "prefix": "oo",
     "values": (
-      "0": $yma-outline-offset * 0,
-      "1": $yma-outline-offset,
-      "2": $yma-outline-offset * 2,
-      "3": $yma-outline-offset * 3,
-      "4": $yma-outline-offset * 4,
+      "0": vars.$yma-outline-offset * 0,
+      "1": vars.$yma-outline-offset,
+      "2": vars.$yma-outline-offset * 2,
+      "3": vars.$yma-outline-offset * 3,
+      "4": vars.$yma-outline-offset * 4,
     ),
   ),
 
@@ -25,11 +26,11 @@ $yma-outline-utils: (
   "outline-width": (
     "prefix": "ow",
     "values": (
-      "0": $yma-outline-width * 0,
-      "1": $yma-outline-width,
-      "2": $yma-outline-width * 2,
-      "3": $yma-outline-width * 3,
-      "4": $yma-outline-width * 4,
+      "0": vars.$yma-outline-width * 0,
+      "1": vars.$yma-outline-width,
+      "2": vars.$yma-outline-width * 2,
+      "3": vars.$yma-outline-width * 3,
+      "4": vars.$yma-outline-width * 4,
     ),
   ),
 );
@@ -37,5 +38,5 @@ $yma-outline-utils: (
 @each $property, $map in $yma-outline-utils {
   $prefix: map-get($map, "prefix");
 
-  @include create-utilities($map, $prefix, $property);
+  @include m.create-utilities($map, $prefix, $property);
 }

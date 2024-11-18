@@ -1,5 +1,5 @@
 @use "sass:math";
-@use "abstracts/mixins/create-utilities";
+@use "../abstracts/mixins/" as m;
 
 $yma-box-model-utils: (
   "box-sizing": (
@@ -14,59 +14,5 @@ $yma-box-model-utils: (
 @each $property, $map in $yma-box-model-utils {
   $prefix: map-get($map, "prefix");
 
-  @include create-utilities($map, $prefix, $property);
+  @include m.create-utilities($map, $prefix, $property);
 }
-
-// variants
-@include dimension-scaling("dim", $yma-height, $yma-width);
-@include dimension-scaling("max-dim", $yma-height, $yma-width);
-@include dimension-scaling("min-dim", $yma-height, $yma-width);
-@include spacing-x("s-x", $yma-spacing);
-@include spacing-y("s-y", $yma-spacing);
-@include scaling("height", "h", $yma-height);
-@include scaling("margin-bottom", "mb", $yma-margin);
-@include scaling("margin-left", "ml", $yma-margin);
-@include scaling("margin-right", "mr", $yma-margin);
-@include scaling("margin-top", "mt", $yma-margin);
-@include scaling("margin", "m", $yma-margin);
-@include scaling("max-height", "max-h", $yma-height);
-@include scaling("max-width", "max-w", $yma-width);
-@include scaling("min-height", "min-h", $yma-height);
-@include scaling("min-width", "min-w", $yma-width);
-@include scaling("padding-bottom", "pb", $yma-padding);
-@include scaling("padding-left", "pl", $yma-padding);
-@include scaling("padding-right", "pr", $yma-padding);
-@include scaling("padding-top", "pt", $yma-padding);
-@include scaling("padding", "p", $yma-padding);
-@include scaling("width", "w", $yma-width);
-@include x-axis-scaling("margin", "mx", $yma-margin);
-@include x-axis-scaling("padding", "px", $yma-padding);
-@include y-axis-scaling("margin", "my", $yma-margin);
-@include y-axis-scaling("padding", "py", $yma-padding);
-
-// extensions
-@include extensions(
-  $yma-extension,
-  (
-    "h": height,
-    "max-h": max-height,
-    "max-w": max-width,
-    "min-h": min-height,
-    "min-w": min-width,
-    "w": width,
-  )
-);
-
-@include dimension-extensions($yma-extension);
-@include height-extensions($yma-height-extension);
-@include box-model-extensions($yma-extension, ("m"), "margin");
-@include box-model-extensions($yma-extension, ("mb"), "margin-bottom");
-@include box-model-extensions($yma-extension, ("ml"), "margin-left");
-@include box-model-extensions($yma-extension, ("mr"), "margin-right");
-@include box-model-extensions($yma-extension, ("mt"), "margin-top");
-@include box-model-extensions($yma-extension, ("p"), "padding");
-@include box-model-extensions($yma-extension, ("pb"), "padding-bottom");
-@include box-model-extensions($yma-extension, ("pl"), "padding-left");
-@include box-model-extensions($yma-extension, ("pr"), "padding-right");
-@include box-model-extensions($yma-extension, ("pt"), "padding-top");
-@include width-extensions($yma-width-extension);

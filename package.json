@@ -19,6 +19,6 @@
     "sass": "^1.62.1"
   },
   "bin": {
-    "yummacss": "./yummacss-cli.js"
+    "yummacss": "/bin/yumma-cli.js"
   }
 }

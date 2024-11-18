@@ -1,5 +1,4 @@
-@import "mixins";
-@import "breakpoints";
+@use "breakpoints" as *;
 
 .cnt {
   width: 100%;

@@ -1,5 +1,5 @@
 @use "sass:math";
-@use "abstracts/mixins/create-utilities";
+@use "../abstracts/mixins/" as m;
 
 $yma-flexbox-utils: (
   "align-content": (
@@ -142,16 +142,16 @@ $yma-flexbox-utils: (
 @each $property, $map in $yma-flexbox-utils {
   $prefix: map-get($map, "prefix");
 
-  @include create-utilities($map, $prefix, $property);
+  @include m.create-utilities($map, $prefix, $property);
 }
 
-// variants
-@include scaling("flex-basis", "fb", $yma-flex-basis);
+// // variants
+// @include scaling("flex-basis", "fb", $yma-flex-basis);
 
-// extensions
-@include extensions(
-  $yma-extension,
-  (
-    "fb": flex-basis,
-  )
-);
+// // extensions
+// @include extensions(
+//   $yma-extension,
+//   (
+//     "fb": flex-basis,
+//   )
+// );
