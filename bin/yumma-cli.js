@@ -1,45 +1,104 @@
 #!/usr/bin/env node
 
-const { program } = require("commander");
-const { PurgeCSS } = require("purgecss");
-const fs = require("fs");
-const path = require("path");
+import { program } from "commander";
+import { PurgeCSS } from "purgecss";
+import fs from "fs";
+import path from "path";
+import sass from "sass";
+import CleanCSS from "clean-css";
+import { fileURLToPath, pathToFileURL } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 const configPath = path.resolve(process.cwd(), "yummacss.config.js");
-const stylesPath = path.resolve(__dirname, "dist", "yumma.min.css");
 
 if (!fs.existsSync(configPath)) {
   console.error("The yummacss.config.js file is missing.");
   process.exit(1);
 }
 
-const config = require(configPath);
-const contentPath = config.content;
-const outputPath = config.output;
+let config;
 
-if (contentPath.length === 0 || !outputPath) {
+try {
+  const importedConfig = await import(pathToFileURL(configPath).href);
+  config = importedConfig.config;
+} catch (err) {
+  console.error("Error loading yummacss.config.js:", err);
+  process.exit(1);
+}
+
+const { content = [], output = "yumma.css", capabilities = {} } = config;
+const { core = true, minify = true } = capabilities;
+
+const outputPath = path.resolve(process.cwd(), output);
+const scssEntryPoint = core
+  ? path.resolve(__dirname, "../src/index.scss")
+  : path.resolve(__dirname, "../src/coreless.scss");
+
+if (content.length === 0 || !output) {
   console.error("The yummacss.config.js file is misconfigured.");
   process.exit(1);
 }
 
+async function buildCSS() {
+  try {
+    console.log("Compiling SCSS...");
+    const result = sass.compile(scssEntryPoint, { quietDeps: !core });
+    let css = result.css;
+
+    if (minify) {
+      console.log("Minifying CSS...");
+      const minified = new CleanCSS().minify(css);
+      if (minified.errors.length > 0) {
+        throw new Error(minified.errors.join("\n"));
+      }
+      css = minified.styles;
+    }
+
+    console.log(`Writing CSS to ${outputPath}`);
+    fs.writeFileSync(outputPath, css, "utf-8");
+  } catch (err) {
+    console.error("CSS build failed:", err);
+    process.exit(1);
+  }
+}
+
 async function purgeCSS() {
   try {
-    const res = await new PurgeCSS().purge({
-      content: contentPath,
-      css: [stylesPath],
+    console.log("Purging unused CSS...");
+    const purgeResult = await new PurgeCSS().purge({
+      content: content,
+      css: [outputPath],
       defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
     });
-    fs.writeFileSync(outputPath, res[0].css, "utf-8");
-    console.log(`The ${outputPath} has been rebuilt`);
+
+    const purgedOutputPath = path.resolve(process.cwd(), output);
+    fs.writeFileSync(purgedOutputPath, purgeResult[0].css, "utf-8");
+    console.log(`Purged CSS written to ${purgedOutputPath}`);
   } catch (err) {
-    console.error("Purge process failed due to:", err);
+    console.error("CSS purge failed:", err);
+    process.exit(1);
   }
 }
 
 program
   .command("build")
-  .description("Remove unused CSS classes from content files.")
-  .action(() => {
-    purgeCSS();
+  .description("Build and optimize CSS based on your configuration.")
+  .action(async () => {
+    try {
+      await buildCSS();
+
+      if (content.length > 0) {
+        await purgeCSS();
+      } else {
+        console.log(
+          "Skipping CSS purge: no content files specified in the configuration."
+        );
+      }
+    } catch (err) {
+      console.error("Build process failed:", err);
+    }
   });
 
 program.parse(process.argv);

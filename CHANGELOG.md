@@ -6,9 +6,9 @@ All notable changes to the Yumma CSS will be documented in this file.
 
 ### Added
 
-- Add `_create-utilities.scss`, `_extend-utilities.scss` and `_scale-utilities.scss` files
+- Add `_color-utilities.scss`, `_create-utilities.scss`, `_extend-utilities.scss` and `_scale-utilities.scss` partial files
 - Add `$yma-box-shadow-*` variables
-- Add `src\abstracts\mixins\_color.scss` partial file
+- Add `coreless.scss` file
 - Add `yummacss.config.js` file
 - Add Yumma CSS CLI
 
@@ -16,16 +16,25 @@ All notable changes to the Yumma CSS will be documented in this file.
 
 - Distribution files optimization
 - Globally replace the keyword `@import` with `@use`
+- Group media queries.
+- Group pseudo-class variants.
 - Merge **Filters** and **Effects** subcategories into a **FX** category
-- Move  `yumma-cli` to `bin\yumma-cli.js`
-- New Core functionality to `yummacss.config.js` config file
+- Migrate from Common Js to ESM
+- Migrate Stylecent functionality to config file
+- Move `yumma-cli` to `bin\yumma-cli.js`
+- Optimize `dist/yumma.css` file performance
+- Optimize `dist/yumma.min.css` file performance
 - Rename `_base.scss` to `base\stylecent.scss`
 - Rename `_core.scss` to `core.scss`
 - Rename `_extensions.scss` to `_maps.scss`
+- Rename `gulpfile.js` file name to `gulpfile.mjs`
 - Rename `src\abstracts\mixins\_color.scss` to `src\abstracts\mixins\_color-utils.scss`
 - Rename `yummacss-cli` file to `yumma-cli`
 - Rename the `*-variants()` mixins to `*-scaling()`
-
+  
 ### Removed
 
-- None
+- Remove `coreFile()` function
+- Remove `minifiedCoreFile()` function
+- Remove `yumma-core.css` file
+- Remove `yumma-core.min.scss` file
