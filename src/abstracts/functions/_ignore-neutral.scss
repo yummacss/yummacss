@@ -1,7 +1,7 @@
 @use "../theme" as *;
 
 // prettier-ignore
-@function is-not-mono($v, $yma-theme) {
+@function ignore-neutral($v, $yma-theme) {
   @return $v != map-get($yma-theme, "black") 
       and $v != map-get($yma-theme, "white") 
       and $v != map-get($yma-theme, "transparent");

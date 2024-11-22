@@ -15,7 +15,7 @@
   @include m.color-scaling("outline-color", "oc", $k, $v);
   @include m.color-scaling("text-decoration-color", "tdc", $k, $v);
 
-  @if (f.is-not-mono($v, t.$yma-theme)) {
+  @if (f.ignore-neutral($v, t.$yma-theme)) {
     @include m.shade-scaling("accent-color", "ac", $k, $v, 10%);
     @include m.shade-scaling("background-color", "bg", $k, $v, 10%);
     @include m.shade-scaling("border-bottom-color", "bc-b", $k, $v, 10%);

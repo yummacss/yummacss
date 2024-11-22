@@ -1,43 +1,219 @@
 @use "sass:math";
+@use "../abstracts/variables" as vars;
 @use "../abstracts/mixins/" as m;
+@use "../utilities/maps/" as ma;
 
 $yma-box-model-utils: (
   "box-sizing": (
+    "properties": (
+      "box-sizing",
+    ),
     "prefix": "bs",
     "values": (
       "bb": border-box,
       "cb": content-box,
     ),
-    // Dimension
-    // Max Dimension
-    // Min Dimension
-    // Height
-    // Max Height
-    // Min Height
-    // Margin
-    // Margin Bottom
-    // Margin Left
-    // Margin Right
-    // Margin Top
-    // Margin X
-    // Margin Y
-    // Padding 
-    // Padding Bottom
-    // Padding Left
-    // Padding Right
-    // Padding Top
-    // Padding X
-    // Padding Y
-    // Spacing X
-    // Spacing Y
-    // Width
-    // Max Width
-    // Min Width
+  ),
+
+  "dimension": (
+    "prefix": "d",
+    "properties": (
+      "height",
+      "width",
+    ),
+    "values": ma.$yma-dimension-map,
+  ),
+
+  "max-dimension": (
+    "prefix": "max-d",
+    "properties": (
+      "max-height",
+      "max-width",
+    ),
+    "values": ma.$yma-dimension-map,
+  ),
+
+  "min-dimension": (
+    "prefix": "min-d",
+    "properties": (
+      "min-height",
+      "min-width",
+    ),
+    "values": ma.$yma-dimension-map,
+  ),
+
+  "height": (
+    "prefix": "h",
+    "properties": (
+      "height",
+    ),
+    "values": ma.$yma-height-map,
+  ),
+
+  "max-height": (
+    "prefix": "h",
+    "properties": (
+      "max-height",
+    ),
+    "values": ma.$yma-height-map,
+  ),
+
+  "min-height": (
+    "prefix": "h",
+    "properties": (
+      "min-height",
+    ),
+    "values": ma.$yma-height-map,
+  ),
+
+  "margin": (
+    "prefix": "m",
+    "properties": (
+      "margin",
+    ),
+    "values": ma.$yma-margin-map,
+  ),
+
+  "margin-bottom": (
+    "prefix": "mb",
+    "properties": (
+      "margin-bottom",
+    ),
+    "values": ma.$yma-margin-map,
+  ),
+
+  "margin-left": (
+    "prefix": "ml",
+    "properties": (
+      "margin-left",
+    ),
+    "values": ma.$yma-margin-map,
+  ),
+
+  "margin-right": (
+    "prefix": "mr",
+    "properties": (
+      "margin-right",
+    ),
+    "values": ma.$yma-margin-map,
+  ),
+
+  "margin-top": (
+    "prefix": "mt",
+    "properties": (
+      "margin-top",
+    ),
+    "values": ma.$yma-margin-map,
+  ),
+
+  "margin-x": (
+    "prefix": "mx",
+    "properties": (
+      "margin-bottom",
+      "margin-top",
+    ),
+    "values": ma.$yma-margin-map,
+  ),
+
+  "margin-y": (
+    "prefix": "my",
+    "properties": (
+      "margin-left",
+      "margin-right",
+    ),
+    "values": ma.$yma-margin-map,
+  ),
+
+  "padding": (
+    "prefix": "p",
+    "properties": (
+      "padding",
+    ),
+    "values": ma.$yma-padding-map,
+  ),
+
+  "padding-bottom": (
+    "prefix": "pb",
+    "properties": (
+      "padding-bottom",
+    ),
+    "values": ma.$yma-padding-map,
+  ),
+
+  "padding-left": (
+    "prefix": "pl",
+    "properties": (
+      "padding-left",
+    ),
+    "values": ma.$yma-padding-map,
+  ),
+
+  "padding-right": (
+    "prefix": "pr",
+    "properties": (
+      "padding-right",
+    ),
+    "values": ma.$yma-padding-map,
+  ),
+
+  "padding-top": (
+    "prefix": "pt",
+    "properties": (
+      "padding-top",
+    ),
+    "values": ma.$yma-padding-map,
+  ),
+
+  "padding-x": (
+    "prefix": "px",
+    "properties": (
+      "padding-bottom",
+      "padding-top",
+    ),
+    "values": ma.$yma-padding-map,
+  ),
+
+  "padding-y": (
+    "prefix": "py",
+    "properties": (
+      "padding-left",
+      "padding-right",
+    ),
+    "values": ma.$yma-padding-map,
+  ),
+
+  // Spacing X
+  // Spacing Y
+
+  "width":
+    (
+      "prefix": "h",
+      "properties": (
+        "width",
+      ),
+      "values": ma.$yma-width-map,
+    ),
+
+  "max-width": (
+    "prefix": "h",
+    "properties": (
+      "max-width",
+    ),
+    "values": ma.$yma-width-map,
+  ),
+
+  "min-width": (
+    "prefix": "h",
+    "properties": (
+      "min-width",
+    ),
+    "values": ma.$yma-width-map,
   ),
 );
 
-@each $property, $map in $yma-box-model-utils {
+@each $name, $map in $yma-box-model-utils {
   $prefix: map-get($map, "prefix");
+  $properties: map-get($map, "properties");
 
-  @include m.create-utilities($map, $prefix, $property);
+  @include m.create-utilities($map, $prefix, $properties);
 }

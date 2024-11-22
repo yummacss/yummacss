@@ -1,0 +1,52 @@
+@use "sass:map";
+@use "../../abstracts/functions/generate-values" as f;
+@use "../../abstracts/variables" as vars;
+
+$yma-padding-map: map.merge(
+  (
+    "auto": auto,
+  ),
+  f.generate-values(vars.$yma-padding)
+);
+
+$yma-padding-bottom-map: map.merge(
+  (
+    "auto": auto,
+  ),
+  f.generate-values(vars.$yma-padding)
+);
+
+$yma-padding-left-map: map.merge(
+  (
+    "auto": auto,
+  ),
+  f.generate-values(vars.$yma-padding)
+);
+
+$yma-padding-right-map: map.merge(
+  (
+    "auto": auto,
+  ),
+  f.generate-values(vars.$yma-padding)
+);
+
+$yma-padding-top-map: map.merge(
+  (
+    "auto": auto,
+  ),
+  f.generate-values(vars.$yma-padding)
+);
+
+$yma-padding-x-map: map.merge(
+  (
+    "auto": auto,
+  ),
+  f.generate-values(vars.$yma-padding)
+);
+
+$yma-padding-y-map: map.merge(
+  (
+    "auto": auto,
+  ),
+  f.generate-values(vars.$yma-padding)
+);

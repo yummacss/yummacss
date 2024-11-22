@@ -1,0 +1,16 @@
+@use "sass:map";
+
+@function generate-values($variable, $min: 0, $max: 100) {
+  $values: ();
+
+  @for $i from $min through $max {
+    $values: map.merge(
+      $values,
+      (
+        "#{$i}": $variable * $i,
+      )
+    );
+  }
+
+  @return $values;
+}
