@@ -1,25 +1,17 @@
 @use "../breakpoints" as b;
 
-@mixin create-utilities($map, $prefix, $property) {
+@mixin create-utilities($map, $prefix, $properties) {
   @each $k, $v in map-get($map, "values") {
     // Base utilities
-    @if ($k == "default") {
-      .#{$prefix} {
-        #{$property}: $v;
-      }
-    } @else {
-      .#{$prefix}-#{$k} {
+    .#{$prefix}-#{$k} {
+      @each $property in $properties {
         #{$property}: $v;
       }
     }
 
     // Hover variants
-    @if ($k == "default") {
-      .h\:#{$prefix}:hover {
-        #{$property}: $v;
-      }
-    } @else {
-      .h\:#{$prefix}-#{$k}:hover {
+    .h\:#{$prefix}-#{$k}:hover {
+      @each $property in $properties {
         #{$property}: $v;
       }
     }
@@ -29,12 +21,8 @@
   @each $bp, $bp-value in b.$yma-breakpoints {
     @media (min-width: $bp-value) {
       @each $k, $v in map-get($map, "values") {
-        @if ($k == "default") {
-          .#{$bp}\:#{$prefix} {
-            #{$property}: $v;
-          }
-        } @else {
-          .#{$bp}\:#{$prefix}-#{$k} {
+        .#{$bp}\:#{$prefix}-#{$k} {
+          @each $property in $properties {
             #{$property}: $v;
           }
         }
