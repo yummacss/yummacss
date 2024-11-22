@@ -9,7 +9,9 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Add `_color-utilities.scss`, `_create-utilities.scss`, `_extend-utilities.scss` and `_scale-utilities.scss` partial files
 - Add `$yma-box-shadow-*` variables
 - Add `coreless.scss` file
+- Add `src\abstracts\functions` folder
 - Add `yummacss.config.js` file
+- Add multiple `_index.scss` files
 - Add Yumma CSS CLI
 
 ### Changes
@@ -27,6 +29,7 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Rename `_base.scss` to `base\stylecent.scss`
 - Rename `_core.scss` to `core.scss`
 - Rename `_extensions.scss` to `_maps.scss`
+- Rename `_functions.scss` to `_is-not-mono.scss`
 - Rename `gulpfile.js` file name to `gulpfile.mjs`
 - Rename `src\abstracts\mixins\_color.scss` to `src\abstracts\mixins\_color-utils.scss`
 - Rename `yummacss-cli` file to `yumma-cli`

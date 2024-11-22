@@ -2,7 +2,7 @@
 
 @mixin create-utilities($map, $prefix, $property) {
   @each $k, $v in map-get($map, "values") {
-    // Base utility variants
+    // Base utilities
     @if ($k == "default") {
       .#{$prefix} {
         #{$property}: $v;
@@ -13,7 +13,7 @@
       }
     }
 
-    // Pseudo class variants
+    // Hover variants
     @if ($k == "default") {
       .h\:#{$prefix}:hover {
         #{$property}: $v;
@@ -25,7 +25,7 @@
     }
   }
 
-  // Media query variants
+  // Responsive variants
   @each $bp, $bp-value in b.$yma-breakpoints {
     @media (min-width: $bp-value) {
       @each $k, $v in map-get($map, "values") {
