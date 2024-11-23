@@ -182,6 +182,24 @@ $yma-box-model-utils: (
     "values": ma.$yma-padding-map,
   ),
 
+  "spacing-x": (
+    "prefix": "sx",
+    "properties": (
+      "margin-bottom",
+      "margin-top",
+    ),
+    "values": ma.$yma-spacing-map,
+  ),
+
+  "spacing-y": (
+    "prefix": "sy",
+    "properties": (
+      "margin-left",
+      "margin-right",
+    ),
+    "values": ma.$yma-spacing-map,
+  ),
+
   "width":
     (
       "prefix": "h",

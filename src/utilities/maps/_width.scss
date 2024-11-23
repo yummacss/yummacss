@@ -1,5 +1,5 @@
 @use "sass:map";
-@use "../../abstracts/functions/generate-values" as f;
+@use "../../abstracts/functions/create-values" as f;
 @use "../../abstracts/variables" as vars;
 
 $yma-width-map: map.merge(
@@ -13,7 +13,7 @@ $yma-width-map: map.merge(
     "max": max-content,
     "min": min-content,
   ),
-  f.generate-values(vars.$yma-width)
+  f.create-values(vars.$yma-width)
 );
 
 $yma-max-width-map: map.merge(
@@ -27,7 +27,7 @@ $yma-max-width-map: map.merge(
     "max": max-content,
     "min": min-content,
   ),
-  f.generate-values(vars.$yma-width)
+  f.create-values(vars.$yma-width)
 );
 
 $yma-min-width-map: map.merge(
@@ -41,5 +41,5 @@ $yma-min-width-map: map.merge(
     "max": max-content,
     "min": min-content,
   ),
-  f.generate-values(vars.$yma-width)
+  f.create-values(vars.$yma-width)
 );

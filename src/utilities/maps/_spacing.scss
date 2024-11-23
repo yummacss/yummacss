@@ -1,0 +1,17 @@
+@use "sass:map";
+@use "../../abstracts/functions/create-values" as f;
+@use "../../abstracts/variables" as vars;
+
+$yma-spacing-x-map: map.merge(
+  (
+    "auto": auto,
+  ),
+  f.create-values(vars.$yma-spacing)
+);
+
+$yma-spacing-y-map: map.merge(
+  (
+    "auto": auto,
+  ),
+  f.create-values(vars.$yma-spacing)
+);

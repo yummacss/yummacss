@@ -7,7 +7,7 @@ All notable changes to the Yumma CSS will be documented in this file.
 ### Added
 
 - Add `_color-utilities.scss`, `_create-utilities.scss`, `_extend-utilities.scss` and `_scale-utilities.scss` partial files
-- Add `_generate-values.scss` file
+- Add `_create-values.scss` file
 - Add `$yma-box-shadow-*` variables
 - Add `coreless.scss` file
 - Add `src\abstracts\functions` folder
