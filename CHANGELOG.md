@@ -38,6 +38,7 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Rename `yummacss-cli` file to `yumma-cli`
 - Rename the `*-variants()` mixins to `*-scaling()`
 - Rework **Box Model** utilities generation
+- Update color shade percentage from `10%` to `14%`
 
 ### Removed
 

@@ -10,27 +10,27 @@
   }
 }
 
-@mixin shade-scaling($property, $prefix, $k, $v, $mod) {
+@mixin shade-scaling($property, $prefix, $k, $v, $percentage) {
   @for $i from 1 through 6 {
     // light variants
     .#{$prefix}-l-#{$k}-#{$i} {
-      #{$property}: mix(white, $v, $i * $mod);
+      #{$property}: mix(white, $v, $i * $percentage);
     }
 
     .h\:#{$prefix}-l-#{$k}-#{$i} {
       &:hover {
-        #{$property}: mix(white, $v, $i * $mod);
+        #{$property}: mix(white, $v, $i * $percentage);
       }
     }
 
     // dark variants
     .#{$prefix}-d-#{$k}-#{$i} {
-      #{$property}: mix(black, $v, $i * $mod);
+      #{$property}: mix(black, $v, $i * $percentage);
     }
 
     .h\:#{$prefix}-d-#{$k}-#{$i} {
       &:hover {
-        #{$property}: mix(black, $v, $i * $mod);
+        #{$property}: mix(black, $v, $i * $percentage);
       }
     }
   }

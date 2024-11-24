@@ -16,16 +16,16 @@
   @include m.color-scaling("text-decoration-color", "tdc", $k, $v);
 
   @if (f.ignore-neutral($v, t.$yma-theme)) {
-    @include m.shade-scaling("accent-color", "ac", $k, $v, 10%);
-    @include m.shade-scaling("background-color", "bg", $k, $v, 10%);
-    @include m.shade-scaling("border-bottom-color", "bc-b", $k, $v, 10%);
-    @include m.shade-scaling("border-color", "bc", $k, $v, 10%);
-    @include m.shade-scaling("border-left-color", "bc-l", $k, $v, 10%);
-    @include m.shade-scaling("border-right-color", "bc-r", $k, $v, 10%);
-    @include m.shade-scaling("border-top-color", "bc-t", $k, $v, 10%);
-    @include m.shade-scaling("caret-color", "cc", $k, $v, 10%);
-    @include m.shade-scaling("color", "tc", $k, $v, 10%);
-    @include m.shade-scaling("outline-color", "oc", $k, $v, 10%);
-    @include m.shade-scaling("text-decoration-color", "tdc", $k, $v, 10%);
+    @include m.shade-scaling("accent-color", "ac", $k, $v, 14%);
+    @include m.shade-scaling("background-color", "bg", $k, $v, 14%);
+    @include m.shade-scaling("border-bottom-color", "bc-b", $k, $v, 14%);
+    @include m.shade-scaling("border-color", "bc", $k, $v, 14%);
+    @include m.shade-scaling("border-left-color", "bc-l", $k, $v, 14%);
+    @include m.shade-scaling("border-right-color", "bc-r", $k, $v, 14%);
+    @include m.shade-scaling("border-top-color", "bc-t", $k, $v, 14%);
+    @include m.shade-scaling("caret-color", "cc", $k, $v, 14%);
+    @include m.shade-scaling("color", "tc", $k, $v, 14%);
+    @include m.shade-scaling("outline-color", "oc", $k, $v, 14%);
+    @include m.shade-scaling("text-decoration-color", "tdc", $k, $v, 14%);
   }
 }
