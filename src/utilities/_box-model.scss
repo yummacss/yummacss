@@ -1,6 +1,6 @@
 @use "sass:math";
 @use "../abstracts/variables" as vars;
-@use "../abstracts/mixins/" as m;
+@use "../abstracts/mixins/" as mi;
 @use "../utilities/maps/" as ma;
 
 $yma-box-model-utils: (
@@ -200,14 +200,13 @@ $yma-box-model-utils: (
     "values": ma.$yma-spacing-y-map,
   ),
 
-  "width":
-    (
-      "prefix": "h",
-      "properties": (
-        "width",
-      ),
-      "values": ma.$yma-width-map,
+  "width": (
+    "prefix": "h",
+    "properties": (
+      "width",
     ),
+    "values": ma.$yma-width-map,
+  ),
 
   "max-width": (
     "prefix": "h",
@@ -230,5 +229,5 @@ $yma-box-model-utils: (
   $prefix: map-get($map, "prefix");
   $properties: map-get($map, "properties");
 
-  @include m.create-utilities($map, $prefix, $properties);
+  @include mi.create-utilities($map, $prefix, $properties);
 }

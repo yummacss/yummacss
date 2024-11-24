@@ -1,6 +1,6 @@
 @use "sass:math";
 @use "../abstracts/variables" as vars;
-@use "../abstracts/mixins/" as m;
+@use "../abstracts/mixins/" as mi;
 
 $yma-border-utils: (
   "border-collapse": (
@@ -176,5 +176,5 @@ $yma-border-utils: (
 @each $property, $map in $yma-border-utils {
   $prefix: map-get($map, "prefix");
 
-  @include m.create-utilities($map, $prefix, $property);
+  @include mi.create-utilities($map, $prefix, $property);
 }

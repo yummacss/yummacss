@@ -1,6 +1,6 @@
 @use "sass:math";
 @use "../abstracts/variables" as vars;
-@use "../abstracts/mixins/" as m;
+@use "../abstracts/mixins/" as mi;
 
 $yma-fx-utils: (
   "backdrop-filter": (
@@ -47,5 +47,5 @@ $yma-fx-utils: (
 @each $property, $map in $yma-fx-utils {
   $prefix: map-get($map, "prefix");
 
-  @include m.create-utilities($map, $prefix, $property);
+  @include mi.create-utilities($map, $prefix, $property);
 }

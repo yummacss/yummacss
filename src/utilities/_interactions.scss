@@ -1,5 +1,5 @@
 @use "sass:math";
-@use "../abstracts/mixins/" as m;
+@use "../abstracts/mixins/" as mi;
 
 $yma-interaction-utils: (
   "appearance": (
@@ -72,5 +72,5 @@ $yma-interaction-utils: (
 @each $property, $map in $yma-interaction-utils {
   $prefix: map-get($map, "prefix");
 
-  @include m.create-utilities($map, $prefix, $property);
+  @include mi.create-utilities($map, $prefix, $property);
 }
