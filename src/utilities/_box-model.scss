@@ -109,8 +109,8 @@ $yma-box-model-utils: (
   "margin-x": (
     "prefix": "mx",
     "properties": (
-      "margin-bottom",
-      "margin-top",
+      "margin-left",
+      "margin-right",
     ),
     "values": ma.$yma-margin-map,
   ),
@@ -118,8 +118,8 @@ $yma-box-model-utils: (
   "margin-y": (
     "prefix": "my",
     "properties": (
-      "margin-left",
-      "margin-right",
+      "margin-bottom",
+      "margin-top",
     ),
     "values": ma.$yma-margin-map,
   ),
@@ -167,8 +167,8 @@ $yma-box-model-utils: (
   "padding-x": (
     "prefix": "px",
     "properties": (
-      "padding-bottom",
-      "padding-top",
+      "padding-left",
+      "padding-right",
     ),
     "values": ma.$yma-padding-map,
   ),
@@ -176,8 +176,8 @@ $yma-box-model-utils: (
   "padding-y": (
     "prefix": "py",
     "properties": (
-      "padding-left",
-      "padding-right",
+      "padding-bottom",
+      "padding-top",
     ),
     "values": ma.$yma-padding-map,
   ),
