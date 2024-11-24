@@ -1,9 +1,14 @@
 @use "sass:math";
+@use "../abstracts/variables" as vars;
 @use "../abstracts/mixins/" as m;
+@use "../utilities/maps/" as ma;
 
 $yma-flexbox-utils: (
   "align-content": (
     "prefix": "ac",
+    "properties": (
+      "align-content",
+    ),
     "values": (
       "b": baseline,
       "c": center,
@@ -19,6 +24,9 @@ $yma-flexbox-utils: (
 
   "align-items": (
     "prefix": "ai",
+    "properties": (
+      "align-items",
+    ),
     "values": (
       "b": baseline,
       "c": center,
@@ -30,6 +38,9 @@ $yma-flexbox-utils: (
 
   "align-self": (
     "prefix": "as",
+    "properties": (
+      "align-self",
+    ),
     "values": (
       "auto": auto,
       "b": baseline,
@@ -40,8 +51,19 @@ $yma-flexbox-utils: (
     ),
   ),
 
+  "flex-basis": (
+    "prefix": "fb",
+    "properties": (
+      "flex-basis",
+    ),
+    "values": ma.$yma-flex-basis-map,
+  ),
+
   "flex-direction": (
     "prefix": "fd",
+    "properties": (
+      "flex-direction",
+    ),
     "values": (
       "c": column,
       "cr": column-reverse,
@@ -52,6 +74,9 @@ $yma-flexbox-utils: (
 
   "flex-grow": (
     "prefix": "fg",
+    "properties": (
+      "flex-grow",
+    ),
     "values": (
       "0": 0,
       "1": 1,
@@ -67,6 +92,9 @@ $yma-flexbox-utils: (
 
   "flex-shrink": (
     "prefix": "fs",
+    "properties": (
+      "flex-shrink",
+    ),
     "values": (
       "0": 0,
       "1": 1,
@@ -82,6 +110,9 @@ $yma-flexbox-utils: (
 
   "flex-wrap": (
     "prefix": "fw",
+    "properties": (
+      "flex-wrap",
+    ),
     "values": (
       "nw": nowrap,
       "w": wrap,
@@ -91,6 +122,9 @@ $yma-flexbox-utils: (
 
   "flex": (
     "prefix": "f",
+    "properties": (
+      "flex",
+    ),
     "values": (
       "1": 1 1 0%,
       "2": 2 2 0%,
@@ -105,6 +139,9 @@ $yma-flexbox-utils: (
 
   "justify-content": (
     "prefix": "jc",
+    "properties": (
+      "justify-content",
+    ),
     "values": (
       "c": center,
       "fe": flex-end,
@@ -119,6 +156,9 @@ $yma-flexbox-utils: (
 
   "justify-items": (
     "prefix": "ji",
+    "properties": (
+      "justify-items",
+    ),
     "values": (
       "c": center,
       "e": end,
@@ -129,6 +169,9 @@ $yma-flexbox-utils: (
 
   "justify-self": (
     "prefix": "js",
+    "properties": (
+      "justify-self",
+    ),
     "values": (
       "auto": auto,
       "c": center,
@@ -139,19 +182,9 @@ $yma-flexbox-utils: (
   ),
 );
 
-@each $property, $map in $yma-flexbox-utils {
+@each $name, $map in $yma-flexbox-utils {
   $prefix: map-get($map, "prefix");
+  $properties: map-get($map, "properties");
 
-  @include m.create-utilities($map, $prefix, $property);
+  @include m.create-utilities($map, $prefix, $properties);
 }
-
-// // variants
-// @include scaling("flex-basis", "fb", $yma-flex-basis);
-
-// // extensions
-// @include extensions(
-//   $yma-extension,
-//   (
-//     "fb": flex-basis,
-//   )
-// );

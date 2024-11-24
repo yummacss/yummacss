@@ -1,0 +1,12 @@
+@use "sass:map";
+@use "../../../abstracts/functions/create-values" as f;
+@use "../../../abstracts/variables" as vars;
+
+$yma-flex-basis-map: map.merge(
+  (
+    "auto": auto,
+    "full": 100%,
+    "half": 50%,
+  ),
+  f.create-values(vars.$yma-flex-basis)
+);

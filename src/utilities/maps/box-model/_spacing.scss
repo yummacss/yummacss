@@ -1,6 +1,6 @@
 @use "sass:map";
-@use "../../abstracts/functions/create-values" as f;
-@use "../../abstracts/variables" as vars;
+@use "../../../abstracts/functions/create-values" as f;
+@use "../../../abstracts/variables" as vars;
 
 $yma-spacing-x-map: map.merge(
   (

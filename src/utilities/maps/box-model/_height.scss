@@ -1,8 +1,8 @@
 @use "sass:map";
-@use "../../abstracts/functions/create-values" as f;
-@use "../../abstracts/variables" as vars;
+@use "../../../abstracts/functions/create-values" as f;
+@use "../../../abstracts/variables" as vars;
 
-$yma-dimension-map: map.merge(
+$yma-height-map: map.merge(
   (
     "1\\/1": 100dvh,
     "1\\/2": 50dvh,
@@ -13,10 +13,10 @@ $yma-dimension-map: map.merge(
     "max": max-content,
     "min": min-content,
   ),
-  f.create-values(vars.$yma-dimension)
+  f.create-values(vars.$yma-height)
 );
 
-$yma-max-dimension-map: map.merge(
+$yma-max-height-map: map.merge(
   (
     "1\\/1": 100dvh,
     "1\\/2": 50dvh,
@@ -27,10 +27,10 @@ $yma-max-dimension-map: map.merge(
     "max": max-content,
     "min": min-content,
   ),
-  f.create-values(vars.$yma-dimension)
+  f.create-values(vars.$yma-height)
 );
 
-$yma-min-dimension-map: map.merge(
+$yma-min-height-map: map.merge(
   (
     "1\\/1": 100dvh,
     "1\\/2": 50dvh,
@@ -41,5 +41,5 @@ $yma-min-dimension-map: map.merge(
     "max": max-content,
     "min": min-content,
   ),
-  f.create-values(vars.$yma-dimension)
+  f.create-values(vars.$yma-height)
 );
