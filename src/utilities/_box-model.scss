@@ -185,8 +185,8 @@ $yma-box-model-utils: (
   "spacing-x": (
     "prefix": "sx",
     "properties": (
-      "margin-bottom",
-      "margin-top",
+      "margin-left",
+      "margin-right",
     ),
     "values": ma.$yma-spacing-x-map,
   ),
@@ -194,8 +194,8 @@ $yma-box-model-utils: (
   "spacing-y": (
     "prefix": "sy",
     "properties": (
-      "margin-left",
-      "margin-right",
+      "margin-bottom",
+      "margin-top",
     ),
     "values": ma.$yma-spacing-y-map,
   ),
