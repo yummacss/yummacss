@@ -4,7 +4,7 @@ import { program } from "commander";
 import { PurgeCSS } from "purgecss";
 import fs from "fs";
 import path from "path";
-import * as sass from "sass";
+import sass from "sass";
 import CleanCSS from "clean-css";
 import { fileURLToPath, pathToFileURL } from "url";
 
