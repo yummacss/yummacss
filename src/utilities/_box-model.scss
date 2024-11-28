@@ -5,10 +5,10 @@
 
 $yma-box-model-utils: (
   "box-sizing": (
+    "prefix": "bs",
     "properties": (
       "box-sizing",
     ),
-    "prefix": "bs",
     "values": (
       "bb": border-box,
       "cb": content-box,
@@ -51,7 +51,7 @@ $yma-box-model-utils: (
   ),
 
   "max-height": (
-    "prefix": "h",
+    "prefix": "max-h",
     "properties": (
       "max-height",
     ),
@@ -59,7 +59,7 @@ $yma-box-model-utils: (
   ),
 
   "min-height": (
-    "prefix": "h",
+    "prefix": "min-h",
     "properties": (
       "min-height",
     ),
@@ -207,7 +207,7 @@ $yma-box-model-utils: (
   ),
 
   "width": (
-    "prefix": "h",
+    "prefix": "w",
     "properties": (
       "width",
     ),
@@ -215,7 +215,7 @@ $yma-box-model-utils: (
   ),
 
   "max-width": (
-    "prefix": "h",
+    "prefix": "max-w",
     "properties": (
       "max-width",
     ),
@@ -223,7 +223,7 @@ $yma-box-model-utils: (
   ),
 
   "min-width": (
-    "prefix": "h",
+    "prefix": "min-w",
     "properties": (
       "min-width",
     ),
