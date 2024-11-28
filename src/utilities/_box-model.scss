@@ -188,7 +188,10 @@ $yma-box-model-utils: (
       "margin-left",
       "margin-right",
     ),
-    "values": ma.$yma-spacing-x-map,
+    "values": (
+      "custom-handler": true,
+      "map": ma.$yma-spacing-x-map,
+    ),
   ),
 
   "spacing-y": (
@@ -197,7 +200,10 @@ $yma-box-model-utils: (
       "margin-bottom",
       "margin-top",
     ),
-    "values": ma.$yma-spacing-y-map,
+    "values": (
+      "custom-handler": true,
+      "map": ma.$yma-spacing-y-map,
+    ),
   ),
 
   "width": (
@@ -228,6 +234,15 @@ $yma-box-model-utils: (
 @each $name, $map in $yma-box-model-utils {
   $prefix: map-get($map, "prefix");
   $properties: map-get($map, "properties");
+  $values: map-get($map, "values");
 
-  @include mi.create-utilities($map, $prefix, $properties);
+  @if type-of($values) == "map" and map-get($values, "custom-handler") {
+    @include mi.create-spacing-utilities(
+      $prefix,
+      map-get($values, "map"),
+      $properties
+    );
+  } @else {
+    @include mi.create-utilities($map, $prefix, $properties);
+  }
 }

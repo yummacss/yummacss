@@ -1,0 +1,32 @@
+@use "../breakpoints" as b;
+
+@mixin create-spacing-utilities($prefix, $map, $properties) {
+  // Base spacing utilities
+  @each $key, $value in $map {
+    .#{$prefix}-#{$key} > :not([hidden]) ~ :not([hidden]) {
+      @each $property in $properties {
+        #{$property}: calc(#{$value} * calc(1 - 0));
+      }
+    }
+
+    // Hover variants
+    .h\:#{$prefix}-#{$key}:hover > :not([hidden]) ~ :not([hidden]) {
+      @each $property in $properties {
+        #{$property}: calc(#{$value} * calc(1 - 0));
+      }
+    }
+  }
+
+  // Responsive variants
+  @each $bp, $bp-value in b.$yma-breakpoints {
+    @media (min-width: $bp-value) {
+      @each $key, $value in $map {
+        .#{$bp}\:#{$prefix}-#{$key} > :not([hidden]) ~ :not([hidden]) {
+          @each $property in $properties {
+            #{$property}: calc(#{$value} * calc(1 - 0));
+          }
+        }
+      }
+    }
+  }
+}

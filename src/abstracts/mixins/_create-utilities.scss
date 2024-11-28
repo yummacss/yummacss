@@ -1,8 +1,8 @@
 @use "../breakpoints" as b;
 
 @mixin create-utilities($map, $prefix, $properties) {
+  // Base utilities
   @each $k, $v in map-get($map, "values") {
-    // Base utilities
     .#{$prefix}-#{$k} {
       @each $property in $properties {
         #{$property}: $v;
