@@ -9,7 +9,7 @@
       }
     }
 
-    // Hover variants
+    // Hover spacing variants
     .h\:#{$prefix}-#{$key}:hover > :not([hidden]) ~ :not([hidden]) {
       @each $property in $properties {
         #{$property}: calc(#{$value} * calc(1 - 0));
@@ -17,7 +17,7 @@
     }
   }
 
-  // Responsive variants
+  // Responsive spacing variants
   @each $bp, $bp-value in b.$yma-breakpoints {
     @media (min-width: $bp-value) {
       @each $key, $value in $map {
