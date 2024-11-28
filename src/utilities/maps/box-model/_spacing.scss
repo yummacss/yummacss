@@ -2,6 +2,4 @@
 @use "../../../abstracts/functions/create-values" as f;
 @use "../../../abstracts/variables" as vars;
 
-$yma-spacing-x-map: f.create-values(vars.$yma-spacing);
-
-$yma-spacing-y-map: f.create-values(vars.$yma-spacing);
+$yma-spacing-map: f.create-values(vars.$yma-spacing);
