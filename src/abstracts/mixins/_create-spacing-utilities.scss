@@ -5,14 +5,38 @@
   @each $key, $value in $map {
     .#{$prefix}-#{$key} > :not([hidden]) ~ :not([hidden]) {
       @each $property in $properties {
-        #{$property}: calc(#{$value} * calc(1 - 0));
+        @if $property == "margin-left" or $property == "margin-right" {
+          @if $property == "margin-left" {
+            #{$property}: calc(#{$value} * calc(1 - 0));
+          } @else {
+            #{$property}: calc(#{$value} * 0);
+          }
+        } @else {
+          @if $property == "margin-top" {
+            #{$property}: calc(#{$value} * calc(1 - 0));
+          } @else {
+            #{$property}: calc(#{$value} * 0);
+          }
+        }
       }
     }
 
     // Hover spacing variants
     .h\:#{$prefix}-#{$key}:hover > :not([hidden]) ~ :not([hidden]) {
       @each $property in $properties {
-        #{$property}: calc(#{$value} * calc(1 - 0));
+        @if $property == "margin-left" or $property == "margin-right" {
+          @if $property == "margin-left" {
+            #{$property}: calc(#{$value} * calc(1 - 0));
+          } @else {
+            #{$property}: calc(#{$value} * 0);
+          }
+        } @else {
+          @if $property == "margin-top" {
+            #{$property}: calc(#{$value} * calc(1 - 0));
+          } @else {
+            #{$property}: calc(#{$value} * 0);
+          }
+        }
       }
     }
   }
@@ -23,7 +47,38 @@
       @each $key, $value in $map {
         .#{$bp}\:#{$prefix}-#{$key} > :not([hidden]) ~ :not([hidden]) {
           @each $property in $properties {
-            #{$property}: calc(#{$value} * calc(1 - 0));
+            @if $property == "margin-left" or $property == "margin-right" {
+              @if $property == "margin-left" {
+                #{$property}: calc(#{$value} * calc(1 - 0));
+              } @else {
+                #{$property}: calc(#{$value} * 0);
+              }
+            } @else {
+              @if $property == "margin-top" {
+                #{$property}: calc(#{$value} * calc(1 - 0));
+              } @else {
+                #{$property}: calc(#{$value} * 0);
+              }
+            }
+          }
+        }
+
+        // Responsive hover variants
+        .#{$bp}\:h\:#{prefix}-#{$key}:hover > :not([hidden]) ~ :not([hidden]) {
+          @each $property in $properties {
+            @if $property == "margin-left" or $property == "margin-right" {
+              @if $property == "margin-left" {
+                #{$property}: calc(#{$value} * calc(1 - 0));
+              } @else {
+                #{$property}: calc(#{$value} * 0);
+              }
+            } @else {
+              @if $property == "margin-top" {
+                #{$property}: calc(#{$value} * calc(1 - 0));
+              } @else {
+                #{$property}: calc(#{$value} * 0);
+              }
+            }
           }
         }
       }

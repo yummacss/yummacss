@@ -15,31 +15,3 @@ $yma-width-map: map.merge(
   ),
   f.create-values(vars.$yma-width)
 );
-
-$yma-max-width-map: map.merge(
-  (
-    "1\\/1": 100dvh,
-    "1\\/2": 50dvh,
-    "auto": auto,
-    "fc": fit-content,
-    "full": 100%,
-    "half": 50%,
-    "max": max-content,
-    "min": min-content,
-  ),
-  f.create-values(vars.$yma-width)
-);
-
-$yma-min-width-map: map.merge(
-  (
-    "1\\/1": 100dvh,
-    "1\\/2": 50dvh,
-    "auto": auto,
-    "fc": fit-content,
-    "full": 100%,
-    "half": 50%,
-    "max": max-content,
-    "min": min-content,
-  ),
-  f.create-values(vars.$yma-width)
-);
