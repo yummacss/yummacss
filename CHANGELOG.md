@@ -6,6 +6,9 @@ All notable changes to the Yumma CSS will be documented in this file.
 
 ### Added
 
+- Add **Box Decoration Break** utilities
+- Add **Border Spacing** utilities
+- Add **Blur** utilities
 - Add `_color-utilities.scss`, `_create-utilities.scss`, `_extend-utilities.scss` and `_scale-utilities.scss` partial files
 - Add `_dimension.scss`, `_height.scss`, `_margin.scss`, `_padding.scss`, `_spacing.scss` and `_width.scss` files
 - Add `_create-values.scss` file
