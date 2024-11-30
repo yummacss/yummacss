@@ -93942,26 +93942,18 @@
 }
 
 .b-lg {
-  filter: blur(24px);
+  filter: blur(32px);
 }
 
 .h\:b-lg:hover {
-  filter: blur(24px);
+  filter: blur(32px);
 }
 
 .b-xl {
-  filter: blur(32px);
-}
-
-.h\:b-xl:hover {
-  filter: blur(32px);
-}
-
-.b-xxl {
   filter: blur(64px);
 }
 
-.h\:b-xxl:hover {
+.h\:b-xl:hover {
   filter: blur(64px);
 }
 
@@ -93979,12 +93971,9 @@
     filter: blur(16px);
   }
   .sm\:b-lg {
-    filter: blur(24px);
-  }
-  .sm\:b-xl {
     filter: blur(32px);
   }
-  .sm\:b-xxl {
+  .sm\:b-xl {
     filter: blur(64px);
   }
 }
@@ -94002,12 +93991,9 @@
     filter: blur(16px);
   }
   .md\:b-lg {
-    filter: blur(24px);
-  }
-  .md\:b-xl {
     filter: blur(32px);
   }
-  .md\:b-xxl {
+  .md\:b-xl {
     filter: blur(64px);
   }
 }
@@ -94025,12 +94011,9 @@
     filter: blur(16px);
   }
   .lg\:b-lg {
-    filter: blur(24px);
-  }
-  .lg\:b-xl {
     filter: blur(32px);
   }
-  .lg\:b-xxl {
+  .lg\:b-xl {
     filter: blur(64px);
   }
 }
@@ -94048,12 +94031,9 @@
     filter: blur(16px);
   }
   .xl\:b-lg {
-    filter: blur(24px);
-  }
-  .xl\:b-xl {
     filter: blur(32px);
   }
-  .xl\:b-xxl {
+  .xl\:b-xl {
     filter: blur(64px);
   }
 }
@@ -94071,12 +94051,9 @@
     filter: blur(16px);
   }
   .xxl\:b-lg {
-    filter: blur(24px);
-  }
-  .xxl\:b-xl {
     filter: blur(32px);
   }
-  .xxl\:b-xxl {
+  .xxl\:b-xl {
     filter: blur(64px);
   }
 }

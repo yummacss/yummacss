@@ -51,9 +51,8 @@ $yma-fx-utils: (
       "xs": blur(vars.$yma-blur),
       "sm": blur(vars.$yma-blur * 2),
       "md": blur(vars.$yma-blur * 4),
-      "lg": blur(vars.$yma-blur * 6),
-      "xl": blur(vars.$yma-blur * 8),
-      "xxl": blur(vars.$yma-blur * 16),
+      "lg": blur(vars.$yma-blur * 8),
+      "xl": blur(vars.$yma-blur * 16),
     ),
   ),
 );
