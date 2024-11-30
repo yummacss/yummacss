@@ -15,6 +15,17 @@ $yma-fx-utils: (
     ),
   ),
 
+  "box-decoration-break": (
+    "prefix": "bdb",
+    "properties": (
+      "box-decoration-break",
+    ),
+    "values": (
+      "c": slice,
+      "s": clone,
+    ),
+  ),
+
   "box-shadow": (
     "prefix": "bs",
     "values": (

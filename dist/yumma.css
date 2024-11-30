@@ -95831,6 +95831,62 @@
     backdrop-filter: blur(64px);
   }
 }
+.bdb-c {
+  box-decoration-break: slice;
+}
+
+.h\:bdb-c:hover {
+  box-decoration-break: slice;
+}
+
+.bdb-s {
+  box-decoration-break: clone;
+}
+
+.h\:bdb-s:hover {
+  box-decoration-break: clone;
+}
+
+@media (min-width: 640px) {
+  .sm\:bdb-c {
+    box-decoration-break: slice;
+  }
+  .sm\:bdb-s {
+    box-decoration-break: clone;
+  }
+}
+@media (min-width: 768px) {
+  .md\:bdb-c {
+    box-decoration-break: slice;
+  }
+  .md\:bdb-s {
+    box-decoration-break: clone;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:bdb-c {
+    box-decoration-break: slice;
+  }
+  .lg\:bdb-s {
+    box-decoration-break: clone;
+  }
+}
+@media (min-width: 1280px) {
+  .xl\:bdb-c {
+    box-decoration-break: slice;
+  }
+  .xl\:bdb-s {
+    box-decoration-break: clone;
+  }
+}
+@media (min-width: 1536px) {
+  .xxl\:bdb-c {
+    box-decoration-break: slice;
+  }
+  .xxl\:bdb-s {
+    box-decoration-break: clone;
+  }
+}
 .bs-none {
   box-shadow: none;
 }
