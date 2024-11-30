@@ -1,3 +1,4 @@
+// Box Model
 @forward "box-model/dimension";
 @forward "box-model/height";
 @forward "box-model/margin";
@@ -5,4 +6,8 @@
 @forward "box-model/spacing";
 @forward "box-model/width";
 
+// Flex Basis
 @forward "flexbox/flex-basis";
+
+// Border Spacing
+@forward "border/border-spacing";

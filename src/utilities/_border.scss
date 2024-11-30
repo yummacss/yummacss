@@ -1,6 +1,7 @@
 @use "sass:math";
 @use "../abstracts/variables" as vars;
 @use "../abstracts/mixins/" as mi;
+@use "../utilities/maps/" as ma;
 
 $yma-border-utils: (
   "border-collapse": (
@@ -86,6 +87,14 @@ $yma-border-utils: (
       "7": vars.$yma-border-radius * 7,
       "8": vars.$yma-border-radius * 8,
     ),
+  ),
+
+  "border-spacing": (
+    "prefix": "bs",
+    "properties": (
+      "border-spacing",
+    ),
+    "values": ma.$yma-border-spacing-map,
   ),
 
   "border-style": (

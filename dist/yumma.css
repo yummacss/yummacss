@@ -17106,6 +17106,2339 @@
     border-top-right-radius: 2rem;
   }
 }
+.bs-0 {
+  border-spacing: 0rem;
+}
+
+.h\:bs-0:hover {
+  border-spacing: 0rem;
+}
+
+.bs-1 {
+  border-spacing: 0.25rem;
+}
+
+.h\:bs-1:hover {
+  border-spacing: 0.25rem;
+}
+
+.bs-2 {
+  border-spacing: 0.5rem;
+}
+
+.h\:bs-2:hover {
+  border-spacing: 0.5rem;
+}
+
+.bs-3 {
+  border-spacing: 0.75rem;
+}
+
+.h\:bs-3:hover {
+  border-spacing: 0.75rem;
+}
+
+.bs-4 {
+  border-spacing: 1rem;
+}
+
+.h\:bs-4:hover {
+  border-spacing: 1rem;
+}
+
+.bs-5 {
+  border-spacing: 1.25rem;
+}
+
+.h\:bs-5:hover {
+  border-spacing: 1.25rem;
+}
+
+.bs-6 {
+  border-spacing: 1.5rem;
+}
+
+.h\:bs-6:hover {
+  border-spacing: 1.5rem;
+}
+
+.bs-7 {
+  border-spacing: 1.75rem;
+}
+
+.h\:bs-7:hover {
+  border-spacing: 1.75rem;
+}
+
+.bs-8 {
+  border-spacing: 2rem;
+}
+
+.h\:bs-8:hover {
+  border-spacing: 2rem;
+}
+
+.bs-9 {
+  border-spacing: 2.25rem;
+}
+
+.h\:bs-9:hover {
+  border-spacing: 2.25rem;
+}
+
+.bs-10 {
+  border-spacing: 2.5rem;
+}
+
+.h\:bs-10:hover {
+  border-spacing: 2.5rem;
+}
+
+.bs-11 {
+  border-spacing: 2.75rem;
+}
+
+.h\:bs-11:hover {
+  border-spacing: 2.75rem;
+}
+
+.bs-12 {
+  border-spacing: 3rem;
+}
+
+.h\:bs-12:hover {
+  border-spacing: 3rem;
+}
+
+.bs-13 {
+  border-spacing: 3.25rem;
+}
+
+.h\:bs-13:hover {
+  border-spacing: 3.25rem;
+}
+
+.bs-14 {
+  border-spacing: 3.5rem;
+}
+
+.h\:bs-14:hover {
+  border-spacing: 3.5rem;
+}
+
+.bs-15 {
+  border-spacing: 3.75rem;
+}
+
+.h\:bs-15:hover {
+  border-spacing: 3.75rem;
+}
+
+.bs-16 {
+  border-spacing: 4rem;
+}
+
+.h\:bs-16:hover {
+  border-spacing: 4rem;
+}
+
+.bs-17 {
+  border-spacing: 4.25rem;
+}
+
+.h\:bs-17:hover {
+  border-spacing: 4.25rem;
+}
+
+.bs-18 {
+  border-spacing: 4.5rem;
+}
+
+.h\:bs-18:hover {
+  border-spacing: 4.5rem;
+}
+
+.bs-19 {
+  border-spacing: 4.75rem;
+}
+
+.h\:bs-19:hover {
+  border-spacing: 4.75rem;
+}
+
+.bs-20 {
+  border-spacing: 5rem;
+}
+
+.h\:bs-20:hover {
+  border-spacing: 5rem;
+}
+
+.bs-21 {
+  border-spacing: 5.25rem;
+}
+
+.h\:bs-21:hover {
+  border-spacing: 5.25rem;
+}
+
+.bs-22 {
+  border-spacing: 5.5rem;
+}
+
+.h\:bs-22:hover {
+  border-spacing: 5.5rem;
+}
+
+.bs-23 {
+  border-spacing: 5.75rem;
+}
+
+.h\:bs-23:hover {
+  border-spacing: 5.75rem;
+}
+
+.bs-24 {
+  border-spacing: 6rem;
+}
+
+.h\:bs-24:hover {
+  border-spacing: 6rem;
+}
+
+.bs-25 {
+  border-spacing: 6.25rem;
+}
+
+.h\:bs-25:hover {
+  border-spacing: 6.25rem;
+}
+
+.bs-26 {
+  border-spacing: 6.5rem;
+}
+
+.h\:bs-26:hover {
+  border-spacing: 6.5rem;
+}
+
+.bs-27 {
+  border-spacing: 6.75rem;
+}
+
+.h\:bs-27:hover {
+  border-spacing: 6.75rem;
+}
+
+.bs-28 {
+  border-spacing: 7rem;
+}
+
+.h\:bs-28:hover {
+  border-spacing: 7rem;
+}
+
+.bs-29 {
+  border-spacing: 7.25rem;
+}
+
+.h\:bs-29:hover {
+  border-spacing: 7.25rem;
+}
+
+.bs-30 {
+  border-spacing: 7.5rem;
+}
+
+.h\:bs-30:hover {
+  border-spacing: 7.5rem;
+}
+
+.bs-31 {
+  border-spacing: 7.75rem;
+}
+
+.h\:bs-31:hover {
+  border-spacing: 7.75rem;
+}
+
+.bs-32 {
+  border-spacing: 8rem;
+}
+
+.h\:bs-32:hover {
+  border-spacing: 8rem;
+}
+
+.bs-33 {
+  border-spacing: 8.25rem;
+}
+
+.h\:bs-33:hover {
+  border-spacing: 8.25rem;
+}
+
+.bs-34 {
+  border-spacing: 8.5rem;
+}
+
+.h\:bs-34:hover {
+  border-spacing: 8.5rem;
+}
+
+.bs-35 {
+  border-spacing: 8.75rem;
+}
+
+.h\:bs-35:hover {
+  border-spacing: 8.75rem;
+}
+
+.bs-36 {
+  border-spacing: 9rem;
+}
+
+.h\:bs-36:hover {
+  border-spacing: 9rem;
+}
+
+.bs-37 {
+  border-spacing: 9.25rem;
+}
+
+.h\:bs-37:hover {
+  border-spacing: 9.25rem;
+}
+
+.bs-38 {
+  border-spacing: 9.5rem;
+}
+
+.h\:bs-38:hover {
+  border-spacing: 9.5rem;
+}
+
+.bs-39 {
+  border-spacing: 9.75rem;
+}
+
+.h\:bs-39:hover {
+  border-spacing: 9.75rem;
+}
+
+.bs-40 {
+  border-spacing: 10rem;
+}
+
+.h\:bs-40:hover {
+  border-spacing: 10rem;
+}
+
+.bs-41 {
+  border-spacing: 10.25rem;
+}
+
+.h\:bs-41:hover {
+  border-spacing: 10.25rem;
+}
+
+.bs-42 {
+  border-spacing: 10.5rem;
+}
+
+.h\:bs-42:hover {
+  border-spacing: 10.5rem;
+}
+
+.bs-43 {
+  border-spacing: 10.75rem;
+}
+
+.h\:bs-43:hover {
+  border-spacing: 10.75rem;
+}
+
+.bs-44 {
+  border-spacing: 11rem;
+}
+
+.h\:bs-44:hover {
+  border-spacing: 11rem;
+}
+
+.bs-45 {
+  border-spacing: 11.25rem;
+}
+
+.h\:bs-45:hover {
+  border-spacing: 11.25rem;
+}
+
+.bs-46 {
+  border-spacing: 11.5rem;
+}
+
+.h\:bs-46:hover {
+  border-spacing: 11.5rem;
+}
+
+.bs-47 {
+  border-spacing: 11.75rem;
+}
+
+.h\:bs-47:hover {
+  border-spacing: 11.75rem;
+}
+
+.bs-48 {
+  border-spacing: 12rem;
+}
+
+.h\:bs-48:hover {
+  border-spacing: 12rem;
+}
+
+.bs-49 {
+  border-spacing: 12.25rem;
+}
+
+.h\:bs-49:hover {
+  border-spacing: 12.25rem;
+}
+
+.bs-50 {
+  border-spacing: 12.5rem;
+}
+
+.h\:bs-50:hover {
+  border-spacing: 12.5rem;
+}
+
+.bs-51 {
+  border-spacing: 12.75rem;
+}
+
+.h\:bs-51:hover {
+  border-spacing: 12.75rem;
+}
+
+.bs-52 {
+  border-spacing: 13rem;
+}
+
+.h\:bs-52:hover {
+  border-spacing: 13rem;
+}
+
+.bs-53 {
+  border-spacing: 13.25rem;
+}
+
+.h\:bs-53:hover {
+  border-spacing: 13.25rem;
+}
+
+.bs-54 {
+  border-spacing: 13.5rem;
+}
+
+.h\:bs-54:hover {
+  border-spacing: 13.5rem;
+}
+
+.bs-55 {
+  border-spacing: 13.75rem;
+}
+
+.h\:bs-55:hover {
+  border-spacing: 13.75rem;
+}
+
+.bs-56 {
+  border-spacing: 14rem;
+}
+
+.h\:bs-56:hover {
+  border-spacing: 14rem;
+}
+
+.bs-57 {
+  border-spacing: 14.25rem;
+}
+
+.h\:bs-57:hover {
+  border-spacing: 14.25rem;
+}
+
+.bs-58 {
+  border-spacing: 14.5rem;
+}
+
+.h\:bs-58:hover {
+  border-spacing: 14.5rem;
+}
+
+.bs-59 {
+  border-spacing: 14.75rem;
+}
+
+.h\:bs-59:hover {
+  border-spacing: 14.75rem;
+}
+
+.bs-60 {
+  border-spacing: 15rem;
+}
+
+.h\:bs-60:hover {
+  border-spacing: 15rem;
+}
+
+.bs-61 {
+  border-spacing: 15.25rem;
+}
+
+.h\:bs-61:hover {
+  border-spacing: 15.25rem;
+}
+
+.bs-62 {
+  border-spacing: 15.5rem;
+}
+
+.h\:bs-62:hover {
+  border-spacing: 15.5rem;
+}
+
+.bs-63 {
+  border-spacing: 15.75rem;
+}
+
+.h\:bs-63:hover {
+  border-spacing: 15.75rem;
+}
+
+.bs-64 {
+  border-spacing: 16rem;
+}
+
+.h\:bs-64:hover {
+  border-spacing: 16rem;
+}
+
+.bs-65 {
+  border-spacing: 16.25rem;
+}
+
+.h\:bs-65:hover {
+  border-spacing: 16.25rem;
+}
+
+.bs-66 {
+  border-spacing: 16.5rem;
+}
+
+.h\:bs-66:hover {
+  border-spacing: 16.5rem;
+}
+
+.bs-67 {
+  border-spacing: 16.75rem;
+}
+
+.h\:bs-67:hover {
+  border-spacing: 16.75rem;
+}
+
+.bs-68 {
+  border-spacing: 17rem;
+}
+
+.h\:bs-68:hover {
+  border-spacing: 17rem;
+}
+
+.bs-69 {
+  border-spacing: 17.25rem;
+}
+
+.h\:bs-69:hover {
+  border-spacing: 17.25rem;
+}
+
+.bs-70 {
+  border-spacing: 17.5rem;
+}
+
+.h\:bs-70:hover {
+  border-spacing: 17.5rem;
+}
+
+.bs-71 {
+  border-spacing: 17.75rem;
+}
+
+.h\:bs-71:hover {
+  border-spacing: 17.75rem;
+}
+
+.bs-72 {
+  border-spacing: 18rem;
+}
+
+.h\:bs-72:hover {
+  border-spacing: 18rem;
+}
+
+.bs-73 {
+  border-spacing: 18.25rem;
+}
+
+.h\:bs-73:hover {
+  border-spacing: 18.25rem;
+}
+
+.bs-74 {
+  border-spacing: 18.5rem;
+}
+
+.h\:bs-74:hover {
+  border-spacing: 18.5rem;
+}
+
+.bs-75 {
+  border-spacing: 18.75rem;
+}
+
+.h\:bs-75:hover {
+  border-spacing: 18.75rem;
+}
+
+.bs-76 {
+  border-spacing: 19rem;
+}
+
+.h\:bs-76:hover {
+  border-spacing: 19rem;
+}
+
+.bs-77 {
+  border-spacing: 19.25rem;
+}
+
+.h\:bs-77:hover {
+  border-spacing: 19.25rem;
+}
+
+.bs-78 {
+  border-spacing: 19.5rem;
+}
+
+.h\:bs-78:hover {
+  border-spacing: 19.5rem;
+}
+
+.bs-79 {
+  border-spacing: 19.75rem;
+}
+
+.h\:bs-79:hover {
+  border-spacing: 19.75rem;
+}
+
+.bs-80 {
+  border-spacing: 20rem;
+}
+
+.h\:bs-80:hover {
+  border-spacing: 20rem;
+}
+
+.bs-81 {
+  border-spacing: 20.25rem;
+}
+
+.h\:bs-81:hover {
+  border-spacing: 20.25rem;
+}
+
+.bs-82 {
+  border-spacing: 20.5rem;
+}
+
+.h\:bs-82:hover {
+  border-spacing: 20.5rem;
+}
+
+.bs-83 {
+  border-spacing: 20.75rem;
+}
+
+.h\:bs-83:hover {
+  border-spacing: 20.75rem;
+}
+
+.bs-84 {
+  border-spacing: 21rem;
+}
+
+.h\:bs-84:hover {
+  border-spacing: 21rem;
+}
+
+.bs-85 {
+  border-spacing: 21.25rem;
+}
+
+.h\:bs-85:hover {
+  border-spacing: 21.25rem;
+}
+
+.bs-86 {
+  border-spacing: 21.5rem;
+}
+
+.h\:bs-86:hover {
+  border-spacing: 21.5rem;
+}
+
+.bs-87 {
+  border-spacing: 21.75rem;
+}
+
+.h\:bs-87:hover {
+  border-spacing: 21.75rem;
+}
+
+.bs-88 {
+  border-spacing: 22rem;
+}
+
+.h\:bs-88:hover {
+  border-spacing: 22rem;
+}
+
+.bs-89 {
+  border-spacing: 22.25rem;
+}
+
+.h\:bs-89:hover {
+  border-spacing: 22.25rem;
+}
+
+.bs-90 {
+  border-spacing: 22.5rem;
+}
+
+.h\:bs-90:hover {
+  border-spacing: 22.5rem;
+}
+
+.bs-91 {
+  border-spacing: 22.75rem;
+}
+
+.h\:bs-91:hover {
+  border-spacing: 22.75rem;
+}
+
+.bs-92 {
+  border-spacing: 23rem;
+}
+
+.h\:bs-92:hover {
+  border-spacing: 23rem;
+}
+
+.bs-93 {
+  border-spacing: 23.25rem;
+}
+
+.h\:bs-93:hover {
+  border-spacing: 23.25rem;
+}
+
+.bs-94 {
+  border-spacing: 23.5rem;
+}
+
+.h\:bs-94:hover {
+  border-spacing: 23.5rem;
+}
+
+.bs-95 {
+  border-spacing: 23.75rem;
+}
+
+.h\:bs-95:hover {
+  border-spacing: 23.75rem;
+}
+
+.bs-96 {
+  border-spacing: 24rem;
+}
+
+.h\:bs-96:hover {
+  border-spacing: 24rem;
+}
+
+.bs-97 {
+  border-spacing: 24.25rem;
+}
+
+.h\:bs-97:hover {
+  border-spacing: 24.25rem;
+}
+
+.bs-98 {
+  border-spacing: 24.5rem;
+}
+
+.h\:bs-98:hover {
+  border-spacing: 24.5rem;
+}
+
+.bs-99 {
+  border-spacing: 24.75rem;
+}
+
+.h\:bs-99:hover {
+  border-spacing: 24.75rem;
+}
+
+.bs-100 {
+  border-spacing: 25rem;
+}
+
+.h\:bs-100:hover {
+  border-spacing: 25rem;
+}
+
+@media (min-width: 640px) {
+  .sm\:bs-0 {
+    border-spacing: 0rem;
+  }
+  .sm\:bs-1 {
+    border-spacing: 0.25rem;
+  }
+  .sm\:bs-2 {
+    border-spacing: 0.5rem;
+  }
+  .sm\:bs-3 {
+    border-spacing: 0.75rem;
+  }
+  .sm\:bs-4 {
+    border-spacing: 1rem;
+  }
+  .sm\:bs-5 {
+    border-spacing: 1.25rem;
+  }
+  .sm\:bs-6 {
+    border-spacing: 1.5rem;
+  }
+  .sm\:bs-7 {
+    border-spacing: 1.75rem;
+  }
+  .sm\:bs-8 {
+    border-spacing: 2rem;
+  }
+  .sm\:bs-9 {
+    border-spacing: 2.25rem;
+  }
+  .sm\:bs-10 {
+    border-spacing: 2.5rem;
+  }
+  .sm\:bs-11 {
+    border-spacing: 2.75rem;
+  }
+  .sm\:bs-12 {
+    border-spacing: 3rem;
+  }
+  .sm\:bs-13 {
+    border-spacing: 3.25rem;
+  }
+  .sm\:bs-14 {
+    border-spacing: 3.5rem;
+  }
+  .sm\:bs-15 {
+    border-spacing: 3.75rem;
+  }
+  .sm\:bs-16 {
+    border-spacing: 4rem;
+  }
+  .sm\:bs-17 {
+    border-spacing: 4.25rem;
+  }
+  .sm\:bs-18 {
+    border-spacing: 4.5rem;
+  }
+  .sm\:bs-19 {
+    border-spacing: 4.75rem;
+  }
+  .sm\:bs-20 {
+    border-spacing: 5rem;
+  }
+  .sm\:bs-21 {
+    border-spacing: 5.25rem;
+  }
+  .sm\:bs-22 {
+    border-spacing: 5.5rem;
+  }
+  .sm\:bs-23 {
+    border-spacing: 5.75rem;
+  }
+  .sm\:bs-24 {
+    border-spacing: 6rem;
+  }
+  .sm\:bs-25 {
+    border-spacing: 6.25rem;
+  }
+  .sm\:bs-26 {
+    border-spacing: 6.5rem;
+  }
+  .sm\:bs-27 {
+    border-spacing: 6.75rem;
+  }
+  .sm\:bs-28 {
+    border-spacing: 7rem;
+  }
+  .sm\:bs-29 {
+    border-spacing: 7.25rem;
+  }
+  .sm\:bs-30 {
+    border-spacing: 7.5rem;
+  }
+  .sm\:bs-31 {
+    border-spacing: 7.75rem;
+  }
+  .sm\:bs-32 {
+    border-spacing: 8rem;
+  }
+  .sm\:bs-33 {
+    border-spacing: 8.25rem;
+  }
+  .sm\:bs-34 {
+    border-spacing: 8.5rem;
+  }
+  .sm\:bs-35 {
+    border-spacing: 8.75rem;
+  }
+  .sm\:bs-36 {
+    border-spacing: 9rem;
+  }
+  .sm\:bs-37 {
+    border-spacing: 9.25rem;
+  }
+  .sm\:bs-38 {
+    border-spacing: 9.5rem;
+  }
+  .sm\:bs-39 {
+    border-spacing: 9.75rem;
+  }
+  .sm\:bs-40 {
+    border-spacing: 10rem;
+  }
+  .sm\:bs-41 {
+    border-spacing: 10.25rem;
+  }
+  .sm\:bs-42 {
+    border-spacing: 10.5rem;
+  }
+  .sm\:bs-43 {
+    border-spacing: 10.75rem;
+  }
+  .sm\:bs-44 {
+    border-spacing: 11rem;
+  }
+  .sm\:bs-45 {
+    border-spacing: 11.25rem;
+  }
+  .sm\:bs-46 {
+    border-spacing: 11.5rem;
+  }
+  .sm\:bs-47 {
+    border-spacing: 11.75rem;
+  }
+  .sm\:bs-48 {
+    border-spacing: 12rem;
+  }
+  .sm\:bs-49 {
+    border-spacing: 12.25rem;
+  }
+  .sm\:bs-50 {
+    border-spacing: 12.5rem;
+  }
+  .sm\:bs-51 {
+    border-spacing: 12.75rem;
+  }
+  .sm\:bs-52 {
+    border-spacing: 13rem;
+  }
+  .sm\:bs-53 {
+    border-spacing: 13.25rem;
+  }
+  .sm\:bs-54 {
+    border-spacing: 13.5rem;
+  }
+  .sm\:bs-55 {
+    border-spacing: 13.75rem;
+  }
+  .sm\:bs-56 {
+    border-spacing: 14rem;
+  }
+  .sm\:bs-57 {
+    border-spacing: 14.25rem;
+  }
+  .sm\:bs-58 {
+    border-spacing: 14.5rem;
+  }
+  .sm\:bs-59 {
+    border-spacing: 14.75rem;
+  }
+  .sm\:bs-60 {
+    border-spacing: 15rem;
+  }
+  .sm\:bs-61 {
+    border-spacing: 15.25rem;
+  }
+  .sm\:bs-62 {
+    border-spacing: 15.5rem;
+  }
+  .sm\:bs-63 {
+    border-spacing: 15.75rem;
+  }
+  .sm\:bs-64 {
+    border-spacing: 16rem;
+  }
+  .sm\:bs-65 {
+    border-spacing: 16.25rem;
+  }
+  .sm\:bs-66 {
+    border-spacing: 16.5rem;
+  }
+  .sm\:bs-67 {
+    border-spacing: 16.75rem;
+  }
+  .sm\:bs-68 {
+    border-spacing: 17rem;
+  }
+  .sm\:bs-69 {
+    border-spacing: 17.25rem;
+  }
+  .sm\:bs-70 {
+    border-spacing: 17.5rem;
+  }
+  .sm\:bs-71 {
+    border-spacing: 17.75rem;
+  }
+  .sm\:bs-72 {
+    border-spacing: 18rem;
+  }
+  .sm\:bs-73 {
+    border-spacing: 18.25rem;
+  }
+  .sm\:bs-74 {
+    border-spacing: 18.5rem;
+  }
+  .sm\:bs-75 {
+    border-spacing: 18.75rem;
+  }
+  .sm\:bs-76 {
+    border-spacing: 19rem;
+  }
+  .sm\:bs-77 {
+    border-spacing: 19.25rem;
+  }
+  .sm\:bs-78 {
+    border-spacing: 19.5rem;
+  }
+  .sm\:bs-79 {
+    border-spacing: 19.75rem;
+  }
+  .sm\:bs-80 {
+    border-spacing: 20rem;
+  }
+  .sm\:bs-81 {
+    border-spacing: 20.25rem;
+  }
+  .sm\:bs-82 {
+    border-spacing: 20.5rem;
+  }
+  .sm\:bs-83 {
+    border-spacing: 20.75rem;
+  }
+  .sm\:bs-84 {
+    border-spacing: 21rem;
+  }
+  .sm\:bs-85 {
+    border-spacing: 21.25rem;
+  }
+  .sm\:bs-86 {
+    border-spacing: 21.5rem;
+  }
+  .sm\:bs-87 {
+    border-spacing: 21.75rem;
+  }
+  .sm\:bs-88 {
+    border-spacing: 22rem;
+  }
+  .sm\:bs-89 {
+    border-spacing: 22.25rem;
+  }
+  .sm\:bs-90 {
+    border-spacing: 22.5rem;
+  }
+  .sm\:bs-91 {
+    border-spacing: 22.75rem;
+  }
+  .sm\:bs-92 {
+    border-spacing: 23rem;
+  }
+  .sm\:bs-93 {
+    border-spacing: 23.25rem;
+  }
+  .sm\:bs-94 {
+    border-spacing: 23.5rem;
+  }
+  .sm\:bs-95 {
+    border-spacing: 23.75rem;
+  }
+  .sm\:bs-96 {
+    border-spacing: 24rem;
+  }
+  .sm\:bs-97 {
+    border-spacing: 24.25rem;
+  }
+  .sm\:bs-98 {
+    border-spacing: 24.5rem;
+  }
+  .sm\:bs-99 {
+    border-spacing: 24.75rem;
+  }
+  .sm\:bs-100 {
+    border-spacing: 25rem;
+  }
+}
+@media (min-width: 768px) {
+  .md\:bs-0 {
+    border-spacing: 0rem;
+  }
+  .md\:bs-1 {
+    border-spacing: 0.25rem;
+  }
+  .md\:bs-2 {
+    border-spacing: 0.5rem;
+  }
+  .md\:bs-3 {
+    border-spacing: 0.75rem;
+  }
+  .md\:bs-4 {
+    border-spacing: 1rem;
+  }
+  .md\:bs-5 {
+    border-spacing: 1.25rem;
+  }
+  .md\:bs-6 {
+    border-spacing: 1.5rem;
+  }
+  .md\:bs-7 {
+    border-spacing: 1.75rem;
+  }
+  .md\:bs-8 {
+    border-spacing: 2rem;
+  }
+  .md\:bs-9 {
+    border-spacing: 2.25rem;
+  }
+  .md\:bs-10 {
+    border-spacing: 2.5rem;
+  }
+  .md\:bs-11 {
+    border-spacing: 2.75rem;
+  }
+  .md\:bs-12 {
+    border-spacing: 3rem;
+  }
+  .md\:bs-13 {
+    border-spacing: 3.25rem;
+  }
+  .md\:bs-14 {
+    border-spacing: 3.5rem;
+  }
+  .md\:bs-15 {
+    border-spacing: 3.75rem;
+  }
+  .md\:bs-16 {
+    border-spacing: 4rem;
+  }
+  .md\:bs-17 {
+    border-spacing: 4.25rem;
+  }
+  .md\:bs-18 {
+    border-spacing: 4.5rem;
+  }
+  .md\:bs-19 {
+    border-spacing: 4.75rem;
+  }
+  .md\:bs-20 {
+    border-spacing: 5rem;
+  }
+  .md\:bs-21 {
+    border-spacing: 5.25rem;
+  }
+  .md\:bs-22 {
+    border-spacing: 5.5rem;
+  }
+  .md\:bs-23 {
+    border-spacing: 5.75rem;
+  }
+  .md\:bs-24 {
+    border-spacing: 6rem;
+  }
+  .md\:bs-25 {
+    border-spacing: 6.25rem;
+  }
+  .md\:bs-26 {
+    border-spacing: 6.5rem;
+  }
+  .md\:bs-27 {
+    border-spacing: 6.75rem;
+  }
+  .md\:bs-28 {
+    border-spacing: 7rem;
+  }
+  .md\:bs-29 {
+    border-spacing: 7.25rem;
+  }
+  .md\:bs-30 {
+    border-spacing: 7.5rem;
+  }
+  .md\:bs-31 {
+    border-spacing: 7.75rem;
+  }
+  .md\:bs-32 {
+    border-spacing: 8rem;
+  }
+  .md\:bs-33 {
+    border-spacing: 8.25rem;
+  }
+  .md\:bs-34 {
+    border-spacing: 8.5rem;
+  }
+  .md\:bs-35 {
+    border-spacing: 8.75rem;
+  }
+  .md\:bs-36 {
+    border-spacing: 9rem;
+  }
+  .md\:bs-37 {
+    border-spacing: 9.25rem;
+  }
+  .md\:bs-38 {
+    border-spacing: 9.5rem;
+  }
+  .md\:bs-39 {
+    border-spacing: 9.75rem;
+  }
+  .md\:bs-40 {
+    border-spacing: 10rem;
+  }
+  .md\:bs-41 {
+    border-spacing: 10.25rem;
+  }
+  .md\:bs-42 {
+    border-spacing: 10.5rem;
+  }
+  .md\:bs-43 {
+    border-spacing: 10.75rem;
+  }
+  .md\:bs-44 {
+    border-spacing: 11rem;
+  }
+  .md\:bs-45 {
+    border-spacing: 11.25rem;
+  }
+  .md\:bs-46 {
+    border-spacing: 11.5rem;
+  }
+  .md\:bs-47 {
+    border-spacing: 11.75rem;
+  }
+  .md\:bs-48 {
+    border-spacing: 12rem;
+  }
+  .md\:bs-49 {
+    border-spacing: 12.25rem;
+  }
+  .md\:bs-50 {
+    border-spacing: 12.5rem;
+  }
+  .md\:bs-51 {
+    border-spacing: 12.75rem;
+  }
+  .md\:bs-52 {
+    border-spacing: 13rem;
+  }
+  .md\:bs-53 {
+    border-spacing: 13.25rem;
+  }
+  .md\:bs-54 {
+    border-spacing: 13.5rem;
+  }
+  .md\:bs-55 {
+    border-spacing: 13.75rem;
+  }
+  .md\:bs-56 {
+    border-spacing: 14rem;
+  }
+  .md\:bs-57 {
+    border-spacing: 14.25rem;
+  }
+  .md\:bs-58 {
+    border-spacing: 14.5rem;
+  }
+  .md\:bs-59 {
+    border-spacing: 14.75rem;
+  }
+  .md\:bs-60 {
+    border-spacing: 15rem;
+  }
+  .md\:bs-61 {
+    border-spacing: 15.25rem;
+  }
+  .md\:bs-62 {
+    border-spacing: 15.5rem;
+  }
+  .md\:bs-63 {
+    border-spacing: 15.75rem;
+  }
+  .md\:bs-64 {
+    border-spacing: 16rem;
+  }
+  .md\:bs-65 {
+    border-spacing: 16.25rem;
+  }
+  .md\:bs-66 {
+    border-spacing: 16.5rem;
+  }
+  .md\:bs-67 {
+    border-spacing: 16.75rem;
+  }
+  .md\:bs-68 {
+    border-spacing: 17rem;
+  }
+  .md\:bs-69 {
+    border-spacing: 17.25rem;
+  }
+  .md\:bs-70 {
+    border-spacing: 17.5rem;
+  }
+  .md\:bs-71 {
+    border-spacing: 17.75rem;
+  }
+  .md\:bs-72 {
+    border-spacing: 18rem;
+  }
+  .md\:bs-73 {
+    border-spacing: 18.25rem;
+  }
+  .md\:bs-74 {
+    border-spacing: 18.5rem;
+  }
+  .md\:bs-75 {
+    border-spacing: 18.75rem;
+  }
+  .md\:bs-76 {
+    border-spacing: 19rem;
+  }
+  .md\:bs-77 {
+    border-spacing: 19.25rem;
+  }
+  .md\:bs-78 {
+    border-spacing: 19.5rem;
+  }
+  .md\:bs-79 {
+    border-spacing: 19.75rem;
+  }
+  .md\:bs-80 {
+    border-spacing: 20rem;
+  }
+  .md\:bs-81 {
+    border-spacing: 20.25rem;
+  }
+  .md\:bs-82 {
+    border-spacing: 20.5rem;
+  }
+  .md\:bs-83 {
+    border-spacing: 20.75rem;
+  }
+  .md\:bs-84 {
+    border-spacing: 21rem;
+  }
+  .md\:bs-85 {
+    border-spacing: 21.25rem;
+  }
+  .md\:bs-86 {
+    border-spacing: 21.5rem;
+  }
+  .md\:bs-87 {
+    border-spacing: 21.75rem;
+  }
+  .md\:bs-88 {
+    border-spacing: 22rem;
+  }
+  .md\:bs-89 {
+    border-spacing: 22.25rem;
+  }
+  .md\:bs-90 {
+    border-spacing: 22.5rem;
+  }
+  .md\:bs-91 {
+    border-spacing: 22.75rem;
+  }
+  .md\:bs-92 {
+    border-spacing: 23rem;
+  }
+  .md\:bs-93 {
+    border-spacing: 23.25rem;
+  }
+  .md\:bs-94 {
+    border-spacing: 23.5rem;
+  }
+  .md\:bs-95 {
+    border-spacing: 23.75rem;
+  }
+  .md\:bs-96 {
+    border-spacing: 24rem;
+  }
+  .md\:bs-97 {
+    border-spacing: 24.25rem;
+  }
+  .md\:bs-98 {
+    border-spacing: 24.5rem;
+  }
+  .md\:bs-99 {
+    border-spacing: 24.75rem;
+  }
+  .md\:bs-100 {
+    border-spacing: 25rem;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:bs-0 {
+    border-spacing: 0rem;
+  }
+  .lg\:bs-1 {
+    border-spacing: 0.25rem;
+  }
+  .lg\:bs-2 {
+    border-spacing: 0.5rem;
+  }
+  .lg\:bs-3 {
+    border-spacing: 0.75rem;
+  }
+  .lg\:bs-4 {
+    border-spacing: 1rem;
+  }
+  .lg\:bs-5 {
+    border-spacing: 1.25rem;
+  }
+  .lg\:bs-6 {
+    border-spacing: 1.5rem;
+  }
+  .lg\:bs-7 {
+    border-spacing: 1.75rem;
+  }
+  .lg\:bs-8 {
+    border-spacing: 2rem;
+  }
+  .lg\:bs-9 {
+    border-spacing: 2.25rem;
+  }
+  .lg\:bs-10 {
+    border-spacing: 2.5rem;
+  }
+  .lg\:bs-11 {
+    border-spacing: 2.75rem;
+  }
+  .lg\:bs-12 {
+    border-spacing: 3rem;
+  }
+  .lg\:bs-13 {
+    border-spacing: 3.25rem;
+  }
+  .lg\:bs-14 {
+    border-spacing: 3.5rem;
+  }
+  .lg\:bs-15 {
+    border-spacing: 3.75rem;
+  }
+  .lg\:bs-16 {
+    border-spacing: 4rem;
+  }
+  .lg\:bs-17 {
+    border-spacing: 4.25rem;
+  }
+  .lg\:bs-18 {
+    border-spacing: 4.5rem;
+  }
+  .lg\:bs-19 {
+    border-spacing: 4.75rem;
+  }
+  .lg\:bs-20 {
+    border-spacing: 5rem;
+  }
+  .lg\:bs-21 {
+    border-spacing: 5.25rem;
+  }
+  .lg\:bs-22 {
+    border-spacing: 5.5rem;
+  }
+  .lg\:bs-23 {
+    border-spacing: 5.75rem;
+  }
+  .lg\:bs-24 {
+    border-spacing: 6rem;
+  }
+  .lg\:bs-25 {
+    border-spacing: 6.25rem;
+  }
+  .lg\:bs-26 {
+    border-spacing: 6.5rem;
+  }
+  .lg\:bs-27 {
+    border-spacing: 6.75rem;
+  }
+  .lg\:bs-28 {
+    border-spacing: 7rem;
+  }
+  .lg\:bs-29 {
+    border-spacing: 7.25rem;
+  }
+  .lg\:bs-30 {
+    border-spacing: 7.5rem;
+  }
+  .lg\:bs-31 {
+    border-spacing: 7.75rem;
+  }
+  .lg\:bs-32 {
+    border-spacing: 8rem;
+  }
+  .lg\:bs-33 {
+    border-spacing: 8.25rem;
+  }
+  .lg\:bs-34 {
+    border-spacing: 8.5rem;
+  }
+  .lg\:bs-35 {
+    border-spacing: 8.75rem;
+  }
+  .lg\:bs-36 {
+    border-spacing: 9rem;
+  }
+  .lg\:bs-37 {
+    border-spacing: 9.25rem;
+  }
+  .lg\:bs-38 {
+    border-spacing: 9.5rem;
+  }
+  .lg\:bs-39 {
+    border-spacing: 9.75rem;
+  }
+  .lg\:bs-40 {
+    border-spacing: 10rem;
+  }
+  .lg\:bs-41 {
+    border-spacing: 10.25rem;
+  }
+  .lg\:bs-42 {
+    border-spacing: 10.5rem;
+  }
+  .lg\:bs-43 {
+    border-spacing: 10.75rem;
+  }
+  .lg\:bs-44 {
+    border-spacing: 11rem;
+  }
+  .lg\:bs-45 {
+    border-spacing: 11.25rem;
+  }
+  .lg\:bs-46 {
+    border-spacing: 11.5rem;
+  }
+  .lg\:bs-47 {
+    border-spacing: 11.75rem;
+  }
+  .lg\:bs-48 {
+    border-spacing: 12rem;
+  }
+  .lg\:bs-49 {
+    border-spacing: 12.25rem;
+  }
+  .lg\:bs-50 {
+    border-spacing: 12.5rem;
+  }
+  .lg\:bs-51 {
+    border-spacing: 12.75rem;
+  }
+  .lg\:bs-52 {
+    border-spacing: 13rem;
+  }
+  .lg\:bs-53 {
+    border-spacing: 13.25rem;
+  }
+  .lg\:bs-54 {
+    border-spacing: 13.5rem;
+  }
+  .lg\:bs-55 {
+    border-spacing: 13.75rem;
+  }
+  .lg\:bs-56 {
+    border-spacing: 14rem;
+  }
+  .lg\:bs-57 {
+    border-spacing: 14.25rem;
+  }
+  .lg\:bs-58 {
+    border-spacing: 14.5rem;
+  }
+  .lg\:bs-59 {
+    border-spacing: 14.75rem;
+  }
+  .lg\:bs-60 {
+    border-spacing: 15rem;
+  }
+  .lg\:bs-61 {
+    border-spacing: 15.25rem;
+  }
+  .lg\:bs-62 {
+    border-spacing: 15.5rem;
+  }
+  .lg\:bs-63 {
+    border-spacing: 15.75rem;
+  }
+  .lg\:bs-64 {
+    border-spacing: 16rem;
+  }
+  .lg\:bs-65 {
+    border-spacing: 16.25rem;
+  }
+  .lg\:bs-66 {
+    border-spacing: 16.5rem;
+  }
+  .lg\:bs-67 {
+    border-spacing: 16.75rem;
+  }
+  .lg\:bs-68 {
+    border-spacing: 17rem;
+  }
+  .lg\:bs-69 {
+    border-spacing: 17.25rem;
+  }
+  .lg\:bs-70 {
+    border-spacing: 17.5rem;
+  }
+  .lg\:bs-71 {
+    border-spacing: 17.75rem;
+  }
+  .lg\:bs-72 {
+    border-spacing: 18rem;
+  }
+  .lg\:bs-73 {
+    border-spacing: 18.25rem;
+  }
+  .lg\:bs-74 {
+    border-spacing: 18.5rem;
+  }
+  .lg\:bs-75 {
+    border-spacing: 18.75rem;
+  }
+  .lg\:bs-76 {
+    border-spacing: 19rem;
+  }
+  .lg\:bs-77 {
+    border-spacing: 19.25rem;
+  }
+  .lg\:bs-78 {
+    border-spacing: 19.5rem;
+  }
+  .lg\:bs-79 {
+    border-spacing: 19.75rem;
+  }
+  .lg\:bs-80 {
+    border-spacing: 20rem;
+  }
+  .lg\:bs-81 {
+    border-spacing: 20.25rem;
+  }
+  .lg\:bs-82 {
+    border-spacing: 20.5rem;
+  }
+  .lg\:bs-83 {
+    border-spacing: 20.75rem;
+  }
+  .lg\:bs-84 {
+    border-spacing: 21rem;
+  }
+  .lg\:bs-85 {
+    border-spacing: 21.25rem;
+  }
+  .lg\:bs-86 {
+    border-spacing: 21.5rem;
+  }
+  .lg\:bs-87 {
+    border-spacing: 21.75rem;
+  }
+  .lg\:bs-88 {
+    border-spacing: 22rem;
+  }
+  .lg\:bs-89 {
+    border-spacing: 22.25rem;
+  }
+  .lg\:bs-90 {
+    border-spacing: 22.5rem;
+  }
+  .lg\:bs-91 {
+    border-spacing: 22.75rem;
+  }
+  .lg\:bs-92 {
+    border-spacing: 23rem;
+  }
+  .lg\:bs-93 {
+    border-spacing: 23.25rem;
+  }
+  .lg\:bs-94 {
+    border-spacing: 23.5rem;
+  }
+  .lg\:bs-95 {
+    border-spacing: 23.75rem;
+  }
+  .lg\:bs-96 {
+    border-spacing: 24rem;
+  }
+  .lg\:bs-97 {
+    border-spacing: 24.25rem;
+  }
+  .lg\:bs-98 {
+    border-spacing: 24.5rem;
+  }
+  .lg\:bs-99 {
+    border-spacing: 24.75rem;
+  }
+  .lg\:bs-100 {
+    border-spacing: 25rem;
+  }
+}
+@media (min-width: 1280px) {
+  .xl\:bs-0 {
+    border-spacing: 0rem;
+  }
+  .xl\:bs-1 {
+    border-spacing: 0.25rem;
+  }
+  .xl\:bs-2 {
+    border-spacing: 0.5rem;
+  }
+  .xl\:bs-3 {
+    border-spacing: 0.75rem;
+  }
+  .xl\:bs-4 {
+    border-spacing: 1rem;
+  }
+  .xl\:bs-5 {
+    border-spacing: 1.25rem;
+  }
+  .xl\:bs-6 {
+    border-spacing: 1.5rem;
+  }
+  .xl\:bs-7 {
+    border-spacing: 1.75rem;
+  }
+  .xl\:bs-8 {
+    border-spacing: 2rem;
+  }
+  .xl\:bs-9 {
+    border-spacing: 2.25rem;
+  }
+  .xl\:bs-10 {
+    border-spacing: 2.5rem;
+  }
+  .xl\:bs-11 {
+    border-spacing: 2.75rem;
+  }
+  .xl\:bs-12 {
+    border-spacing: 3rem;
+  }
+  .xl\:bs-13 {
+    border-spacing: 3.25rem;
+  }
+  .xl\:bs-14 {
+    border-spacing: 3.5rem;
+  }
+  .xl\:bs-15 {
+    border-spacing: 3.75rem;
+  }
+  .xl\:bs-16 {
+    border-spacing: 4rem;
+  }
+  .xl\:bs-17 {
+    border-spacing: 4.25rem;
+  }
+  .xl\:bs-18 {
+    border-spacing: 4.5rem;
+  }
+  .xl\:bs-19 {
+    border-spacing: 4.75rem;
+  }
+  .xl\:bs-20 {
+    border-spacing: 5rem;
+  }
+  .xl\:bs-21 {
+    border-spacing: 5.25rem;
+  }
+  .xl\:bs-22 {
+    border-spacing: 5.5rem;
+  }
+  .xl\:bs-23 {
+    border-spacing: 5.75rem;
+  }
+  .xl\:bs-24 {
+    border-spacing: 6rem;
+  }
+  .xl\:bs-25 {
+    border-spacing: 6.25rem;
+  }
+  .xl\:bs-26 {
+    border-spacing: 6.5rem;
+  }
+  .xl\:bs-27 {
+    border-spacing: 6.75rem;
+  }
+  .xl\:bs-28 {
+    border-spacing: 7rem;
+  }
+  .xl\:bs-29 {
+    border-spacing: 7.25rem;
+  }
+  .xl\:bs-30 {
+    border-spacing: 7.5rem;
+  }
+  .xl\:bs-31 {
+    border-spacing: 7.75rem;
+  }
+  .xl\:bs-32 {
+    border-spacing: 8rem;
+  }
+  .xl\:bs-33 {
+    border-spacing: 8.25rem;
+  }
+  .xl\:bs-34 {
+    border-spacing: 8.5rem;
+  }
+  .xl\:bs-35 {
+    border-spacing: 8.75rem;
+  }
+  .xl\:bs-36 {
+    border-spacing: 9rem;
+  }
+  .xl\:bs-37 {
+    border-spacing: 9.25rem;
+  }
+  .xl\:bs-38 {
+    border-spacing: 9.5rem;
+  }
+  .xl\:bs-39 {
+    border-spacing: 9.75rem;
+  }
+  .xl\:bs-40 {
+    border-spacing: 10rem;
+  }
+  .xl\:bs-41 {
+    border-spacing: 10.25rem;
+  }
+  .xl\:bs-42 {
+    border-spacing: 10.5rem;
+  }
+  .xl\:bs-43 {
+    border-spacing: 10.75rem;
+  }
+  .xl\:bs-44 {
+    border-spacing: 11rem;
+  }
+  .xl\:bs-45 {
+    border-spacing: 11.25rem;
+  }
+  .xl\:bs-46 {
+    border-spacing: 11.5rem;
+  }
+  .xl\:bs-47 {
+    border-spacing: 11.75rem;
+  }
+  .xl\:bs-48 {
+    border-spacing: 12rem;
+  }
+  .xl\:bs-49 {
+    border-spacing: 12.25rem;
+  }
+  .xl\:bs-50 {
+    border-spacing: 12.5rem;
+  }
+  .xl\:bs-51 {
+    border-spacing: 12.75rem;
+  }
+  .xl\:bs-52 {
+    border-spacing: 13rem;
+  }
+  .xl\:bs-53 {
+    border-spacing: 13.25rem;
+  }
+  .xl\:bs-54 {
+    border-spacing: 13.5rem;
+  }
+  .xl\:bs-55 {
+    border-spacing: 13.75rem;
+  }
+  .xl\:bs-56 {
+    border-spacing: 14rem;
+  }
+  .xl\:bs-57 {
+    border-spacing: 14.25rem;
+  }
+  .xl\:bs-58 {
+    border-spacing: 14.5rem;
+  }
+  .xl\:bs-59 {
+    border-spacing: 14.75rem;
+  }
+  .xl\:bs-60 {
+    border-spacing: 15rem;
+  }
+  .xl\:bs-61 {
+    border-spacing: 15.25rem;
+  }
+  .xl\:bs-62 {
+    border-spacing: 15.5rem;
+  }
+  .xl\:bs-63 {
+    border-spacing: 15.75rem;
+  }
+  .xl\:bs-64 {
+    border-spacing: 16rem;
+  }
+  .xl\:bs-65 {
+    border-spacing: 16.25rem;
+  }
+  .xl\:bs-66 {
+    border-spacing: 16.5rem;
+  }
+  .xl\:bs-67 {
+    border-spacing: 16.75rem;
+  }
+  .xl\:bs-68 {
+    border-spacing: 17rem;
+  }
+  .xl\:bs-69 {
+    border-spacing: 17.25rem;
+  }
+  .xl\:bs-70 {
+    border-spacing: 17.5rem;
+  }
+  .xl\:bs-71 {
+    border-spacing: 17.75rem;
+  }
+  .xl\:bs-72 {
+    border-spacing: 18rem;
+  }
+  .xl\:bs-73 {
+    border-spacing: 18.25rem;
+  }
+  .xl\:bs-74 {
+    border-spacing: 18.5rem;
+  }
+  .xl\:bs-75 {
+    border-spacing: 18.75rem;
+  }
+  .xl\:bs-76 {
+    border-spacing: 19rem;
+  }
+  .xl\:bs-77 {
+    border-spacing: 19.25rem;
+  }
+  .xl\:bs-78 {
+    border-spacing: 19.5rem;
+  }
+  .xl\:bs-79 {
+    border-spacing: 19.75rem;
+  }
+  .xl\:bs-80 {
+    border-spacing: 20rem;
+  }
+  .xl\:bs-81 {
+    border-spacing: 20.25rem;
+  }
+  .xl\:bs-82 {
+    border-spacing: 20.5rem;
+  }
+  .xl\:bs-83 {
+    border-spacing: 20.75rem;
+  }
+  .xl\:bs-84 {
+    border-spacing: 21rem;
+  }
+  .xl\:bs-85 {
+    border-spacing: 21.25rem;
+  }
+  .xl\:bs-86 {
+    border-spacing: 21.5rem;
+  }
+  .xl\:bs-87 {
+    border-spacing: 21.75rem;
+  }
+  .xl\:bs-88 {
+    border-spacing: 22rem;
+  }
+  .xl\:bs-89 {
+    border-spacing: 22.25rem;
+  }
+  .xl\:bs-90 {
+    border-spacing: 22.5rem;
+  }
+  .xl\:bs-91 {
+    border-spacing: 22.75rem;
+  }
+  .xl\:bs-92 {
+    border-spacing: 23rem;
+  }
+  .xl\:bs-93 {
+    border-spacing: 23.25rem;
+  }
+  .xl\:bs-94 {
+    border-spacing: 23.5rem;
+  }
+  .xl\:bs-95 {
+    border-spacing: 23.75rem;
+  }
+  .xl\:bs-96 {
+    border-spacing: 24rem;
+  }
+  .xl\:bs-97 {
+    border-spacing: 24.25rem;
+  }
+  .xl\:bs-98 {
+    border-spacing: 24.5rem;
+  }
+  .xl\:bs-99 {
+    border-spacing: 24.75rem;
+  }
+  .xl\:bs-100 {
+    border-spacing: 25rem;
+  }
+}
+@media (min-width: 1536px) {
+  .xxl\:bs-0 {
+    border-spacing: 0rem;
+  }
+  .xxl\:bs-1 {
+    border-spacing: 0.25rem;
+  }
+  .xxl\:bs-2 {
+    border-spacing: 0.5rem;
+  }
+  .xxl\:bs-3 {
+    border-spacing: 0.75rem;
+  }
+  .xxl\:bs-4 {
+    border-spacing: 1rem;
+  }
+  .xxl\:bs-5 {
+    border-spacing: 1.25rem;
+  }
+  .xxl\:bs-6 {
+    border-spacing: 1.5rem;
+  }
+  .xxl\:bs-7 {
+    border-spacing: 1.75rem;
+  }
+  .xxl\:bs-8 {
+    border-spacing: 2rem;
+  }
+  .xxl\:bs-9 {
+    border-spacing: 2.25rem;
+  }
+  .xxl\:bs-10 {
+    border-spacing: 2.5rem;
+  }
+  .xxl\:bs-11 {
+    border-spacing: 2.75rem;
+  }
+  .xxl\:bs-12 {
+    border-spacing: 3rem;
+  }
+  .xxl\:bs-13 {
+    border-spacing: 3.25rem;
+  }
+  .xxl\:bs-14 {
+    border-spacing: 3.5rem;
+  }
+  .xxl\:bs-15 {
+    border-spacing: 3.75rem;
+  }
+  .xxl\:bs-16 {
+    border-spacing: 4rem;
+  }
+  .xxl\:bs-17 {
+    border-spacing: 4.25rem;
+  }
+  .xxl\:bs-18 {
+    border-spacing: 4.5rem;
+  }
+  .xxl\:bs-19 {
+    border-spacing: 4.75rem;
+  }
+  .xxl\:bs-20 {
+    border-spacing: 5rem;
+  }
+  .xxl\:bs-21 {
+    border-spacing: 5.25rem;
+  }
+  .xxl\:bs-22 {
+    border-spacing: 5.5rem;
+  }
+  .xxl\:bs-23 {
+    border-spacing: 5.75rem;
+  }
+  .xxl\:bs-24 {
+    border-spacing: 6rem;
+  }
+  .xxl\:bs-25 {
+    border-spacing: 6.25rem;
+  }
+  .xxl\:bs-26 {
+    border-spacing: 6.5rem;
+  }
+  .xxl\:bs-27 {
+    border-spacing: 6.75rem;
+  }
+  .xxl\:bs-28 {
+    border-spacing: 7rem;
+  }
+  .xxl\:bs-29 {
+    border-spacing: 7.25rem;
+  }
+  .xxl\:bs-30 {
+    border-spacing: 7.5rem;
+  }
+  .xxl\:bs-31 {
+    border-spacing: 7.75rem;
+  }
+  .xxl\:bs-32 {
+    border-spacing: 8rem;
+  }
+  .xxl\:bs-33 {
+    border-spacing: 8.25rem;
+  }
+  .xxl\:bs-34 {
+    border-spacing: 8.5rem;
+  }
+  .xxl\:bs-35 {
+    border-spacing: 8.75rem;
+  }
+  .xxl\:bs-36 {
+    border-spacing: 9rem;
+  }
+  .xxl\:bs-37 {
+    border-spacing: 9.25rem;
+  }
+  .xxl\:bs-38 {
+    border-spacing: 9.5rem;
+  }
+  .xxl\:bs-39 {
+    border-spacing: 9.75rem;
+  }
+  .xxl\:bs-40 {
+    border-spacing: 10rem;
+  }
+  .xxl\:bs-41 {
+    border-spacing: 10.25rem;
+  }
+  .xxl\:bs-42 {
+    border-spacing: 10.5rem;
+  }
+  .xxl\:bs-43 {
+    border-spacing: 10.75rem;
+  }
+  .xxl\:bs-44 {
+    border-spacing: 11rem;
+  }
+  .xxl\:bs-45 {
+    border-spacing: 11.25rem;
+  }
+  .xxl\:bs-46 {
+    border-spacing: 11.5rem;
+  }
+  .xxl\:bs-47 {
+    border-spacing: 11.75rem;
+  }
+  .xxl\:bs-48 {
+    border-spacing: 12rem;
+  }
+  .xxl\:bs-49 {
+    border-spacing: 12.25rem;
+  }
+  .xxl\:bs-50 {
+    border-spacing: 12.5rem;
+  }
+  .xxl\:bs-51 {
+    border-spacing: 12.75rem;
+  }
+  .xxl\:bs-52 {
+    border-spacing: 13rem;
+  }
+  .xxl\:bs-53 {
+    border-spacing: 13.25rem;
+  }
+  .xxl\:bs-54 {
+    border-spacing: 13.5rem;
+  }
+  .xxl\:bs-55 {
+    border-spacing: 13.75rem;
+  }
+  .xxl\:bs-56 {
+    border-spacing: 14rem;
+  }
+  .xxl\:bs-57 {
+    border-spacing: 14.25rem;
+  }
+  .xxl\:bs-58 {
+    border-spacing: 14.5rem;
+  }
+  .xxl\:bs-59 {
+    border-spacing: 14.75rem;
+  }
+  .xxl\:bs-60 {
+    border-spacing: 15rem;
+  }
+  .xxl\:bs-61 {
+    border-spacing: 15.25rem;
+  }
+  .xxl\:bs-62 {
+    border-spacing: 15.5rem;
+  }
+  .xxl\:bs-63 {
+    border-spacing: 15.75rem;
+  }
+  .xxl\:bs-64 {
+    border-spacing: 16rem;
+  }
+  .xxl\:bs-65 {
+    border-spacing: 16.25rem;
+  }
+  .xxl\:bs-66 {
+    border-spacing: 16.5rem;
+  }
+  .xxl\:bs-67 {
+    border-spacing: 16.75rem;
+  }
+  .xxl\:bs-68 {
+    border-spacing: 17rem;
+  }
+  .xxl\:bs-69 {
+    border-spacing: 17.25rem;
+  }
+  .xxl\:bs-70 {
+    border-spacing: 17.5rem;
+  }
+  .xxl\:bs-71 {
+    border-spacing: 17.75rem;
+  }
+  .xxl\:bs-72 {
+    border-spacing: 18rem;
+  }
+  .xxl\:bs-73 {
+    border-spacing: 18.25rem;
+  }
+  .xxl\:bs-74 {
+    border-spacing: 18.5rem;
+  }
+  .xxl\:bs-75 {
+    border-spacing: 18.75rem;
+  }
+  .xxl\:bs-76 {
+    border-spacing: 19rem;
+  }
+  .xxl\:bs-77 {
+    border-spacing: 19.25rem;
+  }
+  .xxl\:bs-78 {
+    border-spacing: 19.5rem;
+  }
+  .xxl\:bs-79 {
+    border-spacing: 19.75rem;
+  }
+  .xxl\:bs-80 {
+    border-spacing: 20rem;
+  }
+  .xxl\:bs-81 {
+    border-spacing: 20.25rem;
+  }
+  .xxl\:bs-82 {
+    border-spacing: 20.5rem;
+  }
+  .xxl\:bs-83 {
+    border-spacing: 20.75rem;
+  }
+  .xxl\:bs-84 {
+    border-spacing: 21rem;
+  }
+  .xxl\:bs-85 {
+    border-spacing: 21.25rem;
+  }
+  .xxl\:bs-86 {
+    border-spacing: 21.5rem;
+  }
+  .xxl\:bs-87 {
+    border-spacing: 21.75rem;
+  }
+  .xxl\:bs-88 {
+    border-spacing: 22rem;
+  }
+  .xxl\:bs-89 {
+    border-spacing: 22.25rem;
+  }
+  .xxl\:bs-90 {
+    border-spacing: 22.5rem;
+  }
+  .xxl\:bs-91 {
+    border-spacing: 22.75rem;
+  }
+  .xxl\:bs-92 {
+    border-spacing: 23rem;
+  }
+  .xxl\:bs-93 {
+    border-spacing: 23.25rem;
+  }
+  .xxl\:bs-94 {
+    border-spacing: 23.5rem;
+  }
+  .xxl\:bs-95 {
+    border-spacing: 23.75rem;
+  }
+  .xxl\:bs-96 {
+    border-spacing: 24rem;
+  }
+  .xxl\:bs-97 {
+    border-spacing: 24.25rem;
+  }
+  .xxl\:bs-98 {
+    border-spacing: 24.5rem;
+  }
+  .xxl\:bs-99 {
+    border-spacing: 24.75rem;
+  }
+  .xxl\:bs-100 {
+    border-spacing: 25rem;
+  }
+}
 .b-none {
   border-style: none;
 }
