@@ -15169,6 +15169,756 @@
   text-decoration-color: transparent;
 }
 
+.ba-f {
+  background-attachment: "fixed";
+}
+
+.h\:ba-f:hover {
+  background-attachment: "fixed";
+}
+
+.ba-l {
+  background-attachment: "local";
+}
+
+.h\:ba-l:hover {
+  background-attachment: "local";
+}
+
+.ba-ls {
+  background-attachment: "local, scroll";
+}
+
+.h\:ba-ls:hover {
+  background-attachment: "local, scroll";
+}
+
+.ba-s {
+  background-attachment: "scroll";
+}
+
+.h\:ba-s:hover {
+  background-attachment: "scroll";
+}
+
+.ba-sl {
+  background-attachment: "scroll, local";
+}
+
+.h\:ba-sl:hover {
+  background-attachment: "scroll, local";
+}
+
+@media (min-width: 640px) {
+  .sm\:ba-f {
+    background-attachment: "fixed";
+  }
+  .sm\:ba-l {
+    background-attachment: "local";
+  }
+  .sm\:ba-ls {
+    background-attachment: "local, scroll";
+  }
+  .sm\:ba-s {
+    background-attachment: "scroll";
+  }
+  .sm\:ba-sl {
+    background-attachment: "scroll, local";
+  }
+}
+@media (min-width: 768px) {
+  .md\:ba-f {
+    background-attachment: "fixed";
+  }
+  .md\:ba-l {
+    background-attachment: "local";
+  }
+  .md\:ba-ls {
+    background-attachment: "local, scroll";
+  }
+  .md\:ba-s {
+    background-attachment: "scroll";
+  }
+  .md\:ba-sl {
+    background-attachment: "scroll, local";
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:ba-f {
+    background-attachment: "fixed";
+  }
+  .lg\:ba-l {
+    background-attachment: "local";
+  }
+  .lg\:ba-ls {
+    background-attachment: "local, scroll";
+  }
+  .lg\:ba-s {
+    background-attachment: "scroll";
+  }
+  .lg\:ba-sl {
+    background-attachment: "scroll, local";
+  }
+}
+@media (min-width: 1280px) {
+  .xl\:ba-f {
+    background-attachment: "fixed";
+  }
+  .xl\:ba-l {
+    background-attachment: "local";
+  }
+  .xl\:ba-ls {
+    background-attachment: "local, scroll";
+  }
+  .xl\:ba-s {
+    background-attachment: "scroll";
+  }
+  .xl\:ba-sl {
+    background-attachment: "scroll, local";
+  }
+}
+@media (min-width: 1536px) {
+  .xxl\:ba-f {
+    background-attachment: "fixed";
+  }
+  .xxl\:ba-l {
+    background-attachment: "local";
+  }
+  .xxl\:ba-ls {
+    background-attachment: "local, scroll";
+  }
+  .xxl\:ba-s {
+    background-attachment: "scroll";
+  }
+  .xxl\:ba-sl {
+    background-attachment: "scroll, local";
+  }
+}
+.bc-bb {
+  background-clip: "border-box";
+}
+
+.h\:bc-bb:hover {
+  background-clip: "border-box";
+}
+
+.bc-cb {
+  background-clip: "content-box";
+}
+
+.h\:bc-cb:hover {
+  background-clip: "content-box";
+}
+
+.bc-pb {
+  background-clip: "padding-box";
+}
+
+.h\:bc-pb:hover {
+  background-clip: "padding-box";
+}
+
+.bc-t {
+  background-clip: "text";
+}
+
+.h\:bc-t:hover {
+  background-clip: "text";
+}
+
+@media (min-width: 640px) {
+  .sm\:bc-bb {
+    background-clip: "border-box";
+  }
+  .sm\:bc-cb {
+    background-clip: "content-box";
+  }
+  .sm\:bc-pb {
+    background-clip: "padding-box";
+  }
+  .sm\:bc-t {
+    background-clip: "text";
+  }
+}
+@media (min-width: 768px) {
+  .md\:bc-bb {
+    background-clip: "border-box";
+  }
+  .md\:bc-cb {
+    background-clip: "content-box";
+  }
+  .md\:bc-pb {
+    background-clip: "padding-box";
+  }
+  .md\:bc-t {
+    background-clip: "text";
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:bc-bb {
+    background-clip: "border-box";
+  }
+  .lg\:bc-cb {
+    background-clip: "content-box";
+  }
+  .lg\:bc-pb {
+    background-clip: "padding-box";
+  }
+  .lg\:bc-t {
+    background-clip: "text";
+  }
+}
+@media (min-width: 1280px) {
+  .xl\:bc-bb {
+    background-clip: "border-box";
+  }
+  .xl\:bc-cb {
+    background-clip: "content-box";
+  }
+  .xl\:bc-pb {
+    background-clip: "padding-box";
+  }
+  .xl\:bc-t {
+    background-clip: "text";
+  }
+}
+@media (min-width: 1536px) {
+  .xxl\:bc-bb {
+    background-clip: "border-box";
+  }
+  .xxl\:bc-cb {
+    background-clip: "content-box";
+  }
+  .xxl\:bc-pb {
+    background-clip: "padding-box";
+  }
+  .xxl\:bc-t {
+    background-clip: "text";
+  }
+}
+.bo-bb {
+  background-origin: "border-box";
+}
+
+.h\:bo-bb:hover {
+  background-origin: "border-box";
+}
+
+.bo-cb {
+  background-origin: "content-box";
+}
+
+.h\:bo-cb:hover {
+  background-origin: "content-box";
+}
+
+.bo-pb {
+  background-origin: "padding-box";
+}
+
+.h\:bo-pb:hover {
+  background-origin: "padding-box";
+}
+
+@media (min-width: 640px) {
+  .sm\:bo-bb {
+    background-origin: "border-box";
+  }
+  .sm\:bo-cb {
+    background-origin: "content-box";
+  }
+  .sm\:bo-pb {
+    background-origin: "padding-box";
+  }
+}
+@media (min-width: 768px) {
+  .md\:bo-bb {
+    background-origin: "border-box";
+  }
+  .md\:bo-cb {
+    background-origin: "content-box";
+  }
+  .md\:bo-pb {
+    background-origin: "padding-box";
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:bo-bb {
+    background-origin: "border-box";
+  }
+  .lg\:bo-cb {
+    background-origin: "content-box";
+  }
+  .lg\:bo-pb {
+    background-origin: "padding-box";
+  }
+}
+@media (min-width: 1280px) {
+  .xl\:bo-bb {
+    background-origin: "border-box";
+  }
+  .xl\:bo-cb {
+    background-origin: "content-box";
+  }
+  .xl\:bo-pb {
+    background-origin: "padding-box";
+  }
+}
+@media (min-width: 1536px) {
+  .xxl\:bo-bb {
+    background-origin: "border-box";
+  }
+  .xxl\:bo-cb {
+    background-origin: "content-box";
+  }
+  .xxl\:bo-pb {
+    background-origin: "padding-box";
+  }
+}
+.bp-b {
+  background-position: "bottom";
+}
+
+.h\:bp-b:hover {
+  background-position: "bottom";
+}
+
+.bp-c {
+  background-position: "center";
+}
+
+.h\:bp-c:hover {
+  background-position: "center";
+}
+
+.bp-l {
+  background-position: "left";
+}
+
+.h\:bp-l:hover {
+  background-position: "left";
+}
+
+.bp-lb {
+  background-position: "left bottom";
+}
+
+.h\:bp-lb:hover {
+  background-position: "left bottom";
+}
+
+.bp-lt {
+  background-position: "left top";
+}
+
+.h\:bp-lt:hover {
+  background-position: "left top";
+}
+
+.bp-r {
+  background-position: "right";
+}
+
+.h\:bp-r:hover {
+  background-position: "right";
+}
+
+.bp-rb {
+  background-position: "right bottom";
+}
+
+.h\:bp-rb:hover {
+  background-position: "right bottom";
+}
+
+.bp-rt {
+  background-position: "right top";
+}
+
+.h\:bp-rt:hover {
+  background-position: "right top";
+}
+
+.bp-t {
+  background-position: "top";
+}
+
+.h\:bp-t:hover {
+  background-position: "top";
+}
+
+@media (min-width: 640px) {
+  .sm\:bp-b {
+    background-position: "bottom";
+  }
+  .sm\:bp-c {
+    background-position: "center";
+  }
+  .sm\:bp-l {
+    background-position: "left";
+  }
+  .sm\:bp-lb {
+    background-position: "left bottom";
+  }
+  .sm\:bp-lt {
+    background-position: "left top";
+  }
+  .sm\:bp-r {
+    background-position: "right";
+  }
+  .sm\:bp-rb {
+    background-position: "right bottom";
+  }
+  .sm\:bp-rt {
+    background-position: "right top";
+  }
+  .sm\:bp-t {
+    background-position: "top";
+  }
+}
+@media (min-width: 768px) {
+  .md\:bp-b {
+    background-position: "bottom";
+  }
+  .md\:bp-c {
+    background-position: "center";
+  }
+  .md\:bp-l {
+    background-position: "left";
+  }
+  .md\:bp-lb {
+    background-position: "left bottom";
+  }
+  .md\:bp-lt {
+    background-position: "left top";
+  }
+  .md\:bp-r {
+    background-position: "right";
+  }
+  .md\:bp-rb {
+    background-position: "right bottom";
+  }
+  .md\:bp-rt {
+    background-position: "right top";
+  }
+  .md\:bp-t {
+    background-position: "top";
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:bp-b {
+    background-position: "bottom";
+  }
+  .lg\:bp-c {
+    background-position: "center";
+  }
+  .lg\:bp-l {
+    background-position: "left";
+  }
+  .lg\:bp-lb {
+    background-position: "left bottom";
+  }
+  .lg\:bp-lt {
+    background-position: "left top";
+  }
+  .lg\:bp-r {
+    background-position: "right";
+  }
+  .lg\:bp-rb {
+    background-position: "right bottom";
+  }
+  .lg\:bp-rt {
+    background-position: "right top";
+  }
+  .lg\:bp-t {
+    background-position: "top";
+  }
+}
+@media (min-width: 1280px) {
+  .xl\:bp-b {
+    background-position: "bottom";
+  }
+  .xl\:bp-c {
+    background-position: "center";
+  }
+  .xl\:bp-l {
+    background-position: "left";
+  }
+  .xl\:bp-lb {
+    background-position: "left bottom";
+  }
+  .xl\:bp-lt {
+    background-position: "left top";
+  }
+  .xl\:bp-r {
+    background-position: "right";
+  }
+  .xl\:bp-rb {
+    background-position: "right bottom";
+  }
+  .xl\:bp-rt {
+    background-position: "right top";
+  }
+  .xl\:bp-t {
+    background-position: "top";
+  }
+}
+@media (min-width: 1536px) {
+  .xxl\:bp-b {
+    background-position: "bottom";
+  }
+  .xxl\:bp-c {
+    background-position: "center";
+  }
+  .xxl\:bp-l {
+    background-position: "left";
+  }
+  .xxl\:bp-lb {
+    background-position: "left bottom";
+  }
+  .xxl\:bp-lt {
+    background-position: "left top";
+  }
+  .xxl\:bp-r {
+    background-position: "right";
+  }
+  .xxl\:bp-rb {
+    background-position: "right bottom";
+  }
+  .xxl\:bp-rt {
+    background-position: "right top";
+  }
+  .xxl\:bp-t {
+    background-position: "top";
+  }
+}
+.br-nr {
+  background-repeat: "no-repeat";
+}
+
+.h\:br-nr:hover {
+  background-repeat: "no-repeat";
+}
+
+.br-r {
+  background-repeat: "repeat";
+}
+
+.h\:br-r:hover {
+  background-repeat: "repeat";
+}
+
+.br-ro {
+  background-repeat: "round";
+}
+
+.h\:br-ro:hover {
+  background-repeat: "round";
+}
+
+.br-rx {
+  background-repeat: "repeat-x";
+}
+
+.h\:br-rx:hover {
+  background-repeat: "repeat-x";
+}
+
+.br-ry {
+  background-repeat: "repeat-y";
+}
+
+.h\:br-ry:hover {
+  background-repeat: "repeat-y";
+}
+
+.br-s {
+  background-repeat: "space";
+}
+
+.h\:br-s:hover {
+  background-repeat: "space";
+}
+
+@media (min-width: 640px) {
+  .sm\:br-nr {
+    background-repeat: "no-repeat";
+  }
+  .sm\:br-r {
+    background-repeat: "repeat";
+  }
+  .sm\:br-ro {
+    background-repeat: "round";
+  }
+  .sm\:br-rx {
+    background-repeat: "repeat-x";
+  }
+  .sm\:br-ry {
+    background-repeat: "repeat-y";
+  }
+  .sm\:br-s {
+    background-repeat: "space";
+  }
+}
+@media (min-width: 768px) {
+  .md\:br-nr {
+    background-repeat: "no-repeat";
+  }
+  .md\:br-r {
+    background-repeat: "repeat";
+  }
+  .md\:br-ro {
+    background-repeat: "round";
+  }
+  .md\:br-rx {
+    background-repeat: "repeat-x";
+  }
+  .md\:br-ry {
+    background-repeat: "repeat-y";
+  }
+  .md\:br-s {
+    background-repeat: "space";
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:br-nr {
+    background-repeat: "no-repeat";
+  }
+  .lg\:br-r {
+    background-repeat: "repeat";
+  }
+  .lg\:br-ro {
+    background-repeat: "round";
+  }
+  .lg\:br-rx {
+    background-repeat: "repeat-x";
+  }
+  .lg\:br-ry {
+    background-repeat: "repeat-y";
+  }
+  .lg\:br-s {
+    background-repeat: "space";
+  }
+}
+@media (min-width: 1280px) {
+  .xl\:br-nr {
+    background-repeat: "no-repeat";
+  }
+  .xl\:br-r {
+    background-repeat: "repeat";
+  }
+  .xl\:br-ro {
+    background-repeat: "round";
+  }
+  .xl\:br-rx {
+    background-repeat: "repeat-x";
+  }
+  .xl\:br-ry {
+    background-repeat: "repeat-y";
+  }
+  .xl\:br-s {
+    background-repeat: "space";
+  }
+}
+@media (min-width: 1536px) {
+  .xxl\:br-nr {
+    background-repeat: "no-repeat";
+  }
+  .xxl\:br-r {
+    background-repeat: "repeat";
+  }
+  .xxl\:br-ro {
+    background-repeat: "round";
+  }
+  .xxl\:br-rx {
+    background-repeat: "repeat-x";
+  }
+  .xxl\:br-ry {
+    background-repeat: "repeat-y";
+  }
+  .xxl\:br-s {
+    background-repeat: "space";
+  }
+}
+.bs-auto {
+  background-size: "auto";
+}
+
+.h\:bs-auto:hover {
+  background-size: "auto";
+}
+
+.bs-c {
+  background-size: "cover";
+}
+
+.h\:bs-c:hover {
+  background-size: "cover";
+}
+
+.bs-co {
+  background-size: "contain";
+}
+
+.h\:bs-co:hover {
+  background-size: "contain";
+}
+
+@media (min-width: 640px) {
+  .sm\:bs-auto {
+    background-size: "auto";
+  }
+  .sm\:bs-c {
+    background-size: "cover";
+  }
+  .sm\:bs-co {
+    background-size: "contain";
+  }
+}
+@media (min-width: 768px) {
+  .md\:bs-auto {
+    background-size: "auto";
+  }
+  .md\:bs-c {
+    background-size: "cover";
+  }
+  .md\:bs-co {
+    background-size: "contain";
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:bs-auto {
+    background-size: "auto";
+  }
+  .lg\:bs-c {
+    background-size: "cover";
+  }
+  .lg\:bs-co {
+    background-size: "contain";
+  }
+}
+@media (min-width: 1280px) {
+  .xl\:bs-auto {
+    background-size: "auto";
+  }
+  .xl\:bs-c {
+    background-size: "cover";
+  }
+  .xl\:bs-co {
+    background-size: "contain";
+  }
+}
+@media (min-width: 1536px) {
+  .xxl\:bs-auto {
+    background-size: "auto";
+  }
+  .xxl\:bs-c {
+    background-size: "cover";
+  }
+  .xxl\:bs-co {
+    background-size: "contain";
+  }
+}
 .bc-c {
   border-collapse: collapse;
 }

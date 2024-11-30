@@ -1,0 +1,77 @@
+@use "sass:math";
+@use "../abstracts/variables" as vars;
+@use "../abstracts/mixins/" as mi;
+
+$yma-background-utils: (
+  "background-attachment": (
+    "prefix": "ba",
+    "values": (
+      "f": "fixed",
+      "l": "local",
+      "ls": "local, scroll",
+      "s": "scroll",
+      "sl": "scroll, local",
+    ),
+  ),
+
+  "background-clip": (
+    "prefix": "bc",
+    "values": (
+      "bb": "border-box",
+      "cb": "content-box",
+      "pb": "padding-box",
+      "t": "text",
+    ),
+  ),
+
+  "background-origin": (
+    "prefix": "bo",
+    "values": (
+      "bb": "border-box",
+      "cb": "content-box",
+      "pb": "padding-box",
+    ),
+  ),
+
+  "background-position": (
+    "prefix": "bp",
+    "values": (
+      "b": "bottom",
+      "c": "center",
+      "l": "left",
+      "lb": "left bottom",
+      "lt": "left top",
+      "r": "right",
+      "rb": "right bottom",
+      "rt": "right top",
+      "t": "top",
+    ),
+  ),
+
+  "background-repeat": (
+    "prefix": "br",
+    "values": (
+      "nr": "no-repeat",
+      "r": "repeat",
+      "ro": "round",
+      "rx": "repeat-x",
+      "ry": "repeat-y",
+      "s": "space",
+    ),
+  ),
+
+  "background-size": (
+    "prefix": "bs",
+    "values": (
+      "auto": "auto",
+      "c": "cover",
+      "co": "contain",
+    ),
+  ),
+);
+
+@each $property, $map in $yma-background-utils {
+  $prefix: map-get($map, "prefix");
+
+  @include mi.create-utilities($map, $prefix, $property);
+}
