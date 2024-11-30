@@ -14,6 +14,7 @@ $yma-fx-utils: (
       "xl": blur(vars.$yma-backdrop-blur * 16),
     ),
   ),
+
   "box-shadow": (
     "prefix": "bs",
     "values": (
@@ -40,6 +41,19 @@ $yma-fx-utils: (
       "80": 0.8,
       "90": 0.9,
       "100": 1,
+    ),
+  ),
+
+  "filter": (
+    "prefix": "b",
+    "values": (
+      "none": blur(vars.$yma-blur * 0),
+      "xs": blur(vars.$yma-blur),
+      "sm": blur(vars.$yma-blur * 2),
+      "md": blur(vars.$yma-blur * 4),
+      "lg": blur(vars.$yma-blur * 6),
+      "xl": blur(vars.$yma-blur * 8),
+      "xxl": blur(vars.$yma-blur * 16),
     ),
   ),
 );

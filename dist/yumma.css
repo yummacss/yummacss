@@ -93909,6 +93909,177 @@
     opacity: 1;
   }
 }
+.b-none {
+  filter: blur(0px);
+}
+
+.h\:b-none:hover {
+  filter: blur(0px);
+}
+
+.b-xs {
+  filter: blur(4px);
+}
+
+.h\:b-xs:hover {
+  filter: blur(4px);
+}
+
+.b-sm {
+  filter: blur(8px);
+}
+
+.h\:b-sm:hover {
+  filter: blur(8px);
+}
+
+.b-md {
+  filter: blur(16px);
+}
+
+.h\:b-md:hover {
+  filter: blur(16px);
+}
+
+.b-lg {
+  filter: blur(24px);
+}
+
+.h\:b-lg:hover {
+  filter: blur(24px);
+}
+
+.b-xl {
+  filter: blur(32px);
+}
+
+.h\:b-xl:hover {
+  filter: blur(32px);
+}
+
+.b-xxl {
+  filter: blur(64px);
+}
+
+.h\:b-xxl:hover {
+  filter: blur(64px);
+}
+
+@media (min-width: 640px) {
+  .sm\:b-none {
+    filter: blur(0px);
+  }
+  .sm\:b-xs {
+    filter: blur(4px);
+  }
+  .sm\:b-sm {
+    filter: blur(8px);
+  }
+  .sm\:b-md {
+    filter: blur(16px);
+  }
+  .sm\:b-lg {
+    filter: blur(24px);
+  }
+  .sm\:b-xl {
+    filter: blur(32px);
+  }
+  .sm\:b-xxl {
+    filter: blur(64px);
+  }
+}
+@media (min-width: 768px) {
+  .md\:b-none {
+    filter: blur(0px);
+  }
+  .md\:b-xs {
+    filter: blur(4px);
+  }
+  .md\:b-sm {
+    filter: blur(8px);
+  }
+  .md\:b-md {
+    filter: blur(16px);
+  }
+  .md\:b-lg {
+    filter: blur(24px);
+  }
+  .md\:b-xl {
+    filter: blur(32px);
+  }
+  .md\:b-xxl {
+    filter: blur(64px);
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:b-none {
+    filter: blur(0px);
+  }
+  .lg\:b-xs {
+    filter: blur(4px);
+  }
+  .lg\:b-sm {
+    filter: blur(8px);
+  }
+  .lg\:b-md {
+    filter: blur(16px);
+  }
+  .lg\:b-lg {
+    filter: blur(24px);
+  }
+  .lg\:b-xl {
+    filter: blur(32px);
+  }
+  .lg\:b-xxl {
+    filter: blur(64px);
+  }
+}
+@media (min-width: 1280px) {
+  .xl\:b-none {
+    filter: blur(0px);
+  }
+  .xl\:b-xs {
+    filter: blur(4px);
+  }
+  .xl\:b-sm {
+    filter: blur(8px);
+  }
+  .xl\:b-md {
+    filter: blur(16px);
+  }
+  .xl\:b-lg {
+    filter: blur(24px);
+  }
+  .xl\:b-xl {
+    filter: blur(32px);
+  }
+  .xl\:b-xxl {
+    filter: blur(64px);
+  }
+}
+@media (min-width: 1536px) {
+  .xxl\:b-none {
+    filter: blur(0px);
+  }
+  .xxl\:b-xs {
+    filter: blur(4px);
+  }
+  .xxl\:b-sm {
+    filter: blur(8px);
+  }
+  .xxl\:b-md {
+    filter: blur(16px);
+  }
+  .xxl\:b-lg {
+    filter: blur(24px);
+  }
+  .xxl\:b-xl {
+    filter: blur(32px);
+  }
+  .xxl\:b-xxl {
+    filter: blur(64px);
+  }
+}
 .cg-0 {
   column-gap: 0rem;
 }
