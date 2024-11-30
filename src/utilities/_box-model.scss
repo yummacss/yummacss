@@ -189,7 +189,7 @@ $yma-box-model-utils: (
       "margin-right",
     ),
     "values": (
-      "custom-handler": true,
+      "custom": true,
       "map": ma.$yma-spacing-map,
     ),
   ),
@@ -201,7 +201,7 @@ $yma-box-model-utils: (
       "margin-top",
     ),
     "values": (
-      "custom-handler": true,
+      "custom": true,
       "map": ma.$yma-spacing-map,
     ),
   ),
@@ -236,7 +236,7 @@ $yma-box-model-utils: (
   $properties: map-get($map, "properties");
   $values: map-get($map, "values");
 
-  @if type-of($values) == "map" and map-get($values, "custom-handler") {
+  @if type-of($values) == "map" and map-get($values, "custom") {
     @include mi.create-spacing-utilities(
       $prefix,
       map-get($values, "map"),
