@@ -94,6 +94,14 @@ $yma-layout-utils: (
     ),
   ),
 
+  "isolation": (
+    "prefix": "i",
+    "values": (
+      "auto": auto,
+      "i": isolate,
+    ),
+  ),
+
   "left": (
     "prefix": "dir-l",
     "values": (

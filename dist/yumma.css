@@ -104943,6 +104943,62 @@
     inset: none;
   }
 }
+.i-auto {
+  isolation: auto;
+}
+
+.h\:i-auto:hover {
+  isolation: auto;
+}
+
+.i-i {
+  isolation: isolate;
+}
+
+.h\:i-i:hover {
+  isolation: isolate;
+}
+
+@media (min-width: 640px) {
+  .sm\:i-auto {
+    isolation: auto;
+  }
+  .sm\:i-i {
+    isolation: isolate;
+  }
+}
+@media (min-width: 768px) {
+  .md\:i-auto {
+    isolation: auto;
+  }
+  .md\:i-i {
+    isolation: isolate;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:i-auto {
+    isolation: auto;
+  }
+  .lg\:i-i {
+    isolation: isolate;
+  }
+}
+@media (min-width: 1280px) {
+  .xl\:i-auto {
+    isolation: auto;
+  }
+  .xl\:i-i {
+    isolation: isolate;
+  }
+}
+@media (min-width: 1536px) {
+  .xxl\:i-auto {
+    isolation: auto;
+  }
+  .xxl\:i-i {
+    isolation: isolate;
+  }
+}
 .dir-l-0 {
   left: 0;
 }
