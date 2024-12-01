@@ -5,6 +5,9 @@
 $yma-fx-utils: (
   "backdrop-filter": (
     "prefix": "bf-b",
+    "properties": (
+      "backdrop-filter"
+    ),
     "values": (
       "none": blur(vars.$yma-backdrop-blur * 0),
       "xs": blur(vars.$yma-backdrop-blur),
@@ -18,7 +21,7 @@ $yma-fx-utils: (
   "box-decoration-break": (
     "prefix": "bdb",
     "properties": (
-      "box-decoration-break",
+      "box-decoration-break"
     ),
     "values": (
       "c": slice,
@@ -28,6 +31,9 @@ $yma-fx-utils: (
 
   "box-shadow": (
     "prefix": "bs",
+    "properties": (
+      "box-shadow"
+    ),
     "values": (
       "none": none,
       "xs": vars.$yma-box-shadow-xs,
@@ -40,6 +46,9 @@ $yma-fx-utils: (
 
   "opacity": (
     "prefix": "o",
+    "properties": (
+      "opacity"
+    ),
     "values": (
       "0": 0,
       "10": 0.1,
@@ -55,8 +64,11 @@ $yma-fx-utils: (
     ),
   ),
 
-  "filter": (
-    "prefix": "b",
+  "filter-blur": (
+    "prefix": "f-b",
+    "properties": (
+      "filter"
+    ),
     "values": (
       "none": blur(vars.$yma-blur * 0),
       "xs": blur(vars.$yma-blur),
@@ -66,10 +78,31 @@ $yma-fx-utils: (
       "xl": blur(vars.$yma-blur * 16),
     ),
   ),
+
+  "filter-grayscale": (
+    "prefix": "f-g",
+    "properties": (
+      "filter"
+    ),
+    "values": (
+      "0": grayscale(vars.$yma-grayscale * 0),
+      "10": grayscale(vars.$yma-grayscale),
+      "20": grayscale(vars.$yma-grayscale * 2),
+      "30": grayscale(vars.$yma-grayscale * 3),
+      "40": grayscale(vars.$yma-grayscale * 4),
+      "50": grayscale(vars.$yma-grayscale * 5),
+      "60": grayscale(vars.$yma-grayscale * 6),
+      "70": grayscale(vars.$yma-grayscale * 7),
+      "80": grayscale(vars.$yma-grayscale * 8),
+      "90": grayscale(vars.$yma-grayscale * 9),
+      "100": grayscale(vars.$yma-grayscale * 10),
+    ),
+  ),
 );
 
-@each $property, $map in $yma-fx-utils {
+@each $name, $map in $yma-fx-utils {
   $prefix: map-get($map, "prefix");
+  $properties: map-get($map, "properties");
 
-  @include mi.create-utilities($map, $prefix, $property);
+  @include mi.create-utilities($map, $prefix, $properties);
 }
