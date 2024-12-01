@@ -42,10 +42,12 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Rename the `*-variants()` mixins to `*-scaling()`
 - Rework **Box Model** utilities generation
 - Update color shade percentage from `10%` to `14%`
+- Rename `src\abstracts\_layout.scss` to `src\abstracts\_container.scss`
 
 ### Removed
 
+- Remove `.ins{}` utility class
 - Remove `coreFile()` function
+- Remove `dist\yumma-core.css` file
+- Remove `dist\yumma-core.min.scss` file
 - Remove `minifiedCoreFile()` function
-- Remove `yumma-core.css` file
-- Remove `yumma-core.min.scss` file
