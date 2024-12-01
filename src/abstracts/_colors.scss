@@ -12,6 +12,7 @@
   @include m.color-scaling("border-top-color", "bc-t", $k, $v);
   @include m.color-scaling("caret-color", "cc", $k, $v);
   @include m.color-scaling("color", "tc", $k, $v);
+  @include m.color-scaling("fill", "f", $k, $v);
   @include m.color-scaling("outline-color", "oc", $k, $v);
   @include m.color-scaling("text-decoration-color", "tdc", $k, $v);
 
@@ -25,6 +26,7 @@
     @include m.shade-scaling("border-top-color", "bc-t", $k, $v, 14%);
     @include m.shade-scaling("caret-color", "cc", $k, $v, 14%);
     @include m.shade-scaling("color", "tc", $k, $v, 14%);
+    @include m.shade-scaling("fill", "f", $k, $v, 14%);
     @include m.shade-scaling("outline-color", "oc", $k, $v, 14%);
     @include m.shade-scaling("text-decoration-color", "tdc", $k, $v, 14%);
   }
