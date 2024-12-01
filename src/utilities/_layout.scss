@@ -12,6 +12,18 @@ $yma-layout-utils: (
     ),
   ),
 
+  "clear": (
+    "prefix": "cl",
+    "values": (
+      "is": inline-start,
+      "ie": inline-end,
+      "l": left,
+      "r": right,
+      "b": both,
+      "none": none,
+    ),
+  ),
+
   "columns": (
     "prefix": "cols",
     "values": (
