@@ -6,6 +6,19 @@ All notable changes to the Yumma CSS will be documented in this file.
 
 ### Added
 
+- Add **Background Attachment** utilities
+- Add **Background Clip** utilities
+- Add **Background Origin** utilities
+- Add **Background Position** utilities
+- Add **Background Repeat** utilities
+- Add **Background Size** utilities
+- Add **Blur** utilities
+- Add **Border Spacing** utilities
+- Add **Box Decoration Break** utilities
+- Add **Clear** utilities
+- Add **Fill** utilities
+- Add **Grayscale** utilities
+- Add **Isolation** utilities
 - Add `_color-utilities.scss`, `_create-utilities.scss`, `_extend-utilities.scss` and `_scale-utilities.scss` partial files
 - Add `_dimension.scss`, `_height.scss`, `_margin.scss`, `_padding.scss`, `_spacing.scss` and `_width.scss` files
 - Add `_create-values.scss` file
