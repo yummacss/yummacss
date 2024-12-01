@@ -1,6 +1,6 @@
 {
   "name": "yummacss",
-  "version": "2.2.0",
+  "version": "3.0.0",
   "description": "A practical CSS framework with an abbreviated naming convention.",
   "main": "bin/yumma-cli.js",
   "bin": {
