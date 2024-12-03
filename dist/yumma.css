@@ -108183,243 +108183,220 @@
   }
 }
 .fs-xs {
-  font-size: 0.75rem;
+  font-size: 0.25rem;
 }
 
 .h\:fs-xs:hover {
-  font-size: 0.75rem;
-}
-
-.fs-b {
-  font-size: 1rem;
-}
-
-.h\:fs-b:hover {
-  font-size: 1rem;
+  font-size: 0.25rem;
 }
 
 .fs-sm {
-  font-size: 1.5rem;
+  font-size: 0.25rem;
 }
 
 .h\:fs-sm:hover {
-  font-size: 1.5rem;
+  font-size: 0.25rem;
 }
 
 .fs-md {
-  font-size: 2.25rem;
+  font-size: 0.5rem;
 }
 
 .h\:fs-md:hover {
-  font-size: 2.25rem;
+  font-size: 0.5rem;
 }
 
 .fs-lg {
-  font-size: 3rem;
+  font-size: 0.75rem;
 }
 
 .h\:fs-lg:hover {
-  font-size: 3rem;
+  font-size: 0.75rem;
 }
 
 .fs-xl {
-  font-size: 3.75rem;
+  font-size: 1rem;
 }
 
 .h\:fs-xl:hover {
-  font-size: 3.75rem;
+  font-size: 1rem;
 }
 
 .fs-xxl {
-  font-size: 4.5rem;
+  font-size: 1.5rem;
 }
 
 .h\:fs-xxl:hover {
-  font-size: 4.5rem;
+  font-size: 1.5rem;
 }
 
 .fs-3xl {
-  font-size: 5.25rem;
+  font-size: 3rem;
 }
 
 .h\:fs-3xl:hover {
-  font-size: 5.25rem;
+  font-size: 3rem;
 }
 
 .fs-6xl {
-  font-size: 6rem;
+  font-size: 4rem;
 }
 
 .h\:fs-6xl:hover {
-  font-size: 6rem;
+  font-size: 4rem;
 }
 
 .fs-9xl {
-  font-size: 6.75rem;
+  font-size: 8rem;
 }
 
 .h\:fs-9xl:hover {
-  font-size: 6.75rem;
+  font-size: 8rem;
 }
 
 @media (min-width: 640px) {
   .sm\:fs-xs {
-    font-size: 0.75rem;
-  }
-  .sm\:fs-b {
-    font-size: 1rem;
+    font-size: 0.25rem;
   }
   .sm\:fs-sm {
-    font-size: 1.5rem;
+    font-size: 0.25rem;
   }
   .sm\:fs-md {
-    font-size: 2.25rem;
+    font-size: 0.5rem;
   }
   .sm\:fs-lg {
-    font-size: 3rem;
+    font-size: 0.75rem;
   }
   .sm\:fs-xl {
-    font-size: 3.75rem;
+    font-size: 1rem;
   }
   .sm\:fs-xxl {
-    font-size: 4.5rem;
+    font-size: 1.5rem;
   }
   .sm\:fs-3xl {
-    font-size: 5.25rem;
+    font-size: 3rem;
   }
   .sm\:fs-6xl {
-    font-size: 6rem;
+    font-size: 4rem;
   }
   .sm\:fs-9xl {
-    font-size: 6.75rem;
+    font-size: 8rem;
   }
 }
 @media (min-width: 768px) {
   .md\:fs-xs {
-    font-size: 0.75rem;
-  }
-  .md\:fs-b {
-    font-size: 1rem;
+    font-size: 0.25rem;
   }
   .md\:fs-sm {
-    font-size: 1.5rem;
+    font-size: 0.25rem;
   }
   .md\:fs-md {
-    font-size: 2.25rem;
+    font-size: 0.5rem;
   }
   .md\:fs-lg {
-    font-size: 3rem;
+    font-size: 0.75rem;
   }
   .md\:fs-xl {
-    font-size: 3.75rem;
+    font-size: 1rem;
   }
   .md\:fs-xxl {
-    font-size: 4.5rem;
+    font-size: 1.5rem;
   }
   .md\:fs-3xl {
-    font-size: 5.25rem;
+    font-size: 3rem;
   }
   .md\:fs-6xl {
-    font-size: 6rem;
+    font-size: 4rem;
   }
   .md\:fs-9xl {
-    font-size: 6.75rem;
+    font-size: 8rem;
   }
 }
 @media (min-width: 1024px) {
   .lg\:fs-xs {
-    font-size: 0.75rem;
-  }
-  .lg\:fs-b {
-    font-size: 1rem;
+    font-size: 0.25rem;
   }
   .lg\:fs-sm {
-    font-size: 1.5rem;
+    font-size: 0.25rem;
   }
   .lg\:fs-md {
-    font-size: 2.25rem;
+    font-size: 0.5rem;
   }
   .lg\:fs-lg {
-    font-size: 3rem;
+    font-size: 0.75rem;
   }
   .lg\:fs-xl {
-    font-size: 3.75rem;
+    font-size: 1rem;
   }
   .lg\:fs-xxl {
-    font-size: 4.5rem;
+    font-size: 1.5rem;
   }
   .lg\:fs-3xl {
-    font-size: 5.25rem;
+    font-size: 3rem;
   }
   .lg\:fs-6xl {
-    font-size: 6rem;
+    font-size: 4rem;
   }
   .lg\:fs-9xl {
-    font-size: 6.75rem;
+    font-size: 8rem;
   }
 }
 @media (min-width: 1280px) {
   .xl\:fs-xs {
-    font-size: 0.75rem;
-  }
-  .xl\:fs-b {
-    font-size: 1rem;
+    font-size: 0.25rem;
   }
   .xl\:fs-sm {
-    font-size: 1.5rem;
+    font-size: 0.25rem;
   }
   .xl\:fs-md {
-    font-size: 2.25rem;
+    font-size: 0.5rem;
   }
   .xl\:fs-lg {
-    font-size: 3rem;
+    font-size: 0.75rem;
   }
   .xl\:fs-xl {
-    font-size: 3.75rem;
+    font-size: 1rem;
   }
   .xl\:fs-xxl {
-    font-size: 4.5rem;
+    font-size: 1.5rem;
   }
   .xl\:fs-3xl {
-    font-size: 5.25rem;
+    font-size: 3rem;
   }
   .xl\:fs-6xl {
-    font-size: 6rem;
+    font-size: 4rem;
   }
   .xl\:fs-9xl {
-    font-size: 6.75rem;
+    font-size: 8rem;
   }
 }
 @media (min-width: 1536px) {
   .xxl\:fs-xs {
-    font-size: 0.75rem;
-  }
-  .xxl\:fs-b {
-    font-size: 1rem;
+    font-size: 0.25rem;
   }
   .xxl\:fs-sm {
-    font-size: 1.5rem;
+    font-size: 0.25rem;
   }
   .xxl\:fs-md {
-    font-size: 2.25rem;
+    font-size: 0.5rem;
   }
   .xxl\:fs-lg {
-    font-size: 3rem;
+    font-size: 0.75rem;
   }
   .xxl\:fs-xl {
-    font-size: 3.75rem;
+    font-size: 1rem;
   }
   .xxl\:fs-xxl {
-    font-size: 4.5rem;
+    font-size: 1.5rem;
   }
   .xxl\:fs-3xl {
-    font-size: 5.25rem;
+    font-size: 3rem;
   }
   .xxl\:fs-6xl {
-    font-size: 6rem;
+    font-size: 4rem;
   }
   .xxl\:fs-9xl {
-    font-size: 6.75rem;
+    font-size: 8rem;
   }
 }
 .fs-i {

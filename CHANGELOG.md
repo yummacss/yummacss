@@ -47,12 +47,13 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Rename `_extensions.scss` to `_maps.scss`
 - Rename `_functions.scss` to `_ignore-neutral.scss`
 - Rename `gulpfile.js` file name to `gulpfile.mjs`
+- Rename `src\abstracts\_layout.scss` to `src\abstracts\_container.scss`
 - Rename `src\abstracts\mixins\_color.scss` to `src\abstracts\mixins\_color-utils.scss`
 - Rename `yummacss-cli` file to `yumma-cli`
 - Rename the `*-variants()` mixins to `*-scaling()`
 - Rework **Box Model** utilities generation
 - Update color shade percentage from `10%` to `14%`
-- Rename `src\abstracts\_layout.scss` to `src\abstracts\_container.scss`
+- Update font size initial value from `0.75rem` to `0.25rem`
 
 ### Removed
 
@@ -60,4 +61,6 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Remove `coreFile()` function
 - Remove `dist\yumma-core.css` file
 - Remove `dist\yumma-core.min.scss` file
+- Remove `fs-b` utility class
 - Remove `minifiedCoreFile()` function
+- Remove the font-size variable variants
