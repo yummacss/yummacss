@@ -74,10 +74,42 @@ $yma-box-model-utils: (
     "values": ma.$yma-margin-map,
   ),
 
+  "margin-block-end": (
+    "prefix": "mbe",
+    "properties": (
+      "margin-block-end",
+    ),
+    "values": ma.$yma-margin-map,
+  ),
+
+  "margin-block-start": (
+    "prefix": "mbs",
+    "properties": (
+      "margin-block-start",
+    ),
+    "values": ma.$yma-margin-map,
+  ),
+
   "margin-bottom": (
     "prefix": "mb",
     "properties": (
       "margin-bottom",
+    ),
+    "values": ma.$yma-margin-map,
+  ),
+
+  "margin-inline-end": (
+    "prefix": "mie",
+    "properties": (
+      "margin-inline-end",
+    ),
+    "values": ma.$yma-margin-map,
+  ),
+
+  "margin-inline-start": (
+    "prefix": "mis",
+    "properties": (
+      "margin-inline-start",
     ),
     "values": ma.$yma-margin-map,
   ),
@@ -132,10 +164,42 @@ $yma-box-model-utils: (
     "values": ma.$yma-padding-map,
   ),
 
+  "padding-block-end": (
+    "prefix": "pbe",
+    "properties": (
+      "padding-block-end",
+    ),
+    "values": ma.$yma-padding-map,
+  ),
+
+  "padding-block-start": (
+    "prefix": "pbs",
+    "properties": (
+      "padding-block-start",
+    ),
+    "values": ma.$yma-padding-map,
+  ),
+
   "padding-bottom": (
     "prefix": "pb",
     "properties": (
       "padding-bottom",
+    ),
+    "values": ma.$yma-padding-map,
+  ),
+
+  "padding-inline-end": (
+    "prefix": "pie",
+    "properties": (
+      "padding-inline-end",
+    ),
+    "values": ma.$yma-padding-map,
+  ),
+
+  "padding-inline-start": (
+    "prefix": "pis",
+    "properties": (
+      "padding-inline-start",
     ),
     "values": ma.$yma-padding-map,
   ),
