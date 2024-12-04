@@ -180,6 +180,50 @@ $yma-flexbox-utils: (
       "st": stretch,
     ),
   ),
+
+  "place-content": (
+    "prefix": "pc",
+    "properties": (
+      "place-content",
+    ),
+    "values": (
+      "b": baseline,
+      "c": center,
+      "e": end,
+      "s": start,
+      "sa": space-around,
+      "sb": space-between,
+      "se": space-evenly,
+    ),
+  ),
+
+  "place-items": (
+    "prefix": "pi",
+    "properties": (
+      "place-items",
+    ),
+    "values": (
+      "b": baseline,
+      "c": center,
+      "e": end,
+      "s": start,
+      "st": stretch,
+    ),
+  ),
+
+  "place-self": (
+    "prefix": "ps",
+    "properties": (
+      "place-self",
+    ),
+    "values": (
+      "auto": auto,
+      "c": center,
+      "e": end,
+      "s": start,
+      "st": stretch,
+    ),
+  ),
 );
 
 @each $name, $map in $yma-flexbox-utils {
