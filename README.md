@@ -32,4 +32,4 @@ npm install yummacss@latest
 
 ## Licensing
 
-MIT — Copyright (c) 2023–present
+MIT — Copyright (c) 2022–present
