@@ -1,5 +1,5 @@
 <div align="center">
-  <a href="https://yummacss.com" target="_blank">
+  <a href="https://yummacss.com" target="_blank" target="_blank" rel="noopener noreferrer">
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="https://www.yummacss.com/assets/vectors/dark-logo.svg">
       <source media="(prefers-color-scheme: light)" srcset="https://www.yummacss.com/assets/vectors/light-logo.svg">
@@ -14,18 +14,22 @@
   <a href="https://yummacss.com"><strong>Read the documentation ↝</strong></a>
 </p>
 
----
+## Getting started
 
-### Support
+Yumma CSS is a utility-first library that uses abbreviated naming conventions that follow regular CSS syntax — it’s a great way to scale and maintain your project with less code.
 
-[Join our Discord server](https://discord.gg/CGw5vyqmQ6). To get support just create a post in the `#help` channel with the <kbd>yummacss</kbd> tag.
+## Installation
 
-### Contributing
+Here's how you can add `yummacss` into your project or framework. Check out [the docs](https://www.yummacss.com/docs/installation) for more info.
 
-I'd love your help with Yumma CSS. I've included some links below which you might find useful.
+```bash
+npm install yummacss@latest
+```
 
-- [Join us on the `#yummacss` channel on Discord](https://discord.gg/V6s5jg5TfX)
-  
-### Licensing
+## Built with
 
-MIT — Copyright (c) 2023–present [Renildo Pereira](https://github.com/yumma-lib/yumma-css/graphs/contributors).
+- [Gulp](https://gulpjs.com/) — A toolkit to automate & enhance your workflow.
+
+## Licensing
+
+MIT — Copyright (c) 2023–present
