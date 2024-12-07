@@ -122966,6 +122966,62 @@
     resize: vertical;
   }
 }
+.sb-auto {
+  scroll-behavior: auto;
+}
+
+.h\:sb-auto:hover {
+  scroll-behavior: auto;
+}
+
+.sb-s {
+  scroll-behavior: smooth;
+}
+
+.h\:sb-s:hover {
+  scroll-behavior: smooth;
+}
+
+@media (min-width: 640px) {
+  .sm\:sb-auto {
+    scroll-behavior: auto;
+  }
+  .sm\:sb-s {
+    scroll-behavior: smooth;
+  }
+}
+@media (min-width: 768px) {
+  .md\:sb-auto {
+    scroll-behavior: auto;
+  }
+  .md\:sb-s {
+    scroll-behavior: smooth;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:sb-auto {
+    scroll-behavior: auto;
+  }
+  .lg\:sb-s {
+    scroll-behavior: smooth;
+  }
+}
+@media (min-width: 1280px) {
+  .xl\:sb-auto {
+    scroll-behavior: auto;
+  }
+  .xl\:sb-s {
+    scroll-behavior: smooth;
+  }
+}
+@media (min-width: 1536px) {
+  .xxl\:sb-auto {
+    scroll-behavior: auto;
+  }
+  .xxl\:sb-s {
+    scroll-behavior: smooth;
+  }
+}
 .us-a {
   user-select: all;
 }

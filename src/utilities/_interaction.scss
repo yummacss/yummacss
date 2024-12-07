@@ -58,6 +58,14 @@ $yma-interaction-utils: (
     ),
   ),
 
+  "scroll-behavior": (
+    "prefix": "sb",
+    "values": (
+      "auto": auto,
+      "s": smooth,
+    ),
+  ),
+
   "user-select": (
     "prefix": "us",
     "values": (
