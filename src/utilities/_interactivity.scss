@@ -1,8 +1,13 @@
 @use "sass:math";
+@use "../abstracts/variables" as vars;
 @use "../abstracts/mixins/" as mi;
+@use "../utilities/maps/" as ma;
 
 $yma-interactivity-utils: (
   "appearance": (
+    "properties": (
+      "appearance",
+    ),
     "prefix": "a",
     "values": (
       "auto": auto,
@@ -12,6 +17,9 @@ $yma-interactivity-utils: (
 
   "cursor": (
     "prefix": "c",
+    "properties": (
+      "cursor",
+    ),
     "values": (
       "auto": auto,
       "ch": crosshair,
@@ -41,6 +49,9 @@ $yma-interactivity-utils: (
   ),
 
   "pointer-events": (
+    "properties": (
+      "pointer-events",
+    ),
     "prefix": "pe",
     "values": (
       "auto": auto,
@@ -50,6 +61,9 @@ $yma-interactivity-utils: (
 
   "resize": (
     "prefix": "r",
+    "properties": (
+      "resize",
+    ),
     "values": (
       "b": both,
       "h": horizontal,
@@ -60,14 +74,86 @@ $yma-interactivity-utils: (
 
   "scroll-behavior": (
     "prefix": "sb",
+    "properties": (
+      "scroll-behavior",
+    ),
     "values": (
       "auto": auto,
       "s": smooth,
     ),
   ),
 
+  "scroll-margin": (
+    "prefix": "sm",
+    "properties": (
+      "scroll-margin",
+    ),
+    "values": ma.$yma-margin-map,
+  ),
+  "scroll-mb": (
+    "prefix": "s-mb",
+    "properties": (
+      "scroll-margin-bottom",
+    ),
+    "values": ma.$yma-margin-map,
+  ),
+  "scroll-mis": (
+    "prefix": "s-mis",
+    "properties": (
+      "scroll-margin-inline-start",
+    ),
+    "values": ma.$yma-margin-map,
+  ),
+  "scroll-ml": (
+    "prefix": "s-ml",
+    "properties": (
+      "scroll-margin-left",
+    ),
+    "values": ma.$yma-margin-map,
+  ),
+  "scroll-mr": (
+    "prefix": "s-mr",
+    "properties": (
+      "scroll-margin-right",
+    ),
+    "values": ma.$yma-margin-map,
+  ),
+  "scroll-mt": (
+    "prefix": "s-mt",
+    "properties": (
+      "scroll-margin-top",
+    ),
+    "values": ma.$yma-margin-map,
+  ),
+  "scroll-mie": (
+    "prefix": "s-mie",
+    "properties": (
+      "scroll-margin-inline-end",
+    ),
+    "values": ma.$yma-margin-map,
+  ),
+  "scroll-mx": (
+    "prefix": "s-mx",
+    "properties": (
+      "scroll-margin-left",
+      "scroll-margin-right",
+    ),
+    "values": ma.$yma-margin-map,
+  ),
+  "scroll-my": (
+    "prefix": "s-my",
+    "properties": (
+      "scroll-margin-bottom",
+      "scroll-margin-top",
+    ),
+    "values": ma.$yma-margin-map,
+  ),
+
   "user-select": (
     "prefix": "us",
+    "properties": (
+      "user-select",
+    ),
     "values": (
       "a": all,
       "auto": auto,
@@ -77,8 +163,9 @@ $yma-interactivity-utils: (
   ),
 );
 
-@each $property, $map in $yma-interactivity-utils {
+@each $name, $map in $yma-interactivity-utils {
   $prefix: map-get($map, "prefix");
+  $properties: map-get($map, "properties");
 
-  @include mi.create-utilities($map, $prefix, $property);
+  @include mi.create-utilities($map, $prefix, $properties);
 }
