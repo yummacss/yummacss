@@ -6,6 +6,7 @@ All notable changes to the Yumma CSS will be documented in this file.
 
 ### Added
 
+- Add **Background Attachment** utilities
 - Add **Background Clip** utilities
 - Add **Background Origin** utilities
 - Add **Background Position** utilities
@@ -27,6 +28,16 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Add **Blur** utilities
 - Add **Box Decoration Break** utilities
 - Add **Grayscale** utilities
+- Add **Scroll Behavior** utilities
+- Add **Scroll Margin** utilities
+- Add **Scroll Margin Bottom** utilities
+- Add **Scroll Margin Inline End** utilities
+- Add **Scroll Margin Inline Start** utilities
+- Add **Scroll Margin Left** utilities
+- Add **Scroll Margin Right** utilities
+- Add **Scroll Margin Top** utilities
+- Add **Scroll Margin X** utilities
+- Add **Scroll Margin Y** utilities
 - Add **Clear** utilities
 - Add **Isolation** utilities
 - Add **Fill** utilities
