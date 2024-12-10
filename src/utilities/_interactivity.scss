@@ -90,6 +90,7 @@ $yma-interactivity-utils: (
     ),
     "values": ma.$yma-margin-map,
   ),
+
   "scroll-mb": (
     "prefix": "s-mb",
     "properties": (
@@ -97,6 +98,7 @@ $yma-interactivity-utils: (
     ),
     "values": ma.$yma-margin-map,
   ),
+
   "scroll-mis": (
     "prefix": "s-mis",
     "properties": (
@@ -104,6 +106,7 @@ $yma-interactivity-utils: (
     ),
     "values": ma.$yma-margin-map,
   ),
+
   "scroll-ml": (
     "prefix": "s-ml",
     "properties": (
@@ -118,6 +121,7 @@ $yma-interactivity-utils: (
     ),
     "values": ma.$yma-margin-map,
   ),
+
   "scroll-mt": (
     "prefix": "s-mt",
     "properties": (
@@ -125,6 +129,7 @@ $yma-interactivity-utils: (
     ),
     "values": ma.$yma-margin-map,
   ),
+
   "scroll-mie": (
     "prefix": "s-mie",
     "properties": (
@@ -132,6 +137,7 @@ $yma-interactivity-utils: (
     ),
     "values": ma.$yma-margin-map,
   ),
+
   "scroll-mx": (
     "prefix": "s-mx",
     "properties": (
@@ -140,6 +146,7 @@ $yma-interactivity-utils: (
     ),
     "values": ma.$yma-margin-map,
   ),
+
   "scroll-my": (
     "prefix": "s-my",
     "properties": (
@@ -147,6 +154,80 @@ $yma-interactivity-utils: (
       "scroll-margin-top",
     ),
     "values": ma.$yma-margin-map,
+  ),
+
+  "scroll-padding": (
+    "prefix": "sm",
+    "properties": (
+      "scroll-padding",
+    ),
+    "values": ma.$yma-padding-map,
+  ),
+  
+  "scroll-pb": (
+    "prefix": "s-pb",
+    "properties": (
+      "scroll-padding-bottom",
+    ),
+    "values": ma.$yma-padding-map,
+  ),
+
+  "scroll-pis": (
+    "prefix": "s-pis",
+    "properties": (
+      "scroll-padding-inline-start",
+    ),
+    "values": ma.$yma-padding-map,
+  ),
+
+  "scroll-pl": (
+    "prefix": "s-pl",
+    "properties": (
+      "scroll-padding-left",
+    ),
+    "values": ma.$yma-padding-map,
+  ),
+
+  "scroll-pr": (
+    "prefix": "s-pr",
+    "properties": (
+      "scroll-padding-right",
+    ),
+    "values": ma.$yma-padding-map,
+  ),
+
+  "scroll-pt": (
+    "prefix": "s-pt",
+    "properties": (
+      "scroll-padding-top",
+    ),
+    "values": ma.$yma-padding-map,
+  ),
+
+  "scroll-pie": (
+    "prefix": "s-pie",
+    "properties": (
+      "scroll-padding-inline-end",
+    ),
+    "values": ma.$yma-padding-map,
+  ),
+
+  "scroll-px": (
+    "prefix": "s-px",
+    "properties": (
+      "scroll-padding-left",
+      "scroll-padding-right",
+    ),
+    "values": ma.$yma-padding-map,
+  ),
+
+  "scroll-py": (
+    "prefix": "s-py",
+    "properties": (
+      "scroll-padding-bottom",
+      "scroll-padding-top",
+    ),
+    "values": ma.$yma-padding-map,
   ),
 
   "user-select": (
