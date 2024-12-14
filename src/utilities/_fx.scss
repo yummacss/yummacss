@@ -6,7 +6,7 @@ $yma-fx-utils: (
   "backdrop-filter": (
     "prefix": "bf-b",
     "properties": (
-      "backdrop-filter"
+      "backdrop-filter",
     ),
     "values": (
       "none": blur(vars.$yma-backdrop-blur * 0),
@@ -21,7 +21,7 @@ $yma-fx-utils: (
   "box-decoration-break": (
     "prefix": "bdb",
     "properties": (
-      "box-decoration-break"
+      "box-decoration-break",
     ),
     "values": (
       "c": slice,
@@ -32,7 +32,7 @@ $yma-fx-utils: (
   "box-shadow": (
     "prefix": "bs",
     "properties": (
-      "box-shadow"
+      "box-shadow",
     ),
     "values": (
       "none": none,
@@ -47,7 +47,7 @@ $yma-fx-utils: (
   "opacity": (
     "prefix": "o",
     "properties": (
-      "opacity"
+      "opacity",
     ),
     "values": (
       "0": 0,
@@ -67,7 +67,7 @@ $yma-fx-utils: (
   "filter-blur": (
     "prefix": "f-b",
     "properties": (
-      "filter"
+      "filter",
     ),
     "values": (
       "none": blur(vars.$yma-blur * 0),
@@ -82,7 +82,7 @@ $yma-fx-utils: (
   "filter-grayscale": (
     "prefix": "f-g",
     "properties": (
-      "filter"
+      "filter",
     ),
     "values": (
       "0": grayscale(vars.$yma-grayscale * 0),
