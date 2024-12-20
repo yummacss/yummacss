@@ -14,6 +14,7 @@
   @include m.color-scaling("color", "tc", $k, $v);
   @include m.color-scaling("fill", "f", $k, $v);
   @include m.color-scaling("outline-color", "oc", $k, $v);
+  @include m.color-scaling("stroke", "s", $k, $v);
   @include m.color-scaling("text-decoration-color", "tdc", $k, $v);
 
   @if (f.ignore-neutral($v, t.$yma-theme)) {
@@ -28,6 +29,7 @@
     @include m.shade-scaling("color", "tc", $k, $v, 14%);
     @include m.shade-scaling("fill", "f", $k, $v, 14%);
     @include m.shade-scaling("outline-color", "oc", $k, $v, 14%);
+    @include m.shade-scaling("stoke", "s", $k, $v, 14%);
     @include m.shade-scaling("text-decoration-color", "tdc", $k, $v, 14%);
   }
 }
