@@ -99,6 +99,7 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Update **Direction Left** utilities syntax from `dir-l-*` to `d-l-*`
 - Update **Direction Right** utilities syntax from `dir-r-*` to `d-r-*`
 - Update **Direction Top** utilities syntax from `dir-t-*` to `d-t-*`
+- Update **Direction** utilities to utilize rem as unit
 - Update **Font Size** initial value from `0.75rem` to `0.25rem`
 - Update **Max Dimension** utilities syntax from `max-dim-*` to `max-d-*`
 - Update **Min Dimension** utilities syntax from `min-dim-*` to `min-d-*`

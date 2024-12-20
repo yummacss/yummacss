@@ -109,6 +109,62 @@ $yma-layout-utils: (
     ),
   ),
 
+  "inset-x": (
+    "properties": (
+      "left",
+      "right",
+    ),
+    "prefix": "d-ix",
+    "values": (
+      "0": vars.$yma-direction * 0,
+      "1": vars.$yma-direction,
+      "2": vars.$yma-direction * 2,
+      "3": vars.$yma-direction * 3,
+      "4": vars.$yma-direction * 4,
+      "5": vars.$yma-direction * 5,
+      "6": vars.$yma-direction * 6,
+      "7": vars.$yma-direction * 7,
+      "8": vars.$yma-direction * 8,
+      "9": vars.$yma-direction * 9,
+      "10": vars.$yma-direction * 10,
+      "11": vars.$yma-direction * 11,
+      "12": vars.$yma-direction * 12,
+      "13": vars.$yma-direction * 13,
+      "14": vars.$yma-direction * 14,
+      "15": vars.$yma-direction * 15,
+      "16": vars.$yma-direction * 16,
+      "none": none,
+    ),
+  ),
+
+  "inset-y": (
+    "properties": (
+      "top",
+      "bottom",
+    ),
+    "prefix": "d-iy",
+    "values": (
+      "0": vars.$yma-direction * 0,
+      "1": vars.$yma-direction,
+      "2": vars.$yma-direction * 2,
+      "3": vars.$yma-direction * 3,
+      "4": vars.$yma-direction * 4,
+      "5": vars.$yma-direction * 5,
+      "6": vars.$yma-direction * 6,
+      "7": vars.$yma-direction * 7,
+      "8": vars.$yma-direction * 8,
+      "9": vars.$yma-direction * 9,
+      "10": vars.$yma-direction * 10,
+      "11": vars.$yma-direction * 11,
+      "12": vars.$yma-direction * 12,
+      "13": vars.$yma-direction * 13,
+      "14": vars.$yma-direction * 14,
+      "15": vars.$yma-direction * 15,
+      "16": vars.$yma-direction * 16,
+      "none": none,
+    ),
+  ),
+
   "isolation": (
     "properties": (
       "isolation"
