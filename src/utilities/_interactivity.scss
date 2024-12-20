@@ -230,6 +230,45 @@ $yma-interactivity-utils: (
     "values": ma.$yma-padding-map,
   ),
 
+  "scroll-snap-align": (
+    "prefix": "ssa",
+    "properties": (
+      "scroll-snap-align",
+    ),
+    "values": (
+      "c": center,
+      "e": end,
+      "none": none,
+      "s": start,
+    ),
+  ),
+
+  "scroll-snap-stop": (
+    "prefix": "sss",
+    "properties": (
+      "scroll-snap-stop",
+    ),
+    "values": (
+      "a": always,
+      "n": normal,
+    ),
+  ),
+
+  "scroll-snap-type": (
+    "prefix": "sst",
+    "properties": (
+      "scroll-snap-type",
+    ),
+    "values": (
+      "b-m": both mandatory,
+      "none": none,
+      "x-m": x mandatory,
+      "x-p": x proximity,
+      "y-m": y mandatory,
+      "y-p": y proximity,
+    ),
+  ),
+
   "user-select": (
     "prefix": "us",
     "properties": (
