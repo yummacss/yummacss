@@ -44,7 +44,7 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Add **Scroll Snap Align** utilities
 - Add **Scroll Snap Stop** utilities
 - Add **Scroll Snap Type** utilities
-- WIP **Direction** utilities
+- Add **Direction (Axis)** utilities
 - WIP **Stroke** utilities
 - WIP **Stroke Width** utilities
 - WIP **Letter Spacing** utilities
