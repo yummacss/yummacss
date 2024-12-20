@@ -41,6 +41,25 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Add **Clear** utilities
 - Add **Isolation** utilities
 - Add **Fill** utilities
+- WIP **Scroll Snap Align** utilities
+- WIP **Scroll Snap Stop** utilities
+- WIP **Scroll Snap Type** utilities
+- WIP **Direction** utilities
+- WIP **Stroke** utilities
+- WIP **Stroke Width** utilities
+- WIP **Letter Spacing** utilities
+- WIP **List Style Position** utilities
+- WIP **Text Indent** utilities
+- WIP **Text Overflow** utilities
+- WIP **Text Transform** utilities
+- WIP **Text Underline Offset** utilities
+- WIP **Text Wrap** utilities
+- WIP **Vertical Align** utilities
+- WIP **Whitespace** utilities
+- WIP **Transform Origin** utilities
+- WIP **Transition Delay** utilities
+- WIP **Transition Duration** utilities
+- WIP **Transition Property** utilities
 - Add `_color-utilities.scss`, `_create-utilities.scss`, `_extend-utilities.scss` and `_scale-utilities.scss` partial files
 - Add `_dimension.scss`, `_height.scss`, `_margin.scss`, `_padding.scss`, `_spacing.scss` and `_width.scss` files
 - Add `_create-values.scss` file
