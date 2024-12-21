@@ -65,6 +65,17 @@ $yma-typography-utils: (
     ),
   ),
 
+  "list-style-position": (
+    "prefix": "lsp",
+    "properties": (
+      "list-style-position",
+    ),
+    "values": (
+      "i": inside,
+      "o": outside,
+    ),
+  ),
+
   "line-height": (
     "prefix": "lh",
     "properties": (

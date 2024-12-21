@@ -176648,6 +176648,62 @@
     letter-spacing: 0.1em;
   }
 }
+.lsp-i {
+  list-style-position: inside;
+}
+
+.h\:lsp-i:hover {
+  list-style-position: inside;
+}
+
+.lsp-o {
+  list-style-position: outside;
+}
+
+.h\:lsp-o:hover {
+  list-style-position: outside;
+}
+
+@media (min-width: 640px) {
+  .sm\:lsp-i {
+    list-style-position: inside;
+  }
+  .sm\:lsp-o {
+    list-style-position: outside;
+  }
+}
+@media (min-width: 768px) {
+  .md\:lsp-i {
+    list-style-position: inside;
+  }
+  .md\:lsp-o {
+    list-style-position: outside;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:lsp-i {
+    list-style-position: inside;
+  }
+  .lg\:lsp-o {
+    list-style-position: outside;
+  }
+}
+@media (min-width: 1280px) {
+  .xl\:lsp-i {
+    list-style-position: inside;
+  }
+  .xl\:lsp-o {
+    list-style-position: outside;
+  }
+}
+@media (min-width: 1536px) {
+  .xxl\:lsp-i {
+    list-style-position: inside;
+  }
+  .xxl\:lsp-o {
+    list-style-position: outside;
+  }
+}
 .lh-1 {
   line-height: 1;
 }
