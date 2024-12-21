@@ -5,6 +5,9 @@
 $yma-typography-utils: (
   "font-size": (
     "prefix": "fs",
+    "properties": (
+      "font-size",
+    ),
     "values": (
       "xs": vars.$yma-font-size,
       "sm": vars.$yma-font-size * 1,
@@ -20,6 +23,9 @@ $yma-typography-utils: (
 
   "font-style": (
     "prefix": "fs",
+    "properties": (
+      "font-style",
+    ),
     "values": (
       "i": italic,
       "n": normal,
@@ -28,6 +34,9 @@ $yma-typography-utils: (
 
   "font-weight": (
     "prefix": "fw",
+    "properties": (
+      "font-weight",
+    ),
     "values": (
       "100": 100,
       "200": 200,
@@ -43,6 +52,9 @@ $yma-typography-utils: (
 
   "line-height": (
     "prefix": "lh",
+    "properties": (
+      "line-height",
+    ),
     "values": (
       "1": 1,
       "2": 1.25,
@@ -55,6 +67,9 @@ $yma-typography-utils: (
 
   "list-style-type": (
     "prefix": "lst",
+    "properties": (
+      "list-style-type",
+    ),
     "values": (
       "c": circle,
       "d": disc,
@@ -64,6 +79,9 @@ $yma-typography-utils: (
 
   "overflow-wrap": (
     "prefix": "ow",
+    "properties": (
+      "overflow-wrap",
+    ),
     "values": (
       "bw": break-word,
       "n": normal,
@@ -72,6 +90,9 @@ $yma-typography-utils: (
 
   "text-align": (
     "prefix": "ta",
+    "properties": (
+      "text-align",
+    ),
     "values": (
       "c": center,
       "e": end,
@@ -86,6 +107,9 @@ $yma-typography-utils: (
 
   "text-decoration-line": (
     "prefix": "tdl",
+    "properties": (
+      "text-decoration-line",
+    ),
     "values": (
       "lt": line-through,
       "none": none,
@@ -96,6 +120,9 @@ $yma-typography-utils: (
 
   "text-decoration-style": (
     "prefix": "tds",
+    "properties": (
+      "text-decoration-style",
+    ),
     "values": (
       "d": dashed,
       "h": hidden,
@@ -106,6 +133,9 @@ $yma-typography-utils: (
 
   "text-decoration-thickness": (
     "prefix": "tdt",
+    "properties": (
+      "text-decoration-thickness",
+    ),
     "values": (
       "0": vars.$yma-decoration-thickness * 0,
       "1": vars.$yma-decoration-thickness,
@@ -119,6 +149,9 @@ $yma-typography-utils: (
 
   "text-decoration": (
     "prefix": "td",
+    "properties": (
+      "text-decoration",
+    ),
     "values": (
       "none": none,
       "u": underline,
@@ -126,8 +159,9 @@ $yma-typography-utils: (
   ),
 );
 
-@each $property, $map in $yma-typography-utils {
+@each $properties, $map in $yma-typography-utils {
   $prefix: map-get($map, "prefix");
+  $properties: map-get($map, "properties");
 
-  @include mi.create-utilities($map, $prefix, $property);
+  @include mi.create-utilities($map, $prefix, $properties);
 }

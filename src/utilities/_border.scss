@@ -5,6 +5,9 @@
 
 $yma-border-utils: (
   "border-collapse": (
+    "properties": (
+      "border-collapse",
+    ),
     "prefix": "bc",
     "values": (
       "c": collapse,
@@ -14,6 +17,9 @@ $yma-border-utils: (
 
   "border-radius": (
     "prefix": "rad",
+    "properties": (
+      "border-radius",
+    ),
     "values": (
       "0": vars.$yma-border-radius * 0,
       "1": vars.$yma-border-radius,
@@ -31,6 +37,9 @@ $yma-border-utils: (
 
   "border-bottom-left-radius": (
     "prefix": "rad-bl",
+    "properties": (
+      "border-bottom-left-radius",
+    ),
     "values": (
       "0": vars.$yma-border-radius * 0,
       "1": vars.$yma-border-radius,
@@ -46,6 +55,9 @@ $yma-border-utils: (
 
   "border-bottom-right-radius": (
     "prefix": "rad-br",
+    "properties": (
+      "border-bottom-right-radius",
+    ),
     "values": (
       "0": vars.$yma-border-radius * 0,
       "1": vars.$yma-border-radius,
@@ -61,6 +73,9 @@ $yma-border-utils: (
 
   "border-top-left-radius": (
     "prefix": "rad-tl",
+    "properties": (
+      "border-top-left-radius",
+    ),
     "values": (
       "0": vars.$yma-border-radius * 0,
       "1": vars.$yma-border-radius,
@@ -76,6 +91,9 @@ $yma-border-utils: (
 
   "border-top-right-radius": (
     "prefix": "rad-tr",
+    "properties": (
+      "border-top-right-radius",
+    ),
     "values": (
       "0": vars.$yma-border-radius * 0,
       "1": vars.$yma-border-radius,
@@ -99,6 +117,9 @@ $yma-border-utils: (
 
   "border-style": (
     "prefix": "b",
+    "properties": (
+      "border-style",
+    ),
     "values": (
       "none": none,
       "d": dashed,
@@ -108,6 +129,9 @@ $yma-border-utils: (
 
   "border-width": (
     "prefix": "b",
+    "properties": (
+      "border-width",
+    ),
     "values": (
       "0": vars.$yma-border * 0,
       "1": vars.$yma-border,
@@ -123,6 +147,9 @@ $yma-border-utils: (
 
   "border-bottom-width": (
     "prefix": "bb",
+    "properties": (
+      "border-bottom-width",
+    ),
     "values": (
       "0": vars.$yma-border * 0,
       "1": vars.$yma-border,
@@ -138,6 +165,9 @@ $yma-border-utils: (
 
   "border-left-width": (
     "prefix": "bl",
+    "properties": (
+      "border-left-width",
+    ),
     "values": (
       "0": vars.$yma-border * 0,
       "1": vars.$yma-border,
@@ -153,6 +183,9 @@ $yma-border-utils: (
 
   "border-right-width": (
     "prefix": "br",
+    "properties": (
+      "border-right-width",
+    ),
     "values": (
       "0": vars.$yma-border * 0,
       "1": vars.$yma-border,
@@ -168,6 +201,9 @@ $yma-border-utils: (
 
   "border-top-width": (
     "prefix": "bt",
+    "properties": (
+      "border-top-width",
+    ),
     "values": (
       "0": vars.$yma-border * 0,
       "1": vars.$yma-border,
@@ -182,8 +218,9 @@ $yma-border-utils: (
   ),
 );
 
-@each $property, $map in $yma-border-utils {
+@each $properties, $map in $yma-border-utils {
   $prefix: map-get($map, "prefix");
+  $properties: map-get($map, "properties");
 
-  @include mi.create-utilities($map, $prefix, $property);
+  @include mi.create-utilities($map, $prefix, $properties);
 }

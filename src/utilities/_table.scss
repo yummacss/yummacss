@@ -5,6 +5,9 @@
 $yma-table-utils: (
   "caption-side": (
     "prefix": "cs",
+    "properties": (
+      "caption-side",
+    ),
     "values": (
       "b": bottom,
       "t": top,
@@ -13,6 +16,9 @@ $yma-table-utils: (
 
   "table-layout": (
     "prefix": "tl",
+    "properties": (
+      "table-layout",
+    ),
     "values": (
       "auto": auto,
       "f": fixed,
@@ -20,8 +26,9 @@ $yma-table-utils: (
   ),
 );
 
-@each $property, $map in $yma-table-utils {
+@each $properties, $map in $yma-table-utils {
   $prefix: map-get($map, "prefix");
+  $properties: map-get($map, "properties");
 
-  @include mi.create-utilities($map, $prefix, $property);
+  @include mi.create-utilities($map, $prefix, $properties);
 }

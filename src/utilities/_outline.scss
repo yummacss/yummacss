@@ -5,6 +5,9 @@
 $yma-outline-utils: (
   "outline-offset": (
     "prefix": "oo",
+    "properties": (
+      "outline-offset",
+    ),
     "values": (
       "0": vars.$yma-outline-offset * 0,
       "1": vars.$yma-outline-offset,
@@ -16,6 +19,9 @@ $yma-outline-utils: (
 
   "outline-style": (
     "prefix": "os",
+    "properties": (
+      "outline-style",
+    ),
     "values": (
       "none": none,
       "d": dashed,
@@ -25,6 +31,9 @@ $yma-outline-utils: (
 
   "outline-width": (
     "prefix": "ow",
+    "properties": (
+      "outline-width",
+    ),
     "values": (
       "0": vars.$yma-outline-width * 0,
       "1": vars.$yma-outline-width,
@@ -35,8 +44,9 @@ $yma-outline-utils: (
   ),
 );
 
-@each $property, $map in $yma-outline-utils {
+@each $properties, $map in $yma-outline-utils {
   $prefix: map-get($map, "prefix");
+  $properties: map-get($map, "properties");
 
-  @include mi.create-utilities($map, $prefix, $property);
+  @include mi.create-utilities($map, $prefix, $properties);
 }

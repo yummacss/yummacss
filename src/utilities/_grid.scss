@@ -5,6 +5,9 @@
 $yma-grid-utils: (
   "column-gap": (
     "prefix": "cg",
+    "properties": (
+      "column-gap",
+    ),
     "values": (
       "0": vars.$yma-column-gap * 0,
       "1": vars.$yma-column-gap,
@@ -28,6 +31,9 @@ $yma-grid-utils: (
 
   "gap": (
     "prefix": "g",
+    "properties": (
+      "gap",
+    ),
     "values": (
       "0": vars.$yma-gap * 0,
       "1": vars.$yma-gap,
@@ -52,6 +58,9 @@ $yma-grid-utils: (
 
   "grid-auto-columns": (
     "prefix": "gac",
+    "properties": (
+      "grid-auto-columns",
+    ),
     "values": (
       "auto": auto,
       "max": max-content,
@@ -61,6 +70,9 @@ $yma-grid-utils: (
 
   "grid-auto-flow": (
     "prefix": "gaf",
+    "properties": (
+      "grid-auto-flow",
+    ),
     "values": (
       "c": column,
       "d": dense,
@@ -72,6 +84,9 @@ $yma-grid-utils: (
 
   "grid-auto-rows": (
     "prefix": "gar",
+    "properties": (
+      "grid-auto-rows",
+    ),
     "values": (
       "auto": auto,
       "max": max-content,
@@ -81,6 +96,9 @@ $yma-grid-utils: (
 
   "grid-column": (
     "prefix": "gc-s",
+    "properties": (
+      "grid-column",
+    ),
     "values": (
       "1": span 1 / span 1,
       "2": span 2 / span 2,
@@ -103,6 +121,9 @@ $yma-grid-utils: (
 
   "grid-column-end": (
     "prefix": "gce",
+    "properties": (
+      "grid-column-end",
+    ),
     "values": (
       "1": 1,
       "2": 2,
@@ -125,6 +146,9 @@ $yma-grid-utils: (
 
   "grid-column-start": (
     "prefix": "gcs",
+    "properties": (
+      "grid-column-start",
+    ),
     "values": (
       "1": 1,
       "2": 2,
@@ -147,6 +171,9 @@ $yma-grid-utils: (
 
   "grid-row": (
     "prefix": "gr-s",
+    "properties": (
+      "grid-row",
+    ),
     "values": (
       "1": span 1 / span 1,
       "2": span 2 / span 2,
@@ -169,6 +196,9 @@ $yma-grid-utils: (
 
   "grid-row-end": (
     "prefix": "gre",
+    "properties": (
+      "grid-row-end",
+    ),
     "values": (
       "1": 1,
       "2": 2,
@@ -191,6 +221,9 @@ $yma-grid-utils: (
 
   "grid-row-start": (
     "prefix": "grs",
+    "properties": (
+      "grid-row-start",
+    ),
     "values": (
       "1": 1,
       "2": 2,
@@ -213,6 +246,9 @@ $yma-grid-utils: (
 
   "grid-template-columns": (
     "prefix": "gtc",
+    "properties": (
+      "grid-template-columns",
+    ),
     "values": (
       "1": repeat(1, minmax(0, 1fr)),
       "2": repeat(2, minmax(0, 1fr)),
@@ -235,6 +271,9 @@ $yma-grid-utils: (
 
   "grid-template-rows": (
     "prefix": "gtr",
+    "properties": (
+      "grid-template-rows",
+    ),
     "values": (
       "1": repeat(1, minmax(0, 1fr)),
       "2": repeat(2, minmax(0, 1fr)),
@@ -257,6 +296,9 @@ $yma-grid-utils: (
 
   "row-gap": (
     "prefix": "rg",
+    "properties": (
+      "row-gap",
+    ),
     "values": (
       "0": vars.$yma-row-gap * 0,
       "1": vars.$yma-row-gap,
@@ -279,8 +321,8 @@ $yma-grid-utils: (
   ),
 );
 
-@each $property, $map in $yma-grid-utils {
+@each $properties, $map in $yma-grid-utils {
   $prefix: map-get($map, "prefix");
 
-  @include mi.create-utilities($map, $prefix, $property);
+  @include mi.create-utilities($map, $prefix, $properties);
 }
