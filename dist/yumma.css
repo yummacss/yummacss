@@ -177135,6 +177135,108 @@
     text-underline-offset: auto;
   }
 }
+.tw-b {
+  text-wrap: balance;
+}
+
+.h\:tw-b:hover {
+  text-wrap: balance;
+}
+
+.tw-n {
+  text-wrap: nowrap;
+}
+
+.h\:tw-n:hover {
+  text-wrap: nowrap;
+}
+
+.tw-p {
+  text-wrap: pretty;
+}
+
+.h\:tw-p:hover {
+  text-wrap: pretty;
+}
+
+.tw-w {
+  text-wrap: wrap;
+}
+
+.h\:tw-w:hover {
+  text-wrap: wrap;
+}
+
+@media (min-width: 640px) {
+  .sm\:tw-b {
+    text-wrap: balance;
+  }
+  .sm\:tw-n {
+    text-wrap: nowrap;
+  }
+  .sm\:tw-p {
+    text-wrap: pretty;
+  }
+  .sm\:tw-w {
+    text-wrap: wrap;
+  }
+}
+@media (min-width: 768px) {
+  .md\:tw-b {
+    text-wrap: balance;
+  }
+  .md\:tw-n {
+    text-wrap: nowrap;
+  }
+  .md\:tw-p {
+    text-wrap: pretty;
+  }
+  .md\:tw-w {
+    text-wrap: wrap;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:tw-b {
+    text-wrap: balance;
+  }
+  .lg\:tw-n {
+    text-wrap: nowrap;
+  }
+  .lg\:tw-p {
+    text-wrap: pretty;
+  }
+  .lg\:tw-w {
+    text-wrap: wrap;
+  }
+}
+@media (min-width: 1280px) {
+  .xl\:tw-b {
+    text-wrap: balance;
+  }
+  .xl\:tw-n {
+    text-wrap: nowrap;
+  }
+  .xl\:tw-p {
+    text-wrap: pretty;
+  }
+  .xl\:tw-w {
+    text-wrap: wrap;
+  }
+}
+@media (min-width: 1536px) {
+  .xxl\:tw-b {
+    text-wrap: balance;
+  }
+  .xxl\:tw-n {
+    text-wrap: nowrap;
+  }
+  .xxl\:tw-p {
+    text-wrap: pretty;
+  }
+  .xxl\:tw-w {
+    text-wrap: wrap;
+  }
+}
 .lh-1 {
   line-height: 1;
 }

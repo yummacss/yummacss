@@ -129,6 +129,19 @@ $yma-typography-utils: (
     ),
   ),
 
+  "text-wrap": (
+    "prefix": "tw",
+    "properties": (
+      "text-wrap",
+    ),
+    "values": (
+      "b": balance,
+      "n": nowrap,
+      "p": pretty,
+      "w": wrap,
+    ),
+  ),
+
   "line-height": (
     "prefix": "lh",
     "properties": (
