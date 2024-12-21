@@ -175750,6 +175750,154 @@
     outline-width: 4px;
   }
 }
+.sw-0 {
+  stroke-width: 0;
+}
+
+.h\:sw-0:hover {
+  stroke-width: 0;
+}
+
+.sw-2 {
+  stroke-width: 0.2;
+}
+
+.h\:sw-2:hover {
+  stroke-width: 0.2;
+}
+
+.sw-4 {
+  stroke-width: 0.4;
+}
+
+.h\:sw-4:hover {
+  stroke-width: 0.4;
+}
+
+.sw-6 {
+  stroke-width: 0.6;
+}
+
+.h\:sw-6:hover {
+  stroke-width: 0.6;
+}
+
+.sw-8 {
+  stroke-width: 0.8;
+}
+
+.h\:sw-8:hover {
+  stroke-width: 0.8;
+}
+
+.sw-1 {
+  stroke-width: 1;
+}
+
+.h\:sw-1:hover {
+  stroke-width: 1;
+}
+
+@media (min-width: 640px) {
+  .sm\:sw-0 {
+    stroke-width: 0;
+  }
+  .sm\:sw-2 {
+    stroke-width: 0.2;
+  }
+  .sm\:sw-4 {
+    stroke-width: 0.4;
+  }
+  .sm\:sw-6 {
+    stroke-width: 0.6;
+  }
+  .sm\:sw-8 {
+    stroke-width: 0.8;
+  }
+  .sm\:sw-1 {
+    stroke-width: 1;
+  }
+}
+@media (min-width: 768px) {
+  .md\:sw-0 {
+    stroke-width: 0;
+  }
+  .md\:sw-2 {
+    stroke-width: 0.2;
+  }
+  .md\:sw-4 {
+    stroke-width: 0.4;
+  }
+  .md\:sw-6 {
+    stroke-width: 0.6;
+  }
+  .md\:sw-8 {
+    stroke-width: 0.8;
+  }
+  .md\:sw-1 {
+    stroke-width: 1;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:sw-0 {
+    stroke-width: 0;
+  }
+  .lg\:sw-2 {
+    stroke-width: 0.2;
+  }
+  .lg\:sw-4 {
+    stroke-width: 0.4;
+  }
+  .lg\:sw-6 {
+    stroke-width: 0.6;
+  }
+  .lg\:sw-8 {
+    stroke-width: 0.8;
+  }
+  .lg\:sw-1 {
+    stroke-width: 1;
+  }
+}
+@media (min-width: 1280px) {
+  .xl\:sw-0 {
+    stroke-width: 0;
+  }
+  .xl\:sw-2 {
+    stroke-width: 0.2;
+  }
+  .xl\:sw-4 {
+    stroke-width: 0.4;
+  }
+  .xl\:sw-6 {
+    stroke-width: 0.6;
+  }
+  .xl\:sw-8 {
+    stroke-width: 0.8;
+  }
+  .xl\:sw-1 {
+    stroke-width: 1;
+  }
+}
+@media (min-width: 1536px) {
+  .xxl\:sw-0 {
+    stroke-width: 0;
+  }
+  .xxl\:sw-2 {
+    stroke-width: 0.2;
+  }
+  .xxl\:sw-4 {
+    stroke-width: 0.4;
+  }
+  .xxl\:sw-6 {
+    stroke-width: 0.6;
+  }
+  .xxl\:sw-8 {
+    stroke-width: 0.8;
+  }
+  .xxl\:sw-1 {
+    stroke-width: 1;
+  }
+}
 .cs-b {
   caption-side: bottom;
 }

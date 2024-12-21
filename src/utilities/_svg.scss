@@ -1,0 +1,26 @@
+@use "sass:math";
+@use "../abstracts/mixins/" as mi;
+
+$yma-svg-utils: (
+  "stroke-width": (
+    "prefix": "sw",
+    "properties": (
+      "stroke-width",
+    ),
+    "values": (
+      "0": 0,
+      "2": 0.2,
+      "4": 0.4,
+      "6": 0.6,
+      "8": 0.8,
+      "1": 1,
+    ),
+  ),
+);
+
+@each $name, $map in $yma-svg-utils {
+  $prefix: map-get($map, "prefix");
+  $properties: map-get($map, "properties");
+
+  @include mi.create-utilities($map, $prefix, $properties);
+}
