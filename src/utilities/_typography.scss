@@ -90,6 +90,17 @@ $yma-typography-utils: (
     ),
   ),
 
+  "text-overflow": (
+    "prefix": "to",
+    "properties": (
+      "text-overflow",
+    ),
+    "values": (
+      "c": clip,
+      "e": ellipsis,
+    ),
+  ),
+
   "line-height": (
     "prefix": "lh",
     "properties": (

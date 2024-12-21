@@ -176829,6 +176829,62 @@
     text-indent: 0.75rem;
   }
 }
+.to-c {
+  text-overflow: clip;
+}
+
+.h\:to-c:hover {
+  text-overflow: clip;
+}
+
+.to-e {
+  text-overflow: ellipsis;
+}
+
+.h\:to-e:hover {
+  text-overflow: ellipsis;
+}
+
+@media (min-width: 640px) {
+  .sm\:to-c {
+    text-overflow: clip;
+  }
+  .sm\:to-e {
+    text-overflow: ellipsis;
+  }
+}
+@media (min-width: 768px) {
+  .md\:to-c {
+    text-overflow: clip;
+  }
+  .md\:to-e {
+    text-overflow: ellipsis;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:to-c {
+    text-overflow: clip;
+  }
+  .lg\:to-e {
+    text-overflow: ellipsis;
+  }
+}
+@media (min-width: 1280px) {
+  .xl\:to-c {
+    text-overflow: clip;
+  }
+  .xl\:to-e {
+    text-overflow: ellipsis;
+  }
+}
+@media (min-width: 1536px) {
+  .xxl\:to-c {
+    text-overflow: clip;
+  }
+  .xxl\:to-e {
+    text-overflow: ellipsis;
+  }
+}
 .lh-1 {
   line-height: 1;
 }
