@@ -52,7 +52,7 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Add **Text Indent** utilities
 - Add **Text Overflow** utilities
 - Add **Text Transform** utilities
-- WIP **Text Underline Offset** utilities
+- Add **Text Underline Offset** utilities
 - WIP **Text Wrap** utilities
 - WIP **Vertical Align** utilities
 - WIP **Whitespace** utilities
