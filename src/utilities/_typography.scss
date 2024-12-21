@@ -76,6 +76,20 @@ $yma-typography-utils: (
     ),
   ),
 
+  "text-indent": (
+    "prefix": "ti",
+    "properties": (
+      "text-indent",
+    ),
+    "values": (
+      "0": 0px,
+      "1": 1px,
+      "2": 0.25rem,
+      "3": 0.5rem,
+      "4": 0.75rem,
+    ),
+  ),
+
   "line-height": (
     "prefix": "lh",
     "properties": (

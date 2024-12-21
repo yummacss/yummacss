@@ -176704,6 +176704,131 @@
     list-style-position: outside;
   }
 }
+.ti-0 {
+  text-indent: 0px;
+}
+
+.h\:ti-0:hover {
+  text-indent: 0px;
+}
+
+.ti-1 {
+  text-indent: 1px;
+}
+
+.h\:ti-1:hover {
+  text-indent: 1px;
+}
+
+.ti-2 {
+  text-indent: 0.25rem;
+}
+
+.h\:ti-2:hover {
+  text-indent: 0.25rem;
+}
+
+.ti-3 {
+  text-indent: 0.5rem;
+}
+
+.h\:ti-3:hover {
+  text-indent: 0.5rem;
+}
+
+.ti-4 {
+  text-indent: 0.75rem;
+}
+
+.h\:ti-4:hover {
+  text-indent: 0.75rem;
+}
+
+@media (min-width: 640px) {
+  .sm\:ti-0 {
+    text-indent: 0px;
+  }
+  .sm\:ti-1 {
+    text-indent: 1px;
+  }
+  .sm\:ti-2 {
+    text-indent: 0.25rem;
+  }
+  .sm\:ti-3 {
+    text-indent: 0.5rem;
+  }
+  .sm\:ti-4 {
+    text-indent: 0.75rem;
+  }
+}
+@media (min-width: 768px) {
+  .md\:ti-0 {
+    text-indent: 0px;
+  }
+  .md\:ti-1 {
+    text-indent: 1px;
+  }
+  .md\:ti-2 {
+    text-indent: 0.25rem;
+  }
+  .md\:ti-3 {
+    text-indent: 0.5rem;
+  }
+  .md\:ti-4 {
+    text-indent: 0.75rem;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:ti-0 {
+    text-indent: 0px;
+  }
+  .lg\:ti-1 {
+    text-indent: 1px;
+  }
+  .lg\:ti-2 {
+    text-indent: 0.25rem;
+  }
+  .lg\:ti-3 {
+    text-indent: 0.5rem;
+  }
+  .lg\:ti-4 {
+    text-indent: 0.75rem;
+  }
+}
+@media (min-width: 1280px) {
+  .xl\:ti-0 {
+    text-indent: 0px;
+  }
+  .xl\:ti-1 {
+    text-indent: 1px;
+  }
+  .xl\:ti-2 {
+    text-indent: 0.25rem;
+  }
+  .xl\:ti-3 {
+    text-indent: 0.5rem;
+  }
+  .xl\:ti-4 {
+    text-indent: 0.75rem;
+  }
+}
+@media (min-width: 1536px) {
+  .xxl\:ti-0 {
+    text-indent: 0px;
+  }
+  .xxl\:ti-1 {
+    text-indent: 1px;
+  }
+  .xxl\:ti-2 {
+    text-indent: 0.25rem;
+  }
+  .xxl\:ti-3 {
+    text-indent: 0.5rem;
+  }
+  .xxl\:ti-4 {
+    text-indent: 0.75rem;
+  }
+}
 .lh-1 {
   line-height: 1;
 }
