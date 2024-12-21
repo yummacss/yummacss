@@ -47,7 +47,7 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Add **Direction (Axis)** utilities
 - Add **Stroke** utilities
 - Add **Stroke Width** utilities
-- WIP **Letter Spacing** utilities
+- Add **Letter Spacing** utilities
 - WIP **List Style Position** utilities
 - WIP **Text Indent** utilities
 - WIP **Text Overflow** utilities

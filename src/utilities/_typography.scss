@@ -50,6 +50,21 @@ $yma-typography-utils: (
     ),
   ),
 
+  "letter-spacing": (
+    "prefix": "ls",
+    "properties": (
+      "letter-spacing",
+    ),
+    "values": (
+      "0": 0em,
+      "1": -0.05em,
+      "2": -0.025em,
+      "3": 0.025em,
+      "4": 0.05em,
+      "5": 0.1em,
+    ),
+  ),
+
   "line-height": (
     "prefix": "lh",
     "properties": (

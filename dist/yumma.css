@@ -176500,6 +176500,154 @@
     font-weight: 900;
   }
 }
+.ls-0 {
+  letter-spacing: 0em;
+}
+
+.h\:ls-0:hover {
+  letter-spacing: 0em;
+}
+
+.ls-1 {
+  letter-spacing: -0.05em;
+}
+
+.h\:ls-1:hover {
+  letter-spacing: -0.05em;
+}
+
+.ls-2 {
+  letter-spacing: -0.025em;
+}
+
+.h\:ls-2:hover {
+  letter-spacing: -0.025em;
+}
+
+.ls-3 {
+  letter-spacing: 0.025em;
+}
+
+.h\:ls-3:hover {
+  letter-spacing: 0.025em;
+}
+
+.ls-4 {
+  letter-spacing: 0.05em;
+}
+
+.h\:ls-4:hover {
+  letter-spacing: 0.05em;
+}
+
+.ls-5 {
+  letter-spacing: 0.1em;
+}
+
+.h\:ls-5:hover {
+  letter-spacing: 0.1em;
+}
+
+@media (min-width: 640px) {
+  .sm\:ls-0 {
+    letter-spacing: 0em;
+  }
+  .sm\:ls-1 {
+    letter-spacing: -0.05em;
+  }
+  .sm\:ls-2 {
+    letter-spacing: -0.025em;
+  }
+  .sm\:ls-3 {
+    letter-spacing: 0.025em;
+  }
+  .sm\:ls-4 {
+    letter-spacing: 0.05em;
+  }
+  .sm\:ls-5 {
+    letter-spacing: 0.1em;
+  }
+}
+@media (min-width: 768px) {
+  .md\:ls-0 {
+    letter-spacing: 0em;
+  }
+  .md\:ls-1 {
+    letter-spacing: -0.05em;
+  }
+  .md\:ls-2 {
+    letter-spacing: -0.025em;
+  }
+  .md\:ls-3 {
+    letter-spacing: 0.025em;
+  }
+  .md\:ls-4 {
+    letter-spacing: 0.05em;
+  }
+  .md\:ls-5 {
+    letter-spacing: 0.1em;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:ls-0 {
+    letter-spacing: 0em;
+  }
+  .lg\:ls-1 {
+    letter-spacing: -0.05em;
+  }
+  .lg\:ls-2 {
+    letter-spacing: -0.025em;
+  }
+  .lg\:ls-3 {
+    letter-spacing: 0.025em;
+  }
+  .lg\:ls-4 {
+    letter-spacing: 0.05em;
+  }
+  .lg\:ls-5 {
+    letter-spacing: 0.1em;
+  }
+}
+@media (min-width: 1280px) {
+  .xl\:ls-0 {
+    letter-spacing: 0em;
+  }
+  .xl\:ls-1 {
+    letter-spacing: -0.05em;
+  }
+  .xl\:ls-2 {
+    letter-spacing: -0.025em;
+  }
+  .xl\:ls-3 {
+    letter-spacing: 0.025em;
+  }
+  .xl\:ls-4 {
+    letter-spacing: 0.05em;
+  }
+  .xl\:ls-5 {
+    letter-spacing: 0.1em;
+  }
+}
+@media (min-width: 1536px) {
+  .xxl\:ls-0 {
+    letter-spacing: 0em;
+  }
+  .xxl\:ls-1 {
+    letter-spacing: -0.05em;
+  }
+  .xxl\:ls-2 {
+    letter-spacing: -0.025em;
+  }
+  .xxl\:ls-3 {
+    letter-spacing: 0.025em;
+  }
+  .xxl\:ls-4 {
+    letter-spacing: 0.05em;
+  }
+  .xxl\:ls-5 {
+    letter-spacing: 0.1em;
+  }
+}
 .lh-1 {
   line-height: 1;
 }
