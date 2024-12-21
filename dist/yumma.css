@@ -176885,6 +176885,108 @@
     text-overflow: ellipsis;
   }
 }
+.tt-c {
+  text-transform: capitalize;
+}
+
+.h\:tt-c:hover {
+  text-transform: capitalize;
+}
+
+.tt-l {
+  text-transform: lowercase;
+}
+
+.h\:tt-l:hover {
+  text-transform: lowercase;
+}
+
+.tt-n {
+  text-transform: none;
+}
+
+.h\:tt-n:hover {
+  text-transform: none;
+}
+
+.tt-u {
+  text-transform: uppercase;
+}
+
+.h\:tt-u:hover {
+  text-transform: uppercase;
+}
+
+@media (min-width: 640px) {
+  .sm\:tt-c {
+    text-transform: capitalize;
+  }
+  .sm\:tt-l {
+    text-transform: lowercase;
+  }
+  .sm\:tt-n {
+    text-transform: none;
+  }
+  .sm\:tt-u {
+    text-transform: uppercase;
+  }
+}
+@media (min-width: 768px) {
+  .md\:tt-c {
+    text-transform: capitalize;
+  }
+  .md\:tt-l {
+    text-transform: lowercase;
+  }
+  .md\:tt-n {
+    text-transform: none;
+  }
+  .md\:tt-u {
+    text-transform: uppercase;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:tt-c {
+    text-transform: capitalize;
+  }
+  .lg\:tt-l {
+    text-transform: lowercase;
+  }
+  .lg\:tt-n {
+    text-transform: none;
+  }
+  .lg\:tt-u {
+    text-transform: uppercase;
+  }
+}
+@media (min-width: 1280px) {
+  .xl\:tt-c {
+    text-transform: capitalize;
+  }
+  .xl\:tt-l {
+    text-transform: lowercase;
+  }
+  .xl\:tt-n {
+    text-transform: none;
+  }
+  .xl\:tt-u {
+    text-transform: uppercase;
+  }
+}
+@media (min-width: 1536px) {
+  .xxl\:tt-c {
+    text-transform: capitalize;
+  }
+  .xxl\:tt-l {
+    text-transform: lowercase;
+  }
+  .xxl\:tt-n {
+    text-transform: none;
+  }
+  .xxl\:tt-u {
+    text-transform: uppercase;
+  }
+}
 .lh-1 {
   line-height: 1;
 }

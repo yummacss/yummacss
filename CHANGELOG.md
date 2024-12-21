@@ -51,7 +51,7 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Add **List Style Position** utilities
 - Add **Text Indent** utilities
 - Add **Text Overflow** utilities
-- WIP **Text Transform** utilities
+- Add **Text Transform** utilities
 - WIP **Text Underline Offset** utilities
 - WIP **Text Wrap** utilities
 - WIP **Vertical Align** utilities

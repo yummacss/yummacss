@@ -101,6 +101,19 @@ $yma-typography-utils: (
     ),
   ),
 
+  "text-transform": (
+    "prefix": "tt",
+    "properties": (
+      "text-transform",
+    ),
+    "values": (
+      "c": capitalize,
+      "l": lowercase,
+      "n": none,
+      "u": uppercase,
+    ),
+  ),
+
   "line-height": (
     "prefix": "lh",
     "properties": (
