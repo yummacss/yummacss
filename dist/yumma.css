@@ -178339,6 +178339,154 @@
     vertical-align: text-top;
   }
 }
+.ws-bs {
+  white-space: break-spaces;
+}
+
+.h\:ws-bs:hover {
+  white-space: break-spaces;
+}
+
+.ws-n {
+  white-space: normal;
+}
+
+.h\:ws-n:hover {
+  white-space: normal;
+}
+
+.ws-nw {
+  white-space: nowrap;
+}
+
+.h\:ws-nw:hover {
+  white-space: nowrap;
+}
+
+.ws-p {
+  white-space: pre;
+}
+
+.h\:ws-p:hover {
+  white-space: pre;
+}
+
+.ws-pl {
+  white-space: pre-line;
+}
+
+.h\:ws-pl:hover {
+  white-space: pre-line;
+}
+
+.ws-pw {
+  white-space: pre-wrap;
+}
+
+.h\:ws-pw:hover {
+  white-space: pre-wrap;
+}
+
+@media (min-width: 640px) {
+  .sm\:ws-bs {
+    white-space: break-spaces;
+  }
+  .sm\:ws-n {
+    white-space: normal;
+  }
+  .sm\:ws-nw {
+    white-space: nowrap;
+  }
+  .sm\:ws-p {
+    white-space: pre;
+  }
+  .sm\:ws-pl {
+    white-space: pre-line;
+  }
+  .sm\:ws-pw {
+    white-space: pre-wrap;
+  }
+}
+@media (min-width: 768px) {
+  .md\:ws-bs {
+    white-space: break-spaces;
+  }
+  .md\:ws-n {
+    white-space: normal;
+  }
+  .md\:ws-nw {
+    white-space: nowrap;
+  }
+  .md\:ws-p {
+    white-space: pre;
+  }
+  .md\:ws-pl {
+    white-space: pre-line;
+  }
+  .md\:ws-pw {
+    white-space: pre-wrap;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:ws-bs {
+    white-space: break-spaces;
+  }
+  .lg\:ws-n {
+    white-space: normal;
+  }
+  .lg\:ws-nw {
+    white-space: nowrap;
+  }
+  .lg\:ws-p {
+    white-space: pre;
+  }
+  .lg\:ws-pl {
+    white-space: pre-line;
+  }
+  .lg\:ws-pw {
+    white-space: pre-wrap;
+  }
+}
+@media (min-width: 1280px) {
+  .xl\:ws-bs {
+    white-space: break-spaces;
+  }
+  .xl\:ws-n {
+    white-space: normal;
+  }
+  .xl\:ws-nw {
+    white-space: nowrap;
+  }
+  .xl\:ws-p {
+    white-space: pre;
+  }
+  .xl\:ws-pl {
+    white-space: pre-line;
+  }
+  .xl\:ws-pw {
+    white-space: pre-wrap;
+  }
+}
+@media (min-width: 1536px) {
+  .xxl\:ws-bs {
+    white-space: break-spaces;
+  }
+  .xxl\:ws-n {
+    white-space: normal;
+  }
+  .xxl\:ws-nw {
+    white-space: nowrap;
+  }
+  .xxl\:ws-p {
+    white-space: pre;
+  }
+  .xxl\:ws-pl {
+    white-space: pre-line;
+  }
+  .xxl\:ws-pw {
+    white-space: pre-wrap;
+  }
+}
 .ff-c {
   font-family: Charter, Cambria, serif;
   font-weight: 500;

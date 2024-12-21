@@ -266,6 +266,21 @@ $yma-typography-utils: (
       "tt": text-top,
     ),
   ),
+
+  "white-space": (
+    "prefix": "ws",
+    "properties": (
+      "white-space",
+    ),
+    "values": (
+      "bs": break-spaces,
+      "n": normal,
+      "nw": nowrap,
+      "p": pre,
+      "pl": pre-line,
+      "pw": pre-wrap,
+    ),
+  ),
 );
 
 @each $properties, $map in $yma-typography-utils {
