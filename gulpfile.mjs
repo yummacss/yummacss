@@ -11,7 +11,9 @@ import { config } from "./yummacss.config.js";
 const { capabilities } = config;
 
 function standardFile() {
-  const entryPoint = capabilities.core ? "src/index.scss" : "src/coreless.scss";
+  const entryPoint = capabilities.core
+    ? "src/yummacss.scss"
+    : "src/coreless.scss";
 
   return src(entryPoint)
     .pipe(debug({ title: "Processing File:" }))
