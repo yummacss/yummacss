@@ -1,9 +1,9 @@
 <div align="center">
   <a href="https://yummacss.com" target="_blank" target="_blank" rel="noopener noreferrer">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://www.yummacss.com/assets/vectors/dark-logo.svg">
-      <source media="(prefers-color-scheme: light)" srcset="https://www.yummacss.com/assets/vectors/light-logo.svg">
-      <img alt="Yumma CSS" src="https://www.yummacss.com/assets/vectors/light-logo.svg" width="220" style="max-width: 100%;">
+      <source media="(prefers-color-scheme: dark)" srcset="https://www.yummacss.com/trademark/logo-dark.png">
+      <source media="(prefers-color-scheme: light)" srcset="https://www.yummacss.com/trademark/logo-light.png">
+      <img alt="Yumma CSS" src="https://www.yummacss.com/trademark/logo-light.png" width="220" style="max-width: 100%;">
     </picture>
   </a>
 </div>
