@@ -12,11 +12,21 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Add **Background Position** utilities
 - Add **Background Repeat** utilities
 - Add **Background Size** utilities
+- Add **Blur** utilities
 - Add **Border Spacing** utilities
+- Add **Box Decoration Break** utilities
+- Add **Clear** utilities
+- Add **Direction (Axis)** utilities
+- Add **Fill** utilities
+- Add **Grayscale** utilities
+- Add **Isolation** utilities
+- Add **Letter Spacing** utilities
+- Add **List Style Position** utilities
 - Add **Margin Block End** utilities
 - Add **Margin Block Start** utilities
 - Add **Margin Inline End** utilities
 - Add **Margin Inline Start** utilities
+- Add **Order** utilities
 - Add **Padding Block End** utilities
 - Add **Padding Block Start** utilities
 - Add **Padding Inline End** utilities
@@ -24,12 +34,7 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Add **Place Content** utilities
 - Add **Place Items** utilities
 - Add **Place Self** utilities
-- Add **Order** utilities
-- Add **Blur** utilities
-- Add **Box Decoration Break** utilities
-- Add **Grayscale** utilities
 - Add **Scroll Behavior** utilities
-- Add **Scroll Margin** utilities
 - Add **Scroll Margin Bottom** utilities
 - Add **Scroll Margin Inline End** utilities
 - Add **Scroll Margin Inline Start** utilities
@@ -38,17 +43,12 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Add **Scroll Margin Top** utilities
 - Add **Scroll Margin X** utilities
 - Add **Scroll Margin Y** utilities
-- Add **Clear** utilities
-- Add **Isolation** utilities
-- Add **Fill** utilities
+- Add **Scroll Margin** utilities
 - Add **Scroll Snap Align** utilities
 - Add **Scroll Snap Stop** utilities
 - Add **Scroll Snap Type** utilities
-- Add **Direction (Axis)** utilities
-- Add **Stroke** utilities
 - Add **Stroke Width** utilities
-- Add **Letter Spacing** utilities
-- Add **List Style Position** utilities
+- Add **Stroke** utilities
 - Add **Text Indent** utilities
 - Add **Text Overflow** utilities
 - Add **Text Transform** utilities
@@ -56,10 +56,14 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Add **Text Wrap** utilities
 - Add **Vertical Align** utilities
 - Add **Whitespace** utilities
+- WIP **Rotate** utilities
+- WIP **Scale** utilities
+- WIP **Skew** utilities
 - WIP **Transform Origin** utilities
 - WIP **Transition Delay** utilities
 - WIP **Transition Duration** utilities
 - WIP **Transition Property** utilities
+- WIP **Translate** utilities
 - Add `_color-utilities.scss`, `_create-utilities.scss`, `_extend-utilities.scss` and `_scale-utilities.scss` partial files
 - Add `_dimension.scss`, `_height.scss`, `_margin.scss`, `_padding.scss`, `_spacing.scss` and `_width.scss` files
 - Add `_create-values.scss` file
