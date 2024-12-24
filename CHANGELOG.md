@@ -56,6 +56,16 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Add **Text Wrap** utilities
 - Add **Vertical Align** utilities
 - Add **Whitespace** utilities
+- Add `_color-utilities.scss`, `_create-utilities.scss`, `_extend-utilities.scss` and `_scale-utilities.scss` partial files
+- Add `_create-values.scss` file
+- Add `_dimension.scss`, `_height.scss`, `_margin.scss`, `_padding.scss`, `_spacing.scss` and `_width.scss` files
+- Add `_index.scss` files
+- Add `$yma-box-shadow-*` variables
+- Add `coreless.scss` file
+- Add `src\abstracts\functions` folder
+- Add `utilities\maps` folder
+- Add `yummacss.config.js` file
+- Add Yumma CSS CLI
 - WIP **Rotate** utilities
 - WIP **Scale** utilities
 - WIP **Skew** utilities
@@ -64,28 +74,18 @@ All notable changes to the Yumma CSS will be documented in this file.
 - WIP **Transition Duration** utilities
 - WIP **Transition Property** utilities
 - WIP **Translate** utilities
-- Add `_color-utilities.scss`, `_create-utilities.scss`, `_extend-utilities.scss` and `_scale-utilities.scss` partial files
-- Add `_dimension.scss`, `_height.scss`, `_margin.scss`, `_padding.scss`, `_spacing.scss` and `_width.scss` files
-- Add `_create-values.scss` file
-- Add `$yma-box-shadow-*` variables
-- Add `coreless.scss` file
-- Add `src\abstracts\functions` folder
-- Add `yummacss.config.js` file
-- Add `_index.scss` files
-- Add Yumma CSS CLI
-- Add `utilities\maps` folder
 
 ### Changes
 
 - Group related utilities and variants
 - Merge **Filters** and **Effects** subcategories into a **FX** category
+- Migrate base styles functionality to config file
 - Migrate from `@import` to `@use` and `@forwards`
 - Migrate from Common Js to ESM
-- Migrate Stylecent functionality to config file
 - Move `yumma-cli` to `bin\yumma-cli.js`
 - Optimize `dist\yumma.css` file performance
 - Optimize `dist\yumma.min.css` file performance
-- Rename `_base.scss` to `base\stylecent.scss`
+- Rename `_base.scss` to `base\_stylecent.scss`
 - Rename `_core.scss` to `coreless.scss`
 - Rename `_functions.scss` to `_ignore-neutral.scss`
 - Rename `gulpfile.js` file name to `gulpfile.mjs`
