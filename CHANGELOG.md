@@ -34,7 +34,7 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Add **Place Content** utilities
 - Add **Place Items** utilities
 - Add **Place Self** utilities
-- Add **Rotate** utilities
+- Add **Scale** utilities
 - Add **Scroll Behavior** utilities
 - Add **Scroll Margin Bottom** utilities
 - Add **Scroll Margin Inline End** utilities
@@ -67,14 +67,13 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Add `utilities\maps` folder
 - Add `yummacss.config.js` file
 - Add Yumma CSS CLI
-- WIP **Scale** utilities
+- WIP **Rotate** utilities
 - WIP **Skew** utilities
 - WIP **Transform Origin** utilities
 - WIP **Transition Delay** utilities
 - WIP **Transition Duration** utilities
 - WIP **Transition Property** utilities
 - WIP **Translate** utilities
-
 ### Changes
 
 - Group related utilities and variants
