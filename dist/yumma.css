@@ -176010,6 +176010,499 @@
     table-layout: fixed;
   }
 }
+.t-r-0 {
+  transform: rotate(0);
+}
+
+.h\:t-r-0:hover {
+  transform: rotate(0);
+}
+
+.t-r-5 {
+  transform: rotate(5deg);
+}
+
+.h\:t-r-5:hover {
+  transform: rotate(5deg);
+}
+
+.t-r-10 {
+  transform: rotate(10deg);
+}
+
+.h\:t-r-10:hover {
+  transform: rotate(10deg);
+}
+
+.t-r-15 {
+  transform: rotate(15deg);
+}
+
+.h\:t-r-15:hover {
+  transform: rotate(15deg);
+}
+
+.t-r-20 {
+  transform: rotate(20deg);
+}
+
+.h\:t-r-20:hover {
+  transform: rotate(20deg);
+}
+
+.t-r-25 {
+  transform: rotate(25deg);
+}
+
+.h\:t-r-25:hover {
+  transform: rotate(25deg);
+}
+
+.t-r-30 {
+  transform: rotate(30deg);
+}
+
+.h\:t-r-30:hover {
+  transform: rotate(30deg);
+}
+
+.t-r-35 {
+  transform: rotate(35deg);
+}
+
+.h\:t-r-35:hover {
+  transform: rotate(35deg);
+}
+
+.t-r-40 {
+  transform: rotate(40deg);
+}
+
+.h\:t-r-40:hover {
+  transform: rotate(40deg);
+}
+
+.t-r-45 {
+  transform: rotate(45deg);
+}
+
+.h\:t-r-45:hover {
+  transform: rotate(45deg);
+}
+
+.t-r-50 {
+  transform: rotate(50deg);
+}
+
+.h\:t-r-50:hover {
+  transform: rotate(50deg);
+}
+
+.t-r-55 {
+  transform: rotate(55deg);
+}
+
+.h\:t-r-55:hover {
+  transform: rotate(55deg);
+}
+
+.t-r-60 {
+  transform: rotate(60deg);
+}
+
+.h\:t-r-60:hover {
+  transform: rotate(60deg);
+}
+
+.t-r-65 {
+  transform: rotate(65deg);
+}
+
+.h\:t-r-65:hover {
+  transform: rotate(65deg);
+}
+
+.t-r-70 {
+  transform: rotate(70deg);
+}
+
+.h\:t-r-70:hover {
+  transform: rotate(70deg);
+}
+
+.t-r-75 {
+  transform: rotate(75deg);
+}
+
+.h\:t-r-75:hover {
+  transform: rotate(75deg);
+}
+
+.t-r-80 {
+  transform: rotate(80deg);
+}
+
+.h\:t-r-80:hover {
+  transform: rotate(80deg);
+}
+
+.t-r-85 {
+  transform: rotate(85deg);
+}
+
+.h\:t-r-85:hover {
+  transform: rotate(85deg);
+}
+
+.t-r-90 {
+  transform: rotate(90deg);
+}
+
+.h\:t-r-90:hover {
+  transform: rotate(90deg);
+}
+
+.t-r-95 {
+  transform: rotate(95deg);
+}
+
+.h\:t-r-95:hover {
+  transform: rotate(95deg);
+}
+
+.t-r-100 {
+  transform: rotate(100deg);
+}
+
+.h\:t-r-100:hover {
+  transform: rotate(100deg);
+}
+
+@media (min-width: 640px) {
+  .sm\:t-r-0 {
+    transform: rotate(0);
+  }
+  .sm\:t-r-5 {
+    transform: rotate(5deg);
+  }
+  .sm\:t-r-10 {
+    transform: rotate(10deg);
+  }
+  .sm\:t-r-15 {
+    transform: rotate(15deg);
+  }
+  .sm\:t-r-20 {
+    transform: rotate(20deg);
+  }
+  .sm\:t-r-25 {
+    transform: rotate(25deg);
+  }
+  .sm\:t-r-30 {
+    transform: rotate(30deg);
+  }
+  .sm\:t-r-35 {
+    transform: rotate(35deg);
+  }
+  .sm\:t-r-40 {
+    transform: rotate(40deg);
+  }
+  .sm\:t-r-45 {
+    transform: rotate(45deg);
+  }
+  .sm\:t-r-50 {
+    transform: rotate(50deg);
+  }
+  .sm\:t-r-55 {
+    transform: rotate(55deg);
+  }
+  .sm\:t-r-60 {
+    transform: rotate(60deg);
+  }
+  .sm\:t-r-65 {
+    transform: rotate(65deg);
+  }
+  .sm\:t-r-70 {
+    transform: rotate(70deg);
+  }
+  .sm\:t-r-75 {
+    transform: rotate(75deg);
+  }
+  .sm\:t-r-80 {
+    transform: rotate(80deg);
+  }
+  .sm\:t-r-85 {
+    transform: rotate(85deg);
+  }
+  .sm\:t-r-90 {
+    transform: rotate(90deg);
+  }
+  .sm\:t-r-95 {
+    transform: rotate(95deg);
+  }
+  .sm\:t-r-100 {
+    transform: rotate(100deg);
+  }
+}
+@media (min-width: 768px) {
+  .md\:t-r-0 {
+    transform: rotate(0);
+  }
+  .md\:t-r-5 {
+    transform: rotate(5deg);
+  }
+  .md\:t-r-10 {
+    transform: rotate(10deg);
+  }
+  .md\:t-r-15 {
+    transform: rotate(15deg);
+  }
+  .md\:t-r-20 {
+    transform: rotate(20deg);
+  }
+  .md\:t-r-25 {
+    transform: rotate(25deg);
+  }
+  .md\:t-r-30 {
+    transform: rotate(30deg);
+  }
+  .md\:t-r-35 {
+    transform: rotate(35deg);
+  }
+  .md\:t-r-40 {
+    transform: rotate(40deg);
+  }
+  .md\:t-r-45 {
+    transform: rotate(45deg);
+  }
+  .md\:t-r-50 {
+    transform: rotate(50deg);
+  }
+  .md\:t-r-55 {
+    transform: rotate(55deg);
+  }
+  .md\:t-r-60 {
+    transform: rotate(60deg);
+  }
+  .md\:t-r-65 {
+    transform: rotate(65deg);
+  }
+  .md\:t-r-70 {
+    transform: rotate(70deg);
+  }
+  .md\:t-r-75 {
+    transform: rotate(75deg);
+  }
+  .md\:t-r-80 {
+    transform: rotate(80deg);
+  }
+  .md\:t-r-85 {
+    transform: rotate(85deg);
+  }
+  .md\:t-r-90 {
+    transform: rotate(90deg);
+  }
+  .md\:t-r-95 {
+    transform: rotate(95deg);
+  }
+  .md\:t-r-100 {
+    transform: rotate(100deg);
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:t-r-0 {
+    transform: rotate(0);
+  }
+  .lg\:t-r-5 {
+    transform: rotate(5deg);
+  }
+  .lg\:t-r-10 {
+    transform: rotate(10deg);
+  }
+  .lg\:t-r-15 {
+    transform: rotate(15deg);
+  }
+  .lg\:t-r-20 {
+    transform: rotate(20deg);
+  }
+  .lg\:t-r-25 {
+    transform: rotate(25deg);
+  }
+  .lg\:t-r-30 {
+    transform: rotate(30deg);
+  }
+  .lg\:t-r-35 {
+    transform: rotate(35deg);
+  }
+  .lg\:t-r-40 {
+    transform: rotate(40deg);
+  }
+  .lg\:t-r-45 {
+    transform: rotate(45deg);
+  }
+  .lg\:t-r-50 {
+    transform: rotate(50deg);
+  }
+  .lg\:t-r-55 {
+    transform: rotate(55deg);
+  }
+  .lg\:t-r-60 {
+    transform: rotate(60deg);
+  }
+  .lg\:t-r-65 {
+    transform: rotate(65deg);
+  }
+  .lg\:t-r-70 {
+    transform: rotate(70deg);
+  }
+  .lg\:t-r-75 {
+    transform: rotate(75deg);
+  }
+  .lg\:t-r-80 {
+    transform: rotate(80deg);
+  }
+  .lg\:t-r-85 {
+    transform: rotate(85deg);
+  }
+  .lg\:t-r-90 {
+    transform: rotate(90deg);
+  }
+  .lg\:t-r-95 {
+    transform: rotate(95deg);
+  }
+  .lg\:t-r-100 {
+    transform: rotate(100deg);
+  }
+}
+@media (min-width: 1280px) {
+  .xl\:t-r-0 {
+    transform: rotate(0);
+  }
+  .xl\:t-r-5 {
+    transform: rotate(5deg);
+  }
+  .xl\:t-r-10 {
+    transform: rotate(10deg);
+  }
+  .xl\:t-r-15 {
+    transform: rotate(15deg);
+  }
+  .xl\:t-r-20 {
+    transform: rotate(20deg);
+  }
+  .xl\:t-r-25 {
+    transform: rotate(25deg);
+  }
+  .xl\:t-r-30 {
+    transform: rotate(30deg);
+  }
+  .xl\:t-r-35 {
+    transform: rotate(35deg);
+  }
+  .xl\:t-r-40 {
+    transform: rotate(40deg);
+  }
+  .xl\:t-r-45 {
+    transform: rotate(45deg);
+  }
+  .xl\:t-r-50 {
+    transform: rotate(50deg);
+  }
+  .xl\:t-r-55 {
+    transform: rotate(55deg);
+  }
+  .xl\:t-r-60 {
+    transform: rotate(60deg);
+  }
+  .xl\:t-r-65 {
+    transform: rotate(65deg);
+  }
+  .xl\:t-r-70 {
+    transform: rotate(70deg);
+  }
+  .xl\:t-r-75 {
+    transform: rotate(75deg);
+  }
+  .xl\:t-r-80 {
+    transform: rotate(80deg);
+  }
+  .xl\:t-r-85 {
+    transform: rotate(85deg);
+  }
+  .xl\:t-r-90 {
+    transform: rotate(90deg);
+  }
+  .xl\:t-r-95 {
+    transform: rotate(95deg);
+  }
+  .xl\:t-r-100 {
+    transform: rotate(100deg);
+  }
+}
+@media (min-width: 1536px) {
+  .xxl\:t-r-0 {
+    transform: rotate(0);
+  }
+  .xxl\:t-r-5 {
+    transform: rotate(5deg);
+  }
+  .xxl\:t-r-10 {
+    transform: rotate(10deg);
+  }
+  .xxl\:t-r-15 {
+    transform: rotate(15deg);
+  }
+  .xxl\:t-r-20 {
+    transform: rotate(20deg);
+  }
+  .xxl\:t-r-25 {
+    transform: rotate(25deg);
+  }
+  .xxl\:t-r-30 {
+    transform: rotate(30deg);
+  }
+  .xxl\:t-r-35 {
+    transform: rotate(35deg);
+  }
+  .xxl\:t-r-40 {
+    transform: rotate(40deg);
+  }
+  .xxl\:t-r-45 {
+    transform: rotate(45deg);
+  }
+  .xxl\:t-r-50 {
+    transform: rotate(50deg);
+  }
+  .xxl\:t-r-55 {
+    transform: rotate(55deg);
+  }
+  .xxl\:t-r-60 {
+    transform: rotate(60deg);
+  }
+  .xxl\:t-r-65 {
+    transform: rotate(65deg);
+  }
+  .xxl\:t-r-70 {
+    transform: rotate(70deg);
+  }
+  .xxl\:t-r-75 {
+    transform: rotate(75deg);
+  }
+  .xxl\:t-r-80 {
+    transform: rotate(80deg);
+  }
+  .xxl\:t-r-85 {
+    transform: rotate(85deg);
+  }
+  .xxl\:t-r-90 {
+    transform: rotate(90deg);
+  }
+  .xxl\:t-r-95 {
+    transform: rotate(95deg);
+  }
+  .xxl\:t-r-100 {
+    transform: rotate(100deg);
+  }
+}
 .t-s-0 {
   transform: scale(0%);
 }

@@ -3,7 +3,37 @@
 @use "../abstracts/mixins/" as mi;
 
 $yma-transform-utils: (
-  "transform": (
+  "transform-rotate": (
+    "prefix": "t-r",
+    "properties": (
+      "transform",
+    ),
+    "values": (
+      "0": rotate(0),
+      "5": rotate(5deg),
+      "10": rotate(10deg),
+      "15": rotate(15deg),
+      "20": rotate(20deg),
+      "25": rotate(25deg),
+      "30": rotate(30deg),
+      "35": rotate(35deg),
+      "40": rotate(40deg),
+      "45": rotate(45deg),
+      "50": rotate(50deg),
+      "55": rotate(55deg),
+      "60": rotate(60deg),
+      "65": rotate(65deg),
+      "70": rotate(70deg),
+      "75": rotate(75deg),
+      "80": rotate(80deg),
+      "85": rotate(85deg),
+      "90": rotate(90deg),
+      "95": rotate(95deg),
+      "100": rotate(100deg),
+    ),
+  ),
+
+  "transform-scale": (
     "prefix": "t-s",
     "properties": (
       "transform",
