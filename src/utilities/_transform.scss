@@ -52,6 +52,46 @@ $yma-transform-utils: (
       "100": scale(100%),
     ),
   ),
+
+  "transform-scale-x": (
+    "prefix": "t-sx",
+    "properties": (
+      "transform",
+    ),
+    "values": (
+      "0": scaleX(0%),
+      "10": scaleX(10%),
+      "20": scaleX(20%),
+      "30": scaleX(30%),
+      "40": scaleX(40%),
+      "50": scaleX(50%),
+      "60": scaleX(60%),
+      "70": scaleX(70%),
+      "80": scaleX(80%),
+      "90": scaleX(90%),
+      "100": scaleX(100%),
+    ),
+  ),
+
+  "transform-scale-y": (
+    "prefix": "t-sy",
+    "properties": (
+      "transform",
+    ),
+    "values": (
+      "0": scaleY(0%),
+      "10": scaleY(10%),
+      "20": scaleY(20%),
+      "30": scaleY(30%),
+      "40": scaleY(40%),
+      "50": scaleY(50%),
+      "60": scaleY(60%),
+      "70": scaleY(70%),
+      "80": scaleY(80%),
+      "90": scaleY(90%),
+      "100": scaleY(100%),
+    ),
+  ),
 );
 
 @each $name, $map in $yma-transform-utils {
