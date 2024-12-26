@@ -1,0 +1,32 @@
+@use "sass:math";
+@use "../abstracts/variables" as vars;
+@use "../abstracts/mixins/" as mi;
+
+$yma-transform-utils: (
+  "transform": (
+    "prefix": "t-s",
+    "properties": (
+      "transform",
+    ),
+    "values": (
+      "0": scale(0%),
+      "10": scale(10%),
+      "20": scale(20%),
+      "30": scale(30%),
+      "40": scale(40%),
+      "50": scale(50%),
+      "60": scale(60%),
+      "70": scale(70%),
+      "80": scale(80%),
+      "90": scale(90%),
+      "100": scale(100%),
+    ),
+  ),
+);
+
+@each $name, $map in $yma-transform-utils {
+  $prefix: map-get($map, "prefix");
+  $properties: map-get($map, "properties");
+
+  @include mi.create-utilities($map, $prefix, $properties);
+}
