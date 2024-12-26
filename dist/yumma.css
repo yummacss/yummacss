@@ -178124,6 +178124,246 @@
     transition-delay: 1000ms;
   }
 }
+.t-du-0 {
+  transition-duration: 0s;
+}
+
+.h\:t-du-0:hover {
+  transition-duration: 0s;
+}
+
+.t-du-50 {
+  transition-duration: 50ms;
+}
+
+.h\:t-du-50:hover {
+  transition-duration: 50ms;
+}
+
+.t-du-100 {
+  transition-duration: 100ms;
+}
+
+.h\:t-du-100:hover {
+  transition-duration: 100ms;
+}
+
+.t-du-150 {
+  transition-duration: 150ms;
+}
+
+.h\:t-du-150:hover {
+  transition-duration: 150ms;
+}
+
+.t-du-200 {
+  transition-duration: 200ms;
+}
+
+.h\:t-du-200:hover {
+  transition-duration: 200ms;
+}
+
+.t-du-250 {
+  transition-duration: 250ms;
+}
+
+.h\:t-du-250:hover {
+  transition-duration: 250ms;
+}
+
+.t-du-300 {
+  transition-duration: 300ms;
+}
+
+.h\:t-du-300:hover {
+  transition-duration: 300ms;
+}
+
+.t-du-500 {
+  transition-duration: 500ms;
+}
+
+.h\:t-du-500:hover {
+  transition-duration: 500ms;
+}
+
+.t-du-700 {
+  transition-duration: 700ms;
+}
+
+.h\:t-du-700:hover {
+  transition-duration: 700ms;
+}
+
+.t-du-1000 {
+  transition-duration: 1000ms;
+}
+
+.h\:t-du-1000:hover {
+  transition-duration: 1000ms;
+}
+
+@media (min-width: 640px) {
+  .sm\:t-du-0 {
+    transition-duration: 0s;
+  }
+  .sm\:t-du-50 {
+    transition-duration: 50ms;
+  }
+  .sm\:t-du-100 {
+    transition-duration: 100ms;
+  }
+  .sm\:t-du-150 {
+    transition-duration: 150ms;
+  }
+  .sm\:t-du-200 {
+    transition-duration: 200ms;
+  }
+  .sm\:t-du-250 {
+    transition-duration: 250ms;
+  }
+  .sm\:t-du-300 {
+    transition-duration: 300ms;
+  }
+  .sm\:t-du-500 {
+    transition-duration: 500ms;
+  }
+  .sm\:t-du-700 {
+    transition-duration: 700ms;
+  }
+  .sm\:t-du-1000 {
+    transition-duration: 1000ms;
+  }
+}
+@media (min-width: 768px) {
+  .md\:t-du-0 {
+    transition-duration: 0s;
+  }
+  .md\:t-du-50 {
+    transition-duration: 50ms;
+  }
+  .md\:t-du-100 {
+    transition-duration: 100ms;
+  }
+  .md\:t-du-150 {
+    transition-duration: 150ms;
+  }
+  .md\:t-du-200 {
+    transition-duration: 200ms;
+  }
+  .md\:t-du-250 {
+    transition-duration: 250ms;
+  }
+  .md\:t-du-300 {
+    transition-duration: 300ms;
+  }
+  .md\:t-du-500 {
+    transition-duration: 500ms;
+  }
+  .md\:t-du-700 {
+    transition-duration: 700ms;
+  }
+  .md\:t-du-1000 {
+    transition-duration: 1000ms;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:t-du-0 {
+    transition-duration: 0s;
+  }
+  .lg\:t-du-50 {
+    transition-duration: 50ms;
+  }
+  .lg\:t-du-100 {
+    transition-duration: 100ms;
+  }
+  .lg\:t-du-150 {
+    transition-duration: 150ms;
+  }
+  .lg\:t-du-200 {
+    transition-duration: 200ms;
+  }
+  .lg\:t-du-250 {
+    transition-duration: 250ms;
+  }
+  .lg\:t-du-300 {
+    transition-duration: 300ms;
+  }
+  .lg\:t-du-500 {
+    transition-duration: 500ms;
+  }
+  .lg\:t-du-700 {
+    transition-duration: 700ms;
+  }
+  .lg\:t-du-1000 {
+    transition-duration: 1000ms;
+  }
+}
+@media (min-width: 1280px) {
+  .xl\:t-du-0 {
+    transition-duration: 0s;
+  }
+  .xl\:t-du-50 {
+    transition-duration: 50ms;
+  }
+  .xl\:t-du-100 {
+    transition-duration: 100ms;
+  }
+  .xl\:t-du-150 {
+    transition-duration: 150ms;
+  }
+  .xl\:t-du-200 {
+    transition-duration: 200ms;
+  }
+  .xl\:t-du-250 {
+    transition-duration: 250ms;
+  }
+  .xl\:t-du-300 {
+    transition-duration: 300ms;
+  }
+  .xl\:t-du-500 {
+    transition-duration: 500ms;
+  }
+  .xl\:t-du-700 {
+    transition-duration: 700ms;
+  }
+  .xl\:t-du-1000 {
+    transition-duration: 1000ms;
+  }
+}
+@media (min-width: 1536px) {
+  .xxl\:t-du-0 {
+    transition-duration: 0s;
+  }
+  .xxl\:t-du-50 {
+    transition-duration: 50ms;
+  }
+  .xxl\:t-du-100 {
+    transition-duration: 100ms;
+  }
+  .xxl\:t-du-150 {
+    transition-duration: 150ms;
+  }
+  .xxl\:t-du-200 {
+    transition-duration: 200ms;
+  }
+  .xxl\:t-du-250 {
+    transition-duration: 250ms;
+  }
+  .xxl\:t-du-300 {
+    transition-duration: 300ms;
+  }
+  .xxl\:t-du-500 {
+    transition-duration: 500ms;
+  }
+  .xxl\:t-du-700 {
+    transition-duration: 700ms;
+  }
+  .xxl\:t-du-1000 {
+    transition-duration: 1000ms;
+  }
+}
 .fs-xs {
   font-size: 0.25rem;
 }

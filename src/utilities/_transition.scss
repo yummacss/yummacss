@@ -20,6 +20,25 @@ $yma-transition-utils: (
       "1000": 1000ms,
     ),
   ),
+
+  "transition-duration": (
+    "prefix": "t-du",
+    "properties": (
+      "transition-duration",
+    ),
+    "values": (
+      "0": 0s,
+      "50": 50ms,
+      "100": 100ms,
+      "150": 150ms,
+      "200": 200ms,
+      "250": 250ms,
+      "300": 300ms,
+      "500": 500ms,
+      "700": 700ms,
+      "1000": 1000ms,
+    ),
+  ),
 );
 
 @each $name, $map in $yma-transition-utils {
