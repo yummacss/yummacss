@@ -1,0 +1,30 @@
+@use "sass:math";
+@use "../abstracts/mixins/" as mi;
+
+$yma-transition-utils: (
+  "transition-delay": (
+    "prefix": "t-d",
+    "properties": (
+      "transition-delay",
+    ),
+    "values": (
+      "0": 0s,
+      "50": 50ms,
+      "100": 100ms,
+      "150": 150ms,
+      "200": 200ms,
+      "250": 250ms,
+      "300": 300ms,
+      "500": 500ms,
+      "700": 700ms,
+      "1000": 1000ms,
+    ),
+  ),
+);
+
+@each $name, $map in $yma-transition-utils {
+  $prefix: map-get($map, "prefix");
+  $properties: map-get($map, "properties");
+
+  @include mi.create-utilities($map, $prefix, $properties);
+}

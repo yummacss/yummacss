@@ -58,6 +58,7 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Add **Text Underline Offset** utilities
 - Add **Text Wrap** utilities
 - Add **Transform Origin** utilities
+- Add **Transition Delay** utilities
 - Add **Vertical Align** utilities
 - Add **Whitespace** utilities
 - Add `_color-utilities.scss`, `_create-utilities.scss`, `_extend-utilities.scss` and `_scale-utilities.scss` partial files
@@ -70,7 +71,6 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Add `utilities\maps` folder
 - Add `yummacss.config.js` file
 - Add Yumma CSS CLI
-- WIP **Transition Delay** utilities
 - WIP **Transition Duration** utilities
 - WIP **Transition Property** utilities
 - WIP **Translate** utilities

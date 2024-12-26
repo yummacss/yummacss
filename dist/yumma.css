@@ -177884,6 +177884,246 @@
     transform-origin: top right;
   }
 }
+.t-d-0 {
+  transition-delay: 0s;
+}
+
+.h\:t-d-0:hover {
+  transition-delay: 0s;
+}
+
+.t-d-50 {
+  transition-delay: 50ms;
+}
+
+.h\:t-d-50:hover {
+  transition-delay: 50ms;
+}
+
+.t-d-100 {
+  transition-delay: 100ms;
+}
+
+.h\:t-d-100:hover {
+  transition-delay: 100ms;
+}
+
+.t-d-150 {
+  transition-delay: 150ms;
+}
+
+.h\:t-d-150:hover {
+  transition-delay: 150ms;
+}
+
+.t-d-200 {
+  transition-delay: 200ms;
+}
+
+.h\:t-d-200:hover {
+  transition-delay: 200ms;
+}
+
+.t-d-250 {
+  transition-delay: 250ms;
+}
+
+.h\:t-d-250:hover {
+  transition-delay: 250ms;
+}
+
+.t-d-300 {
+  transition-delay: 300ms;
+}
+
+.h\:t-d-300:hover {
+  transition-delay: 300ms;
+}
+
+.t-d-500 {
+  transition-delay: 500ms;
+}
+
+.h\:t-d-500:hover {
+  transition-delay: 500ms;
+}
+
+.t-d-700 {
+  transition-delay: 700ms;
+}
+
+.h\:t-d-700:hover {
+  transition-delay: 700ms;
+}
+
+.t-d-1000 {
+  transition-delay: 1000ms;
+}
+
+.h\:t-d-1000:hover {
+  transition-delay: 1000ms;
+}
+
+@media (min-width: 640px) {
+  .sm\:t-d-0 {
+    transition-delay: 0s;
+  }
+  .sm\:t-d-50 {
+    transition-delay: 50ms;
+  }
+  .sm\:t-d-100 {
+    transition-delay: 100ms;
+  }
+  .sm\:t-d-150 {
+    transition-delay: 150ms;
+  }
+  .sm\:t-d-200 {
+    transition-delay: 200ms;
+  }
+  .sm\:t-d-250 {
+    transition-delay: 250ms;
+  }
+  .sm\:t-d-300 {
+    transition-delay: 300ms;
+  }
+  .sm\:t-d-500 {
+    transition-delay: 500ms;
+  }
+  .sm\:t-d-700 {
+    transition-delay: 700ms;
+  }
+  .sm\:t-d-1000 {
+    transition-delay: 1000ms;
+  }
+}
+@media (min-width: 768px) {
+  .md\:t-d-0 {
+    transition-delay: 0s;
+  }
+  .md\:t-d-50 {
+    transition-delay: 50ms;
+  }
+  .md\:t-d-100 {
+    transition-delay: 100ms;
+  }
+  .md\:t-d-150 {
+    transition-delay: 150ms;
+  }
+  .md\:t-d-200 {
+    transition-delay: 200ms;
+  }
+  .md\:t-d-250 {
+    transition-delay: 250ms;
+  }
+  .md\:t-d-300 {
+    transition-delay: 300ms;
+  }
+  .md\:t-d-500 {
+    transition-delay: 500ms;
+  }
+  .md\:t-d-700 {
+    transition-delay: 700ms;
+  }
+  .md\:t-d-1000 {
+    transition-delay: 1000ms;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:t-d-0 {
+    transition-delay: 0s;
+  }
+  .lg\:t-d-50 {
+    transition-delay: 50ms;
+  }
+  .lg\:t-d-100 {
+    transition-delay: 100ms;
+  }
+  .lg\:t-d-150 {
+    transition-delay: 150ms;
+  }
+  .lg\:t-d-200 {
+    transition-delay: 200ms;
+  }
+  .lg\:t-d-250 {
+    transition-delay: 250ms;
+  }
+  .lg\:t-d-300 {
+    transition-delay: 300ms;
+  }
+  .lg\:t-d-500 {
+    transition-delay: 500ms;
+  }
+  .lg\:t-d-700 {
+    transition-delay: 700ms;
+  }
+  .lg\:t-d-1000 {
+    transition-delay: 1000ms;
+  }
+}
+@media (min-width: 1280px) {
+  .xl\:t-d-0 {
+    transition-delay: 0s;
+  }
+  .xl\:t-d-50 {
+    transition-delay: 50ms;
+  }
+  .xl\:t-d-100 {
+    transition-delay: 100ms;
+  }
+  .xl\:t-d-150 {
+    transition-delay: 150ms;
+  }
+  .xl\:t-d-200 {
+    transition-delay: 200ms;
+  }
+  .xl\:t-d-250 {
+    transition-delay: 250ms;
+  }
+  .xl\:t-d-300 {
+    transition-delay: 300ms;
+  }
+  .xl\:t-d-500 {
+    transition-delay: 500ms;
+  }
+  .xl\:t-d-700 {
+    transition-delay: 700ms;
+  }
+  .xl\:t-d-1000 {
+    transition-delay: 1000ms;
+  }
+}
+@media (min-width: 1536px) {
+  .xxl\:t-d-0 {
+    transition-delay: 0s;
+  }
+  .xxl\:t-d-50 {
+    transition-delay: 50ms;
+  }
+  .xxl\:t-d-100 {
+    transition-delay: 100ms;
+  }
+  .xxl\:t-d-150 {
+    transition-delay: 150ms;
+  }
+  .xxl\:t-d-200 {
+    transition-delay: 200ms;
+  }
+  .xxl\:t-d-250 {
+    transition-delay: 250ms;
+  }
+  .xxl\:t-d-300 {
+    transition-delay: 300ms;
+  }
+  .xxl\:t-d-500 {
+    transition-delay: 500ms;
+  }
+  .xxl\:t-d-700 {
+    transition-delay: 700ms;
+  }
+  .xxl\:t-d-1000 {
+    transition-delay: 1000ms;
+  }
+}
 .fs-xs {
   font-size: 0.25rem;
 }
