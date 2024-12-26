@@ -92,6 +92,36 @@ $yma-transform-utils: (
       "100": scaleY(100%),
     ),
   ),
+
+  "transform-skew": (
+    "prefix": "t-sk",
+    "properties": (
+      "transform",
+    ),
+    "values": (
+      "0": skew(0),
+      "5": skew(5deg),
+      "10": skew(10deg),
+      "15": skew(15deg),
+      "20": skew(20deg),
+      "25": skew(25deg),
+      "30": skew(30deg),
+      "35": skew(35deg),
+      "40": skew(40deg),
+      "45": skew(45deg),
+      "50": skew(50deg),
+      "55": skew(55deg),
+      "60": skew(60deg),
+      "65": skew(65deg),
+      "70": skew(70deg),
+      "75": skew(75deg),
+      "80": skew(80deg),
+      "85": skew(85deg),
+      "90": skew(90deg),
+      "95": skew(95deg),
+      "100": skew(100deg),
+    ),
+  ),
 );
 
 @each $name, $map in $yma-transform-utils {

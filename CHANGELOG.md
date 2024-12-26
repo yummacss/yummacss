@@ -49,6 +49,7 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Add **Scroll Snap Align** utilities
 - Add **Scroll Snap Stop** utilities
 - Add **Scroll Snap Type** utilities
+- Add **Skew** utilities
 - Add **Stroke Width** utilities
 - Add **Stroke** utilities
 - Add **Text Indent** utilities
@@ -68,7 +69,6 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Add `utilities\maps` folder
 - Add `yummacss.config.js` file
 - Add Yumma CSS CLI
-- WIP **Skew** utilities
 - WIP **Transform Origin** utilities
 - WIP **Transition Delay** utilities
 - WIP **Transition Duration** utilities
