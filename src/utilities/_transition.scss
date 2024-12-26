@@ -39,6 +39,17 @@ $yma-transition-utils: (
       "1000": 1000ms,
     ),
   ),
+
+  "transition-property": (
+    "prefix": "t-p",
+    "properties": (
+      "transition-property",
+    ),
+    "values": (
+      "a": all,
+      "none": none,
+    ),
+  ),
 );
 
 @each $name, $map in $yma-transition-utils {

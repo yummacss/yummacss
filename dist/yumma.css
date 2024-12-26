@@ -178364,6 +178364,62 @@
     transition-duration: 1000ms;
   }
 }
+.t-p-a {
+  transition-property: all;
+}
+
+.h\:t-p-a:hover {
+  transition-property: all;
+}
+
+.t-p-none {
+  transition-property: none;
+}
+
+.h\:t-p-none:hover {
+  transition-property: none;
+}
+
+@media (min-width: 640px) {
+  .sm\:t-p-a {
+    transition-property: all;
+  }
+  .sm\:t-p-none {
+    transition-property: none;
+  }
+}
+@media (min-width: 768px) {
+  .md\:t-p-a {
+    transition-property: all;
+  }
+  .md\:t-p-none {
+    transition-property: none;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:t-p-a {
+    transition-property: all;
+  }
+  .lg\:t-p-none {
+    transition-property: none;
+  }
+}
+@media (min-width: 1280px) {
+  .xl\:t-p-a {
+    transition-property: all;
+  }
+  .xl\:t-p-none {
+    transition-property: none;
+  }
+}
+@media (min-width: 1536px) {
+  .xxl\:t-p-a {
+    transition-property: all;
+  }
+  .xxl\:t-p-none {
+    transition-property: none;
+  }
+}
 .fs-xs {
   font-size: 0.25rem;
 }
