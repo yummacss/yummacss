@@ -134,6 +134,24 @@ $yma-transform-utils: (
       "12": skewY(12deg),
     ),
   ),
+
+  "transform-origin": (
+    "prefix": "t-o",
+    "properties": (
+      "transform-origin",
+    ),
+    "values": (
+      "b": bottom,
+      "bl": bottom left,
+      "br": bottom right,
+      "c": center,
+      "l": left,
+      "r": right,
+      "t": top,
+      "tl": top left,
+      "tr": top right,
+    ),
+  ),
 );
 
 @each $name, $map in $yma-transform-utils {

@@ -177550,20 +177550,20 @@
   transform: skewY(1deg);
 }
 
-.t-sky-3 {
-  transform: skewY(3deg);
-}
-
-.h\:t-sky-3:hover {
-  transform: skewY(3deg);
-}
-
 .t-sky-2 {
   transform: skewY(2deg);
 }
 
 .h\:t-sky-2:hover {
   transform: skewY(2deg);
+}
+
+.t-sky-3 {
+  transform: skewY(3deg);
+}
+
+.h\:t-sky-3:hover {
+  transform: skewY(3deg);
 }
 
 .t-sky-6 {
@@ -177586,11 +177586,11 @@
   .sm\:t-sky-1 {
     transform: skewY(1deg);
   }
-  .sm\:t-sky-3 {
-    transform: skewY(3deg);
-  }
   .sm\:t-sky-2 {
     transform: skewY(2deg);
+  }
+  .sm\:t-sky-3 {
+    transform: skewY(3deg);
   }
   .sm\:t-sky-6 {
     transform: skewY(6deg);
@@ -177603,11 +177603,11 @@
   .md\:t-sky-1 {
     transform: skewY(1deg);
   }
-  .md\:t-sky-3 {
-    transform: skewY(3deg);
-  }
   .md\:t-sky-2 {
     transform: skewY(2deg);
+  }
+  .md\:t-sky-3 {
+    transform: skewY(3deg);
   }
   .md\:t-sky-6 {
     transform: skewY(6deg);
@@ -177620,11 +177620,11 @@
   .lg\:t-sky-1 {
     transform: skewY(1deg);
   }
-  .lg\:t-sky-3 {
-    transform: skewY(3deg);
-  }
   .lg\:t-sky-2 {
     transform: skewY(2deg);
+  }
+  .lg\:t-sky-3 {
+    transform: skewY(3deg);
   }
   .lg\:t-sky-6 {
     transform: skewY(6deg);
@@ -177637,11 +177637,11 @@
   .xl\:t-sky-1 {
     transform: skewY(1deg);
   }
-  .xl\:t-sky-3 {
-    transform: skewY(3deg);
-  }
   .xl\:t-sky-2 {
     transform: skewY(2deg);
+  }
+  .xl\:t-sky-3 {
+    transform: skewY(3deg);
   }
   .xl\:t-sky-6 {
     transform: skewY(6deg);
@@ -177654,17 +177654,234 @@
   .xxl\:t-sky-1 {
     transform: skewY(1deg);
   }
-  .xxl\:t-sky-3 {
-    transform: skewY(3deg);
-  }
   .xxl\:t-sky-2 {
     transform: skewY(2deg);
+  }
+  .xxl\:t-sky-3 {
+    transform: skewY(3deg);
   }
   .xxl\:t-sky-6 {
     transform: skewY(6deg);
   }
   .xxl\:t-sky-12 {
     transform: skewY(12deg);
+  }
+}
+.t-o-b {
+  transform-origin: bottom;
+}
+
+.h\:t-o-b:hover {
+  transform-origin: bottom;
+}
+
+.t-o-bl {
+  transform-origin: bottom left;
+}
+
+.h\:t-o-bl:hover {
+  transform-origin: bottom left;
+}
+
+.t-o-br {
+  transform-origin: bottom right;
+}
+
+.h\:t-o-br:hover {
+  transform-origin: bottom right;
+}
+
+.t-o-c {
+  transform-origin: center;
+}
+
+.h\:t-o-c:hover {
+  transform-origin: center;
+}
+
+.t-o-l {
+  transform-origin: left;
+}
+
+.h\:t-o-l:hover {
+  transform-origin: left;
+}
+
+.t-o-r {
+  transform-origin: right;
+}
+
+.h\:t-o-r:hover {
+  transform-origin: right;
+}
+
+.t-o-t {
+  transform-origin: top;
+}
+
+.h\:t-o-t:hover {
+  transform-origin: top;
+}
+
+.t-o-tl {
+  transform-origin: top left;
+}
+
+.h\:t-o-tl:hover {
+  transform-origin: top left;
+}
+
+.t-o-tr {
+  transform-origin: top right;
+}
+
+.h\:t-o-tr:hover {
+  transform-origin: top right;
+}
+
+@media (min-width: 640px) {
+  .sm\:t-o-b {
+    transform-origin: bottom;
+  }
+  .sm\:t-o-bl {
+    transform-origin: bottom left;
+  }
+  .sm\:t-o-br {
+    transform-origin: bottom right;
+  }
+  .sm\:t-o-c {
+    transform-origin: center;
+  }
+  .sm\:t-o-l {
+    transform-origin: left;
+  }
+  .sm\:t-o-r {
+    transform-origin: right;
+  }
+  .sm\:t-o-t {
+    transform-origin: top;
+  }
+  .sm\:t-o-tl {
+    transform-origin: top left;
+  }
+  .sm\:t-o-tr {
+    transform-origin: top right;
+  }
+}
+@media (min-width: 768px) {
+  .md\:t-o-b {
+    transform-origin: bottom;
+  }
+  .md\:t-o-bl {
+    transform-origin: bottom left;
+  }
+  .md\:t-o-br {
+    transform-origin: bottom right;
+  }
+  .md\:t-o-c {
+    transform-origin: center;
+  }
+  .md\:t-o-l {
+    transform-origin: left;
+  }
+  .md\:t-o-r {
+    transform-origin: right;
+  }
+  .md\:t-o-t {
+    transform-origin: top;
+  }
+  .md\:t-o-tl {
+    transform-origin: top left;
+  }
+  .md\:t-o-tr {
+    transform-origin: top right;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:t-o-b {
+    transform-origin: bottom;
+  }
+  .lg\:t-o-bl {
+    transform-origin: bottom left;
+  }
+  .lg\:t-o-br {
+    transform-origin: bottom right;
+  }
+  .lg\:t-o-c {
+    transform-origin: center;
+  }
+  .lg\:t-o-l {
+    transform-origin: left;
+  }
+  .lg\:t-o-r {
+    transform-origin: right;
+  }
+  .lg\:t-o-t {
+    transform-origin: top;
+  }
+  .lg\:t-o-tl {
+    transform-origin: top left;
+  }
+  .lg\:t-o-tr {
+    transform-origin: top right;
+  }
+}
+@media (min-width: 1280px) {
+  .xl\:t-o-b {
+    transform-origin: bottom;
+  }
+  .xl\:t-o-bl {
+    transform-origin: bottom left;
+  }
+  .xl\:t-o-br {
+    transform-origin: bottom right;
+  }
+  .xl\:t-o-c {
+    transform-origin: center;
+  }
+  .xl\:t-o-l {
+    transform-origin: left;
+  }
+  .xl\:t-o-r {
+    transform-origin: right;
+  }
+  .xl\:t-o-t {
+    transform-origin: top;
+  }
+  .xl\:t-o-tl {
+    transform-origin: top left;
+  }
+  .xl\:t-o-tr {
+    transform-origin: top right;
+  }
+}
+@media (min-width: 1536px) {
+  .xxl\:t-o-b {
+    transform-origin: bottom;
+  }
+  .xxl\:t-o-bl {
+    transform-origin: bottom left;
+  }
+  .xxl\:t-o-br {
+    transform-origin: bottom right;
+  }
+  .xxl\:t-o-c {
+    transform-origin: center;
+  }
+  .xxl\:t-o-l {
+    transform-origin: left;
+  }
+  .xxl\:t-o-r {
+    transform-origin: right;
+  }
+  .xxl\:t-o-t {
+    transform-origin: top;
+  }
+  .xxl\:t-o-tl {
+    transform-origin: top left;
+  }
+  .xxl\:t-o-tr {
+    transform-origin: top right;
   }
 }
 .fs-xs {
