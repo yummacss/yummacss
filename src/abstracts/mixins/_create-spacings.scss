@@ -1,4 +1,4 @@
-@use "../breakpoints" as b;
+@use "../breakpoints" as bp;
 
 @mixin create-spacing-utilities($prefix, $map, $properties) {
   // Base spacing utilities
@@ -42,7 +42,7 @@
   }
 
   // Responsive spacing variants
-  @each $bp, $bp-value in b.$yma-breakpoints {
+  @each $bp, $bp-value in bp.$yma-breakpoints {
     @media (min-width: $bp-value) {
       @each $key, $value in $map {
         .#{$bp}\:#{$prefix}-#{$key} > :not([hidden]) ~ :not([hidden]) {

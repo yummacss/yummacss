@@ -1,7 +1,7 @@
 @use "sass:math";
 @use "../abstracts/variables" as vars;
-@use "../abstracts/mixins/" as mi;
-@use "../utilities/maps/" as ma;
+@use "../abstracts/mixins/" as mix;
+@use "../utilities/maps/" as maps;
 
 $yma-flexbox-utils: (
   "align-content": (
@@ -56,7 +56,7 @@ $yma-flexbox-utils: (
     "properties": (
       "flex-basis",
     ),
-    "values": ma.$yma-flex-basis-map,
+    "values": maps.$yma-flex-basis-map,
   ),
 
   "flex-direction": (
@@ -252,5 +252,5 @@ $yma-flexbox-utils: (
   $prefix: map-get($map, "prefix");
   $properties: map-get($map, "properties");
 
-  @include mi.create-utilities($map, $prefix, $properties);
+  @include mix.create-utilities($map, $prefix, $properties);
 }

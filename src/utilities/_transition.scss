@@ -1,5 +1,5 @@
 @use "sass:math";
-@use "../abstracts/mixins/" as mi;
+@use "../abstracts/mixins/" as mix;
 
 $yma-transition-utils: (
   "transition-delay": (
@@ -56,5 +56,5 @@ $yma-transition-utils: (
   $prefix: map-get($map, "prefix");
   $properties: map-get($map, "properties");
 
-  @include mi.create-utilities($map, $prefix, $properties);
+  @include mix.create-utilities($map, $prefix, $properties);
 }

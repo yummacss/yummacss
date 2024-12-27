@@ -1,5 +1,5 @@
 @use "sass:map";
-@use "../../../abstracts/functions/create-values" as f;
+@use "../../../abstracts/functions/create-values" as fns;
 @use "../../../abstracts/variables" as vars;
 
-$yma-border-spacing-map: f.create-values(vars.$yma-border-spacing);
+$yma-border-spacing-map: fns.create-values(vars.$yma-border-spacing);

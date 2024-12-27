@@ -1,5 +1,5 @@
 @use "sass:map";
-@use "../../../abstracts/functions/create-values" as f;
+@use "../../../abstracts/functions/create-values" as fns;
 @use "../../../abstracts/variables" as vars;
 
 $yma-height-map: map.merge(
@@ -13,5 +13,5 @@ $yma-height-map: map.merge(
     "max": max-content,
     "min": min-content,
   ),
-  f.create-values(vars.$yma-height)
+  fns.create-values(vars.$yma-height)
 );

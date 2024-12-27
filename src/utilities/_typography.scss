@@ -1,6 +1,6 @@
 @use "sass:math";
 @use "../abstracts/variables" as vars;
-@use "../abstracts/mixins/" as mi;
+@use "../abstracts/mixins/" as mix;
 
 $yma-typography-utils: (
   "font-size": (
@@ -287,5 +287,5 @@ $yma-typography-utils: (
   $prefix: map-get($map, "prefix");
   $properties: map-get($map, "properties");
 
-  @include mi.create-utilities($map, $prefix, $properties);
+  @include mix.create-utilities($map, $prefix, $properties);
 }

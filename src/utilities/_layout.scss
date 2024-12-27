@@ -1,11 +1,11 @@
 @use "sass:math";
 @use "../abstracts/variables" as vars;
-@use "../abstracts/mixins/" as mi;
+@use "../abstracts/mixins/" as mix;
 
 $yma-layout-utils: (
   "aspect-ratio": (
     "properties": (
-      "aspect-ratio"
+      "aspect-ratio",
     ),
     "prefix": "ar",
     "values": (
@@ -17,7 +17,7 @@ $yma-layout-utils: (
 
   "clear": (
     "properties": (
-      "clear"
+      "clear",
     ),
     "prefix": "cl",
     "values": (
@@ -32,7 +32,7 @@ $yma-layout-utils: (
 
   "columns": (
     "properties": (
-      "columns"
+      "columns",
     ),
     "prefix": "cols",
     "values": (
@@ -57,7 +57,7 @@ $yma-layout-utils: (
 
   "bottom": (
     "properties": (
-      "bottom"
+      "bottom",
     ),
     "prefix": "d-b",
     "values": (
@@ -84,7 +84,7 @@ $yma-layout-utils: (
 
   "inset": (
     "properties": (
-      "inset"
+      "inset",
     ),
     "prefix": "d-i",
     "values": (
@@ -167,7 +167,7 @@ $yma-layout-utils: (
 
   "isolation": (
     "properties": (
-      "isolation"
+      "isolation",
     ),
     "prefix": "i",
     "values": (
@@ -178,7 +178,7 @@ $yma-layout-utils: (
 
   "left": (
     "properties": (
-      "left"
+      "left",
     ),
     "prefix": "d-l",
     "values": (
@@ -205,7 +205,7 @@ $yma-layout-utils: (
 
   "right": (
     "properties": (
-      "right"
+      "right",
     ),
     "prefix": "d-r",
     "values": (
@@ -232,7 +232,7 @@ $yma-layout-utils: (
 
   "top": (
     "properties": (
-      "top"
+      "top",
     ),
     "prefix": "d-t",
     "values": (
@@ -259,7 +259,7 @@ $yma-layout-utils: (
 
   "display": (
     "properties": (
-      "display"
+      "display",
     ),
     "prefix": "d",
     "values": (
@@ -279,7 +279,7 @@ $yma-layout-utils: (
 
   "float": (
     "properties": (
-      "float"
+      "float",
     ),
     "prefix": "flo",
     "values": (
@@ -293,7 +293,7 @@ $yma-layout-utils: (
 
   "object-fit": (
     "properties": (
-      "object-fit"
+      "object-fit",
     ),
     "prefix": "of",
     "values": (
@@ -306,7 +306,7 @@ $yma-layout-utils: (
 
   "object-position": (
     "properties": (
-      "object-position"
+      "object-position",
     ),
     "prefix": "op",
     "values": (
@@ -324,7 +324,7 @@ $yma-layout-utils: (
 
   "overflow": (
     "properties": (
-      "overflow"
+      "overflow",
     ),
     "prefix": "ovf",
     "values": (
@@ -338,7 +338,7 @@ $yma-layout-utils: (
 
   "overflow-x": (
     "properties": (
-      "overflow-x"
+      "overflow-x",
     ),
     "prefix": "ovf-x",
     "values": (
@@ -352,7 +352,7 @@ $yma-layout-utils: (
 
   "overflow-y": (
     "properties": (
-      "overflow-y"
+      "overflow-y",
     ),
     "prefix": "ovf-y",
     "values": (
@@ -366,7 +366,7 @@ $yma-layout-utils: (
 
   "position": (
     "properties": (
-      "position"
+      "position",
     ),
     "prefix": "p",
     "values": (
@@ -380,7 +380,7 @@ $yma-layout-utils: (
 
   "z-index": (
     "properties": (
-      "z-index"
+      "z-index",
     ),
     "prefix": "zi",
     "values": (
@@ -403,5 +403,5 @@ $yma-layout-utils: (
   $prefix: map-get($map, "prefix");
   $properties: map-get($map, "properties");
 
-  @include mi.create-utilities($map, $prefix, $properties);
+  @include mix.create-utilities($map, $prefix, $properties);
 }

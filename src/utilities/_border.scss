@@ -1,7 +1,7 @@
 @use "sass:math";
 @use "../abstracts/variables" as vars;
-@use "../abstracts/mixins/" as mi;
-@use "../utilities/maps/" as ma;
+@use "../abstracts/mixins/" as mix;
+@use "../utilities/maps/" as maps;
 
 $yma-border-utils: (
   "border-collapse": (
@@ -112,7 +112,7 @@ $yma-border-utils: (
     "properties": (
       "border-spacing",
     ),
-    "values": ma.$yma-border-spacing-map,
+    "values": maps.$yma-border-spacing-map,
   ),
 
   "border-style": (
@@ -222,5 +222,5 @@ $yma-border-utils: (
   $prefix: map-get($map, "prefix");
   $properties: map-get($map, "properties");
 
-  @include mi.create-utilities($map, $prefix, $properties);
+  @include mix.create-utilities($map, $prefix, $properties);
 }

@@ -1,7 +1,7 @@
 @use "sass:math";
 @use "../abstracts/variables" as vars;
-@use "../abstracts/mixins/" as mi;
-@use "../utilities/maps/" as ma;
+@use "../abstracts/mixins/" as mix;
+@use "../utilities/maps/" as maps;
 
 $yma-interactivity-utils: (
   "appearance": (
@@ -88,7 +88,7 @@ $yma-interactivity-utils: (
     "properties": (
       "scroll-margin",
     ),
-    "values": ma.$yma-margin-map,
+    "values": maps.$yma-margin-map,
   ),
 
   "scroll-mb": (
@@ -96,7 +96,7 @@ $yma-interactivity-utils: (
     "properties": (
       "scroll-margin-bottom",
     ),
-    "values": ma.$yma-margin-map,
+    "values": maps.$yma-margin-map,
   ),
 
   "scroll-mis": (
@@ -104,7 +104,7 @@ $yma-interactivity-utils: (
     "properties": (
       "scroll-margin-inline-start",
     ),
-    "values": ma.$yma-margin-map,
+    "values": maps.$yma-margin-map,
   ),
 
   "scroll-ml": (
@@ -112,14 +112,14 @@ $yma-interactivity-utils: (
     "properties": (
       "scroll-margin-left",
     ),
-    "values": ma.$yma-margin-map,
+    "values": maps.$yma-margin-map,
   ),
   "scroll-mr": (
     "prefix": "s-mr",
     "properties": (
       "scroll-margin-right",
     ),
-    "values": ma.$yma-margin-map,
+    "values": maps.$yma-margin-map,
   ),
 
   "scroll-mt": (
@@ -127,7 +127,7 @@ $yma-interactivity-utils: (
     "properties": (
       "scroll-margin-top",
     ),
-    "values": ma.$yma-margin-map,
+    "values": maps.$yma-margin-map,
   ),
 
   "scroll-mie": (
@@ -135,7 +135,7 @@ $yma-interactivity-utils: (
     "properties": (
       "scroll-margin-inline-end",
     ),
-    "values": ma.$yma-margin-map,
+    "values": maps.$yma-margin-map,
   ),
 
   "scroll-mx": (
@@ -144,7 +144,7 @@ $yma-interactivity-utils: (
       "scroll-margin-left",
       "scroll-margin-right",
     ),
-    "values": ma.$yma-margin-map,
+    "values": maps.$yma-margin-map,
   ),
 
   "scroll-my": (
@@ -153,7 +153,7 @@ $yma-interactivity-utils: (
       "scroll-margin-bottom",
       "scroll-margin-top",
     ),
-    "values": ma.$yma-margin-map,
+    "values": maps.$yma-margin-map,
   ),
 
   "scroll-padding": (
@@ -161,7 +161,7 @@ $yma-interactivity-utils: (
     "properties": (
       "scroll-padding",
     ),
-    "values": ma.$yma-padding-map,
+    "values": maps.$yma-padding-map,
   ),
 
   "scroll-pb": (
@@ -169,7 +169,7 @@ $yma-interactivity-utils: (
     "properties": (
       "scroll-padding-bottom",
     ),
-    "values": ma.$yma-padding-map,
+    "values": maps.$yma-padding-map,
   ),
 
   "scroll-pis": (
@@ -177,7 +177,7 @@ $yma-interactivity-utils: (
     "properties": (
       "scroll-padding-inline-start",
     ),
-    "values": ma.$yma-padding-map,
+    "values": maps.$yma-padding-map,
   ),
 
   "scroll-pl": (
@@ -185,7 +185,7 @@ $yma-interactivity-utils: (
     "properties": (
       "scroll-padding-left",
     ),
-    "values": ma.$yma-padding-map,
+    "values": maps.$yma-padding-map,
   ),
 
   "scroll-pr": (
@@ -193,7 +193,7 @@ $yma-interactivity-utils: (
     "properties": (
       "scroll-padding-right",
     ),
-    "values": ma.$yma-padding-map,
+    "values": maps.$yma-padding-map,
   ),
 
   "scroll-pt": (
@@ -201,7 +201,7 @@ $yma-interactivity-utils: (
     "properties": (
       "scroll-padding-top",
     ),
-    "values": ma.$yma-padding-map,
+    "values": maps.$yma-padding-map,
   ),
 
   "scroll-pie": (
@@ -209,7 +209,7 @@ $yma-interactivity-utils: (
     "properties": (
       "scroll-padding-inline-end",
     ),
-    "values": ma.$yma-padding-map,
+    "values": maps.$yma-padding-map,
   ),
 
   "scroll-px": (
@@ -218,7 +218,7 @@ $yma-interactivity-utils: (
       "scroll-padding-left",
       "scroll-padding-right",
     ),
-    "values": ma.$yma-padding-map,
+    "values": maps.$yma-padding-map,
   ),
 
   "scroll-py": (
@@ -227,7 +227,7 @@ $yma-interactivity-utils: (
       "scroll-padding-bottom",
       "scroll-padding-top",
     ),
-    "values": ma.$yma-padding-map,
+    "values": maps.$yma-padding-map,
   ),
 
   "scroll-snap-align": (
@@ -287,5 +287,5 @@ $yma-interactivity-utils: (
   $prefix: map-get($map, "prefix");
   $properties: map-get($map, "properties");
 
-  @include mi.create-utilities($map, $prefix, $properties);
+  @include mix.create-utilities($map, $prefix, $properties);
 }

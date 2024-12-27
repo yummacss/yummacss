@@ -58,8 +58,10 @@ $yma-direction: 0.25rem;
 // typography
 $yma-font-size: 0.25rem;
 $yma-font-weight: 500;
-$yma-font-size-xs: $yma-font-size;
 
 $yma-font-charter: Charter, Cambria, serif;
 $yma-font-mono: ui-monospace, Consolas, monospace;
 $yma-font-system: system-ui, sans-serif;
+
+// Transform
+$yma-transform-translate: 0.25rem;
