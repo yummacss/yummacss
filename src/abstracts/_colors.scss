@@ -29,7 +29,7 @@
     @include mix.shade-scaling("color", "tc", $k, $v, 14%);
     @include mix.shade-scaling("fill", "f", $k, $v, 14%);
     @include mix.shade-scaling("outline-color", "oc", $k, $v, 14%);
-    @include mix.shade-scaling("stoke", "s", $k, $v, 14%);
+    @include mix.shade-scaling("stroke", "s", $k, $v, 14%);
     @include mix.shade-scaling("text-decoration-color", "tdc", $k, $v, 14%);
   }
 }
