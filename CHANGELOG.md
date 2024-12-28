@@ -111,6 +111,7 @@ All notable changes to the Yumma CSS will be documented in this file.
 
 ### Removed
 
+- Remove `.cnt{}` utility class
 - Remove `.ins{}` utility class
 - Remove `coreFile()` function
 - Remove `dist\yumma-core.css` file
