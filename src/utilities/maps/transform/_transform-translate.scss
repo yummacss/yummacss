@@ -1,5 +1,5 @@
 @use "sass:map";
-@use "../../../abstracts/functions/create-values" as fns;
+@use "../../../abstracts/functions/create-values" as fun;
 @use "../../../abstracts/variables" as vars;
 
 $yma-transform-translate-map: map.merge(
@@ -7,5 +7,5 @@ $yma-transform-translate-map: map.merge(
     "full": 100%,
     "half": 50%,
   ),
-  fns.create-values(vars.$yma-transform-translate)
+  fun.create-values(vars.$yma-transform-translate)
 );

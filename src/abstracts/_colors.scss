@@ -1,6 +1,6 @@
 @use "theme" as theme;
 @use "mixins" as mix;
-@use "functions" as fns;
+@use "functions" as fun;
 
 @each $k, $v in theme.$yma-theme {
   @include mix.color-scaling("accent-color", "ac", $k, $v);
@@ -17,7 +17,7 @@
   @include mix.color-scaling("stroke", "s", $k, $v);
   @include mix.color-scaling("text-decoration-color", "tdc", $k, $v);
 
-  @if (fns.ignore-neutral($v, theme.$yma-theme)) {
+  @if (fun.ignore-neutral($v, theme.$yma-theme)) {
     @include mix.shade-scaling("accent-color", "ac", $k, $v, 14%);
     @include mix.shade-scaling("background-color", "bg", $k, $v, 14%);
     @include mix.shade-scaling("border-bottom-color", "bc-b", $k, $v, 14%);
