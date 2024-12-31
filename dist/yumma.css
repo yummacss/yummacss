@@ -181654,10 +181654,20 @@ optgroup,
 select,
 textarea {
   background-color: transparent; /* 1 */
-  border: 1px solid #bfc2c7; /* 1 */
   border-radius: 0.25rem; /* 4 */
   font-family: inherit; /* 2 */
   padding: 0.5rem; /* 3 */
+}
+
+/**
+ * Add a default border to form elements that do not have a class attribute.
+ */
+button:not([class]),
+input:not([class]),
+optgroup:not([class]),
+select:not([class]),
+textarea:not([class]) {
+  border: 1px solid #bfc2c7; /* 1 */
 }
 
 /**
