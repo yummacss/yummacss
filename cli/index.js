@@ -26,7 +26,7 @@ export async function runBuild() {
   const outputPath = path.resolve(process.cwd(), output);
 
   if (!scssEntryPoint || !outputPath) {
-    throw new Error("Invalid entry point or output path!");
+    throw new Error("Invalid entry point or output path.");
   }
 
   await buildCSS(config, scssEntryPoint, outputPath);
