@@ -3,7 +3,7 @@ import path from "path";
 
 export async function jsonFile() {
   const input = path.resolve("dist", "yumma.css");
-const output = path.resolve("dist", "yummacss.json");
+  const output = path.resolve("dist", "yummacss.json");
 
   try {
     const cssData = await fs.readFile(input, "utf-8");
