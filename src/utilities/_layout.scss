@@ -55,7 +55,7 @@ $yma-layout-utils: (
     ),
   ),
 
-  "bottom": (
+  "direction#bottom": (
     "properties": (
       "bottom",
     ),
@@ -109,7 +109,7 @@ $yma-layout-utils: (
     ),
   ),
 
-  "inset-x": (
+  "direction#inset-x": (
     "properties": (
       "left",
       "right",
@@ -137,7 +137,7 @@ $yma-layout-utils: (
     ),
   ),
 
-  "inset-y": (
+  "direction#inset-y": (
     "properties": (
       "top",
       "bottom",
@@ -176,7 +176,7 @@ $yma-layout-utils: (
     ),
   ),
 
-  "left": (
+  "direction#left": (
     "properties": (
       "left",
     ),
@@ -203,7 +203,7 @@ $yma-layout-utils: (
     ),
   ),
 
-  "right": (
+  "direction#right": (
     "properties": (
       "right",
     ),
@@ -230,7 +230,7 @@ $yma-layout-utils: (
     ),
   ),
 
-  "top": (
+  "direction#top": (
     "properties": (
       "top",
     ),
@@ -336,7 +336,7 @@ $yma-layout-utils: (
     ),
   ),
 
-  "overflow-x": (
+  "overflow#overflow-x": (
     "properties": (
       "overflow-x",
     ),
@@ -350,7 +350,7 @@ $yma-layout-utils: (
     ),
   ),
 
-  "overflow-y": (
+  "overflow#overflow-y": (
     "properties": (
       "overflow-y",
     ),

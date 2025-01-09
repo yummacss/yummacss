@@ -24,7 +24,7 @@ $yma-box-model-utils: (
     "values": maps.$yma-dimension-map,
   ),
 
-  "max-dimension": (
+  "dimension#max-dimension": (
     "prefix": "max-d",
     "properties": (
       "max-height",
@@ -33,7 +33,7 @@ $yma-box-model-utils: (
     "values": maps.$yma-dimension-map,
   ),
 
-  "min-dimension": (
+  "dimension#min-dimension": (
     "prefix": "min-d",
     "properties": (
       "min-height",
@@ -50,7 +50,7 @@ $yma-box-model-utils: (
     "values": maps.$yma-height-map,
   ),
 
-  "max-height": (
+  "height#max-height": (
     "prefix": "max-h",
     "properties": (
       "max-height",
@@ -58,7 +58,7 @@ $yma-box-model-utils: (
     "values": maps.$yma-height-map,
   ),
 
-  "min-height": (
+  "height#min-height": (
     "prefix": "min-h",
     "properties": (
       "min-height",
@@ -74,7 +74,7 @@ $yma-box-model-utils: (
     "values": maps.$yma-margin-map,
   ),
 
-  "margin-block-end": (
+  "margin#margin-block-end": (
     "prefix": "mbe",
     "properties": (
       "margin-block-end",
@@ -82,7 +82,7 @@ $yma-box-model-utils: (
     "values": maps.$yma-margin-map,
   ),
 
-  "margin-block-start": (
+  "margin#margin-block-start": (
     "prefix": "mbs",
     "properties": (
       "margin-block-start",
@@ -90,7 +90,7 @@ $yma-box-model-utils: (
     "values": maps.$yma-margin-map,
   ),
 
-  "margin-bottom": (
+  "margin#margin-bottom": (
     "prefix": "mb",
     "properties": (
       "margin-bottom",
@@ -98,7 +98,7 @@ $yma-box-model-utils: (
     "values": maps.$yma-margin-map,
   ),
 
-  "margin-inline-end": (
+  "margin#margin-inline-end": (
     "prefix": "mie",
     "properties": (
       "margin-inline-end",
@@ -106,7 +106,7 @@ $yma-box-model-utils: (
     "values": maps.$yma-margin-map,
   ),
 
-  "margin-inline-start": (
+  "margin#margin-inline-start": (
     "prefix": "mis",
     "properties": (
       "margin-inline-start",
@@ -114,7 +114,7 @@ $yma-box-model-utils: (
     "values": maps.$yma-margin-map,
   ),
 
-  "margin-left": (
+  "margin#margin-left": (
     "prefix": "ml",
     "properties": (
       "margin-left",
@@ -122,7 +122,7 @@ $yma-box-model-utils: (
     "values": maps.$yma-margin-map,
   ),
 
-  "margin-right": (
+  "margin#margin-right": (
     "prefix": "mr",
     "properties": (
       "margin-right",
@@ -130,7 +130,7 @@ $yma-box-model-utils: (
     "values": maps.$yma-margin-map,
   ),
 
-  "margin-top": (
+  "margin#margin-top": (
     "prefix": "mt",
     "properties": (
       "margin-top",
@@ -138,7 +138,7 @@ $yma-box-model-utils: (
     "values": maps.$yma-margin-map,
   ),
 
-  "margin-x": (
+  "margin#margin-x": (
     "prefix": "mx",
     "properties": (
       "margin-left",
@@ -147,7 +147,7 @@ $yma-box-model-utils: (
     "values": maps.$yma-margin-map,
   ),
 
-  "margin-y": (
+  "margin#margin-y": (
     "prefix": "my",
     "properties": (
       "margin-bottom",
@@ -164,7 +164,7 @@ $yma-box-model-utils: (
     "values": maps.$yma-padding-map,
   ),
 
-  "padding-block-end": (
+  "padding#padding-block-end": (
     "prefix": "pbe",
     "properties": (
       "padding-block-end",
@@ -172,7 +172,7 @@ $yma-box-model-utils: (
     "values": maps.$yma-padding-map,
   ),
 
-  "padding-block-start": (
+  "padding#padding-block-start": (
     "prefix": "pbs",
     "properties": (
       "padding-block-start",
@@ -180,7 +180,7 @@ $yma-box-model-utils: (
     "values": maps.$yma-padding-map,
   ),
 
-  "padding-bottom": (
+  "padding#padding-bottom": (
     "prefix": "pb",
     "properties": (
       "padding-bottom",
@@ -188,7 +188,7 @@ $yma-box-model-utils: (
     "values": maps.$yma-padding-map,
   ),
 
-  "padding-inline-end": (
+  "padding#padding-inline-end": (
     "prefix": "pie",
     "properties": (
       "padding-inline-end",
@@ -196,7 +196,7 @@ $yma-box-model-utils: (
     "values": maps.$yma-padding-map,
   ),
 
-  "padding-inline-start": (
+  "padding#padding-inline-start": (
     "prefix": "pis",
     "properties": (
       "padding-inline-start",
@@ -204,7 +204,7 @@ $yma-box-model-utils: (
     "values": maps.$yma-padding-map,
   ),
 
-  "padding-left": (
+  "padding#padding-left": (
     "prefix": "pl",
     "properties": (
       "padding-left",
@@ -212,7 +212,7 @@ $yma-box-model-utils: (
     "values": maps.$yma-padding-map,
   ),
 
-  "padding-right": (
+  "padding#padding-right": (
     "prefix": "pr",
     "properties": (
       "padding-right",
@@ -220,7 +220,7 @@ $yma-box-model-utils: (
     "values": maps.$yma-padding-map,
   ),
 
-  "padding-top": (
+  "padding#padding-top": (
     "prefix": "pt",
     "properties": (
       "padding-top",
@@ -228,7 +228,7 @@ $yma-box-model-utils: (
     "values": maps.$yma-padding-map,
   ),
 
-  "padding-x": (
+  "padding#padding-x": (
     "prefix": "px",
     "properties": (
       "padding-left",
@@ -237,7 +237,7 @@ $yma-box-model-utils: (
     "values": maps.$yma-padding-map,
   ),
 
-  "padding-y": (
+  "padding#padding-y": (
     "prefix": "py",
     "properties": (
       "padding-bottom",
@@ -246,7 +246,7 @@ $yma-box-model-utils: (
     "values": maps.$yma-padding-map,
   ),
 
-  "spacing-x": (
+  "spacing#spacing-x": (
     "prefix": "sx",
     "properties": (
       "margin-left",
@@ -258,7 +258,7 @@ $yma-box-model-utils: (
     ),
   ),
 
-  "spacing-y": (
+  "spacing#spacing-y": (
     "prefix": "sy",
     "properties": (
       "margin-bottom",
@@ -278,7 +278,7 @@ $yma-box-model-utils: (
     "values": maps.$yma-width-map,
   ),
 
-  "max-width": (
+  "width#max-width": (
     "prefix": "max-w",
     "properties": (
       "max-width",
@@ -286,7 +286,7 @@ $yma-box-model-utils: (
     "values": maps.$yma-width-map,
   ),
 
-  "min-width": (
+  "width#min-width": (
     "prefix": "min-w",
     "properties": (
       "min-width",
