@@ -15667,23 +15667,9 @@
   },
   {
     "classLink": "background-attachment",
-    "className": "ba-ls",
-    "properties": [
-      "background-attachment: local scroll;"
-    ]
-  },
-  {
-    "classLink": "background-attachment",
     "className": "ba-s",
     "properties": [
       "background-attachment: scroll;"
-    ]
-  },
-  {
-    "classLink": "background-attachment",
-    "className": "ba-sl",
-    "properties": [
-      "background-attachment: scroll local;"
     ]
   },
   {

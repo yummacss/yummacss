@@ -17902,28 +17902,12 @@
   background-attachment: local;
 }
 
-.ba-ls {
-  background-attachment: local scroll;
-}
-
-.h\:ba-ls:hover {
-  background-attachment: local scroll;
-}
-
 .ba-s {
   background-attachment: scroll;
 }
 
 .h\:ba-s:hover {
   background-attachment: scroll;
-}
-
-.ba-sl {
-  background-attachment: scroll local;
-}
-
-.h\:ba-sl:hover {
-  background-attachment: scroll local;
 }
 
 @media (min-width: 640px) {
@@ -17933,14 +17917,8 @@
   .sm\:ba-l {
     background-attachment: local;
   }
-  .sm\:ba-ls {
-    background-attachment: local scroll;
-  }
   .sm\:ba-s {
     background-attachment: scroll;
-  }
-  .sm\:ba-sl {
-    background-attachment: scroll local;
   }
 }
 @media (min-width: 768px) {
@@ -17950,14 +17928,8 @@
   .md\:ba-l {
     background-attachment: local;
   }
-  .md\:ba-ls {
-    background-attachment: local scroll;
-  }
   .md\:ba-s {
     background-attachment: scroll;
-  }
-  .md\:ba-sl {
-    background-attachment: scroll local;
   }
 }
 @media (min-width: 1024px) {
@@ -17967,14 +17939,8 @@
   .lg\:ba-l {
     background-attachment: local;
   }
-  .lg\:ba-ls {
-    background-attachment: local scroll;
-  }
   .lg\:ba-s {
     background-attachment: scroll;
-  }
-  .lg\:ba-sl {
-    background-attachment: scroll local;
   }
 }
 @media (min-width: 1280px) {
@@ -17984,14 +17950,8 @@
   .xl\:ba-l {
     background-attachment: local;
   }
-  .xl\:ba-ls {
-    background-attachment: local scroll;
-  }
   .xl\:ba-s {
     background-attachment: scroll;
-  }
-  .xl\:ba-sl {
-    background-attachment: scroll local;
   }
 }
 @media (min-width: 1536px) {
@@ -18001,14 +17961,8 @@
   .xxl\:ba-l {
     background-attachment: local;
   }
-  .xxl\:ba-ls {
-    background-attachment: local scroll;
-  }
   .xxl\:ba-s {
     background-attachment: scroll;
-  }
-  .xxl\:ba-sl {
-    background-attachment: scroll local;
   }
 }
 .bc-bb {
