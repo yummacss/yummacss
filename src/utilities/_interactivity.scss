@@ -167,7 +167,7 @@ $yma-interactivity-utils: (
   "scroll-pb": (
     "prefix": "s-pb",
     "properties": (
-      "scroll-padding#scroll-padding-bottom",
+      "scroll-padding-bottom",
     ),
     "values": maps.$yma-padding-map,
   ),
@@ -175,7 +175,7 @@ $yma-interactivity-utils: (
   "scroll-pis": (
     "prefix": "s-pis",
     "properties": (
-      "scroll-padding#scroll-padding-inline-start",
+      "scroll-padding-inline-start",
     ),
     "values": maps.$yma-padding-map,
   ),
@@ -183,7 +183,7 @@ $yma-interactivity-utils: (
   "scroll-pl": (
     "prefix": "s-pl",
     "properties": (
-      "scroll-padding#scroll-padding-left",
+      "scroll-padding-left",
     ),
     "values": maps.$yma-padding-map,
   ),
@@ -191,7 +191,7 @@ $yma-interactivity-utils: (
   "scroll-pr": (
     "prefix": "s-pr",
     "properties": (
-      "scroll-padding#scroll-padding-right",
+      "scroll-padding-right",
     ),
     "values": maps.$yma-padding-map,
   ),
@@ -199,7 +199,7 @@ $yma-interactivity-utils: (
   "scroll-pt": (
     "prefix": "s-pt",
     "properties": (
-      "scroll-padding#scroll-padding-top",
+      "scroll-padding-top",
     ),
     "values": maps.$yma-padding-map,
   ),
@@ -207,7 +207,7 @@ $yma-interactivity-utils: (
   "scroll-pie": (
     "prefix": "s-pie",
     "properties": (
-      "scroll-padding#scroll-padding-inline-end",
+      "scroll-padding-inline-end",
     ),
     "values": maps.$yma-padding-map,
   ),
@@ -215,8 +215,8 @@ $yma-interactivity-utils: (
   "scroll-px": (
     "prefix": "s-px",
     "properties": (
-      "scroll-padding#scroll-padding-left",
-      "scroll-padding#scroll-padding-right",
+      "scroll-padding-left",
+      "scroll-padding-right",
     ),
     "values": maps.$yma-padding-map,
   ),
@@ -224,8 +224,8 @@ $yma-interactivity-utils: (
   "scroll-py": (
     "prefix": "s-py",
     "properties": (
-      "scroll-padding#scroll-padding-bottom",
-      "scroll-padding#scroll-padding-top",
+      "scroll-padding-bottom",
+      "scroll-padding-top",
     ),
     "values": maps.$yma-padding-map,
   ),
