@@ -69,6 +69,7 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Add `_dimension.scss`, `_height.scss`, `_margin.scss`, `_padding.scss`, `_spacing.scss` and `_width.scss` files
 - Add `_index.scss` files
 - Add `$yma-box-shadow-*` variables
+- Add `$yma-font-size-*` variables
 - Add `coreless.scss` file
 - Add `src\abstracts\functions` folder
 - Add `utilities\maps` folder

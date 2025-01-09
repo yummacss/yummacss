@@ -60284,40 +60284,40 @@
     "classLink": "font-size",
     "className": "fs-xs",
     "properties": [
-      "font-size: 0.25rem;"
+      "font-size: 0.75rem;"
     ]
   },
   {
     "classLink": "font-size",
     "className": "fs-sm",
     "properties": [
-      "font-size: 0.25rem;"
+      "font-size: 0.875rem;"
     ]
   },
   {
     "classLink": "font-size",
-    "className": "fs-md",
-    "properties": [
-      "font-size: 0.5rem;"
-    ]
-  },
-  {
-    "classLink": "font-size",
-    "className": "fs-lg",
-    "properties": [
-      "font-size: 0.75rem;"
-    ]
-  },
-  {
-    "classLink": "font-size",
-    "className": "fs-xl",
+    "className": "fs-b",
     "properties": [
       "font-size: 1rem;"
     ]
   },
   {
     "classLink": "font-size",
-    "className": "fs-xxl",
+    "className": "fs-lg",
+    "properties": [
+      "font-size: 1.125rem;"
+    ]
+  },
+  {
+    "classLink": "font-size",
+    "className": "fs-xl",
+    "properties": [
+      "font-size: 1.25rem;"
+    ]
+  },
+  {
+    "classLink": "font-size",
+    "className": "fs-2xl",
     "properties": [
       "font-size: 1.5rem;"
     ]
@@ -60326,6 +60326,20 @@
     "classLink": "font-size",
     "className": "fs-3xl",
     "properties": [
+      "font-size: 1.875rem;"
+    ]
+  },
+  {
+    "classLink": "font-size",
+    "className": "fs-4xl",
+    "properties": [
+      "font-size: 2.25rem;"
+    ]
+  },
+  {
+    "classLink": "font-size",
+    "className": "fs-5xl",
+    "properties": [
       "font-size: 3rem;"
     ]
   },
@@ -60333,7 +60347,21 @@
     "classLink": "font-size",
     "className": "fs-6xl",
     "properties": [
-      "font-size: 4rem;"
+      "font-size: 3.75rem;"
+    ]
+  },
+  {
+    "classLink": "font-size",
+    "className": "fs-7xl",
+    "properties": [
+      "font-size: 4.5rem;"
+    ]
+  },
+  {
+    "classLink": "font-size",
+    "className": "fs-8xl",
+    "properties": [
+      "font-size: 6rem;"
     ]
   },
   {
