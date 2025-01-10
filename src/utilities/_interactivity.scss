@@ -94,7 +94,7 @@ $yma-interactivity-utils: (
   "scroll-mb": (
     "prefix": "s-mb",
     "properties": (
-      "scroll-margin#scroll-margin-bottom",
+      "scroll-margin-bottom",
     ),
     "values": maps.$yma-margin-map,
   ),
@@ -102,7 +102,7 @@ $yma-interactivity-utils: (
   "scroll-mis": (
     "prefix": "s-mis",
     "properties": (
-      "scroll-margin#scroll-margin-inline-start",
+      "scroll-margin-inline-start",
     ),
     "values": maps.$yma-margin-map,
   ),
@@ -110,14 +110,14 @@ $yma-interactivity-utils: (
   "scroll-ml": (
     "prefix": "s-ml",
     "properties": (
-      "scroll-margin#scroll-margin-left",
+      "scroll-margin-left",
     ),
     "values": maps.$yma-margin-map,
   ),
   "scroll-mr": (
     "prefix": "s-mr",
     "properties": (
-      "scroll-margin#scroll-margin-right",
+      "scroll-margin-right",
     ),
     "values": maps.$yma-margin-map,
   ),
@@ -125,7 +125,7 @@ $yma-interactivity-utils: (
   "scroll-mt": (
     "prefix": "s-mt",
     "properties": (
-      "scroll-margin#scroll-margin-top",
+      "scroll-margin-top",
     ),
     "values": maps.$yma-margin-map,
   ),
@@ -133,7 +133,7 @@ $yma-interactivity-utils: (
   "scroll-mie": (
     "prefix": "s-mie",
     "properties": (
-      "scroll-margin#scroll-margin-inline-end",
+      "scroll-margin-inline-end",
     ),
     "values": maps.$yma-margin-map,
   ),
@@ -141,8 +141,8 @@ $yma-interactivity-utils: (
   "scroll-mx": (
     "prefix": "s-mx",
     "properties": (
-      "scroll-margin#scroll-margin-left",
-      "scroll-margin#scroll-margin-right",
+      "scroll-margin-left",
+      "scroll-margin-right",
     ),
     "values": maps.$yma-margin-map,
   ),
@@ -150,8 +150,8 @@ $yma-interactivity-utils: (
   "scroll-my": (
     "prefix": "s-my",
     "properties": (
-      "scroll-margin#scroll-margin-bottom",
-      "scroll-margin#scroll-margin-top",
+      "scroll-margin-bottom",
+      "scroll-margin-top",
     ),
     "values": maps.$yma-margin-map,
   ),

@@ -75,6 +75,22 @@ textarea:not([class]) {
 }
 
 /**
+ * Apply consistent focus styles to interactive elements.
+ */
+
+button,
+input,
+textarea,
+select,
+a,
+summary {
+  &:focus {
+    outline: 2px solid vars.$yma-color-black;
+    outline-offset: 2px;
+  }
+}
+
+/**
  * Set a minimum height for textareas without a defined `rows` attribute.
  */
 
@@ -88,6 +104,18 @@ textarea:not([rows]) {
 
 button {
   cursor: pointer;
+}
+
+/** Disabled States
+ * 1. Reduce opacity and set a "not-allowed" cursor for disabled elements.
+ */
+
+button:disabled,
+input:disabled,
+select:disabled,
+textarea:disabled {
+  opacity: 0.5; /* 1 */
+  cursor: not-allowed; /* 1 */
 }
 
 /** -- Typography --
@@ -199,22 +227,6 @@ hr {
 }
 
 /**
- * Apply consistent focus styles to interactive elements.
- */
-
-button,
-input,
-textarea,
-select,
-a,
-summary {
-  &:focus {
-    outline: 2px solid vars.$yma-color-black;
-    outline-offset: 2px;
-  }
-}
-
-/**
  * Ensure details and summary elements display correctly.
  */
 
@@ -224,16 +236,4 @@ details {
 
 summary {
   display: list-item;
-}
-
-/** Disabled States
- * 1. Reduce opacity and set a "not-allowed" cursor for disabled elements.
- */
-
-button:disabled,
-input:disabled,
-select:disabled,
-textarea:disabled {
-  opacity: 0.5; /* 1 */
-  cursor: not-allowed; /* 1 */
 }
