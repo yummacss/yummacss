@@ -8,7 +8,7 @@ $yma-grid-utils: (
     "properties": (
       "column-gap",
     ),
-    "slug": "",
+    "slug": "column-gap",
     "values": (
       "0": vars.$yma-column-gap * 0,
       "1": vars.$yma-column-gap,
@@ -35,7 +35,7 @@ $yma-grid-utils: (
     "properties": (
       "gap",
     ),
-    "slug": "",
+    "slug": "gap",
     "values": (
       "0": vars.$yma-gap * 0,
       "1": vars.$yma-gap,
@@ -63,7 +63,7 @@ $yma-grid-utils: (
     "properties": (
       "grid-auto-columns",
     ),
-    "slug": "",
+    "slug": "grid-auto-columns",
     "values": (
       "auto": auto,
       "max": max-content,
@@ -76,7 +76,7 @@ $yma-grid-utils: (
     "properties": (
       "grid-auto-flow",
     ),
-    "slug": "",
+    "slug": "grid-auto-flow",
     "values": (
       "c": column,
       "d": dense,
@@ -91,7 +91,7 @@ $yma-grid-utils: (
     "properties": (
       "grid-auto-rows",
     ),
-    "slug": "",
+    "slug": "grid-auto-rows",
     "values": (
       "auto": auto,
       "max": max-content,
@@ -104,7 +104,7 @@ $yma-grid-utils: (
     "properties": (
       "grid-column",
     ),
-    "slug": "",
+    "slug": "grid-column",
     "values": (
       "1": span 1 / span 1,
       "2": span 2 / span 2,
@@ -130,7 +130,7 @@ $yma-grid-utils: (
     "properties": (
       "grid-column-end",
     ),
-    "slug": "",
+    "slug": "grid-column/#grid-column-end",
     "values": (
       "1": 1,
       "2": 2,
@@ -156,7 +156,7 @@ $yma-grid-utils: (
     "properties": (
       "grid-column-start",
     ),
-    "slug": "",
+    "slug": "grid-column/#grid-column-start",
     "values": (
       "1": 1,
       "2": 2,
@@ -182,7 +182,7 @@ $yma-grid-utils: (
     "properties": (
       "grid-row",
     ),
-    "slug": "",
+    "slug": "grid-row",
     "values": (
       "1": span 1 / span 1,
       "2": span 2 / span 2,
@@ -208,7 +208,7 @@ $yma-grid-utils: (
     "properties": (
       "grid-row-end",
     ),
-    "slug": "",
+    "slug": "grid-row/#grid-row-end",
     "values": (
       "1": 1,
       "2": 2,
@@ -234,7 +234,7 @@ $yma-grid-utils: (
     "properties": (
       "grid-row-start",
     ),
-    "slug": "",
+    "slug": "grid-row/#grid-row-start",
     "values": (
       "1": 1,
       "2": 2,
@@ -260,7 +260,7 @@ $yma-grid-utils: (
     "properties": (
       "grid-template-columns",
     ),
-    "slug": "",
+    "slug": "grid-template-columns",
     "values": (
       "1": repeat(1, minmax(0, 1fr)),
       "2": repeat(2, minmax(0, 1fr)),
@@ -286,7 +286,7 @@ $yma-grid-utils: (
     "properties": (
       "grid-template-rows",
     ),
-    "slug": "",
+    "slug": "grid-template-rows",
     "values": (
       "1": repeat(1, minmax(0, 1fr)),
       "2": repeat(2, minmax(0, 1fr)),
@@ -312,7 +312,7 @@ $yma-grid-utils: (
     "properties": (
       "row-gap",
     ),
-    "slug": "",
+    "slug": "row-gap",
     "values": (
       "0": vars.$yma-row-gap * 0,
       "1": vars.$yma-row-gap,
