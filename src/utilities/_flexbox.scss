@@ -9,7 +9,7 @@ $yma-flexbox-utils: (
     "properties": (
       "align-content",
     ),
-    "slug": "",
+    "slug": "align-content",
     "values": (
       "b": baseline,
       "c": center,
@@ -28,7 +28,7 @@ $yma-flexbox-utils: (
     "properties": (
       "align-items",
     ),
-    "slug": "",
+    "slug": "align-items",
     "values": (
       "b": baseline,
       "c": center,
@@ -43,7 +43,7 @@ $yma-flexbox-utils: (
     "properties": (
       "align-self",
     ),
-    "slug": "",
+    "slug": "align-self",
     "values": (
       "auto": auto,
       "b": baseline,
@@ -59,7 +59,8 @@ $yma-flexbox-utils: (
     "properties": (
       "flex-basis",
     ),
-    "values": maps.$yma-flex-basis-map,
+    "slug": "flex-basis",
+    "values": maps$yma-flex-basis-map,
   ),
 
   "flex-direction": (
@@ -67,7 +68,7 @@ $yma-flexbox-utils: (
     "properties": (
       "flex-direction",
     ),
-    "slug": "",
+    "slug": "flex-direction",
     "values": (
       "c": column,
       "cr": column-reverse,
@@ -81,7 +82,7 @@ $yma-flexbox-utils: (
     "properties": (
       "flex-grow",
     ),
-    "slug": "",
+    "slug": "flex-grow",
     "values": (
       "0": 0,
       "1": 1,
@@ -100,7 +101,7 @@ $yma-flexbox-utils: (
     "properties": (
       "flex-shrink",
     ),
-    "slug": "",
+    "slug": "flex-shrink",
     "values": (
       "0": 0,
       "1": 1,
@@ -119,7 +120,7 @@ $yma-flexbox-utils: (
     "properties": (
       "flex-wrap",
     ),
-    "slug": "",
+    "slug": "flex-wrap",
     "values": (
       "nw": nowrap,
       "w": wrap,
@@ -132,7 +133,7 @@ $yma-flexbox-utils: (
     "properties": (
       "flex",
     ),
-    "slug": "",
+    "slug": "flex",
     "values": (
       "1": 1 1 0%,
       "2": 2 2 0%,
@@ -150,7 +151,7 @@ $yma-flexbox-utils: (
     "properties": (
       "justify-content",
     ),
-    "slug": "",
+    "slug": "justify-content",
     "values": (
       "c": center,
       "fe": flex-end,
@@ -168,7 +169,7 @@ $yma-flexbox-utils: (
     "properties": (
       "justify-items",
     ),
-    "slug": "",
+    "slug": "justify-items",
     "values": (
       "c": center,
       "e": end,
@@ -182,7 +183,7 @@ $yma-flexbox-utils: (
     "properties": (
       "justify-self",
     ),
-    "slug": "",
+    "slug": "justify-self",
     "values": (
       "auto": auto,
       "c": center,
@@ -197,7 +198,7 @@ $yma-flexbox-utils: (
     "properties": (
       "order",
     ),
-    "slug": "",
+    "slug": "order",
     "values": (
       "l": -9999,
       "0": 0,
@@ -220,7 +221,7 @@ $yma-flexbox-utils: (
     "properties": (
       "place-content",
     ),
-    "slug": "",
+    "slug": "place-content",
     "values": (
       "b": baseline,
       "c": center,
@@ -237,7 +238,7 @@ $yma-flexbox-utils: (
     "properties": (
       "place-items",
     ),
-    "slug": "",
+    "slug": "place-items",
     "values": (
       "b": baseline,
       "c": center,
@@ -252,7 +253,7 @@ $yma-flexbox-utils: (
     "properties": (
       "place-self",
     ),
-    "slug": "",
+    "slug": "place-self",
     "values": (
       "auto": auto,
       "c": center,
