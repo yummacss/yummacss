@@ -79,7 +79,7 @@ All notable changes to the Yumma CSS will be documented in this file.
 ### Changes
 
 - Group related utilities and variants
-- Merge **Filters** and **Effects** subcategories into a **FX** category
+- Merge **Filters** and **Effects** subcategories into a **Effect** category
 - Migrate base styles functionality to config file
 - Migrate from `@import` to `@use` and `@forwards`
 - Migrate from Common Js to ESM
