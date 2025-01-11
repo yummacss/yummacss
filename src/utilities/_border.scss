@@ -9,6 +9,7 @@ $yma-border-utils: (
     "properties": (
       "border-collapse",
     ),
+    "slug": "",
     "values": (
       "c": collapse,
       "s": separate,
@@ -20,6 +21,7 @@ $yma-border-utils: (
     "properties": (
       "border-radius",
     ),
+    "slug": "",
     "values": (
       "0": vars.$yma-border-radius * 0,
       "1": vars.$yma-border-radius,
@@ -40,6 +42,7 @@ $yma-border-utils: (
     "properties": (
       "border-bottom-left-radius",
     ),
+    "slug": "",
     "values": (
       "0": vars.$yma-border-radius * 0,
       "1": vars.$yma-border-radius,
@@ -58,6 +61,7 @@ $yma-border-utils: (
     "properties": (
       "border-bottom-right-radius",
     ),
+    "slug": "",
     "values": (
       "0": vars.$yma-border-radius * 0,
       "1": vars.$yma-border-radius,
@@ -76,6 +80,7 @@ $yma-border-utils: (
     "properties": (
       "border-top-left-radius",
     ),
+    "slug": "",
     "values": (
       "0": vars.$yma-border-radius * 0,
       "1": vars.$yma-border-radius,
@@ -94,6 +99,7 @@ $yma-border-utils: (
     "properties": (
       "border-top-right-radius",
     ),
+    "slug": "",
     "values": (
       "0": vars.$yma-border-radius * 0,
       "1": vars.$yma-border-radius,
@@ -112,6 +118,7 @@ $yma-border-utils: (
     "properties": (
       "border-spacing",
     ),
+    "slug": "",
     "values": (
       "0": vars.$yma-border-spacing * 0,
       "1": vars.$yma-border-spacing,
@@ -130,6 +137,7 @@ $yma-border-utils: (
     "properties": (
       "border-style",
     ),
+    "slug": "",
     "values": (
       "none": none,
       "d": dashed,
@@ -142,6 +150,7 @@ $yma-border-utils: (
     "properties": (
       "border-width",
     ),
+    "slug": "",
     "values": (
       "0": vars.$yma-border * 0,
       "1": vars.$yma-border,
@@ -160,6 +169,7 @@ $yma-border-utils: (
     "properties": (
       "border-bottom-width",
     ),
+    "slug": "",
     "values": (
       "0": vars.$yma-border * 0,
       "1": vars.$yma-border,
@@ -178,6 +188,7 @@ $yma-border-utils: (
     "properties": (
       "border-left-width",
     ),
+    "slug": "",
     "values": (
       "0": vars.$yma-border * 0,
       "1": vars.$yma-border,
@@ -196,6 +207,7 @@ $yma-border-utils: (
     "properties": (
       "border-right-width",
     ),
+    "slug": "",
     "values": (
       "0": vars.$yma-border * 0,
       "1": vars.$yma-border,
@@ -214,6 +226,7 @@ $yma-border-utils: (
     "properties": (
       "border-top-width",
     ),
+    "slug": "",
     "values": (
       "0": vars.$yma-border * 0,
       "1": vars.$yma-border,

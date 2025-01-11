@@ -8,6 +8,7 @@ $yma-outline-utils: (
     "properties": (
       "outline-offset",
     ),
+    "slug": "",
     "values": (
       "0": vars.$yma-outline-offset * 0,
       "1": vars.$yma-outline-offset,
@@ -22,6 +23,7 @@ $yma-outline-utils: (
     "properties": (
       "outline-style",
     ),
+    "slug": "",
     "values": (
       "none": none,
       "d": dashed,
@@ -34,6 +36,7 @@ $yma-outline-utils: (
     "properties": (
       "outline-width",
     ),
+    "slug": "",
     "values": (
       "0": vars.$yma-outline-width * 0,
       "1": vars.$yma-outline-width,

@@ -9,6 +9,7 @@ $yma-box-model-utils: (
     "properties": (
       "box-sizing",
     ),
+    "slug": "",
     "values": (
       "bb": border-box,
       "cb": content-box,
@@ -252,6 +253,7 @@ $yma-box-model-utils: (
       "margin-left",
       "margin-right",
     ),
+    "slug": "",
     "values": (
       "custom": true,
       "map": maps.$yma-spacing-map,
@@ -264,6 +266,7 @@ $yma-box-model-utils: (
       "margin-bottom",
       "margin-top",
     ),
+    "slug": "",
     "values": (
       "custom": true,
       "map": maps.$yma-spacing-map,
