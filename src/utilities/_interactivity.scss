@@ -5,10 +5,10 @@
 
 $yma-interactivity-utils: (
   "appearance": (
+    "prefix": "a",
     "properties": (
       "appearance",
     ),
-    "prefix": "a",
     "values": (
       "auto": auto,
       "none": none,
@@ -49,10 +49,10 @@ $yma-interactivity-utils: (
   ),
 
   "pointer-events": (
+    "prefix": "pe",
     "properties": (
       "pointer-events",
     ),
-    "prefix": "pe",
     "values": (
       "auto": auto,
       "none": none,

@@ -5,10 +5,10 @@
 
 $yma-border-utils: (
   "border-collapse": (
+    "prefix": "bc",
     "properties": (
       "border-collapse",
     ),
-    "prefix": "bc",
     "values": (
       "c": collapse,
       "s": separate,

@@ -4,10 +4,10 @@
 
 $yma-layout-utils: (
   "aspect-ratio": (
+    "prefix": "ar",
     "properties": (
       "aspect-ratio",
     ),
-    "prefix": "ar",
     "values": (
       "auto": auto,
       "l": "16/9",
@@ -16,10 +16,10 @@ $yma-layout-utils: (
   ),
 
   "clear": (
+    "prefix": "cl",
     "properties": (
       "clear",
     ),
-    "prefix": "cl",
     "values": (
       "is": inline-start,
       "ie": inline-end,
@@ -31,10 +31,10 @@ $yma-layout-utils: (
   ),
 
   "columns": (
+    "prefix": "cols",
     "properties": (
       "columns",
     ),
-    "prefix": "cols",
     "values": (
       "1": 1,
       "2": 2,
@@ -56,10 +56,10 @@ $yma-layout-utils: (
   ),
 
   "bottom": (
+    "prefix": "d-b",
     "properties": (
       "bottom",
     ),
-    "prefix": "d-b",
     "values": (
       "0": vars.$yma-direction * 0,
       "1": vars.$yma-direction,
@@ -83,10 +83,10 @@ $yma-layout-utils: (
   ),
 
   "inset": (
+    "prefix": "d-i",
     "properties": (
       "inset",
     ),
-    "prefix": "d-i",
     "values": (
       "0": vars.$yma-direction * 0,
       "1": vars.$yma-direction,
@@ -110,11 +110,11 @@ $yma-layout-utils: (
   ),
 
   "inset-x": (
+    "prefix": "d-ix",
     "properties": (
       "left",
       "right",
     ),
-    "prefix": "d-ix",
     "values": (
       "0": vars.$yma-direction * 0,
       "1": vars.$yma-direction,
@@ -138,11 +138,11 @@ $yma-layout-utils: (
   ),
 
   "inset-y": (
+    "prefix": "d-iy",
     "properties": (
       "top",
       "bottom",
     ),
-    "prefix": "d-iy",
     "values": (
       "0": vars.$yma-direction * 0,
       "1": vars.$yma-direction,
@@ -166,10 +166,10 @@ $yma-layout-utils: (
   ),
 
   "isolation": (
+    "prefix": "i",
     "properties": (
       "isolation",
     ),
-    "prefix": "i",
     "values": (
       "auto": auto,
       "i": isolate,
@@ -177,10 +177,10 @@ $yma-layout-utils: (
   ),
 
   "left": (
+    "prefix": "d-l",
     "properties": (
       "left",
     ),
-    "prefix": "d-l",
     "values": (
       "0": vars.$yma-direction * 0,
       "1": vars.$yma-direction,
@@ -204,10 +204,10 @@ $yma-layout-utils: (
   ),
 
   "right": (
+    "prefix": "d-r",
     "properties": (
       "right",
     ),
-    "prefix": "d-r",
     "values": (
       "0": vars.$yma-direction * 0,
       "1": vars.$yma-direction,
@@ -231,10 +231,10 @@ $yma-layout-utils: (
   ),
 
   "top": (
+    "prefix": "d-t",
     "properties": (
       "top",
     ),
-    "prefix": "d-t",
     "values": (
       "0": vars.$yma-direction * 0,
       "1": vars.$yma-direction,
@@ -258,10 +258,10 @@ $yma-layout-utils: (
   ),
 
   "display": (
+    "prefix": "d",
     "properties": (
       "display",
     ),
-    "prefix": "d",
     "values": (
       "b": block,
       "f": flex,
@@ -278,10 +278,10 @@ $yma-layout-utils: (
   ),
 
   "float": (
+    "prefix": "flo",
     "properties": (
       "float",
     ),
-    "prefix": "flo",
     "values": (
       "ie": inline-end,
       "is": inline-start,
@@ -292,10 +292,10 @@ $yma-layout-utils: (
   ),
 
   "object-fit": (
+    "prefix": "of",
     "properties": (
       "object-fit",
     ),
-    "prefix": "of",
     "values": (
       "c": cover,
       "f": fill,
@@ -305,10 +305,10 @@ $yma-layout-utils: (
   ),
 
   "object-position": (
+    "prefix": "op",
     "properties": (
       "object-position",
     ),
-    "prefix": "op",
     "values": (
       "b": bottom,
       "c": center,
@@ -323,10 +323,10 @@ $yma-layout-utils: (
   ),
 
   "overflow": (
+    "prefix": "ovf",
     "properties": (
       "overflow",
     ),
-    "prefix": "ovf",
     "values": (
       "auto": auto,
       "c": clip,
@@ -337,10 +337,10 @@ $yma-layout-utils: (
   ),
 
   "overflow-x": (
+    "prefix": "ovf-x",
     "properties": (
       "overflow-x",
     ),
-    "prefix": "ovf-x",
     "values": (
       "auto": auto,
       "c": clip,
@@ -351,10 +351,10 @@ $yma-layout-utils: (
   ),
 
   "overflow-y": (
+    "prefix": "ovf-y",
     "properties": (
       "overflow-y",
     ),
-    "prefix": "ovf-y",
     "values": (
       "auto": auto,
       "c": clip,
@@ -365,10 +365,10 @@ $yma-layout-utils: (
   ),
 
   "position": (
+    "prefix": "p",
     "properties": (
       "position",
     ),
-    "prefix": "p",
     "values": (
       "a": absolute,
       "f": fixed,
@@ -379,10 +379,10 @@ $yma-layout-utils: (
   ),
 
   "z-index": (
+    "prefix": "zi",
     "properties": (
       "z-index",
     ),
-    "prefix": "zi",
     "values": (
       "0": 0,
       "10": 10,

@@ -4,10 +4,10 @@
 
 $yma-background-utils: (
   "background-attachment": (
+    "prefix": "ba",
     "properties": (
       "background-attachment",
     ),
-    "prefix": "ba",
     "values": (
       "f": fixed,
       "l": local,
