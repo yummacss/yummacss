@@ -4,12 +4,12 @@
 @use "../utilities/maps/" as maps;
 
 $yma-transform-utils: (
-  "transform-rotate": (
+  "rotate": (
     "prefix": "t-r",
     "properties": (
       "transform",
     ),
-    "slug": "",
+    "slug": "rotate",
     "values": (
       "0": rotate(0),
       "5": rotate(5deg),
@@ -35,12 +35,12 @@ $yma-transform-utils: (
     ),
   ),
 
-  "transform-scale": (
+  "scale": (
     "prefix": "t-s",
     "properties": (
       "transform",
     ),
-    "slug": "",
+    "slug": "scale",
     "values": (
       "0": scale(0%),
       "10": scale(10%),
@@ -56,12 +56,12 @@ $yma-transform-utils: (
     ),
   ),
 
-  "transform-scale-x": (
+  "scale-x": (
     "prefix": "t-sx",
     "properties": (
       "transform",
     ),
-    "slug": "",
+    "slug": "scale/#scale-x",
     "values": (
       "0": scaleX(0%),
       "10": scaleX(10%),
@@ -77,12 +77,12 @@ $yma-transform-utils: (
     ),
   ),
 
-  "transform-scale-y": (
+  "scale-y": (
     "prefix": "t-sy",
     "properties": (
       "transform",
     ),
-    "slug": "",
+    "slug": "scale/#scale-y",
     "values": (
       "0": scaleY(0%),
       "10": scaleY(10%),
@@ -98,12 +98,12 @@ $yma-transform-utils: (
     ),
   ),
 
-  "transform-skew": (
+  "skew": (
     "prefix": "t-sk",
     "properties": (
       "transform",
     ),
-    "slug": "",
+    "slug": "skew",
     "values": (
       "1": skew(1deg),
       "2": skew(2deg),
@@ -113,12 +113,12 @@ $yma-transform-utils: (
     ),
   ),
 
-  "transform-skew-x": (
+  "skew-x": (
     "prefix": "t-skx",
     "properties": (
       "transform",
     ),
-    "slug": "",
+    "slug": "skew/#skew-x",
     "values": (
       "1": skewX(1deg),
       "2": skewX(2deg),
@@ -128,12 +128,12 @@ $yma-transform-utils: (
     ),
   ),
 
-  "transform-skew-y": (
+  "skew-y": (
     "prefix": "t-sky",
     "properties": (
       "transform",
     ),
-    "slug": "",
+    "slug": "skew/#skew-y",
     "values": (
       "1": skewY(1deg),
       "2": skewY(2deg),
@@ -148,7 +148,7 @@ $yma-transform-utils: (
     "properties": (
       "transform-origin",
     ),
-    "slug": "",
+    "slug": "transform-origin",
     "values": (
       "b": bottom,
       "bl": bottom left,
@@ -162,21 +162,23 @@ $yma-transform-utils: (
     ),
   ),
 
-  "transform-translate-x": (
+  "translate-x": (
     "prefix": "t-tx",
     "properties": (
       "transform",
     ),
     "property-function": translateX,
+    "slug": "translate/#translate-x",
     "values": maps.$yma-transform-translate-map,
   ),
 
-  "transform-translate-y": (
+  "translate-y": (
     "prefix": "t-ty",
     "properties": (
       "transform",
     ),
     "property-function": translateY,
+    "slug": "translate/#translate-y",
     "values": maps.$yma-transform-translate-map,
   ),
 );
