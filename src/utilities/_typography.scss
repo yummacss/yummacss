@@ -8,7 +8,7 @@ $yma-typography-utils: (
     "properties": (
       "font-size",
     ),
-    "slug": "",
+    "slug": "font-size",
     "values": (
       "xs": vars.$yma-font-size-xs,
       "sm": vars.$yma-font-size-sm,
@@ -31,7 +31,7 @@ $yma-typography-utils: (
     "properties": (
       "font-style",
     ),
-    "slug": "",
+    "slug": "font-style",
     "values": (
       "i": italic,
       "n": normal,
@@ -43,7 +43,7 @@ $yma-typography-utils: (
     "properties": (
       "font-weight",
     ),
-    "slug": "",
+    "slug": "font-weight",
     "values": (
       "100": 100,
       "200": 200,
@@ -62,7 +62,7 @@ $yma-typography-utils: (
     "properties": (
       "letter-spacing",
     ),
-    "slug": "",
+    "slug": "letter-spacing",
     "values": (
       "0": 0em,
       "1": -0.05em,
@@ -78,7 +78,7 @@ $yma-typography-utils: (
     "properties": (
       "line-height",
     ),
-    "slug": "",
+    "slug": "line-height",
     "values": (
       "1": 1,
       "2": 1.25,
@@ -94,7 +94,7 @@ $yma-typography-utils: (
     "properties": (
       "list-style-position",
     ),
-    "slug": "",
+    "slug": "list-style-position",
     "values": (
       "i": inside,
       "o": outside,
@@ -106,7 +106,7 @@ $yma-typography-utils: (
     "properties": (
       "list-style-type",
     ),
-    "slug": "",
+    "slug": "list-style-type",
     "values": (
       "c": circle,
       "d": disc,
@@ -119,7 +119,7 @@ $yma-typography-utils: (
     "properties": (
       "overflow-wrap",
     ),
-    "slug": "",
+    "slug": "overflow-wrap",
     "values": (
       "bw": break-word,
       "n": normal,
@@ -131,7 +131,7 @@ $yma-typography-utils: (
     "properties": (
       "text-align",
     ),
-    "slug": "",
+    "slug": "text-align",
     "values": (
       "c": center,
       "e": end,
@@ -149,7 +149,7 @@ $yma-typography-utils: (
     "properties": (
       "text-decoration-line",
     ),
-    "slug": "",
+    "slug": "text-decoration-line",
     "values": (
       "lt": line-through,
       "none": none,
@@ -163,7 +163,7 @@ $yma-typography-utils: (
     "properties": (
       "text-decoration-style",
     ),
-    "slug": "",
+    "slug": "text-decoration-style",
     "values": (
       "d": dashed,
       "h": hidden,
@@ -177,7 +177,7 @@ $yma-typography-utils: (
     "properties": (
       "text-decoration-thickness",
     ),
-    "slug": "",
+    "slug": "text-decoration-thickness",
     "values": (
       "0": vars.$yma-decoration-thickness * 0,
       "1": vars.$yma-decoration-thickness,
@@ -194,7 +194,7 @@ $yma-typography-utils: (
     "properties": (
       "text-decoration",
     ),
-    "slug": "",
+    "slug": "ext-decoration",
     "values": (
       "none": none,
       "u": underline,
@@ -206,7 +206,7 @@ $yma-typography-utils: (
     "properties": (
       "text-indent",
     ),
-    "slug": "",
+    "slug": "text-indent",
     "values": (
       "0": 0px,
       "1": 1px,
@@ -221,7 +221,7 @@ $yma-typography-utils: (
     "properties": (
       "text-overflow",
     ),
-    "slug": "",
+    "slug": "text-overflow",
     "values": (
       "c": clip,
       "e": ellipsis,
@@ -233,7 +233,7 @@ $yma-typography-utils: (
     "properties": (
       "text-transform",
     ),
-    "slug": "",
+    "slug": "text-transform",
     "values": (
       "c": capitalize,
       "l": lowercase,
@@ -247,7 +247,7 @@ $yma-typography-utils: (
     "properties": (
       "text-underline-offset",
     ),
-    "slug": "",
+    "slug": "text-underline-offset",
     "values": (
       "0": 0px,
       "1": 1px,
@@ -263,7 +263,7 @@ $yma-typography-utils: (
     "properties": (
       "text-wrap",
     ),
-    "slug": "",
+    "slug": "text-wrap",
     "values": (
       "b": balance,
       "n": nowrap,
@@ -277,7 +277,7 @@ $yma-typography-utils: (
     "properties": (
       "vertical-align",
     ),
-    "slug": "",
+    "slug": "vertical-align",
     "values": (
       "b": bottom,
       "ba": baseline,
@@ -295,7 +295,7 @@ $yma-typography-utils: (
     "properties": (
       "white-space",
     ),
-    "slug": "",
+    "slug": "white-space",
     "values": (
       "bs": break-spaces,
       "n": normal,
