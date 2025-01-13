@@ -108,6 +108,7 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Update **Min Dimension** utilities syntax from `min-dim-*` to `min-d-*`
 - Update **Spacing X** utilities syntax from `s-x-*` to `sx-*`
 - Update **Spacing Y** utilities syntax from `s-y-*` to `sy-*`
+- Update color generation logic
 - Update color shade percentage from `10%` to `14%`
 
 ### Removed
