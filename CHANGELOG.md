@@ -109,7 +109,8 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Update **Spacing X** utilities syntax from `s-x-*` to `sx-*`
 - Update **Spacing Y** utilities syntax from `s-y-*` to `sy-*`
 - Update color generation logic
-- Update color shade percentage from `10%` to `14%`
+- Update color shade percentage from 10% to 14%
+- Update color utility range from 1-6 to 1-12
 
 ### Removed
 
@@ -120,4 +121,5 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Remove `dist\yumma-core.min.scss` file
 - Remove `fs-b` utility class
 - Remove `minifiedCoreFile()` function
+- Remove `d-` and `l-` from color utilities
 - Remove the font-size variable variants
