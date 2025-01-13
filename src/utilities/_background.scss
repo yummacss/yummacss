@@ -93,7 +93,7 @@ $yma-background-utils: (
 );
 
 @each $properties, $map in $yma-background-utils {
-  $prefix: map-get($map, prefix);
+  $prefix: map-get($map, "prefix");
   $properties: map-get($map, "properties");
 
   @include mix.create-utilities($map, $prefix, $properties);
