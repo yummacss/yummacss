@@ -1,0 +1,84 @@
+@use "sass:color";
+@use "../abstracts/mixins" as mix;
+@use "../abstracts/functions" as fun;
+@use "../abstracts/_theme" as map;
+
+$yma-color-utils: (
+  "accent-color": (
+    "prefix": "ac",
+    "property": "accent-color",
+  ),
+
+  "background-color": (
+    "prefix": "bg",
+    "property": "background-color",
+  ),
+
+  "border-color": (
+    "prefix": "bc",
+    "property": "border-color",
+  ),
+
+  "border-bottom-color": (
+    "prefix": "bc",
+    "property": "border-bottom-color",
+  ),
+
+  "border-left-color": (
+    "prefix": "bc",
+    "property": "border-left-color",
+  ),
+
+  "border-right-color": (
+    "prefix": "bc",
+    "property": "border-right-color",
+  ),
+
+  "border-top-color": (
+    "prefix": "bc",
+    "property": "border-top-color",
+  ),
+
+  "caret-color": (
+    "prefix": "cc",
+    "property": "caret-color",
+  ),
+
+  "color": (
+    "prefix": "tc",
+    "property": "color",
+  ),
+
+  "fill": (
+    "prefix": "f",
+    "property": "fill",
+  ),
+
+  "outline-color": (
+    "prefix": "oc",
+    "property": "outline-color",
+  ),
+
+  "stroke": (
+    "prefix": "s",
+    "property": "stroke",
+  ),
+
+  "text-decoration-color": (
+    "prefix": "tdc",
+    "property": "text-decoration-color",
+  ),
+);
+
+@each $utility, $map in $yma-color-utils {
+  $property: map-get($map, "property");
+  $prefix: map-get($map, "prefix");
+
+  @each $k, $v in map.$yma-theme {
+    @include mix.color-scaling($property, $prefix, $k, $v);
+
+    @if (fun.ignore-neutral($v, map.$yma-theme)) {
+      @include mix.shade-scaling($property, $prefix, $k, $v, 14%);
+    }
+  }
+}
