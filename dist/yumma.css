@@ -1,3 +1,226 @@
+/**
+ * Yumma CSS v3.0.0 (https://github.com/yumma-lib/yumma-css)
+ * Created by: Renildo Pereira (https://github.com/rrenildopereiraa)
+ * Released under the MIT License (https://github.com/yumma-lib/yumma-css/blob/main/LICENSE)
+ */
+/** -- Box sizing --
+ * 1. Use a more intuitive box-sizing model to make the design consistent.
+ * 2. Remove default margin and padding.
+ * 3. Reset default border styles.
+ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /* 1 */
+  border: 0 solid; /* 3 */
+}
+
+* {
+  margin: 0; /* 2 */
+  padding: 0; /* 2 */
+}
+
+/** -- Document --
+ * 1. Improve font smoothing.
+ * 2. Set a default system font.
+ * 3. Add accessible line-height.
+ */
+body {
+  -webkit-font-smoothing: antialiased; /* 1 */
+  font-family: system-ui, sans-serif; /* 2 */
+  line-height: 1.5; /* 3 */
+}
+
+/** -- Media Elements --
+ * 1. Ensure all media elements like images, videos, and canvases are block-level.
+ * 2. Limit their maximum width to the parent container.
+ */
+canvas,
+img,
+picture,
+svg,
+video {
+  display: block; /* 1 */
+  max-width: 100%; /* 2 */
+}
+
+/** -- Form Elements --
+ * 1. Reset background and border styles for form elements.
+ * 2. Use `inherit` to ensure font consistency within forms.
+ * 3. Add default padding for usability.
+ * 4. Set a consistent default border radius.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  background-color: transparent; /* 1 */
+  border-radius: 0.25rem; /* 4 */
+  font-family: inherit; /* 2 */
+  padding: 0.5rem; /* 3 */
+}
+
+/**
+ * Add a default border to form elements that do not have a class attribute.
+ */
+button:not([class]),
+input:not([class]),
+optgroup:not([class]),
+select:not([class]),
+textarea:not([class]) {
+  border: 1px solid #bfc2c7; /* 1 */
+}
+
+/**
+ * Apply consistent focus styles to interactive elements.
+ */
+button:focus,
+input:focus,
+textarea:focus,
+select:focus,
+a:focus,
+summary:focus {
+  outline: 2px solid black;
+  outline-offset: 2px;
+}
+
+/**
+ * Set a minimum height for textareas without a defined `rows` attribute.
+ */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/**
+ * Ensure the buttons have a pointer cursor.
+ */
+button {
+  cursor: pointer;
+}
+
+/** Disabled States
+ * 1. Reduce opacity and set a "not-allowed" cursor for disabled elements.
+ */
+button:disabled,
+input:disabled,
+select:disabled,
+textarea:disabled {
+  opacity: 0.5; /* 1 */
+  cursor: not-allowed; /* 1 */
+}
+
+/** -- Typography --
+ * 1. Avoid text overflows.
+ * 2. Improve line wrapping for headings.
+ * 3. Add a consistent font weight for bold text.
+ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  overflow-wrap: break-word; /* 1 */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 1rem; /* 3 */
+  font-weight: 600; /* 3 */
+  text-wrap: balance; /* 2 */
+}
+
+p {
+  text-wrap: pretty; /* 2 */
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+  font-weight: 700;
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+  font-size: 80%;
+  line-height: 1.4;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre,
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/** -- Links --
+ * 1. Remove underline styling from links by default.
+ * 2. Restore underline styling on hover for accessibility.
+ * 3. Reset color to inherit from parent element.
+ */
+a {
+  color: inherit; /* 3 */
+  text-decoration: none; /* 1 */
+}
+
+a:hover {
+  text-decoration: underline; /* 2 */
+}
+
+/** -- Lists --
+ * Remove default list styling and padding.
+ */
+ol,
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+/** -- Tables --
+* 1. Add a consistent font weight for bold text.
+ */
+th {
+  font-size: 1rem; /* 1 */
+  font-weight: 600; /* 1 */
+}
+
+/** -- Miscellaneous --
+ * 1. Add the correct height in Firefox.
+ * 2. Correct text decoration.
+ * 3. Add spacing around horizontal rules.
+ */
+hr {
+  border-top: 1px solid #bfc2c7; /* 2 */
+  height: 0; /* 1 */
+  margin: 1em 0; /* 3 */
+}
+
+/**
+ * Ensure details and summary elements display correctly.
+ */
+details {
+  display: block;
+}
+
+summary {
+  display: list-item;
+}
+
 .ba-f {
   background-attachment: fixed;
 }
@@ -180129,227 +180352,3 @@
   font-family: system-ui, sans-serif;
   font-weight: 500;
 }
-
-/** -- Box sizing --
- * 1. Use a more intuitive box-sizing model to make the design consistent.
- * 2. Remove default margin and padding.
- * 3. Reset default border styles.
- */
-*,
-*::before,
-*::after {
-  box-sizing: border-box; /* 1 */
-  border: 0 solid; /* 3 */
-}
-
-* {
-  margin: 0; /* 2 */
-  padding: 0; /* 2 */
-}
-
-/** -- Document --
- * 1. Improve font smoothing.
- * 2. Set a default system font.
- * 3. Add accessible line-height.
- */
-body {
-  -webkit-font-smoothing: antialiased; /* 1 */
-  font-family: system-ui, sans-serif; /* 2 */
-  line-height: 1.5; /* 3 */
-}
-
-/** -- Media Elements --
- * 1. Ensure all media elements like images, videos, and canvases are block-level.
- * 2. Limit their maximum width to the parent container.
- */
-canvas,
-img,
-picture,
-svg,
-video {
-  display: block; /* 1 */
-  max-width: 100%; /* 2 */
-}
-
-/** -- Form Elements --
- * 1. Reset background and border styles for form elements.
- * 2. Use `inherit` to ensure font consistency within forms.
- * 3. Add default padding for usability.
- * 4. Set a consistent default border radius.
- */
-button,
-input,
-optgroup,
-select,
-textarea {
-  background-color: transparent; /* 1 */
-  border-radius: 0.25rem; /* 4 */
-  font-family: inherit; /* 2 */
-  padding: 0.5rem; /* 3 */
-}
-
-/**
- * Add a default border to form elements that do not have a class attribute.
- */
-button:not([class]),
-input:not([class]),
-optgroup:not([class]),
-select:not([class]),
-textarea:not([class]) {
-  border: 1px solid #bfc2c7; /* 1 */
-}
-
-/**
- * Apply consistent focus styles to interactive elements.
- */
-button:focus,
-input:focus,
-textarea:focus,
-select:focus,
-a:focus,
-summary:focus {
-  outline: 2px solid black;
-  outline-offset: 2px;
-}
-
-/**
- * Set a minimum height for textareas without a defined `rows` attribute.
- */
-textarea:not([rows]) {
-  min-height: 10em;
-}
-
-/**
- * Ensure the buttons have a pointer cursor.
- */
-button {
-  cursor: pointer;
-}
-
-/** Disabled States
- * 1. Reduce opacity and set a "not-allowed" cursor for disabled elements.
- */
-button:disabled,
-input:disabled,
-select:disabled,
-textarea:disabled {
-  opacity: 0.5; /* 1 */
-  cursor: not-allowed; /* 1 */
-}
-
-/** -- Typography --
- * 1. Avoid text overflows.
- * 2. Improve line wrapping for headings.
- * 3. Add a consistent font weight for bold text.
- */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-  overflow-wrap: break-word; /* 1 */
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-size: 1rem; /* 3 */
-  font-weight: 600; /* 3 */
-  text-wrap: balance; /* 2 */
-}
-
-p {
-  text-wrap: pretty; /* 2 */
-}
-
-/**
- * Add the correct font weight in Chrome, Edge, and Safari.
- */
-b,
-strong {
-  font-weight: 700;
-}
-
-/**
- * Add the correct font size in all browsers.
- */
-small {
-  font-size: 80%;
-  line-height: 1.4;
-}
-
-/**
- * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
- */
-pre,
-code,
-kbd,
-samp {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
-}
-
-/** -- Links --
- * 1. Remove underline styling from links by default.
- * 2. Restore underline styling on hover for accessibility.
- * 3. Reset color to inherit from parent element.
- */
-a {
-  color: inherit; /* 3 */
-  text-decoration: none; /* 1 */
-}
-
-a:hover {
-  text-decoration: underline; /* 2 */
-}
-
-/** -- Lists --
- * Remove default list styling and padding.
- */
-ol,
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-/** -- Tables --
-* 1. Add a consistent font weight for bold text.
- */
-th {
-  font-size: 1rem; /* 1 */
-  font-weight: 600; /* 1 */
-}
-
-/** -- Miscellaneous --
- * 1. Add the correct height in Firefox.
- * 2. Correct text decoration.
- * 3. Add spacing around horizontal rules.
- */
-hr {
-  border-top: 1px solid #bfc2c7; /* 2 */
-  height: 0; /* 1 */
-  margin: 1em 0; /* 3 */
-}
-
-/**
- * Ensure details and summary elements display correctly.
- */
-details {
-  display: block;
-}
-
-summary {
-  display: list-item;
-}
-
-/**
- * Yumma CSS v3.0.0 (https://github.com/yumma-lib/yumma-css)
- * Created by: Renildo Pereira (https://github.com/rrenildopereiraa)
- * Released under the MIT License (https://github.com/yumma-lib/yumma-css/blob/main/LICENSE)
- */
