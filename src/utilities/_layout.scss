@@ -397,6 +397,19 @@ $yma-layout-utils: (
     ),
   ),
 
+  "visibility": (
+    "prefix": "v",
+    "properties": (
+      "visibility",
+    ),
+    "slug": "",
+    "values": (
+      "c": collapse,
+      "i": invisible,
+      "v": visible,
+    ),
+  ),
+
   "z-index": (
     "prefix": "zi",
     "properties": (

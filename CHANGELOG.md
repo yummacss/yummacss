@@ -63,6 +63,7 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Add **Transition Property** utilities
 - Add **Translate** utilities
 - Add **Vertical Align** utilities
+- Add **Visibility** utilities
 - Add **Whitespace** utilities
 - Add `_color-utilities.scss`, `_create-utilities.scss`, `_extend-utilities.scss` and `_scale-utilities.scss` partial files
 - Add `_create-values.scss` file
