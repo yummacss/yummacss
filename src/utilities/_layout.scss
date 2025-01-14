@@ -8,7 +8,7 @@ $yma-layout-utils: (
     "properties": (
       "aspect-ratio",
     ),
-    "slug": "",
+    "slug": "aspect-ratio",
     "values": (
       "auto": auto,
       "l": "16/9",
@@ -21,7 +21,7 @@ $yma-layout-utils: (
     "properties": (
       "clear",
     ),
-    "slug": "",
+    "slug": "clear",
     "values": (
       "is": inline-start,
       "ie": inline-end,
@@ -37,7 +37,7 @@ $yma-layout-utils: (
     "properties": (
       "columns",
     ),
-    "slug": "",
+    "slug": "columns",
     "values": (
       "1": 1,
       "2": 2,
@@ -63,7 +63,7 @@ $yma-layout-utils: (
     "properties": (
       "bottom",
     ),
-    "slug": "",
+    "slug": "direction#/bottom",
     "values": (
       "0": vars.$yma-direction * 0,
       "1": vars.$yma-direction,
@@ -91,7 +91,7 @@ $yma-layout-utils: (
     "properties": (
       "inset",
     ),
-    "slug": "",
+    "slug": "direction#/inset",
     "values": (
       "0": vars.$yma-direction * 0,
       "1": vars.$yma-direction,
@@ -120,7 +120,7 @@ $yma-layout-utils: (
       "left",
       "right",
     ),
-    "slug": "",
+    "slug": "direction#/inset-x",
     "values": (
       "0": vars.$yma-direction * 0,
       "1": vars.$yma-direction,
@@ -149,7 +149,7 @@ $yma-layout-utils: (
       "top",
       "bottom",
     ),
-    "slug": "",
+    "slug": "direction#/inset-y",
     "values": (
       "0": vars.$yma-direction * 0,
       "1": vars.$yma-direction,
@@ -177,7 +177,7 @@ $yma-layout-utils: (
     "properties": (
       "isolation",
     ),
-    "slug": "",
+    "slug": "isolation",
     "values": (
       "auto": auto,
       "i": isolate,
@@ -189,7 +189,7 @@ $yma-layout-utils: (
     "properties": (
       "left",
     ),
-    "slug": "",
+    "slug": "direction#/left",
     "values": (
       "0": vars.$yma-direction * 0,
       "1": vars.$yma-direction,
@@ -217,7 +217,7 @@ $yma-layout-utils: (
     "properties": (
       "right",
     ),
-    "slug": "",
+    "slug": "direction#/right",
     "values": (
       "0": vars.$yma-direction * 0,
       "1": vars.$yma-direction,
@@ -245,7 +245,7 @@ $yma-layout-utils: (
     "properties": (
       "top",
     ),
-    "slug": "",
+    "slug": "direction#/top",
     "values": (
       "0": vars.$yma-direction * 0,
       "1": vars.$yma-direction,
@@ -273,7 +273,7 @@ $yma-layout-utils: (
     "properties": (
       "display",
     ),
-    "slug": "",
+    "slug": "display",
     "values": (
       "b": block,
       "f": flex,
@@ -294,7 +294,7 @@ $yma-layout-utils: (
     "properties": (
       "float",
     ),
-    "slug": "",
+    "slug": "float",
     "values": (
       "ie": inline-end,
       "is": inline-start,
@@ -309,7 +309,7 @@ $yma-layout-utils: (
     "properties": (
       "object-fit",
     ),
-    "slug": "",
+    "slug": "object-fit",
     "values": (
       "c": cover,
       "f": fill,
@@ -323,7 +323,7 @@ $yma-layout-utils: (
     "properties": (
       "object-position",
     ),
-    "slug": "",
+    "slug": "object-position",
     "values": (
       "b": bottom,
       "c": center,
@@ -342,7 +342,7 @@ $yma-layout-utils: (
     "properties": (
       "overflow",
     ),
-    "slug": "",
+    "slug": "overflow",
     "values": (
       "auto": auto,
       "c": clip,
@@ -357,7 +357,7 @@ $yma-layout-utils: (
     "properties": (
       "overflow-x",
     ),
-    "slug": "",
+    "slug": "overflow/#overflow-x",
     "values": (
       "auto": auto,
       "c": clip,
@@ -372,7 +372,7 @@ $yma-layout-utils: (
     "properties": (
       "overflow-y",
     ),
-    "slug": "",
+    "slug": "overflow/#overflow-y",
     "values": (
       "auto": auto,
       "c": clip,
@@ -387,7 +387,7 @@ $yma-layout-utils: (
     "properties": (
       "position",
     ),
-    "slug": "",
+    "slug": "position",
     "values": (
       "a": absolute,
       "f": fixed,
@@ -402,7 +402,7 @@ $yma-layout-utils: (
     "properties": (
       "visibility",
     ),
-    "slug": "",
+    "slug": "visibility",
     "values": (
       "c": collapse,
       "i": invisible,
@@ -415,7 +415,7 @@ $yma-layout-utils: (
     "properties": (
       "z-index",
     ),
-    "slug": "",
+    "slug": "z-index",
     "values": (
       "0": 0,
       "10": 10,
