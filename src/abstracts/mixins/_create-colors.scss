@@ -9,15 +9,15 @@
 }
 
 @mixin shade-scaling($property, $prefix, $k, $v, $percentage) {
-  @for $i from 1 through 12 {
+  @for $i from 1 through 13 {
     @if $i <= 6 {
       .#{$prefix}-#{$k}-#{$i} {
-        #{$property}: color.mix(white, $v, $i * $percentage);
+        #{$property}: color.mix(white, $v, (7 - $i) * $percentage);
       }
 
       .h\:#{$prefix}-#{$k}-#{$i} {
         &:hover {
-          #{$property}: color.mix(white, $v, $i * $percentage);
+          #{$property}: color.mix(white, $v, (7 - $i) * $percentage);
         }
       }
     } @else if $i == 7 {
@@ -31,11 +31,11 @@
         }
       }
     } @else {
-      .#{$prefix}-#{$k}-#{$i} {
+      .#{$prefix}-#{$k}-#{$i - 1} {
         #{$property}: color.mix(black, $v, ($i - 7) * $percentage);
       }
 
-      .h\:#{$prefix}-#{$k}-#{$i} {
+      .h\:#{$prefix}-#{$k}-#{$i - 1} {
         &:hover {
           #{$property}: color.mix(black, $v, ($i - 7) * $percentage);
         }
