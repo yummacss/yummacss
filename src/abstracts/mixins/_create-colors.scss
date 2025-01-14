@@ -6,12 +6,6 @@
       #{$property}: $v;
     }
   }
-
-  .f\:#{$prefix}-#{$k} {
-    &:focus {
-      #{$property}: $v;
-    }
-  }
 }
 
 @mixin shade-scaling($property, $prefix, $k, $v, $percentage) {
@@ -26,12 +20,6 @@
           #{$property}: color.mix(white, $v, $i * $percentage);
         }
       }
-
-      .f\:#{$prefix}-#{$k}-#{$i} {
-        &:focus {
-          #{$property}: color.mix(white, $v, $i * $percentage);
-        }
-      }
     } @else if $i == 7 {
       .#{$prefix}-#{$k} {
         #{$property}: $v;
@@ -42,12 +30,6 @@
           #{$property}: $v;
         }
       }
-
-      .f\:#{$prefix}-#{$k} {
-        &:focus {
-          #{$property}: $v;
-        }
-      }
     } @else {
       .#{$prefix}-#{$k}-#{$i} {
         #{$property}: color.mix(black, $v, ($i - 7) * $percentage);
@@ -55,12 +37,6 @@
 
       .h\:#{$prefix}-#{$k}-#{$i} {
         &:hover {
-          #{$property}: color.mix(black, $v, ($i - 7) * $percentage);
-        }
-      }
-
-      .f\:#{$prefix}-#{$k}-#{$i} {
-        &:focus {
           #{$property}: color.mix(black, $v, ($i - 7) * $percentage);
         }
       }
