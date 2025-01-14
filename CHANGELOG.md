@@ -65,7 +65,7 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Add **Vertical Align** utilities
 - Add **Visibility** utilities
 - Add **Whitespace** utilities
-- Add `_color-utilities.scss`, `_create-utilities.scss`, `_extend-utilities.scss` and `_scale-utilities.scss` partial files
+- Add `_create-colors.scss`, `_create-utilities.scss`, `_extend-utilities.scss` and `_scale-utilities.scss` partial files
 - Add `_create-values.scss` file
 - Add `_dimension.scss`, `_height.scss`, `_margin.scss`, `_padding.scss`, `_spacing.scss` and `_width.scss` files
 - Add `_index.scss` files
@@ -93,7 +93,7 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Rename `gulpfile.js` file name to `gulpfile.mjs`
 - Rename `index.scss` to `yummacss.scss`
 - Rename `src\abstracts\_layout.scss` to `src\abstracts\_container.scss`
-- Rename `src\abstracts\mixins\_color.scss` to `src\abstracts\mixins\_color-utilities.scss`
+- Rename `src\abstracts\mixins\_color.scss` to `src\abstracts\mixins\_create-colors.scss`
 - Rename `yummacss-cli` file to `yumma-cli`
 - Rename the `*-variants()` mixins to `*-scaling()`
 - Rework **Box Model** utilities generation

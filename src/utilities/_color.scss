@@ -75,7 +75,7 @@ $yma-color-utils: (
   $prefix: map-get($map, "prefix");
 
   @each $k, $v in map.$yma-theme {
-    @include mix.color-scaling($property, $prefix, $k, $v);
+    @include mix.mod-color-scaling($property, $prefix, $k, $v);
 
     @if (fun.ignore-neutral($v, map.$yma-theme)) {
       @include mix.shade-scaling($property, $prefix, $k, $v, 14%);
