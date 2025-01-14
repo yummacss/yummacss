@@ -15,7 +15,6 @@
 @mixin shade-scaling($property, $prefix, $k, $v, $percentage) {
   @for $i from 1 through 12 {
     @if $i <= 6 {
-      // Light shades (1-6)
       .#{$prefix}-#{$k}-#{$i} {
         #{$property}: color.mix(white, $v, $i * $percentage);
       }
@@ -26,7 +25,6 @@
         }
       }
     } @else if $i == 7 {
-      // Base color
       .#{$prefix}-#{$k} {
         #{$property}: $v;
       }
@@ -37,7 +35,6 @@
         }
       }
     } @else {
-      // Dark shades (7-12)
       .#{$prefix}-#{$k}-#{$i} {
         #{$property}: color.mix(black, $v, ($i - 7) * $percentage);
       }
@@ -50,4 +47,3 @@
     }
   }
 }
-
