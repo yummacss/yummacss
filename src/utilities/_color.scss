@@ -7,66 +7,79 @@ $yma-color-utils: (
   "accent-color": (
     "prefix": "ac",
     "property": "accent-color",
+    "slug": "accent-color",
   ),
 
   "background-color": (
     "prefix": "bg",
     "property": "background-color",
+    "slug": "background-color",
   ),
 
   "border-color": (
     "prefix": "bc",
     "property": "border-color",
+    "slug": "border-color",
   ),
 
   "border-bottom-color": (
     "prefix": "bc",
     "property": "border-bottom-color",
+    "slug": "border/#border-bottom-color",
   ),
 
   "border-left-color": (
     "prefix": "bc",
     "property": "border-left-color",
+    "slug": "border/#border-left-color",
   ),
 
   "border-right-color": (
     "prefix": "bc",
     "property": "border-right-color",
+    "slug": "border/#border-right-color",
   ),
 
   "border-top-color": (
     "prefix": "bc",
     "property": "border-top-color",
+    "slug": "border/#border-top-color",
   ),
 
   "caret-color": (
     "prefix": "cc",
     "property": "caret-color",
+    "slug": "caret-color",
   ),
 
   "color": (
     "prefix": "tc",
     "property": "color",
+    "slug": "color",
   ),
 
   "fill": (
     "prefix": "f",
     "property": "fill",
+    "slug": "fill",
   ),
 
   "outline-color": (
     "prefix": "oc",
     "property": "outline-color",
+    "slug": "outline/outline-color",
   ),
 
   "stroke": (
     "prefix": "s",
     "property": "stroke",
+    "slug": "stroke",
   ),
 
   "text-decoration-color": (
     "prefix": "tdc",
     "property": "text-decoration-color",
+    "slug": "text-decoration-color",
   ),
 );
 
