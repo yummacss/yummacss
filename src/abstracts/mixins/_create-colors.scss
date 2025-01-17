@@ -1,6 +1,10 @@
 @use "sass:color";
 
 @mixin mod-color-scaling($property, $prefix, $k, $v) {
+  .#{$prefix}-#{$k} {
+    #{$property}: $v;
+  }
+
   .h\:#{$prefix}-#{$k} {
     &:hover {
       #{$property}: $v;
@@ -20,17 +24,7 @@
           #{$property}: color.mix(white, $v, (7 - $i) * $percentage);
         }
       }
-    } @else if $i == 7 {
-      .#{$prefix}-#{$k} {
-        #{$property}: $v;
-      }
-
-      .h\:#{$prefix}-#{$k} {
-        &:hover {
-          #{$property}: $v;
-        }
-      }
-    } @else {
+    } @else if $i > 7 {
       .#{$prefix}-#{$k}-#{$i - 1} {
         #{$property}: color.mix(black, $v, ($i - 7) * $percentage);
       }
