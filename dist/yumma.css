@@ -112660,6 +112660,14 @@ summary {
   place-content: space-evenly;
 }
 
+.pc-st {
+  place-content: stretch;
+}
+
+.h\:pc-st:hover {
+  place-content: stretch;
+}
+
 @media (min-width: 640px) {
   .sm\:pc-b {
     place-content: baseline;
@@ -112681,6 +112689,9 @@ summary {
   }
   .sm\:pc-se {
     place-content: space-evenly;
+  }
+  .sm\:pc-st {
+    place-content: stretch;
   }
 }
 @media (min-width: 768px) {
@@ -112705,6 +112716,9 @@ summary {
   .md\:pc-se {
     place-content: space-evenly;
   }
+  .md\:pc-st {
+    place-content: stretch;
+  }
 }
 @media (min-width: 1024px) {
   .lg\:pc-b {
@@ -112727,6 +112741,9 @@ summary {
   }
   .lg\:pc-se {
     place-content: space-evenly;
+  }
+  .lg\:pc-st {
+    place-content: stretch;
   }
 }
 @media (min-width: 1280px) {
@@ -112751,6 +112768,9 @@ summary {
   .xl\:pc-se {
     place-content: space-evenly;
   }
+  .xl\:pc-st {
+    place-content: stretch;
+  }
 }
 @media (min-width: 1536px) {
   .xxl\:pc-b {
@@ -112773,6 +112793,9 @@ summary {
   }
   .xxl\:pc-se {
     place-content: space-evenly;
+  }
+  .xxl\:pc-st {
+    place-content: stretch;
   }
 }
 .pi-b {
