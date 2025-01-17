@@ -177289,11 +177289,11 @@ summary {
   font-size: 1.25rem;
 }
 
-.fs-2xl {
+.fs-xxl {
   font-size: 1.5rem;
 }
 
-.h\:fs-2xl:hover {
+.h\:fs-xxl:hover {
   font-size: 1.5rem;
 }
 
@@ -177369,7 +177369,7 @@ summary {
   .sm\:fs-xl {
     font-size: 1.25rem;
   }
-  .sm\:fs-2xl {
+  .sm\:fs-xxl {
     font-size: 1.5rem;
   }
   .sm\:fs-3xl {
@@ -177410,7 +177410,7 @@ summary {
   .md\:fs-xl {
     font-size: 1.25rem;
   }
-  .md\:fs-2xl {
+  .md\:fs-xxl {
     font-size: 1.5rem;
   }
   .md\:fs-3xl {
@@ -177451,7 +177451,7 @@ summary {
   .lg\:fs-xl {
     font-size: 1.25rem;
   }
-  .lg\:fs-2xl {
+  .lg\:fs-xxl {
     font-size: 1.5rem;
   }
   .lg\:fs-3xl {
@@ -177492,7 +177492,7 @@ summary {
   .xl\:fs-xl {
     font-size: 1.25rem;
   }
-  .xl\:fs-2xl {
+  .xl\:fs-xxl {
     font-size: 1.5rem;
   }
   .xl\:fs-3xl {
@@ -177533,7 +177533,7 @@ summary {
   .xxl\:fs-xl {
     font-size: 1.25rem;
   }
-  .xxl\:fs-2xl {
+  .xxl\:fs-xxl {
     font-size: 1.5rem;
   }
   .xxl\:fs-3xl {
