@@ -113960,20 +113960,20 @@ summary {
   grid-auto-flow: column;
 }
 
+.gaf-cd {
+  grid-auto-flow: column dense;
+}
+
+.h\:gaf-cd:hover {
+  grid-auto-flow: column dense;
+}
+
 .gaf-d {
   grid-auto-flow: dense;
 }
 
 .h\:gaf-d:hover {
   grid-auto-flow: dense;
-}
-
-.gaf-dr {
-  grid-auto-flow: dense row;
-}
-
-.h\:gaf-dr:hover {
-  grid-auto-flow: dense row;
 }
 
 .gaf-r {
@@ -113996,11 +113996,11 @@ summary {
   .sm\:gaf-c {
     grid-auto-flow: column;
   }
+  .sm\:gaf-cd {
+    grid-auto-flow: column dense;
+  }
   .sm\:gaf-d {
     grid-auto-flow: dense;
-  }
-  .sm\:gaf-dr {
-    grid-auto-flow: dense row;
   }
   .sm\:gaf-r {
     grid-auto-flow: row;
@@ -114013,11 +114013,11 @@ summary {
   .md\:gaf-c {
     grid-auto-flow: column;
   }
+  .md\:gaf-cd {
+    grid-auto-flow: column dense;
+  }
   .md\:gaf-d {
     grid-auto-flow: dense;
-  }
-  .md\:gaf-dr {
-    grid-auto-flow: dense row;
   }
   .md\:gaf-r {
     grid-auto-flow: row;
@@ -114030,11 +114030,11 @@ summary {
   .lg\:gaf-c {
     grid-auto-flow: column;
   }
+  .lg\:gaf-cd {
+    grid-auto-flow: column dense;
+  }
   .lg\:gaf-d {
     grid-auto-flow: dense;
-  }
-  .lg\:gaf-dr {
-    grid-auto-flow: dense row;
   }
   .lg\:gaf-r {
     grid-auto-flow: row;
@@ -114047,11 +114047,11 @@ summary {
   .xl\:gaf-c {
     grid-auto-flow: column;
   }
+  .xl\:gaf-cd {
+    grid-auto-flow: column dense;
+  }
   .xl\:gaf-d {
     grid-auto-flow: dense;
-  }
-  .xl\:gaf-dr {
-    grid-auto-flow: dense row;
   }
   .xl\:gaf-r {
     grid-auto-flow: row;
@@ -114064,11 +114064,11 @@ summary {
   .xxl\:gaf-c {
     grid-auto-flow: column;
   }
+  .xxl\:gaf-cd {
+    grid-auto-flow: column dense;
+  }
   .xxl\:gaf-d {
     grid-auto-flow: dense;
-  }
-  .xxl\:gaf-dr {
-    grid-auto-flow: dense row;
   }
   .xxl\:gaf-r {
     grid-auto-flow: row;

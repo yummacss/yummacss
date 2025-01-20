@@ -79,8 +79,8 @@ $yma-grid-utils: (
     "slug": "grid-auto-flow",
     "values": (
       "c": column,
+      "cd": column dense,
       "d": dense,
-      "dr": dense row,
       "r": row,
       "rd": row dense,
     ),
