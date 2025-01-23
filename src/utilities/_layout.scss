@@ -59,11 +59,11 @@ $yma-layout-utils: (
   ),
 
   "bottom": (
-    "prefix": "d-b",
+    "prefix": "bo",
     "properties": (
       "bottom",
     ),
-    "slug": "direction#/bottom",
+    "slug": "bottom-left-right-top#/bottom",
     "values": (
       "0": vars.$yma-direction * 0,
       "1": vars.$yma-direction,
@@ -87,11 +87,11 @@ $yma-layout-utils: (
   ),
 
   "inset": (
-    "prefix": "d-i",
+    "prefix": "i",
     "properties": (
       "inset",
     ),
-    "slug": "direction#/inset",
+    "slug": "bottom-left-right-top#/inset",
     "values": (
       "0": vars.$yma-direction * 0,
       "1": vars.$yma-direction,
@@ -115,12 +115,12 @@ $yma-layout-utils: (
   ),
 
   "inset-x": (
-    "prefix": "d-ix",
+    "prefix": "ix",
     "properties": (
       "left",
       "right",
     ),
-    "slug": "direction#/inset-x",
+    "slug": "bottom-left-right-top#/inset-x",
     "values": (
       "0": vars.$yma-direction * 0,
       "1": vars.$yma-direction,
@@ -144,12 +144,12 @@ $yma-layout-utils: (
   ),
 
   "inset-y": (
-    "prefix": "d-iy",
+    "prefix": "iy",
     "properties": (
       "top",
       "bottom",
     ),
-    "slug": "direction#/inset-y",
+    "slug": "bottom-left-right-top#/inset-y",
     "values": (
       "0": vars.$yma-direction * 0,
       "1": vars.$yma-direction,
@@ -185,11 +185,11 @@ $yma-layout-utils: (
   ),
 
   "left": (
-    "prefix": "d-l",
+    "prefix": "l",
     "properties": (
       "left",
     ),
-    "slug": "direction#/left",
+    "slug": "bottom-left-right-top#/left",
     "values": (
       "0": vars.$yma-direction * 0,
       "1": vars.$yma-direction,
@@ -213,11 +213,11 @@ $yma-layout-utils: (
   ),
 
   "right": (
-    "prefix": "d-r",
+    "prefix": "r",
     "properties": (
       "right",
     ),
-    "slug": "direction#/right",
+    "slug": "bottom-left-right-top#/right",
     "values": (
       "0": vars.$yma-direction * 0,
       "1": vars.$yma-direction,
@@ -241,11 +241,11 @@ $yma-layout-utils: (
   ),
 
   "top": (
-    "prefix": "d-t",
+    "prefix": "t",
     "properties": (
       "top",
     ),
-    "slug": "direction#/top",
+    "slug": "bottom-left-right-top#/top",
     "values": (
       "0": vars.$yma-direction * 0,
       "1": vars.$yma-direction,
