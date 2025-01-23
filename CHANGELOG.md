@@ -88,6 +88,7 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Move `yumma-cli` to `bin\yumma-cli.js`
 - Optimize `dist\yumma.css` file performance
 - Optimize `dist\yumma.min.css` file performance
+- Refactor **Directions** `d-` prefix utility syntax
 - Rename `_base.scss` to `base\_stylecent.scss`
 - Rename `_core.scss` to `coreless.scss`
 - Rename `_functions.scss` to `_ignore-neutral.scss`
