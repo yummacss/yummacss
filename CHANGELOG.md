@@ -72,6 +72,7 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Add `$yma-box-shadow-*` variables
 - Add `$yma-font-size-*` variables
 - Add `coreless.scss` file
+- Add `rad-b-*` and `rad-t` **Border Radius** utilities
 - Add `src\abstracts\functions` folder
 - Add `utilities\maps` folder
 - Add `yummacss.config.js` file
