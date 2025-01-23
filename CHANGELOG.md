@@ -101,11 +101,11 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Rename the `*-variants()` mixins to `*-scaling()`
 - Rework **Box Model** utilities generation
 - Update **Dimension** utilities syntax from `dim-*` to `d-*`
-- Update **Direction Bottom** utilities syntax from `dir-b-*` to `d-b-*`
-- Update **Direction Inset** utilities syntax from `dir-i-*` to `d-i-*`
-- Update **Direction Left** utilities syntax from `dir-l-*` to `d-l-*`
-- Update **Direction Right** utilities syntax from `dir-r-*` to `d-r-*`
-- Update **Direction Top** utilities syntax from `dir-t-*` to `d-t-*`
+- Update **Direction Bottom** utilities syntax from `dir-b-*` to `bo-*`
+- Update **Direction Inset** utilities syntax from `dir-i-*` to `i-*`
+- Update **Direction Left** utilities syntax from `dir-l-*` to `l-*`
+- Update **Direction Right** utilities syntax from `dir-r-*` to `r-*`
+- Update **Direction Top** utilities syntax from `dir-t-*` to `t-*`
 - Update **Direction** utilities to utilize rem as unit
 - Update **Font Size** initial value from `0.75rem` to `0.25rem`
 - Update **Max Dimension** utilities syntax from `max-dim-*` to `max-d-*`
