@@ -36,6 +36,26 @@ $yma-border-utils: (
       "half": 50%,
     ),
   ),
+  
+  "border-bottom-radius": (
+    "prefix": "rad-b",
+    "properties": (
+      "border-bottom-left-radius",
+      "border-bottom-right-radius",
+    ),
+    "slug": "border-radius/#border-bottom-radius",
+    "values": (
+      "0": vars.$yma-border-radius * 0,
+      "1": vars.$yma-border-radius,
+      "2": vars.$yma-border-radius * 2,
+      "3": vars.$yma-border-radius * 3,
+      "4": vars.$yma-border-radius * 4,
+      "5": vars.$yma-border-radius * 5,
+      "6": vars.$yma-border-radius * 6,
+      "7": vars.$yma-border-radius * 7,
+      "8": vars.$yma-border-radius * 8,
+    ),
+  ),
 
   "border-bottom-left-radius": (
     "prefix": "rad-bl",
@@ -62,6 +82,26 @@ $yma-border-utils: (
       "border-bottom-right-radius",
     ),
     "slug": "border-radius/#border-bottom-right-radius",
+    "values": (
+      "0": vars.$yma-border-radius * 0,
+      "1": vars.$yma-border-radius,
+      "2": vars.$yma-border-radius * 2,
+      "3": vars.$yma-border-radius * 3,
+      "4": vars.$yma-border-radius * 4,
+      "5": vars.$yma-border-radius * 5,
+      "6": vars.$yma-border-radius * 6,
+      "7": vars.$yma-border-radius * 7,
+      "8": vars.$yma-border-radius * 8,
+    ),
+  ),
+
+  "border-top-radius": (
+    "prefix": "rad-t",
+    "properties": (
+      "border-top-left-radius",
+      "border-top-right-radius",
+    ),
+    "slug": "border-radius/#border-top-radius",
     "values": (
       "0": vars.$yma-border-radius * 0,
       "1": vars.$yma-border-radius,
