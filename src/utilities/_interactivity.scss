@@ -98,7 +98,7 @@ $yma-interactivity-utils: (
   ),
 
   "scroll-margin-bottom": (
-    "prefix": "s-mb",
+    "prefix": "smb",
     "properties": (
       "scroll-margin-bottom",
     ),
@@ -107,7 +107,7 @@ $yma-interactivity-utils: (
   ),
 
   "scroll-margin-inline-start": (
-    "prefix": "s-mis",
+    "prefix": "smis",
     "properties": (
       "scroll-margin-inline-start",
     ),
@@ -116,7 +116,7 @@ $yma-interactivity-utils: (
   ),
 
   "scroll-margin-left": (
-    "prefix": "s-ml",
+    "prefix": "sml",
     "properties": (
       "scroll-margin-left",
     ),
@@ -124,7 +124,7 @@ $yma-interactivity-utils: (
     "values": maps.$yma-margin-map,
   ),
   "scroll-margin-right": (
-    "prefix": "s-mr",
+    "prefix": "smr",
     "properties": (
       "scroll-margin-right",
     ),
@@ -133,7 +133,7 @@ $yma-interactivity-utils: (
   ),
 
   "scroll-margin-top": (
-    "prefix": "s-mt",
+    "prefix": "smt",
     "properties": (
       "scroll-margin-top",
     ),
@@ -142,7 +142,7 @@ $yma-interactivity-utils: (
   ),
 
   "scroll-margin-inline-end": (
-    "prefix": "s-mie",
+    "prefix": "smie",
     "properties": (
       "scroll-margin-inline-end",
     ),
@@ -151,7 +151,7 @@ $yma-interactivity-utils: (
   ),
 
   "scroll-margin-x": (
-    "prefix": "s-mx",
+    "prefix": "smx",
     "properties": (
       "scroll-margin-left",
       "scroll-margin-right",
@@ -161,7 +161,7 @@ $yma-interactivity-utils: (
   ),
 
   "scroll-margin-y": (
-    "prefix": "s-my",
+    "prefix": "smy",
     "properties": (
       "scroll-margin-bottom",
       "scroll-margin-top",
@@ -171,7 +171,7 @@ $yma-interactivity-utils: (
   ),
 
   "scroll-padding": (
-    "prefix": "sm",
+    "prefix": "sp",
     "properties": (
       "scroll-padding",
     ),
@@ -180,7 +180,7 @@ $yma-interactivity-utils: (
   ),
 
   "scroll-padding-bottom": (
-    "prefix": "s-pb",
+    "prefix": "spb",
     "properties": (
       "scroll-padding-bottom",
     ),
@@ -189,7 +189,7 @@ $yma-interactivity-utils: (
   ),
 
   "scroll-padding-inline-start": (
-    "prefix": "s-pis",
+    "prefix": "spis",
     "properties": (
       "scroll-padding-inline-start",
     ),
@@ -198,7 +198,7 @@ $yma-interactivity-utils: (
   ),
 
   "scroll-padding-left": (
-    "prefix": "s-pl",
+    "prefix": "spl",
     "properties": (
       "scroll-padding-left",
     ),
@@ -207,7 +207,7 @@ $yma-interactivity-utils: (
   ),
 
   "scroll-padding-right": (
-    "prefix": "s-pr",
+    "prefix": "spr",
     "properties": (
       "scroll-padding-right",
     ),
@@ -216,7 +216,7 @@ $yma-interactivity-utils: (
   ),
 
   "scroll-padding-top": (
-    "prefix": "s-pt",
+    "prefix": "spt",
     "properties": (
       "scroll-padding-top",
     ),
@@ -225,7 +225,7 @@ $yma-interactivity-utils: (
   ),
 
   "scroll-padding-inline-end": (
-    "prefix": "s-pie",
+    "prefix": "spie",
     "properties": (
       "scroll-padding-inline-end",
     ),
@@ -234,7 +234,7 @@ $yma-interactivity-utils: (
   ),
 
   "scroll-padding-x": (
-    "prefix": "s-px",
+    "prefix": "spx",
     "properties": (
       "scroll-padding-left",
       "scroll-padding-right",
@@ -244,7 +244,7 @@ $yma-interactivity-utils: (
   ),
 
   "scroll-padding-y": (
-    "prefix": "s-py",
+    "prefix": "spy",
     "properties": (
       "scroll-padding-bottom",
       "scroll-padding-top",
