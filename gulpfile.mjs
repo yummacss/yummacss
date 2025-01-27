@@ -5,7 +5,6 @@ import rename from "gulp-rename";
 import clean from "gulp-clean-css";
 import debug from "gulp-debug";
 import { config } from "./yummacss.config.js";
-import { jsonFile } from "./apifile.js";
 
 const { series, src, dest } = gulp;
 const sass = gulpSass(dartSass);
@@ -32,4 +31,4 @@ function minifiedFile() {
     .pipe(dest("dist"));
 }
 
-export const build = series(standardFile, minifiedFile, jsonFile);
+export const build = series(standardFile, minifiedFile);
