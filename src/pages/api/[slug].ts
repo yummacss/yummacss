@@ -2,22 +2,22 @@ import { NextApiRequest, NextApiResponse } from "next";
 import { getData } from "@/util/getData";
 
 const handler = (req: NextApiRequest, res: NextApiResponse) => {
-  const { classLink } = req.query;
+  const { slug } = req.query;
 
-  if (!classLink || typeof classLink !== "string") {
+  if (!slug || typeof slug !== "string") {
     return res.status(400).json({ error: "Please specify a utility class" });
   }
 
   const data = getData();
 
   const classData = data.filter(
-    (item: { classLink: string }) => item.classLink === classLink
+    (item: { slug: string }) => item.slug === slug
   );
 
   if (classData.length === 0) {
     return res
       .status(404)
-      .json({ error: `The '${classLink}' utility was not found` });
+      .json({ error: `The '${slug}' utility was not found` });
   }
 
   res.status(200).json(classData);
