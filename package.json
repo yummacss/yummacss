@@ -1,6 +1,6 @@
 {
   "name": "yumma-css-api",
-  "description": "Provides an easy way to access all the fundamental Yumma CSS utility classes.",
+  "description": "Get all of the Yumma CSS utilities through an API.",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -10,16 +10,16 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@types/sass": "^1.45.0",
     "next": "15.1.2",
-    "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "tinycolor2": "^1.6.0"
+    "react": "^18.2.0",
+    "sass": "^1.83.4"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "@types/tinycolor2": "^1.4.6",
     "eslint": "^8",
     "eslint-config-next": "15.0.3",
     "typescript": "^5"
