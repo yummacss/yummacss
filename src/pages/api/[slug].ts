@@ -5,7 +5,7 @@ const handler = (req: NextApiRequest, res: NextApiResponse) => {
   const { slug } = req.query;
 
   if (!slug || typeof slug !== "string") {
-    return res.status(400).json({ error: "Please specify a utility class" });
+    return res.status(400).json({ error: "No utility class was specified" });
   }
 
   const data = getData();
