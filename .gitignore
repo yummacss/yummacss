@@ -9,3 +9,7 @@ project-hierarchy.txt
 
 # vs code
 .vscode/
+
+# api
+apifile.js
+dist/*.json
