@@ -1,5 +1,5 @@
 import fs from "fs";
-import sass from "sass";
+import * as sass from "sass";
 import CleanCSS from "clean-css";
 
 export async function buildCSS(config, scssEntryPoint, outputPath) {

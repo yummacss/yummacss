@@ -1,7 +1,8 @@
 @use "sass:color";
+@use "sass:map";
 @use "../abstracts/mixins" as mix;
 @use "../abstracts/functions" as fun;
-@use "../abstracts/_theme" as map;
+@use "../abstracts/_theme" as theme;
 
 $yma-color-utils: (
   "accent-color": (
@@ -84,13 +85,13 @@ $yma-color-utils: (
 );
 
 @each $utility, $map in $yma-color-utils {
-  $property: map-get($map, "property");
-  $prefix: map-get($map, "prefix");
+  $property: map.get($map, "property");
+  $prefix: map.get($map, "prefix");
 
-  @each $k, $v in map.$yma-theme {
+  @each $k, $v in theme.$yma-theme {
     @include mix.mod-color-scaling($property, $prefix, $k, $v);
 
-    @if (fun.ignore-neutral($v, map.$yma-theme)) {
+    @if (fun.ignore-neutral($v, theme.$yma-theme)) {
       @include mix.shade-scaling($property, $prefix, $k, $v, 14%);
     }
   }

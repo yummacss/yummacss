@@ -1,4 +1,5 @@
 @use "sass:math";
+@use "sass:map";
 @use "../abstracts/variables" as vars;
 @use "../abstracts/mixins/" as mix;
 
@@ -336,7 +337,7 @@ $yma-grid-utils: (
 );
 
 @each $properties, $map in $yma-grid-utils {
-  $prefix: map-get($map, "prefix");
+  $prefix: map.get($map, "prefix");
 
   @include mix.create-utilities($map, $prefix, $properties);
 }

@@ -1,8 +1,9 @@
 @use "../theme" as *;
+@use "sass:map";
 
 // prettier-ignore
 @function ignore-neutral($v, $yma-theme) {
-  @return $v != map-get($yma-theme, "black") 
-      and $v != map-get($yma-theme, "white") 
-      and $v != map-get($yma-theme, "transparent");
+  @return $v != map.get($yma-theme, "black") 
+      and $v != map.get($yma-theme, "white") 
+      and $v != map.get($yma-theme, "transparent");
 }

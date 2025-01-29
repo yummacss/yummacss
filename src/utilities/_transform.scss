@@ -1,4 +1,5 @@
 @use "sass:math";
+@use "sass:map";
 @use "../abstracts/variables" as vars;
 @use "../abstracts/mixins/" as mix;
 @use "../utilities/maps/" as maps;
@@ -184,8 +185,8 @@ $yma-transform-utils: (
 );
 
 @each $name, $map in $yma-transform-utils {
-  $prefix: map-get($map, "prefix");
-  $properties: map-get($map, "properties");
+  $prefix: map.get($map, "prefix");
+  $properties: map.get($map, "properties");
 
   @include mix.create-utilities($map, $prefix, $properties);
 }

@@ -1,20 +1,25 @@
 @use "../breakpoints" as bp;
+@use "sass:map";
 
 @mixin create-utilities($map, $prefix, $properties) {
-  $function: if(map-has-key($map, "property-function"), map-get($map, "property-function"), null);
+  $function: if(
+    map.has-key($map, "property-function"),
+    map.get($map, "property-function"),
+    null
+  );
 
   // Base utilities
-  @each $k, $v in map-get($map, "values") {
+  @each $k, $v in map.get($map, "values") {
     .#{$prefix}-#{$k} {
       @each $property in $properties {
-        #{$property}: if($function != null, $function + '(' + $v + ')', $v);
+        #{$property}: if($function != null, $function + "(" + $v + ")", $v);
       }
     }
 
     // Hover variants
     .h\:#{$prefix}-#{$k}:hover {
       @each $property in $properties {
-        #{$property}: if($function != null, $function + '(' + $v + ')', $v);
+        #{$property}: if($function != null, $function + "(" + $v + ")", $v);
       }
     }
   }
@@ -22,10 +27,10 @@
   // Responsive variants
   @each $bp, $bp-value in bp.$yma-breakpoints {
     @media (min-width: $bp-value) {
-      @each $k, $v in map-get($map, "values") {
+      @each $k, $v in map.get($map, "values") {
         .#{$bp}\:#{$prefix}-#{$k} {
           @each $property in $properties {
-            #{$property}: if($function != null, $function + '(' + $v + ')', $v);
+            #{$property}: if($function != null, $function + "(" + $v + ")", $v);
           }
         }
       }

@@ -1,4 +1,5 @@
 @use "sass:math";
+@use "sass:map";
 @use "../abstracts/mixins/" as mix;
 
 $yma-transition-utils: (
@@ -56,8 +57,8 @@ $yma-transition-utils: (
 );
 
 @each $name, $map in $yma-transition-utils {
-  $prefix: map-get($map, "prefix");
-  $properties: map-get($map, "properties");
+  $prefix: map.get($map, "prefix");
+  $properties: map.get($map, "properties");
 
   @include mix.create-utilities($map, $prefix, $properties);
 }

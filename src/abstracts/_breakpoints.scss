@@ -1,3 +1,5 @@
+@use "sass:map";
+
 $yma-breakpoints: (
   "sm": 640px,
   "md": 768px,
@@ -7,31 +9,31 @@ $yma-breakpoints: (
 );
 
 @mixin sm {
-  @media (min-width: map-get($yma-breakpoints, "sm")) {
+  @media (min-width: map.get($yma-breakpoints, "sm")) {
     @content;
   }
 }
 
 @mixin md {
-  @media (min-width: map-get($yma-breakpoints, "md")) {
+  @media (min-width: map.get($yma-breakpoints, "md")) {
     @content;
   }
 }
 
 @mixin lg {
-  @media (min-width: map-get($yma-breakpoints, "lg")) {
+  @media (min-width: map.get($yma-breakpoints, "lg")) {
     @content;
   }
 }
 
 @mixin xl {
-  @media (min-width: map-get($yma-breakpoints, "xl")) {
+  @media (min-width: map.get($yma-breakpoints, "xl")) {
     @content;
   }
 }
 
 @mixin xxl {
-  @media (min-width: map-get($yma-breakpoints, "xxl")) {
+  @media (min-width: map.get($yma-breakpoints, "xxl")) {
     @content;
   }
 }

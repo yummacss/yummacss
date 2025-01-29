@@ -1,4 +1,6 @@
 @use "sass:math";
+@use "sass:map";
+@use 'sass:meta';
 @use "../abstracts/variables" as vars;
 @use "../abstracts/mixins/" as mix;
 @use "../utilities/maps/" as maps;
@@ -330,14 +332,14 @@ $yma-box-model-utils: (
 );
 
 @each $name, $map in $yma-box-model-utils {
-  $prefix: map-get($map, "prefix");
-  $properties: map-get($map, "properties");
-  $values: map-get($map, "values");
+  $prefix: map.get($map, "prefix");
+  $properties: map.get($map, "properties");
+  $values: map.get($map, "values");
 
-  @if type-of($values) == "map" and map-get($values, "custom") {
+  @if meta.type-of($values) == "map" and map.get($values, "custom") {
     @include mix.create-spacing-utilities(
       $prefix,
-      map-get($values, "map"),
+      map.get($values, "map"),
       $properties
     );
   } @else {
