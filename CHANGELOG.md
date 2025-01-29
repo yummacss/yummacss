@@ -86,6 +86,7 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Migrate base styles functionality to config file
 - Migrate from `@import` to `@use` and `@forwards`
 - Migrate from Common Js to ESM
+- Migrate to Dart SCSS
 - Move `yumma-cli` to `bin\yumma-cli.js`
 - Optimize `dist\yumma.css` file performance
 - Optimize `dist\yumma.min.css` file performance
@@ -115,7 +116,6 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Update color generation logic
 - Update color shade percentage from 10% to 14%
 - Update color utility range from 1-6 to 1-12
-- Migrate from `npm` to `pnpm`
 
 ### Removed
 
