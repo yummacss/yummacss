@@ -12,4 +12,4 @@ project-hierarchy.txt
 
 # api
 apifile.js
-dist/*.json
+dist/yummacss.json
