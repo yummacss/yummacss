@@ -115,6 +115,7 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Update color generation logic
 - Update color shade percentage from 10% to 14%
 - Update color utility range from 1-6 to 1-12
+- Migrate from `npm` to `pnpm`
 
 ### Removed
 

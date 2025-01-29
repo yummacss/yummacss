@@ -180400,12 +180400,12 @@ summary {
   }
 }
 .ff-c {
-  font-family: Charter, Cambria, serif;
+  font-family: Charter, "Bitstream Charter", "Sitka Text", Cambria, serif;
   font-weight: 500;
 }
 
 .ff-m {
-  font-family: ui-monospace, Consolas, monospace;
+  font-family: "Nimbus Mono PS", "Courier New", monospace;
   font-weight: 500;
 }
 

@@ -21,17 +21,17 @@
   "license": "MIT",
   "type": "module",
   "dependencies": {
-    "commander": "^12.1.0"
+    "commander": "^13.1.0"
   },
   "devDependencies": {
     "clean-css": "^5.3.3",
+    "gulp": "^5.0.0",
     "gulp-clean-css": "^4.3.0",
     "gulp-debug": "^5.0.1",
     "gulp-rename": "^2.0.0",
-    "gulp-sass": "^5.1.0",
-    "gulp": "^4.0.2",
-    "purgecss": "^6.0.0",
-    "sass": "^1.62.1"
+    "gulp-sass": "^6.0.0",
+    "purgecss": "^7.0.2",
+    "sass": "^1.83.4"
   },
   "peerDependencies": {
     "gulp": "^4.0.2"
