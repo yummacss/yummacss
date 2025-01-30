@@ -56897,6 +56897,20 @@
   },
   {
     "slug": "bottom",
+    "util": "bo-full",
+    "prop": [
+      "bottom: 100%;"
+    ]
+  },
+  {
+    "slug": "bottom",
+    "util": "bo-half",
+    "prop": [
+      "bottom: 50%;"
+    ]
+  },
+  {
+    "slug": "bottom",
     "util": "bo-none",
     "prop": [
       "bottom: none;"
@@ -57019,6 +57033,20 @@
     "util": "i-16",
     "prop": [
       "inset: 4rem;"
+    ]
+  },
+  {
+    "slug": "inset",
+    "util": "i-full",
+    "prop": [
+      "inset: 100%;"
+    ]
+  },
+  {
+    "slug": "inset",
+    "util": "i-half",
+    "prop": [
+      "inset: 50%;"
     ]
   },
   {
@@ -57162,6 +57190,22 @@
     "prop": [
       "left: 4rem;",
       "right: 4rem;"
+    ]
+  },
+  {
+    "slug": "left",
+    "util": "ix-full",
+    "prop": [
+      "left: 100%;",
+      "right: 100%;"
+    ]
+  },
+  {
+    "slug": "left",
+    "util": "ix-half",
+    "prop": [
+      "left: 50%;",
+      "right: 50%;"
     ]
   },
   {
@@ -57310,6 +57354,22 @@
   },
   {
     "slug": "top",
+    "util": "iy-full",
+    "prop": [
+      "top: 100%;",
+      "bottom: 100%;"
+    ]
+  },
+  {
+    "slug": "top",
+    "util": "iy-half",
+    "prop": [
+      "top: 50%;",
+      "bottom: 50%;"
+    ]
+  },
+  {
+    "slug": "top",
     "util": "iy-none",
     "prop": [
       "top: none;",
@@ -57451,6 +57511,20 @@
   },
   {
     "slug": "left",
+    "util": "l-full",
+    "prop": [
+      "left: 100%;"
+    ]
+  },
+  {
+    "slug": "left",
+    "util": "l-half",
+    "prop": [
+      "left: 50%;"
+    ]
+  },
+  {
+    "slug": "left",
     "util": "l-none",
     "prop": [
       "left: none;"
@@ -57577,6 +57651,20 @@
   },
   {
     "slug": "right",
+    "util": "r-full",
+    "prop": [
+      "right: 100%;"
+    ]
+  },
+  {
+    "slug": "right",
+    "util": "r-half",
+    "prop": [
+      "right: 50%;"
+    ]
+  },
+  {
+    "slug": "right",
     "util": "r-none",
     "prop": [
       "right: none;"
@@ -57699,6 +57787,20 @@
     "util": "t-16",
     "prop": [
       "top: 4rem;"
+    ]
+  },
+  {
+    "slug": "top",
+    "util": "t-full",
+    "prop": [
+      "top: 100%;"
+    ]
+  },
+  {
+    "slug": "top",
+    "util": "t-half",
+    "prop": [
+      "top: 50%;"
     ]
   },
   {
