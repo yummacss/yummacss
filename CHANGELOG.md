@@ -82,6 +82,7 @@ All notable changes to the Yumma CSS will be documented in this file.
 ### Changes
 
 - Group related utilities and variants
+- Include `full` and `half` values for **Direction** utilities
 - Include the `column-dense `and `row-dense` values for **Grid Auto Flow**
 - Merge **Filters** and **Effects** subcategories into a **Effect** category
 - Migrate base styles functionality to config file

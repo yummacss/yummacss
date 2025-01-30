@@ -165384,6 +165384,22 @@ summary {
   bottom: 4rem;
 }
 
+.bo-full {
+  bottom: 100%;
+}
+
+.h\:bo-full:hover {
+  bottom: 100%;
+}
+
+.bo-half {
+  bottom: 50%;
+}
+
+.h\:bo-half:hover {
+  bottom: 50%;
+}
+
 .bo-none {
   bottom: none;
 }
@@ -165444,6 +165460,12 @@ summary {
   .sm\:bo-16 {
     bottom: 4rem;
   }
+  .sm\:bo-full {
+    bottom: 100%;
+  }
+  .sm\:bo-half {
+    bottom: 50%;
+  }
   .sm\:bo-none {
     bottom: none;
   }
@@ -165499,6 +165521,12 @@ summary {
   }
   .md\:bo-16 {
     bottom: 4rem;
+  }
+  .md\:bo-full {
+    bottom: 100%;
+  }
+  .md\:bo-half {
+    bottom: 50%;
   }
   .md\:bo-none {
     bottom: none;
@@ -165556,6 +165584,12 @@ summary {
   .lg\:bo-16 {
     bottom: 4rem;
   }
+  .lg\:bo-full {
+    bottom: 100%;
+  }
+  .lg\:bo-half {
+    bottom: 50%;
+  }
   .lg\:bo-none {
     bottom: none;
   }
@@ -165612,6 +165646,12 @@ summary {
   .xl\:bo-16 {
     bottom: 4rem;
   }
+  .xl\:bo-full {
+    bottom: 100%;
+  }
+  .xl\:bo-half {
+    bottom: 50%;
+  }
   .xl\:bo-none {
     bottom: none;
   }
@@ -165667,6 +165707,12 @@ summary {
   }
   .xxl\:bo-16 {
     bottom: 4rem;
+  }
+  .xxl\:bo-full {
+    bottom: 100%;
+  }
+  .xxl\:bo-half {
+    bottom: 50%;
   }
   .xxl\:bo-none {
     bottom: none;
@@ -165808,6 +165854,22 @@ summary {
   inset: 4rem;
 }
 
+.i-full {
+  inset: 100%;
+}
+
+.h\:i-full:hover {
+  inset: 100%;
+}
+
+.i-half {
+  inset: 50%;
+}
+
+.h\:i-half:hover {
+  inset: 50%;
+}
+
 .i-none {
   inset: none;
 }
@@ -165868,6 +165930,12 @@ summary {
   .sm\:i-16 {
     inset: 4rem;
   }
+  .sm\:i-full {
+    inset: 100%;
+  }
+  .sm\:i-half {
+    inset: 50%;
+  }
   .sm\:i-none {
     inset: none;
   }
@@ -165923,6 +165991,12 @@ summary {
   }
   .md\:i-16 {
     inset: 4rem;
+  }
+  .md\:i-full {
+    inset: 100%;
+  }
+  .md\:i-half {
+    inset: 50%;
   }
   .md\:i-none {
     inset: none;
@@ -165980,6 +166054,12 @@ summary {
   .lg\:i-16 {
     inset: 4rem;
   }
+  .lg\:i-full {
+    inset: 100%;
+  }
+  .lg\:i-half {
+    inset: 50%;
+  }
   .lg\:i-none {
     inset: none;
   }
@@ -166036,6 +166116,12 @@ summary {
   .xl\:i-16 {
     inset: 4rem;
   }
+  .xl\:i-full {
+    inset: 100%;
+  }
+  .xl\:i-half {
+    inset: 50%;
+  }
   .xl\:i-none {
     inset: none;
   }
@@ -166091,6 +166177,12 @@ summary {
   }
   .xxl\:i-16 {
     inset: 4rem;
+  }
+  .xxl\:i-full {
+    inset: 100%;
+  }
+  .xxl\:i-half {
+    inset: 50%;
   }
   .xxl\:i-none {
     inset: none;
@@ -166266,6 +166358,26 @@ summary {
   right: 4rem;
 }
 
+.ix-full {
+  left: 100%;
+  right: 100%;
+}
+
+.h\:ix-full:hover {
+  left: 100%;
+  right: 100%;
+}
+
+.ix-half {
+  left: 50%;
+  right: 50%;
+}
+
+.h\:ix-half:hover {
+  left: 50%;
+  right: 50%;
+}
+
 .ix-none {
   left: none;
   right: none;
@@ -166345,6 +166457,14 @@ summary {
     left: 4rem;
     right: 4rem;
   }
+  .sm\:ix-full {
+    left: 100%;
+    right: 100%;
+  }
+  .sm\:ix-half {
+    left: 50%;
+    right: 50%;
+  }
   .sm\:ix-none {
     left: none;
     right: none;
@@ -166418,6 +166538,14 @@ summary {
   .md\:ix-16 {
     left: 4rem;
     right: 4rem;
+  }
+  .md\:ix-full {
+    left: 100%;
+    right: 100%;
+  }
+  .md\:ix-half {
+    left: 50%;
+    right: 50%;
   }
   .md\:ix-none {
     left: none;
@@ -166493,6 +166621,14 @@ summary {
     left: 4rem;
     right: 4rem;
   }
+  .lg\:ix-full {
+    left: 100%;
+    right: 100%;
+  }
+  .lg\:ix-half {
+    left: 50%;
+    right: 50%;
+  }
   .lg\:ix-none {
     left: none;
     right: none;
@@ -166567,6 +166703,14 @@ summary {
     left: 4rem;
     right: 4rem;
   }
+  .xl\:ix-full {
+    left: 100%;
+    right: 100%;
+  }
+  .xl\:ix-half {
+    left: 50%;
+    right: 50%;
+  }
   .xl\:ix-none {
     left: none;
     right: none;
@@ -166640,6 +166784,14 @@ summary {
   .xxl\:ix-16 {
     left: 4rem;
     right: 4rem;
+  }
+  .xxl\:ix-full {
+    left: 100%;
+    right: 100%;
+  }
+  .xxl\:ix-half {
+    left: 50%;
+    right: 50%;
   }
   .xxl\:ix-none {
     left: none;
@@ -166816,6 +166968,26 @@ summary {
   bottom: 4rem;
 }
 
+.iy-full {
+  top: 100%;
+  bottom: 100%;
+}
+
+.h\:iy-full:hover {
+  top: 100%;
+  bottom: 100%;
+}
+
+.iy-half {
+  top: 50%;
+  bottom: 50%;
+}
+
+.h\:iy-half:hover {
+  top: 50%;
+  bottom: 50%;
+}
+
 .iy-none {
   top: none;
   bottom: none;
@@ -166895,6 +167067,14 @@ summary {
     top: 4rem;
     bottom: 4rem;
   }
+  .sm\:iy-full {
+    top: 100%;
+    bottom: 100%;
+  }
+  .sm\:iy-half {
+    top: 50%;
+    bottom: 50%;
+  }
   .sm\:iy-none {
     top: none;
     bottom: none;
@@ -166968,6 +167148,14 @@ summary {
   .md\:iy-16 {
     top: 4rem;
     bottom: 4rem;
+  }
+  .md\:iy-full {
+    top: 100%;
+    bottom: 100%;
+  }
+  .md\:iy-half {
+    top: 50%;
+    bottom: 50%;
   }
   .md\:iy-none {
     top: none;
@@ -167043,6 +167231,14 @@ summary {
     top: 4rem;
     bottom: 4rem;
   }
+  .lg\:iy-full {
+    top: 100%;
+    bottom: 100%;
+  }
+  .lg\:iy-half {
+    top: 50%;
+    bottom: 50%;
+  }
   .lg\:iy-none {
     top: none;
     bottom: none;
@@ -167117,6 +167313,14 @@ summary {
     top: 4rem;
     bottom: 4rem;
   }
+  .xl\:iy-full {
+    top: 100%;
+    bottom: 100%;
+  }
+  .xl\:iy-half {
+    top: 50%;
+    bottom: 50%;
+  }
   .xl\:iy-none {
     top: none;
     bottom: none;
@@ -167190,6 +167394,14 @@ summary {
   .xxl\:iy-16 {
     top: 4rem;
     bottom: 4rem;
+  }
+  .xxl\:iy-full {
+    top: 100%;
+    bottom: 100%;
+  }
+  .xxl\:iy-half {
+    top: 50%;
+    bottom: 50%;
   }
   .xxl\:iy-none {
     top: none;
@@ -167388,6 +167600,22 @@ summary {
   left: 4rem;
 }
 
+.l-full {
+  left: 100%;
+}
+
+.h\:l-full:hover {
+  left: 100%;
+}
+
+.l-half {
+  left: 50%;
+}
+
+.h\:l-half:hover {
+  left: 50%;
+}
+
 .l-none {
   left: none;
 }
@@ -167448,6 +167676,12 @@ summary {
   .sm\:l-16 {
     left: 4rem;
   }
+  .sm\:l-full {
+    left: 100%;
+  }
+  .sm\:l-half {
+    left: 50%;
+  }
   .sm\:l-none {
     left: none;
   }
@@ -167503,6 +167737,12 @@ summary {
   }
   .md\:l-16 {
     left: 4rem;
+  }
+  .md\:l-full {
+    left: 100%;
+  }
+  .md\:l-half {
+    left: 50%;
   }
   .md\:l-none {
     left: none;
@@ -167560,6 +167800,12 @@ summary {
   .lg\:l-16 {
     left: 4rem;
   }
+  .lg\:l-full {
+    left: 100%;
+  }
+  .lg\:l-half {
+    left: 50%;
+  }
   .lg\:l-none {
     left: none;
   }
@@ -167616,6 +167862,12 @@ summary {
   .xl\:l-16 {
     left: 4rem;
   }
+  .xl\:l-full {
+    left: 100%;
+  }
+  .xl\:l-half {
+    left: 50%;
+  }
   .xl\:l-none {
     left: none;
   }
@@ -167671,6 +167923,12 @@ summary {
   }
   .xxl\:l-16 {
     left: 4rem;
+  }
+  .xxl\:l-full {
+    left: 100%;
+  }
+  .xxl\:l-half {
+    left: 50%;
   }
   .xxl\:l-none {
     left: none;
@@ -167812,6 +168070,22 @@ summary {
   right: 4rem;
 }
 
+.r-full {
+  right: 100%;
+}
+
+.h\:r-full:hover {
+  right: 100%;
+}
+
+.r-half {
+  right: 50%;
+}
+
+.h\:r-half:hover {
+  right: 50%;
+}
+
 .r-none {
   right: none;
 }
@@ -167872,6 +168146,12 @@ summary {
   .sm\:r-16 {
     right: 4rem;
   }
+  .sm\:r-full {
+    right: 100%;
+  }
+  .sm\:r-half {
+    right: 50%;
+  }
   .sm\:r-none {
     right: none;
   }
@@ -167927,6 +168207,12 @@ summary {
   }
   .md\:r-16 {
     right: 4rem;
+  }
+  .md\:r-full {
+    right: 100%;
+  }
+  .md\:r-half {
+    right: 50%;
   }
   .md\:r-none {
     right: none;
@@ -167984,6 +168270,12 @@ summary {
   .lg\:r-16 {
     right: 4rem;
   }
+  .lg\:r-full {
+    right: 100%;
+  }
+  .lg\:r-half {
+    right: 50%;
+  }
   .lg\:r-none {
     right: none;
   }
@@ -168040,6 +168332,12 @@ summary {
   .xl\:r-16 {
     right: 4rem;
   }
+  .xl\:r-full {
+    right: 100%;
+  }
+  .xl\:r-half {
+    right: 50%;
+  }
   .xl\:r-none {
     right: none;
   }
@@ -168095,6 +168393,12 @@ summary {
   }
   .xxl\:r-16 {
     right: 4rem;
+  }
+  .xxl\:r-full {
+    right: 100%;
+  }
+  .xxl\:r-half {
+    right: 50%;
   }
   .xxl\:r-none {
     right: none;
@@ -168236,6 +168540,22 @@ summary {
   top: 4rem;
 }
 
+.t-full {
+  top: 100%;
+}
+
+.h\:t-full:hover {
+  top: 100%;
+}
+
+.t-half {
+  top: 50%;
+}
+
+.h\:t-half:hover {
+  top: 50%;
+}
+
 .t-none {
   top: none;
 }
@@ -168296,6 +168616,12 @@ summary {
   .sm\:t-16 {
     top: 4rem;
   }
+  .sm\:t-full {
+    top: 100%;
+  }
+  .sm\:t-half {
+    top: 50%;
+  }
   .sm\:t-none {
     top: none;
   }
@@ -168351,6 +168677,12 @@ summary {
   }
   .md\:t-16 {
     top: 4rem;
+  }
+  .md\:t-full {
+    top: 100%;
+  }
+  .md\:t-half {
+    top: 50%;
   }
   .md\:t-none {
     top: none;
@@ -168408,6 +168740,12 @@ summary {
   .lg\:t-16 {
     top: 4rem;
   }
+  .lg\:t-full {
+    top: 100%;
+  }
+  .lg\:t-half {
+    top: 50%;
+  }
   .lg\:t-none {
     top: none;
   }
@@ -168464,6 +168802,12 @@ summary {
   .xl\:t-16 {
     top: 4rem;
   }
+  .xl\:t-full {
+    top: 100%;
+  }
+  .xl\:t-half {
+    top: 50%;
+  }
   .xl\:t-none {
     top: none;
   }
@@ -168519,6 +168863,12 @@ summary {
   }
   .xxl\:t-16 {
     top: 4rem;
+  }
+  .xxl\:t-full {
+    top: 100%;
+  }
+  .xxl\:t-half {
+    top: 50%;
   }
   .xxl\:t-none {
     top: none;
