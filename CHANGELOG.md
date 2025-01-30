@@ -73,17 +73,17 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Add `$yma-box-shadow-*` variables
 - Add `$yma-font-size-*` variables
 - Add `coreless.scss` file
+- Add `full` and `half` values for **Direction** utilities
 - Add `rad-b-*` and `rad-t` **Border Radius** utilities
 - Add `src\abstracts\functions` folder
 - Add `utilities\maps` folder
 - Add `yummacss.config.js` file
+- Add the `column-dense `and `row-dense` values for **Grid Auto Flow**
 - Add Yumma CSS CLI
 
 ### Changes
 
 - Group related utilities and variants
-- Include `full` and `half` values for **Direction** utilities
-- Include the `column-dense `and `row-dense` values for **Grid Auto Flow**
 - Merge **Filters** and **Effects** subcategories into a **Effect** category
 - Migrate base styles functionality to config file
 - Migrate from `@import` to `@use` and `@forwards`
