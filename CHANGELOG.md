@@ -103,6 +103,7 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Rename `yummacss-cli` file to `yumma-cli`
 - Rename the `*-variants()` mixins to `*-scaling()`
 - Rework **Box Model** utilities generation
+- Update **Columns** utilities syntax from `cols-*` to `c-*`
 - Update **Dimension** utilities syntax from `dim-*` to `d-*`
 - Update **Direction Bottom** utilities syntax from `dir-b-*` to `bo-*`
 - Update **Direction Inset** utilities syntax from `dir-i-*` to `i-*`

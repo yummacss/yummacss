@@ -164870,381 +164870,381 @@ summary {
     clear: right;
   }
 }
-.cols-1 {
+.c-1 {
   columns: 1;
 }
 
-.h\:cols-1:hover {
+.h\:c-1:hover {
   columns: 1;
 }
 
-.cols-2 {
+.c-2 {
   columns: 2;
 }
 
-.h\:cols-2:hover {
+.h\:c-2:hover {
   columns: 2;
 }
 
-.cols-3 {
+.c-3 {
   columns: 3;
 }
 
-.h\:cols-3:hover {
+.h\:c-3:hover {
   columns: 3;
 }
 
-.cols-4 {
+.c-4 {
   columns: 4;
 }
 
-.h\:cols-4:hover {
+.h\:c-4:hover {
   columns: 4;
 }
 
-.cols-5 {
+.c-5 {
   columns: 5;
 }
 
-.h\:cols-5:hover {
+.h\:c-5:hover {
   columns: 5;
 }
 
-.cols-6 {
+.c-6 {
   columns: 6;
 }
 
-.h\:cols-6:hover {
+.h\:c-6:hover {
   columns: 6;
 }
 
-.cols-7 {
+.c-7 {
   columns: 7;
 }
 
-.h\:cols-7:hover {
+.h\:c-7:hover {
   columns: 7;
 }
 
-.cols-8 {
+.c-8 {
   columns: 8;
 }
 
-.h\:cols-8:hover {
+.h\:c-8:hover {
   columns: 8;
 }
 
-.cols-9 {
+.c-9 {
   columns: 9;
 }
 
-.h\:cols-9:hover {
+.h\:c-9:hover {
   columns: 9;
 }
 
-.cols-10 {
+.c-10 {
   columns: 10;
 }
 
-.h\:cols-10:hover {
+.h\:c-10:hover {
   columns: 10;
 }
 
-.cols-11 {
+.c-11 {
   columns: 11;
 }
 
-.h\:cols-11:hover {
+.h\:c-11:hover {
   columns: 11;
 }
 
-.cols-12 {
+.c-12 {
   columns: 12;
 }
 
-.h\:cols-12:hover {
+.h\:c-12:hover {
   columns: 12;
 }
 
-.cols-13 {
+.c-13 {
   columns: 13;
 }
 
-.h\:cols-13:hover {
+.h\:c-13:hover {
   columns: 13;
 }
 
-.cols-14 {
+.c-14 {
   columns: 14;
 }
 
-.h\:cols-14:hover {
+.h\:c-14:hover {
   columns: 14;
 }
 
-.cols-15 {
+.c-15 {
   columns: 15;
 }
 
-.h\:cols-15:hover {
+.h\:c-15:hover {
   columns: 15;
 }
 
-.cols-16 {
+.c-16 {
   columns: 16;
 }
 
-.h\:cols-16:hover {
+.h\:c-16:hover {
   columns: 16;
 }
 
 @media (min-width: 640px) {
-  .sm\:cols-1 {
+  .sm\:c-1 {
     columns: 1;
   }
-  .sm\:cols-2 {
+  .sm\:c-2 {
     columns: 2;
   }
-  .sm\:cols-3 {
+  .sm\:c-3 {
     columns: 3;
   }
-  .sm\:cols-4 {
+  .sm\:c-4 {
     columns: 4;
   }
-  .sm\:cols-5 {
+  .sm\:c-5 {
     columns: 5;
   }
-  .sm\:cols-6 {
+  .sm\:c-6 {
     columns: 6;
   }
-  .sm\:cols-7 {
+  .sm\:c-7 {
     columns: 7;
   }
-  .sm\:cols-8 {
+  .sm\:c-8 {
     columns: 8;
   }
-  .sm\:cols-9 {
+  .sm\:c-9 {
     columns: 9;
   }
-  .sm\:cols-10 {
+  .sm\:c-10 {
     columns: 10;
   }
-  .sm\:cols-11 {
+  .sm\:c-11 {
     columns: 11;
   }
-  .sm\:cols-12 {
+  .sm\:c-12 {
     columns: 12;
   }
-  .sm\:cols-13 {
+  .sm\:c-13 {
     columns: 13;
   }
-  .sm\:cols-14 {
+  .sm\:c-14 {
     columns: 14;
   }
-  .sm\:cols-15 {
+  .sm\:c-15 {
     columns: 15;
   }
-  .sm\:cols-16 {
+  .sm\:c-16 {
     columns: 16;
   }
 }
 @media (min-width: 768px) {
-  .md\:cols-1 {
+  .md\:c-1 {
     columns: 1;
   }
-  .md\:cols-2 {
+  .md\:c-2 {
     columns: 2;
   }
-  .md\:cols-3 {
+  .md\:c-3 {
     columns: 3;
   }
-  .md\:cols-4 {
+  .md\:c-4 {
     columns: 4;
   }
-  .md\:cols-5 {
+  .md\:c-5 {
     columns: 5;
   }
-  .md\:cols-6 {
+  .md\:c-6 {
     columns: 6;
   }
-  .md\:cols-7 {
+  .md\:c-7 {
     columns: 7;
   }
-  .md\:cols-8 {
+  .md\:c-8 {
     columns: 8;
   }
-  .md\:cols-9 {
+  .md\:c-9 {
     columns: 9;
   }
-  .md\:cols-10 {
+  .md\:c-10 {
     columns: 10;
   }
-  .md\:cols-11 {
+  .md\:c-11 {
     columns: 11;
   }
-  .md\:cols-12 {
+  .md\:c-12 {
     columns: 12;
   }
-  .md\:cols-13 {
+  .md\:c-13 {
     columns: 13;
   }
-  .md\:cols-14 {
+  .md\:c-14 {
     columns: 14;
   }
-  .md\:cols-15 {
+  .md\:c-15 {
     columns: 15;
   }
-  .md\:cols-16 {
+  .md\:c-16 {
     columns: 16;
   }
 }
 @media (min-width: 1024px) {
-  .lg\:cols-1 {
+  .lg\:c-1 {
     columns: 1;
   }
-  .lg\:cols-2 {
+  .lg\:c-2 {
     columns: 2;
   }
-  .lg\:cols-3 {
+  .lg\:c-3 {
     columns: 3;
   }
-  .lg\:cols-4 {
+  .lg\:c-4 {
     columns: 4;
   }
-  .lg\:cols-5 {
+  .lg\:c-5 {
     columns: 5;
   }
-  .lg\:cols-6 {
+  .lg\:c-6 {
     columns: 6;
   }
-  .lg\:cols-7 {
+  .lg\:c-7 {
     columns: 7;
   }
-  .lg\:cols-8 {
+  .lg\:c-8 {
     columns: 8;
   }
-  .lg\:cols-9 {
+  .lg\:c-9 {
     columns: 9;
   }
-  .lg\:cols-10 {
+  .lg\:c-10 {
     columns: 10;
   }
-  .lg\:cols-11 {
+  .lg\:c-11 {
     columns: 11;
   }
-  .lg\:cols-12 {
+  .lg\:c-12 {
     columns: 12;
   }
-  .lg\:cols-13 {
+  .lg\:c-13 {
     columns: 13;
   }
-  .lg\:cols-14 {
+  .lg\:c-14 {
     columns: 14;
   }
-  .lg\:cols-15 {
+  .lg\:c-15 {
     columns: 15;
   }
-  .lg\:cols-16 {
+  .lg\:c-16 {
     columns: 16;
   }
 }
 @media (min-width: 1280px) {
-  .xl\:cols-1 {
+  .xl\:c-1 {
     columns: 1;
   }
-  .xl\:cols-2 {
+  .xl\:c-2 {
     columns: 2;
   }
-  .xl\:cols-3 {
+  .xl\:c-3 {
     columns: 3;
   }
-  .xl\:cols-4 {
+  .xl\:c-4 {
     columns: 4;
   }
-  .xl\:cols-5 {
+  .xl\:c-5 {
     columns: 5;
   }
-  .xl\:cols-6 {
+  .xl\:c-6 {
     columns: 6;
   }
-  .xl\:cols-7 {
+  .xl\:c-7 {
     columns: 7;
   }
-  .xl\:cols-8 {
+  .xl\:c-8 {
     columns: 8;
   }
-  .xl\:cols-9 {
+  .xl\:c-9 {
     columns: 9;
   }
-  .xl\:cols-10 {
+  .xl\:c-10 {
     columns: 10;
   }
-  .xl\:cols-11 {
+  .xl\:c-11 {
     columns: 11;
   }
-  .xl\:cols-12 {
+  .xl\:c-12 {
     columns: 12;
   }
-  .xl\:cols-13 {
+  .xl\:c-13 {
     columns: 13;
   }
-  .xl\:cols-14 {
+  .xl\:c-14 {
     columns: 14;
   }
-  .xl\:cols-15 {
+  .xl\:c-15 {
     columns: 15;
   }
-  .xl\:cols-16 {
+  .xl\:c-16 {
     columns: 16;
   }
 }
 @media (min-width: 1536px) {
-  .xxl\:cols-1 {
+  .xxl\:c-1 {
     columns: 1;
   }
-  .xxl\:cols-2 {
+  .xxl\:c-2 {
     columns: 2;
   }
-  .xxl\:cols-3 {
+  .xxl\:c-3 {
     columns: 3;
   }
-  .xxl\:cols-4 {
+  .xxl\:c-4 {
     columns: 4;
   }
-  .xxl\:cols-5 {
+  .xxl\:c-5 {
     columns: 5;
   }
-  .xxl\:cols-6 {
+  .xxl\:c-6 {
     columns: 6;
   }
-  .xxl\:cols-7 {
+  .xxl\:c-7 {
     columns: 7;
   }
-  .xxl\:cols-8 {
+  .xxl\:c-8 {
     columns: 8;
   }
-  .xxl\:cols-9 {
+  .xxl\:c-9 {
     columns: 9;
   }
-  .xxl\:cols-10 {
+  .xxl\:c-10 {
     columns: 10;
   }
-  .xxl\:cols-11 {
+  .xxl\:c-11 {
     columns: 11;
   }
-  .xxl\:cols-12 {
+  .xxl\:c-12 {
     columns: 12;
   }
-  .xxl\:cols-13 {
+  .xxl\:c-13 {
     columns: 13;
   }
-  .xxl\:cols-14 {
+  .xxl\:c-14 {
     columns: 14;
   }
-  .xxl\:cols-15 {
+  .xxl\:c-15 {
     columns: 15;
   }
-  .xxl\:cols-16 {
+  .xxl\:c-16 {
     columns: 16;
   }
 }
