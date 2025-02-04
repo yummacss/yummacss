@@ -56624,9 +56624,9 @@
   },
   {
     "slug": "clear",
-    "util": "cl-is",
+    "util": "cl-b",
     "prop": [
-      "clear: inline-start;"
+      "clear: both;"
     ]
   },
   {
@@ -56638,6 +56638,13 @@
   },
   {
     "slug": "clear",
+    "util": "cl-is",
+    "prop": [
+      "clear: inline-start;"
+    ]
+  },
+  {
+    "slug": "clear",
     "util": "cl-l",
     "prop": [
       "clear: left;"
@@ -56645,23 +56652,16 @@
   },
   {
     "slug": "clear",
-    "util": "cl-r",
-    "prop": [
-      "clear: right;"
-    ]
-  },
-  {
-    "slug": "clear",
-    "util": "cl-b",
-    "prop": [
-      "clear: both;"
-    ]
-  },
-  {
-    "slug": "clear",
     "util": "cl-none",
     "prop": [
       "clear: none;"
+    ]
+  },
+  {
+    "slug": "clear",
+    "util": "cl-r",
+    "prop": [
+      "clear: right;"
     ]
   },
   {
