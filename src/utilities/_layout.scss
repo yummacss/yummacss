@@ -24,12 +24,12 @@ $yma-layout-utils: (
     ),
     "slug": "clear",
     "values": (
-      "is": inline-start,
-      "ie": inline-end,
-      "l": left,
-      "r": right,
       "b": both,
+      "ie": inline-end,
+      "is": inline-start,
+      "l": left,
       "none": none,
+      "r": right,
     ),
   ),
 

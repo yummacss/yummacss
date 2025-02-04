@@ -164722,12 +164722,12 @@ summary {
     aspect-ratio: "1/1";
   }
 }
-.cl-is {
-  clear: inline-start;
+.cl-b {
+  clear: both;
 }
 
-.h\:cl-is:hover {
-  clear: inline-start;
+.h\:cl-b:hover {
+  clear: both;
 }
 
 .cl-ie {
@@ -164738,28 +164738,20 @@ summary {
   clear: inline-end;
 }
 
+.cl-is {
+  clear: inline-start;
+}
+
+.h\:cl-is:hover {
+  clear: inline-start;
+}
+
 .cl-l {
   clear: left;
 }
 
 .h\:cl-l:hover {
   clear: left;
-}
-
-.cl-r {
-  clear: right;
-}
-
-.h\:cl-r:hover {
-  clear: right;
-}
-
-.cl-b {
-  clear: both;
-}
-
-.h\:cl-b:hover {
-  clear: both;
 }
 
 .cl-none {
@@ -164770,104 +164762,112 @@ summary {
   clear: none;
 }
 
+.cl-r {
+  clear: right;
+}
+
+.h\:cl-r:hover {
+  clear: right;
+}
+
 @media (min-width: 640px) {
-  .sm\:cl-is {
-    clear: inline-start;
+  .sm\:cl-b {
+    clear: both;
   }
   .sm\:cl-ie {
     clear: inline-end;
   }
+  .sm\:cl-is {
+    clear: inline-start;
+  }
   .sm\:cl-l {
     clear: left;
-  }
-  .sm\:cl-r {
-    clear: right;
-  }
-  .sm\:cl-b {
-    clear: both;
   }
   .sm\:cl-none {
     clear: none;
   }
+  .sm\:cl-r {
+    clear: right;
+  }
 }
 @media (min-width: 768px) {
-  .md\:cl-is {
-    clear: inline-start;
+  .md\:cl-b {
+    clear: both;
   }
   .md\:cl-ie {
     clear: inline-end;
   }
+  .md\:cl-is {
+    clear: inline-start;
+  }
   .md\:cl-l {
     clear: left;
-  }
-  .md\:cl-r {
-    clear: right;
-  }
-  .md\:cl-b {
-    clear: both;
   }
   .md\:cl-none {
     clear: none;
   }
+  .md\:cl-r {
+    clear: right;
+  }
 }
 @media (min-width: 1024px) {
-  .lg\:cl-is {
-    clear: inline-start;
+  .lg\:cl-b {
+    clear: both;
   }
   .lg\:cl-ie {
     clear: inline-end;
   }
+  .lg\:cl-is {
+    clear: inline-start;
+  }
   .lg\:cl-l {
     clear: left;
-  }
-  .lg\:cl-r {
-    clear: right;
-  }
-  .lg\:cl-b {
-    clear: both;
   }
   .lg\:cl-none {
     clear: none;
   }
+  .lg\:cl-r {
+    clear: right;
+  }
 }
 @media (min-width: 1280px) {
-  .xl\:cl-is {
-    clear: inline-start;
+  .xl\:cl-b {
+    clear: both;
   }
   .xl\:cl-ie {
     clear: inline-end;
   }
+  .xl\:cl-is {
+    clear: inline-start;
+  }
   .xl\:cl-l {
     clear: left;
-  }
-  .xl\:cl-r {
-    clear: right;
-  }
-  .xl\:cl-b {
-    clear: both;
   }
   .xl\:cl-none {
     clear: none;
   }
+  .xl\:cl-r {
+    clear: right;
+  }
 }
 @media (min-width: 1536px) {
-  .xxl\:cl-is {
-    clear: inline-start;
+  .xxl\:cl-b {
+    clear: both;
   }
   .xxl\:cl-ie {
     clear: inline-end;
   }
+  .xxl\:cl-is {
+    clear: inline-start;
+  }
   .xxl\:cl-l {
     clear: left;
   }
-  .xxl\:cl-r {
-    clear: right;
-  }
-  .xxl\:cl-b {
-    clear: both;
-  }
   .xxl\:cl-none {
     clear: none;
+  }
+  .xxl\:cl-r {
+    clear: right;
   }
 }
 .cols-1 {
