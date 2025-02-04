@@ -15,7 +15,7 @@ const { capabilities } = config;
 function standardFile() {
   const entryPoint = capabilities.core
     ? "src/yummacss.scss"
-    : "src/coreless.scss";
+    : "src/no-reset.scss";
 
   return src(entryPoint)
     .pipe(debug({ title: "Processing file:" }))

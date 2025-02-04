@@ -21,7 +21,7 @@ export async function runBuild() {
 
   const scssEntryPoint = capabilities.core
     ? path.resolve(__dirname, "../src/yummacss.scss")
-    : path.resolve(__dirname, "../src/coreless.scss");
+    : path.resolve(__dirname, "../src/no-reset.scss");
 
   const outputPath = path.resolve(process.cwd(), output);
 

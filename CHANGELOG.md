@@ -72,7 +72,7 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Add `_index.scss` files
 - Add `$yma-box-shadow-*` variables
 - Add `$yma-font-size-*` variables
-- Add `coreless.scss` file
+- Add `no-reset.scss` file
 - Add `full` and `half` values for **Direction** utilities
 - Add `rad-b-*` and `rad-t` **Border Radius** utilities
 - Add `src\abstracts\functions` folder
@@ -94,7 +94,7 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Optimize `dist\yumma.min.css` file performance
 - Refactor **Directions** `d-` prefix utility syntax
 - Rename `_base.scss` to `base\_stylecent.scss`
-- Rename `_core.scss` to `coreless.scss`
+- Rename `_core.scss` to `no-reset.scss`
 - Rename `_functions.scss` to `_ignore-neutral.scss`
 - Rename `gulpfile.js` file name to `gulpfile.mjs`
 - Rename `index.scss` to `yummacss.scss`
