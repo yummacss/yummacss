@@ -145,7 +145,7 @@ All notable changes to the Yumma CSS will be documented in this file.
     <b>Fixes</b>
 </summary>
 
-- Fix responsive breakpoint utilities not overriding existent utilities
-- Fixed duplicated utilities in `yumma.css` and `yumma.min.css` files
+- Fixed responsive breakpoint utilities not overriding existent utilities [#2](https://github.com/yumma-lib/yumma-css/issues/2)
+- Fixed duplicated utilities in `yumma.css` and `yumma.min.css` files [#3](https://github.com/yumma-lib/yumma-css/issues/3)
 
 </details>
