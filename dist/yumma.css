@@ -180111,22 +180111,6 @@ summary {
   text-decoration-style: dashed;
 }
 
-.tds-h {
-  text-decoration-style: hidden;
-}
-
-.h\:tds-h:hover {
-  text-decoration-style: hidden;
-}
-
-.tds-none {
-  text-decoration-style: none;
-}
-
-.h\:tds-none:hover {
-  text-decoration-style: none;
-}
-
 .tds-s {
   text-decoration-style: solid;
 }
@@ -180135,74 +180119,67 @@ summary {
   text-decoration-style: solid;
 }
 
+.tds-w {
+  text-decoration-style: wavy;
+}
+
+.h\:tds-w:hover {
+  text-decoration-style: wavy;
+}
+
 @media (min-width: 640px) {
   .sm\:tds-d {
     text-decoration-style: dashed;
   }
-  .sm\:tds-h {
-    text-decoration-style: hidden;
-  }
-  .sm\:tds-none {
-    text-decoration-style: none;
-  }
   .sm\:tds-s {
     text-decoration-style: solid;
+  }
+  .sm\:tds-w {
+    text-decoration-style: wavy;
   }
 }
 @media (min-width: 768px) {
   .md\:tds-d {
     text-decoration-style: dashed;
   }
-  .md\:tds-h {
-    text-decoration-style: hidden;
-  }
-  .md\:tds-none {
-    text-decoration-style: none;
-  }
   .md\:tds-s {
     text-decoration-style: solid;
+  }
+  .md\:tds-w {
+    text-decoration-style: wavy;
   }
 }
 @media (min-width: 1024px) {
   .lg\:tds-d {
     text-decoration-style: dashed;
   }
-  .lg\:tds-h {
-    text-decoration-style: hidden;
-  }
-  .lg\:tds-none {
-    text-decoration-style: none;
-  }
   .lg\:tds-s {
     text-decoration-style: solid;
+  }
+  .lg\:tds-w {
+    text-decoration-style: wavy;
   }
 }
 @media (min-width: 1280px) {
   .xl\:tds-d {
     text-decoration-style: dashed;
   }
-  .xl\:tds-h {
-    text-decoration-style: hidden;
-  }
-  .xl\:tds-none {
-    text-decoration-style: none;
-  }
   .xl\:tds-s {
     text-decoration-style: solid;
+  }
+  .xl\:tds-w {
+    text-decoration-style: wavy;
   }
 }
 @media (min-width: 1536px) {
   .xxl\:tds-d {
     text-decoration-style: dashed;
   }
-  .xxl\:tds-h {
-    text-decoration-style: hidden;
-  }
-  .xxl\:tds-none {
-    text-decoration-style: none;
-  }
   .xxl\:tds-s {
     text-decoration-style: solid;
+  }
+  .xxl\:tds-w {
+    text-decoration-style: wavy;
   }
 }
 .tdt-0 {

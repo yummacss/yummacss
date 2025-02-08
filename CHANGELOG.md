@@ -110,8 +110,11 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Removed `dist\yumma-core.css` file
 - Removed `dist\yumma-core.min.scss` file
 - Removed `fs-b` utility class
+- Removed `hidden` and `none` properties from **Text Decoration Style** utilities
 - Removed `minifiedCoreFile()` function
 - Removed the font-size variable variants
+- Rename `yummacss-cli` file to `yumma-cli`
+- Rename the `*-variants()` mixins to `*-scaling()`
 - Renamed `_base.scss` to `base\_stylecent.scss`
 - Renamed `_core.scss` to `no-reset.scss`
 - Renamed `_functions.scss` to `_ignore-neutral.scss`
@@ -119,8 +122,6 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Renamed `index.scss` to `yummacss.scss`
 - Renamed `src\abstracts\_layout.scss` to `src\abstracts\_container.scss`
 - Renamed `src\abstracts\mixins\_color.scss` to `src\abstracts\mixins\_create-colors.scss`
-- Rename `yummacss-cli` file to `yumma-cli`
-- Rename the `*-variants()` mixins to `*-scaling()`
 - Reworked **Box Model** utilities generation
 - Updated **Columns** utilities syntax from `cols-*` to `c-*`
 - Updated **Dimension** utilities syntax from `dim-*` to `d-*`
