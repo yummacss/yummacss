@@ -73,12 +73,12 @@ textarea:not([class]) {
 /**
  * Apply consistent focus styles to interactive elements.
  */
+a:focus,
 button:focus,
 input:focus,
-textarea:focus,
 select:focus,
-a:focus,
-summary:focus {
+summary:focus,
+textarea:focus {
   outline: 2px solid black;
   outline-offset: 2px;
 }
@@ -104,8 +104,8 @@ button:disabled,
 input:disabled,
 select:disabled,
 textarea:disabled {
-  opacity: 0.5; /* 1 */
   cursor: not-allowed; /* 1 */
+  opacity: 0.5; /* 1 */
 }
 
 /** -- Typography --

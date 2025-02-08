@@ -82,12 +82,12 @@ textarea:not([class]) {
  * Apply consistent focus styles to interactive elements.
  */
 
+a,
 button,
 input,
-textarea,
 select,
-a,
-summary {
+summary,
+textarea {
   &:focus {
     outline: 2px solid vars.$yma-color-black;
     outline-offset: 2px;
@@ -118,8 +118,8 @@ button:disabled,
 input:disabled,
 select:disabled,
 textarea:disabled {
-  opacity: 0.5; /* 1 */
   cursor: not-allowed; /* 1 */
+  opacity: 0.5; /* 1 */
 }
 
 /** -- Typography --

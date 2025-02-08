@@ -2,9 +2,12 @@
 
 All notable changes to the Yumma CSS will be documented in this file.
 
-## [3.0.0]
+## Changelog for 3.0.0 🎉
 
-### Added
+<details>
+<summary>
+    <b>Features</b>
+</summary>
 
 - Add **Background Attachment** utilities
 - Add **Background Clip** utilities
@@ -81,7 +84,13 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Add the `column-dense `and `row-dense` values for **Grid Auto Flow**
 - Add Yumma CSS CLI
 
-### Changes
+</details>
+
+<details>
+
+<summary>
+    <b>Breaking changes</b>
+</summary>
 
 - Group related utilities and variants
 - Include new and improved **Font Size** utilities
@@ -94,6 +103,15 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Optimize `dist\yumma.css` file performance
 - Optimize `dist\yumma.min.css` file performance
 - Refactor **Bottom / Left / Right / Top** `d-` prefix utility syntax
+- Remove `.cnt{}` utility class
+- Remove `.ins{}` utility class
+- Remove `coreFile()` function
+- Remove `d-` and `l-` from color utilities
+- Remove `dist\yumma-core.css` file
+- Remove `dist\yumma-core.min.scss` file
+- Remove `fs-b` utility class
+- Remove `minifiedCoreFile()` function
+- Remove the font-size variable variants
 - Rename `_base.scss` to `base\_stylecent.scss`
 - Rename `_core.scss` to `no-reset.scss`
 - Rename `_functions.scss` to `_ignore-neutral.scss`
@@ -120,14 +138,12 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Update color shade percentage from 10% to 14%
 - Update color utility range from 1-6 to 1-12
 
-### Removed
+</details>
 
-- Remove `.cnt{}` utility class
-- Remove `.ins{}` utility class
-- Remove `coreFile()` function
-- Remove `dist\yumma-core.css` file
-- Remove `dist\yumma-core.min.scss` file
-- Remove `fs-b` utility class
-- Remove `minifiedCoreFile()` function
-- Remove `d-` and `l-` from color utilities
-- Remove the font-size variable variants
+<details>
+<summary>
+    <b>Fixes</b>
+</summary>
+
+- None
+</details>
