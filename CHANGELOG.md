@@ -77,7 +77,7 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Added `$yma-font-size-*` variables
 - Added `no-reset.scss` file
 - Added `full` and `half` values for **Direction** utilities
-- Added `rad-b-*` and `rad-t` **Border Radius** utilities
+- Added `rad-b-*`, `rad-l-*`, `rad-r-*` and `rad-t` **Border Radius** utilities
 - Added `src\abstracts\functions` folder
 - Added `utilities\maps` folder
 - Added `yummacss.config.js` file
