@@ -145,5 +145,7 @@ All notable changes to the Yumma CSS will be documented in this file.
     <b>Fixes</b>
 </summary>
 
-- None
+- Fix responsive breakpoint utilities not overriding existent utilities
+- Fixed duplicated utilities in `yumma.css` and `yumma.min.css` files
+
 </details>
