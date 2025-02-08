@@ -46,7 +46,6 @@ video {
  * 1. Reset background and border styles for form elements.
  * 2. Use `inherit` to ensure font consistency within forms.
  * 3. Add default padding for usability.
- * 4. Set a consistent default border radius.
  */
 button,
 input,
@@ -54,7 +53,6 @@ optgroup,
 select,
 textarea {
   background-color: transparent; /* 1 */
-  border-radius: 0.25rem; /* 4 */
   font-family: inherit; /* 2 */
   padding: 0.5rem; /* 3 */
 }
