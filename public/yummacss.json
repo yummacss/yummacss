@@ -61267,7 +61267,7 @@
   },
   {
     "slug": "text-underline-offset",
-    "util": "tuo-3",
+    "util": "tuo-4",
     "prop": [
       "text-underline-offset: 4px;"
     ]
