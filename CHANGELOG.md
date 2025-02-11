@@ -62,9 +62,6 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Added **Text Underline Offset** utilities
 - Added **Text Wrap** utilities
 - Added **Transform Origin** utilities
-- Added **Transition Delay** utilities
-- Added **Transition Duration** utilities
-- Added **Transition Property** utilities
 - Added **Translate** utilities
 - Added **Vertical Align** utilities
 - Added **Visibility** utilities
