@@ -109329,11 +109329,11 @@ summary {
   align-content: normal;
 }
 
-.ac-s {
+.ac-st {
   align-content: stretch;
 }
 
-.h\:ac-s:hover {
+.h\:ac-st:hover {
   align-content: stretch;
 }
 
@@ -109377,7 +109377,7 @@ summary {
   .sm\:ac-n {
     align-content: normal;
   }
-  .sm\:ac-s {
+  .sm\:ac-st {
     align-content: stretch;
   }
   .sm\:ac-sa {
@@ -109406,7 +109406,7 @@ summary {
   .md\:ac-n {
     align-content: normal;
   }
-  .md\:ac-s {
+  .md\:ac-st {
     align-content: stretch;
   }
   .md\:ac-sa {
@@ -109435,7 +109435,7 @@ summary {
   .lg\:ac-n {
     align-content: normal;
   }
-  .lg\:ac-s {
+  .lg\:ac-st {
     align-content: stretch;
   }
   .lg\:ac-sa {
@@ -109464,7 +109464,7 @@ summary {
   .xl\:ac-n {
     align-content: normal;
   }
-  .xl\:ac-s {
+  .xl\:ac-st {
     align-content: stretch;
   }
   .xl\:ac-sa {
@@ -109493,7 +109493,7 @@ summary {
   .xxl\:ac-n {
     align-content: normal;
   }
-  .xxl\:ac-s {
+  .xxl\:ac-st {
     align-content: stretch;
   }
   .xxl\:ac-sa {
@@ -109538,11 +109538,11 @@ summary {
   align-items: flex-start;
 }
 
-.ai-s {
+.ai-st {
   align-items: stretch;
 }
 
-.h\:ai-s:hover {
+.h\:ai-st:hover {
   align-items: stretch;
 }
 
@@ -109559,7 +109559,7 @@ summary {
   .sm\:ai-fs {
     align-items: flex-start;
   }
-  .sm\:ai-s {
+  .sm\:ai-st {
     align-items: stretch;
   }
 }
@@ -109576,7 +109576,7 @@ summary {
   .md\:ai-fs {
     align-items: flex-start;
   }
-  .md\:ai-s {
+  .md\:ai-st {
     align-items: stretch;
   }
 }
@@ -109593,7 +109593,7 @@ summary {
   .lg\:ai-fs {
     align-items: flex-start;
   }
-  .lg\:ai-s {
+  .lg\:ai-st {
     align-items: stretch;
   }
 }
@@ -109610,7 +109610,7 @@ summary {
   .xl\:ai-fs {
     align-items: flex-start;
   }
-  .xl\:ai-s {
+  .xl\:ai-st {
     align-items: stretch;
   }
 }
@@ -109627,7 +109627,7 @@ summary {
   .xxl\:ai-fs {
     align-items: flex-start;
   }
-  .xxl\:ai-s {
+  .xxl\:ai-st {
     align-items: stretch;
   }
 }
@@ -109671,11 +109671,11 @@ summary {
   align-self: flex-start;
 }
 
-.as-s {
+.as-st {
   align-self: stretch;
 }
 
-.h\:as-s:hover {
+.h\:as-st:hover {
   align-self: stretch;
 }
 
@@ -109695,7 +109695,7 @@ summary {
   .sm\:as-fs {
     align-self: flex-start;
   }
-  .sm\:as-s {
+  .sm\:as-st {
     align-self: stretch;
   }
 }
@@ -109715,7 +109715,7 @@ summary {
   .md\:as-fs {
     align-self: flex-start;
   }
-  .md\:as-s {
+  .md\:as-st {
     align-self: stretch;
   }
 }
@@ -109735,7 +109735,7 @@ summary {
   .lg\:as-fs {
     align-self: flex-start;
   }
-  .lg\:as-s {
+  .lg\:as-st {
     align-self: stretch;
   }
 }
@@ -109755,7 +109755,7 @@ summary {
   .xl\:as-fs {
     align-self: flex-start;
   }
-  .xl\:as-s {
+  .xl\:as-st {
     align-self: stretch;
   }
 }
@@ -109775,7 +109775,7 @@ summary {
   .xxl\:as-fs {
     align-self: flex-start;
   }
-  .xxl\:as-s {
+  .xxl\:as-st {
     align-self: stretch;
   }
 }
@@ -113022,11 +113022,11 @@ summary {
   justify-content: normal;
 }
 
-.jc-s {
+.jc-st {
   justify-content: stretch;
 }
 
-.h\:jc-s:hover {
+.h\:jc-st:hover {
   justify-content: stretch;
 }
 
@@ -113067,7 +113067,7 @@ summary {
   .sm\:jc-n {
     justify-content: normal;
   }
-  .sm\:jc-s {
+  .sm\:jc-st {
     justify-content: stretch;
   }
   .sm\:jc-sa {
@@ -113093,7 +113093,7 @@ summary {
   .md\:jc-n {
     justify-content: normal;
   }
-  .md\:jc-s {
+  .md\:jc-st {
     justify-content: stretch;
   }
   .md\:jc-sa {
@@ -113119,7 +113119,7 @@ summary {
   .lg\:jc-n {
     justify-content: normal;
   }
-  .lg\:jc-s {
+  .lg\:jc-st {
     justify-content: stretch;
   }
   .lg\:jc-sa {
@@ -113145,7 +113145,7 @@ summary {
   .xl\:jc-n {
     justify-content: normal;
   }
-  .xl\:jc-s {
+  .xl\:jc-st {
     justify-content: stretch;
   }
   .xl\:jc-sa {
@@ -113171,7 +113171,7 @@ summary {
   .xxl\:jc-n {
     justify-content: normal;
   }
-  .xxl\:jc-s {
+  .xxl\:jc-st {
     justify-content: stretch;
   }
   .xxl\:jc-sa {
