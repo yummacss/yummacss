@@ -40400,7 +40400,7 @@
   },
   {
     "slug": "align-content",
-    "util": "ac-s",
+    "util": "ac-st",
     "prop": [
       "align-content: stretch;"
     ]
@@ -40456,7 +40456,7 @@
   },
   {
     "slug": "align-items",
-    "util": "ai-s",
+    "util": "ai-st",
     "prop": [
       "align-items: stretch;"
     ]
@@ -40498,7 +40498,7 @@
   },
   {
     "slug": "align-self",
-    "util": "as-s",
+    "util": "as-st",
     "prop": [
       "align-self: stretch;"
     ]
@@ -41492,7 +41492,7 @@
   },
   {
     "slug": "justify-content",
-    "util": "jc-s",
+    "util": "jc-st",
     "prop": [
       "justify-content: stretch;"
     ]
@@ -60542,160 +60542,6 @@
     "util": "t-ty-100",
     "prop": [
       "transform: translateY(25rem);"
-    ]
-  },
-  {
-    "slug": "transition-delay",
-    "util": "t-d-0",
-    "prop": [
-      "transition-delay: 0s;"
-    ]
-  },
-  {
-    "slug": "transition-delay",
-    "util": "t-d-50",
-    "prop": [
-      "transition-delay: 50ms;"
-    ]
-  },
-  {
-    "slug": "transition-delay",
-    "util": "t-d-100",
-    "prop": [
-      "transition-delay: 100ms;"
-    ]
-  },
-  {
-    "slug": "transition-delay",
-    "util": "t-d-150",
-    "prop": [
-      "transition-delay: 150ms;"
-    ]
-  },
-  {
-    "slug": "transition-delay",
-    "util": "t-d-200",
-    "prop": [
-      "transition-delay: 200ms;"
-    ]
-  },
-  {
-    "slug": "transition-delay",
-    "util": "t-d-250",
-    "prop": [
-      "transition-delay: 250ms;"
-    ]
-  },
-  {
-    "slug": "transition-delay",
-    "util": "t-d-300",
-    "prop": [
-      "transition-delay: 300ms;"
-    ]
-  },
-  {
-    "slug": "transition-delay",
-    "util": "t-d-500",
-    "prop": [
-      "transition-delay: 500ms;"
-    ]
-  },
-  {
-    "slug": "transition-delay",
-    "util": "t-d-700",
-    "prop": [
-      "transition-delay: 700ms;"
-    ]
-  },
-  {
-    "slug": "transition-delay",
-    "util": "t-d-1000",
-    "prop": [
-      "transition-delay: 1000ms;"
-    ]
-  },
-  {
-    "slug": "transition-duration",
-    "util": "t-du-0",
-    "prop": [
-      "transition-duration: 0s;"
-    ]
-  },
-  {
-    "slug": "transition-duration",
-    "util": "t-du-50",
-    "prop": [
-      "transition-duration: 50ms;"
-    ]
-  },
-  {
-    "slug": "transition-duration",
-    "util": "t-du-100",
-    "prop": [
-      "transition-duration: 100ms;"
-    ]
-  },
-  {
-    "slug": "transition-duration",
-    "util": "t-du-150",
-    "prop": [
-      "transition-duration: 150ms;"
-    ]
-  },
-  {
-    "slug": "transition-duration",
-    "util": "t-du-200",
-    "prop": [
-      "transition-duration: 200ms;"
-    ]
-  },
-  {
-    "slug": "transition-duration",
-    "util": "t-du-250",
-    "prop": [
-      "transition-duration: 250ms;"
-    ]
-  },
-  {
-    "slug": "transition-duration",
-    "util": "t-du-300",
-    "prop": [
-      "transition-duration: 300ms;"
-    ]
-  },
-  {
-    "slug": "transition-duration",
-    "util": "t-du-500",
-    "prop": [
-      "transition-duration: 500ms;"
-    ]
-  },
-  {
-    "slug": "transition-duration",
-    "util": "t-du-700",
-    "prop": [
-      "transition-duration: 700ms;"
-    ]
-  },
-  {
-    "slug": "transition-duration",
-    "util": "t-du-1000",
-    "prop": [
-      "transition-duration: 1000ms;"
-    ]
-  },
-  {
-    "slug": "transition-property",
-    "util": "t-p-a",
-    "prop": [
-      "transition-property: all;"
-    ]
-  },
-  {
-    "slug": "transition-property",
-    "util": "t-p-none",
-    "prop": [
-      "transition-property: none;"
     ]
   },
   {
