@@ -43318,6 +43318,20 @@
     ]
   },
   {
+    "slug": "field-sizing",
+    "util": "fs-f",
+    "prop": [
+      "field-sizing: fixed;"
+    ]
+  },
+  {
+    "slug": "field-sizing",
+    "util": "fs-c",
+    "prop": [
+      "field-sizing: content;"
+    ]
+  },
+  {
     "slug": "pointer-events",
     "util": "pe-auto",
     "prop": [
