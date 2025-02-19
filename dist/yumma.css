@@ -119315,6 +119315,62 @@ summary {
     cursor: zoom-out;
   }
 }
+.fs-f {
+  field-sizing: fixed;
+}
+
+.h\:fs-f:hover {
+  field-sizing: fixed;
+}
+
+.fs-c {
+  field-sizing: content;
+}
+
+.h\:fs-c:hover {
+  field-sizing: content;
+}
+
+@media (min-width: 640px) {
+  .sm\:fs-f {
+    field-sizing: fixed;
+  }
+  .sm\:fs-c {
+    field-sizing: content;
+  }
+}
+@media (min-width: 768px) {
+  .md\:fs-f {
+    field-sizing: fixed;
+  }
+  .md\:fs-c {
+    field-sizing: content;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:fs-f {
+    field-sizing: fixed;
+  }
+  .lg\:fs-c {
+    field-sizing: content;
+  }
+}
+@media (min-width: 1280px) {
+  .xl\:fs-f {
+    field-sizing: fixed;
+  }
+  .xl\:fs-c {
+    field-sizing: content;
+  }
+}
+@media (min-width: 1536px) {
+  .xxl\:fs-f {
+    field-sizing: fixed;
+  }
+  .xxl\:fs-c {
+    field-sizing: content;
+  }
+}
 .pe-auto {
   pointer-events: auto;
 }

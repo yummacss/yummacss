@@ -20,6 +20,7 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Added **Box Decoration Break** utilities
 - Added **Clear** utilities
 - Added **Direction (Axis)** utilities
+- Added **Field Sizing** utilities
 - Added **Fill** utilities
 - Added **Font Family** fallbacks
 - Added **Grayscale** utilities

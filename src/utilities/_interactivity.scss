@@ -51,6 +51,18 @@ $yma-interactivity-utils: (
     ),
   ),
 
+  "field-sizing": (
+    "prefix": "fs",
+    "properties": (
+      "field-sizing",
+    ),
+    "slug": "field-sizing",
+    "values": (
+      "f": fixed,
+      "c": content,
+    ),
+  ),
+
   "pointer-events": (
     "prefix": "pe",
     "properties": (
