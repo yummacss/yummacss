@@ -116,9 +116,9 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Renamed `_base.scss` to `base\_stylecent.scss`
 - Renamed `_core.scss` to `no-reset.scss`
 - Renamed `_functions.scss` to `_ignore-neutral.scss`
+- Renamed `_layout.scss` to `_positioning.scss`
 - Renamed `gulpfile.js` file name to `gulpfile.mjs`
 - Renamed `index.scss` to `yummacss.scss`
-- Renamed `src\abstracts\_layout.scss` to `src\abstracts\_container.scss`
 - Renamed `src\abstracts\mixins\_color.scss` to `src\abstracts\mixins\_create-colors.scss`
 - Reworked **Box Model** utilities generation
 - Updated **Columns** utilities syntax from `cols-*` to `c-*`
