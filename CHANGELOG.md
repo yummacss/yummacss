@@ -131,6 +131,9 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Updated **Direction** utilities to utilize rem as unit
 - Updated **Max Dimension** utilities syntax from `max-dim-*` to `max-d-*`
 - Updated **Min Dimension** utilities syntax from `min-dim-*` to `min-d-*`
+- Updated **Overflow X** utilities syntax from `ovf-x-*` to `o-x-*`
+- Updated **Overflow Y** utilities syntax from `ovf-y-*` to `o-y-*`
+- Updated **Overflow** utilities syntax from `ovf-*` to `o-*`
 - Updated **Spacing X** utilities syntax from `s-x-*` to `sx-*`
 - Updated **Spacing Y** utilities syntax from `s-y-*` to `sy-*`
 - Updated color generation logic

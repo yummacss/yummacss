@@ -170195,378 +170195,378 @@ summary {
     object-position: top;
   }
 }
-.ovf-auto {
+.o-auto {
   overflow: auto;
 }
 
-.h\:ovf-auto:hover {
+.h\:o-auto:hover {
   overflow: auto;
 }
 
-.ovf-c {
+.o-c {
   overflow: clip;
 }
 
-.h\:ovf-c:hover {
+.h\:o-c:hover {
   overflow: clip;
 }
 
-.ovf-h {
+.o-h {
   overflow: hidden;
 }
 
-.h\:ovf-h:hover {
+.h\:o-h:hover {
   overflow: hidden;
 }
 
-.ovf-s {
+.o-s {
   overflow: scroll;
 }
 
-.h\:ovf-s:hover {
+.h\:o-s:hover {
   overflow: scroll;
 }
 
-.ovf-v {
+.o-v {
   overflow: visible;
 }
 
-.h\:ovf-v:hover {
+.h\:o-v:hover {
   overflow: visible;
 }
 
 @media (min-width: 640px) {
-  .sm\:ovf-auto {
+  .sm\:o-auto {
     overflow: auto;
   }
-  .sm\:ovf-c {
+  .sm\:o-c {
     overflow: clip;
   }
-  .sm\:ovf-h {
+  .sm\:o-h {
     overflow: hidden;
   }
-  .sm\:ovf-s {
+  .sm\:o-s {
     overflow: scroll;
   }
-  .sm\:ovf-v {
+  .sm\:o-v {
     overflow: visible;
   }
 }
 @media (min-width: 768px) {
-  .md\:ovf-auto {
+  .md\:o-auto {
     overflow: auto;
   }
-  .md\:ovf-c {
+  .md\:o-c {
     overflow: clip;
   }
-  .md\:ovf-h {
+  .md\:o-h {
     overflow: hidden;
   }
-  .md\:ovf-s {
+  .md\:o-s {
     overflow: scroll;
   }
-  .md\:ovf-v {
+  .md\:o-v {
     overflow: visible;
   }
 }
 @media (min-width: 1024px) {
-  .lg\:ovf-auto {
+  .lg\:o-auto {
     overflow: auto;
   }
-  .lg\:ovf-c {
+  .lg\:o-c {
     overflow: clip;
   }
-  .lg\:ovf-h {
+  .lg\:o-h {
     overflow: hidden;
   }
-  .lg\:ovf-s {
+  .lg\:o-s {
     overflow: scroll;
   }
-  .lg\:ovf-v {
+  .lg\:o-v {
     overflow: visible;
   }
 }
 @media (min-width: 1280px) {
-  .xl\:ovf-auto {
+  .xl\:o-auto {
     overflow: auto;
   }
-  .xl\:ovf-c {
+  .xl\:o-c {
     overflow: clip;
   }
-  .xl\:ovf-h {
+  .xl\:o-h {
     overflow: hidden;
   }
-  .xl\:ovf-s {
+  .xl\:o-s {
     overflow: scroll;
   }
-  .xl\:ovf-v {
+  .xl\:o-v {
     overflow: visible;
   }
 }
 @media (min-width: 1536px) {
-  .xxl\:ovf-auto {
+  .xxl\:o-auto {
     overflow: auto;
   }
-  .xxl\:ovf-c {
+  .xxl\:o-c {
     overflow: clip;
   }
-  .xxl\:ovf-h {
+  .xxl\:o-h {
     overflow: hidden;
   }
-  .xxl\:ovf-s {
+  .xxl\:o-s {
     overflow: scroll;
   }
-  .xxl\:ovf-v {
+  .xxl\:o-v {
     overflow: visible;
   }
 }
-.ovf-x-auto {
+.o-x-auto {
   overflow-x: auto;
 }
 
-.h\:ovf-x-auto:hover {
+.h\:o-x-auto:hover {
   overflow-x: auto;
 }
 
-.ovf-x-c {
+.o-x-c {
   overflow-x: clip;
 }
 
-.h\:ovf-x-c:hover {
+.h\:o-x-c:hover {
   overflow-x: clip;
 }
 
-.ovf-x-h {
+.o-x-h {
   overflow-x: hidden;
 }
 
-.h\:ovf-x-h:hover {
+.h\:o-x-h:hover {
   overflow-x: hidden;
 }
 
-.ovf-x-s {
+.o-x-s {
   overflow-x: scroll;
 }
 
-.h\:ovf-x-s:hover {
+.h\:o-x-s:hover {
   overflow-x: scroll;
 }
 
-.ovf-x-v {
+.o-x-v {
   overflow-x: visible;
 }
 
-.h\:ovf-x-v:hover {
+.h\:o-x-v:hover {
   overflow-x: visible;
 }
 
 @media (min-width: 640px) {
-  .sm\:ovf-x-auto {
+  .sm\:o-x-auto {
     overflow-x: auto;
   }
-  .sm\:ovf-x-c {
+  .sm\:o-x-c {
     overflow-x: clip;
   }
-  .sm\:ovf-x-h {
+  .sm\:o-x-h {
     overflow-x: hidden;
   }
-  .sm\:ovf-x-s {
+  .sm\:o-x-s {
     overflow-x: scroll;
   }
-  .sm\:ovf-x-v {
+  .sm\:o-x-v {
     overflow-x: visible;
   }
 }
 @media (min-width: 768px) {
-  .md\:ovf-x-auto {
+  .md\:o-x-auto {
     overflow-x: auto;
   }
-  .md\:ovf-x-c {
+  .md\:o-x-c {
     overflow-x: clip;
   }
-  .md\:ovf-x-h {
+  .md\:o-x-h {
     overflow-x: hidden;
   }
-  .md\:ovf-x-s {
+  .md\:o-x-s {
     overflow-x: scroll;
   }
-  .md\:ovf-x-v {
+  .md\:o-x-v {
     overflow-x: visible;
   }
 }
 @media (min-width: 1024px) {
-  .lg\:ovf-x-auto {
+  .lg\:o-x-auto {
     overflow-x: auto;
   }
-  .lg\:ovf-x-c {
+  .lg\:o-x-c {
     overflow-x: clip;
   }
-  .lg\:ovf-x-h {
+  .lg\:o-x-h {
     overflow-x: hidden;
   }
-  .lg\:ovf-x-s {
+  .lg\:o-x-s {
     overflow-x: scroll;
   }
-  .lg\:ovf-x-v {
+  .lg\:o-x-v {
     overflow-x: visible;
   }
 }
 @media (min-width: 1280px) {
-  .xl\:ovf-x-auto {
+  .xl\:o-x-auto {
     overflow-x: auto;
   }
-  .xl\:ovf-x-c {
+  .xl\:o-x-c {
     overflow-x: clip;
   }
-  .xl\:ovf-x-h {
+  .xl\:o-x-h {
     overflow-x: hidden;
   }
-  .xl\:ovf-x-s {
+  .xl\:o-x-s {
     overflow-x: scroll;
   }
-  .xl\:ovf-x-v {
+  .xl\:o-x-v {
     overflow-x: visible;
   }
 }
 @media (min-width: 1536px) {
-  .xxl\:ovf-x-auto {
+  .xxl\:o-x-auto {
     overflow-x: auto;
   }
-  .xxl\:ovf-x-c {
+  .xxl\:o-x-c {
     overflow-x: clip;
   }
-  .xxl\:ovf-x-h {
+  .xxl\:o-x-h {
     overflow-x: hidden;
   }
-  .xxl\:ovf-x-s {
+  .xxl\:o-x-s {
     overflow-x: scroll;
   }
-  .xxl\:ovf-x-v {
+  .xxl\:o-x-v {
     overflow-x: visible;
   }
 }
-.ovf-y-auto {
+.o-y-auto {
   overflow-y: auto;
 }
 
-.h\:ovf-y-auto:hover {
+.h\:o-y-auto:hover {
   overflow-y: auto;
 }
 
-.ovf-y-c {
+.o-y-c {
   overflow-y: clip;
 }
 
-.h\:ovf-y-c:hover {
+.h\:o-y-c:hover {
   overflow-y: clip;
 }
 
-.ovf-y-h {
+.o-y-h {
   overflow-y: hidden;
 }
 
-.h\:ovf-y-h:hover {
+.h\:o-y-h:hover {
   overflow-y: hidden;
 }
 
-.ovf-y-s {
+.o-y-s {
   overflow-y: scroll;
 }
 
-.h\:ovf-y-s:hover {
+.h\:o-y-s:hover {
   overflow-y: scroll;
 }
 
-.ovf-y-v {
+.o-y-v {
   overflow-y: visible;
 }
 
-.h\:ovf-y-v:hover {
+.h\:o-y-v:hover {
   overflow-y: visible;
 }
 
 @media (min-width: 640px) {
-  .sm\:ovf-y-auto {
+  .sm\:o-y-auto {
     overflow-y: auto;
   }
-  .sm\:ovf-y-c {
+  .sm\:o-y-c {
     overflow-y: clip;
   }
-  .sm\:ovf-y-h {
+  .sm\:o-y-h {
     overflow-y: hidden;
   }
-  .sm\:ovf-y-s {
+  .sm\:o-y-s {
     overflow-y: scroll;
   }
-  .sm\:ovf-y-v {
+  .sm\:o-y-v {
     overflow-y: visible;
   }
 }
 @media (min-width: 768px) {
-  .md\:ovf-y-auto {
+  .md\:o-y-auto {
     overflow-y: auto;
   }
-  .md\:ovf-y-c {
+  .md\:o-y-c {
     overflow-y: clip;
   }
-  .md\:ovf-y-h {
+  .md\:o-y-h {
     overflow-y: hidden;
   }
-  .md\:ovf-y-s {
+  .md\:o-y-s {
     overflow-y: scroll;
   }
-  .md\:ovf-y-v {
+  .md\:o-y-v {
     overflow-y: visible;
   }
 }
 @media (min-width: 1024px) {
-  .lg\:ovf-y-auto {
+  .lg\:o-y-auto {
     overflow-y: auto;
   }
-  .lg\:ovf-y-c {
+  .lg\:o-y-c {
     overflow-y: clip;
   }
-  .lg\:ovf-y-h {
+  .lg\:o-y-h {
     overflow-y: hidden;
   }
-  .lg\:ovf-y-s {
+  .lg\:o-y-s {
     overflow-y: scroll;
   }
-  .lg\:ovf-y-v {
+  .lg\:o-y-v {
     overflow-y: visible;
   }
 }
 @media (min-width: 1280px) {
-  .xl\:ovf-y-auto {
+  .xl\:o-y-auto {
     overflow-y: auto;
   }
-  .xl\:ovf-y-c {
+  .xl\:o-y-c {
     overflow-y: clip;
   }
-  .xl\:ovf-y-h {
+  .xl\:o-y-h {
     overflow-y: hidden;
   }
-  .xl\:ovf-y-s {
+  .xl\:o-y-s {
     overflow-y: scroll;
   }
-  .xl\:ovf-y-v {
+  .xl\:o-y-v {
     overflow-y: visible;
   }
 }
 @media (min-width: 1536px) {
-  .xxl\:ovf-y-auto {
+  .xxl\:o-y-auto {
     overflow-y: auto;
   }
-  .xxl\:ovf-y-c {
+  .xxl\:o-y-c {
     overflow-y: clip;
   }
-  .xxl\:ovf-y-h {
+  .xxl\:o-y-h {
     overflow-y: hidden;
   }
-  .xxl\:ovf-y-s {
+  .xxl\:o-y-s {
     overflow-y: scroll;
   }
-  .xxl\:ovf-y-v {
+  .xxl\:o-y-v {
     overflow-y: visible;
   }
 }
