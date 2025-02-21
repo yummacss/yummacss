@@ -58173,105 +58173,105 @@
   },
   {
     "slug": "overflow",
-    "util": "ovf-auto",
+    "util": "o-auto",
     "prop": [
       "overflow: auto;"
     ]
   },
   {
     "slug": "overflow",
-    "util": "ovf-c",
+    "util": "o-c",
     "prop": [
       "overflow: clip;"
     ]
   },
   {
     "slug": "overflow",
-    "util": "ovf-h",
+    "util": "o-h",
     "prop": [
       "overflow: hidden;"
     ]
   },
   {
     "slug": "overflow",
-    "util": "ovf-s",
+    "util": "o-s",
     "prop": [
       "overflow: scroll;"
     ]
   },
   {
     "slug": "overflow",
-    "util": "ovf-v",
+    "util": "o-v",
     "prop": [
       "overflow: visible;"
     ]
   },
   {
     "slug": "overflow-x",
-    "util": "ovf-x-auto",
+    "util": "o-x-auto",
     "prop": [
       "overflow-x: auto;"
     ]
   },
   {
     "slug": "overflow-x",
-    "util": "ovf-x-c",
+    "util": "o-x-c",
     "prop": [
       "overflow-x: clip;"
     ]
   },
   {
     "slug": "overflow-x",
-    "util": "ovf-x-h",
+    "util": "o-x-h",
     "prop": [
       "overflow-x: hidden;"
     ]
   },
   {
     "slug": "overflow-x",
-    "util": "ovf-x-s",
+    "util": "o-x-s",
     "prop": [
       "overflow-x: scroll;"
     ]
   },
   {
     "slug": "overflow-x",
-    "util": "ovf-x-v",
+    "util": "o-x-v",
     "prop": [
       "overflow-x: visible;"
     ]
   },
   {
     "slug": "overflow-y",
-    "util": "ovf-y-auto",
+    "util": "o-y-auto",
     "prop": [
       "overflow-y: auto;"
     ]
   },
   {
     "slug": "overflow-y",
-    "util": "ovf-y-c",
+    "util": "o-y-c",
     "prop": [
       "overflow-y: clip;"
     ]
   },
   {
     "slug": "overflow-y",
-    "util": "ovf-y-h",
+    "util": "o-y-h",
     "prop": [
       "overflow-y: hidden;"
     ]
   },
   {
     "slug": "overflow-y",
-    "util": "ovf-y-s",
+    "util": "o-y-s",
     "prop": [
       "overflow-y: scroll;"
     ]
   },
   {
     "slug": "overflow-y",
-    "util": "ovf-y-v",
+    "util": "o-y-v",
     "prop": [
       "overflow-y: visible;"
     ]
