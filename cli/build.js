@@ -2,12 +2,12 @@ import fs from "fs";
 import * as sass from "sass";
 import CleanCSS from "clean-css";
 
-export async function buildCSS(config, scssEntryPoint, outputPath) {
+export async function buildCSS(config, entryPoint, outputPath) {
   const { reset, minify } = config.capabilities;
 
   try {
     console.log("Compiling SCSS...");
-    const result = sass.compile(scssEntryPoint, { quietDeps: !reset });
+    const result = sass.compile(entryPoint, { quietDeps: !reset });
     let css = result.css;
 
     if (minify) {

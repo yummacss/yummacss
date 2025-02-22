@@ -19,17 +19,17 @@ export async function runBuild() {
     throw new Error("Output path is not defined.");
   }
 
-  const scssEntryPoint = capabilities.reset
+  const entryPoint = capabilities.reset
     ? path.resolve(__dirname, "../src/yummacss.scss")
     : path.resolve(__dirname, "../src/no-reset.scss");
 
   const outputPath = path.resolve(process.cwd(), output);
 
-  if (!scssEntryPoint || !outputPath) {
+  if (!entryPoint || !outputPath) {
     throw new Error("Invalid entry point or output path.");
   }
 
-  await buildCSS(config, scssEntryPoint, outputPath);
+  await buildCSS(config, entryPoint, outputPath);
 
   if (content && content.length > 0) {
     await purgeCSS(content, outputPath);
