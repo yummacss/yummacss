@@ -4,8 +4,8 @@ import { program } from "commander";
 import { runBuild } from "../cli/index.js";
 
 program
-  .command("build")
-  .description("Compiles SCSS based on your configuration.")
+  .command("init")
+  .description("Purges unused styles.")
   .action(async () => {
     try {
       await runBuild();
