@@ -4,20 +4,14 @@ import gulpSass from "gulp-sass";
 import rename from "gulp-rename";
 import clean from "gulp-clean-css";
 import debug from "gulp-debug";
-import { config } from "./yummacss.config.js";
+
 import { apiFile } from "./apifile.js";
 
 const { series, src, dest } = gulp;
 const sass = gulpSass(dartSass);
 
-const { capabilities } = config;
-
 function standardFile() {
-  const entryPoint = capabilities.core
-    ? "src/yummacss.scss"
-    : "src/no-reset.scss";
-
-  return src(entryPoint)
+  return src("src/yummacss.scss")
     .pipe(debug({ title: "Processing file:" }))
     .pipe(sass().on("error", sass.logError))
     .pipe(rename("yumma.css"))
