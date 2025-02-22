@@ -3,11 +3,11 @@ import * as sass from "sass";
 import CleanCSS from "clean-css";
 
 export async function buildCSS(config, scssEntryPoint, outputPath) {
-  const { core, minify } = config.capabilities;
+  const { reset, minify } = config.capabilities;
 
   try {
     console.log("Compiling SCSS...");
-    const result = sass.compile(scssEntryPoint, { quietDeps: !core });
+    const result = sass.compile(scssEntryPoint, { quietDeps: !reset });
     let css = result.css;
 
     if (minify) {

@@ -19,7 +19,7 @@ export async function runBuild() {
     throw new Error("Output path is not defined.");
   }
 
-  const scssEntryPoint = capabilities.core
+  const scssEntryPoint = capabilities.reset
     ? path.resolve(__dirname, "../src/yummacss.scss")
     : path.resolve(__dirname, "../src/no-reset.scss");
 
