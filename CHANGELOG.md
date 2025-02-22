@@ -100,11 +100,11 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Moved `yumma-cli` to `bin\yumma-cli.js`
 - Optimized `dist\yumma.css` file performance
 - Optimized `dist\yumma.min.css` file performance
-- Refactored **Bottom / Left / Right / Top** `d-` prefix utility syntax
 - Removed `.cnt{}` utility class
 - Removed `.ins{}` utility class
 - Removed `coreFile()` function
 - Removed `d-` and `l-` from color utilities
+- Removed `d-` from **Bottom / Left / Right / Top** utilities
 - Removed `dist\yumma-core.css` file
 - Removed `dist\yumma-core.min.scss` file
 - Removed `fs-b` utility class
