@@ -12,7 +12,7 @@ const sass = gulpSass(dartSass);
 
 function standardFile() {
   return src("src/yummacss.scss")
-    .pipe(debug({ title: "Processing file:" }))
+    .pipe(debug({ title: "Building styles:" }))
     .pipe(sass().on("error", sass.logError))
     .pipe(rename("yumma.css"))
     .pipe(dest("dist"));
@@ -20,7 +20,7 @@ function standardFile() {
 
 function minifiedFile() {
   return src("dist/yumma.css", { allowEmpty: true })
-    .pipe(debug({ title: "Minifying file:" }))
+    .pipe(debug({ title: "Minifying styles:" }))
     .pipe(clean())
     .pipe(rename({ suffix: ".min" }))
     .pipe(dest("dist"));
