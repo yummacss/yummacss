@@ -8,13 +8,19 @@ importers:
 
   .:
     dependencies:
-      commander:
-        specifier: ^13.1.0
-        version: 13.1.0
-    devDependencies:
       clean-css:
         specifier: ^5.3.3
         version: 5.3.3
+      commander:
+        specifier: ^13.1.0
+        version: 13.1.0
+      purgecss:
+        specifier: ^7.0.2
+        version: 7.0.2
+      sass:
+        specifier: ^1.83.4
+        version: 1.83.4
+    devDependencies:
       gulp:
         specifier: ^5.0.0
         version: 5.0.0
@@ -30,12 +36,6 @@ importers:
       gulp-sass:
         specifier: ^6.0.0
         version: 6.0.0
-      purgecss:
-        specifier: ^7.0.2
-        version: 7.0.2
-      sass:
-        specifier: ^1.83.4
-        version: 1.83.4
 
 packages:
 
