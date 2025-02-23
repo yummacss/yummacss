@@ -10,7 +10,7 @@ import { apiFile } from "./apifile.js";
 const { series, src, dest } = gulp;
 const sass = gulpSass(dartSass);
 
-function standardFile() {
+function buildStyles() {
   return src("src/yummacss.scss")
     .pipe(debug({ title: "Building styles:" }))
     .pipe(sass().on("error", sass.logError))
@@ -18,7 +18,7 @@ function standardFile() {
     .pipe(dest("dist"));
 }
 
-function minifiedFile() {
+function minifyStyles() {
   return src("dist/yumma.css", { allowEmpty: true })
     .pipe(debug({ title: "Minifying styles:" }))
     .pipe(clean())
@@ -26,4 +26,4 @@ function minifiedFile() {
     .pipe(dest("dist"));
 }
 
-export const build = series(standardFile, minifiedFile, apiFile);
+export const build = series(buildStyles, minifyStyles, apiFile);
