@@ -5,8 +5,6 @@ import rename from "gulp-rename";
 import clean from "gulp-clean-css";
 import debug from "gulp-debug";
 
-import { apiFile } from "./apifile.js";
-
 const { series, src, dest } = gulp;
 const sass = gulpSass(dartSass);
 
@@ -26,4 +24,4 @@ function minifyStyles() {
     .pipe(dest("dist"));
 }
 
-export const build = series(buildStyles, minifyStyles, apiFile);
+export const build = series(buildStyles, minifyStyles);
