@@ -87,8 +87,7 @@ select,
 summary,
 textarea {
   &:focus {
-    outline: 2px solid vars.$yma-color-black;
-    outline-offset: 2px;
+    outline: 2px solid vars.$yma-color-transparent;
   }
 }
 
@@ -184,17 +183,12 @@ samp {
 
 /** -- Links --
  * 1. Remove underline styling from links by default.
- * 2. Restore underline styling on hover for accessibility.
  * 3. Reset color to inherit from parent element.
  */
 
 a {
   color: inherit; /* 3 */
   text-decoration: none; /* 1 */
-}
-
-a:hover {
-  text-decoration: underline; /* 2 */
 }
 
 /** -- Lists --
