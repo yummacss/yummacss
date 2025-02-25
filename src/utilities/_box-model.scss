@@ -277,32 +277,6 @@ $yma-box-model-utils: (
     "values": maps.$yma-padding-map,
   ),
 
-  "spacing-x": (
-    "prefix": "sx",
-    "properties": (
-      "margin-left",
-      "margin-right",
-    ),
-    "slug": "spacing/#spacing-x",
-    "values": (
-      "custom": true,
-      "map": maps.$yma-spacing-map,
-    ),
-  ),
-
-  "spacing-y": (
-    "prefix": "sy",
-    "properties": (
-      "margin-bottom",
-      "margin-top",
-    ),
-    "slug": "spacing/#spacing-y",
-    "values": (
-      "custom": true,
-      "map": maps.$yma-spacing-map,
-    ),
-  ),
-
   "width": (
     "prefix": "w",
     "properties": (
