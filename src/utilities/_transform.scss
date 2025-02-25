@@ -162,26 +162,6 @@ $yma-transform-utils: (
       "tr": top right,
     ),
   ),
-
-  "translate-x": (
-    "prefix": "t-tx",
-    "properties": (
-      "transform",
-    ),
-    "property-function": translateX,
-    "slug": "translate/#translate-x",
-    "values": maps.$yma-transform-translate-map,
-  ),
-
-  "translate-y": (
-    "prefix": "t-ty",
-    "properties": (
-      "transform",
-    ),
-    "property-function": translateY,
-    "slug": "translate/#translate-y",
-    "values": maps.$yma-transform-translate-map,
-  ),
 );
 
 @each $name, $map in $yma-transform-utils {
