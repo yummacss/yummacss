@@ -8,7 +8,7 @@
     null
   );
 
-  // Base utilities
+  // base styles
   @each $k, $v in map.get($map, "values") {
     .#{$prefix}-#{$k} {
       @each $property in $properties {
@@ -16,7 +16,7 @@
       }
     }
 
-    // Hover variants
+    // hover styles
     .h\:#{$prefix}-#{$k}:hover {
       @each $property in $properties {
         #{$property}: if($function != null, $function + "(" + $v + ")", $v);
@@ -24,7 +24,7 @@
     }
   }
 
-  // Responsive variants
+  // responsive styles
   @each $bp, $bp-value in bp.$yma-breakpoints {
     @media (min-width: $bp-value) {
       @each $k, $v in map.get($map, "values") {

@@ -1,80 +1,77 @@
 // colors
-$yma-color-red: rgb(215, 61, 61);
-$yma-color-orange: rgb(224, 104, 20);
-$yma-color-yellow: rgb(211, 161, 7);
-$yma-color-green: rgb(31, 177, 85);
-$yma-color-teal: rgb(18, 166, 149);
-$yma-color-cyan: rgb(5, 164, 191);
-$yma-color-blue: rgb(53, 117, 221);
-$yma-color-indigo: rgb(89, 92, 217);
-$yma-color-violet: rgb(125, 83, 221);
-$yma-color-pink: rgb(212, 65, 138);
-$yma-color-lead: rgb(63, 63, 78);
-$yma-color-gray: rgb(96, 103, 115);
-$yma-color-silver: rgb(191, 194, 199);
-$yma-color-black: black;
-$yma-color-white: white;
-$yma-color-transparent: transparent;
+$yma-color-red: rgb(215, 61, 61) !default;
+$yma-color-orange: rgb(224, 104, 20) !default;
+$yma-color-yellow: rgb(211, 161, 7) !default;
+$yma-color-green: rgb(31, 177, 85) !default;
+$yma-color-teal: rgb(18, 166, 149) !default;
+$yma-color-cyan: rgb(5, 164, 191) !default;
+$yma-color-blue: rgb(53, 117, 221) !default;
+$yma-color-indigo: rgb(89, 92, 217) !default;
+$yma-color-violet: rgb(125, 83, 221) !default;
+$yma-color-pink: rgb(212, 65, 138) !default;
+$yma-color-lead: rgb(63, 63, 78) !default;
+$yma-color-gray: rgb(96, 103, 115) !default;
+$yma-color-silver: rgb(191, 194, 199) !default;
+$yma-color-black: black !default;
+$yma-color-white: white !default;
+$yma-color-transparent: transparent !default;
 
 // borders
-$yma-border: 1px;
-$yma-border-radius: 0.25rem;
-$yma-border-spacing: 0.25rem;
+$yma-border: 1px !default;
+$yma-border-radius: 0.25rem !default;
+$yma-border-spacing: 0.25rem !default;
 
 // outlines
-$yma-outline-offset: 1px;
-$yma-outline-width: 1px;
-$yma-decoration-thickness: 1px;
+$yma-outline-offset: 1px !default;
+$yma-outline-width: 1px !default;
+$yma-decoration-thickness: 1px !default;
 
 // box model
-$yma-dimension: 0.25rem;
-$yma-height: 0.25rem;
-$yma-width: 0.25rem;
-$yma-padding: 0.25rem;
-$yma-margin: 0.25rem;
-$yma-spacing: 0.25rem;
+$yma-dimension: 0.25rem !default;
+$yma-height: 0.25rem !default;
+$yma-width: 0.25rem !default;
+$yma-padding: 0.25rem !default;
+$yma-margin: 0.25rem !default;
+$yma-spacing: 0.25rem !default;
 
 // fx
-$yma-backdrop-blur: 4px;
-$yma-blur: 4px;
-$yma-box-shadow-lg: 1px 3px 5px 1px rgb(0, 0, 0, 0.1);
-$yma-box-shadow-md: 1px 3px 5px -1px rgb(0, 0, 0, 0.1);
-$yma-box-shadow-sm: 1px 3px 5px -2px rgb(0, 0, 0, 0.1);
-$yma-box-shadow-xl: 1px 3px 5px 2px rgb(0, 0, 0, 0.1);
-$yma-box-shadow-xs: 1px 3px 5px -3px rgb(0, 0, 0, 0.1);
-$yma-grayscale: 10%;
+$yma-backdrop-blur: 4px !default;
+$yma-blur: 4px !default;
+$yma-box-shadow-lg: 1px 3px 5px 1px rgb(0, 0, 0, 0.1) !default;
+$yma-box-shadow-md: 1px 3px 5px -1px rgb(0, 0, 0, 0.1) !default;
+$yma-box-shadow-sm: 1px 3px 5px -2px rgb(0, 0, 0, 0.1) !default;
+$yma-box-shadow-xl: 1px 3px 5px 2px rgb(0, 0, 0, 0.1) !default;
+$yma-box-shadow-xs: 1px 3px 5px -3px rgb(0, 0, 0, 0.1) !default;
+$yma-grayscale: 10% !default;
 
 // flexbox
-$yma-flex-basis: 0.25rem;
+$yma-flex-basis: 0.25rem !default;
 
 // grid
-$yma-gap: 0.25rem;
-$yma-column-gap: 0.25rem;
-$yma-row-gap: 0.25rem;
+$yma-gap: 0.25rem !default;
+$yma-column-gap: 0.25rem !default;
+$yma-row-gap: 0.25rem !default;
 
 // layout
-$yma-direction: 0.25rem;
+$yma-direction: 0.25rem !default;
 
 // typography
-$yma-font-size-xs: 0.75rem;
-$yma-font-size-sm: 0.875rem;
-$yma-font-size-base: 1rem;
-$yma-font-size-lg: 1.125rem;
-$yma-font-size-xl: 1.25rem;
-$yma-font-size-2xl: 1.5rem;
-$yma-font-size-3xl: 1.875rem;
-$yma-font-size-4xl: 2.25rem;
-$yma-font-size-5xl: 3rem;
-$yma-font-size-6xl: 3.75rem;
-$yma-font-size-7xl: 4.5rem;
-$yma-font-size-8xl: 6rem;
-$yma-font-size-9xl: 8rem;
+$yma-font-size-xs: 0.75rem !default;
+$yma-font-size-sm: 0.875rem !default;
+$yma-font-size-base: 1rem !default;
+$yma-font-size-lg: 1.125rem !default;
+$yma-font-size-xl: 1.25rem !default;
+$yma-font-size-2xl: 1.5rem !default;
+$yma-font-size-3xl: 1.875rem !default;
+$yma-font-size-4xl: 2.25rem !default;
+$yma-font-size-5xl: 3rem !default;
+$yma-font-size-6xl: 3.75rem !default;
+$yma-font-size-7xl: 4.5rem !default;
+$yma-font-size-8xl: 6rem !default;
+$yma-font-size-9xl: 8rem !default;
 
-$yma-font-weight: 500;
+$yma-font-weight: 500 !default;
 
-$yma-font-charter: Charter, "Bitstream Charter", "Sitka Text", Cambria, serif;
-$yma-font-mono: "Nimbus Mono PS", "Courier New", monospace;
-$yma-font-system: system-ui, sans-serif;
-
-// transform
-$yma-transform-translate: 0.25rem;
+$yma-font-charter: Charter, "Bitstream Charter", "Sitka Text", Cambria, serif !default;
+$yma-font-mono: "Nimbus Mono PS", "Courier New", monospace !default;
+$yma-font-system: system-ui, sans-serif !default;

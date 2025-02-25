@@ -98,6 +98,8 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Moved `yumma-cli` to `bin\yumma-cli.js`
 - Optimized `dist\yumma.css` file performance
 - Optimized `dist\yumma.min.css` file performance
+- Removed **Spacing X** utilities
+- Removed **Spacing Y** utilities
 - Removed `.cnt{}` utility class
 - Removed `.ins{}` utility class
 - Removed `coreFile()` function
