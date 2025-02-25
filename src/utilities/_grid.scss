@@ -1,7 +1,9 @@
 @use "sass:math";
 @use "sass:map";
+@use "sass:meta";
 @use "../abstracts/variables" as vars;
 @use "../abstracts/mixins/" as mix;
+@use "../utilities/maps/" as maps;
 
 $yma-grid-utils: (
   "column-gap": (
@@ -10,25 +12,7 @@ $yma-grid-utils: (
       "column-gap",
     ),
     "slug": "column-gap",
-    "values": (
-      "0": vars.$yma-column-gap * 0,
-      "1": vars.$yma-column-gap,
-      "2": vars.$yma-column-gap * 2,
-      "3": vars.$yma-column-gap * 3,
-      "4": vars.$yma-column-gap * 4,
-      "5": vars.$yma-column-gap * 5,
-      "6": vars.$yma-column-gap * 6,
-      "7": vars.$yma-column-gap * 7,
-      "8": vars.$yma-column-gap * 8,
-      "9": vars.$yma-column-gap * 9,
-      "10": vars.$yma-column-gap * 10,
-      "11": vars.$yma-column-gap * 11,
-      "12": vars.$yma-column-gap * 12,
-      "13": vars.$yma-column-gap * 13,
-      "14": vars.$yma-column-gap * 14,
-      "15": vars.$yma-column-gap * 15,
-      "16": vars.$yma-column-gap * 16,
-    ),
+    "values": maps.$yma-gap-map,
   ),
 
   "gap": (
@@ -37,26 +21,7 @@ $yma-grid-utils: (
       "gap",
     ),
     "slug": "gap",
-    "values": (
-      "0": vars.$yma-gap * 0,
-      "1": vars.$yma-gap,
-      "2": vars.$yma-gap * 2,
-      "3": vars.$yma-gap * 3,
-      "4": vars.$yma-gap * 4,
-      "5": vars.$yma-gap * 5,
-      "6": vars.$yma-gap * 6,
-      "7": vars.$yma-gap * 7,
-      "8": vars.$yma-gap * 8,
-      "9": vars.$yma-gap * 9,
-      "10": vars.$yma-gap * 10,
-      "11": vars.$yma-gap * 11,
-      "12": vars.$yma-gap * 12,
-      "13": vars.$yma-gap * 13,
-      "14": vars.$yma-gap * 14,
-      "15": vars.$yma-gap * 15,
-      "16": vars.$yma-gap * 16,
-      "none": none,
-    ),
+    "values": maps.$yma-gap-map,
   ),
 
   "grid-auto-columns": (
@@ -314,30 +279,13 @@ $yma-grid-utils: (
       "row-gap",
     ),
     "slug": "row-gap",
-    "values": (
-      "0": vars.$yma-row-gap * 0,
-      "1": vars.$yma-row-gap,
-      "2": vars.$yma-row-gap * 2,
-      "3": vars.$yma-row-gap * 3,
-      "4": vars.$yma-row-gap * 4,
-      "5": vars.$yma-row-gap * 5,
-      "6": vars.$yma-row-gap * 6,
-      "7": vars.$yma-row-gap * 7,
-      "8": vars.$yma-row-gap * 8,
-      "9": vars.$yma-row-gap * 9,
-      "10": vars.$yma-row-gap * 10,
-      "11": vars.$yma-row-gap * 11,
-      "12": vars.$yma-row-gap * 12,
-      "13": vars.$yma-row-gap * 13,
-      "14": vars.$yma-row-gap * 14,
-      "15": vars.$yma-row-gap * 15,
-      "16": vars.$yma-row-gap * 16,
-    ),
+    "values": maps.$yma-gap-map,
   ),
 );
 
-@each $properties, $map in $yma-grid-utils {
+@each $name, $map in $yma-grid-utils {
   $prefix: map.get($map, "prefix");
+  $properties: map.get($map, "properties");
 
   @include mix.create-utilities($map, $prefix, $properties);
 }

@@ -17,9 +17,9 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Added **Background Size** utilities
 - Added **Blur** utilities
 - Added **Border Spacing** utilities
+- Added **Bottom/Left/Right/Top (Axis)** utilities
 - Added **Box Decoration Break** utilities
 - Added **Clear** utilities
-- Added **Bottom/Left/Right/Top (Axis)** utilities
 - Added **Field Sizing** utilities
 - Added **Fill** utilities
 - Added **Font Family** fallbacks
@@ -71,14 +71,17 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Added `_index.scss` files
 - Added `$yma-box-shadow-*` variables
 - Added `$yma-font-size-*` variables
-- Added `no-reset.scss` file
 - Added `full` and `half` values for **Direction** utilities
+- Added `no-reset.scss` file
 - Added `rad-b-*`, `rad-l-*`, `rad-r-*` and `rad-t` **Border Radius** utilities
 - Added `src\abstracts\functions` folder
 - Added `utilities\maps` folder
 - Added `yummacss.config.js` file
 - Added the `column-dense `and `row-dense` values for **Grid Auto Flow**
-- Added Yumma CSS CLI
+- Added Yumma CSS CLI feature
+- Extend **Column Gap** utilities from 0-16 to 0-100
+- Extend **Gap** utilities from 0-16 to 0-100
+- Extend **Row Gap** utilities from 0-16 to 0-100
 
 </details>
 
