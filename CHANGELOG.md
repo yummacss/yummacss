@@ -67,7 +67,7 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Added **Whitespace** utilities
 - Added `_create-colors.scss`, `_create-utilities.scss`, `_extend-utilities.scss` and `_scale-utilities.scss` partial files
 - Added `_create-values.scss` file
-- Added `_dimension.scss`, `_height.scss`, `_margin.scss`, `_padding.scss`, `_spacing.scss` and `_width.scss` files
+- Added `_dimension.scss`, `_height.scss`, `_margin.scss`, `_padding.scss` and `_width.scss` files
 - Added `_index.scss` files
 - Added `$yma-box-shadow-*` variables
 - Added `$yma-font-size-*` variables
@@ -134,8 +134,6 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Updated **Overflow X** utilities syntax from `ovf-x-*` to `o-x-*`
 - Updated **Overflow Y** utilities syntax from `ovf-y-*` to `o-y-*`
 - Updated **Overflow** utilities syntax from `ovf-*` to `o-*`
-- Updated **Spacing X** utilities syntax from `s-x-*` to `sx-*`
-- Updated **Spacing Y** utilities syntax from `s-y-*` to `sy-*`
 - Updated color generation logic
 - Updated color shade percentage from 10% to 14%
 - Updated color utility range from 1-6 to 1-12
