@@ -63,8 +63,6 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Added **Text Underline Offset** utilities
 - Added **Text Wrap** utilities
 - Added **Transform Origin** utilities
-- Added **Translate** utilities
-- Added **Vertical Align** utilities
 - Added **Visibility** utilities
 - Added **Whitespace** utilities
 - Added `_create-colors.scss`, `_create-utilities.scss`, `_extend-utilities.scss` and `_scale-utilities.scss` partial files
