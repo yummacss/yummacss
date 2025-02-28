@@ -102325,62 +102325,6 @@ summary {
     backdrop-filter: blur(64px);
   }
 }
-.bdb-c {
-  box-decoration-break: slice;
-}
-
-.h\:bdb-c:hover {
-  box-decoration-break: slice;
-}
-
-.bdb-s {
-  box-decoration-break: clone;
-}
-
-.h\:bdb-s:hover {
-  box-decoration-break: clone;
-}
-
-@media (min-width: 40rem) {
-  .sm\:bdb-c {
-    box-decoration-break: slice;
-  }
-  .sm\:bdb-s {
-    box-decoration-break: clone;
-  }
-}
-@media (min-width: 48rem) {
-  .md\:bdb-c {
-    box-decoration-break: slice;
-  }
-  .md\:bdb-s {
-    box-decoration-break: clone;
-  }
-}
-@media (min-width: 64rem) {
-  .lg\:bdb-c {
-    box-decoration-break: slice;
-  }
-  .lg\:bdb-s {
-    box-decoration-break: clone;
-  }
-}
-@media (min-width: 80rem) {
-  .xl\:bdb-c {
-    box-decoration-break: slice;
-  }
-  .xl\:bdb-s {
-    box-decoration-break: clone;
-  }
-}
-@media (min-width: 96rem) {
-  .xxl\:bdb-c {
-    box-decoration-break: slice;
-  }
-  .xxl\:bdb-s {
-    box-decoration-break: clone;
-  }
-}
 .bs-none {
   box-shadow: none;
 }

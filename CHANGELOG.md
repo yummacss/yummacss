@@ -17,14 +17,15 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Added **Background Size** utilities
 - Added **Blur** utilities
 - Added **Border Spacing** utilities
+- Added **Bottom Radius** utilities
 - Added **Bottom/Left/Right/Top (Axis)** utilities
-- Added **Box Decoration Break** utilities
 - Added **Clear** utilities
 - Added **Field Sizing** utilities
 - Added **Fill** utilities
 - Added **Font Family** fallbacks
 - Added **Grayscale** utilities
 - Added **Isolation** utilities
+- Added **Left Radius** utilities
 - Added **Letter Spacing** utilities
 - Added **List Style Position** utilities
 - Added **Margin Block End** utilities
@@ -39,6 +40,7 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Added **Place Content** utilities
 - Added **Place Items** utilities
 - Added **Place Self** utilities
+- Added **Right Radius** utilities
 - Added **Rotate** utilities
 - Added **Scale** utilities
 - Added **Scroll Behavior** utilities
@@ -62,6 +64,7 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Added **Text Transform** utilities
 - Added **Text Underline Offset** utilities
 - Added **Text Wrap** utilities
+- Added **Top Radius** utilities
 - Added **Transform Origin** utilities
 - Added **Visibility** utilities
 - Added **Whitespace** utilities
@@ -73,7 +76,6 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Added `$yma-font-size-*` variables
 - Added `full` and `half` values for **Direction** utilities
 - Added `no-reset.scss` file
-- Added `rad-b-*`, `rad-l-*`, `rad-r-*` and `rad-t` **Border Radius** utilities
 - Added `src\abstracts\functions` folder
 - Added `utilities\maps` folder
 - Added `yummacss.config.js` file
