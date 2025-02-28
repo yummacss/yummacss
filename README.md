@@ -16,19 +16,22 @@
 
 ## Getting started
 
-Yumma CSS is a utility-first library that uses abbreviated naming conventions that follow regular CSS syntax — it’s a great way to scale and maintain your project with less code.
-
-## Installation
-
-Here's how you can add `yummacss` into your project or framework. Check out [the docs](https://www.yummacss.com/docs/installation) for more info.
+1. Add `yummacss` to your project.
 
 ```bash
 npm install yummacss@latest
 ```
 
+2. Include `yummacss` in your main CSS file:
+
+```css
+@import "/node_modules/yummacss/dist/yumma.min.css";
+```
+
 ## Built with
 
 - [Gulp](https://gulpjs.com/) — A toolkit to automate & enhance your workflow.
+- [SCSS](https://sass-lang.com/documentation/syntax/) —  CSS with superpowers.
 
 ## Licensing
 
