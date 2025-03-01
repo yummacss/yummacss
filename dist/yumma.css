@@ -164896,98 +164896,282 @@ summary {
   aspect-ratio: auto;
 }
 
-.ar-l {
-  aspect-ratio: 16/9;
-}
-
-.h\:ar-l:hover {
-  aspect-ratio: 16/9;
-}
-
-.ar-p {
-  aspect-ratio: 9/16;
-}
-
-.h\:ar-p:hover {
-  aspect-ratio: 9/16;
-}
-
-.ar-s {
+.ar-1\/1 {
   aspect-ratio: 1/1;
 }
 
-.h\:ar-s:hover {
+.h\:ar-1\/1:hover {
   aspect-ratio: 1/1;
+}
+
+.ar-1\/2 {
+  aspect-ratio: 1/2;
+}
+
+.h\:ar-1\/2:hover {
+  aspect-ratio: 1/2;
+}
+
+.ar-16\/9 {
+  aspect-ratio: 16/9;
+}
+
+.h\:ar-16\/9:hover {
+  aspect-ratio: 16/9;
+}
+
+.ar-2\/1 {
+  aspect-ratio: 2/1;
+}
+
+.h\:ar-2\/1:hover {
+  aspect-ratio: 2/1;
+}
+
+.ar-2\/3 {
+  aspect-ratio: 2/3;
+}
+
+.h\:ar-2\/3:hover {
+  aspect-ratio: 2/3;
+}
+
+.ar-3\/2 {
+  aspect-ratio: 3/2;
+}
+
+.h\:ar-3\/2:hover {
+  aspect-ratio: 3/2;
+}
+
+.ar-3\/4 {
+  aspect-ratio: 3/4;
+}
+
+.h\:ar-3\/4:hover {
+  aspect-ratio: 3/4;
+}
+
+.ar-4\/3 {
+  aspect-ratio: 4/3;
+}
+
+.h\:ar-4\/3:hover {
+  aspect-ratio: 4/3;
+}
+
+.ar-4\/5 {
+  aspect-ratio: 4/5;
+}
+
+.h\:ar-4\/5:hover {
+  aspect-ratio: 4/5;
+}
+
+.ar-5\/4 {
+  aspect-ratio: 5/4;
+}
+
+.h\:ar-5\/4:hover {
+  aspect-ratio: 5/4;
+}
+
+.ar-9\/16 {
+  aspect-ratio: 9/16;
+}
+
+.h\:ar-9\/16:hover {
+  aspect-ratio: 9/16;
 }
 
 @media (min-width: 40rem) {
   .sm\:ar-auto {
     aspect-ratio: auto;
   }
-  .sm\:ar-l {
+  .sm\:ar-1\/1 {
+    aspect-ratio: 1/1;
+  }
+  .sm\:ar-1\/2 {
+    aspect-ratio: 1/2;
+  }
+  .sm\:ar-16\/9 {
     aspect-ratio: 16/9;
   }
-  .sm\:ar-p {
-    aspect-ratio: 9/16;
+  .sm\:ar-2\/1 {
+    aspect-ratio: 2/1;
   }
-  .sm\:ar-s {
-    aspect-ratio: 1/1;
+  .sm\:ar-2\/3 {
+    aspect-ratio: 2/3;
+  }
+  .sm\:ar-3\/2 {
+    aspect-ratio: 3/2;
+  }
+  .sm\:ar-3\/4 {
+    aspect-ratio: 3/4;
+  }
+  .sm\:ar-4\/3 {
+    aspect-ratio: 4/3;
+  }
+  .sm\:ar-4\/5 {
+    aspect-ratio: 4/5;
+  }
+  .sm\:ar-5\/4 {
+    aspect-ratio: 5/4;
+  }
+  .sm\:ar-9\/16 {
+    aspect-ratio: 9/16;
   }
 }
 @media (min-width: 48rem) {
   .md\:ar-auto {
     aspect-ratio: auto;
   }
-  .md\:ar-l {
+  .md\:ar-1\/1 {
+    aspect-ratio: 1/1;
+  }
+  .md\:ar-1\/2 {
+    aspect-ratio: 1/2;
+  }
+  .md\:ar-16\/9 {
     aspect-ratio: 16/9;
   }
-  .md\:ar-p {
-    aspect-ratio: 9/16;
+  .md\:ar-2\/1 {
+    aspect-ratio: 2/1;
   }
-  .md\:ar-s {
-    aspect-ratio: 1/1;
+  .md\:ar-2\/3 {
+    aspect-ratio: 2/3;
+  }
+  .md\:ar-3\/2 {
+    aspect-ratio: 3/2;
+  }
+  .md\:ar-3\/4 {
+    aspect-ratio: 3/4;
+  }
+  .md\:ar-4\/3 {
+    aspect-ratio: 4/3;
+  }
+  .md\:ar-4\/5 {
+    aspect-ratio: 4/5;
+  }
+  .md\:ar-5\/4 {
+    aspect-ratio: 5/4;
+  }
+  .md\:ar-9\/16 {
+    aspect-ratio: 9/16;
   }
 }
 @media (min-width: 64rem) {
   .lg\:ar-auto {
     aspect-ratio: auto;
   }
-  .lg\:ar-l {
+  .lg\:ar-1\/1 {
+    aspect-ratio: 1/1;
+  }
+  .lg\:ar-1\/2 {
+    aspect-ratio: 1/2;
+  }
+  .lg\:ar-16\/9 {
     aspect-ratio: 16/9;
   }
-  .lg\:ar-p {
-    aspect-ratio: 9/16;
+  .lg\:ar-2\/1 {
+    aspect-ratio: 2/1;
   }
-  .lg\:ar-s {
-    aspect-ratio: 1/1;
+  .lg\:ar-2\/3 {
+    aspect-ratio: 2/3;
+  }
+  .lg\:ar-3\/2 {
+    aspect-ratio: 3/2;
+  }
+  .lg\:ar-3\/4 {
+    aspect-ratio: 3/4;
+  }
+  .lg\:ar-4\/3 {
+    aspect-ratio: 4/3;
+  }
+  .lg\:ar-4\/5 {
+    aspect-ratio: 4/5;
+  }
+  .lg\:ar-5\/4 {
+    aspect-ratio: 5/4;
+  }
+  .lg\:ar-9\/16 {
+    aspect-ratio: 9/16;
   }
 }
 @media (min-width: 80rem) {
   .xl\:ar-auto {
     aspect-ratio: auto;
   }
-  .xl\:ar-l {
+  .xl\:ar-1\/1 {
+    aspect-ratio: 1/1;
+  }
+  .xl\:ar-1\/2 {
+    aspect-ratio: 1/2;
+  }
+  .xl\:ar-16\/9 {
     aspect-ratio: 16/9;
   }
-  .xl\:ar-p {
-    aspect-ratio: 9/16;
+  .xl\:ar-2\/1 {
+    aspect-ratio: 2/1;
   }
-  .xl\:ar-s {
-    aspect-ratio: 1/1;
+  .xl\:ar-2\/3 {
+    aspect-ratio: 2/3;
+  }
+  .xl\:ar-3\/2 {
+    aspect-ratio: 3/2;
+  }
+  .xl\:ar-3\/4 {
+    aspect-ratio: 3/4;
+  }
+  .xl\:ar-4\/3 {
+    aspect-ratio: 4/3;
+  }
+  .xl\:ar-4\/5 {
+    aspect-ratio: 4/5;
+  }
+  .xl\:ar-5\/4 {
+    aspect-ratio: 5/4;
+  }
+  .xl\:ar-9\/16 {
+    aspect-ratio: 9/16;
   }
 }
 @media (min-width: 96rem) {
   .xxl\:ar-auto {
     aspect-ratio: auto;
   }
-  .xxl\:ar-l {
+  .xxl\:ar-1\/1 {
+    aspect-ratio: 1/1;
+  }
+  .xxl\:ar-1\/2 {
+    aspect-ratio: 1/2;
+  }
+  .xxl\:ar-16\/9 {
     aspect-ratio: 16/9;
   }
-  .xxl\:ar-p {
-    aspect-ratio: 9/16;
+  .xxl\:ar-2\/1 {
+    aspect-ratio: 2/1;
   }
-  .xxl\:ar-s {
-    aspect-ratio: 1/1;
+  .xxl\:ar-2\/3 {
+    aspect-ratio: 2/3;
+  }
+  .xxl\:ar-3\/2 {
+    aspect-ratio: 3/2;
+  }
+  .xxl\:ar-3\/4 {
+    aspect-ratio: 3/4;
+  }
+  .xxl\:ar-4\/3 {
+    aspect-ratio: 4/3;
+  }
+  .xxl\:ar-4\/5 {
+    aspect-ratio: 4/5;
+  }
+  .xxl\:ar-5\/4 {
+    aspect-ratio: 5/4;
+  }
+  .xxl\:ar-9\/16 {
+    aspect-ratio: 9/16;
   }
 }
 .cl-b {
