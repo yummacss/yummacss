@@ -164904,6 +164904,14 @@ summary {
   aspect-ratio: "16/9";
 }
 
+.ar-p {
+  aspect-ratio: "9/16";
+}
+
+.h\:ar-p:hover {
+  aspect-ratio: "9/16";
+}
+
 .ar-s {
   aspect-ratio: "1/1";
 }
@@ -164919,6 +164927,9 @@ summary {
   .sm\:ar-l {
     aspect-ratio: "16/9";
   }
+  .sm\:ar-p {
+    aspect-ratio: "9/16";
+  }
   .sm\:ar-s {
     aspect-ratio: "1/1";
   }
@@ -164929,6 +164940,9 @@ summary {
   }
   .md\:ar-l {
     aspect-ratio: "16/9";
+  }
+  .md\:ar-p {
+    aspect-ratio: "9/16";
   }
   .md\:ar-s {
     aspect-ratio: "1/1";
@@ -164941,6 +164955,9 @@ summary {
   .lg\:ar-l {
     aspect-ratio: "16/9";
   }
+  .lg\:ar-p {
+    aspect-ratio: "9/16";
+  }
   .lg\:ar-s {
     aspect-ratio: "1/1";
   }
@@ -164952,6 +164969,9 @@ summary {
   .xl\:ar-l {
     aspect-ratio: "16/9";
   }
+  .xl\:ar-p {
+    aspect-ratio: "9/16";
+  }
   .xl\:ar-s {
     aspect-ratio: "1/1";
   }
@@ -164962,6 +164982,9 @@ summary {
   }
   .xxl\:ar-l {
     aspect-ratio: "16/9";
+  }
+  .xxl\:ar-p {
+    aspect-ratio: "9/16";
   }
   .xxl\:ar-s {
     aspect-ratio: "1/1";
