@@ -164944,38 +164944,6 @@ summary {
   aspect-ratio: 3/2;
 }
 
-.ar-3\/4 {
-  aspect-ratio: 3/4;
-}
-
-.h\:ar-3\/4:hover {
-  aspect-ratio: 3/4;
-}
-
-.ar-4\/3 {
-  aspect-ratio: 4/3;
-}
-
-.h\:ar-4\/3:hover {
-  aspect-ratio: 4/3;
-}
-
-.ar-4\/5 {
-  aspect-ratio: 4/5;
-}
-
-.h\:ar-4\/5:hover {
-  aspect-ratio: 4/5;
-}
-
-.ar-5\/4 {
-  aspect-ratio: 5/4;
-}
-
-.h\:ar-5\/4:hover {
-  aspect-ratio: 5/4;
-}
-
 .ar-9\/16 {
   aspect-ratio: 9/16;
 }
@@ -165006,18 +164974,6 @@ summary {
   .sm\:ar-3\/2 {
     aspect-ratio: 3/2;
   }
-  .sm\:ar-3\/4 {
-    aspect-ratio: 3/4;
-  }
-  .sm\:ar-4\/3 {
-    aspect-ratio: 4/3;
-  }
-  .sm\:ar-4\/5 {
-    aspect-ratio: 4/5;
-  }
-  .sm\:ar-5\/4 {
-    aspect-ratio: 5/4;
-  }
   .sm\:ar-9\/16 {
     aspect-ratio: 9/16;
   }
@@ -165043,18 +164999,6 @@ summary {
   }
   .md\:ar-3\/2 {
     aspect-ratio: 3/2;
-  }
-  .md\:ar-3\/4 {
-    aspect-ratio: 3/4;
-  }
-  .md\:ar-4\/3 {
-    aspect-ratio: 4/3;
-  }
-  .md\:ar-4\/5 {
-    aspect-ratio: 4/5;
-  }
-  .md\:ar-5\/4 {
-    aspect-ratio: 5/4;
   }
   .md\:ar-9\/16 {
     aspect-ratio: 9/16;
@@ -165082,18 +165026,6 @@ summary {
   .lg\:ar-3\/2 {
     aspect-ratio: 3/2;
   }
-  .lg\:ar-3\/4 {
-    aspect-ratio: 3/4;
-  }
-  .lg\:ar-4\/3 {
-    aspect-ratio: 4/3;
-  }
-  .lg\:ar-4\/5 {
-    aspect-ratio: 4/5;
-  }
-  .lg\:ar-5\/4 {
-    aspect-ratio: 5/4;
-  }
   .lg\:ar-9\/16 {
     aspect-ratio: 9/16;
   }
@@ -165120,18 +165052,6 @@ summary {
   .xl\:ar-3\/2 {
     aspect-ratio: 3/2;
   }
-  .xl\:ar-3\/4 {
-    aspect-ratio: 3/4;
-  }
-  .xl\:ar-4\/3 {
-    aspect-ratio: 4/3;
-  }
-  .xl\:ar-4\/5 {
-    aspect-ratio: 4/5;
-  }
-  .xl\:ar-5\/4 {
-    aspect-ratio: 5/4;
-  }
   .xl\:ar-9\/16 {
     aspect-ratio: 9/16;
   }
@@ -165157,18 +165077,6 @@ summary {
   }
   .xxl\:ar-3\/2 {
     aspect-ratio: 3/2;
-  }
-  .xxl\:ar-3\/4 {
-    aspect-ratio: 3/4;
-  }
-  .xxl\:ar-4\/3 {
-    aspect-ratio: 4/3;
-  }
-  .xxl\:ar-4\/5 {
-    aspect-ratio: 4/5;
-  }
-  .xxl\:ar-5\/4 {
-    aspect-ratio: 5/4;
   }
   .xxl\:ar-9\/16 {
     aspect-ratio: 9/16;
