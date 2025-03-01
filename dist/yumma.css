@@ -164897,27 +164897,27 @@ summary {
 }
 
 .ar-l {
-  aspect-ratio: "16/9";
+  aspect-ratio: 16/9;
 }
 
 .h\:ar-l:hover {
-  aspect-ratio: "16/9";
+  aspect-ratio: 16/9;
 }
 
 .ar-p {
-  aspect-ratio: "9/16";
+  aspect-ratio: 9/16;
 }
 
 .h\:ar-p:hover {
-  aspect-ratio: "9/16";
+  aspect-ratio: 9/16;
 }
 
 .ar-s {
-  aspect-ratio: "1/1";
+  aspect-ratio: 1/1;
 }
 
 .h\:ar-s:hover {
-  aspect-ratio: "1/1";
+  aspect-ratio: 1/1;
 }
 
 @media (min-width: 40rem) {
@@ -164925,13 +164925,13 @@ summary {
     aspect-ratio: auto;
   }
   .sm\:ar-l {
-    aspect-ratio: "16/9";
+    aspect-ratio: 16/9;
   }
   .sm\:ar-p {
-    aspect-ratio: "9/16";
+    aspect-ratio: 9/16;
   }
   .sm\:ar-s {
-    aspect-ratio: "1/1";
+    aspect-ratio: 1/1;
   }
 }
 @media (min-width: 48rem) {
@@ -164939,13 +164939,13 @@ summary {
     aspect-ratio: auto;
   }
   .md\:ar-l {
-    aspect-ratio: "16/9";
+    aspect-ratio: 16/9;
   }
   .md\:ar-p {
-    aspect-ratio: "9/16";
+    aspect-ratio: 9/16;
   }
   .md\:ar-s {
-    aspect-ratio: "1/1";
+    aspect-ratio: 1/1;
   }
 }
 @media (min-width: 64rem) {
@@ -164953,13 +164953,13 @@ summary {
     aspect-ratio: auto;
   }
   .lg\:ar-l {
-    aspect-ratio: "16/9";
+    aspect-ratio: 16/9;
   }
   .lg\:ar-p {
-    aspect-ratio: "9/16";
+    aspect-ratio: 9/16;
   }
   .lg\:ar-s {
-    aspect-ratio: "1/1";
+    aspect-ratio: 1/1;
   }
 }
 @media (min-width: 80rem) {
@@ -164967,13 +164967,13 @@ summary {
     aspect-ratio: auto;
   }
   .xl\:ar-l {
-    aspect-ratio: "16/9";
+    aspect-ratio: 16/9;
   }
   .xl\:ar-p {
-    aspect-ratio: "9/16";
+    aspect-ratio: 9/16;
   }
   .xl\:ar-s {
-    aspect-ratio: "1/1";
+    aspect-ratio: 1/1;
   }
 }
 @media (min-width: 96rem) {
@@ -164981,13 +164981,13 @@ summary {
     aspect-ratio: auto;
   }
   .xxl\:ar-l {
-    aspect-ratio: "16/9";
+    aspect-ratio: 16/9;
   }
   .xxl\:ar-p {
-    aspect-ratio: "9/16";
+    aspect-ratio: 9/16;
   }
   .xxl\:ar-s {
-    aspect-ratio: "1/1";
+    aspect-ratio: 1/1;
   }
 }
 .cl-b {

@@ -1,5 +1,6 @@
 @use "sass:math";
 @use "sass:map";
+@use "sass:string";
 @use "../abstracts/variables" as vars;
 @use "../abstracts/mixins/" as mix;
 
@@ -12,9 +13,9 @@ $yma-positioning-utils: (
     "slug": "aspect-ratio",
     "values": (
       "auto": auto,
-      "l": "16/9",
-      "p": "9/16",
-      "s": "1/1",
+      "l": string.unquote("16/9"),
+      "p": string.unquote("9/16"),
+      "s": string.unquote("1/1"),
     ),
   ),
 
