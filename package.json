@@ -1,25 +1,27 @@
 {
-  "name": "yummacss",
-  "version": "3.0.0",
+  "author": "Renildo Pereira",
   "description": "A practical CSS framework with an abbreviated naming convention.",
+  "license": "MIT",
   "main": "bin/yumma-cli.js",
+  "name": "yummacss",
+  "type": "module",
+  "version": "3.0.0",
   "bin": {
     "yummacss": "./bin/yumma-cli.js",
     "yumma": "./bin/yumma-cli.js"
   },
-  "scripts": {
-    "build": "gulp build"
-  },
   "exports": {
     "./cli": "./bin/yumma-cli.js"
   },
+  "scripts": {
+    "build": "gulp build"
+  },
+  
   "keywords": [
     "utility-first",
     "framework"
   ],
-  "author": "Renildo Pereira",
-  "license": "MIT",
-  "type": "module",
+  
   "dependencies": {
     "clean-css": "^5.3.3",
     "commander": "^13.1.0",
@@ -32,8 +34,5 @@
     "gulp-debug": "^5.0.1",
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^6.0.0"
-  },
-  "peerDependencies": {
-    "gulp": "^4.0.2"
   }
 }

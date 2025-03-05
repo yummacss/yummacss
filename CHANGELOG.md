@@ -24,7 +24,6 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Added **Fill** utilities
 - Added **Font Family** fallbacks
 - Added **Grayscale** utilities
-- Added **Isolation** utilities
 - Added **Left Radius** utilities
 - Added **Letter Spacing** utilities
 - Added **List Style Position** utilities
