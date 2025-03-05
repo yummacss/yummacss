@@ -167768,62 +167768,6 @@ summary {
     bottom: none;
   }
 }
-.i-auto {
-  isolation: auto;
-}
-
-.h\:i-auto:hover {
-  isolation: auto;
-}
-
-.i-i {
-  isolation: isolate;
-}
-
-.h\:i-i:hover {
-  isolation: isolate;
-}
-
-@media (min-width: 40rem) {
-  .sm\:i-auto {
-    isolation: auto;
-  }
-  .sm\:i-i {
-    isolation: isolate;
-  }
-}
-@media (min-width: 48rem) {
-  .md\:i-auto {
-    isolation: auto;
-  }
-  .md\:i-i {
-    isolation: isolate;
-  }
-}
-@media (min-width: 64rem) {
-  .lg\:i-auto {
-    isolation: auto;
-  }
-  .lg\:i-i {
-    isolation: isolate;
-  }
-}
-@media (min-width: 80rem) {
-  .xl\:i-auto {
-    isolation: auto;
-  }
-  .xl\:i-i {
-    isolation: isolate;
-  }
-}
-@media (min-width: 96rem) {
-  .xxl\:i-auto {
-    isolation: auto;
-  }
-  .xxl\:i-i {
-    isolation: isolate;
-  }
-}
 .l-0 {
   left: 0rem;
 }
