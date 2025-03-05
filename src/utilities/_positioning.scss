@@ -187,6 +187,18 @@ $yma-positioning-utils: (
     ),
   ),
 
+  "isolation": (
+    "prefix": "i",
+    "properties": (
+      "isolation",
+    ),
+    "slug": "isolation",
+    "values": (
+      "auto": auto,
+      "i": isolate,
+    ),
+  ),
+
   "left": (
     "prefix": "l",
     "properties": (
