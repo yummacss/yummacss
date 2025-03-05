@@ -169266,6 +169266,30 @@ summary {
   display: table;
 }
 
+.d-tc {
+  display: table-cell;
+}
+
+.h\:d-tc:hover {
+  display: table-cell;
+}
+
+.d-tco {
+  display: table-column;
+}
+
+.h\:d-tco:hover {
+  display: table-column;
+}
+
+.d-tr {
+  display: table-row;
+}
+
+.h\:d-tr:hover {
+  display: table-row;
+}
+
 @media (min-width: 40rem) {
   .sm\:d-b {
     display: block;
@@ -169299,6 +169323,15 @@ summary {
   }
   .sm\:d-t {
     display: table;
+  }
+  .sm\:d-tc {
+    display: table-cell;
+  }
+  .sm\:d-tco {
+    display: table-column;
+  }
+  .sm\:d-tr {
+    display: table-row;
   }
 }
 @media (min-width: 48rem) {
@@ -169335,6 +169368,15 @@ summary {
   .md\:d-t {
     display: table;
   }
+  .md\:d-tc {
+    display: table-cell;
+  }
+  .md\:d-tco {
+    display: table-column;
+  }
+  .md\:d-tr {
+    display: table-row;
+  }
 }
 @media (min-width: 64rem) {
   .lg\:d-b {
@@ -169369,6 +169411,15 @@ summary {
   }
   .lg\:d-t {
     display: table;
+  }
+  .lg\:d-tc {
+    display: table-cell;
+  }
+  .lg\:d-tco {
+    display: table-column;
+  }
+  .lg\:d-tr {
+    display: table-row;
   }
 }
 @media (min-width: 80rem) {
@@ -169405,6 +169456,15 @@ summary {
   .xl\:d-t {
     display: table;
   }
+  .xl\:d-tc {
+    display: table-cell;
+  }
+  .xl\:d-tco {
+    display: table-column;
+  }
+  .xl\:d-tr {
+    display: table-row;
+  }
 }
 @media (min-width: 96rem) {
   .xxl\:d-b {
@@ -169439,6 +169499,15 @@ summary {
   }
   .xxl\:d-t {
     display: table;
+  }
+  .xxl\:d-tc {
+    display: table-cell;
+  }
+  .xxl\:d-tco {
+    display: table-column;
+  }
+  .xxl\:d-tr {
+    display: table-row;
   }
 }
 .flo-ie {
