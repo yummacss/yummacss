@@ -73,10 +73,11 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Added `_index.scss` files
 - Added `$yma-box-shadow-*` variables
 - Added `$yma-font-size-*` variables
-- Added `1/2`, `2/1`, `2/3`, `3/2`, and `9/16` values for **Aspect Ratio**
+- Added `1/2`, `2/1`, `2/3`, `3/2`, and `9/16` values for **Aspect Ratio** utilities
 - Added `full` and `half` values for **Direction** utilities
 - Added `no-reset.scss` file
 - Added `src\abstracts\functions` folder
+- Added `table-cell`, `table-column` and `table-row` values for **Display** utilities
 - Added `utilities\maps` folder
 - Added `yummacss.config.js` file
 - Added the `column-dense `and `row-dense` values for **Grid Auto Flow**
