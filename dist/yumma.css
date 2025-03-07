@@ -170518,12 +170518,12 @@ summary {
   visibility: collapse;
 }
 
-.v-i {
-  visibility: invisible;
+.v-h {
+  visibility: hidden;
 }
 
-.h\:v-i:hover {
-  visibility: invisible;
+.h\:v-h:hover {
+  visibility: hidden;
 }
 
 .v-v {
@@ -170538,8 +170538,8 @@ summary {
   .sm\:v-c {
     visibility: collapse;
   }
-  .sm\:v-i {
-    visibility: invisible;
+  .sm\:v-h {
+    visibility: hidden;
   }
   .sm\:v-v {
     visibility: visible;
@@ -170549,8 +170549,8 @@ summary {
   .md\:v-c {
     visibility: collapse;
   }
-  .md\:v-i {
-    visibility: invisible;
+  .md\:v-h {
+    visibility: hidden;
   }
   .md\:v-v {
     visibility: visible;
@@ -170560,8 +170560,8 @@ summary {
   .lg\:v-c {
     visibility: collapse;
   }
-  .lg\:v-i {
-    visibility: invisible;
+  .lg\:v-h {
+    visibility: hidden;
   }
   .lg\:v-v {
     visibility: visible;
@@ -170571,8 +170571,8 @@ summary {
   .xl\:v-c {
     visibility: collapse;
   }
-  .xl\:v-i {
-    visibility: invisible;
+  .xl\:v-h {
+    visibility: hidden;
   }
   .xl\:v-v {
     visibility: visible;
@@ -170582,8 +170582,8 @@ summary {
   .xxl\:v-c {
     visibility: collapse;
   }
-  .xxl\:v-i {
-    visibility: invisible;
+  .xxl\:v-h {
+    visibility: hidden;
   }
   .xxl\:v-v {
     visibility: visible;
