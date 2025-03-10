@@ -136,6 +136,7 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Updated **Direction Right** utilities syntax from `dir-r-*` to `r-*`
 - Updated **Direction Top** utilities syntax from `dir-t-*` to `t-*`
 - Updated **Direction** utilities to utilize rem as unit
+- Updated **Float** utilities syntax from `flo-*` to `fl-*`
 - Updated **Max Dimension** utilities syntax from `max-dim-*` to `max-d-*`
 - Updated **Min Dimension** utilities syntax from `min-dim-*` to `min-d-*`
 - Updated **Overflow X** utilities syntax from `ovf-x-*` to `o-x-*`

@@ -169566,128 +169566,128 @@ summary {
     display: table-row;
   }
 }
-.flo-ie {
+.fl-ie {
   float: inline-end;
 }
 
-.h\:flo-ie:hover {
+.h\:fl-ie:hover {
   float: inline-end;
 }
 
-.flo-is {
+.fl-is {
   float: inline-start;
 }
 
-.h\:flo-is:hover {
+.h\:fl-is:hover {
   float: inline-start;
 }
 
-.flo-l {
+.fl-l {
   float: left;
 }
 
-.h\:flo-l:hover {
+.h\:fl-l:hover {
   float: left;
 }
 
-.flo-none {
+.fl-none {
   float: none;
 }
 
-.h\:flo-none:hover {
+.h\:fl-none:hover {
   float: none;
 }
 
-.flo-r {
+.fl-r {
   float: right;
 }
 
-.h\:flo-r:hover {
+.h\:fl-r:hover {
   float: right;
 }
 
 @media (min-width: 40rem) {
-  .sm\:flo-ie {
+  .sm\:fl-ie {
     float: inline-end;
   }
-  .sm\:flo-is {
+  .sm\:fl-is {
     float: inline-start;
   }
-  .sm\:flo-l {
+  .sm\:fl-l {
     float: left;
   }
-  .sm\:flo-none {
+  .sm\:fl-none {
     float: none;
   }
-  .sm\:flo-r {
+  .sm\:fl-r {
     float: right;
   }
 }
 @media (min-width: 48rem) {
-  .md\:flo-ie {
+  .md\:fl-ie {
     float: inline-end;
   }
-  .md\:flo-is {
+  .md\:fl-is {
     float: inline-start;
   }
-  .md\:flo-l {
+  .md\:fl-l {
     float: left;
   }
-  .md\:flo-none {
+  .md\:fl-none {
     float: none;
   }
-  .md\:flo-r {
+  .md\:fl-r {
     float: right;
   }
 }
 @media (min-width: 64rem) {
-  .lg\:flo-ie {
+  .lg\:fl-ie {
     float: inline-end;
   }
-  .lg\:flo-is {
+  .lg\:fl-is {
     float: inline-start;
   }
-  .lg\:flo-l {
+  .lg\:fl-l {
     float: left;
   }
-  .lg\:flo-none {
+  .lg\:fl-none {
     float: none;
   }
-  .lg\:flo-r {
+  .lg\:fl-r {
     float: right;
   }
 }
 @media (min-width: 80rem) {
-  .xl\:flo-ie {
+  .xl\:fl-ie {
     float: inline-end;
   }
-  .xl\:flo-is {
+  .xl\:fl-is {
     float: inline-start;
   }
-  .xl\:flo-l {
+  .xl\:fl-l {
     float: left;
   }
-  .xl\:flo-none {
+  .xl\:fl-none {
     float: none;
   }
-  .xl\:flo-r {
+  .xl\:fl-r {
     float: right;
   }
 }
 @media (min-width: 96rem) {
-  .xxl\:flo-ie {
+  .xxl\:fl-ie {
     float: inline-end;
   }
-  .xxl\:flo-is {
+  .xxl\:fl-is {
     float: inline-start;
   }
-  .xxl\:flo-l {
+  .xxl\:fl-l {
     float: left;
   }
-  .xxl\:flo-none {
+  .xxl\:fl-none {
     float: none;
   }
-  .xxl\:flo-r {
+  .xxl\:fl-r {
     float: right;
   }
 }
