@@ -9,7 +9,7 @@
 </div>
 
 <p align="center">
-  A practical CSS framework with an abbreviated naming convention.
+  A CSS framework with an abbreviated styles.
   <br>
   <a href="https://yummacss.com"><strong>Read the documentation ↝</strong></a>
 </p>
@@ -31,7 +31,7 @@ npm install yummacss@latest
 ## Built with
 
 - [Gulp](https://gulpjs.com/) — A toolkit to automate & enhance your workflow.
-- [SCSS](https://sass-lang.com/documentation/syntax/) —  CSS with superpowers.
+- [SCSS](https://sass-lang.com/documentation/syntax/) — CSS with superpowers.
 
 ## Licensing
 
