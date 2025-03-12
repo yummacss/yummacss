@@ -10,7 +10,6 @@ $yma-positioning-utils: (
     "properties": (
       "aspect-ratio",
     ),
-    "slug": "aspect-ratio",
     "values": (
       "auto": auto,
       1\/1: string.unquote("1/1"),
@@ -28,7 +27,6 @@ $yma-positioning-utils: (
     "properties": (
       "clear",
     ),
-    "slug": "clear",
     "values": (
       "b": both,
       "ie": inline-end,
@@ -44,7 +42,6 @@ $yma-positioning-utils: (
     "properties": (
       "columns",
     ),
-    "slug": "columns",
     "values": (
       "1": 1,
       "2": 2,
@@ -70,7 +67,6 @@ $yma-positioning-utils: (
     "properties": (
       "bottom",
     ),
-    "slug": "bottom-left-right-top#/bottom",
     "values": (
       "0": vars.$yma-direction * 0,
       "1": vars.$yma-direction,
@@ -100,7 +96,6 @@ $yma-positioning-utils: (
     "properties": (
       "inset",
     ),
-    "slug": "bottom-left-right-top#/inset",
     "values": (
       "0": vars.$yma-direction * 0,
       "1": vars.$yma-direction,
@@ -131,7 +126,6 @@ $yma-positioning-utils: (
       "left",
       "right",
     ),
-    "slug": "bottom-left-right-top#/inset-x",
     "values": (
       "0": vars.$yma-direction * 0,
       "1": vars.$yma-direction,
@@ -162,7 +156,6 @@ $yma-positioning-utils: (
       "top",
       "bottom",
     ),
-    "slug": "bottom-left-right-top#/inset-y",
     "values": (
       "0": vars.$yma-direction * 0,
       "1": vars.$yma-direction,
@@ -192,7 +185,6 @@ $yma-positioning-utils: (
     "properties": (
       "isolation",
     ),
-    "slug": "isolation",
     "values": (
       "auto": auto,
       "i": isolate,
@@ -204,7 +196,6 @@ $yma-positioning-utils: (
     "properties": (
       "left",
     ),
-    "slug": "bottom-left-right-top#/left",
     "values": (
       "0": vars.$yma-direction * 0,
       "1": vars.$yma-direction,
@@ -234,7 +225,6 @@ $yma-positioning-utils: (
     "properties": (
       "right",
     ),
-    "slug": "bottom-left-right-top#/right",
     "values": (
       "0": vars.$yma-direction * 0,
       "1": vars.$yma-direction,
@@ -264,7 +254,6 @@ $yma-positioning-utils: (
     "properties": (
       "top",
     ),
-    "slug": "bottom-left-right-top#/top",
     "values": (
       "0": vars.$yma-direction * 0,
       "1": vars.$yma-direction,
@@ -294,7 +283,6 @@ $yma-positioning-utils: (
     "properties": (
       "display",
     ),
-    "slug": "display",
     "values": (
       "b": block,
       "f": flex,
@@ -318,7 +306,6 @@ $yma-positioning-utils: (
     "properties": (
       "float",
     ),
-    "slug": "float",
     "values": (
       "ie": inline-end,
       "is": inline-start,
@@ -333,7 +320,6 @@ $yma-positioning-utils: (
     "properties": (
       "object-fit",
     ),
-    "slug": "object-fit",
     "values": (
       "c": cover,
       "f": fill,
@@ -347,7 +333,6 @@ $yma-positioning-utils: (
     "properties": (
       "object-position",
     ),
-    "slug": "object-position",
     "values": (
       "b": bottom,
       "c": center,
@@ -366,7 +351,6 @@ $yma-positioning-utils: (
     "properties": (
       "overflow",
     ),
-    "slug": "overflow",
     "values": (
       "auto": auto,
       "c": clip,
@@ -381,7 +365,6 @@ $yma-positioning-utils: (
     "properties": (
       "overflow-x",
     ),
-    "slug": "overflow/#overflow-x",
     "values": (
       "auto": auto,
       "c": clip,
@@ -396,7 +379,6 @@ $yma-positioning-utils: (
     "properties": (
       "overflow-y",
     ),
-    "slug": "overflow/#overflow-y",
     "values": (
       "auto": auto,
       "c": clip,
@@ -411,7 +393,6 @@ $yma-positioning-utils: (
     "properties": (
       "position",
     ),
-    "slug": "position",
     "values": (
       "a": absolute,
       "f": fixed,
@@ -426,7 +407,6 @@ $yma-positioning-utils: (
     "properties": (
       "visibility",
     ),
-    "slug": "visibility",
     "values": (
       "c": collapse,
       "h": hidden,
@@ -439,7 +419,6 @@ $yma-positioning-utils: (
     "properties": (
       "z-index",
     ),
-    "slug": "z-index",
     "values": (
       "0": 0,
       "10": 10,

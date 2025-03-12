@@ -9,7 +9,6 @@ $yma-fx-utils: (
     "properties": (
       "backdrop-filter",
     ),
-    "slug": "backdrop-blur",
     "values": (
       "none": blur(vars.$yma-backdrop-blur * 0),
       "xs": blur(vars.$yma-backdrop-blur),
@@ -25,7 +24,6 @@ $yma-fx-utils: (
     "properties": (
       "box-shadow",
     ),
-    "slug": "box-shadow",
     "values": (
       "none": none,
       "xs": vars.$yma-box-shadow-xs,
@@ -41,7 +39,6 @@ $yma-fx-utils: (
     "properties": (
       "opacity",
     ),
-    "slug": "opacity",
     "values": (
       "0": 0,
       "10": 0.1,
@@ -62,7 +59,6 @@ $yma-fx-utils: (
     "properties": (
       "filter",
     ),
-    "slug": "blur",
     "values": (
       "none": blur(vars.$yma-blur * 0),
       "xs": blur(vars.$yma-blur),
@@ -78,7 +74,6 @@ $yma-fx-utils: (
     "properties": (
       "filter",
     ),
-    "slug": "grayscale",
     "values": (
       "0": grayscale(vars.$yma-grayscale * 0),
       "10": grayscale(vars.$yma-grayscale),

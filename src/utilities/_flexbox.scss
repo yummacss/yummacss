@@ -10,7 +10,6 @@ $yma-flexbox-utils: (
     "properties": (
       "align-content",
     ),
-    "slug": "align-content",
     "values": (
       "b": baseline,
       "c": center,
@@ -29,7 +28,6 @@ $yma-flexbox-utils: (
     "properties": (
       "align-items",
     ),
-    "slug": "align-items",
     "values": (
       "b": baseline,
       "c": center,
@@ -44,7 +42,6 @@ $yma-flexbox-utils: (
     "properties": (
       "align-self",
     ),
-    "slug": "align-self",
     "values": (
       "auto": auto,
       "b": baseline,
@@ -60,7 +57,6 @@ $yma-flexbox-utils: (
     "properties": (
       "flex-basis",
     ),
-    "slug": "flex-basis",
     "values": maps.$yma-flex-basis-map,
   ),
 
@@ -69,7 +65,6 @@ $yma-flexbox-utils: (
     "properties": (
       "flex-direction",
     ),
-    "slug": "flex-direction",
     "values": (
       "c": column,
       "cr": column-reverse,
@@ -83,7 +78,6 @@ $yma-flexbox-utils: (
     "properties": (
       "flex-grow",
     ),
-    "slug": "flex-grow",
     "values": (
       "0": 0,
       "1": 1,
@@ -102,7 +96,6 @@ $yma-flexbox-utils: (
     "properties": (
       "flex-shrink",
     ),
-    "slug": "flex-shrink",
     "values": (
       "0": 0,
       "1": 1,
@@ -121,7 +114,6 @@ $yma-flexbox-utils: (
     "properties": (
       "flex-wrap",
     ),
-    "slug": "flex-wrap",
     "values": (
       "nw": nowrap,
       "w": wrap,
@@ -134,7 +126,6 @@ $yma-flexbox-utils: (
     "properties": (
       "flex",
     ),
-    "slug": "flex",
     "values": (
       "1": 1 1 0%,
       "2": 2 2 0%,
@@ -152,7 +143,6 @@ $yma-flexbox-utils: (
     "properties": (
       "justify-content",
     ),
-    "slug": "justify-content",
     "values": (
       "c": center,
       "fe": flex-end,
@@ -170,7 +160,6 @@ $yma-flexbox-utils: (
     "properties": (
       "justify-items",
     ),
-    "slug": "justify-items",
     "values": (
       "c": center,
       "e": end,
@@ -184,7 +173,6 @@ $yma-flexbox-utils: (
     "properties": (
       "justify-self",
     ),
-    "slug": "justify-self",
     "values": (
       "auto": auto,
       "c": center,
@@ -199,7 +187,6 @@ $yma-flexbox-utils: (
     "properties": (
       "order",
     ),
-    "slug": "order",
     "values": (
       "l": -9999,
       "0": 0,
@@ -222,7 +209,6 @@ $yma-flexbox-utils: (
     "properties": (
       "place-content",
     ),
-    "slug": "place-content",
     "values": (
       "b": baseline,
       "c": center,
@@ -240,7 +226,6 @@ $yma-flexbox-utils: (
     "properties": (
       "place-items",
     ),
-    "slug": "place-items",
     "values": (
       "b": baseline,
       "c": center,
@@ -255,7 +240,6 @@ $yma-flexbox-utils: (
     "properties": (
       "place-self",
     ),
-    "slug": "place-self",
     "values": (
       "auto": auto,
       "c": center,
