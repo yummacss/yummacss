@@ -9,7 +9,6 @@ $yma-typography-utils: (
     "properties": (
       "font-size",
     ),
-    "slug": "font-size",
     "values": (
       "xs": vars.$yma-font-size-xs,
       "sm": vars.$yma-font-size-sm,
@@ -32,7 +31,6 @@ $yma-typography-utils: (
     "properties": (
       "font-style",
     ),
-    "slug": "font-style",
     "values": (
       "i": italic,
       "n": normal,
@@ -44,7 +42,6 @@ $yma-typography-utils: (
     "properties": (
       "font-weight",
     ),
-    "slug": "font-weight",
     "values": (
       "100": 100,
       "200": 200,
@@ -63,7 +60,6 @@ $yma-typography-utils: (
     "properties": (
       "letter-spacing",
     ),
-    "slug": "letter-spacing",
     "values": (
       "0": 0em,
       "1": -0.05em,
@@ -79,7 +75,6 @@ $yma-typography-utils: (
     "properties": (
       "line-height",
     ),
-    "slug": "line-height",
     "values": (
       "1": 1,
       "2": 1.25,
@@ -95,7 +90,6 @@ $yma-typography-utils: (
     "properties": (
       "list-style-position",
     ),
-    "slug": "list-style-position",
     "values": (
       "i": inside,
       "o": outside,
@@ -107,7 +101,6 @@ $yma-typography-utils: (
     "properties": (
       "list-style-type",
     ),
-    "slug": "list-style-type",
     "values": (
       "c": circle,
       "d": disc,
@@ -120,7 +113,6 @@ $yma-typography-utils: (
     "properties": (
       "overflow-wrap",
     ),
-    "slug": "overflow-wrap",
     "values": (
       "bw": break-word,
       "n": normal,
@@ -132,7 +124,6 @@ $yma-typography-utils: (
     "properties": (
       "text-align",
     ),
-    "slug": "text-align",
     "values": (
       "c": center,
       "e": end,
@@ -150,7 +141,6 @@ $yma-typography-utils: (
     "properties": (
       "text-decoration-line",
     ),
-    "slug": "text-decoration-line",
     "values": (
       "lt": line-through,
       "none": none,
@@ -164,7 +154,6 @@ $yma-typography-utils: (
     "properties": (
       "text-decoration-style",
     ),
-    "slug": "text-decoration-style",
     "values": (
       "d": dashed,
       "s": solid,
@@ -177,7 +166,6 @@ $yma-typography-utils: (
     "properties": (
       "text-decoration-thickness",
     ),
-    "slug": "text-decoration-thickness",
     "values": (
       "0": vars.$yma-decoration-thickness * 0,
       "1": vars.$yma-decoration-thickness,
@@ -194,7 +182,6 @@ $yma-typography-utils: (
     "properties": (
       "text-decoration",
     ),
-    "slug": "ext-decoration",
     "values": (
       "none": none,
       "u": underline,
@@ -206,7 +193,6 @@ $yma-typography-utils: (
     "properties": (
       "text-indent",
     ),
-    "slug": "text-indent",
     "values": (
       "0": 0px,
       "1": 1px,
@@ -221,7 +207,6 @@ $yma-typography-utils: (
     "properties": (
       "text-overflow",
     ),
-    "slug": "text-overflow",
     "values": (
       "c": clip,
       "e": ellipsis,
@@ -233,7 +218,6 @@ $yma-typography-utils: (
     "properties": (
       "text-transform",
     ),
-    "slug": "text-transform",
     "values": (
       "c": capitalize,
       "l": lowercase,
@@ -247,7 +231,6 @@ $yma-typography-utils: (
     "properties": (
       "text-underline-offset",
     ),
-    "slug": "text-underline-offset",
     "values": (
       "0": 0px,
       "1": 1px,
@@ -263,7 +246,6 @@ $yma-typography-utils: (
     "properties": (
       "text-wrap",
     ),
-    "slug": "text-wrap",
     "values": (
       "b": balance,
       "n": nowrap,
@@ -277,7 +259,6 @@ $yma-typography-utils: (
     "properties": (
       "white-space",
     ),
-    "slug": "white-space",
     "values": (
       "bs": break-spaces,
       "n": normal,
