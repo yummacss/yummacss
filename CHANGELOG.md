@@ -76,7 +76,7 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Added `$yma-font-size-*` variables
 - Added `1/2`, `2/1`, `2/3`, `3/2`, and `9/16` values for **Aspect Ratio** utilities
 - Added `full` and `half` values for **Direction** utilities
-- Added `no-reset.scss` file
+- Added `yummacss-core.scss` file
 - Added `src\abstracts\functions` folder
 - Added `table-cell`, `table-column` and `table-row` values for **Display** utilities
 - Added `utilities\maps` folder
@@ -121,7 +121,7 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Rename `yummacss-cli` file to `yumma-cli`
 - Rename the `*-variants()` mixins to `*-scaling()`
 - Renamed `_base.scss` to `base\_stylecent.scss`
-- Renamed `_core.scss` to `no-reset.scss`
+- Renamed `_core.scss` to `yummacss-core.scss`
 - Renamed `_functions.scss` to `_ignore-neutral.scss`
 - Renamed `_layout.scss` to `_positioning.scss`
 - Renamed `gulpfile.js` file name to `gulpfile.mjs`
