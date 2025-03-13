@@ -8,8 +8,8 @@ export interface YummaConfig {
 }
 
 export const defaultConfig: YummaConfig = {
-  source: ["./src/**/*.html"],
-  output: "./src/globals.css",
+  source: [""],
+  output: "",
   buildOptions: {
     reset: true,
     minify: false,
