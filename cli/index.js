@@ -21,7 +21,7 @@ export async function runBuild() {
 
   const entryPoint = capabilities.reset
     ? path.resolve(__dirname, "../src/yummacss.scss")
-    : path.resolve(__dirname, "../src/no-reset.scss");
+    : path.resolve(__dirname, "../src/yummacss-core.scss");
 
   const outputPath = path.resolve(process.cwd(), output);
 
