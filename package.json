@@ -2,37 +2,45 @@
   "author": "Renildo Pereira",
   "description": "A CSS framework with an abbreviated styles.",
   "license": "MIT",
-  "main": "bin/yumma-cli.js",
+  "main": "./dist/cli/index.js",
   "name": "yummacss",
   "type": "module",
   "version": "3.0.0",
   "bin": {
-    "yummacss": "./bin/yumma-cli.js",
-    "yumma": "./bin/yumma-cli.js"
+    "yummacss": "./dist/cli/src/cli.js",
+    "yumma": "./dist/cli/src/cli.js"
   },
   "exports": {
-    "./cli": "./bin/yumma-cli.js"
+    ".": "./dist/cli/src/cli.js"
   },
+  "files": [
+    "dist",
+    "src"
+  ],
   "scripts": {
-    "build": "gulp build"
+    "build": "gulp build",
+    "build:cli": "tsc -p tsconfig.cli.json",
+    "dev": "tsc -p tsconfig.cli.json --watch",
+    "prepublishOnly": "pnpm build:cli"
   },
-  
   "keywords": [
     "utility-first",
     "framework"
   ],
-  
   "dependencies": {
+    "chokidar": "^4.0.3",
     "clean-css": "^5.3.3",
     "commander": "^13.1.0",
     "purgecss": "^7.0.2",
     "sass": "^1.83.4"
   },
   "devDependencies": {
+    "@types/node": "^22.13.10",
     "gulp": "^5.0.0",
     "gulp-clean-css": "^4.3.0",
     "gulp-debug": "^5.0.1",
     "gulp-rename": "^2.0.0",
-    "gulp-sass": "^6.0.0"
+    "gulp-sass": "^6.0.0",
+    "typescript": "^5.8.2"
   }
 }

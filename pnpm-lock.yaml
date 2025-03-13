@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      chokidar:
+        specifier: ^4.0.3
+        version: 4.0.3
       clean-css:
         specifier: ^5.3.3
         version: 5.3.3
@@ -21,6 +24,9 @@ importers:
         specifier: ^1.83.4
         version: 1.83.4
     devDependencies:
+      '@types/node':
+        specifier: ^22.13.10
+        version: 22.13.10
       gulp:
         specifier: ^5.0.0
         version: 5.0.0
@@ -36,6 +42,9 @@ importers:
       gulp-sass:
         specifier: ^6.0.0
         version: 6.0.0
+      typescript:
+        specifier: ^5.8.2
+        version: 5.8.2
 
 packages:
 
@@ -136,8 +145,8 @@ packages:
   '@types/expect@1.20.4':
     resolution: {integrity: sha512-Q5Vn3yjTDyCMV50TB6VRIbQNxSE4OmZR86VSbGaNpfUolm0iePBB4KdEEHmxoY5sT2+2DIvXW0rvMDP2nHZ4Mg==}
 
-  '@types/node@22.12.0':
-    resolution: {integrity: sha512-Fll2FZ1riMjNmlmJOdAyY5pUbkftXslB5DgEzlIuNaiWhXd00FhWxVC/r4yV/4wBb9JfImTu+jiSvXTkJ7F/gA==}
+  '@types/node@22.13.10':
+    resolution: {integrity: sha512-I6LPUvlRH+O6VRUqYOcMudhaIdUVWfsjnZavnsraHvpBwaEyMN29ry+0UVJhImYL16xsscu0aske3yA+uPOWfw==}
 
   '@types/vinyl@2.0.12':
     resolution: {integrity: sha512-Sr2fYMBUVGYq8kj3UthXFAu5UN6ZW+rYr4NACjZQJvHvj+c8lYv0CahmZ2P/r7iUkN44gGUBwqxZkrKXYPb7cw==}
@@ -872,6 +881,11 @@ packages:
     resolution: {integrity: sha512-y8MN937s/HVhEoBU1SxfHC+wxCHkV1a9gW8eAdTadYh/bGyesZIVcbjI+mSpFbSVwQici/XjBjuUyri1dnXwBw==}
     engines: {node: '>=10.13.0'}
 
+  typescript@5.8.2:
+    resolution: {integrity: sha512-aJn6wq13/afZp/jT9QZmwEjDqqvSGp1VT5GVg+f/t6/oVyrgXM6BY1h9BRh/O5p3PlUPAe+WuiEZOmb/49RqoQ==}
+    engines: {node: '>=14.17'}
+    hasBin: true
+
   unc-path-regex@0.1.2:
     resolution: {integrity: sha512-eXL4nmJT7oCpkZsHZUOJo8hcX3GbsiDOa0Qu9F646fi8dT3XuSVopVqAcEiVzSKKH7UoDti23wNX3qGFxcW5Qg==}
     engines: {node: '>=0.10.0'}
@@ -1029,14 +1043,14 @@ snapshots:
 
   '@types/expect@1.20.4': {}
 
-  '@types/node@22.12.0':
+  '@types/node@22.13.10':
     dependencies:
       undici-types: 6.20.0
 
   '@types/vinyl@2.0.12':
     dependencies:
       '@types/expect': 1.20.4
-      '@types/node': 22.12.0
+      '@types/node': 22.13.10
 
   ansi-colors@1.1.0:
     dependencies:
@@ -1739,6 +1753,8 @@ snapshots:
   to-through@3.0.0:
     dependencies:
       streamx: 2.22.0
+
+  typescript@5.8.2: {}
 
   unc-path-regex@0.1.2: {}
 
