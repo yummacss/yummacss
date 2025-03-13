@@ -2,14 +2,9 @@
 node_modules/
 
 # development
-test/
-
-# tree
+*.tgz
 project-hierarchy.txt
+test/
 
 # vs code
 .vscode/
-
-# api
-apifile.js
-dist/yummacss.json
