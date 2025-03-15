@@ -9,9 +9,8 @@ export async function compileSCSS(config) {
         ? "yummacss.scss"
         : "yummacss-core.scss";
     try {
-        const scssPath = join(packageRoot, "src", scssFile);
-        const result = await sass.compileAsync(scssPath, {
-            style: config.buildOptions.minify ? "compressed" : "expanded",
+        const result = await sass.compileAsync(join(packageRoot, "src", scssFile), {
+            style: "expanded",
             loadPaths: [join(packageRoot, "src")],
         });
         return result.css;

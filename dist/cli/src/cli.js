@@ -1,17 +1,22 @@
 import { Command } from "commander";
 import { init } from "../commands/init.js";
 import { build } from "../commands/build.js";
+import { watch } from "../commands/watch.js";
 const program = new Command();
 program
     .name("yummacss")
-    .description("Compiling SCSS and purges styles")
+    .description("Modern CSS framework compiler")
     .version("3.0.0");
 program
     .command("init")
-    .description("Initialize yumma.config.js file")
+    .description("Create a default config file")
     .action(init);
 program
     .command("build")
-    .description("Compile SCSS to CSS based on yumma.config.js")
-    .action(build);
+    .description("Compile CSS with optional minification")
+    .action(() => build().catch(() => process.exit(1)));
+program
+    .command("watch")
+    .description("Watch files and rebuild on changes")
+    .action(() => watch().catch(() => process.exit(1)));
 program.parse(process.argv);

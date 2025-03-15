@@ -29,8 +29,8 @@
   ],
   "dependencies": {
     "chokidar": "^4.0.3",
-    "clean-css": "^5.3.3",
     "commander": "^13.1.0",
+    "lightningcss": "^1.29.3",
     "purgecss": "^7.0.2",
     "sass": "^1.83.4"
   },

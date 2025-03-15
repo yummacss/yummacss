@@ -1,31 +1,32 @@
 import { writeFileSync } from "fs";
 import { compileSCSS } from "../services/scssCompiler.js";
 import { purgeCSS } from "../services/purgeService.js";
-import { YummaConfig } from "../config/defaultConfig.js";
-import { pathToFileURL } from "url";
-import { join } from "path";
+import { minifyCSS } from "../services/minifyService.js";
+import { loadConfig } from "../services/configLoader.js";
+import type { YummaConfig } from "../config/defaultConfig.js";
 
 export async function build(existingConfig?: YummaConfig) {
   try {
-    const config = existingConfig || await (async () => {
-      const configPath = join(process.cwd(), "yumma.config.js");
-      const configUrl = pathToFileURL(configPath).href;
-      const { default: config } = await import(configUrl) as { default: YummaConfig };
-      return config;
-    })();
+    console.time("⏱️ Total build time");
+    const config = existingConfig || (await loadConfig());
 
-    console.log("Compiling SCSS...");
-    const css = await compileSCSS(config);
+    console.time("🔨 SCSS compilation");
+    const compiledCSS = await compileSCSS(config);
+    console.timeEnd("🔨 SCSS compilation");
 
-    console.log("Purging unused styles...");
-    const purgedCSS = await purgeCSS(css, config);
+    console.time("🧹 CSS purging");
+    const purgedCSS = await purgeCSS(compiledCSS, config);
+    console.timeEnd("🧹 CSS purging");
 
-    console.log("Writing output...");
-    writeFileSync(config.output, purgedCSS);
+    console.time("💎 CSS minification");
+    const finalCSS = minifyCSS(purgedCSS, config);
+    console.timeEnd("💎 CSS minification");
 
-    console.log("Build completed successfully!");
+    writeFileSync(config.output, finalCSS);
+    console.timeEnd("⏱️ Total build time");
+    console.log("\n✅ Build completed successfully!\n");
   } catch (error) {
-    console.error("Build failed:", error);
+    console.error("\n❌ Build failed:", error);
     process.exit(1);
   }
 }
