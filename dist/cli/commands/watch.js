@@ -18,8 +18,8 @@ export async function watch() {
                 : ["yummacss-core.scss"]),
         ], {
             awaitWriteFinish: {
+                pollInterval: 50,
                 stabilityThreshold: 200,
-                pollInterval: 50
             },
             ignored: /(^|[/\\])\../,
             ignoreInitial: true,
@@ -30,7 +30,6 @@ export async function watch() {
             .on("change", (path) => handleChange(path, "changed"))
             .on("unlink", (path) => handleChange(path, "removed"));
         async function handleChange(path, event) {
-            // cli.info(`File ${event}: ${path}`);
             await build(currentConfig, path === "yumma.config.js" || path.endsWith(".scss"));
         }
     }
