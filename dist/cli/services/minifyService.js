@@ -5,7 +5,7 @@ export function minifyCSS(css, config) {
             filename: "style.css",
             code: Buffer.from(css),
             minify: config.buildOptions.minify,
-            sourceMap: true,
+            sourceMap: false,
         });
         return result.code.toString();
     }
