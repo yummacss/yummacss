@@ -112,11 +112,14 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Removed `coreFile()` function
 - Removed `d-` and `l-` from color utilities
 - Removed `d-` from **Bottom / Left / Right / Top** utilities
+- Removed `d-1/2` **Dimension** utility
 - Removed `dist\yumma-core.css` file
 - Removed `dist\yumma-core.min.scss` file
 - Removed `fs-b` utility class
+- Removed `h-1/2` **Height** utility
 - Removed `hidden` and `none` properties from **Text Decoration Style** utilities
 - Removed `minifiedCoreFile()` function
+- Removed `w-1/2` **Width** utility
 - Removed the font-size variable variants
 - Rename `yummacss-cli` file to `yumma-cli`
 - Rename the `*-variants()` mixins to `*-scaling()`
@@ -142,6 +145,9 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Updated **Overflow X** utilities syntax from `ovf-x-*` to `o-x-*`
 - Updated **Overflow Y** utilities syntax from `ovf-y-*` to `o-y-*`
 - Updated **Overflow** utilities syntax from `ovf-*` to `o-*`
+- Updated `d-1/1` **Dimension** utility to `d-s`
+- Updated `h-1/1` **Height** utility to `h-s`
+- Updated `w-1/1` **Width** utility to `w-s`
 - Updated color generation logic
 - Updated color shade percentage from 10% to 14%
 - Updated color utility range from 1-6 to 1-12
