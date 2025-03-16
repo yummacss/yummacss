@@ -7,11 +7,7 @@ export async function purgeCSS(
 ): Promise<string> {
   const purgeCSSResult = await new PurgeCSS().purge({
     content: config.source,
-    css: [
-      {
-        raw: css,
-      },
-    ],
+    css: [{ raw: css }],
   });
 
   return purgeCSSResult[0].css;
