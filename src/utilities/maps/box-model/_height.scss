@@ -5,12 +5,12 @@
 $yma-height-map: map.merge(
   (
     "auto": auto,
+    "dvh": 100dvh,
     "fc": fit-content,
     "full": 100%,
     "half": 50%,
     "max": max-content,
     "min": min-content,
-    "s": 100dvh,
   ),
   fun.create-values(vars.$yma-height)
 );
