@@ -3,10 +3,7 @@ import { init } from "../commands/init.js";
 import { build } from "../commands/build.js";
 import { watch } from "../commands/watch.js";
 const program = new Command();
-program
-    .name("yummacss")
-    .description("Yumma CSS CLI")
-    .version("3.0.0");
+program.name("yummacss").description("Yumma CSS CLI").version("3.0.0");
 program
     .command("init")
     .description("Create a default config file")

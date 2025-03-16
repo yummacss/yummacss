@@ -5,10 +5,7 @@ import { watch } from "../commands/watch.js";
 
 const program = new Command();
 
-program
-  .name("yummacss")
-  .description("Yumma CSS CLI")
-  .version("3.0.0");
+program.name("yummacss").description("Yumma CSS CLI").version("3.0.0");
 
 program
   .command("init")

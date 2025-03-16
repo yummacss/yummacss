@@ -4,6 +4,7 @@ import { purgeCSS } from "../services/purgeService.js";
 import { minifyCSS } from "../services/minifyService.js";
 import { loadConfig } from "../services/configLoader.js";
 import type { YummaConfig } from "../config/defaultConfig.js";
+import { cli } from "../utils/cli-ui.js";
 
 type BuildCache = {
   css?: string;
@@ -17,18 +18,17 @@ export async function build(
   existingConfig?: YummaConfig,
   forceRebuild = false
 ) {
-  try {
-    console.time("⏱️ Total build time");
-    const config = existingConfig || (await loadConfig());
+  const buildSpinner = cli.startSpinner("Starting build process...");
+  const startTime = Date.now();
 
-    // Config change detection
+  try {
+    const config = existingConfig || (await loadConfig());
     const configHash = JSON.stringify(config);
     const configChanged = cache.configHash !== configHash;
 
-    // Recompile SCSS only if needed
     let css: string;
     if (forceRebuild || configChanged || !cache.css) {
-      console.time("🔨 SCSS compilation");
+      buildSpinner.text = "Compiling SCSS...";
       const result = await compileSCSS(config);
       css = result.css;
       cache = {
@@ -36,26 +36,27 @@ export async function build(
         dependencies: result.dependencies,
         configHash,
       };
-      console.timeEnd("🔨 SCSS compilation");
     } else {
       css = cache.css;
-      console.log("♻️ Using cached SCSS compilation");
+      buildSpinner.text = "Using cached SCSS...";
     }
 
-    // Always purge and minify
-    console.time("🧹 CSS purging");
+    buildSpinner.text = "Purging unused styles...";
     const purgedCSS = await purgeCSS(css, config);
-    console.timeEnd("🧹 CSS purging");
 
-    console.time("💎 CSS minification");
+    buildSpinner.text = "Minifying CSS...";
     const finalCSS = minifyCSS(purgedCSS, config);
-    console.timeEnd("💎 CSS minification");
 
     writeFileSync(config.output, finalCSS);
-    console.timeEnd("⏱️ Total build time");
-    console.log("\n✅ Build completed successfully!\n");
+
+    buildSpinner.succeed("Build completed successfully!");
+    cli.success(`Styles written to: ${config.output}`);
+    cli.info(`Total time: ${Date.now() - startTime}ms`);
   } catch (error) {
-    console.error("\n❌ Build failed:", error);
+    buildSpinner.fail("Build failed!");
+    cli.error(
+      error instanceof Error ? error.message : "Unknown error occurred"
+    );
     process.exit(1);
   }
 }
