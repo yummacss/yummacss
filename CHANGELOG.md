@@ -145,9 +145,9 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Updated **Overflow X** utilities syntax from `ovf-x-*` to `o-x-*`
 - Updated **Overflow Y** utilities syntax from `ovf-y-*` to `o-y-*`
 - Updated **Overflow** utilities syntax from `ovf-*` to `o-*`
-- Updated `d-1/1` **Dimension** utility to `d-s`
-- Updated `h-1/1` **Height** utility to `h-s`
-- Updated `w-1/1` **Width** utility to `w-s`
+- Updated `d-1/1` **Dimension** utility to `d-dvh`
+- Updated `h-1/1` **Height** utility to `h-dvh`
+- Updated `w-1/1` **Width** utility to `w-dvh`
 - Updated color generation logic
 - Updated color shade percentage from 10% to 14%
 - Updated color utility range from 1-6 to 1-12
