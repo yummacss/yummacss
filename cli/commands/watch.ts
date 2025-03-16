@@ -2,19 +2,20 @@ import chokidar from "chokidar";
 import { build } from "./build.js";
 import { loadConfig } from "../services/configLoader.js";
 import type { YummaConfig } from "../config/defaultConfig.js";
+import { cli } from "../utils/cli-ui.js";
 
 let currentConfig: YummaConfig;
-let watchedFiles: string[] = [];
 
 export async function watch() {
+  const watchSpinner = cli.startSpinner("Initializing watch mode...");
+
   try {
     currentConfig = await loadConfig();
-    console.log("🚀 Watching for changes...\n");
+    watchSpinner.start("Watching for changes...");
 
     // Initial build
     await build(currentConfig, true);
 
-    // Set up watcher
     const watcher = chokidar.watch(
       [
         ...currentConfig.source,
@@ -24,30 +25,32 @@ export async function watch() {
           : ["yummacss-core.scss"]),
       ],
       {
-        ignored: /(^|[/\\])\../, // ignore dotfiles
+        awaitWriteFinish: {
+          pollInterval: 50,
+          stabilityThreshold: 200,
+        },
+        ignored: /(^|[/\\])\../,
+        ignoreInitial: true,
         persistent: true,
       }
     );
 
     watcher
-      .on("change", async (path) => handleChange(path, "changed"))
-      .on("add", async (path) => handleChange(path, "added"))
-      .on("unlink", async (path) => handleChange(path, "removed"));
+      .on("add", (path) => handleChange(path, "added"))
+      .on("change", (path) => handleChange(path, "changed"))
+      .on("unlink", (path) => handleChange(path, "removed"));
 
     async function handleChange(path: string, event: string) {
-      console.log(`🔍 ${event}: ${path}`);
-      console.time("🔄 Rebuild time");
-
-      const configChanged = path === "yumma.config.js";
-      const scssChanged = path.endsWith(".scss");
-
-      await build(currentConfig, configChanged || scssChanged);
-
-      console.timeEnd("🔄 Rebuild time");
-      console.log("\n👀 Watching for changes...\n");
+      await build(
+        currentConfig,
+        path === "yumma.config.js" || path.endsWith(".scss")
+      );
     }
   } catch (error) {
-    console.error("❌ Watch failed:", error);
+    watchSpinner.fail("Watch failed!");
+    cli.error(
+      error instanceof Error ? error.message : "Unknown error occurred"
+    );
     process.exit(1);
   }
 }
