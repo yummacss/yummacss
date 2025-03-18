@@ -21,11 +21,6 @@ $yma-border: 1px !default;
 $yma-border-radius: 0.25rem !default;
 $yma-border-spacing: 0.25rem !default;
 
-// outlines
-$yma-outline-offset: 1px !default;
-$yma-outline-width: 1px !default;
-$yma-decoration-thickness: 1px !default;
-
 // box model
 $yma-dimension: 0.25rem !default;
 $yma-height: 0.25rem !default;
@@ -34,7 +29,7 @@ $yma-padding: 0.25rem !default;
 $yma-margin: 0.25rem !default;
 $yma-spacing: 0.25rem !default;
 
-// fx
+// effect
 $yma-backdrop-blur: 4px !default;
 $yma-blur: 4px !default;
 $yma-box-shadow-lg: 1px 3px 5px 1px rgb(0, 0, 0, 0.1) !default;
@@ -42,6 +37,7 @@ $yma-box-shadow-md: 1px 3px 5px -1px rgb(0, 0, 0, 0.1) !default;
 $yma-box-shadow-sm: 1px 3px 5px -2px rgb(0, 0, 0, 0.1) !default;
 $yma-box-shadow-xl: 1px 3px 5px 2px rgb(0, 0, 0, 0.1) !default;
 $yma-box-shadow-xs: 1px 3px 5px -3px rgb(0, 0, 0, 0.1) !default;
+
 $yma-grayscale: 10% !default;
 
 // flexbox
@@ -52,8 +48,13 @@ $yma-gap: 0.25rem !default;
 $yma-column-gap: 0.25rem !default;
 $yma-row-gap: 0.25rem !default;
 
-// layout
-$yma-direction: 0.25rem !default;
+// outlines
+$yma-outline-offset: 1px !default;
+$yma-outline-width: 1px !default;
+$yma-decoration-thickness: 1px !default;
+
+// positioning
+$yma-bottom-left-top-right: 0.25rem !default;
 
 // typography
 $yma-font-size-xs: 0.75rem !default;
