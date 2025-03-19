@@ -31,13 +31,18 @@ export const YMA_SPACING = 0.25;
 
 // effect
 export const YMA_BACKDROP_BLUR = 4;
+
 export const YMA_BLUR = 4;
+
 export const YMA_BOX_SHADOW_LG = "1px 3px 5px 1px rgb(0, 0, 0, 0.1)";
 export const YMA_BOX_SHADOW_MD = "1px 3px 5px _1px rgb(0, 0, 0, 0.1)";
 export const YMA_BOX_SHADOW_SM = "1px 3px 5px _2px rgb(0, 0, 0, 0.1)";
 export const YMA_BOX_SHADOW_XL = "1px 3px 5px 2px rgb(0, 0, 0, 0.1)";
 export const YMA_BOX_SHADOW_XS = "1px 3px 5px _3px rgb(0, 0, 0, 0.1)";
-export const YMA_GRAYSCALE = "10%";
+
+export const YMA_GRAYSCALE = 10;
+
+export const YMA_OPACITY = 0.1;
 
 // flexbox
 export const YMA_FLEX_BASIS = 0.25;
@@ -47,7 +52,7 @@ export const YMA_GAP = 0.25;
 export const YMA_COLUMN_GAP = 0.25;
 export const YMA_ROW_GAP = 0.25;
 
-// layout
+// positioning
 export const YMA_DIRECTION = 0.25;
 
 // outline
