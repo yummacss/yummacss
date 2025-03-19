@@ -53,7 +53,7 @@ export const YMA_COLUMN_GAP = 0.25;
 export const YMA_ROW_GAP = 0.25;
 
 // positioning
-export const YMA_DIRECTION = 0.25;
+export const YMA_BOTTOM_LEFT_TOP_RIGHT = 0.25;
 
 // outline
 export const YMA_OUTLINE_OFFSET = 1;
