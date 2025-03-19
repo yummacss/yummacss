@@ -51,12 +51,17 @@ export const flexboxUtils: UtilityMap = {
     prefix: "fb",
     properties: ["flex-basis"],
     slug: "flex-basis",
-    values: createValues({
-      base: YMA_FLEX_BASIS,
-      unit: "rem",
-      min: 0,
-      max: 100,
-    }),
+    values: {
+      ...createValues({
+        base: YMA_FLEX_BASIS,
+        unit: "rem",
+        min: 0,
+        max: 100,
+      }),
+      auto: "auto",
+      full: "100%",
+      half: "50%",
+    },
   },
 
   "flex-direction": {
