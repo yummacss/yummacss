@@ -1,3 +1,92 @@
 import { UtilityMap } from "@/interfaces";
+import {
+  YMA_BACKDROP_BLUR,
+  YMA_BLUR,
+  YMA_BOX_SHADOW_XS,
+  YMA_BOX_SHADOW_SM,
+  YMA_BOX_SHADOW_MD,
+  YMA_BOX_SHADOW_LG,
+  YMA_BOX_SHADOW_XL,
+} from "@/constants/variables";
 
-export const effectUtils: UtilityMap = {};
+export const effectUtils: UtilityMap = {
+  "backdrop-blur": {
+    prefix: "bf-b",
+    properties: ["backdrop-filter"],
+    slug: "backdrop-blur",
+    values: {
+      none: "blur(0)",
+      xs: `blur(${YMA_BACKDROP_BLUR}px)`,
+      sm: `blur(${YMA_BACKDROP_BLUR * 2}px)`,
+      md: `blur(${YMA_BACKDROP_BLUR * 4}px)`,
+      lg: `blur(${YMA_BACKDROP_BLUR * 8}px)`,
+      xl: `blur(${YMA_BACKDROP_BLUR * 16}px)`,
+    },
+  },
+
+  blur: {
+    prefix: "f-b",
+    properties: ["filter"],
+    slug: "blur",
+    values: {
+      none: "blur(0)",
+      xs: `blur(${YMA_BLUR}px)`,
+      sm: `blur(${YMA_BLUR * 2}px)`,
+      md: `blur(${YMA_BLUR * 4}px)`,
+      lg: `blur(${YMA_BLUR * 8}px)`,
+      xl: `blur(${YMA_BLUR * 16}px)`,
+    },
+  },
+
+  "box-shadow": {
+    prefix: "bs",
+    properties: ["box-shadow"],
+    slug: "box-shadow",
+    values: {
+      none: "none",
+      xs: YMA_BOX_SHADOW_XS,
+      sm: YMA_BOX_SHADOW_SM,
+      md: YMA_BOX_SHADOW_MD,
+      lg: YMA_BOX_SHADOW_LG,
+      xl: YMA_BOX_SHADOW_XL,
+    },
+  },
+
+  grayscale: {
+    prefix: "f-g",
+    properties: ["filter"],
+    slug: "grayscale",
+    values: {
+      0: "grayscale(0%)",
+      10: "grayscale(10%)",
+      20: "grayscale(20%)",
+      30: "grayscale(30%)",
+      40: "grayscale(40%)",
+      50: "grayscale(50%)",
+      60: "grayscale(60%)",
+      70: "grayscale(70%)",
+      80: "grayscale(80%)",
+      90: "grayscale(90%)",
+      100: "grayscale(100%)",
+    },
+  },
+
+  opacity: {
+    prefix: "o",
+    properties: ["opacity"],
+    slug: "opacity",
+    values: {
+      0: "0",
+      10: "0.1",
+      20: "0.2",
+      30: "0.3",
+      40: "0.4",
+      50: "0.5",
+      60: "0.6",
+      70: "0.7",
+      80: "0.8",
+      90: "0.9",
+      100: "1",
+    },
+  },
+};
