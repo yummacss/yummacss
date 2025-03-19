@@ -30,7 +30,7 @@ export const effectUtils: UtilityMap = {
     properties: ["filter"],
     slug: "blur",
     values: {
-      none: "blur(0px)",
+      none: `blur(${YMA_BLUR * 0}px)`,
       xs: `blur(${YMA_BLUR}px)`,
       sm: `blur(${YMA_BLUR * 2}px)`,
       md: `blur(${YMA_BLUR * 4}px)`,
@@ -58,7 +58,7 @@ export const effectUtils: UtilityMap = {
     properties: ["filter"],
     slug: "grayscale",
     values: {
-      0: `grayscale(0%)`,
+      0: `grayscale(${YMA_GRAYSCALE * 0}%)`,
       10: `grayscale(${YMA_GRAYSCALE}%)`,
       20: `grayscale(${YMA_GRAYSCALE * 2}%)`,
       30: `grayscale(${YMA_GRAYSCALE * 3}%)`,
