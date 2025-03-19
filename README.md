@@ -27,7 +27,7 @@ Get utility classes through our API endpoints. Here's an example:
 ### Request
 
 ```bash
-GET http://localhost:8080/api/stylesbackground-attachment
+GET /api/styles/background-attachment
 ```
 
 ### Response
