@@ -16,12 +16,12 @@ export const effectUtils: UtilityMap = {
     properties: ["backdrop-filter"],
     slug: "backdrop-blur",
     values: {
-      none: "blur(0)",
-      xs: `blur(${YMA_BACKDROP_BLUR}%)`,
-      sm: `blur(${YMA_BACKDROP_BLUR * 2}%)`,
-      md: `blur(${YMA_BACKDROP_BLUR * 4}%)`,
-      lg: `blur(${YMA_BACKDROP_BLUR * 8}%)`,
-      xl: `blur(${YMA_BACKDROP_BLUR * 16}%)`,
+      none: "blur(0px)",
+      xs: `blur(${YMA_BACKDROP_BLUR}px)`,
+      sm: `blur(${YMA_BACKDROP_BLUR * 2}px)`,
+      md: `blur(${YMA_BACKDROP_BLUR * 4}px)`,
+      lg: `blur(${YMA_BACKDROP_BLUR * 8}px)`,
+      xl: `blur(${YMA_BACKDROP_BLUR * 16}px)`,
     },
   },
 
