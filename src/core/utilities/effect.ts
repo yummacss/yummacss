@@ -16,7 +16,7 @@ export const effectUtils: UtilityMap = {
     properties: ["backdrop-filter"],
     slug: "backdrop-blur",
     values: {
-      none: "blur(0px)",
+      none: `blur(${YMA_BACKDROP_BLUR * 0}px)`,
       xs: `blur(${YMA_BACKDROP_BLUR}px)`,
       sm: `blur(${YMA_BACKDROP_BLUR * 2}px)`,
       md: `blur(${YMA_BACKDROP_BLUR * 4}px)`,
