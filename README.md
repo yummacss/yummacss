@@ -15,14 +15,14 @@
 </p>
 
 > [!Caution]
-> 
+>
 > ## Early Development Stage
-> 
+>
 > This project is still in a very early stage of development. The API, features, and documentation are subject to frequent changes. The codebase isn't ready for production use yet, so be prepared for breaking changes.
 
 ## Getting a list of utilities
 
-Get utility classes through our API endpoints. Here's an example:
+Get all the utilities of a given CSS property. Here's an example:
 
 ### Request
 
@@ -48,6 +48,28 @@ GET /api/styles/background-attachment
     "slug": "background-attachment",
     "utility": "ba-s",
     "property": ["background-attachment: scroll;"]
+  }
+]
+```
+
+## Getting a single utility item
+
+Get a specific utility of a given CSS property's numeric value. Here's an example:
+
+### Request
+
+```bash
+GET /api/styles/height/1
+```
+
+### Response
+
+```json
+[
+  {
+    "slug": "height",
+    "utility": "h-1",
+    "property": ["height: 0.25rem;"]
   }
 ]
 ```
