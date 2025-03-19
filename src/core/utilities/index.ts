@@ -7,6 +7,7 @@ import { colorUtils } from "./color";
 import { effectUtils } from "./effect";
 import { flexboxUtils } from "./flexbox";
 import { gridUtils } from "./grid";
+import { interactivityUtils } from "./interactivity";
 import { outlineUtils } from "./outline";
 import { positioningUtils } from "./positioning";
 import { svgUtils } from "./svg";
@@ -22,6 +23,7 @@ export const allUtilities: UtilityMap = {
   ...effectUtils,
   ...flexboxUtils,
   ...gridUtils,
+  ...interactivityUtils,
   ...outlineUtils,
   ...positioningUtils,
   ...svgUtils,
