@@ -30,12 +30,12 @@ export const effectUtils: UtilityMap = {
     properties: ["filter"],
     slug: "blur",
     values: {
-      none: "blur(0)",
-      xs: `blur(${YMA_BLUR}%)`,
-      sm: `blur(${YMA_BLUR * 2}%)`,
-      md: `blur(${YMA_BLUR * 4}%)`,
-      lg: `blur(${YMA_BLUR * 8}%)`,
-      xl: `blur(${YMA_BLUR * 16}%)`,
+      none: "blur(0px)",
+      xs: `blur(${YMA_BLUR}px)`,
+      sm: `blur(${YMA_BLUR * 2}px)`,
+      md: `blur(${YMA_BLUR * 4}px)`,
+      lg: `blur(${YMA_BLUR * 8}px)`,
+      xl: `blur(${YMA_BLUR * 16}px)`,
     },
   },
 
