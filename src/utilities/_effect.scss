@@ -19,41 +19,6 @@ $yma-effect-utils: (
     ),
   ),
 
-  "box-shadow": (
-    "prefix": "bs",
-    "properties": (
-      "box-shadow",
-    ),
-    "values": (
-      "none": none,
-      "xs": vars.$yma-box-shadow-xs,
-      "sm": vars.$yma-box-shadow-sm,
-      "md": vars.$yma-box-shadow-md,
-      "lg": vars.$yma-box-shadow-lg,
-      "xl": vars.$yma-box-shadow-xl,
-    ),
-  ),
-
-  "opacity": (
-    "prefix": "o",
-    "properties": (
-      "opacity",
-    ),
-    "values": (
-      "0": 0,
-      "10": 0.1,
-      "20": 0.2,
-      "30": 0.3,
-      "40": 0.4,
-      "50": 0.5,
-      "60": 0.6,
-      "70": 0.7,
-      "80": 0.8,
-      "90": 0.9,
-      "100": 1,
-    ),
-  ),
-
   "blur": (
     "prefix": "f-b",
     "properties": (
@@ -66,6 +31,21 @@ $yma-effect-utils: (
       "md": blur(vars.$yma-blur * 4),
       "lg": blur(vars.$yma-blur * 8),
       "xl": blur(vars.$yma-blur * 16),
+    ),
+  ),
+
+  "box-shadow": (
+    "prefix": "bs",
+    "properties": (
+      "box-shadow",
+    ),
+    "values": (
+      "none": none,
+      "xs": vars.$yma-box-shadow-xs,
+      "sm": vars.$yma-box-shadow-sm,
+      "md": vars.$yma-box-shadow-md,
+      "lg": vars.$yma-box-shadow-lg,
+      "xl": vars.$yma-box-shadow-xl,
     ),
   ),
 
@@ -86,6 +66,26 @@ $yma-effect-utils: (
       "80": grayscale(vars.$yma-grayscale * 8),
       "90": grayscale(vars.$yma-grayscale * 9),
       "100": grayscale(vars.$yma-grayscale * 10),
+    ),
+  ),
+
+  "opacity": (
+    "prefix": "o",
+    "properties": (
+      "opacity",
+    ),
+    "values": (
+      "0": 0,
+      "10": 0.1,
+      "20": 0.2,
+      "30": 0.3,
+      "40": 0.4,
+      "50": 0.5,
+      "60": 0.6,
+      "70": 0.7,
+      "80": 0.8,
+      "90": 0.9,
+      "100": 1,
     ),
   ),
 );
