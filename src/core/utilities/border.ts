@@ -33,96 +33,128 @@ export const borderUtils: UtilityMap = {
     prefix: "rad-b",
     properties: ["border-bottom-left-radius", "border-bottom-right-radius"],
     slug: "border-radius/#bottom-radius",
-    values: createValues({
-      base: YMA_BORDER_RADIUS,
-      unit: "rem",
-      min: 0,
-      max: 8,
-    }),
+    values: {
+      ...createValues({
+        base: YMA_BORDER_RADIUS,
+        unit: "rem",
+        min: 0,
+        max: 8,
+      }),
+      full: "100%",
+      half: "50%",
+    },
   },
 
   "border-left-radius": {
     prefix: "rad-l",
     properties: ["border-bottom-left-radius", "border-top-left-radius"],
     slug: "border-radius/#left-radius",
-    values: createValues({
-      base: YMA_BORDER_RADIUS,
-      unit: "rem",
-      min: 0,
-      max: 8,
-    }),
+    values: {
+      ...createValues({
+        base: YMA_BORDER_RADIUS,
+        unit: "rem",
+        min: 0,
+        max: 8,
+      }),
+      full: "100%",
+      half: "50%",
+    },
   },
 
   "border-right-radius": {
     prefix: "rad-r",
     properties: ["border-bottom-right-radius", "border-top-right-radius"],
     slug: "border-radius/#right-radius",
-    values: createValues({
-      base: YMA_BORDER_RADIUS,
-      unit: "rem",
-      min: 0,
-      max: 8,
-    }),
+    values: {
+      ...createValues({
+        base: YMA_BORDER_RADIUS,
+        unit: "rem",
+        min: 0,
+        max: 8,
+      }),
+      full: "100%",
+      half: "50%",
+    },
   },
 
   "border-bottom-left-radius": {
     prefix: "rad-bl",
     properties: ["border-bottom-left-radius"],
     slug: "border-radius/#bottom-left-radius",
-    values: createValues({
-      base: YMA_BORDER_RADIUS,
-      unit: "rem",
-      min: 0,
-      max: 8,
-    }),
+    values: {
+      ...createValues({
+        base: YMA_BORDER_RADIUS,
+        unit: "rem",
+        min: 0,
+        max: 8,
+      }),
+      full: "100%",
+      half: "50%",
+    },
   },
 
   "border-bottom-right-radius": {
     prefix: "rad-br",
     properties: ["border-bottom-right-radius"],
     slug: "border-radius/#bottom-right-radius",
-    values: createValues({
-      base: YMA_BORDER_RADIUS,
-      unit: "rem",
-      min: 0,
-      max: 8,
-    }),
+    values: {
+      ...createValues({
+        base: YMA_BORDER_RADIUS,
+        unit: "rem",
+        min: 0,
+        max: 8,
+      }),
+      full: "100%",
+      half: "50%",
+    },
   },
 
   "border-top-radius": {
     prefix: "rad-t",
     properties: ["border-top-left-radius", "border-top-right-radius"],
     slug: "border-radius/#top-radius",
-    values: createValues({
-      base: YMA_BORDER_RADIUS,
-      unit: "rem",
-      min: 0,
-      max: 8,
-    }),
+    values: {
+      ...createValues({
+        base: YMA_BORDER_RADIUS,
+        unit: "rem",
+        min: 0,
+        max: 8,
+      }),
+      full: "100%",
+      half: "50%",
+    },
   },
 
   "border-top-left-radius": {
     prefix: "rad-tl",
     properties: ["border-top-left-radius"],
     slug: "border-radius/#top-left-radius",
-    values: createValues({
-      base: YMA_BORDER_RADIUS,
-      unit: "rem",
-      min: 0,
-      max: 8,
-    }),
+    values: {
+      ...createValues({
+        base: YMA_BORDER_RADIUS,
+        unit: "rem",
+        min: 0,
+        max: 8,
+      }),
+      full: "100%",
+      half: "50%",
+    },
   },
 
   "border-top-right-radius": {
     prefix: "rad-tr",
     properties: ["border-top-right-radius"],
     slug: "border-radius/#top-right-radius",
-    values: createValues({
-      base: YMA_BORDER_RADIUS,
-      unit: "rem",
-      min: 0,
-      max: 8,
-    }),
+    values: {
+      ...createValues({
+        base: YMA_BORDER_RADIUS,
+        unit: "rem",
+        min: 0,
+        max: 8,
+      }),
+      full: "100%",
+      half: "50%",
+    },
   },
 
   "border-spacing": {
