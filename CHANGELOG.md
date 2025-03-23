@@ -68,24 +68,22 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Added **Transform Origin** utilities
 - Added **Visibility** utilities
 - Added **Whitespace** utilities
-- Added `_create-colors.scss`, `_create-utilities.scss` and `_extend-utilities.scss` partial files
-- Added `_create-values.scss` file
+- Added `_create-colors.scss`, `_create-values.scss`, `_create-utilities.scss` and `_extend-utilities.scss` partial files
 - Added `_dimension.scss`, `_height.scss`, `_margin.scss`, `_padding.scss` and `_width.scss` files
 - Added `_index.scss` files
 - Added `$yma-box-shadow-*` variables
 - Added `$yma-font-size-*` variables
 - Added `1/2`, `2/1`, `2/3`, `3/2`, and `9/16` values for **Aspect Ratio** utilities
-- Added `full` and `half` values for **Direction** utilities
-- Added `yummacss-core.scss` file
-- Added `src\abstracts\functions` folder
+- Added `full` and `half` values for **Bottom/Left/Right/Top** utilities
+- Added `src/abstracts/functions` folder
 - Added `table-cell`, `table-column` and `table-row` values for **Display** utilities
-- Added `utilities\maps` folder
-- Added `yummacss.config.js` file
-- Added the `column-dense `and `row-dense` values for **Grid Auto Flow**
-- Added Yumma CSS CLI feature
+- Added `utilities/maps` folder
+- Added `yummacss-core.scss` file
+- Added the `column-dense` and `row-dense` values for **Grid Auto Flow**
 - Extend **Column Gap** utilities from 0-16 to 0-100
 - Extend **Gap** utilities from 0-16 to 0-100
 - Extend **Row Gap** utilities from 0-16 to 0-100
+- Implement Yumma CSS CLI
 
 </details>
 
@@ -95,41 +93,33 @@ All notable changes to the Yumma CSS will be documented in this file.
     <b>Breaking changes</b>
 </summary>
 
-- Grouped related utilities and variants
 - Included new and improved **Font Size** utilities
 - Merged **Filters** and **Effects** subcategories into a **Effect** category
 - Migrated base styles functionality to config file
 - Migrated from `@import` to `@use` and `@forwards`
 - Migrated from Common Js to ESM
 - Migrated to Dart SCSS
-- Moved `yumma-cli` to `bin\yumma-cli.js`
-- Optimized `dist\yumma.css` file performance
-- Optimized `dist\yumma.min.css` file performance
+- Relocate `_base.scss` to `reset/_stylecent.scss`
+- Relocate `_functions.scss` to `reset/_ignore-neutral.scss`
 - Removed **Spacing X** utilities
 - Removed **Spacing Y** utilities
 - Removed `.cnt{}` utility class
 - Removed `.ins{}` utility class
-- Removed `coreFile()` function
-- Removed `d-` and `l-` from color utilities
-- Removed `d-` from **Bottom / Left / Right / Top** utilities
+- Removed `coreFile()` function from `gulpfile.mjs`
+- Removed `d-` (dark) and `l-` (light) from all color utilities
+- Removed `d-` from **Bottom/Left/Right/Top** utilities
 - Removed `d-1/2` **Dimension** utility
-- Removed `dist\yumma-core.css` file
-- Removed `dist\yumma-core.min.scss` file
-- Removed `fs-b` utility class
+- Removed `dist/yumma-core.css` file
+- Removed `dist/yumma-core.min.scss` file
 - Removed `h-1/2` **Height** utility
 - Removed `hidden` and `none` properties from **Text Decoration Style** utilities
 - Removed `minifiedCoreFile()` function
 - Removed `w-1/2` **Width** utility
-- Removed the font-size variable variants
-- Rename `yummacss-cli` file to `yumma-cli`
-- Rename the `*-variants()` mixins to `*-scaling()`
-- Renamed `_base.scss` to `base\_stylecent.scss`
+- Renamed `_color.scss` to `_create-colors.scss`
 - Renamed `_core.scss` to `yummacss-core.scss`
-- Renamed `_functions.scss` to `_ignore-neutral.scss`
 - Renamed `_layout.scss` to `_positioning.scss`
-- Renamed `gulpfile.js` file name to `gulpfile.mjs`
+- Renamed `gulpfile.js` to `gulpfile.mjs`
 - Renamed `index.scss` to `yummacss.scss`
-- Renamed `src\abstracts\mixins\_color.scss` to `src\abstracts\mixins\_create-colors.scss`
 - Reworked **Box Model** utilities generation
 - Updated **Columns** utilities syntax from `cols-*` to `c-*`
 - Updated **Dimension** utilities syntax from `dim-*` to `d-*`
@@ -138,8 +128,9 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Updated **Direction Left** utilities syntax from `dir-l-*` to `l-*`
 - Updated **Direction Right** utilities syntax from `dir-r-*` to `r-*`
 - Updated **Direction Top** utilities syntax from `dir-t-*` to `t-*`
-- Updated **Direction** utilities to utilize rem as unit
+- Updated **Direction** utilities to utilize `rem` as unit
 - Updated **Float** utilities syntax from `flo-*` to `fl-*`
+- Updated **Font Size** utilities syntax from `fs-b` to `fs-md`
 - Updated **Max Dimension** utilities syntax from `max-dim-*` to `max-d-*`
 - Updated **Min Dimension** utilities syntax from `min-dim-*` to `min-d-*`
 - Updated **Overflow X** utilities syntax from `ovf-x-*` to `o-x-*`
