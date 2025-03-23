@@ -9,7 +9,7 @@
 </div>
 
 <p align="center">
-  A CSS framework with an abbreviated styles.
+  A CSS framework with abbreviated styles.
   <br>
   <a href="https://yummacss.com"><strong>Read the documentation ↝</strong></a>
 </p>
