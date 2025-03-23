@@ -74,6 +74,7 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Added `$yma-box-shadow-*` variables
 - Added `$yma-font-size-*` variables
 - Added `1/2`, `2/1`, `2/3`, `3/2`, and `9/16` values for **Aspect Ratio** utilities
+- Added `fs-4xl`, `fs-5xl`, `fs-7xl` and `fs-8xl` values for **Font Size** utilities
 - Added `full` and `half` values for **Bottom/Left/Right/Top** utilities
 - Added `src/abstracts/functions` folder
 - Added `table-cell`, `table-column` and `table-row` values for **Display** utilities
