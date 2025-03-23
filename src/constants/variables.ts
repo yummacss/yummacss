@@ -64,7 +64,7 @@ export const YMA_DECORATION_THICKNESS = 1;
 
 export const YMA_FONT_SIZE_XS = 0.75;
 export const YMA_FONT_SIZE_SM = 0.875;
-export const YMA_FONT_SIZE_BASE = 1;
+export const YMA_FONT_SIZE_MD = 1;
 export const YMA_FONT_SIZE_LG = 1.125;
 export const YMA_FONT_SIZE_XL = 1.25;
 export const YMA_FONT_SIZE_2XL = 1.5;
