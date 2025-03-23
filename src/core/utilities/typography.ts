@@ -39,7 +39,7 @@ export const typographyUtils: UtilityMap = {
     values: {
       xs: `${YMA_FONT_SIZE_XS}rem`,
       sm: `${YMA_FONT_SIZE_SM}rem`,
-      b: `${YMA_FONT_SIZE_MD}rem`,
+      md: `${YMA_FONT_SIZE_MD}rem`,
       lg: `${YMA_FONT_SIZE_LG}rem`,
       xl: `${YMA_FONT_SIZE_XL}rem`,
       xxl: `${YMA_FONT_SIZE_2XL}rem`,
