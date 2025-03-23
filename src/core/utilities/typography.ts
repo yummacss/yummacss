@@ -12,7 +12,7 @@ import {
   YMA_FONT_SIZE_7XL,
   YMA_FONT_SIZE_8XL,
   YMA_FONT_SIZE_9XL,
-  YMA_FONT_SIZE_BASE,
+  YMA_FONT_SIZE_MD,
   YMA_FONT_SIZE_LG,
   YMA_FONT_SIZE_SM,
   YMA_FONT_SIZE_XL,
@@ -39,7 +39,7 @@ export const typographyUtils: UtilityMap = {
     values: {
       xs: `${YMA_FONT_SIZE_XS}rem`,
       sm: `${YMA_FONT_SIZE_SM}rem`,
-      b: `${YMA_FONT_SIZE_BASE}rem`,
+      b: `${YMA_FONT_SIZE_MD}rem`,
       lg: `${YMA_FONT_SIZE_LG}rem`,
       xl: `${YMA_FONT_SIZE_XL}rem`,
       xxl: `${YMA_FONT_SIZE_2XL}rem`,
