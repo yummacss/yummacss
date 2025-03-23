@@ -2,6 +2,8 @@ import { UtilityMap } from "@/interfaces";
 import { createValues } from "@/core/helpers/create-values";
 import {
   YMA_DECORATION_THICKNESS,
+  YMA_FONT_CHARTER,
+  YMA_FONT_MONO,
   YMA_FONT_SIZE_2XL,
   YMA_FONT_SIZE_3XL,
   YMA_FONT_SIZE_4XL,
@@ -15,9 +17,21 @@ import {
   YMA_FONT_SIZE_SM,
   YMA_FONT_SIZE_XL,
   YMA_FONT_SIZE_XS,
+  YMA_FONT_SYSTEM,
 } from "@/constants/variables";
 
 export const typographyUtils: UtilityMap = {
+  "font-family": {
+    prefix: "ff",
+    properties: ["font-family"],
+    slug: "font-family",
+    values: {
+      c: YMA_FONT_CHARTER,
+      m: YMA_FONT_MONO,
+      s: YMA_FONT_SYSTEM,
+    },
+  },
+
   "font-size": {
     prefix: "fs",
     properties: ["font-size"],
