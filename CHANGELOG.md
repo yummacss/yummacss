@@ -94,7 +94,7 @@ All notable changes to the Yumma CSS will be documented in this file.
     <b>Breaking changes</b>
 </summary>
 
-- Included new and improved **Font Size** utilities
+- Improved **Font Size** utilities
 - Merged **Filters** and **Effects** subcategories into a **Effect** category
 - Migrated base styles functionality to config file
 - Migrated from `@import` to `@use` and `@forwards`
@@ -108,13 +108,14 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Removed `.ins{}` utility class
 - Removed `coreFile()` function from `gulpfile.mjs`
 - Removed `d-` (dark) and `l-` (light) from all color utilities
-- Removed `d-` from **Bottom/Left/Right/Top** utilities
+- Removed `d-` prefix from **Bottom/Left/Right/Top** utilities
 - Removed `d-1/2` **Dimension** utility
 - Removed `dist/yumma-core.css` file
 - Removed `dist/yumma-core.min.scss` file
 - Removed `h-1/2` **Height** utility
 - Removed `hidden` and `none` properties from **Text Decoration Style** utilities
 - Removed `minifiedCoreFile()` function
+- Removed `none` **Bottom/Left/Right/Top** invalid utilities
 - Removed `w-1/2` **Width** utility
 - Renamed `_color.scss` to `_create-colors.scss`
 - Renamed `_core.scss` to `yummacss-core.scss`
@@ -140,8 +141,8 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Updated `d-1/1` **Dimension** utility to `d-dvh`
 - Updated `h-1/1` **Height** utility to `h-dvh`
 - Updated `w-1/1` **Width** utility to `w-dvh`
-- Updated color generation logic
 - Updated color shade percentage from 10% to 14%
+- Updated color utility generation logic
 - Updated color utility range from 1-6 to 1-12
 
 </details>
