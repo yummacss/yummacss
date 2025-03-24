@@ -57,7 +57,6 @@ export const positioningUtils: UtilityMap = {
       }),
       full: "100%",
       half: "50%",
-      none: "none",
     },
   },
 
@@ -74,7 +73,6 @@ export const positioningUtils: UtilityMap = {
       }),
       full: "100%",
       half: "50%",
-      none: "none",
     },
   },
 
@@ -91,7 +89,6 @@ export const positioningUtils: UtilityMap = {
       }),
       full: "100%",
       half: "50%",
-      none: "none",
     },
   },
 
@@ -108,7 +105,6 @@ export const positioningUtils: UtilityMap = {
       }),
       full: "100%",
       half: "50%",
-      none: "none",
     },
   },
 
@@ -135,7 +131,6 @@ export const positioningUtils: UtilityMap = {
       }),
       full: "100%",
       half: "50%",
-      none: "none",
     },
   },
 
@@ -152,7 +147,6 @@ export const positioningUtils: UtilityMap = {
       }),
       full: "100%",
       half: "50%",
-      none: "none",
     },
   },
 
@@ -169,7 +163,6 @@ export const positioningUtils: UtilityMap = {
       }),
       full: "100%",
       half: "50%",
-      none: "none",
     },
   },
 
