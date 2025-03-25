@@ -14,19 +14,13 @@
   <a href="https://yummacss.com"><strong>Read the documentation ↝</strong></a>
 </p>
 
-## Getting started
+## Community
 
-1. Add `yummacss` to your project.
+Join the Yumma CSS community! Share your experiences and help Yumma CSS grow and be the best it can be.
 
-```bash
-npm install yummacss@latest
-```
-
-2. Include `yummacss` in your main CSS file:
-
-```css
-@import "/node_modules/yummacss/dist/yumma.min.css";
-```
+- Follow [@yummacss on X (Twitter)](https://x.com/yummacss)
+- Subscribe to [@yummacss on YouTube](https://www.youtube.com/@yummacss)
+- Join the [community Discord server](https://discord.gg/Zd2y6yVqgK) to discuss issues and more.
 
 ## Built with
 
