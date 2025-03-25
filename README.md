@@ -20,7 +20,7 @@ Join the Yumma CSS community! Share your experiences and help Yumma CSS grow and
 
 - Follow [@yummacss on X (Twitter)](https://x.com/yummacss)
 - Subscribe to [@yummacss on YouTube](https://www.youtube.com/@yummacss)
-- Join the [community Discord server](https://discord.gg/Zd2y6yVqgK) to discuss issues and more
+- Join discussions on [`#yummacss` Discord](https://discord.gg/Zd2y6yVqgK)
 
 ## Built with
 
