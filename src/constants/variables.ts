@@ -12,9 +12,6 @@ export const YMA_COLOR_PINK = "rgb(212, 65, 138)";
 export const YMA_COLOR_LEAD = "rgb(63, 63, 78)";
 export const YMA_COLOR_GRAY = "rgb(96, 103, 115)";
 export const YMA_COLOR_SILVER = "rgb(191, 194, 199)";
-export const YMA_COLOR_BLACK = "black";
-export const YMA_COLOR_WHITE = "white";
-export const YMA_COLOR_TRANSPARENT = "transparent";
 
 // border
 export const YMA_BORDER = 1;
