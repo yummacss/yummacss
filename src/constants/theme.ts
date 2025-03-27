@@ -12,9 +12,6 @@ import {
   YMA_COLOR_LEAD,
   YMA_COLOR_GRAY,
   YMA_COLOR_SILVER,
-  YMA_COLOR_BLACK,
-  YMA_COLOR_WHITE,
-  YMA_COLOR_TRANSPARENT,
 } from "@/constants/variables";
 
 export const YMA_THEME = {
@@ -31,7 +28,4 @@ export const YMA_THEME = {
   lead: YMA_COLOR_LEAD,
   gray: YMA_COLOR_GRAY,
   silver: YMA_COLOR_SILVER,
-  black: YMA_COLOR_BLACK,
-  white: YMA_COLOR_WHITE,
-  transparent: YMA_COLOR_TRANSPARENT,
 };
