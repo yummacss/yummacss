@@ -1,6 +1,6 @@
 {
   "author": "Renildo Pereira",
-  "description": "A CSS framework with abbreviated styles.",
+  "description": "The CSS framework with abbreviated styles.",
   "license": "MIT",
   "main": "./dist/cli/index.js",
   "name": "yummacss",
