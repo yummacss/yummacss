@@ -7,7 +7,7 @@ export const cli = {
     info: (msg) => console.log(`ℹ ${msg}`),
     error: (msg) => console.log(`✗ ${msg}`),
     startSpinner: (text) => {
-        const spinner = ora({ spinner: "dots" }).start(text);
+        const spinner = ora({ spinner: "dots3", color: "white" }).start(text);
         return spinner;
     },
 };
