@@ -1,9 +1,9 @@
-import { glob } from "node:fs/promises";
 import chok from "chokidar";
 import { build } from "./build.js";
 import { loadConfig } from "../services/configLoader.js";
 import type { YummaConfig } from "../config/defaultConfig.js";
 import { cli } from "../utils/cli-ui.js";
+import { globby } from "globby";
 
 let currentConfig: YummaConfig;
 
@@ -16,9 +16,9 @@ export async function watch() {
 
     await build(currentConfig, true);
 
-    const templateFiles = [...currentConfig.source];
+    const files = await globby(currentConfig.source);
 
-    const watcher = chok.watch(templateFiles, {
+    const watcher = chok.watch(files, {
       awaitWriteFinish: {
         pollInterval: 50,
         stabilityThreshold: 200,

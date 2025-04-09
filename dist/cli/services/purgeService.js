@@ -1,7 +1,8 @@
 import { PurgeCSS } from "purgecss";
+import { globby } from "globby";
 export async function purgeCSS(css, config) {
     const purgeCSSResult = await new PurgeCSS().purge({
-        content: config.source,
+        content: await globby(config.source),
         css: [{ raw: css }],
         defaultExtractor: (content) => {
             return content.match(/[\w-/\\:]+/g) || [];
