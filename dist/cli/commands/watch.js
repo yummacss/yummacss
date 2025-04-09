@@ -1,4 +1,4 @@
-import chokidar from "chokidar";
+import chok from "chokidar";
 import { build } from "./build.js";
 import { loadConfig } from "../services/configLoader.js";
 import { cli } from "../utils/cli-ui.js";
@@ -9,10 +9,8 @@ export async function watch() {
         currentConfig = await loadConfig();
         watchSpinner.start("Watching for changes...");
         await build(currentConfig, true);
-        const filesToWatch = [
-            ...currentConfig.source,
-        ];
-        const watcher = chokidar.watch(filesToWatch, {
+        const templateFiles = [...currentConfig.source];
+        const watcher = chok.watch(templateFiles, {
             awaitWriteFinish: {
                 pollInterval: 50,
                 stabilityThreshold: 200,
