@@ -17,9 +17,6 @@ export async function watch() {
 
     const filesToWatch = [
       ...currentConfig.source,
-      ...(currentConfig.buildOptions.reset
-        ? ["yummacss.scss"]
-        : ["yummacss-core.scss"]),
     ];
 
     const watcher = chokidar.watch(filesToWatch, {

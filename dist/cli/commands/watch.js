@@ -7,13 +7,10 @@ export async function watch() {
     const watchSpinner = cli.startSpinner("Initializing watch mode...");
     try {
         currentConfig = await loadConfig();
-        watchSpinner.start("Watching for file changes...");
+        watchSpinner.start("Watching for changes...");
         await build(currentConfig, true);
         const filesToWatch = [
             ...currentConfig.source,
-            ...(currentConfig.buildOptions.reset
-                ? ["yummacss.scss"]
-                : ["yummacss-core.scss"]),
         ];
         const watcher = chokidar.watch(filesToWatch, {
             awaitWriteFinish: {
