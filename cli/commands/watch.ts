@@ -13,27 +13,24 @@ export async function watch() {
     currentConfig = await loadConfig();
     watchSpinner.start("Watching for changes...");
 
-    // Initial build
     await build(currentConfig, true);
 
-    const watcher = chokidar.watch(
-      [
-        ...currentConfig.source,
-        "yumma.config.js",
-        ...(currentConfig.buildOptions.reset
-          ? ["yummacss.scss"]
-          : ["yummacss-core.scss"]),
-      ],
-      {
-        awaitWriteFinish: {
-          pollInterval: 50,
-          stabilityThreshold: 200,
-        },
-        ignored: /(^|[/\\])\../,
-        ignoreInitial: true,
-        persistent: true,
-      }
-    );
+    const filesToWatch = [
+      ...currentConfig.source,
+      ...(currentConfig.buildOptions.reset
+        ? ["yummacss.scss"]
+        : ["yummacss-core.scss"]),
+    ];
+
+    const watcher = chokidar.watch(filesToWatch, {
+      awaitWriteFinish: {
+        pollInterval: 50,
+        stabilityThreshold: 200,
+      },
+      ignored: /(^|[/\\])\../,
+      ignoreInitial: true,
+      persistent: true,
+    });
 
     watcher
       .on("add", (path) => handleChange(path, "added"))
@@ -41,10 +38,7 @@ export async function watch() {
       .on("unlink", (path) => handleChange(path, "removed"));
 
     async function handleChange(path: string, event: string) {
-      await build(
-        currentConfig,
-        path === "yumma.config.js" || path.endsWith(".scss")
-      );
+      await build(currentConfig, true);
     }
   } catch (error) {
     watchSpinner.fail("Watch failed!");
