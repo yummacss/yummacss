@@ -2,6 +2,7 @@ import chok from "chokidar";
 import { build } from "./build.js";
 import { loadConfig } from "../services/configLoader.js";
 import { cli } from "../utils/cli-ui.js";
+import { globby } from "globby";
 let currentConfig;
 export async function watch() {
     const watchSpinner = cli.startSpinner("Initializing watch mode...");
@@ -9,8 +10,8 @@ export async function watch() {
         currentConfig = await loadConfig();
         watchSpinner.start("Watching for changes...");
         await build(currentConfig, true);
-        const templateFiles = [...currentConfig.source];
-        const watcher = chok.watch(templateFiles, {
+        const files = await globby(currentConfig.source);
+        const watcher = chok.watch(files, {
             awaitWriteFinish: {
                 pollInterval: 50,
                 stabilityThreshold: 200,
