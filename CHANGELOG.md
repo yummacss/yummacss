@@ -67,7 +67,7 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Added **Top Radius** utilities
 - Added **Transform Origin** utilities
 - Added **Visibility** utilities
-- Added **Whitespace** utilities
+- Added **White Space** utilities
 - Added `_create-colors.scss`, `_create-values.scss`, `_create-utilities.scss` and `_extend-utilities.scss` partial files
 - Added `_dimension.scss`, `_height.scss`, `_margin.scss`, `_padding.scss` and `_width.scss` files
 - Added `_index.scss` files
