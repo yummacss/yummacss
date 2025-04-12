@@ -68,23 +68,23 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Added **Transform Origin** utilities
 - Added **Visibility** utilities
 - Added **White Space** utilities
-- Added `_create-colors.scss`, `_create-values.scss`, `_create-utilities.scss` and `_extend-utilities.scss` partial files
-- Added `_dimension.scss`, `_height.scss`, `_margin.scss`, `_padding.scss` and `_width.scss` files
-- Added `_index.scss` files
-- Added `$yma-box-shadow-*` variables
-- Added `$yma-font-size-*` variables
+- Added `_create-colors.scss`, `_create-values.scss`, `_create-utilities.scss` and `_extend-utilities.scss` partial files (Internal)
+- Added `_dimension.scss`, `_height.scss`, `_margin.scss`, `_padding.scss` and `_width.scss` files (Internal)
+- Added `_index.scss` files (Internal)
+- Added `$yma-box-shadow-*` variables (Internal)
+- Added `$yma-font-size-*` variables (Internal)
 - Added `1/2`, `2/1`, `2/3`, `3/2`, and `9/16` values for **Aspect Ratio** utilities
 - Added `fs-4xl`, `fs-5xl`, `fs-7xl` and `fs-8xl` values for **Font Size** utilities
 - Added `full` and `half` values for **Bottom/Left/Right/Top** utilities
-- Added `src/abstracts/functions` folder
+- Added `src/abstracts/functions` folder (Internal)
 - Added `table-cell`, `table-column` and `table-row` values for **Display** utilities
-- Added `utilities/maps` folder
-- Added `yummacss-core.scss` file
+- Added `utilities/maps` folder (Internal)
+- Added `yummacss-core.scss` file (Internal)
+- Added CLI functionality
 - Added the `column-dense` and `row-dense` values for **Grid Auto Flow**
 - Extend **Column Gap** utilities from 0-16 to 0-100
 - Extend **Gap** utilities from 0-16 to 0-100
 - Extend **Row Gap** utilities from 0-16 to 0-100
-- Implement Yumma CSS CLI
 
 </details>
 
@@ -94,33 +94,32 @@ All notable changes to the Yumma CSS will be documented in this file.
     <b>Breaking changes</b>
 </summary>
 
-- Improved **Font Size** utilities
 - Merged **Filters** and **Effects** subcategories into a **Effect** category
 - Migrated base styles functionality to config file
 - Migrated from `@import` to `@use` and `@forwards`
-- Migrated from Common Js to ESM
-- Migrated to Dart SCSS
+- Migrated from Common Js to ESM (Internal)
+- Migrated to Dart SASS (Internal)
 - Relocate `_base.scss` to `reset/_stylecent.scss`
 - Relocate `_functions.scss` to `reset/_ignore-neutral.scss`
 - Removed **Spacing X** utilities
 - Removed **Spacing Y** utilities
 - Removed `.cnt{}` utility class
 - Removed `.ins{}` utility class
-- Removed `coreFile()` function from `gulpfile.mjs`
+- Removed `coreFile()` function from `gulpfile.mjs` (Internal)
 - Removed `d-` (dark) and `l-` (light) from all color utilities
 - Removed `d-` prefix from **Bottom/Left/Right/Top** utilities
 - Removed `d-1/2` **Dimension** utility
-- Removed `dist/yumma-core.css` file
-- Removed `dist/yumma-core.min.scss` file
+- Removed `dist/yumma-core.css` file (Internal)
+- Removed `dist/yumma-core.min.scss` file (Internal)
 - Removed `h-1/2` **Height** utility
 - Removed `hidden` and `none` properties from **Text Decoration Style** utilities
-- Removed `minifiedCoreFile()` function
+- Removed `minifiedCoreFile()` function (Internal)
 - Removed `none` **Bottom/Left/Right/Top** invalid utilities
 - Removed `w-1/2` **Width** utility
 - Renamed `_color.scss` to `_create-colors.scss`
 - Renamed `_core.scss` to `yummacss-core.scss`
 - Renamed `_layout.scss` to `_positioning.scss`
-- Renamed `gulpfile.js` to `gulpfile.mjs`
+- Renamed `gulpfile.js` to `gulpfile.mjs` (Internal)
 - Renamed `index.scss` to `yummacss.scss`
 - Reworked **Box Model** utilities generation
 - Updated **Columns** utilities syntax from `cols-*` to `c-*`
