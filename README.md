@@ -5,7 +5,7 @@
 </div>
 
 <div align="center">
-  Get all of the Yumma CSS utilities through an API.
+  Yumma CSS for all of your back end needs.
   <br>
   <a href="https://yummacss.com"><strong>Read the documentation ↝</strong></a>
 </div>
