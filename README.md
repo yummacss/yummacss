@@ -1,16 +1,14 @@
 <div align="center">
   <a href="https://yummacss.com" target="_blank" target="_blank" rel="noopener noreferrer">
-    <picture>
-      <img alt="Yumma CSS" src="https://www.yummacss.com/trademark/logo.png" width="110" style="max-width: 100%;">
-    </picture>
+    <img alt="Yumma CSS API" src="https://api.yummacss.com/dark-logomark.png" width="250" style="max-width: 100%;">
   </a>
 </div>
 
-<p align="center">
+<div align="center">
   Get all of the Yumma CSS utilities through an API.
   <br>
   <a href="https://yummacss.com"><strong>Read the documentation ↝</strong></a>
-</p>
+</div>
 
 > [!Caution]
 >
@@ -18,7 +16,7 @@
 >
 > This project is still in a very early stage of development. The API, features, and documentation are subject to frequent changes. The codebase isn't ready for production use yet, so be prepared for breaking changes.
 
-## Getting a list of utilities
+## List of utilities
 
 Get all the utilities of a given CSS property. Here's an example:
 
@@ -50,7 +48,7 @@ GET /api/styles/background-attachment
 ]
 ```
 
-## Getting a single utility item
+## Single utility
 
 Get a specific utility of a given CSS property's numeric value. Here's an example:
 
