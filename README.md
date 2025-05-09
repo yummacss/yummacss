@@ -26,7 +26,6 @@ Join the Yumma CSS community! Share your experiences and help Yumma CSS grow and
 
 - [Gulp](https://gulpjs.com/) — A toolkit to automate & enhance your workflow.
 - [SCSS](https://sass-lang.com/documentation/syntax/) — CSS with superpowers.
-- [Typescript](https://www.typescriptlang.org/) — A superset of JavaScript.
 
 ## Licensing
 
