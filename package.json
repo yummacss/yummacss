@@ -1,6 +1,7 @@
 {
   "author": "Renildo Pereira",
   "description": "The CSS framework with abbreviated styles.",
+  "homepage": "https://yummacss.com",
   "license": "MIT",
   "main": "./dist/cli/index.js",
   "name": "yummacss",
@@ -13,20 +14,6 @@
   "exports": {
     ".": "./dist/cli/src/cli.js"
   },
-  "files": [
-    "dist",
-    "src"
-  ],
-  "scripts": {
-    "build:css": "gulp build",
-    "build:cli": "tsc -p tsconfig.cli.json",
-    "dev": "tsc -p tsconfig.cli.json --watch",
-    "prepublishOnly": "pnpm build:cli"
-  },
-  "keywords": [
-    "utility-first",
-    "framework"
-  ],
   "dependencies": {
     "chokidar": "^4.0.3",
     "commander": "^13.1.0",
@@ -45,5 +32,27 @@
     "gulp-sass": "^6.0.0",
     "sass": "^1.85.1",
     "typescript": "^5.8.2"
-  }
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yumma-lib/yumma-css"
+  },
+  "scripts": {
+    "build:css": "gulp build",
+    "build:cli": "tsc -p tsconfig.cli.json",
+    "dev": "tsc -p tsconfig.cli.json --watch",
+    "prepublishOnly": "pnpm build:cli"
+  },
+  "keywords": [
+    "css-framework",
+    "css",
+    "framework",
+    "utility-first",
+    "yumma",
+    "yummacss"
+  ]
 }
