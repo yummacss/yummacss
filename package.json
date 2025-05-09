@@ -18,7 +18,6 @@
     "src"
   ],
   "scripts": {
-    "build": "gulp build",
     "build:css": "gulp build",
     "build:cli": "tsc -p tsconfig.cli.json",
     "dev": "tsc -p tsconfig.cli.json --watch",
