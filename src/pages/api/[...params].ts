@@ -32,7 +32,8 @@ async function getStyleData(category: string, subCategory?: string): Promise<Api
 }
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<ApiResponse[] | { error: string }>) {
-  const ip = (req.headers['x-forwarded-for'] as string)?.split(',')[0]?.trim() || req.socket.remoteAddress || "127.0.0.1";
+  const forwarded = req.headers["x-forwarded-for"];
+  const ip = (forwarded ? (forwarded as string).split(",")[0] : req.socket.remoteAddress) ?? "127.0.0.1";
 
   const { success } = await ratelimit.limit(ip);
 
