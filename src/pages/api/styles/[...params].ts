@@ -34,15 +34,10 @@ async function getStyleData(category: string, subCategory?: string): Promise<Api
 export default async function handler(req: NextApiRequest, res: NextApiResponse<ApiResponse[] | { error: string }>) {
   const ip = req.ip ?? "127.0.0.1";
 
-  const { success, limit, reset, remaining } = await ratelimit.limit(ip);
+  const { success } = await ratelimit.limit(ip);
 
   if (!success) {
-    console.log("Rate Limit Exceeded");
-    console.log("Limit:", limit);
-    console.log("Reset:", reset);
-    console.log("Remaining:", remaining);
-
-    return res.status(429).json({ error: "Rate Limited" });
+    return res.status(429).json({ error: "Rate limit exceeded" });
   }
 
   const { params } = req.query;
