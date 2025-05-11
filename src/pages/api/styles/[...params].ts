@@ -1,4 +1,4 @@
-import NextApiRequest, { default as NextApiResponse } from "next";
+import type { NextApiRequest, NextApiResponse } from "next";
 
 import { allUtilities } from "@/core/utilities";
 import { UtilityItem, ApiResponse } from "@/interfaces";
