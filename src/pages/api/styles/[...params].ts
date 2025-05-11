@@ -1,11 +1,10 @@
-import { NextApiRequest, NextApiResponse } from "next";
+import NextApiRequest, { default as NextApiResponse } from "next";
+
 import { allUtilities } from "@/core/utilities";
 import { UtilityItem, ApiResponse } from "@/interfaces";
+import { ratelimit } from "@/lib/ratelimiter";
 
-async function getStyleData(
-  category: string,
-  subCategory?: string
-): Promise<ApiResponse[] | null> {
+async function getStyleData(category: string, subCategory?: string): Promise<ApiResponse[] | null> {
   const item: UtilityItem | undefined = allUtilities[category];
 
   if (!item) {
@@ -32,10 +31,20 @@ async function getStyleData(
   return apiData;
 }
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<ApiResponse[] | { error: string }>
-) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse<ApiResponse[] | { error: string }>) {
+  const ip = req.ip ?? "127.0.0.1";
+
+  const { success, limit, reset, remaining } = await ratelimit.limit(ip);
+
+  if (!success) {
+    console.log("Rate Limit Exceeded");
+    console.log("Limit:", limit);
+    console.log("Reset:", reset);
+    console.log("Remaining:", remaining);
+
+    return res.status(429).json({ error: "Rate Limited" });
+  }
+
   const { params } = req.query;
 
   if (!params || params.length === 0) {
