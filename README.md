@@ -1,6 +1,6 @@
 <div align="center">
   <a href="https://yummacss.com" target="_blank" target="_blank" rel="noopener noreferrer">
-    <img alt="Yumma CSS API" src="https://api.yummacss.com/dark-logomark.png" width="250" style="max-width: 100%;">
+    <img alt="Yumma CSS API" src="./public/logomark.png" width="250" style="max-width: 100%;">
   </a>
 </div>
 
@@ -16,17 +16,36 @@
 >
 > This project is still in a very early stage of development. The API, features, and documentation are subject to frequent changes. The codebase isn't ready for production use yet, so be prepared for breaking changes.
 
-## List of utilities
+## Overview
 
 Get all the utilities of a given CSS property. Here's an example:
 
 ### Request
 
 ```bash
-GET /api/styles/background-attachment
+GET get.yummacss.com/api/background-attachment
 ```
 
 ### Response
+
+````json
+[
+  {
+    "slug": "background-attachment",
+    "utility": "ba-f",
+    "property": ["background-attachment: fixed;"]
+  },
+  {
+    "slug": "background-attachment",
+    "utility": "ba-l",
+    "property": ["background-attachment: local;"]
+  },
+  {
+    "slug": "background-attachment",
+    "utility": "ba-s",
+    "property": ["background-attachment: scroll;"]
+  }
+]
 
 ```json
 [
@@ -46,16 +65,16 @@ GET /api/styles/background-attachment
     "property": ["background-attachment: scroll;"]
   }
 ]
-```
+````
 
-## Single utility
+## List of utilities with a specific value
 
 Get a specific utility of a given CSS property's numeric value. Here's an example:
 
 ### Request
 
 ```bash
-GET /api/styles/height/1
+GET get.yummacss.com/api/height/1
 ```
 
 ### Response
