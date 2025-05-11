@@ -1,6 +1,6 @@
 {
   "author": "Renildo Pereira",
-  "description": "Get all of the Yumma CSS utilities through an API.",
+  "description": "Yumma CSS for all of your back end needs.",
   "name": "yumma-css-api",
   "private": true,
   "version": "0.0.1",
