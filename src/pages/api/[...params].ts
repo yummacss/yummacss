@@ -2,7 +2,6 @@ import type { NextApiRequest, NextApiResponse } from "next";
 
 import { allUtilities } from "@/core/utilities";
 import { UtilityItem, ApiResponse } from "@/interfaces";
-import { ratelimit } from "@/lib/ratelimiter";
 
 async function getStyleData(category: string, subCategory?: string): Promise<ApiResponse[] | null> {
   const item: UtilityItem | undefined = allUtilities[category];
@@ -32,15 +31,6 @@ async function getStyleData(category: string, subCategory?: string): Promise<Api
 }
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<ApiResponse[] | { error: string }>) {
-  const forwarded = req.headers["x-forwarded-for"];
-  const ip = (forwarded ? (forwarded as string).split(",")[0] : req.socket.remoteAddress) ?? "127.0.0.1";
-
-  const { success } = await ratelimit.limit(ip);
-
-  if (!success) {
-    return res.status(429).json({ error: "Rate limit exceeded" });
-  }
-
   const { params } = req.query;
 
   if (!params || params.length === 0) {
