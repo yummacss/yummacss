@@ -10,74 +10,71 @@
   <a href="https://yummacss.com"><strong>Read the documentation ↝</strong></a>
 </div>
 
-> [!Caution]
->
-> ## Early Development Stage
->
-> This project is still in a very early stage of development. The API, features, and documentation are subject to frequent changes. The codebase isn't ready for production use yet, so be prepared for breaking changes.
+## Get all utilities
 
-## Overview
+Get the all available utility classes:
 
-Get all the utilities of a given CSS property. Here's an example:
-
-### Request
+**Request**
 
 ```bash
-GET get.yummacss.com/api/background-attachment
+GET get.yummacss.com/api/all-utilities
 ```
 
-### Response
-
-````json
-[
-  {
-    "slug": "background-attachment",
-    "utility": "ba-f",
-    "property": ["background-attachment: fixed;"]
-  },
-  {
-    "slug": "background-attachment",
-    "utility": "ba-l",
-    "property": ["background-attachment: local;"]
-  },
-  {
-    "slug": "background-attachment",
-    "utility": "ba-s",
-    "property": ["background-attachment: scroll;"]
-  }
-]
+**Response**
 
 ```json
 [
   {
-    "slug": "background-attachment",
-    "utility": "ba-f",
-    "property": ["background-attachment: fixed;"]
-  },
-  {
-    "slug": "background-attachment",
-    "utility": "ba-l",
-    "property": ["background-attachment: local;"]
-  },
-  {
-    "slug": "background-attachment",
-    "utility": "ba-s",
-    "property": ["background-attachment: scroll;"]
+    "slug": string,
+    "utility": string,
+    "property": string[],
   }
 ]
-````
+```
 
-## List of utilities with a specific value
+## Get a specific utility
 
-Get a specific utility of a given CSS property's numeric value. Here's an example:
+Get all the variants of a given utility class:
 
-### Request
+**Request**
+
+```bash
+GET get.yummacss.com/api/visibility
+```
+
+**Response**
+
+```json
+[
+  {
+    "slug": "visibility",
+    "utility": "v-c",
+    "property": ["visibility: collapse;"]
+  },
+  {
+    "slug": "visibility",
+    "utility": "v-h",
+    "property": ["visibility: hidden;"]
+  },
+  {
+    "slug": "visibility",
+    "utility": "v-v",
+    "property": ["visibility: visible;"]
+  }
+]
+```
+
+## Get a specific value
+
+Get a specific numeric value of a given utility class:
+
+**Request**
 
 ```bash
 GET get.yummacss.com/api/height/1
 ```
 
-### Response
+**Response**
 
 ```json
 [
