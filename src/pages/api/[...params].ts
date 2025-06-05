@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-
 import { allUtilities } from "@/core/utilities";
 import { UtilityItem, ApiResponse } from "@/interfaces";
+import { handleCors } from "@/utils/cors";
 
 async function getStyleData(category: string, subCategory?: string): Promise<ApiResponse[] | null> {
   const item: UtilityItem | undefined = allUtilities[category];
@@ -31,6 +31,8 @@ async function getStyleData(category: string, subCategory?: string): Promise<Api
 }
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<ApiResponse[] | { error: string }>) {
+  if (handleCors(req, res)) return;
+
   const { params } = req.query;
 
   if (!params || params.length === 0) {
