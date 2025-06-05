@@ -2,6 +2,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import { allUtilities } from "@/core/utilities";
 import { UtilityItem, ApiResponse } from "@/interfaces";
 import { handleCors } from "@/utils/cors";
+import { applyRateLimit } from "@/lib/ratelimiter";
 
 async function getStyleData(category: string, subCategory?: string): Promise<ApiResponse[] | null> {
   const item: UtilityItem | undefined = allUtilities[category];
@@ -32,6 +33,12 @@ async function getStyleData(category: string, subCategory?: string): Promise<Api
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<ApiResponse[] | { error: string }>) {
   if (handleCors(req, res)) return;
+
+  if (await applyRateLimit(req, res)) return;
+
+  if (req.method !== "GET") {
+    return res.status(405).json({ error: "Method not allowed" });
+  }
 
   const { params } = req.query;
 
