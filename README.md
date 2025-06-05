@@ -25,9 +25,12 @@ GET get.yummacss.com/api/all-utilities
 ```json
 [
   {
-    "slug": string,
-    "utility": string,
-    "property": string[],
+    "slug": "example",
+    "utility": "example",
+    "property": [
+      "example-1",
+      "example-2"
+    ]
   }
 ]
 ```
