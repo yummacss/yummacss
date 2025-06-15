@@ -1,24 +1,20 @@
 import { Ratelimit } from "@upstash/ratelimit";
 import { Redis } from "@upstash/redis";
 import { getClientIp } from "@/utils/ip";
-import type { NextApiRequest, NextApiResponse } from "next";
+import { NextApiRequest, NextApiResponse } from "next";
 
 export const redis = Redis.fromEnv();
-const cache = new Map();
+const cache = new Map(); //
 
 export const ratelimit = new Ratelimit({
   redis,
-  limiter: Ratelimit.slidingWindow(20, "10 s"),
+  limiter: Ratelimit.slidingWindow(10, "10 s"), // 10 requests every 10 seconds
   analytics: true,
-  timeout: 3000,
   ephemeralCache: cache,
+  timeout: 3000, // 3 seconds
 });
 
 export async function applyRateLimit(req: NextApiRequest, res: NextApiResponse): Promise<boolean> {
-  if (req.headers.origin === "https://yummacss.com") {
-    return false;
-  }
-
   const identifier = getClientIp(req);
   const result = await ratelimit.limit(identifier);
 
