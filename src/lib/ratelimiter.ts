@@ -24,7 +24,7 @@ export async function applyRateLimit(req: NextApiRequest, res: NextApiResponse):
 
   if (!result.success) {
     res.status(429).json({
-      error: "Too many requests. Please try again later.",
+      error: "Too many requests!",
     });
     return true;
   }
