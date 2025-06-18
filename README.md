@@ -1,5 +1,5 @@
 <div align="center">
-  <a href="https://yummacss.com" target="_blank" target="_blank" rel="noopener noreferrer">
+  <a href="https://yummacss.com" target="_blank" rel="noopener noreferrer">
     <img alt="Yumma CSS API" src="./public/logomark.png" width="250" style="max-width: 100%;">
   </a>
 </div>
