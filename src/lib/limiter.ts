@@ -3,7 +3,7 @@ import { Redis } from "@upstash/redis";
 import { getClientIp } from "@/utils/ip";
 import { NextApiRequest, NextApiResponse } from "next";
 
-export const redis = Redis.fromEnv();
+const redis = Redis.fromEnv();
 const cache = new Map();
 
 export const ratelimit = new Ratelimit({

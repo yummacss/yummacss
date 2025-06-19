@@ -2,7 +2,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import { allUtilities } from "@/core/utilities";
 import { UtilityItem, ApiResponse } from "@/interfaces";
 import { handleCors } from "@/utils/cors";
-import { applyRateLimit } from "@/lib/ratelimiter";
+import { applyRateLimit } from "@/lib/limiter";
 
 async function getStyleData(category: string, subCategory?: string): Promise<ApiResponse[] | null> {
   const item: UtilityItem | undefined = allUtilities[category];

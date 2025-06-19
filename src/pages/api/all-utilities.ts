@@ -2,7 +2,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import { allUtilities } from "@/core/utilities";
 import { ApiResponse } from "@/interfaces";
 import { handleCors } from "@/utils/cors";
-import { applyRateLimit } from "@/lib/ratelimiter";
+import { applyRateLimit } from "@/lib/limiter";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<ApiResponse[] | { error: string }>) {
   if (handleCors(req, res)) return;
