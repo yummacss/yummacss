@@ -4,7 +4,7 @@ import { getClientIp } from "@/utils/ip";
 import { NextApiRequest, NextApiResponse } from "next";
 
 export const redis = Redis.fromEnv();
-const cache = new Map(); //
+const cache = new Map();
 
 export const ratelimit = new Ratelimit({
   redis,
