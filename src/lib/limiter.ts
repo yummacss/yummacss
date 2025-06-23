@@ -8,7 +8,7 @@ const cache = new Map();
 
 export const ratelimit = new Ratelimit({
   redis,
-  limiter: Ratelimit.slidingWindow(10, "10 s"), // 10 requests every 10 seconds
+  limiter: Ratelimit.slidingWindow(20, "10 s"), // 20 requests every 10 seconds
   analytics: true,
   ephemeralCache: cache,
   timeout: 3000, // 3 seconds
