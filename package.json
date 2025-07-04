@@ -36,10 +36,11 @@
   },
   "keywords": [
     "css",
-    "utilities",
-    "tailwind",
     "design-system",
-    "typescript"
+    "typescript",
+    "utilities",
+    "yumma-css",
+    "yummacss"
   ],
   "license": "MIT",
   "repository": {
