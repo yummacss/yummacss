@@ -5,95 +5,35 @@
 </div>
 
 <div align="center">
-  Yumma CSS for all of your back end needs.
+  Yumma CSS utility classes library for all of your development needs.
   <br>
-  <a href="https://yummacss.com"><strong>Read the documentation ↝</strong></a>
 </div>
 
 ## Get all utilities
 
 Get the all available utility classes:
 
-**Request**
+```ts
+import { getAllUtils } from "yumma-css-api";
 
-```bash
-GET get.yummacss.com/api/all-utilities
+const all = getAllUtils();
 ```
 
-**Response**
+## Get specific utilities
 
-```json
-[
-  {
-    "slug": "example",
-    "utility": "example",
-    "property": [
-      "example-1",
-      "example-2"
-    ]
-  }
-]
-```
+Get all the utility variants of a given slug:
 
-## Get a specific utility
+```ts
+import { getBackgroundUtils } from "yumma-css-api";
 
-Get all the variants of a given utility class:
-
-**Request**
-
-```bash
-GET get.yummacss.com/api/visibility
-```
-
-**Response**
-
-```json
-[
-  {
-    "slug": "visibility",
-    "utility": "v-c",
-    "property": ["visibility: collapse;"]
-  },
-  {
-    "slug": "visibility",
-    "utility": "v-h",
-    "property": ["visibility: hidden;"]
-  },
-  {
-    "slug": "visibility",
-    "utility": "v-v",
-    "property": ["visibility: visible;"]
-  }
-]
-```
-
-## Get a specific value
-
-Get a specific numeric value of a given utility class:
-
-**Request**
-
-```bash
-GET get.yummacss.com/api/height/1
-```
-
-**Response**
-
-```json
-[
-  {
-    "slug": "height",
-    "utility": "h-1",
-    "property": ["height: 0.25rem;"]
-  }
-]
+const backgrounds = getBackgroundUtils();
 ```
 
 ## Built with
 
-- [Next.js](https://nextjs.org/) — The React Framework for the Web.
+- [tsup](https://tsup.egoist.dev/) — The simplest and fastest way to build TypeScript libraries.
 - [tinycolor2](https://bgrins.github.io/TinyColor/) — Fast, small color manipulation and conversion for JavaScript.
 
 ## Licensing
 
-MIT — Copyright (c) 2022–present
+MIT — Copyright (c) 2025–present
