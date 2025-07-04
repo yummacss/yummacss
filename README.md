@@ -29,4 +29,4 @@ const backgrounds = getBackgroundUtils();
 
 ## Licensing
 
-MIT — Copyright (c) 2025–present
+MIT — Copyright (c) 2024–present
