@@ -8,7 +8,7 @@ export default defineConfig({
   sourcemap: true,
   clean: true,
   treeshake: true,
-  minify: false, // Keep readable for debugging
+  minify: true,
   outDir: "dist",
   target: "node16",
   external: ["tinycolor2"],
