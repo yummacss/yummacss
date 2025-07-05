@@ -1,5 +1,5 @@
 import { UtilityMap } from "@/interfaces";
-import { createValues } from "@/core/helpers/create-values";
+import { createValues } from "@/helpers/create-values";
 import {
   YMA_DECORATION_THICKNESS,
   YMA_FONT_CHARTER,
