@@ -1,5 +1,5 @@
 import { UtilityMap } from "@/interfaces";
-import { createValues } from "@/core/helpers/create-values";
+import { createValues } from "@/helpers/create-values";
 import { YMA_BORDER, YMA_BORDER_RADIUS, YMA_BORDER_SPACING } from "@/constants/variables";
 
 export const borderUtils: UtilityMap = {

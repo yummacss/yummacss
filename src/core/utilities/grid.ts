@@ -1,5 +1,5 @@
 import { UtilityMap } from "@/interfaces";
-import { createValues } from "@/core/helpers/create-values";
+import { createValues } from "@/helpers/create-values";
 import { YMA_GAP } from "@/constants/variables";
 
 export const gridUtils: UtilityMap = {
