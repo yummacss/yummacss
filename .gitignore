@@ -10,6 +10,7 @@
 
 # testing
 /coverage
+*.tgz
 
 # production
 /build
