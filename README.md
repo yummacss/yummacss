@@ -1,32 +1,66 @@
-<div align="center">
-  <a href="https://yummacss.com" target="_blank" rel="noopener noreferrer">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://www.yummacss.com/trademark/logo-dark.png">
-      <source media="(prefers-color-scheme: light)" srcset="https://www.yummacss.com/trademark/logo-light.png">
-      <img alt="Yumma CSS" src="https://www.yummacss.com/trademark/logo-light.png" width="220" style="max-width: 100%;">
-    </picture>
-  </a>
-</div>
+# [@yummacss](https://x.com/yummacss)
 
-<p align="center">
-  A CSS framework for the web with abbreviated styles.
-  <br>
-  <a href="https://yummacss.com"><strong>Read the documentation ↝</strong></a>
-</p>
+A CSS framework for the web with abbreviated styles.
 
-## Community
+[![NPM Version](https://img.shields.io/npm/v/yummacss?style=plastic&label=yummacss&labelColor=eaedfc&color=413cb8)](https://www.npmjs.com/package/yummacss)
+[![NPM Downloads](https://img.shields.io/npm/d18m/yummacss?style=plastic&label=downloads&labelColor=eaedfc&color=413cb8)](https://www.npmjs.com/package/yummacss)
 
-Join the Yumma CSS community! Share your experiences and help Yumma CSS grow and be the best it can be.
+## Getting started
 
-- Follow [@yummacss on X (Twitter)](https://x.com/yummacss)
-- Subscribe to [@yummacss on YouTube](https://www.youtube.com/@yummacss)
-- Join discussions on [`#yummacss` Discord](https://discord.gg/Zd2y6yVqgK)
+Yumma CSS is a CSS framework packed with a set of abbreviated utility classes for building faster and more maintainable UIs.
+
+### Installing
+
+A step by step series of examples that tell you how to get a development
+environment running
+
+Install Yumma CSS
+
+```
+npm i yummacss -D
+```
+
+Initialize configuration
+
+```
+npx yummacss init
+```
+
+Our [framework guides](https://www.yummacss.com/docs/installation#framework-guides) will teach you how to set up your configuration file.
+
+## Development setup
+
+The Yumma CSS CLI provides several commands to help you work with your Yumma CSS files.
+
+> [!IMPORTANT]  
+> Make sure you have a `yumma.config.js` file set up before running these commands. If you haven’t, run `npx yummacss init` first.
+
+### Building styles
+
+The `build` command will compile your Yumma CSS files once.
+
+```bash
+npx yummacss build
+```
+
+### Watching changes
+
+The `watch` command will watch for changes in your Yumma CSS files and recompile them automatically.
+
+```bash
+npx yummacss watch
+```
+
+## Documentation
+
+Head over to [yummacss.com](https://www.yummacss.com) for the full documentation.
 
 ## Built with
 
-- [Gulp](https://gulpjs.com/) — A toolkit to automate & enhance your workflow.
-- [SCSS](https://sass-lang.com/documentation/syntax/) — CSS with superpowers.
+- [gulp](https://gulpjs.com/) - The streaming build system.
+- [scss](https://sass-lang.com/documentation/syntax/) - CSS with superpowers.
+- [typescript](https://www.typescriptlang.org/) - A language for application-scale JavaScript.
 
-## Licensing
+## License
 
-MIT — Copyright (c) 2022–present
+This project is licensed under the [MIT License](LICENSE)
