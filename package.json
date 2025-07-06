@@ -1,7 +1,7 @@
 {
   "author": "Renildo Pereira",
-  "description": "Yumma CSS utility classes library for all of your development needs.",
-  "name": "yumma-css-api",
+  "description": "Yumma CSS utility classes for all your development needs.",
+  "name": "@yummacss/api",
   "version": "0.0.1",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -35,17 +35,15 @@
     "typescript": "^5.8.2"
   },
   "keywords": [
-    "api",
-    "library",
     "typescript",
-    "utilities",
-    "yumma-css",
-    "yummacss api",
+    "design-patterns",
+    "typescript-library",
+    "css-utilities",
     "yummacss"
   ],
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-username/yumma-css-api.git"
+    "url": "https://github.com/yumma-lib/yumma-css-api.git"
   }
 }

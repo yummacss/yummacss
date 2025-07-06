@@ -1,9 +1,9 @@
-# [@yummacss/api](https://www.npmjs.com/package/yumma-css-api)
+# [@yummacss/api](https://www.npmjs.com/package/@yummacss/api)
 
-Yumma CSS utility classes library for all of your development needs.
+Yumma CSS utility classes for all your development needs.
 
-[![NPM Version](https://img.shields.io/npm/v/yumma-css-api?style=plastic&label=yumma-css-api&labelColor=eaedfc&color=413cb8)](https://www.npmjs.com/package/yumma-css-api)
-[![NPM Downloads](https://img.shields.io/npm/d18m/yumma-css-api?style=plastic&label=downloads&labelColor=eaedfc&color=413cb8)](https://www.npmjs.com/package/yumma-css-api)
+[![NPM Version](https://img.shields.io/npm/v/@yummacss/api?style=plastic&label=@yummacss/api&labelColor=eaedfc&color=413cb8)](https://www.npmjs.com/package/@yummacss/api)
+[![NPM Downloads](https://img.shields.io/npm/d18m/@yummacss/api?style=plastic&label=downloads&labelColor=eaedfc&color=413cb8)](https://www.npmjs.com/package/@yummacss/api)
 
 ## Getting started
 
@@ -12,7 +12,7 @@ Yumma CSS API is a powerful TypeScript/JavaScript utility library that provides 
 ### Installing
 
 ```bash
-npm i yumma-css-api
+npm i @yummacss/api
 ```
 
 ## Usage examples
@@ -20,7 +20,7 @@ npm i yumma-css-api
 Get all utilities at once:
 
 ```ts
-import { getAllUtils } from "yumma-css-api";
+import { getAllUtils } from "@yummacss/api";
 
 const all = getAllUtils();
 ```
@@ -28,7 +28,7 @@ const all = getAllUtils();
 Get only background utilities:
 
 ```ts
-import { getBackgroundUtils } from "yumma-css-api";
+import { getBackgroundUtils } from "@yummacss/api";
 
 const backgrounds = getBackgroundUtils();
 ```
@@ -36,7 +36,7 @@ const backgrounds = getBackgroundUtils();
 Access a specific utility from a category:
 
 ```ts
-import { getBoxModelUtils } from "yumma-css-api";
+import { getBoxModelUtils } from "@yummacss/api";
 
 const boxModel = getBoxModelUtils();
 const margin = boxModel["margin"];
@@ -64,13 +64,13 @@ import {
   getTableUtils,
   getTextUtils,
   getTransformUtils,
-} from "yumma-css-api";
+} from "@yummacss/api";
 ```
 
 For advanced use cases use these types:
 
 ```ts
-import type { UtilityMap, UtilityItem } from "yumma-css-api";
+import type { UtilityMap, UtilityItem } from "@yummacss/api";
 ```
 
 ## Built with
