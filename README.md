@@ -1,4 +1,4 @@
-# [@yummacss/api](https://x.com/yummacss)
+# [@yummacss/api](https://www.npmjs.com/package/@yummacss/api)
 
 Yumma CSS utility classes library for all of your development needs.
 
