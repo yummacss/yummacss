@@ -1,42 +1,50 @@
-# Yumma CSS API
+# [@yummacss/api](https://x.com/yummacss)
 
 Yumma CSS utility classes library for all of your development needs.
 
-## All utilities
+[![NPM Version](https://img.shields.io/npm/v/@yummacss/api?style=plastic&label=@yummacss/api&labelColor=eaedfc&color=413cb8)](https://www.npmjs.com/package/@yummacss/api)
+[![NPM Downloads](https://img.shields.io/npm/d18m/@yummacss/api?style=plastic&label=downloads&labelColor=eaedfc&color=413cb8)](https://www.npmjs.com/package/@yummacss/api)
 
-Return all available utility classes across every category as a single object.
+## Getting started
+
+Yumma CSS API is a powerful TypeScript/JavaScript utility library that provides programmatic access to Yumma CSS class definitions.
+
+### Installing
+
+```bash
+npm i @yummacss/api
+```
+
+## Usage examples
+
+Get all utilities at once:
 
 ```ts
-import { getAllUtils } from "yumma-css-api";
+import { getAllUtils } from "@yummacss/api";
 
 const all = getAllUtils();
 ```
 
-## Specific utilities
-
-Return only the utility classes for a specific category, such as background, border, or color.
+Get only background utilities:
 
 ```ts
-import { getBackgroundUtils } from "yumma-css-api";
+import { getBackgroundUtils } from "@yummacss/api";
 
 const backgrounds = getBackgroundUtils();
 ```
 
-## Specific utilities from a category
-
-Return a single utility class definition from a specific category by accessing it via its key (slug) on the returned object.
+Access a specific utility from a category:
 
 ```ts
-import { getBoxModelUtils } from "yumma-css-api";
+import { getBoxModelUtils } from "@yummacss/api";
 
 const boxModel = getBoxModelUtils();
-
 const margin = boxModel["margin"];
 ```
 
-## Available imports
+## Available API
 
-Return functions to access groups of CSS utility classes.
+Import utility group functions individually:
 
 ```ts
 import {
@@ -55,15 +63,13 @@ import {
   getTableUtils,
   getTransformUtils,
   getTypographyUtils,
-} from "yumma-css-api";
+} from "@yummacss/api";
 ```
 
-## Available types
-
-Return TypeScript types for advanced usage, type safety, and IntelliSense.
+For advanced use cases use these types:
 
 ```ts
-import { UtilityMap, UtilityItem } from "yumma-css-api";
+import { UtilityMap, UtilityItem } from "@yummacss/api";
 ```
 
 ## Built with
@@ -71,6 +77,6 @@ import { UtilityMap, UtilityItem } from "yumma-css-api";
 - [tsup](https://tsup.egoist.dev/) — The simplest and fastest way to build TypeScript libraries.
 - [tinycolor2](https://bgrins.github.io/TinyColor/) — Fast, small color manipulation and conversion for JavaScript.
 
-## Licensing
+## License
 
-MIT — Copyright (c) 2024–present
+This project is licensed under the [MIT License](LICENSE)
