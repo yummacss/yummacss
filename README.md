@@ -55,14 +55,15 @@ import {
   getColorUtils,
   getEffectUtils,
   getFlexboxUtils,
+  getFontUtils,
   getGridUtils,
   getInteractivityUtils,
   getOutlineUtils,
   getPositioningUtils,
   getSvgUtils,
   getTableUtils,
+  getTextUtils,
   getTransformUtils,
-  getTypographyUtils,
 } from "yumma-css-api";
 ```
 
