@@ -1,11 +1,12 @@
 {
   "author": "Renildo Pereira",
   "description": "Yumma CSS utility classes for all your development needs.",
-  "name": "@yummacss/api",
-  "version": "0.0.1",
+  "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
+  "name": "@yummacss/api",
   "types": "dist/index.d.ts",
+  "version": "0.0.1",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -41,7 +42,7 @@
     "css-utilities",
     "yummacss"
   ],
-  "license": "MIT",
+  
   "repository": {
     "type": "git",
     "url": "https://github.com/yumma-lib/yumma-css-api.git"
