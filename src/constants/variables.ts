@@ -56,9 +56,10 @@ export const YMA_BOTTOM_LEFT_TOP_RIGHT = 0.25;
 export const YMA_OUTLINE_OFFSET = 1;
 export const YMA_OUTLINE_WIDTH = 1;
 
-// typography
+// text
 export const YMA_DECORATION_THICKNESS = 1;
 
+// font
 export const YMA_FONT_SIZE_XS = 0.75;
 export const YMA_FONT_SIZE_SM = 0.875;
 export const YMA_FONT_SIZE_MD = 1;
