@@ -469,48 +469,6 @@ export const boxModelUtils: UtilityMap = {
     },
   },
 
-  "place-content": {
-    prefix: "pc",
-    properties: ["place-content"],
-    slug: "place-content",
-    values: {
-      b: "baseline",
-      c: "center",
-      e: "end",
-      s: "start",
-      sa: "space-around",
-      sb: "space-between",
-      se: "space-evenly",
-      st: "stretch",
-    },
-  },
-
-  "place-items": {
-    prefix: "pi",
-    properties: ["place-items"],
-    slug: "place-items",
-    values: {
-      b: "baseline",
-      c: "center",
-      e: "end",
-      s: "start",
-      st: "stretch",
-    },
-  },
-
-  "place-self": {
-    prefix: "ps",
-    properties: ["place-self"],
-    slug: "place-self",
-    values: {
-      auto: "auto",
-      c: "center",
-      e: "end",
-      s: "start",
-      st: "stretch",
-    },
-  },
-
   width: {
     prefix: "w",
     properties: ["width"],
