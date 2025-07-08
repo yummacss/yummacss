@@ -1,9 +1,13 @@
 # dependencies
 node_modules/
 
+# build artifacts
+dist/*.css
+dist/*.min.css
+
 # development
 *.tgz
-project-hierarchy.txt
+*.txt
 test/
 
 # vs code
