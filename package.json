@@ -6,7 +6,7 @@
   "main": "./dist/cli/index.js",
   "name": "yummacss",
   "type": "module",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "bin": {
     "yummacss": "./dist/cli/src/cli.js",
     "yumma": "./dist/cli/src/cli.js"
@@ -34,7 +34,7 @@
     "typescript": "^5.8.2"
   },
   "files": [
-    "dist",
+    "dist/cli",
     "src"
   ],
   "repository": {
@@ -42,8 +42,9 @@
     "url": "https://github.com/yumma-lib/yumma-css"
   },
   "scripts": {
-    "build:css": "gulp build",
     "build:cli": "tsc -p tsconfig.cli.json",
+    "build:css": "gulp build",
+    "build": "pnpm build:cli",
     "dev": "tsc -p tsconfig.cli.json --watch",
     "prepublishOnly": "pnpm build:cli"
   },
