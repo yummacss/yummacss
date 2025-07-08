@@ -3,7 +3,7 @@ import { defaultConfig } from "../config/defaultConfig.js";
 import { cli } from "../utils/cli-ui.js";
 
 export function init() {
-  const initSpinner = cli.startSpinner("Creating config file...");
+  const init = cli.startSpinner("Creating config file...");
 
   try {
     const configContent = `export default ${JSON.stringify(
@@ -13,10 +13,10 @@ export function init() {
     )}`;
     writeFileSync("yumma.config.js", configContent);
 
-    initSpinner.succeed("Config file created!");
+    init.succeed("Config file created!");
     cli.success("yumma.config.js successfully created");
   } catch (error) {
-    initSpinner.fail("Failed to create config file!");
+    init.fail("Failed to create config file!");
     cli.error(
       error instanceof Error ? error.message : "Unknown error occurred"
     );
