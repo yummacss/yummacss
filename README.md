@@ -57,9 +57,9 @@ Head over to [yummacss.com](https://www.yummacss.com) for the full documentation
 
 ## Built with
 
-- [gulp](https://gulpjs.com/) - The streaming build system.
-- [scss](https://sass-lang.com/documentation/syntax/) - CSS with superpowers.
-- [typescript](https://www.typescriptlang.org/) - A language for application-scale JavaScript.
+- [gulp](https://www.npmjs.com/package/gulp) - The streaming build system.
+- [sass](https://www.npmjs.com/package/sass) - CSS with superpowers.
+- [typescript](https://www.npmjs.com/package/typescript) - A language for application-scale JavaScript.
 
 ## License
 
