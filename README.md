@@ -75,8 +75,8 @@ import type { UtilityMap, UtilityItem } from "@yummacss/api";
 
 ## Built with
 
-- [tsup](https://tsup.egoist.dev/) — The simplest and fastest way to build TypeScript libraries.
-- [tinycolor2](https://bgrins.github.io/TinyColor/) — Fast, small color manipulation and conversion for JavaScript.
+- [tsup](https://www.npmjs.com/package/tsup) — The simplest and fastest way to build TypeScript libraries.
+- [tinycolor2](https://www.npmjs.com/package/tinycolor2) — Fast, small color manipulation and conversion for JavaScript.
 
 ## License
 
