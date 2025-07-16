@@ -1,5 +1,6 @@
 import { join } from "path";
 import { pathToFileURL } from "url";
+
 import { YummaConfig, defaultConfig } from "../config/defaultConfig.js";
 
 export async function loadConfig(): Promise<YummaConfig> {

@@ -1,7 +1,7 @@
-import { PurgeCSS } from "purgecss";
-import { YummaConfig } from "../config/defaultConfig.js";
-
 import { globby } from "globby";
+import { PurgeCSS } from "purgecss";
+
+import { YummaConfig } from "../config/defaultConfig.js";
 
 export async function purgeCSS(
   css: string,

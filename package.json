@@ -46,6 +46,7 @@
     "build:css": "gulp build",
     "build": "pnpm build:cli",
     "dev": "tsc -p tsconfig.cli.json --watch",
+    "format:cli": "pnpx prettier --write cli",
     "prepublishOnly": "pnpm build:cli"
   },
   "keywords": [
