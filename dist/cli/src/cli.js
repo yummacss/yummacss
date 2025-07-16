@@ -6,7 +6,7 @@ const program = new Command();
 program.name("yummacss").description("Yumma CSS CLI");
 program
     .command("init")
-    .description("Create a default config file")
+    .description("Create config file.")
     .action(init);
 program
     .command("build")

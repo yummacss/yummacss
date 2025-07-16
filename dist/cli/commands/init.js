@@ -1,7 +1,7 @@
 import { writeFileSync } from "fs";
 import { defaultConfig } from "../config/defaultConfig.js";
-import { cli } from "../utils/cli-ui.js";
-import { messages } from "../lang.js";
+import { cli } from "../lib/cli-ui.js";
+import { messages } from "../lib/cli-lang.js";
 export function init() {
     const init = cli.startSpinner(messages.init.start);
     try {

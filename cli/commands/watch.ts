@@ -2,9 +2,9 @@ import chok from "chokidar";
 import { build } from "./build.js";
 import { loadConfig } from "../services/configLoader.js";
 import type { YummaConfig } from "../config/defaultConfig.js";
-import { cli } from "../utils/cli-ui.js";
+import { cli } from "../lib/cli-ui.js";
 import { globby } from "globby";
-import { messages } from "../lang.js";
+import { messages } from "../lib/cli-lang.js";
 
 let currentConfig: YummaConfig;
 let buildTimeout: NodeJS.Timeout | null = null;
