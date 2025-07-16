@@ -14,7 +14,7 @@ export const messages = {
         fail: "Config failed.",
     },
     watch: {
-        start: "Watching for changes...",
+        start: "Watching...",
         fail: "Watch failed.",
     },
     common: {

@@ -3,8 +3,8 @@ import { compileSCSS } from "../services/scssCompiler.js";
 import { purgeCSS } from "../services/purgeService.js";
 import { minifyCSS } from "../services/minifyService.js";
 import { loadConfig } from "../services/configLoader.js";
-import { cli } from "../utils/cli-ui.js";
-import { messages } from "../lang.js";
+import { cli } from "../lib/cli-ui.js";
+import { messages } from "../lib/cli-lang.js";
 let cache = {};
 export async function build(existingConfig, forceRebuild = false) {
     const buildSpinner = cli.startSpinner(messages.build.start);
