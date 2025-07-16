@@ -1,4 +1,5 @@
 import { transform } from "lightningcss";
+
 import type { YummaConfig } from "../config/defaultConfig.js";
 
 export function minifyCSS(css: string, config: YummaConfig): string {
