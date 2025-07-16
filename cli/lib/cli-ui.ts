@@ -1,10 +1,10 @@
 import ora from "ora";
 
-export const spinner = ora({
+const spinner = ora({
   spinner: "sand",
 });
 
-export const cli = {
+const cli = {
   success: (msg: string) => console.log(`✔ ${msg}`),
   info: (msg: string) => console.log(`ℹ ${msg}`),
   error: (msg: string) => console.log(`✗ ${msg}`),
@@ -13,3 +13,5 @@ export const cli = {
     return spinner;
   },
 };
+
+export { spinner, cli };
