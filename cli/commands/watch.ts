@@ -4,20 +4,21 @@ import { loadConfig } from "../services/configLoader.js";
 import type { YummaConfig } from "../config/defaultConfig.js";
 import { cli } from "../utils/cli-ui.js";
 import { globby } from "globby";
+import { messages } from "../lang.js";
 
 let currentConfig: YummaConfig;
+let buildTimeout: NodeJS.Timeout | null = null;
+let changedFiles = new Set<string>();
 
 export async function watch() {
-  const watchSpinner = cli.startSpinner("Initializing watch mode...");
+  const watchSpinner = cli.startSpinner(messages.watch.start);
 
   try {
     currentConfig = await loadConfig();
-    watchSpinner.start("Watching for changes...");
 
     await build(currentConfig, true);
 
     const files = await globby(currentConfig.source);
-
     const watcher = chok.watch(files, {
       awaitWriteFinish: {
         pollInterval: 50,
@@ -33,13 +34,26 @@ export async function watch() {
       .on("change", (path) => handleChange(path, "changed"))
       .on("unlink", (path) => handleChange(path, "removed"));
 
-    async function handleChange(path: string, event: string) {
-      await build(currentConfig, true);
+    function handleChange(path: string, event: string) {
+      changedFiles.add(path);
+
+      if (buildTimeout) {
+        clearTimeout(buildTimeout);
+      }
+
+      buildTimeout = setTimeout(async () => {
+        if (changedFiles.size > 0) {
+          await build(currentConfig, true);
+
+          changedFiles.clear();
+        }
+        buildTimeout = null;
+      }, 500); // 500ms
     }
   } catch (error) {
-    watchSpinner.fail("Watch failed!");
+    watchSpinner.fail(messages.watch.fail);
     cli.error(
-      error instanceof Error ? error.message : "Unknown error occurred"
+      error instanceof Error ? error.message : messages.common.unknownError
     );
     process.exit(1);
   }

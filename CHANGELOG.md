@@ -2,7 +2,7 @@
 
 All notable changes to the Yumma CSS will be documented in this file.
 
-## Changelog for 3.1.0 🎉
+## Changelog for 3.0.1 🎉
 
 <details open>
 <summary>
@@ -29,5 +29,6 @@ All notable changes to the Yumma CSS will be documented in this file.
 </summary>
 
 - Excluded CSS build artifacts from the published package
+- Improved CLI watch command with debouncing and batching to prevent multiple build tasks for better performance
 
 </details>

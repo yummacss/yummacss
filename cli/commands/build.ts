@@ -5,6 +5,7 @@ import { minifyCSS } from "../services/minifyService.js";
 import { loadConfig } from "../services/configLoader.js";
 import type { YummaConfig } from "../config/defaultConfig.js";
 import { cli } from "../utils/cli-ui.js";
+import { messages } from "../lang.js";
 
 type BuildCache = {
   css?: string;
@@ -18,7 +19,7 @@ export async function build(
   existingConfig?: YummaConfig,
   forceRebuild = false
 ) {
-  const buildSpinner = cli.startSpinner("Starting build process...");
+  const buildSpinner = cli.startSpinner(messages.build.start);
   const startTime = Date.now();
 
   try {
@@ -28,7 +29,7 @@ export async function build(
 
     let css: string;
     if (forceRebuild || configChanged || !cache.css) {
-      buildSpinner.text = "Compiling SCSS...";
+      buildSpinner.text = messages.build.compiling;
       const result = await compileSCSS(config);
       css = result.css;
       cache = {
@@ -38,24 +39,24 @@ export async function build(
       };
     } else {
       css = cache.css;
-      buildSpinner.text = "Using cached SCSS...";
+      buildSpinner.text = messages.build.usingCache;
     }
 
-    buildSpinner.text = "Purging unused styles...";
+    buildSpinner.text = messages.build.purging;
     const purgedCSS = await purgeCSS(css, config);
 
-    buildSpinner.text = "Minifying CSS...";
+    buildSpinner.text = messages.build.minifying;
     const finalCSS = minifyCSS(purgedCSS, config);
 
     writeFileSync(config.output, finalCSS);
 
-    buildSpinner.succeed("Build completed successfully!");
-    cli.success(`Styles written to: ${config.output}`);
-    cli.info(`Total time: ${Date.now() - startTime}ms`);
+    buildSpinner.succeed(
+      messages.build.success(Date.now() - startTime, config.output)
+    );
   } catch (error) {
-    buildSpinner.fail("Build failed!");
+    buildSpinner.fail(messages.build.fail);
     cli.error(
-      error instanceof Error ? error.message : "Unknown error occurred"
+      error instanceof Error ? error.message : messages.common.unknownError
     );
     process.exit(1);
   }
