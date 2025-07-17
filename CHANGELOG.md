@@ -4,7 +4,7 @@ All notable changes to the Yumma CSS will be documented in this file.
 
 ## Changelog for 3.0.1 🎉
 
-<details open>
+<details>
 <summary>
     <b>Features</b>
 </summary>
@@ -23,7 +23,7 @@ All notable changes to the Yumma CSS will be documented in this file.
 
 </details>
 
-<details>
+<details open>
 <summary>
     <b>Fixes</b>
 </summary>
