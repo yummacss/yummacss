@@ -1,4 +1,4 @@
-export const defaultConfig = {
+const defaultConfig = {
     source: [""],
     output: "",
     buildOptions: {
@@ -6,3 +6,4 @@ export const defaultConfig = {
         minify: false,
     },
 };
+export { defaultConfig };
