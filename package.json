@@ -1,18 +1,42 @@
 {
-  "author": "Renildo Pereira",
+  "name": "yummacss",
+  "version": "3.0.1",
   "description": "A CSS framework for the web with abbreviated styles.",
+  "keywords": [
+    "css-framework",
+    "css",
+    "framework",
+    "utility-first",
+    "yumma",
+    "yummacss"
+  ],
   "homepage": "https://yummacss.com",
   "license": "MIT",
+  "author": "Renildo Pereira",
+  "files": [
+    "dist/cli",
+    "src"
+  ],
   "main": "./dist/cli/index.js",
-  "name": "yummacss",
   "type": "module",
-  "version": "3.0.1",
+  "exports": {
+    ".": "./dist/cli/src/cli.js"
+  },
   "bin": {
     "yummacss": "./dist/cli/src/cli.js",
     "yumma": "./dist/cli/src/cli.js"
   },
-  "exports": {
-    ".": "./dist/cli/src/cli.js"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yumma-lib/yumma-css"
+  },
+  "scripts": {
+    "build:cli": "tsc -p tsconfig.cli.json",
+    "build:css": "gulp build",
+    "build": "pnpm build:cli",
+    "dev": "tsc -p tsconfig.cli.json --watch",
+    "format:cli": "pnpx prettier --write cli",
+    "prepublishOnly": "pnpm build:cli"
   },
   "dependencies": {
     "chokidar": "^4.0.3",
@@ -32,29 +56,5 @@
     "gulp-sass": "^6.0.0",
     "sass": "^1.85.1",
     "typescript": "^5.8.2"
-  },
-  "files": [
-    "dist/cli",
-    "src"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/yumma-lib/yumma-css"
-  },
-  "scripts": {
-    "build:cli": "tsc -p tsconfig.cli.json",
-    "build:css": "gulp build",
-    "build": "pnpm build:cli",
-    "dev": "tsc -p tsconfig.cli.json --watch",
-    "format:cli": "pnpx prettier --write cli",
-    "prepublishOnly": "pnpm build:cli"
-  },
-  "keywords": [
-    "css-framework",
-    "css",
-    "framework",
-    "utility-first",
-    "yumma",
-    "yummacss"
-  ]
+  }
 }
