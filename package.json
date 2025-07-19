@@ -37,7 +37,7 @@
   "scripts": {
     "build:cli": "tsc -p tsconfig.cli.json",
     "build:css": "gulp build",
-    "build": "pnpm build:cli",
+    "build": "pnpm build:css && pnpm build:cli",
     "dev": "tsc -p tsconfig.cli.json --watch",
     "format:cli": "pnpx prettier --write cli",
     "prepublishOnly": "pnpm build:cli"

@@ -260,6 +260,51 @@ $yma-grid-utils: (
     ),
   ),
 
+  "place-content": (
+    "prefix": "pc",
+    "properties": (
+      "place-content",
+    ),
+    "values": (
+      "b": baseline,
+      "c": center,
+      "e": end,
+      "s": start,
+      "sa": space-around,
+      "sb": space-between,
+      "se": space-evenly,
+      "st": stretch,
+    ),
+  ),
+
+  "place-items": (
+    "prefix": "pi",
+    "properties": (
+      "place-items",
+    ),
+    "values": (
+      "b": baseline,
+      "c": center,
+      "e": end,
+      "s": start,
+      "st": stretch,
+    ),
+  ),
+
+  "place-self": (
+    "prefix": "ps",
+    "properties": (
+      "place-self",
+    ),
+    "values": (
+      "auto": auto,
+      "c": center,
+      "e": end,
+      "s": start,
+      "st": stretch,
+    ),
+  ),
+
   "row-gap": (
     "prefix": "rg",
     "properties": (
