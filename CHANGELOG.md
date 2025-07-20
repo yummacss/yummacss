@@ -28,8 +28,6 @@ All notable changes to the Yumma CSS will be documented in this file.
     <b>Fixes</b>
 </summary>
 
-- Excluded CSS build artifacts from the published package
-- Improved CLI watch command with debouncing and batching to prevent multiple build tasks for better performance
-- Improved CLI message for better user feedback
+- Move the `place-content`, `place-items` and `place-self` utilities to `_grid.scss` file for consistency
 
 </details>
