@@ -31,3 +31,32 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Move the `place-content`, `place-items` and `place-self` utilities to `_grid.scss` file for consistency
 
 </details>
+
+## Changelog for 3.0.3 🎉
+
+<details>
+<summary>
+    <b>Features</b>
+</summary>
+
+- None
+
+</details>
+
+<details>
+<summary>
+    <b>Breaking changes</b>
+</summary>
+
+- None
+
+</details>
+
+<details open>
+<summary>
+    <b>Fixes</b>
+</summary>
+
+- Remove unused `_extend-utilities.scss` file (internal)
+
+</details>
