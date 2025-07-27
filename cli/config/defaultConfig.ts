@@ -1,4 +1,4 @@
-interface YummaConfig {
+interface Configuration {
   source: string[];
   output: string;
   buildOptions: {
@@ -7,7 +7,7 @@ interface YummaConfig {
   };
 }
 
-const defaultConfig: YummaConfig = {
+const defaultConfig: Configuration = {
   source: [""],
   output: "",
   buildOptions: {
@@ -16,4 +16,4 @@ const defaultConfig: YummaConfig = {
   },
 };
 
-export { YummaConfig, defaultConfig };
+export { Configuration, defaultConfig };
