@@ -1,10 +1,27 @@
 @use "sass:color";
 
 @mixin color-scaling($property, $prefix, $k, $v) {
+
+  // base styles
   .#{$prefix}-#{$k} {
     #{$property}: $v;
   }
 
+  // focus styles
+  .f\:#{$prefix}-#{$k} {
+    &:focus {
+      #{$property}: $v;
+    }
+  }
+
+  // active styles
+  .a\:#{$prefix}-#{$k} {
+    &:active {
+      #{$property}: $v;
+    }
+  }
+
+  // hover styles
   .h\:#{$prefix}-#{$k} {
     &:hover {
       #{$property}: $v;

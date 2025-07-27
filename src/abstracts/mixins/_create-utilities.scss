@@ -16,6 +16,20 @@
       }
     }
 
+    // active styles
+    .a\:#{$prefix}-#{$k}:active {
+      @each $property in $properties {
+        #{$property}: if($function != null, $function + "(" + $v + ")", $v);
+      }
+    }
+
+    // focus styles
+    .f\:#{$prefix}-#{$k}:focus {
+      @each $property in $properties {
+        #{$property}: if($function != null, $function + "(" + $v + ")", $v);
+      }
+    }
+
     // hover styles
     .h\:#{$prefix}-#{$k}:hover {
       @each $property in $properties {

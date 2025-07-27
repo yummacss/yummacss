@@ -9,7 +9,7 @@ All notable changes to the Yumma CSS will be documented in this file.
     <b>Features</b>
 </summary>
 
-- Add `:focus`, `:focus-visible`, `:focus-within` and `:active` pseudo-class variants support
+- Add `:focus` and and `:active` pseudo-class variants support
 
 </details>
 
