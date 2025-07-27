@@ -28,6 +28,6 @@ All notable changes to the Yumma CSS will be documented in this file.
     <b>Fixes</b>
 </summary>
 
-- None
+- Fix `init` CLI not generating `yumma.config.js` file
 
 </details>
