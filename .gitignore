@@ -2,8 +2,7 @@
 node_modules/
 
 # build artifacts
-dist/*.css
-dist/*.min.css
+dist/cli
 
 # development
 *.tgz
