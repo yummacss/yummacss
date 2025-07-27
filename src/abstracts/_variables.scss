@@ -1,17 +1,17 @@
 // color
-$yma-color-red: rgb(215, 61, 61) !default;
-$yma-color-orange: rgb(224, 104, 20) !default;
-$yma-color-yellow: rgb(211, 161, 7) !default;
-$yma-color-green: rgb(31, 177, 85) !default;
-$yma-color-teal: rgb(18, 166, 149) !default;
-$yma-color-cyan: rgb(5, 164, 191) !default;
-$yma-color-blue: rgb(53, 117, 221) !default;
-$yma-color-indigo: rgb(89, 92, 217) !default;
-$yma-color-violet: rgb(125, 83, 221) !default;
-$yma-color-pink: rgb(212, 65, 138) !default;
-$yma-color-lead: rgb(63, 63, 78) !default;
-$yma-color-gray: rgb(96, 103, 115) !default;
-$yma-color-silver: rgb(191, 194, 199) !default;
+$yma-color-red: #d73d3d !default;
+$yma-color-orange: #e06814 !default;
+$yma-color-yellow: #d3a107 !default;
+$yma-color-green: #1fb155 !default;
+$yma-color-teal: #12a695 !default;
+$yma-color-cyan: #05a4bf !default;
+$yma-color-blue: #3575dd !default;
+$yma-color-indigo: #595cd9 !default;
+$yma-color-violet: #7d53dd !default;
+$yma-color-pink: #d4418a !default;
+$yma-color-lead: #3f3f4e !default;
+$yma-color-gray: #606773 !default;
+$yma-color-silver: #bfc2c7 !default;
 $yma-color-black: black !default;
 $yma-color-white: white !default;
 $yma-color-transparent: transparent !default;
@@ -34,11 +34,11 @@ $yma-backdrop-blur: 4px !default;
 
 $yma-blur: 4px !default;
 
-$yma-box-shadow-lg: 1px 3px 5px 1px rgb(0, 0, 0, 0.1) !default;
-$yma-box-shadow-md: 1px 3px 5px -1px rgb(0, 0, 0, 0.1) !default;
-$yma-box-shadow-sm: 1px 3px 5px -2px rgb(0, 0, 0, 0.1) !default;
-$yma-box-shadow-xl: 1px 3px 5px 2px rgb(0, 0, 0, 0.1) !default;
-$yma-box-shadow-xs: 1px 3px 5px -3px rgb(0, 0, 0, 0.1) !default;
+$yma-box-shadow-lg: 1px 3px 5px 1px #0000001a !default;
+$yma-box-shadow-md: 1px 3px 5px -1px #0000001a !default;
+$yma-box-shadow-sm: 1px 3px 5px -2px #0000001a !default;
+$yma-box-shadow-xl: 1px 3px 5px 2px #0000001a !default;
+$yma-box-shadow-xs: 1px 3px 5px -3px #0000001a !default;
 
 $yma-grayscale: 10% !default;
 
