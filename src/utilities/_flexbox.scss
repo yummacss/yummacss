@@ -5,10 +5,13 @@
 @use "../utilities/maps/" as maps;
 
 $yma-flexbox-utils: (
-  "align-content": ("prefix": "ac",
-    "properties": ("align-content",
+  "align-content": (
+    "prefix": "ac",
+    "properties": (
+      "align-content",
     ),
-    "values": ("b": baseline,
+    "values": (
+      "b": baseline,
       "c": center,
       "fe": flex-end,
       "fs": flex-start,
@@ -20,21 +23,12 @@ $yma-flexbox-utils: (
     ),
   ),
 
-  "align-items": ("prefix": "ai",
-    "properties": ("align-items",
+  "align-items": (
+    "prefix": "ai",
+    "properties": (
+      "align-items",
     ),
-    "values": ("b": baseline,
-      "c": center,
-      "fe": flex-end,
-      "fs": flex-start,
-      "st": stretch,
-    ),
-  ),
-
-  "align-self": ("prefix": "as",
-    "properties": ("align-self",
-    ),
-    "values": ("auto": auto,
+    "values": (
       "b": baseline,
       "c": center,
       "fe": flex-end,
@@ -43,26 +37,49 @@ $yma-flexbox-utils: (
     ),
   ),
 
-  "flex-basis": ("prefix": "fb",
-    "properties": ("flex-basis",
+  "align-self": (
+    "prefix": "as",
+    "properties": (
+      "align-self",
+    ),
+    "values": (
+      "auto": auto,
+      "b": baseline,
+      "c": center,
+      "fe": flex-end,
+      "fs": flex-start,
+      "st": stretch,
+    ),
+  ),
+
+  "flex-basis": (
+    "prefix": "fb",
+    "properties": (
+      "flex-basis",
     ),
     "values": maps.$yma-flex-basis-map,
   ),
 
-  "flex-direction": ("prefix": "fd",
-    "properties": ("flex-direction",
+  "flex-direction": (
+    "prefix": "fd",
+    "properties": (
+      "flex-direction",
     ),
-    "values": ("c": column,
+    "values": (
+      "c": column,
       "cr": column-reverse,
       "r": row,
       "rr": row-reverse,
     ),
   ),
 
-  "flex-grow": ("prefix": "fg",
-    "properties": ("flex-grow",
+  "flex-grow": (
+    "prefix": "fg",
+    "properties": (
+      "flex-grow",
     ),
-    "values": ("0": 0,
+    "values": (
+      "0": 0,
       "1": 1,
       "2": 2,
       "3": 3,
@@ -74,10 +91,13 @@ $yma-flexbox-utils: (
     ),
   ),
 
-  "flex-shrink": ("prefix": "fs",
-    "properties": ("flex-shrink",
+  "flex-shrink": (
+    "prefix": "fs",
+    "properties": (
+      "flex-shrink",
     ),
-    "values": ("0": 0,
+    "values": (
+      "0": 0,
       "1": 1,
       "2": 2,
       "3": 3,
@@ -89,19 +109,25 @@ $yma-flexbox-utils: (
     ),
   ),
 
-  "flex-wrap": ("prefix": "fw",
-    "properties": ("flex-wrap",
+  "flex-wrap": (
+    "prefix": "fw",
+    "properties": (
+      "flex-wrap",
     ),
-    "values": ("nw": nowrap,
+    "values": (
+      "nw": nowrap,
       "w": wrap,
       "wr": wrap-reverse,
     ),
   ),
 
-  "flex": ("prefix": "f",
-    "properties": ("flex",
+  "flex": (
+    "prefix": "f",
+    "properties": (
+      "flex",
     ),
-    "values": ("1": 1 1 0%,
+    "values": (
+      "1": 1 1 0%,
       "2": 2 2 0%,
       "3": 3 3 0%,
       "4": 4 4 0%,
@@ -112,10 +138,13 @@ $yma-flexbox-utils: (
     ),
   ),
 
-  "justify-content": ("prefix": "jc",
-    "properties": ("justify-content",
+  "justify-content": (
+    "prefix": "jc",
+    "properties": (
+      "justify-content",
     ),
-    "values": ("c": center,
+    "values": (
+      "c": center,
       "fe": flex-end,
       "fs": flex-start,
       "n": normal,
@@ -126,20 +155,12 @@ $yma-flexbox-utils: (
     ),
   ),
 
-  "justify-items": ("prefix": "ji",
-    "properties": ("justify-items",
+  "justify-items": (
+    "prefix": "ji",
+    "properties": (
+      "justify-items",
     ),
-    "values": ("c": center,
-      "e": end,
-      "s": start,
-      "st": stretch,
-    ),
-  ),
-
-  "justify-self": ("prefix": "js",
-    "properties": ("justify-self",
-    ),
-    "values": ("auto": auto,
+    "values": (
       "c": center,
       "e": end,
       "s": start,
@@ -147,10 +168,27 @@ $yma-flexbox-utils: (
     ),
   ),
 
-  "order": ("prefix": "or",
-    "properties": ("order",
+  "justify-self": (
+    "prefix": "js",
+    "properties": (
+      "justify-self",
     ),
-    "values": ("l": -9999,
+    "values": (
+      "auto": auto,
+      "c": center,
+      "e": end,
+      "s": start,
+      "st": stretch,
+    ),
+  ),
+
+  "order": (
+    "prefix": "or",
+    "properties": (
+      "order",
+    ),
+    "values": (
+      "l": -9999,
       "0": 0,
       "1": 1,
       "2": 2,

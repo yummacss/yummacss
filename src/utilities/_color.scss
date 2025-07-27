@@ -5,55 +5,68 @@
 @use "../abstracts/_theme" as theme;
 
 $yma-color-utils: (
-  "accent-color": ("prefix": "ac",
+  "accent-color": (
+    "prefix": "ac",
     "property": "accent-color",
   ),
 
-  "background-color": ("prefix": "bg",
+  "background-color": (
+    "prefix": "bg",
     "property": "background-color",
   ),
 
-  "border-color": ("prefix": "bc",
+  "border-color": (
+    "prefix": "bc",
     "property": "border-color",
   ),
 
-  "border-bottom-color": ("prefix": "bc-b",
+  "border-bottom-color": (
+    "prefix": "bc-b",
     "property": "border-bottom-color",
   ),
 
-  "border-left-color": ("prefix": "bc-l",
+  "border-left-color": (
+    "prefix": "bc-l",
     "property": "border-left-color",
   ),
 
-  "border-right-color": ("prefix": "bc-r",
+  "border-right-color": (
+    "prefix": "bc-r",
     "property": "border-right-color",
   ),
 
-  "border-top-color": ("prefix": "bc-t",
+  "border-top-color": (
+    "prefix": "bc-t",
     "property": "border-top-color",
   ),
 
-  "caret-color": ("prefix": "cc",
+  "caret-color": (
+    "prefix": "cc",
     "property": "caret-color",
   ),
 
-  "color": ("prefix": "tc",
+  "color": (
+    "prefix": "tc",
     "property": "color",
   ),
 
-  "fill": ("prefix": "f",
+  "fill": (
+    "prefix": "f",
     "property": "fill",
   ),
 
-  "outline-color": ("prefix": "oc",
+  "outline-color": (
+    "prefix": "oc",
     "property": "outline-color",
   ),
 
-  "stroke": ("prefix": "s",
+  "stroke": (
+    "prefix": "s",
     "property": "stroke",
   ),
 
-  "text-decoration-color": ("prefix": "tdc",
+  "text-decoration-color": (
+    "prefix": "tdc",
     "property": "text-decoration-color",
   ),
 );
