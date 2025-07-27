@@ -7,7 +7,10 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const packageRoot = join(__dirname, "../../..");
 
-export async function compileSCSS(config: Configuration): Promise {
+export async function compileSCSS(config: Configuration): Promise<{
+  css: string;
+  dependencies: string[];
+}> {
   const scssFile = config.buildOptions.reset
     ? "yummacss.scss"
     : "yummacss-core.scss";
