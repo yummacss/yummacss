@@ -1,11 +1,8 @@
 import { globby } from "globby";
 import { PurgeCSS } from "purgecss";
-import { YummaConfig } from "../config/defaultConfig.js";
+import { Configuration } from "../config/defaultConfig.js";
 
-export async function purgeCSS(
-  css: string,
-  config: YummaConfig
-): Promise<string> {
+export async function purgeCSS(css: string, config: Configuration): Promise {
   const purgeCSSResult = await new PurgeCSS().purge({
     content: await globby(config.source),
     css: [{ raw: css }],

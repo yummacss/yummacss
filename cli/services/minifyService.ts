@@ -1,7 +1,7 @@
 import { transform } from "lightningcss";
-import type { YummaConfig } from "../config/defaultConfig.js";
+import type { Configuration } from "../config/defaultConfig.js";
 
-export function minifyCSS(css: string, config: YummaConfig): string {
+export function minifyCSS(css: string, config: Configuration): string {
   try {
     const result = transform({
       filename: "style.css",

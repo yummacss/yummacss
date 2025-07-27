@@ -1,5 +1,5 @@
 import { writeFileSync } from "fs";
-import type { YummaConfig } from "../config/defaultConfig.js";
+import type { Configuration } from "../config/defaultConfig.js";
 import { messages } from "../lib/cli-lang.js";
 import { cli } from "../lib/cli-ui.js";
 import { loadConfig } from "../services/configLoader.js";
@@ -16,7 +16,7 @@ type BuildCache = {
 let cache: BuildCache = {};
 
 export async function build(
-  existingConfig?: YummaConfig,
+  existingConfig?: Configuration,
   forceRebuild = false
 ) {
   const buildSpinner = cli.startSpinner(messages.build.start);

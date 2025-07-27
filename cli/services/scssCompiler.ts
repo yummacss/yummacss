@@ -1,16 +1,13 @@
 import { dirname, join } from "path";
 import { fileURLToPath } from "url";
 import * as sass from "sass-embedded";
-import type { YummaConfig } from "../config/defaultConfig.js";
+import type { Configuration } from "../config/defaultConfig.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const packageRoot = join(__dirname, "../../..");
 
-export async function compileSCSS(config: YummaConfig): Promise<{
-  css: string;
-  dependencies: string[];
-}> {
+export async function compileSCSS(config: Configuration): Promise {
   const scssFile = config.buildOptions.reset
     ? "yummacss.scss"
     : "yummacss-core.scss";
