@@ -1,5 +1,4 @@
 import { writeFileSync } from "fs";
-
 import type { YummaConfig } from "../config/defaultConfig.js";
 import { messages } from "../lib/cli-lang.js";
 import { cli } from "../lib/cli-ui.js";

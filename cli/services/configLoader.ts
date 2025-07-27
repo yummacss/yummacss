@@ -1,7 +1,7 @@
-import { join, extname } from "path";
-import { pathToFileURL } from "url";
 import { existsSync } from "fs";
-import { YummaConfig, defaultConfig } from "../config/defaultConfig.js";
+import { extname, join } from "path";
+import { pathToFileURL } from "url";
+import { defaultConfig, YummaConfig } from "../config/defaultConfig.js";
 import { getSupportedExtensions } from "../config/templates.js";
 
 const CONFIG_BASE = "yumma.config";

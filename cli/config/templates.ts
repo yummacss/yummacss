@@ -1,5 +1,5 @@
 import { readFileSync } from "fs";
-import { join, dirname } from "path";
+import { dirname, join } from "path";
 import { fileURLToPath } from "url";
 import { defaultConfig } from "./defaultConfig.js";
 
@@ -29,8 +29,10 @@ function generateConfigContent(template: string, config: object): string {
 }
 
 export function generateConfigFile(extension: string): string {
-  const templateInfo = SUPPORTED_TEMPLATES.find(t => t.extension === extension);
-  
+  const templateInfo = SUPPORTED_TEMPLATES.find(
+    (t) => t.extension === extension
+  );
+
   if (!templateInfo) {
     throw new Error(`Unsupported config extension: ${extension}`);
   }
@@ -40,9 +42,9 @@ export function generateConfigFile(extension: string): string {
 }
 
 export function getSupportedExtensions(): string[] {
-  return SUPPORTED_TEMPLATES.map(t => t.extension);
+  return SUPPORTED_TEMPLATES.map((t) => t.extension);
 }
 
 export function isSupportedExtension(extension: string): boolean {
-  return SUPPORTED_TEMPLATES.some(t => t.extension === extension);
-} 
+  return SUPPORTED_TEMPLATES.some((t) => t.extension === extension);
+}

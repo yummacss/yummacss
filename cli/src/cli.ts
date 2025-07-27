@@ -1,5 +1,4 @@
 import { Command } from "commander";
-
 import { build } from "../commands/build.js";
 import { init } from "../commands/init.js";
 import { watch } from "../commands/watch.js";

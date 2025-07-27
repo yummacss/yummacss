@@ -11,7 +11,7 @@ export function init() {
   try {
     const configContent = generateConfigFile(DEFAULT_CONFIG_EXTENSION);
     const configFileName = `yumma.config${DEFAULT_CONFIG_EXTENSION}`;
-    
+
     writeFileSync(configFileName, configContent);
 
     init.succeed(messages.init.success);
