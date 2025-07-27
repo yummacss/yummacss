@@ -57,8 +57,8 @@ Head over to [yummacss.com](https://www.yummacss.com) for the full documentation
 
 ## Built with
 
-- [gulp](https://www.npmjs.com/package/gulp)
 - [sass](https://www.npmjs.com/package/sass)
+- [lightningcss](https://www.npmjs.com/package/lightningcss)
 - [typescript](https://www.npmjs.com/package/typescript)
 
 ## License

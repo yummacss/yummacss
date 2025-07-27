@@ -2,14 +2,14 @@
 
 All notable changes to the Yumma CSS will be documented in this file.
 
-## Changelog for 3.0.3 🎉
+## Changelog for 3.1.0 🎉
 
 <details>
 <summary>
     <b>Features</b>
 </summary>
 
-- None
+- Add `:focus`, `:focus-visible`, `:focus-within` and `:active` pseudo-class variants support
 
 </details>
 
@@ -18,7 +18,8 @@ All notable changes to the Yumma CSS will be documented in this file.
     <b>Breaking changes</b>
 </summary>
 
-- None
+- Remove `yumma.css` and `yumma.min.css` files
+- Remove `gulpfile.js` and `gulp` related libraries (internal)
 
 </details>
 
@@ -27,6 +28,6 @@ All notable changes to the Yumma CSS will be documented in this file.
     <b>Fixes</b>
 </summary>
 
-- Remove unused `_extend-utilities.scss` file (internal)
+- None
 
 </details>
