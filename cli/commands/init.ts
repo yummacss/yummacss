@@ -1,18 +1,18 @@
 import { writeFileSync } from "fs";
-import { generateConfigFile } from "../config/templates.js";
+import { defaultConfig } from "../config/defaultConfig.js";
 import { messages } from "../lib/cli-lang.js";
 import { cli } from "../lib/cli-ui.js";
-
-const DEFAULT_CONFIG_EXTENSION = ".js";
 
 export function init() {
   const init = cli.startSpinner(messages.init.start);
 
   try {
-    const configContent = generateConfigFile(DEFAULT_CONFIG_EXTENSION);
-    const configFileName = `yumma.config${DEFAULT_CONFIG_EXTENSION}`;
-
-    writeFileSync(configFileName, configContent);
+    const configContent = `export default ${JSON.stringify(
+      defaultConfig,
+      null,
+      2
+    )}`;
+    writeFileSync("yumma.config.js", configContent);
 
     init.succeed(messages.init.success);
   } catch (error) {
