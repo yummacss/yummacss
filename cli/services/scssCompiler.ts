@@ -1,8 +1,6 @@
 import { dirname, join } from "path";
 import { fileURLToPath } from "url";
-
 import * as sass from "sass-embedded";
-
 import type { YummaConfig } from "../config/defaultConfig.js";
 
 const __filename = fileURLToPath(import.meta.url);
