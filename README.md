@@ -57,7 +57,7 @@ Head over to [yummacss.com](https://www.yummacss.com) for the full documentation
 
 ## Built with
 
-- [sass](https://www.npmjs.com/package/sass)
+- [sass-embedded](https://www.npmjs.com/package/sass-embedded)
 - [lightningcss](https://www.npmjs.com/package/lightningcss)
 - [typescript](https://www.npmjs.com/package/typescript)
 
