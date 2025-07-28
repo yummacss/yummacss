@@ -2,7 +2,7 @@
 
 All notable changes to the Yumma CSS API will be documented in this file.
 
-## Changelog for 1.0.0 🎉
+## Changelog for 1.1.0 🎉
 
 <details open>
 <summary>
@@ -19,7 +19,7 @@ All notable changes to the Yumma CSS API will be documented in this file.
     <b>Breaking changes</b>
 </summary>
 
-- None
+- Color utilities now return HEX values instead of RGB
 
 </details>
 
