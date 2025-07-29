@@ -1,17 +1,17 @@
 // color
-export const YMA_COLOR_RED = "rgb(215, 61, 61)";
-export const YMA_COLOR_ORANGE = "rgb(224, 104, 20)";
-export const YMA_COLOR_YELLOW = "rgb(211, 161, 7)";
-export const YMA_COLOR_GREEN = "rgb(31, 177, 85)";
-export const YMA_COLOR_TEAL = "rgb(18, 166, 149)";
-export const YMA_COLOR_CYAN = "rgb(5, 164, 191)";
-export const YMA_COLOR_BLUE = "rgb(53, 117, 221)";
-export const YMA_COLOR_INDIGO = "rgb(89, 92, 217)";
-export const YMA_COLOR_VIOLET = "rgb(125, 83, 221)";
-export const YMA_COLOR_PINK = "rgb(212, 65, 138)";
-export const YMA_COLOR_LEAD = "rgb(63, 63, 78)";
-export const YMA_COLOR_GRAY = "rgb(96, 103, 115)";
-export const YMA_COLOR_SILVER = "rgb(191, 194, 199)";
+export const YMA_COLOR_RED = "#d73d3d";
+export const YMA_COLOR_ORANGE = "#e06814";
+export const YMA_COLOR_YELLOW = "#d3a107";
+export const YMA_COLOR_GREEN = "#1fb155";
+export const YMA_COLOR_TEAL = "#12a695";
+export const YMA_COLOR_CYAN = "#05a4bf";
+export const YMA_COLOR_BLUE = "#3575dd";
+export const YMA_COLOR_INDIGO = "#595cd9";
+export const YMA_COLOR_VIOLET = "#7d53dd";
+export const YMA_COLOR_PINK = "#d4418a";
+export const YMA_COLOR_LEAD = "#3f3f4e";
+export const YMA_COLOR_GRAY = "#606773";
+export const YMA_COLOR_SILVER = "#bfc2c7";
 
 // border
 export const YMA_BORDER = 1;
