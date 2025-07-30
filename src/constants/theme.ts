@@ -12,7 +12,7 @@ import {
   YMA_COLOR_LEAD,
   YMA_COLOR_GRAY,
   YMA_COLOR_SILVER,
-} from "@/constants/variables";
+} from "./variables";
 
 export const YMA_THEME = {
   red: YMA_COLOR_RED,
