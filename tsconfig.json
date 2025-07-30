@@ -1,4 +1,5 @@
 {
+  "extends": "./tsconfig.paths.json",
   "compilerOptions": {
     "target": "ES2020",
     "lib": ["ES2020"],
@@ -14,9 +15,6 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "baseUrl": ".",
-    "paths": {
-      "@/*": ["./src/*"]
-    },
     "declaration": true,
     "declarationMap": true,
     "outDir": "./dist"
