@@ -16,7 +16,7 @@ import { textUtils } from "./core/utilities/text";
 import { transformUtils } from "./core/utilities/transform";
 import { UtilityMap } from "./interfaces";
 
-// main
+// all utilities
 export const getAllUtils = (): UtilityMap => allUtilities;
 
 // api
