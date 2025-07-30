@@ -1,5 +1,5 @@
 import { ColorUtilityMap } from "@/interfaces";
-import { createColors } from "../../helpers/create-colors";
+import { createColors } from "@/helpers/create-colors";
 
 const colors = createColors();
 
