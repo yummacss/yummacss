@@ -4,16 +4,16 @@ All notable changes to the Yumma CSS will be documented in this file.
 
 ## Changelog for 3.1.0 🎉
 
-<details>
+<details open>
 <summary>
     <b>Features</b>
 </summary>
 
-- Add `:focus` and and `:active` pseudo-class variants support
+- Add `:focus` and `:active` pseudo-class variants support
 
 </details>
 
-<details>
+<details open>
 <summary>
     <b>Breaking changes</b>
 </summary>
