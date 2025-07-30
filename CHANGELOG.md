@@ -2,7 +2,7 @@
 
 All notable changes to the Yumma CSS API will be documented in this file.
 
-## Changelog for 1.1.1 🎉
+## Changelog for 1.1.2 🎉
 
 <details open>
 <summary>
@@ -19,7 +19,7 @@ All notable changes to the Yumma CSS API will be documented in this file.
     <b>Breaking changes</b>
 </summary>
 
-- None
+- Remove source maps from production builds
 
 </details>
 
@@ -28,6 +28,6 @@ All notable changes to the Yumma CSS API will be documented in this file.
     <b>Fixes</b>
 </summary>
 
-- Change color variables to use HEX format
+- None
 
 </details>
