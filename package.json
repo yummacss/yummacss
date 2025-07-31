@@ -1,12 +1,12 @@
 {
   "name": "@yummacss/api",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Yumma CSS utility classes for all your development needs.",
   "keywords": [
-    "typescript",
-    "design-patterns",
-    "typescript-library",
+    "api",
     "css-utilities",
+    "typescript-library",
+    "typescript",
     "yummacss"
   ],
   "license": "MIT",
