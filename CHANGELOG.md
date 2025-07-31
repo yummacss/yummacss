@@ -4,7 +4,7 @@ All notable changes to the Yumma CSS API will be documented in this file.
 
 ## Changelog for 1.1.2 🎉
 
-<details open>
+<details>
 <summary>
     <b>Features</b>
 </summary>
