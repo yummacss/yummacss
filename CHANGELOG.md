@@ -19,7 +19,7 @@ All notable changes to the Yumma CSS API will be documented in this file.
     <b>Breaking changes</b>
 </summary>
 
-- Remove source maps from dist directory
+- Remove source maps from distribution directory
 
 </details>
 
