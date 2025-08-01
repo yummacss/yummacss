@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   semi: true,
   singleQuote: false,
   tabWidth: 2,
@@ -6,7 +6,6 @@ module.exports = {
   printWidth: 80,
   bracketSameLine: true,
   bracketSpacing: true,
-  importOrderSeparation: true,
   importOrder: [
     "^(fs|path|url)$",
     "<THIRD_PARTY_MODULES>",

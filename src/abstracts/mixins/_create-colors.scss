@@ -1,7 +1,6 @@
 @use "sass:color";
 
 @mixin color-scaling($property, $prefix, $k, $v) {
-
   // base styles
   .#{$prefix}-#{$k} {
     #{$property}: $v;
@@ -32,7 +31,6 @@
 @mixin shade-scaling($property, $prefix, $k, $v, $percentage) {
   @for $i from 1 through 13 {
     @if $i <=6 {
-
       // base styles
       .#{$prefix}-#{$k}-#{$i} {
         #{$property}: color.mix(white, $v, (7 - $i) * $percentage);
@@ -59,7 +57,6 @@
         }
       }
     } @else if $i >7 {
-
       // base styles
       .#{$prefix}-#{$k}-#{$i - 1} {
         #{$property}: color.mix(black, $v, ($i - 7) * $percentage);
