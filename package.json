@@ -35,8 +35,7 @@
     "url": "git+https://github.com/yumma-lib/yumma-css.git"
   },
   "scripts": {
-    "build": "pnpm clean && tsc -p tsconfig.cli.json",
-    "clean": "rm -rf dist",
+    "build": "tsc -p tsconfig.cli.json",
     "dev": "tsc -p tsconfig.cli.json --watch",
     "format:cli": "prettier --write cli",
     "format": "prettier --write .",
