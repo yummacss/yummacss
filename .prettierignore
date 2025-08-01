@@ -1,0 +1,9 @@
+.gitignore
+.prettierignore
+
+dist/
+node_modules/
+pnpm-lock.yaml
+
+*.tsbuildinfo
+coverage/
