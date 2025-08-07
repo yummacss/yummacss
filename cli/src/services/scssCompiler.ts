@@ -1,11 +1,28 @@
+import { existsSync } from "fs";
 import { dirname, join } from "path";
 import { fileURLToPath } from "url";
 import * as sass from "sass-embedded";
 import type { Configuration } from "../config/defaultConfig.js";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-const packageRoot = join(__dirname, "../../..");
+// Find package root by looking for package.json
+function findPackageRoot(): string {
+  const __filename = fileURLToPath(import.meta.url);
+  let currentDir = dirname(__filename);
+
+  // Keep going up until we find package.json or reach root
+  while (currentDir !== dirname(currentDir)) {
+    const packageJsonPath = join(currentDir, "package.json");
+    if (existsSync(packageJsonPath)) {
+      return currentDir;
+    }
+    currentDir = dirname(currentDir);
+  }
+
+  // Fallback: assume we're in node_modules/yummacss
+  return currentDir;
+}
+
+const packageRoot = findPackageRoot();
 
 export async function compileSCSS(config: Configuration): Promise<{
   css: string;

@@ -18,24 +18,24 @@
   "license": "MIT",
   "author": "Renildo Pereira",
   "files": [
-    "dist/cli",
+    "dist",
     "src"
   ],
   "type": "module",
   "exports": {
-    ".": "./dist/cli/src/cli.js"
+    ".": "./dist/index.js"
   },
   "bin": {
-    "yummacss": "./dist/cli/src/cli.js",
-    "yumma": "./dist/cli/src/cli.js"
+    "yummacss": "./dist/index.js",
+    "yumma": "./dist/index.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/yumma-lib/yumma-css.git"
   },
   "scripts": {
-    "build": "tsc -p tsconfig.cli.json",
-    "dev": "tsc -p tsconfig.cli.json --watch",
+    "build": "tsup",
+    "dev": "tsup --watch",
     "format:cli": "prettier --write cli",
     "format": "prettier --write .",
     "prepublishOnly": "pnpm build"
