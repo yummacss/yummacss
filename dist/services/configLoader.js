@@ -1,0 +1,1 @@
+import{join as r}from"path";import{pathToFileURL as f}from"url";var o={source:[""],output:"",buildOptions:{reset:!0,minify:!1}};async function g(){let t=r(process.cwd(),"yumma.config.js"),n=f(t).href,{default:i}=await import(n);return{...o,...i,buildOptions:{...o.buildOptions,...i.buildOptions}}}export{g as loadConfig};

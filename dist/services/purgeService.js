@@ -1,0 +1,1 @@
+import{globby as e}from"globby";import{PurgeCSS as n}from"purgecss";async function a(r,t){return(await new n().purge({content:await e(t.source),css:[{raw:r}],defaultExtractor:o=>o.match(/[\w-/\\:]+/g)||[]}))[0].css}export{a as purgeCSS};
