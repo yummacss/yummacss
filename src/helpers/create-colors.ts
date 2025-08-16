@@ -1,5 +1,5 @@
-import tinycolor from "tinycolor2";
 import { YMA_THEME } from "@/constants/theme";
+import tinycolor from "tinycolor2";
 
 const percentage = 14;
 

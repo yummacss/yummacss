@@ -1,4 +1,4 @@
- export interface UtilityItem {
+export interface UtilityItem {
   prefix: string;
   properties: string[];
   slug: string;

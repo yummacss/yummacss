@@ -1,6 +1,6 @@
-import { UtilityMap } from "@/interfaces";
-import { createValues } from "@/helpers/create-values";
 import { YMA_FLEX_BASIS } from "@/constants/variables";
+import { createValues } from "@/helpers/create-values";
+import { UtilityMap } from "@/interfaces";
 
 export const flexboxUtils: UtilityMap = {
   "align-content": {

@@ -1,6 +1,6 @@
-import { UtilityMap } from "@/interfaces";
-import { createValues } from "@/helpers/create-values";
 import { YMA_BORDER, YMA_BORDER_RADIUS, YMA_BORDER_SPACING } from "@/constants/variables";
+import { createValues } from "@/helpers/create-values";
+import { UtilityMap } from "@/interfaces";
 
 export const borderUtils: UtilityMap = {
   "border-collapse": {
