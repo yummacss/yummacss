@@ -6,15 +6,5 @@ export default {
   printWidth: 80,
   bracketSameLine: true,
   bracketSpacing: true,
-  importOrder: [
-    "^(fs|path|url)$",
-    "<THIRD_PARTY_MODULES>",
-    "^config/",
-    "^services/",
-    "^utils/",
-    "^commands/",
-    "^../",
-    "^./",
-  ],
-  plugins: ["@ianvs/prettier-plugin-sort-imports"],
+  plugins: ["prettier-plugin-organize-imports"],
 };
