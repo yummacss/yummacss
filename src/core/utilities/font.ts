@@ -1,4 +1,3 @@
-import { UtilityMap } from "@/interfaces";
 import {
   YMA_FONT_CHARTER,
   YMA_FONT_MONO,
@@ -10,13 +9,14 @@ import {
   YMA_FONT_SIZE_7XL,
   YMA_FONT_SIZE_8XL,
   YMA_FONT_SIZE_9XL,
-  YMA_FONT_SIZE_MD,
   YMA_FONT_SIZE_LG,
+  YMA_FONT_SIZE_MD,
   YMA_FONT_SIZE_SM,
   YMA_FONT_SIZE_XL,
   YMA_FONT_SIZE_XS,
   YMA_FONT_SYSTEM,
 } from "@/constants/variables";
+import { UtilityMap } from "@/interfaces";
 
 export const fontUtils: UtilityMap = {
   "font-family": {

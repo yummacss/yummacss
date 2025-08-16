@@ -1,6 +1,6 @@
-import { UtilityMap } from "@/interfaces";
-import { createValues } from "@/helpers/create-values";
 import { YMA_DIMENSION, YMA_HEIGHT, YMA_MARGIN, YMA_PADDING, YMA_WIDTH } from "@/constants/variables";
+import { createValues } from "@/helpers/create-values";
+import { UtilityMap } from "@/interfaces";
 
 export const boxModelUtils: UtilityMap = {
   "box-sizing": {

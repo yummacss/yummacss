@@ -16,6 +16,7 @@
   ],
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "type": "module",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -30,6 +31,7 @@
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
+    "format": "prettier --write .",
     "lint": "eslint src --ext .ts",
     "type-check": "tsc --noEmit"
   },
@@ -42,6 +44,7 @@
     "@typescript-eslint/eslint-plugin": "^7.0.0",
     "@typescript-eslint/parser": "^7.0.0",
     "eslint": "^8.57.1",
+    "prettier-plugin-organize-imports": "^4.2.0",
     "tsup": "^8.0.2",
     "typescript": "^5.8.2"
   },

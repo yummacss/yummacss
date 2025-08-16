@@ -1,6 +1,6 @@
-import { UtilityMap } from "@/interfaces";
-import { createValues } from "@/helpers/create-values";
 import { YMA_OUTLINE_OFFSET, YMA_OUTLINE_WIDTH } from "@/constants/variables";
+import { createValues } from "@/helpers/create-values";
+import { UtilityMap } from "@/interfaces";
 
 export const outlineUtils: UtilityMap = {
   "outline-offset": {

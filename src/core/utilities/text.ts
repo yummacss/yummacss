@@ -1,8 +1,6 @@
-import { UtilityMap } from "@/interfaces";
+import { YMA_DECORATION_THICKNESS } from "@/constants/variables";
 import { createValues } from "@/helpers/create-values";
-import {
-  YMA_DECORATION_THICKNESS,
-} from "@/constants/variables";
+import { UtilityMap } from "@/interfaces";
 
 export const textUtils: UtilityMap = {
   "letter-spacing": {

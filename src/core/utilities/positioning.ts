@@ -1,6 +1,6 @@
-import { UtilityMap } from "@/interfaces";
-import { createValues } from "@/helpers/create-values";
 import { YMA_BOTTOM_LEFT_TOP_RIGHT } from "@/constants/variables";
+import { createValues } from "@/helpers/create-values";
+import { UtilityMap } from "@/interfaces";
 
 export const positioningUtils: UtilityMap = {
   "aspect-ratio": {

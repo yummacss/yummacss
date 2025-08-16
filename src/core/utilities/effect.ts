@@ -1,14 +1,14 @@
-import { UtilityMap } from "@/interfaces";
 import {
   YMA_BACKDROP_BLUR,
   YMA_BLUR,
-  YMA_BOX_SHADOW_XS,
-  YMA_BOX_SHADOW_SM,
-  YMA_BOX_SHADOW_MD,
   YMA_BOX_SHADOW_LG,
+  YMA_BOX_SHADOW_MD,
+  YMA_BOX_SHADOW_SM,
   YMA_BOX_SHADOW_XL,
+  YMA_BOX_SHADOW_XS,
   YMA_GRAYSCALE,
 } from "@/constants/variables";
+import { UtilityMap } from "@/interfaces";
 
 export const effectUtils: UtilityMap = {
   "backdrop-blur": {
