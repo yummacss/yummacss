@@ -1,7 +1,7 @@
 import { existsSync } from "fs";
 import { dirname, join } from "path";
-import { fileURLToPath } from "url";
 import * as sass from "sass-embedded";
+import { fileURLToPath } from "url";
 import type { Configuration } from "../config/defaultConfig.js";
 
 // Find package root by looking for package.json

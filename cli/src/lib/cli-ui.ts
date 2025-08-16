@@ -14,4 +14,4 @@ const cli = {
   },
 };
 
-export { spinner, cli };
+export { cli, spinner };
