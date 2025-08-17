@@ -9,6 +9,7 @@ All notable changes to the Yumma CSS will be documented in this file.
     <b>Features</b>
 </summary>
 
+- Add module system detection for config file
 - Implement Zod for schema-driven configuration
 
 </details>
