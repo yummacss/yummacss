@@ -9,7 +9,7 @@ All notable changes to the Yumma CSS will be documented in this file.
     <b>Features</b>
 </summary>
 
-- None
+- Implement Zod for schema-driven configuration
 
 </details>
 

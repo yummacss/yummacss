@@ -1,12 +1,12 @@
 import chok from "chokidar";
 import { globby } from "globby";
-import type { Configuration } from "../config/defaultConfig.js";
+import type { InternalConfig } from "../config/defaultConfig.js";
 import { messages } from "../lib/cli-lang.js";
 import { cli } from "../lib/cli-ui.js";
 import { loadConfig } from "../services/configLoader.js";
 import { build } from "./build.js";
 
-let currentConfig: Configuration;
+let currentConfig: InternalConfig;
 let buildTimeout: NodeJS.Timeout | null = null;
 let changedFiles = new Set<string>();
 
