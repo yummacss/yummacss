@@ -12,10 +12,10 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Add module system detection for config file
 - Implement Zod for schema-driven configuration
 - Add `currentColor` to theme colors
-- Add `px` value to Dimension, Height, Width, Padding, Margin utilities
-- Add `vh` and `vw` values to Dimension, Height, Width utilities
-- Add `dvw` values to Dimension, Height, Width utilities
-- Add `sm`, `md`, `lg`, `xl`, `xxl` values to Dimension, Height, Width utilities
+- Add `px` value to **Dimension**, **Height**, **Width**, **Padding**, **Margin** utilities
+- Add `vh` and `vw` values to **Dimension**, **Height**, **Width** utilities
+- Add `dvw` values to **Dimension**, **Height**, **Width** utilities
+- Add `sm`, `md`, `lg`, `xl`, `xxl` values to **Dimension**, **Height**, **Width** utilities
 - Add `max` value to Border Radius utility
 
 </details>
