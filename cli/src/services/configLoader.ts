@@ -1,9 +1,9 @@
 import { join } from "path";
 import { pathToFileURL } from "url";
 import {
-  InternalConfig,
   ConfigSchema,
-  defaultBuildOptions
+  defaultConfig,
+  InternalConfig,
 } from "../config/defaultConfig.js";
 
 export async function loadConfig(): Promise<InternalConfig> {
@@ -15,16 +15,15 @@ export async function loadConfig(): Promise<InternalConfig> {
       default: unknown;
     };
 
-    // Validate user config with Zod schema
     const validatedConfig = ConfigSchema.parse(userConfig);
 
-    // Apply defaults for optional fields
     const internalConfig: InternalConfig = {
       source: validatedConfig.source,
       output: validatedConfig.output,
       buildOptions: {
-        reset: validatedConfig.buildOptions?.reset ?? defaultBuildOptions.reset,
-        minify: validatedConfig.buildOptions?.minify ?? defaultBuildOptions.minify,
+        reset: validatedConfig.buildOptions?.reset ?? defaultConfig.buildOptions.reset,
+        minify:
+          validatedConfig.buildOptions?.minify ?? defaultConfig.buildOptions.reset,
       },
     };
 
