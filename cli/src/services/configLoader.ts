@@ -21,9 +21,12 @@ export async function loadConfig(): Promise<InternalConfig> {
       source: validatedConfig.source,
       output: validatedConfig.output,
       buildOptions: {
-        reset: validatedConfig.buildOptions?.reset ?? defaultConfig.buildOptions.reset,
+        reset:
+          validatedConfig.buildOptions?.reset ??
+          defaultConfig.buildOptions.reset,
         minify:
-          validatedConfig.buildOptions?.minify ?? defaultConfig.buildOptions.reset,
+          validatedConfig.buildOptions?.minify ??
+          defaultConfig.buildOptions.reset,
       },
     };
 

@@ -31,4 +31,4 @@ const defaultConfig = {
   },
 };
 
-export { ConfigSchema, Config, defaultConfig, InternalConfig };
+export { Config, ConfigSchema, defaultConfig, InternalConfig };

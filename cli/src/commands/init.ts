@@ -44,7 +44,7 @@ export function init() {
     init.succeed(messages.init.success);
   } catch (error) {
     init.fail(messages.init.fail);
-        cli.error(
+    cli.error(
       error instanceof Error ? error.message : messages.common.unknownError
     );
     process.exit(1);
