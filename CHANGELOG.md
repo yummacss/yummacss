@@ -16,7 +16,7 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Add `vh` and `vw` values to **Dimension**, **Height**, **Width** utilities
 - Add `dvw` values to **Dimension**, **Height**, **Width** utilities
 - Add `sm`, `md`, `lg`, `xl`, `xxl` values to **Dimension**, **Height**, **Width** utilities
-- Add `max` value to Border Radius utility
+- Add `9` value to Border Radius utility
 
 </details>
 
