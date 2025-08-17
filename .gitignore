@@ -1,9 +1,6 @@
 # dependencies
 node_modules/
 
-# build
-dist/
-
 coverage/
 *.tgz
 *.txt
