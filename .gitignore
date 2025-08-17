@@ -1,13 +1,13 @@
 # dependencies
 node_modules/
 
-# build artifacts
-dist/cli
+# build
+dist/
 
-# development
+# testing
+coverage/
 *.tgz
 *.txt
-coverage/
 
 # vs code
 .vscode/
