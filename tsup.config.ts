@@ -9,5 +9,4 @@ export default defineConfig({
   minify: true,
   outDir: "dist",
   target: "es2020",
-  onSuccess: "pnpm format:cli",
 });
