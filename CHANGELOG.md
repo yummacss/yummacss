@@ -18,7 +18,9 @@ All notable changes to the Yumma CSS will be documented in this file.
     <b>Breaking changes</b>
 </summary>
 
-- None
+- Rename `yummacss.scss` to `index.scss` (Internal)
+- Rename `yummacss-core.scss` to `core.scss` (Internal)
+- Rename `reset/_stylecent.scss` to `base.scss` (Internal)
 
 </details>
 
