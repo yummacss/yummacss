@@ -13,7 +13,7 @@ All notable changes to the Yumma CSS will be documented in this file.
 
 </details>
 
-<details>
+<details open>
 <summary>
     <b>Breaking changes</b>
 </summary>
@@ -22,6 +22,7 @@ All notable changes to the Yumma CSS will be documented in this file.
 - Rename `yummacss-core.scss` to `core.scss` (Internal)
 - Rename `reset/_stylecent.scss` to `base.scss` (Internal)
 - Rename `$yma` variable prefixes to `$ycss` (Internal)
+- Rename the `lead` utility color to `slate`
 
 </details>
 
