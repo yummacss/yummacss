@@ -1,83 +1,83 @@
-// color
-$yma-color-red: #d73d3d !default;
-$yma-color-orange: #e06814 !default;
-$yma-color-yellow: #d3a107 !default;
-$yma-color-green: #1fb155 !default;
-$yma-color-teal: #12a695 !default;
-$yma-color-cyan: #05a4bf !default;
-$yma-color-blue: #3575dd !default;
-$yma-color-indigo: #595cd9 !default;
-$yma-color-violet: #7d53dd !default;
-$yma-color-pink: #d4418a !default;
-$yma-color-lead: #3f3f4e !default;
-$yma-color-gray: #606773 !default;
-$yma-color-silver: #bfc2c7 !default;
-$yma-color-black: black !default;
-$yma-color-white: white !default;
-$yma-color-transparent: transparent !default;
+// borders
+$ycss-border: 1px !default;
+$ycss-border-radius: 0.25rem !default;
+$ycss-border-spacing: 0.25rem !default;
 
-// border
-$yma-border: 1px !default;
-$yma-border-radius: 0.25rem !default;
-$yma-border-spacing: 0.25rem !default;
+// outlines
+$ycss-outline-offset: 1px !default;
+$ycss-outline-width: 1px !default;
+
+// color
+$ycss-color-red: #d73d3d !default;
+$ycss-color-orange: #e06814 !default;
+$ycss-color-yellow: #d3a107 !default;
+$ycss-color-green: #1fb155 !default;
+$ycss-color-teal: #12a695 !default;
+$ycss-color-cyan: #05a4bf !default;
+$ycss-color-blue: #3575dd !default;
+$ycss-color-indigo: #595cd9 !default;
+$ycss-color-violet: #7d53dd !default;
+$ycss-color-pink: #d4418a !default;
+$ycss-color-slate: #3f3f4e !default;
+$ycss-color-gray: #606773 !default;
+$ycss-color-silver: #bfc2c7 !default;
+$ycss-color-black: black !default;
+$ycss-color-white: white !default;
+$ycss-color-transparent: transparent !default;
 
 // box model
-$yma-dimension: 0.25rem !default;
-$yma-height: 0.25rem !default;
-$yma-width: 0.25rem !default;
-$yma-padding: 0.25rem !default;
-$yma-margin: 0.25rem !default;
-$yma-spacing: 0.25rem !default;
-
-// effect
-$yma-backdrop-blur: 4px !default;
-
-$yma-blur: 4px !default;
-
-$yma-box-shadow-lg: 1px 3px 5px 1px #0000001a !default;
-$yma-box-shadow-md: 1px 3px 5px -1px #0000001a !default;
-$yma-box-shadow-sm: 1px 3px 5px -2px #0000001a !default;
-$yma-box-shadow-xl: 1px 3px 5px 2px #0000001a !default;
-$yma-box-shadow-xs: 1px 3px 5px -3px #0000001a !default;
-
-$yma-grayscale: 10% !default;
+$ycss-dimension: 0.25rem !default;
+$ycss-height: 0.25rem !default;
+$ycss-width: 0.25rem !default;
+$ycss-padding: 0.25rem !default;
+$ycss-margin: 0.25rem !default;
+$ycss-spacing: 0.25rem !default;
 
 // flexbox
-$yma-flex-basis: 0.25rem !default;
+$ycss-flex-basis: 0.25rem !default;
 
 // grid
-$yma-gap: 0.25rem !default;
-$yma-column-gap: 0.25rem !default;
-$yma-row-gap: 0.25rem !default;
+$ycss-gap: 0.25rem !default;
+$ycss-column-gap: 0.25rem !default;
+$ycss-row-gap: 0.25rem !default;
 
-// outline
-$yma-outline-offset: 1px !default;
-$yma-outline-width: 1px !default;
+// effect
+$ycss-backdrop-blur: 4px !default;
+
+$ycss-blur: 4px !default;
+
+$ycss-box-shadow-lg: 1px 3px 5px 1px #0000001a !default;
+$ycss-box-shadow-md: 1px 3px 5px -1px #0000001a !default;
+$ycss-box-shadow-sm: 1px 3px 5px -2px #0000001a !default;
+$ycss-box-shadow-xl: 1px 3px 5px 2px #0000001a !default;
+$ycss-box-shadow-xs: 1px 3px 5px -3px #0000001a !default;
+
+$ycss-grayscale: 10% !default;
 
 // positioning
-$yma-bottom-left-top-right: 0.25rem !default;
-
-// text
-$yma-decoration-thickness: 1px !default;
+$ycss-bottom-left-top-right: 0.25rem !default;
 
 // font
-$yma-font-size-xs: 0.75rem !default;
-$yma-font-size-sm: 0.875rem !default;
-$yma-font-size-md: 1rem !default;
-$yma-font-size-lg: 1.125rem !default;
-$yma-font-size-xl: 1.25rem !default;
-$yma-font-size-2xl: 1.5rem !default;
-$yma-font-size-3xl: 1.875rem !default;
-$yma-font-size-4xl: 2.25rem !default;
-$yma-font-size-5xl: 3rem !default;
-$yma-font-size-6xl: 3.75rem !default;
-$yma-font-size-7xl: 4.5rem !default;
-$yma-font-size-8xl: 6rem !default;
-$yma-font-size-9xl: 8rem !default;
-
-$yma-font-weight: 500 !default;
-
-$yma-font-charter:
+$ycss-font-charter:
   Charter, "Bitstream Charter", "Sitka Text", Cambria, serif !default;
-$yma-font-mono: "Nimbus Mono PS", "Courier New", monospace !default;
-$yma-font-system: system-ui, sans-serif !default;
+$ycss-font-mono: "Nimbus Mono PS", "Courier New", monospace !default;
+$ycss-font-system: system-ui, sans-serif !default;
+
+$ycss-font-size-xs: 0.75rem !default;
+$ycss-font-size-sm: 0.875rem !default;
+$ycss-font-size-md: 1rem !default;
+$ycss-font-size-lg: 1.125rem !default;
+$ycss-font-size-xl: 1.25rem !default;
+$ycss-font-size-2xl: 1.5rem !default;
+$ycss-font-size-3xl: 1.875rem !default;
+$ycss-font-size-4xl: 2.25rem !default;
+$ycss-font-size-5xl: 3rem !default;
+$ycss-font-size-6xl: 3.75rem !default;
+$ycss-font-size-7xl: 4.5rem !default;
+$ycss-font-size-8xl: 6rem !default;
+$ycss-font-size-9xl: 8rem !default;
+
+$ycss-font-weight: 500 !default;
+
+// text
+$ycss-decoration-thickness: 1px !default;

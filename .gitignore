@@ -7,7 +7,7 @@ dist/cli
 # development
 *.tgz
 *.txt
-test/
+coverage/
 
 # vs code
 .vscode/

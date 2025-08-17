@@ -39,7 +39,7 @@
   }
 
   // responsive styles
-  @each $bp, $bp-value in bp.$yma-breakpoints {
+  @each $bp, $bp-value in bp.$ycss-breakpoints {
     @media (min-width: $bp-value) {
       @each $k, $v in map.get($map, "values") {
         .#{$bp}\:#{$prefix}-#{$k} {

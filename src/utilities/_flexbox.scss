@@ -4,7 +4,7 @@
 @use "../abstracts/mixins/" as mix;
 @use "../utilities/maps/" as maps;
 
-$yma-flexbox-utils: (
+$ycss-flexbox-utils: (
   "align-content": (
     "prefix": "ac",
     "properties": (
@@ -57,7 +57,7 @@ $yma-flexbox-utils: (
     "properties": (
       "flex-basis",
     ),
-    "values": maps.$yma-flex-basis-map,
+    "values": maps.$ycss-flex-basis-map,
   ),
 
   "flex-direction": (
@@ -205,7 +205,7 @@ $yma-flexbox-utils: (
   ),
 );
 
-@each $name, $map in $yma-flexbox-utils {
+@each $name, $map in $ycss-flexbox-utils {
   $prefix: map.get($map, "prefix");
   $properties: map.get($map, "properties");
 

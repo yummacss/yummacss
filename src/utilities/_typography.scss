@@ -3,26 +3,26 @@
 @use "../abstracts/variables" as vars;
 @use "../abstracts/mixins/" as mix;
 
-$yma-typography-utils: (
+$ycss-typography-utils: (
   "font-size": (
     "prefix": "fs",
     "properties": (
       "font-size",
     ),
     "values": (
-      "xs": vars.$yma-font-size-xs,
-      "sm": vars.$yma-font-size-sm,
-      "md": vars.$yma-font-size-md,
-      "lg": vars.$yma-font-size-lg,
-      "xl": vars.$yma-font-size-xl,
-      "xxl": vars.$yma-font-size-2xl,
-      "3xl": vars.$yma-font-size-3xl,
-      "4xl": vars.$yma-font-size-4xl,
-      "5xl": vars.$yma-font-size-5xl,
-      "6xl": vars.$yma-font-size-6xl,
-      "7xl": vars.$yma-font-size-7xl,
-      "8xl": vars.$yma-font-size-8xl,
-      "9xl": vars.$yma-font-size-9xl,
+      "xs": vars.$ycss-font-size-xs,
+      "sm": vars.$ycss-font-size-sm,
+      "md": vars.$ycss-font-size-md,
+      "lg": vars.$ycss-font-size-lg,
+      "xl": vars.$ycss-font-size-xl,
+      "xxl": vars.$ycss-font-size-2xl,
+      "3xl": vars.$ycss-font-size-3xl,
+      "4xl": vars.$ycss-font-size-4xl,
+      "5xl": vars.$ycss-font-size-5xl,
+      "6xl": vars.$ycss-font-size-6xl,
+      "7xl": vars.$ycss-font-size-7xl,
+      "8xl": vars.$ycss-font-size-8xl,
+      "9xl": vars.$ycss-font-size-9xl,
     ),
   ),
 
@@ -167,11 +167,11 @@ $yma-typography-utils: (
       "text-decoration-thickness",
     ),
     "values": (
-      "0": vars.$yma-decoration-thickness * 0,
-      "1": vars.$yma-decoration-thickness,
-      "2": vars.$yma-decoration-thickness * 2,
-      "3": vars.$yma-decoration-thickness * 3,
-      "4": vars.$yma-decoration-thickness * 4,
+      "0": vars.$ycss-decoration-thickness * 0,
+      "1": vars.$ycss-decoration-thickness,
+      "2": vars.$ycss-decoration-thickness * 2,
+      "3": vars.$ycss-decoration-thickness * 3,
+      "4": vars.$ycss-decoration-thickness * 4,
       "auto": auto,
       "ff": from-font,
     ),
@@ -270,7 +270,7 @@ $yma-typography-utils: (
   ),
 );
 
-@each $properties, $map in $yma-typography-utils {
+@each $properties, $map in $ycss-typography-utils {
   $prefix: map.get($map, "prefix");
   $properties: map.get($map, "properties");
 

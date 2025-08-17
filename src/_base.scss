@@ -1,4 +1,4 @@
-@use "../abstracts/variables" as vars;
+@use "abstracts/variables" as vars;
 
 /** -- Box sizing --
  * 1. Use a more intuitive box-sizing model to make the design consistent.
@@ -26,7 +26,7 @@
 
 body {
   -webkit-font-smoothing: antialiased; /* 1 */
-  font-family: vars.$yma-font-system; /* 2 */
+  font-family: vars.$ycss-font-system; /* 2 */
   line-height: 1.5; /* 3 */
 }
 
@@ -55,7 +55,7 @@ input,
 optgroup,
 select,
 textarea {
-  background-color: vars.$yma-color-transparent; /* 1 */
+  background-color: vars.$ycss-color-transparent; /* 1 */
   font-family: inherit; /* 2 */
   padding: 0.5rem; /* 3 */
 }
@@ -69,7 +69,7 @@ input:not([class]),
 optgroup:not([class]),
 select:not([class]),
 textarea:not([class]) {
-  border: 1px solid vars.$yma-color-silver; /* 1 */
+  border: 1px solid vars.$ycss-color-silver; /* 1 */
 }
 
 /**
@@ -83,7 +83,7 @@ select,
 summary,
 textarea {
   &:focus {
-    outline: 2px solid vars.$yma-color-transparent;
+    outline: 2px solid vars.$ycss-color-transparent;
   }
 }
 
@@ -213,7 +213,7 @@ th {
  */
 
 hr {
-  border-top: 1px solid vars.$yma-color-silver; /* 2 */
+  border-top: 1px solid vars.$ycss-color-silver; /* 2 */
   height: 0; /* 1 */
   margin: 1em 0; /* 3 */
 }

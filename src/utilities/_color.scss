@@ -4,7 +4,7 @@
 @use "../abstracts/functions" as fun;
 @use "../abstracts/_theme" as theme;
 
-$yma-color-utils: (
+$ycss-color-utils: (
   "accent-color": (
     "prefix": "ac",
     "property": "accent-color",
@@ -71,14 +71,14 @@ $yma-color-utils: (
   ),
 );
 
-@each $utility, $map in $yma-color-utils {
+@each $utility, $map in $ycss-color-utils {
   $property: map.get($map, "property");
   $prefix: map.get($map, "prefix");
 
-  @each $k, $v in theme.$yma-theme {
+  @each $k, $v in theme.$ycss-theme {
     @include mix.color-scaling($property, $prefix, $k, $v);
 
-    @if (fun.ignore-neutral($v, theme.$yma-theme)) {
+    @if (fun.ignore-neutral($v, theme.$ycss-theme)) {
       @include mix.shade-scaling($property, $prefix, $k, $v, 14%);
     }
   }

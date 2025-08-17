@@ -3,7 +3,7 @@
 @use "../abstracts/variables" as vars;
 @use "../abstracts/mixins/" as mix;
 
-$yma-background-utils: (
+$ycss-background-utils: (
   "background-attachment": (
     "prefix": "ba",
     "properties": (
@@ -87,7 +87,7 @@ $yma-background-utils: (
   ),
 );
 
-@each $properties, $map in $yma-background-utils {
+@each $properties, $map in $ycss-background-utils {
   $prefix: map.get($map, "prefix");
   $properties: map.get($map, "properties");
 

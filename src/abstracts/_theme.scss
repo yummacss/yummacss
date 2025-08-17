@@ -1,21 +1,21 @@
 @use "sass:map";
 @use "variables" as vars;
 
-$yma-theme: (
-  "red": vars.$yma-color-red,
-  "orange": vars.$yma-color-orange,
-  "yellow": vars.$yma-color-yellow,
-  "green": vars.$yma-color-green,
-  "teal": vars.$yma-color-teal,
-  "cyan": vars.$yma-color-cyan,
-  "blue": vars.$yma-color-blue,
-  "indigo": vars.$yma-color-indigo,
-  "violet": vars.$yma-color-violet,
-  "pink": vars.$yma-color-pink,
-  "silver": vars.$yma-color-silver,
-  "gray": vars.$yma-color-gray,
-  "lead": vars.$yma-color-lead,
-  "black": vars.$yma-color-black,
-  "white": vars.$yma-color-white,
-  "transparent": vars.$yma-color-transparent,
+$ycss-theme: (
+  "red": vars.$ycss-color-red,
+  "orange": vars.$ycss-color-orange,
+  "yellow": vars.$ycss-color-yellow,
+  "green": vars.$ycss-color-green,
+  "teal": vars.$ycss-color-teal,
+  "cyan": vars.$ycss-color-cyan,
+  "blue": vars.$ycss-color-blue,
+  "indigo": vars.$ycss-color-indigo,
+  "violet": vars.$ycss-color-violet,
+  "pink": vars.$ycss-color-pink,
+  "slate": vars.$ycss-color-slate,
+  "gray": vars.$ycss-color-gray,
+  "silver": vars.$ycss-color-silver,
+  "black": vars.$ycss-color-black,
+  "white": vars.$ycss-color-white,
+  "transparent": vars.$ycss-color-transparent,
 );

@@ -2,9 +2,9 @@
 @use "../../../abstracts/functions/create-values" as fun;
 @use "../../../abstracts/variables" as vars;
 
-$yma-margin-map: map.merge(
+$ycss-margin-map: map.merge(
   (
     "auto": auto,
   ),
-  fun.create-values(vars.$yma-margin)
+  fun.create-values(vars.$ycss-margin)
 );

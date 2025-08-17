@@ -2,4 +2,4 @@
 @use "../../../abstracts/functions/create-values" as fun;
 @use "../../../abstracts/variables" as vars;
 
-$yma-gap-map: fun.create-values(vars.$yma-gap);
+$ycss-gap-map: fun.create-values(vars.$ycss-gap);

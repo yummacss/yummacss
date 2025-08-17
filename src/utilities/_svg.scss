@@ -2,7 +2,7 @@
 @use "sass:map";
 @use "../abstracts/mixins/" as mix;
 
-$yma-svg-utils: (
+$ycss-svg-utils: (
   "stroke-width": (
     "prefix": "sw",
     "properties": (
@@ -19,7 +19,7 @@ $yma-svg-utils: (
   ),
 );
 
-@each $name, $map in $yma-svg-utils {
+@each $name, $map in $ycss-svg-utils {
   $prefix: map.get($map, "prefix");
   $properties: map.get($map, "properties");
 

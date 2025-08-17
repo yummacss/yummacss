@@ -4,7 +4,7 @@
 @use "../abstracts/mixins/" as mix;
 @use "../utilities/maps/" as maps;
 
-$yma-interactivity-utils: (
+$ycss-interactivity-utils: (
   "appearance": (
     "prefix": "a",
     "properties": (
@@ -100,7 +100,7 @@ $yma-interactivity-utils: (
     "properties": (
       "scroll-margin",
     ),
-    "values": maps.$yma-margin-map,
+    "values": maps.$ycss-margin-map,
   ),
 
   "scroll-margin-bottom": (
@@ -108,7 +108,7 @@ $yma-interactivity-utils: (
     "properties": (
       "scroll-margin-bottom",
     ),
-    "values": maps.$yma-margin-map,
+    "values": maps.$ycss-margin-map,
   ),
 
   "scroll-margin-inline-start": (
@@ -116,7 +116,7 @@ $yma-interactivity-utils: (
     "properties": (
       "scroll-margin-inline-start",
     ),
-    "values": maps.$yma-margin-map,
+    "values": maps.$ycss-margin-map,
   ),
 
   "scroll-margin-left": (
@@ -124,7 +124,7 @@ $yma-interactivity-utils: (
     "properties": (
       "scroll-margin-left",
     ),
-    "values": maps.$yma-margin-map,
+    "values": maps.$ycss-margin-map,
   ),
 
   "scroll-margin-right": (
@@ -132,7 +132,7 @@ $yma-interactivity-utils: (
     "properties": (
       "scroll-margin-right",
     ),
-    "values": maps.$yma-margin-map,
+    "values": maps.$ycss-margin-map,
   ),
 
   "scroll-margin-top": (
@@ -140,7 +140,7 @@ $yma-interactivity-utils: (
     "properties": (
       "scroll-margin-top",
     ),
-    "values": maps.$yma-margin-map,
+    "values": maps.$ycss-margin-map,
   ),
 
   "scroll-margin-inline-end": (
@@ -148,7 +148,7 @@ $yma-interactivity-utils: (
     "properties": (
       "scroll-margin-inline-end",
     ),
-    "values": maps.$yma-margin-map,
+    "values": maps.$ycss-margin-map,
   ),
 
   "scroll-margin-x": (
@@ -157,7 +157,7 @@ $yma-interactivity-utils: (
       "scroll-margin-left",
       "scroll-margin-right",
     ),
-    "values": maps.$yma-margin-map,
+    "values": maps.$ycss-margin-map,
   ),
 
   "scroll-margin-y": (
@@ -166,7 +166,7 @@ $yma-interactivity-utils: (
       "scroll-margin-bottom",
       "scroll-margin-top",
     ),
-    "values": maps.$yma-margin-map,
+    "values": maps.$ycss-margin-map,
   ),
 
   "scroll-padding": (
@@ -174,7 +174,7 @@ $yma-interactivity-utils: (
     "properties": (
       "scroll-padding",
     ),
-    "values": maps.$yma-padding-map,
+    "values": maps.$ycss-padding-map,
   ),
 
   "scroll-padding-bottom": (
@@ -182,7 +182,7 @@ $yma-interactivity-utils: (
     "properties": (
       "scroll-padding-bottom",
     ),
-    "values": maps.$yma-padding-map,
+    "values": maps.$ycss-padding-map,
   ),
 
   "scroll-padding-inline-start": (
@@ -190,7 +190,7 @@ $yma-interactivity-utils: (
     "properties": (
       "scroll-padding-inline-start",
     ),
-    "values": maps.$yma-padding-map,
+    "values": maps.$ycss-padding-map,
   ),
 
   "scroll-padding-left": (
@@ -198,7 +198,7 @@ $yma-interactivity-utils: (
     "properties": (
       "scroll-padding-left",
     ),
-    "values": maps.$yma-padding-map,
+    "values": maps.$ycss-padding-map,
   ),
 
   "scroll-padding-right": (
@@ -206,7 +206,7 @@ $yma-interactivity-utils: (
     "properties": (
       "scroll-padding-right",
     ),
-    "values": maps.$yma-padding-map,
+    "values": maps.$ycss-padding-map,
   ),
 
   "scroll-padding-top": (
@@ -214,7 +214,7 @@ $yma-interactivity-utils: (
     "properties": (
       "scroll-padding-top",
     ),
-    "values": maps.$yma-padding-map,
+    "values": maps.$ycss-padding-map,
   ),
 
   "scroll-padding-inline-end": (
@@ -222,7 +222,7 @@ $yma-interactivity-utils: (
     "properties": (
       "scroll-padding-inline-end",
     ),
-    "values": maps.$yma-padding-map,
+    "values": maps.$ycss-padding-map,
   ),
 
   "scroll-padding-x": (
@@ -231,7 +231,7 @@ $yma-interactivity-utils: (
       "scroll-padding-left",
       "scroll-padding-right",
     ),
-    "values": maps.$yma-padding-map,
+    "values": maps.$ycss-padding-map,
   ),
 
   "scroll-padding-y": (
@@ -240,7 +240,7 @@ $yma-interactivity-utils: (
       "scroll-padding-bottom",
       "scroll-padding-top",
     ),
-    "values": maps.$yma-padding-map,
+    "values": maps.$ycss-padding-map,
   ),
 
   "scroll-snap-align": (
@@ -296,7 +296,7 @@ $yma-interactivity-utils: (
   ),
 );
 
-@each $name, $map in $yma-interactivity-utils {
+@each $name, $map in $ycss-interactivity-utils {
   $prefix: map.get($map, "prefix");
   $properties: map.get($map, "properties");
 

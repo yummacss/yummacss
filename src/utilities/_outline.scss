@@ -3,18 +3,18 @@
 @use "../abstracts/variables" as vars;
 @use "../abstracts/mixins/" as mix;
 
-$yma-outline-utils: (
+$ycss-outline-utils: (
   "outline-offset": (
     "prefix": "oo",
     "properties": (
       "outline-offset",
     ),
     "values": (
-      "0": vars.$yma-outline-offset * 0,
-      "1": vars.$yma-outline-offset,
-      "2": vars.$yma-outline-offset * 2,
-      "3": vars.$yma-outline-offset * 3,
-      "4": vars.$yma-outline-offset * 4,
+      "0": vars.$ycss-outline-offset * 0,
+      "1": vars.$ycss-outline-offset,
+      "2": vars.$ycss-outline-offset * 2,
+      "3": vars.$ycss-outline-offset * 3,
+      "4": vars.$ycss-outline-offset * 4,
     ),
   ),
 
@@ -36,16 +36,16 @@ $yma-outline-utils: (
       "outline-width",
     ),
     "values": (
-      "0": vars.$yma-outline-width * 0,
-      "1": vars.$yma-outline-width,
-      "2": vars.$yma-outline-width * 2,
-      "3": vars.$yma-outline-width * 3,
-      "4": vars.$yma-outline-width * 4,
+      "0": vars.$ycss-outline-width * 0,
+      "1": vars.$ycss-outline-width,
+      "2": vars.$ycss-outline-width * 2,
+      "3": vars.$ycss-outline-width * 3,
+      "4": vars.$ycss-outline-width * 4,
     ),
   ),
 );
 
-@each $properties, $map in $yma-outline-utils {
+@each $properties, $map in $ycss-outline-utils {
   $prefix: map.get($map, "prefix");
   $properties: map.get($map, "properties");
 
