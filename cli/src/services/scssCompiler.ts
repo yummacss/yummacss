@@ -2,7 +2,7 @@ import { existsSync } from "fs";
 import { dirname, join } from "path";
 import * as sass from "sass-embedded";
 import { fileURLToPath } from "url";
-import type { Configuration } from "../config/defaultConfig.js";
+import type { InternalConfig } from "../config/defaultConfig.js";
 
 // Find package root by looking for package.json
 function findPackageRoot(): string {
@@ -24,7 +24,7 @@ function findPackageRoot(): string {
 
 const packageRoot = findPackageRoot();
 
-export async function compileSCSS(config: Configuration): Promise<{
+export async function compileSCSS(config: InternalConfig): Promise<{
   css: string;
   dependencies: string[];
 }> {

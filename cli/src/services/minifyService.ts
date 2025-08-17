@@ -1,7 +1,7 @@
 import { transform } from "lightningcss";
-import type { Configuration } from "../config/defaultConfig.js";
+import type { InternalConfig } from "../config/defaultConfig.js";
 
-export function minifyCSS(css: string, config: Configuration): string {
+export function minifyCSS(css: string, config: InternalConfig): string {
   try {
     const result = transform({
       filename: "style.css",
