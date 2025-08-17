@@ -4,7 +4,7 @@
 @use "../abstracts/mixins/" as mix;
 @use "../utilities/maps/" as maps;
 
-$yma-transform-utils: (
+$ycss-transform-utils: (
   "rotate": (
     "prefix": "t-r",
     "properties": (
@@ -156,7 +156,7 @@ $yma-transform-utils: (
   ),
 );
 
-@each $name, $map in $yma-transform-utils {
+@each $name, $map in $ycss-transform-utils {
   $prefix: map.get($map, "prefix");
   $properties: map.get($map, "properties");
 

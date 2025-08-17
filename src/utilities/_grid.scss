@@ -5,13 +5,13 @@
 @use "../abstracts/mixins/" as mix;
 @use "../utilities/maps/" as maps;
 
-$yma-grid-utils: (
+$ycss-grid-utils: (
   "column-gap": (
     "prefix": "cg",
     "properties": (
       "column-gap",
     ),
-    "values": maps.$yma-gap-map,
+    "values": maps.$ycss-gap-map,
   ),
 
   "gap": (
@@ -19,7 +19,7 @@ $yma-grid-utils: (
     "properties": (
       "gap",
     ),
-    "values": maps.$yma-gap-map,
+    "values": maps.$ycss-gap-map,
   ),
 
   "grid-auto-columns": (
@@ -310,11 +310,11 @@ $yma-grid-utils: (
     "properties": (
       "row-gap",
     ),
-    "values": maps.$yma-gap-map,
+    "values": maps.$ycss-gap-map,
   ),
 );
 
-@each $name, $map in $yma-grid-utils {
+@each $name, $map in $ycss-grid-utils {
   $prefix: map.get($map, "prefix");
   $properties: map.get($map, "properties");
 

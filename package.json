@@ -26,8 +26,7 @@
     ".": "./dist/index.js"
   },
   "bin": {
-    "yummacss": "./dist/index.js",
-    "yumma": "./dist/index.js"
+    "yummacss": "./dist/index.js"
   },
   "repository": {
     "type": "git",

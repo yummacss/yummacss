@@ -2,11 +2,11 @@
 @use "../../../abstracts/functions/create-values" as fun;
 @use "../../../abstracts/variables" as vars;
 
-$yma-flex-basis-map: map.merge(
+$ycss-flex-basis-map: map.merge(
   (
     "auto": auto,
     "full": 100%,
     "half": 50%,
   ),
-  fun.create-values(vars.$yma-flex-basis)
+  fun.create-values(vars.$ycss-flex-basis)
 );

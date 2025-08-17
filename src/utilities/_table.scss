@@ -3,7 +3,7 @@
 @use "../abstracts/variables" as vars;
 @use "../abstracts/mixins/" as mix;
 
-$yma-table-utils: (
+$ycss-table-utils: (
   "caption-side": (
     "prefix": "cs",
     "properties": (
@@ -27,7 +27,7 @@ $yma-table-utils: (
   ),
 );
 
-@each $properties, $map in $yma-table-utils {
+@each $properties, $map in $ycss-table-utils {
   $prefix: map.get($map, "prefix");
   $properties: map.get($map, "properties");
 

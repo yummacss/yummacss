@@ -2,7 +2,7 @@
 @use "../../../abstracts/functions/create-values" as fun;
 @use "../../../abstracts/variables" as vars;
 
-$yma-width-map: map.merge(
+$ycss-width-map: map.merge(
   (
     "auto": auto,
     "dvh": 100dvh,
@@ -12,5 +12,5 @@ $yma-width-map: map.merge(
     "max": max-content,
     "min": min-content,
   ),
-  fun.create-values(vars.$yma-width)
+  fun.create-values(vars.$ycss-width)
 );

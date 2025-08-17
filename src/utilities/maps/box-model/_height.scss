@@ -2,7 +2,7 @@
 @use "../../../abstracts/functions/create-values" as fun;
 @use "../../../abstracts/variables" as vars;
 
-$yma-height-map: map.merge(
+$ycss-height-map: map.merge(
   (
     "auto": auto,
     "dvh": 100dvh,
@@ -12,5 +12,5 @@ $yma-height-map: map.merge(
     "max": max-content,
     "min": min-content,
   ),
-  fun.create-values(vars.$yma-height)
+  fun.create-values(vars.$ycss-height)
 );
