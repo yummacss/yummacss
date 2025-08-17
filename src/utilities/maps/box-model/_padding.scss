@@ -5,6 +5,7 @@
 $ycss-padding-map: map.merge(
   (
     "auto": auto,
+    "px": 1px,
   ),
   fun.create-values(vars.$ycss-padding)
 );
