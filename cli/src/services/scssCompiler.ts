@@ -28,9 +28,7 @@ export async function compileSCSS(config: Configuration): Promise<{
   css: string;
   dependencies: string[];
 }> {
-  const scssFile = config.buildOptions.reset
-    ? "yummacss.scss"
-    : "yummacss-core.scss";
+  const scssFile = config.buildOptions.reset ? "index.scss" : "core.scss";
 
   try {
     const result = await sass.compileAsync(join(packageRoot, "src", scssFile), {
