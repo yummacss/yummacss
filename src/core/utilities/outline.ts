@@ -1,4 +1,4 @@
-import { YMA_OUTLINE_OFFSET, YMA_OUTLINE_WIDTH } from "@/constants/variables";
+import { YCSS_OUTLINE_OFFSET, YCSS_OUTLINE_WIDTH } from "@/constants/variables";
 import { createValues } from "@/helpers/create-values";
 import { UtilityMap } from "@/interfaces";
 
@@ -8,7 +8,7 @@ export const outlineUtils: UtilityMap = {
     properties: ["outline-offset"],
     slug: "outline-offset",
     values: createValues({
-      base: YMA_OUTLINE_OFFSET,
+      base: YCSS_OUTLINE_OFFSET,
       unit: "px",
       min: 0,
       max: 4,
@@ -31,7 +31,7 @@ export const outlineUtils: UtilityMap = {
     properties: ["outline-width"],
     slug: "outline-width",
     values: createValues({
-      base: YMA_OUTLINE_WIDTH,
+      base: YCSS_OUTLINE_WIDTH,
       unit: "px",
       min: 0,
       max: 4,

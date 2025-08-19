@@ -1,4 +1,4 @@
-import { YMA_GAP } from "@/constants/variables";
+import { YCSS_GAP } from "@/constants/variables";
 import { createValues } from "@/helpers/create-values";
 import { UtilityMap } from "@/interfaces";
 
@@ -8,7 +8,7 @@ export const gridUtils: UtilityMap = {
     properties: ["column-gap"],
     slug: "column-gap",
     values: createValues({
-      base: YMA_GAP,
+      base: YCSS_GAP,
       unit: "rem",
       min: 0,
       max: 100,
@@ -20,7 +20,7 @@ export const gridUtils: UtilityMap = {
     properties: ["gap"],
     slug: "gap",
     values: createValues({
-      base: YMA_GAP,
+      base: YCSS_GAP,
       unit: "rem",
       min: 0,
       max: 100,
@@ -249,7 +249,7 @@ export const gridUtils: UtilityMap = {
     properties: ["row-gap"],
     slug: "row-gap",
     values: createValues({
-      base: YMA_GAP,
+      base: YCSS_GAP,
       unit: "rem",
       min: 0,
       max: 100,

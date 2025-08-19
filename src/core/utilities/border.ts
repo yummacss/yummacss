@@ -1,4 +1,4 @@
-import { YMA_BORDER, YMA_BORDER_RADIUS, YMA_BORDER_SPACING } from "@/constants/variables";
+import { YCSS_BORDER, YCSS_BORDER_RADIUS, YCSS_BORDER_SPACING } from "@/constants/variables";
 import { createValues } from "@/helpers/create-values";
 import { UtilityMap } from "@/interfaces";
 
@@ -19,13 +19,14 @@ export const borderUtils: UtilityMap = {
     slug: "border-radius",
     values: {
       ...createValues({
-        base: YMA_BORDER_RADIUS,
+        base: YCSS_BORDER_RADIUS,
         unit: "rem",
         min: 0,
         max: 8,
       }),
       full: "100%",
       half: "50%",
+      "9": "9999px",
     },
   },
 
@@ -35,13 +36,14 @@ export const borderUtils: UtilityMap = {
     slug: "border-radius/#bottom-radius",
     values: {
       ...createValues({
-        base: YMA_BORDER_RADIUS,
+        base: YCSS_BORDER_RADIUS,
         unit: "rem",
         min: 0,
         max: 8,
       }),
       full: "100%",
       half: "50%",
+      "9": "9999px",
     },
   },
 
@@ -51,13 +53,14 @@ export const borderUtils: UtilityMap = {
     slug: "border-radius/#left-radius",
     values: {
       ...createValues({
-        base: YMA_BORDER_RADIUS,
+        base: YCSS_BORDER_RADIUS,
         unit: "rem",
         min: 0,
         max: 8,
       }),
       full: "100%",
       half: "50%",
+      "9": "9999px",
     },
   },
 
@@ -67,13 +70,14 @@ export const borderUtils: UtilityMap = {
     slug: "border-radius/#right-radius",
     values: {
       ...createValues({
-        base: YMA_BORDER_RADIUS,
+        base: YCSS_BORDER_RADIUS,
         unit: "rem",
         min: 0,
         max: 8,
       }),
       full: "100%",
       half: "50%",
+      "9": "9999px",
     },
   },
 
@@ -83,13 +87,14 @@ export const borderUtils: UtilityMap = {
     slug: "border-radius/#bottom-left-radius",
     values: {
       ...createValues({
-        base: YMA_BORDER_RADIUS,
+        base: YCSS_BORDER_RADIUS,
         unit: "rem",
         min: 0,
         max: 8,
       }),
       full: "100%",
       half: "50%",
+      "9": "9999px",
     },
   },
 
@@ -99,13 +104,14 @@ export const borderUtils: UtilityMap = {
     slug: "border-radius/#bottom-right-radius",
     values: {
       ...createValues({
-        base: YMA_BORDER_RADIUS,
+        base: YCSS_BORDER_RADIUS,
         unit: "rem",
         min: 0,
         max: 8,
       }),
       full: "100%",
       half: "50%",
+      "9": "9999px",
     },
   },
 
@@ -115,13 +121,14 @@ export const borderUtils: UtilityMap = {
     slug: "border-radius/#top-radius",
     values: {
       ...createValues({
-        base: YMA_BORDER_RADIUS,
+        base: YCSS_BORDER_RADIUS,
         unit: "rem",
         min: 0,
         max: 8,
       }),
       full: "100%",
       half: "50%",
+      "9": "9999px",
     },
   },
 
@@ -131,13 +138,14 @@ export const borderUtils: UtilityMap = {
     slug: "border-radius/#top-left-radius",
     values: {
       ...createValues({
-        base: YMA_BORDER_RADIUS,
+        base: YCSS_BORDER_RADIUS,
         unit: "rem",
         min: 0,
         max: 8,
       }),
       full: "100%",
       half: "50%",
+      "9": "9999px",
     },
   },
 
@@ -147,13 +155,14 @@ export const borderUtils: UtilityMap = {
     slug: "border-radius/#top-right-radius",
     values: {
       ...createValues({
-        base: YMA_BORDER_RADIUS,
+        base: YCSS_BORDER_RADIUS,
         unit: "rem",
         min: 0,
         max: 8,
       }),
       full: "100%",
       half: "50%",
+      "9": "9999px",
     },
   },
 
@@ -162,7 +171,7 @@ export const borderUtils: UtilityMap = {
     properties: ["border-spacing"],
     slug: "border-spacing",
     values: createValues({
-      base: YMA_BORDER_SPACING,
+      base: YCSS_BORDER_SPACING,
       unit: "rem",
       min: 0,
       max: 8,
@@ -185,7 +194,7 @@ export const borderUtils: UtilityMap = {
     properties: ["border-width"],
     slug: "border-width",
     values: createValues({
-      base: YMA_BORDER,
+      base: YCSS_BORDER,
       unit: "px",
       min: 0,
       max: 8,
@@ -197,7 +206,7 @@ export const borderUtils: UtilityMap = {
     properties: ["border-bottom-width"],
     slug: "border-bottom-radius",
     values: createValues({
-      base: YMA_BORDER,
+      base: YCSS_BORDER,
       unit: "px",
       min: 0,
       max: 8,
@@ -209,7 +218,7 @@ export const borderUtils: UtilityMap = {
     properties: ["border-left-width"],
     slug: "border-width/#left-width",
     values: createValues({
-      base: YMA_BORDER,
+      base: YCSS_BORDER,
       unit: "px",
       min: 0,
       max: 8,
@@ -221,7 +230,7 @@ export const borderUtils: UtilityMap = {
     properties: ["border-right-width"],
     slug: "border-width/#right-width",
     values: createValues({
-      base: YMA_BORDER,
+      base: YCSS_BORDER,
       unit: "px",
       min: 0,
       max: 8,
@@ -233,7 +242,7 @@ export const borderUtils: UtilityMap = {
     properties: ["border-top-width"],
     slug: "border-width/#top-width",
     values: createValues({
-      base: YMA_BORDER,
+      base: YCSS_BORDER,
       unit: "px",
       min: 0,
       max: 8,
