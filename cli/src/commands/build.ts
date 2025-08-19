@@ -1,7 +1,7 @@
 import { writeFileSync } from "fs";
 import type { InternalConfig } from "../config/defaultConfig.js";
-import { messages } from "../lib/cli-lang.js";
-import { cli } from "../lib/cli-ui.js";
+import { messages } from "../utils/lang.js";
+import { ui } from "../utils/ui.js";
 import { loadConfig } from "../services/configLoader.js";
 import { minifyCSS } from "../services/minifyService.js";
 import { purgeCSS } from "../services/purgeService.js";
@@ -19,7 +19,7 @@ export async function build(
   existingConfig?: InternalConfig,
   forceRebuild = false
 ) {
-  const buildSpinner = cli.startSpinner(messages.build.start);
+  const buildSpinner = ui.startSpinner(messages.build.start);
   const startTime = Date.now();
 
   try {
@@ -55,7 +55,7 @@ export async function build(
     );
   } catch (error) {
     buildSpinner.fail(messages.build.fail);
-    cli.error(
+    ui.error(
       error instanceof Error ? error.message : messages.common.unknownError
     );
     process.exit(1);

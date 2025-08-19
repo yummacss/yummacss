@@ -1,7 +1,7 @@
 import { existsSync, readFileSync, writeFileSync } from "fs";
 import { ConfigSchema, defaultConfig } from "../config/defaultConfig.js";
-import { messages } from "../lib/cli-lang.js";
-import { cli } from "../lib/cli-ui.js";
+import { messages } from "../utils/lang.js";
+import { ui } from "../utils/ui.js";
 
 function detectModuleSystem(): "esm" | "cjs" {
   try {
@@ -35,7 +35,7 @@ function generateConfigFromSchema(): { filename: string; content: string } {
 }
 
 export function init() {
-  const init = cli.startSpinner(messages.init.start);
+  const init = ui.startSpinner(messages.init.start);
 
   try {
     const { filename, content } = generateConfigFromSchema();
@@ -44,7 +44,7 @@ export function init() {
     init.succeed(messages.init.success);
   } catch (error) {
     init.fail(messages.init.fail);
-    cli.error(
+    ui.error(
       error instanceof Error ? error.message : messages.common.unknownError
     );
     process.exit(1);

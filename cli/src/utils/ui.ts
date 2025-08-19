@@ -4,7 +4,7 @@ const spinner = ora({
   spinner: "sand",
 });
 
-const cli = {
+const ui = {
   success: (msg: string) => console.log(`✔ ${msg}`),
   info: (msg: string) => console.log(`ℹ ${msg}`),
   error: (msg: string) => console.log(`✗ ${msg}`),
@@ -14,4 +14,4 @@ const cli = {
   },
 };
 
-export { cli, spinner };
+export { ui, spinner };
