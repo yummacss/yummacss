@@ -1,4 +1,4 @@
-import { YMA_DECORATION_THICKNESS } from "@/constants/variables";
+import { YCSS_DECORATION_THICKNESS } from "@/constants/variables";
 import { createValues } from "@/helpers/create-values";
 import { UtilityMap } from "@/interfaces";
 
@@ -107,7 +107,7 @@ export const textUtils: UtilityMap = {
     slug: "text-decoration-thickness",
     values: {
       ...createValues({
-        base: YMA_DECORATION_THICKNESS,
+        base: YCSS_DECORATION_THICKNESS,
         unit: "rem",
         min: 0,
         max: 4,

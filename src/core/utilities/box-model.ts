@@ -1,4 +1,4 @@
-import { YMA_DIMENSION, YMA_HEIGHT, YMA_MARGIN, YMA_PADDING, YMA_WIDTH } from "@/constants/variables";
+import { YCSS_DIMENSION, YCSS_HEIGHT, YCSS_MARGIN, YCSS_PADDING, YCSS_WIDTH } from "@/constants/variables";
 import { createValues } from "@/helpers/create-values";
 import { UtilityMap } from "@/interfaces";
 
@@ -19,18 +19,27 @@ export const boxModelUtils: UtilityMap = {
     slug: "dimension",
     values: {
       ...createValues({
-        base: YMA_DIMENSION,
+        base: YCSS_DIMENSION,
         unit: "rem",
         min: 0,
         max: 100,
       }),
       auto: "auto",
       dvh: "100dvh",
+      dvw: "100dvw",
+      vh: "100vh",
+      vw: "100vw",
       fc: "fit-content",
       full: "100%",
       half: "50%",
       max: "max-content",
       min: "min-content",
+      px: "1px",
+      sm: "40rem",
+      md: "48rem",
+      lg: "64rem",
+      xl: "80rem",
+      xxl: "96rem",
     },
   },
 
@@ -40,18 +49,27 @@ export const boxModelUtils: UtilityMap = {
     slug: "dimension/#max-dimension",
     values: {
       ...createValues({
-        base: YMA_DIMENSION,
+        base: YCSS_DIMENSION,
         unit: "rem",
         min: 0,
         max: 100,
       }),
       auto: "auto",
       dvh: "100dvh",
+      dvw: "100dvw",
+      vh: "100vh",
+      vw: "100vw",
       fc: "fit-content",
       full: "100%",
       half: "50%",
       max: "max-content",
       min: "min-content",
+      px: "1px",
+      sm: "40rem",
+      md: "48rem",
+      lg: "64rem",
+      xl: "80rem",
+      xxl: "96rem",
     },
   },
 
@@ -61,18 +79,27 @@ export const boxModelUtils: UtilityMap = {
     slug: "dimension/#min-dimension",
     values: {
       ...createValues({
-        base: YMA_DIMENSION,
+        base: YCSS_DIMENSION,
         unit: "rem",
         min: 0,
         max: 100,
       }),
       auto: "auto",
       dvh: "100dvh",
+      dvw: "100dvw",
+      vh: "100vh",
+      vw: "100vw",
       fc: "fit-content",
       full: "100%",
       half: "50%",
       max: "max-content",
       min: "min-content",
+      px: "1px",
+      sm: "40rem",
+      md: "48rem",
+      lg: "64rem",
+      xl: "80rem",
+      xxl: "96rem",
     },
   },
 
@@ -82,18 +109,27 @@ export const boxModelUtils: UtilityMap = {
     slug: "height",
     values: {
       ...createValues({
-        base: YMA_HEIGHT,
+        base: YCSS_HEIGHT,
         unit: "rem",
         min: 0,
         max: 100,
       }),
       auto: "auto",
       dvh: "100dvh",
+      dvw: "100dvw",
+      vh: "100vh",
+      vw: "100vw",
       fc: "fit-content",
       full: "100%",
       half: "50%",
       max: "max-content",
       min: "min-content",
+      px: "1px",
+      sm: "40rem",
+      md: "48rem",
+      lg: "64rem",
+      xl: "80rem",
+      xxl: "96rem",
     },
   },
 
@@ -103,18 +139,27 @@ export const boxModelUtils: UtilityMap = {
     slug: "height/#max-height",
     values: {
       ...createValues({
-        base: YMA_HEIGHT,
+        base: YCSS_HEIGHT,
         unit: "rem",
         min: 0,
         max: 100,
       }),
       auto: "auto",
       dvh: "100dvh",
+      dvw: "100dvw",
+      vh: "100vh",
+      vw: "100vw",
       fc: "fit-content",
       full: "100%",
       half: "50%",
       max: "max-content",
       min: "min-content",
+      px: "1px",
+      sm: "40rem",
+      md: "48rem",
+      lg: "64rem",
+      xl: "80rem",
+      xxl: "96rem",
     },
   },
 
@@ -124,18 +169,27 @@ export const boxModelUtils: UtilityMap = {
     slug: "height/#min-height",
     values: {
       ...createValues({
-        base: YMA_HEIGHT,
+        base: YCSS_HEIGHT,
         unit: "rem",
         min: 0,
         max: 100,
       }),
       auto: "auto",
       dvh: "100dvh",
+      dvw: "100dvw",
+      vh: "100vh",
+      vw: "100vw",
       fc: "fit-content",
       full: "100%",
       half: "50%",
       max: "max-content",
       min: "min-content",
+      px: "1px",
+      sm: "40rem",
+      md: "48rem",
+      lg: "64rem",
+      xl: "80rem",
+      xxl: "96rem",
     },
   },
 
@@ -145,12 +199,13 @@ export const boxModelUtils: UtilityMap = {
     slug: "margin",
     values: {
       ...createValues({
-        base: YMA_MARGIN,
+        base: YCSS_MARGIN,
         unit: "rem",
         min: 0,
         max: 100,
       }),
       auto: "auto",
+      px: "1px",
     },
   },
 
@@ -160,12 +215,13 @@ export const boxModelUtils: UtilityMap = {
     slug: "margin/#block-end",
     values: {
       ...createValues({
-        base: YMA_MARGIN,
+        base: YCSS_MARGIN,
         unit: "rem",
         min: 0,
         max: 100,
       }),
       auto: "auto",
+      px: "1px",
     },
   },
 
@@ -175,12 +231,13 @@ export const boxModelUtils: UtilityMap = {
     slug: "margin/#block-start",
     values: {
       ...createValues({
-        base: YMA_MARGIN,
+        base: YCSS_MARGIN,
         unit: "rem",
         min: 0,
         max: 100,
       }),
       auto: "auto",
+      px: "1px",
     },
   },
 
@@ -190,12 +247,13 @@ export const boxModelUtils: UtilityMap = {
     slug: "margin/#bottom",
     values: {
       ...createValues({
-        base: YMA_MARGIN,
+        base: YCSS_MARGIN,
         unit: "rem",
         min: 0,
         max: 100,
       }),
       auto: "auto",
+      px: "1px",
     },
   },
 
@@ -205,12 +263,13 @@ export const boxModelUtils: UtilityMap = {
     slug: "margin/#inline-end",
     values: {
       ...createValues({
-        base: YMA_MARGIN,
+        base: YCSS_MARGIN,
         unit: "rem",
         min: 0,
         max: 100,
       }),
       auto: "auto",
+      px: "1px",
     },
   },
 
@@ -220,12 +279,13 @@ export const boxModelUtils: UtilityMap = {
     slug: "margin/#inline-start",
     values: {
       ...createValues({
-        base: YMA_MARGIN,
+        base: YCSS_MARGIN,
         unit: "rem",
         min: 0,
         max: 100,
       }),
       auto: "auto",
+      px: "1px",
     },
   },
 
@@ -235,12 +295,13 @@ export const boxModelUtils: UtilityMap = {
     slug: "margin/#left",
     values: {
       ...createValues({
-        base: YMA_MARGIN,
+        base: YCSS_MARGIN,
         unit: "rem",
         min: 0,
         max: 100,
       }),
       auto: "auto",
+      px: "1px",
     },
   },
 
@@ -250,12 +311,13 @@ export const boxModelUtils: UtilityMap = {
     slug: "margin/#right",
     values: {
       ...createValues({
-        base: YMA_MARGIN,
+        base: YCSS_MARGIN,
         unit: "rem",
         min: 0,
         max: 100,
       }),
       auto: "auto",
+      px: "1px",
     },
   },
 
@@ -265,12 +327,13 @@ export const boxModelUtils: UtilityMap = {
     slug: "margin/#top",
     values: {
       ...createValues({
-        base: YMA_MARGIN,
+        base: YCSS_MARGIN,
         unit: "rem",
         min: 0,
         max: 100,
       }),
       auto: "auto",
+      px: "1px",
     },
   },
 
@@ -280,12 +343,13 @@ export const boxModelUtils: UtilityMap = {
     slug: "margin/#x-axis",
     values: {
       ...createValues({
-        base: YMA_MARGIN,
+        base: YCSS_MARGIN,
         unit: "rem",
         min: 0,
         max: 100,
       }),
       auto: "auto",
+      px: "1px",
     },
   },
 
@@ -295,12 +359,13 @@ export const boxModelUtils: UtilityMap = {
     slug: "margin/#y-axis",
     values: {
       ...createValues({
-        base: YMA_MARGIN,
+        base: YCSS_MARGIN,
         unit: "rem",
         min: 0,
         max: 100,
       }),
       auto: "auto",
+      px: "1px",
     },
   },
 
@@ -310,12 +375,13 @@ export const boxModelUtils: UtilityMap = {
     slug: "padding",
     values: {
       ...createValues({
-        base: YMA_PADDING,
+        base: YCSS_PADDING,
         unit: "rem",
         min: 0,
         max: 100,
       }),
       auto: "auto",
+      px: "1px",
     },
   },
 
@@ -325,12 +391,13 @@ export const boxModelUtils: UtilityMap = {
     slug: "padding/#block-end",
     values: {
       ...createValues({
-        base: YMA_PADDING,
+        base: YCSS_PADDING,
         unit: "rem",
         min: 0,
         max: 100,
       }),
       auto: "auto",
+      px: "1px",
     },
   },
 
@@ -340,12 +407,13 @@ export const boxModelUtils: UtilityMap = {
     slug: "padding/#block-start",
     values: {
       ...createValues({
-        base: YMA_PADDING,
+        base: YCSS_PADDING,
         unit: "rem",
         min: 0,
         max: 100,
       }),
       auto: "auto",
+      px: "1px",
     },
   },
 
@@ -355,12 +423,13 @@ export const boxModelUtils: UtilityMap = {
     slug: "padding/#bottom",
     values: {
       ...createValues({
-        base: YMA_PADDING,
+        base: YCSS_PADDING,
         unit: "rem",
         min: 0,
         max: 100,
       }),
       auto: "auto",
+      px: "1px",
     },
   },
 
@@ -370,12 +439,13 @@ export const boxModelUtils: UtilityMap = {
     slug: "padding/#inline-end",
     values: {
       ...createValues({
-        base: YMA_PADDING,
+        base: YCSS_PADDING,
         unit: "rem",
         min: 0,
         max: 100,
       }),
       auto: "auto",
+      px: "1px",
     },
   },
 
@@ -385,12 +455,13 @@ export const boxModelUtils: UtilityMap = {
     slug: "padding/#inline-start",
     values: {
       ...createValues({
-        base: YMA_PADDING,
+        base: YCSS_PADDING,
         unit: "rem",
         min: 0,
         max: 100,
       }),
       auto: "auto",
+      px: "1px",
     },
   },
 
@@ -400,12 +471,13 @@ export const boxModelUtils: UtilityMap = {
     slug: "padding/#left",
     values: {
       ...createValues({
-        base: YMA_PADDING,
+        base: YCSS_PADDING,
         unit: "rem",
         min: 0,
         max: 100,
       }),
       auto: "auto",
+      px: "1px",
     },
   },
 
@@ -415,12 +487,13 @@ export const boxModelUtils: UtilityMap = {
     slug: "padding/#right",
     values: {
       ...createValues({
-        base: YMA_PADDING,
+        base: YCSS_PADDING,
         unit: "rem",
         min: 0,
         max: 100,
       }),
       auto: "auto",
+      px: "1px",
     },
   },
 
@@ -430,12 +503,13 @@ export const boxModelUtils: UtilityMap = {
     slug: "padding/#top",
     values: {
       ...createValues({
-        base: YMA_PADDING,
+        base: YCSS_PADDING,
         unit: "rem",
         min: 0,
         max: 100,
       }),
       auto: "auto",
+      px: "1px",
     },
   },
 
@@ -445,12 +519,13 @@ export const boxModelUtils: UtilityMap = {
     slug: "padding/#x-axis",
     values: {
       ...createValues({
-        base: YMA_PADDING,
+        base: YCSS_PADDING,
         unit: "rem",
         min: 0,
         max: 100,
       }),
       auto: "auto",
+      px: "1px",
     },
   },
 
@@ -460,12 +535,13 @@ export const boxModelUtils: UtilityMap = {
     slug: "padding/#y-axis",
     values: {
       ...createValues({
-        base: YMA_PADDING,
+        base: YCSS_PADDING,
         unit: "rem",
         min: 0,
         max: 100,
       }),
       auto: "auto",
+      px: "1px",
     },
   },
 
@@ -475,18 +551,27 @@ export const boxModelUtils: UtilityMap = {
     slug: "width",
     values: {
       ...createValues({
-        base: YMA_WIDTH,
+        base: YCSS_WIDTH,
         unit: "rem",
         min: 0,
         max: 100,
       }),
       auto: "auto",
       dvh: "100dvh",
+      dvw: "100dvw",
+      vh: "100vh",
+      vw: "100vw",
       fc: "fit-content",
       full: "100%",
       half: "50%",
       max: "max-content",
       min: "min-content",
+      px: "1px",
+      sm: "40rem",
+      md: "48rem",
+      lg: "64rem",
+      xl: "80rem",
+      xxl: "96rem",
     },
   },
 
@@ -496,18 +581,27 @@ export const boxModelUtils: UtilityMap = {
     slug: "width/#max-width",
     values: {
       ...createValues({
-        base: YMA_WIDTH,
+        base: YCSS_WIDTH,
         unit: "rem",
         min: 0,
         max: 100,
       }),
       auto: "auto",
       dvh: "100dvh",
+      dvw: "100dvw",
+      vh: "100vh",
+      vw: "100vw",
       fc: "fit-content",
       full: "100%",
       half: "50%",
       max: "max-content",
       min: "min-content",
+      px: "1px",
+      sm: "40rem",
+      md: "48rem",
+      lg: "64rem",
+      xl: "80rem",
+      xxl: "96rem",
     },
   },
 
@@ -517,18 +611,27 @@ export const boxModelUtils: UtilityMap = {
     slug: "width/#min-width",
     values: {
       ...createValues({
-        base: YMA_WIDTH,
+        base: YCSS_WIDTH,
         unit: "rem",
         min: 0,
         max: 100,
       }),
       auto: "auto",
       dvh: "100dvh",
+      dvw: "100dvw",
+      vh: "100vh",
+      vw: "100vw",
       fc: "fit-content",
       full: "100%",
       half: "50%",
       max: "max-content",
       min: "min-content",
+      px: "1px",
+      sm: "40rem",
+      md: "48rem",
+      lg: "64rem",
+      xl: "80rem",
+      xxl: "96rem",
     },
   },
 };
