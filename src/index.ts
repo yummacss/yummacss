@@ -1,19 +1,19 @@
-import { allUtilities } from "./core/utilities";
-import { backgroundUtils } from "./core/utilities/background";
-import { borderUtils } from "./core/utilities/border";
-import { boxModelUtils } from "./core/utilities/box-model";
-import { colorUtils } from "./core/utilities/color";
-import { effectUtils } from "./core/utilities/effect";
-import { flexboxUtils } from "./core/utilities/flexbox";
-import { fontUtils } from "./core/utilities/font";
-import { gridUtils } from "./core/utilities/grid";
-import { interactivityUtils } from "./core/utilities/interactivity";
-import { outlineUtils } from "./core/utilities/outline";
-import { positioningUtils } from "./core/utilities/positioning";
-import { svgUtils } from "./core/utilities/svg";
-import { tableUtils } from "./core/utilities/table";
-import { textUtils } from "./core/utilities/text";
-import { transformUtils } from "./core/utilities/transform";
+import { allUtilities } from "./core";
+import { backgroundUtils } from "./core/background";
+import { borderUtils } from "./core/border";
+import { boxModelUtils } from "./core/box-model";
+import { colorUtils } from "./core/color";
+import { effectUtils } from "./core/effect";
+import { flexboxUtils } from "./core/flexbox";
+import { fontUtils } from "./core/font";
+import { gridUtils } from "./core/grid";
+import { interactivityUtils } from "./core/interactivity";
+import { outlineUtils } from "./core/outline";
+import { positioningUtils } from "./core/positioning";
+import { svgUtils } from "./core/svg";
+import { tableUtils } from "./core/table";
+import { textUtils } from "./core/text";
+import { transformUtils } from "./core/transform";
 import { UtilityMap } from "./interfaces";
 
 // all utilities
