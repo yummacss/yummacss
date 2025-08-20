@@ -1,6 +1,6 @@
 import chok from "chokidar";
 import { globby } from "globby";
-import { loadConfig } from "../config/loader.js";
+import { loadConfig } from "../services/loader.js";
 import type { InternalConfig } from "../config/template.js";
 import { msg } from "../utils/message.js";
 import { cli } from "../utils/status.js";

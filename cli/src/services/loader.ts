@@ -1,7 +1,7 @@
 import { join } from "path";
 import { pathToFileURL } from "url";
-import { ConfigSchema } from "./schema.js";
-import { defaultConfig, InternalConfig } from "./template.js";
+import { ConfigSchema } from "../config/schema.js";
+import { defaultConfig, InternalConfig } from "../config/template.js";
 
 export async function loadConfig(): Promise<InternalConfig> {
   const path = join(process.cwd(), "yumma.config.js");
