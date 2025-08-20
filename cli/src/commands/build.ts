@@ -1,5 +1,5 @@
 import { writeFileSync } from "fs";
-import { loadConfig } from "../config/loader.js";
+import { loadConfig } from "../services/loader.js";
 import type { InternalConfig } from "../config/template.js";
 import { compile } from "../services/compiler.js";
 import { minify } from "../services/minify.js";
