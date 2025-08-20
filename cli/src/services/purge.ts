@@ -1,8 +1,8 @@
 import { globby } from "globby";
 import { PurgeCSS } from "purgecss";
-import { InternalConfig } from "../config/defaultConfig.js";
+import { InternalConfig } from "../config/template.js";
 
-export async function purgeCSS(
+export async function purge(
   css: string,
   config: InternalConfig
 ): Promise<string> {

@@ -1,11 +1,11 @@
 import { writeFileSync } from "fs";
-import type { InternalConfig } from "../config/defaultConfig.js";
-import { messages } from "../utils/lang.js";
-import { ui } from "../utils/ui.js";
-import { loadConfig } from "../services/configLoader.js";
-import { minifyCSS } from "../services/minifyService.js";
-import { purgeCSS } from "../services/purgeService.js";
-import { compileSCSS } from "../services/scssCompiler.js";
+import { loadConfig } from "../config/loader.js";
+import type { InternalConfig } from "../config/template.js";
+import { compile } from "../services/compiler.js";
+import { minify } from "../services/minify.js";
+import { purge } from "../services/purge.js";
+import { msg } from "../utils/message.js";
+import { cli } from "../utils/status.js";
 
 type BuildCache = {
   css?: string;
@@ -19,7 +19,7 @@ export async function build(
   existingConfig?: InternalConfig,
   forceRebuild = false
 ) {
-  const buildSpinner = ui.startSpinner(messages.build.start);
+  const buildSpinner = cli.startSpinner(msg.build.start);
   const startTime = Date.now();
 
   try {
@@ -29,35 +29,33 @@ export async function build(
 
     let css: string;
     if (forceRebuild || configChanged || !cache.css) {
-      buildSpinner.text = messages.build.compiling;
-      const result = await compileSCSS(config);
-      css = result.css;
+      buildSpinner.text = msg.build.compiling;
+      const res = await compile(config);
+      css = res.css;
       cache = {
-        css: result.css,
-        dependencies: result.dependencies,
+        css: res.css,
+        dependencies: res.dependencies,
         configHash,
       };
     } else {
       css = cache.css;
-      buildSpinner.text = messages.build.usingCache;
+      buildSpinner.text = msg.build.usingCache;
     }
 
-    buildSpinner.text = messages.build.purging;
-    const purgedCSS = await purgeCSS(css, config);
+    buildSpinner.text = msg.build.purging;
+    const purgedCSS = await purge(css, config);
 
-    buildSpinner.text = messages.build.minifying;
-    const finalCSS = minifyCSS(purgedCSS, config);
+    buildSpinner.text = msg.build.minifying;
+    const finalCSS = minify(purgedCSS, config);
 
     writeFileSync(config.output, finalCSS);
 
     buildSpinner.succeed(
-      messages.build.success(Date.now() - startTime, config.output)
+      msg.build.success(Date.now() - startTime, config.output)
     );
   } catch (error) {
-    buildSpinner.fail(messages.build.fail);
-    ui.error(
-      error instanceof Error ? error.message : messages.common.unknownError
-    );
+    buildSpinner.fail(msg.build.fail);
+    cli.error(error instanceof Error ? error.message : msg.common.unknownError);
     process.exit(1);
   }
 }

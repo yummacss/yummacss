@@ -1,23 +1,20 @@
 import { join } from "path";
 import { pathToFileURL } from "url";
-import {
-  ConfigSchema,
-  defaultConfig,
-  InternalConfig,
-} from "../config/defaultConfig.js";
+import { ConfigSchema } from "./schema.js";
+import { defaultConfig, InternalConfig } from "./template.js";
 
 export async function loadConfig(): Promise<InternalConfig> {
-  const configPath = join(process.cwd(), "yumma.config.js");
-  const configUrl = pathToFileURL(configPath).href;
+  const path = join(process.cwd(), "yumma.config.js");
+  const url = pathToFileURL(path).href;
 
   try {
-    const { default: userConfig } = (await import(configUrl)) as {
+    const { default: userConfig } = (await import(url)) as {
       default: unknown;
     };
 
     const validatedConfig = ConfigSchema.parse(userConfig);
 
-    const internalConfig: InternalConfig = {
+    const ic: InternalConfig = {
       source: validatedConfig.source,
       output: validatedConfig.output,
       buildOptions: {
@@ -30,7 +27,7 @@ export async function loadConfig(): Promise<InternalConfig> {
       },
     };
 
-    return internalConfig;
+    return ic;
   } catch (error) {
     if (error instanceof Error) {
       throw new Error(`Config validation failed: ${error.message}`);

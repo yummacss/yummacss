@@ -1,9 +1,9 @@
 import chok from "chokidar";
 import { globby } from "globby";
-import type { InternalConfig } from "../config/defaultConfig.js";
-import { messages } from "../utils/lang.js";
-import { ui } from "../utils/ui.js";
-import { loadConfig } from "../services/configLoader.js";
+import { loadConfig } from "../config/loader.js";
+import type { InternalConfig } from "../config/template.js";
+import { msg } from "../utils/message.js";
+import { cli } from "../utils/status.js";
 import { build } from "./build.js";
 
 let currentConfig: InternalConfig;
@@ -11,7 +11,7 @@ let buildTimeout: NodeJS.Timeout | null = null;
 let changedFiles = new Set<string>();
 
 export async function watch() {
-  const watchSpinner = ui.startSpinner(messages.watch.start);
+  const watchSpinner = cli.startSpinner(msg.watch.start);
 
   try {
     currentConfig = await loadConfig();
@@ -51,10 +51,8 @@ export async function watch() {
       }, 500); // 500ms
     }
   } catch (error) {
-    watchSpinner.fail(messages.watch.fail);
-    ui.error(
-      error instanceof Error ? error.message : messages.common.unknownError
-    );
+    watchSpinner.fail(msg.watch.fail);
+    cli.error(error instanceof Error ? error.message : msg.common.unknownError);
     process.exit(1);
   }
 }

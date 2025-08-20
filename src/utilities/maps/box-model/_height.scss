@@ -20,7 +20,7 @@ $ycss-height-map: map.merge(
     "md": map.get(bp.$ycss-breakpoints, "md"),
     "lg": map.get(bp.$ycss-breakpoints, "lg"),
     "xl": map.get(bp.$ycss-breakpoints, "xl"),
-    "xxl": map.get(bp.$ycss-breakpoints, "xxl"),  
+    "xxl": map.get(bp.$ycss-breakpoints, "xxl"),
   ),
   fun.create-values(vars.$ycss-height)
 );
