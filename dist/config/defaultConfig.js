@@ -1,1 +1,0 @@
-import{z as o}from"zod";var t=o.object({source:o.array(o.string()),output:o.string(),buildOptions:o.object({reset:o.boolean().optional(),minify:o.boolean().optional()}).optional()}),i={source:[""],output:"",buildOptions:{reset:!1,minify:!1}};export{t as ConfigSchema,i as defaultConfig};

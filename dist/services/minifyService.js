@@ -1,1 +1,0 @@
-import{transform as i}from"lightningcss";function e(o,n){try{return i({filename:"style.css",code:Buffer.from(o),minify:n.buildOptions.minify,sourceMap:!1}).code.toString()}catch(r){throw console.error("Minification error:",r),r}}export{e as minifyCSS};

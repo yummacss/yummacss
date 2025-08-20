@@ -2,15 +2,15 @@ import { existsSync } from "fs";
 import { dirname, join } from "path";
 import * as sass from "sass-embedded";
 import { fileURLToPath } from "url";
-import type { InternalConfig } from "../config/defaultConfig.js";
+import type { InternalConfig } from "../config/template.js";
 
-function findPackageRoot(): string {
+function findRoot(): string {
   const __filename = fileURLToPath(import.meta.url);
   let currentDir = dirname(__filename);
 
   while (currentDir !== dirname(currentDir)) {
-    const packageJsonPath = join(currentDir, "package.json");
-    if (existsSync(packageJsonPath)) {
+    const packagePath = join(currentDir, "package.json");
+    if (existsSync(packagePath)) {
       return currentDir;
     }
     currentDir = dirname(currentDir);
@@ -19,22 +19,22 @@ function findPackageRoot(): string {
   return currentDir;
 }
 
-const packageRoot = findPackageRoot();
+const pkg = findRoot();
 
-export async function compileSCSS(config: InternalConfig): Promise<{
+export async function compile(config: InternalConfig): Promise<{
   css: string;
   dependencies: string[];
 }> {
-  const scssFile = config.buildOptions.reset ? "index.scss" : "core.scss";
+  const entryFile = config.buildOptions.reset ? "index.scss" : "core.scss";
 
   try {
-    const result = await sass.compileAsync(join(packageRoot, "src", scssFile), {
+    const result = await sass.compileAsync(join(pkg, "src", entryFile), {
       style: "expanded",
-      loadPaths: [join(packageRoot, "src")],
+      loadPaths: [join(pkg, "src")],
       importers: [
         {
           findFileUrl(url) {
-            return new URL(url, `file://${join(packageRoot, "src/")}`);
+            return new URL(url, `file://${join(pkg, "src/")}`);
           },
         },
       ],

@@ -1,0 +1,1 @@
+import r from"ora";var e=r({spinner:"sand"}),i={success:n=>console.log(`[success] ${n}`),info:n=>console.log(`[info] ${n}`),error:n=>console.log(`[error] ${n}`),startSpinner:n=>r({spinner:"sand",color:"white"}).start(n)};export{i as cli,e as spinner};

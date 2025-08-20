@@ -1,4 +1,4 @@
-export const messages = {
+export const msg = {
   build: {
     start: "Building...",
     compiling: "Compiling...",
@@ -19,6 +19,6 @@ export const messages = {
     fail: "Watch failed.",
   },
   common: {
-    unknownError: "Unknown error.",
+    unknownError: "Something went wrong.",
   },
 };

@@ -1,9 +1,10 @@
 import { existsSync, readFileSync, writeFileSync } from "fs";
-import { ConfigSchema, defaultConfig } from "../config/defaultConfig.js";
-import { messages } from "../utils/lang.js";
-import { ui } from "../utils/ui.js";
+import { ConfigSchema } from "../config/schema.js";
+import { defaultConfig } from "../config/template.js";
+import { msg } from "../utils/message.js";
+import { cli } from "../utils/status.js";
 
-function detectModuleSystem(): "esm" | "cjs" {
+function detectModule(): "esm" | "cjs" {
   try {
     if (existsSync("package.json")) {
       const packageJson = JSON.parse(readFileSync("package.json", "utf-8"));
@@ -16,10 +17,10 @@ function detectModuleSystem(): "esm" | "cjs" {
   return "cjs";
 }
 
-function generateConfigFromSchema(): { filename: string; content: string } {
+function generateConfig(): { filename: string; content: string } {
   const validatedConfig = ConfigSchema.parse(defaultConfig);
 
-  const moduleSystem = detectModuleSystem();
+  const moduleSystem = detectModule();
 
   if (moduleSystem === "esm") {
     return {
@@ -35,18 +36,16 @@ function generateConfigFromSchema(): { filename: string; content: string } {
 }
 
 export function init() {
-  const init = ui.startSpinner(messages.init.start);
+  const init = cli.startSpinner(msg.init.start);
 
   try {
-    const { filename, content } = generateConfigFromSchema();
+    const { filename, content } = generateConfig();
     writeFileSync(filename, content);
 
-    init.succeed(messages.init.success);
+    init.succeed(msg.init.success);
   } catch (error) {
-    init.fail(messages.init.fail);
-    ui.error(
-      error instanceof Error ? error.message : messages.common.unknownError
-    );
+    init.fail(msg.init.fail);
+    cli.error(error instanceof Error ? error.message : msg.common.unknownError);
     process.exit(1);
   }
 }
