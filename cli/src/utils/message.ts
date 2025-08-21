@@ -1,24 +1,24 @@
 export const msg = {
-  build: {
-    start: "Building...",
-    compiling: "Compiling...",
-    usingCache: "Using cache...",
-    purging: "Purging...",
-    minifying: "Minifying...",
-    success: (ms: number, output: string) =>
-      `Build done in ${ms}ms. (${output})`,
-    fail: "Build failed.",
-  },
   init: {
+    exists: "Config already exists.",
+    fail: "Config failed.",
     start: "Creating config...",
     success: "Config created.",
-    fail: "Config failed.",
+  },
+  build: {
+    compiling: "Compiling...",
+    fail: "Build failed.",
+    minifying: "Minifying...",
+    purging: "Purging...",
+    start: "Building...",
+    success: (time: number, output: string) =>
+      `Build done in ${time}ms. (${output})`,
   },
   watch: {
-    start: "Watching...",
     fail: "Watch failed.",
+    start: "Watching...",
   },
   common: {
-    unknownError: "Something went wrong.",
+    unknownError: "Something went wrong, and we don't know why.",
   },
 };
