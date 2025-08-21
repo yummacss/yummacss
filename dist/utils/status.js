@@ -1,1 +1,1 @@
-import r from"ora";var e=r({spinner:"sand"}),i={success:n=>console.log(`[success] ${n}`),info:n=>console.log(`[info] ${n}`),error:n=>console.log(`[error] ${n}`),startSpinner:n=>r({spinner:"sand",color:"white"}).start(n)};export{i as cli,e as spinner};
+import s from"ora";var e=s({spinner:"sand"}),i={success:r=>console.log(`[success] ${r}`),info:r=>console.log(`[info] ${r}`),error:r=>console.log(`[error] ${r}`),progress:r=>s({spinner:"sand",color:"white"}).start(r)};export{i as cli};

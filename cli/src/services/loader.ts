@@ -12,18 +12,14 @@ export async function loadConfig(): Promise<InternalConfig> {
       default: unknown;
     };
 
-    const validatedConfig = ConfigSchema.parse(userConfig);
+    const s = ConfigSchema.parse(userConfig);
 
     const ic: InternalConfig = {
-      source: validatedConfig.source,
-      output: validatedConfig.output,
+      source: s.source,
+      output: s.output,
       buildOptions: {
-        reset:
-          validatedConfig.buildOptions?.reset ??
-          defaultConfig.buildOptions.reset,
-        minify:
-          validatedConfig.buildOptions?.minify ??
-          defaultConfig.buildOptions.reset,
+        reset: s.buildOptions?.reset ?? defaultConfig.buildOptions.reset,
+        minify: s.buildOptions?.minify ?? defaultConfig.buildOptions.reset,
       },
     };
 
