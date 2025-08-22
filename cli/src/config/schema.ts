@@ -1,5 +1,7 @@
 import { z } from "zod";
 
+const configName = "yumma.config.js";
+
 const ConfigSchema = z.object({
   source: z.array(z.string()).default([""]),
   output: z.string().default(""),
@@ -13,4 +15,4 @@ const ConfigSchema = z.object({
 
 type Config = z.infer<typeof ConfigSchema>;
 
-export { Config, ConfigSchema };
+export { Config, ConfigSchema, configName };

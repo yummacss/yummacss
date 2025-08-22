@@ -1,10 +1,10 @@
 import { globby } from "globby";
 import { PurgeCSS } from "purgecss";
-import { InternalConfig } from "../config/template.js";
+import { Config } from "../config/schema.js";
 
 export async function purge(
   css: string,
-  config: InternalConfig
+  config: Config
 ): Promise<string> {
   const res = await new PurgeCSS().purge({
     content: await globby(config.source),

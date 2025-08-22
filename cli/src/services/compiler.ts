@@ -2,7 +2,7 @@ import { existsSync } from "fs";
 import { dirname, join } from "path";
 import * as sass from "sass-embedded";
 import { fileURLToPath } from "url";
-import type { InternalConfig } from "../config/template.js";
+import type { Config } from "../config/schema.js";
 import { message } from "../utils/message.js";
 import { cli } from "../utils/status.js";
 
@@ -23,7 +23,7 @@ function findRoot(): string {
 
 const pkg = findRoot();
 
-export async function compile(config: InternalConfig): Promise<{
+export async function compile(config: Config): Promise<{
   css: string;
   dependencies: string[];
 }> {

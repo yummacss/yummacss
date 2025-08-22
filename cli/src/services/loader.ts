@@ -1,12 +1,8 @@
 import { join } from "path";
 import { pathToFileURL } from "url";
-import { ConfigSchema } from "../config/schema.js";
-import {
-  configName,
-  InternalConfig,
-} from "../config/template.js";
+import { ConfigSchema, Config, configName } from "../config/schema.js";
 
-export async function loadConfig(): Promise<InternalConfig> {
+export async function loadConfig(): Promise<Config> {
   const path = join(process.cwd(), configName);
   const url = pathToFileURL(path).href;
 
@@ -16,7 +12,7 @@ export async function loadConfig(): Promise<InternalConfig> {
     };
 
     const config = ConfigSchema.parse(userConfig);
-    return config as InternalConfig;
+    return config;
   } catch (error) {
     if (error instanceof Error) {
       throw new Error(`Config validation failed: ${error.message}`);
