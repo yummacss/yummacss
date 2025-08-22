@@ -5,18 +5,18 @@ import { watch } from "./commands/watch.js";
 
 const program = new Command();
 
-program.name("yummacss").description("Main command.");
+program.name("yummacss").description("Main command");
 
-program.command("init").description("Create config file.").action(init);
+program.command("init").description("Initialize config.").action(init);
 
 program
   .command("build")
-  .description("Build styles.")
+  .description("Build styles once")
   .action(() => build().catch(() => process.exit(1)));
 
 program
   .command("watch")
-  .description("Build styles continuously.")
+  .description("Build styles continuously")
   .action(() => watch().catch(() => process.exit(1)));
 
 program.parse(process.argv);
