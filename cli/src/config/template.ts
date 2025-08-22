@@ -9,13 +9,4 @@ type InternalConfig = {
   };
 };
 
-const defaultConfig = {
-  source: [""],
-  output: "",
-  buildOptions: {
-    reset: false,
-    minify: false,
-  },
-};
-
-export { InternalConfig, configName, defaultConfig };
+export { InternalConfig, configName };

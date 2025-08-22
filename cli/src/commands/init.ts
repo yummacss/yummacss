@@ -1,6 +1,6 @@
 import { existsSync, readFileSync, writeFileSync } from "fs";
 import { ConfigSchema } from "../config/schema.js";
-import { configName, defaultConfig } from "../config/template.js";
+import { configName } from "../config/template.js";
 import { message } from "../utils/message.js";
 import { cli } from "../utils/status.js";
 
@@ -17,7 +17,7 @@ function detectModule(): "esm" | "cjs" {
 }
 
 function generateConfig(): { filename: string; content: string } {
-  const z = ConfigSchema.parse(defaultConfig);
+  const z = ConfigSchema.parse({});
 
   const moduleSystem = detectModule();
 

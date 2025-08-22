@@ -3,7 +3,6 @@ import { pathToFileURL } from "url";
 import { ConfigSchema } from "../config/schema.js";
 import {
   configName,
-  defaultConfig,
   InternalConfig,
 } from "../config/template.js";
 
@@ -16,18 +15,8 @@ export async function loadConfig(): Promise<InternalConfig> {
       default: unknown;
     };
 
-    const z = ConfigSchema.parse(userConfig);
-
-    const ic: InternalConfig = {
-      source: z.source,
-      output: z.output,
-      buildOptions: {
-        reset: z.buildOptions?.reset ?? defaultConfig.buildOptions.reset,
-        minify: z.buildOptions?.minify ?? defaultConfig.buildOptions.reset,
-      },
-    };
-
-    return ic;
+    const config = ConfigSchema.parse(userConfig);
+    return config as InternalConfig;
   } catch (error) {
     if (error instanceof Error) {
       throw new Error(`Config validation failed: ${error.message}`);
