@@ -1,8 +1,8 @@
 import { z } from "zod";
 
-const configName = "yumma.config.js";
+export const configName = "yumma.config.js";
 
-const ConfigSchema = z.object({
+export const ConfigSchema = z.object({
   source: z.array(z.string()).default([""]),
   output: z.string().default(""),
   buildOptions: z
@@ -13,6 +13,4 @@ const ConfigSchema = z.object({
     .default({ reset: true, minify: false }),
 });
 
-type Config = z.infer<typeof ConfigSchema>;
-
-export { Config, ConfigSchema, configName };
+export type Config = z.infer<typeof ConfigSchema>;

@@ -34,15 +34,15 @@ function generateConfig(): { filename: string; content: string } {
 }
 
 export function init() {
-  const status = cli.progress(message.config.success);
+  const status = cli.progress(message.init.success);
 
   try {
     const { filename, content } = generateConfig();
     writeFileSync(filename, content);
 
-    status.succeed(message.config.success);
+    status.succeed(message.init.success);
   } catch (error) {
-    status.fail(message.config.fail);
+    status.fail(message.init.fail);
     cli.error(message.common.unknownError);
     process.exit(1);
   }

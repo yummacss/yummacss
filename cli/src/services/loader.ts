@@ -17,7 +17,7 @@ export async function loadConfig(): Promise<Config> {
     return config;
   } catch (error) {
     if (error instanceof Error) {
-      cli.error(message.config.fail);
+      cli.error(message.init.fail);
     }
     throw error;
   }
