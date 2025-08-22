@@ -1,5 +1,5 @@
 import { writeFileSync } from "fs";
-import type { InternalConfig } from "../config/template.js";
+import type { Config } from "../config/schema.js";
 import { compile } from "../services/compiler.js";
 import { loadConfig } from "../services/loader.js";
 import { minify } from "../services/minify.js";
@@ -16,7 +16,7 @@ type BuildCache = {
 let cache: BuildCache = {};
 
 export async function build(
-  existingConfig?: InternalConfig,
+  existingConfig?: Config,
   forceRebuild = false
 ) {
   const buildSpinner = cli.progress(message.build.start);

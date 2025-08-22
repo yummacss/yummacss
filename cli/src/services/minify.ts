@@ -1,9 +1,9 @@
 import { transform } from "lightningcss";
-import type { InternalConfig } from "../config/template.js";
+import type { Config } from "../config/schema.js";
 import { message } from "../utils/message.js";
 import { cli } from "../utils/status.js";
 
-export function minify(css: string, config: InternalConfig): string {
+export function minify(css: string, config: Config): string {
   try {
     const result = transform({
       filename: "style.css",

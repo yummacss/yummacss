@@ -1,6 +1,5 @@
 import { existsSync, readFileSync, writeFileSync } from "fs";
-import { ConfigSchema } from "../config/schema.js";
-import { configName } from "../config/template.js";
+import { ConfigSchema, configName } from "../config/schema.js";
 import { message } from "../utils/message.js";
 import { cli } from "../utils/status.js";
 
