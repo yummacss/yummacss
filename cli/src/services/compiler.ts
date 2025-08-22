@@ -11,8 +11,8 @@ function findRoot(): string {
   let currentDir = dirname(__filename);
 
   while (currentDir !== dirname(currentDir)) {
-    const packagePath = join(currentDir, "package.json");
-    if (existsSync(packagePath)) {
+    const path = join(currentDir, "package.json");
+    if (existsSync(path)) {
       return currentDir;
     }
     currentDir = dirname(currentDir);
