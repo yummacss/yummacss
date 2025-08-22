@@ -1,3 +1,59 @@
-export async function build() {
-  // use gulp-sass task
+import { writeFileSync } from "fs";
+import type { InternalConfig } from "../config/template.js";
+import { compile } from "../services/compiler.js";
+import { loadConfig } from "../services/loader.js";
+import { minify } from "../services/minify.js";
+import { purge } from "../services/purge.js";
+import { message } from "../utils/message.js";
+import { cli } from "../utils/status.js";
+
+type BuildCache = {
+  css?: string;
+  dependencies?: string[];
+  configHash?: string;
+};
+
+let cache: BuildCache = {};
+
+export async function build(
+  existingConfig?: InternalConfig,
+  forceRebuild = false
+) {
+  const buildSpinner = cli.progress(message.build.start);
+  const startTime = Date.now();
+
+  try {
+    const config = existingConfig || (await loadConfig());
+    const configHash = JSON.stringify(config);
+    const configChanged = cache.configHash !== configHash;
+
+    let css: string;
+    if (forceRebuild || configChanged || !cache.css) {
+      const res = await compile(config);
+      css = res.css;
+      cache = {
+        css: res.css,
+        dependencies: res.dependencies,
+        configHash,
+      };
+    } else {
+      css = cache.css;
+    }
+
+    const purgedCSS = await purge(css, config);
+
+    const finalCSS = minify(purgedCSS, config);
+
+    writeFileSync(config.output, finalCSS);
+
+    buildSpinner.succeed(
+      message.build.success(Date.now() - startTime, config.output)
+    );
+  } catch (error) {
+    buildSpinner.fail(message.build.fail);
+    cli.error(
+      error instanceof Error ? error.message : message.common.unknownError
+    );
+    process.exit(1);
+  }
 }
