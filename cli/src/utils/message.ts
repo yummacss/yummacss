@@ -5,10 +5,9 @@ export const message = {
       `Build done in ${time}ms. (${output})`,
     fail: "Build failed.",
   },
-  init: {
-    start: "Creating config...",
-    success: "Config created.",
+  config: {
     fail: "Config failed.",
+    success: "Config created.",
   },
   watch: {
     start: "Watching...",

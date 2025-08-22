@@ -19,7 +19,7 @@ export async function build(
   existingConfig?: Config,
   forceRebuild = false
 ) {
-  const buildSpinner = cli.progress(message.build.start);
+  const status = cli.progress(message.build.start);
   const startTime = Date.now();
 
   try {
@@ -32,9 +32,9 @@ export async function build(
       const res = await compile(config);
       css = res.css;
       cache = {
+        configHash,
         css: res.css,
         dependencies: res.dependencies,
-        configHash,
       };
     } else {
       css = cache.css;
@@ -46,11 +46,11 @@ export async function build(
 
     writeFileSync(config.output, finalCSS);
 
-    buildSpinner.succeed(
+    status.succeed(
       message.build.success(Date.now() - startTime, config.output)
-    );
+  );
   } catch (error) {
-    buildSpinner.fail(message.build.fail);
+    status.fail(message.build.fail);
     cli.error(
       error instanceof Error ? error.message : message.common.unknownError
     );
