@@ -3,20 +3,22 @@ import { build } from "./commands/build.js";
 import { init } from "./commands/init.js";
 import { watch } from "./commands/watch.js";
 
-const program = new Command();
+const cli = new Command();
 
-program.name("yummacss").description("Main command");
+cli.name("yummacss").description("Main command");
 
-program.command("init").description("Initialize config.").action(init);
+cli.command("init").description("Initialize config").action(init);
 
-program
+cli
   .command("build")
-  .description("Build styles once")
-  .action(() => build().catch(() => process.exit(1)));
+  .action(() => build().catch(() => process.exit(1)))
+  .alias("b")
+  .description("Build styles once");
 
-program
+cli
   .command("watch")
-  .description("Build styles continuously")
-  .action(() => watch().catch(() => process.exit(1)));
+  .action(() => watch().catch(() => process.exit(1)))
+  .alias("w")
+  .description("Build styles continuously");
 
-program.parse(process.argv);
+cli.parse(process.argv);

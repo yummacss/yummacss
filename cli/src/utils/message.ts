@@ -5,7 +5,8 @@ export const message = {
       `Build done in ${time}ms. (${output})`,
     fail: "Build failed.",
   },
-  config: {
+  init: {
+    exists: "Config already exists.",
     fail: "Config failed.",
     success: "Config created.",
   },
