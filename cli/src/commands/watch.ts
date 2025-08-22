@@ -11,7 +11,7 @@ let buildTimeout: NodeJS.Timeout | null = null;
 let changedFiles = new Set<string>();
 
 export async function watch() {
-  const watchSpinner = cli.progress(message.watch.start);
+  const status = cli.progress(message.watch.start);
 
   try {
     currentConfig = await loadConfig();
@@ -51,7 +51,7 @@ export async function watch() {
       }, 500); // 500ms
     }
   } catch (error) {
-    watchSpinner.fail(message.watch.fail);
+    status.fail(message.watch.fail);
     cli.error(
       error instanceof Error ? error.message : message.common.unknownError
     );
