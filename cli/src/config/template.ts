@@ -1,3 +1,5 @@
+const configName = "yumma.config.js";
+
 type InternalConfig = {
   source: string[];
   output: string;
@@ -16,4 +18,4 @@ const defaultConfig = {
   },
 };
 
-export { InternalConfig, defaultConfig };
+export { InternalConfig, configName, defaultConfig };

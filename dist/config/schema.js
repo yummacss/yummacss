@@ -1,1 +1,0 @@
-import{z as o}from"zod";var i=o.object({source:o.array(o.string()),output:o.string(),buildOptions:o.object({reset:o.boolean().optional(),minify:o.boolean().optional()}).optional()});export{i as ConfigSchema};

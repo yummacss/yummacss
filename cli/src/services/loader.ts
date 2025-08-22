@@ -1,10 +1,14 @@
 import { join } from "path";
 import { pathToFileURL } from "url";
 import { ConfigSchema } from "../config/schema.js";
-import { defaultConfig, InternalConfig } from "../config/template.js";
+import {
+  configName,
+  defaultConfig,
+  InternalConfig,
+} from "../config/template.js";
 
 export async function loadConfig(): Promise<InternalConfig> {
-  const path = join(process.cwd(), "yumma.config.js");
+  const path = join(process.cwd(), configName);
   const url = pathToFileURL(path).href;
 
   try {
@@ -12,14 +16,14 @@ export async function loadConfig(): Promise<InternalConfig> {
       default: unknown;
     };
 
-    const s = ConfigSchema.parse(userConfig);
+    const z = ConfigSchema.parse(userConfig);
 
     const ic: InternalConfig = {
-      source: s.source,
-      output: s.output,
+      source: z.source,
+      output: z.output,
       buildOptions: {
-        reset: s.buildOptions?.reset ?? defaultConfig.buildOptions.reset,
-        minify: s.buildOptions?.minify ?? defaultConfig.buildOptions.reset,
+        reset: z.buildOptions?.reset ?? defaultConfig.buildOptions.reset,
+        minify: z.buildOptions?.minify ?? defaultConfig.buildOptions.reset,
       },
     };
 

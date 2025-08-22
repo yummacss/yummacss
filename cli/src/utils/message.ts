@@ -1,24 +1,20 @@
-export const msg = {
-  init: {
-    exists: "Config already exists.",
-    fail: "Config failed.",
-    start: "Creating config...",
-    success: "Config created.",
-  },
+export const message = {
   build: {
-    compiling: "Compiling...",
-    fail: "Build failed.",
-    minifying: "Minifying...",
-    purging: "Purging...",
     start: "Building...",
     success: (time: number, output: string) =>
       `Build done in ${time}ms. (${output})`,
+    fail: "Build failed.",
+  },
+  init: {
+    start: "Creating config...",
+    success: "Config created.",
+    fail: "Config failed.",
   },
   watch: {
-    fail: "Watch failed.",
     start: "Watching...",
+    fail: "Watch failed.",
   },
   common: {
-    unknownError: "Something went wrong, and we don't know why.",
+    unknownError: "Something went wrong, and we don't know what.",
   },
 };
