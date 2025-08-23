@@ -7,6 +7,7 @@ export const message = {
   },
   init: {
     fail: "Config failed.",
+    invalid: "Invalid config.",
     notFound: "Config not found.",
     success: "Config created.",
   },

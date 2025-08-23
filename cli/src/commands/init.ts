@@ -17,7 +17,6 @@ function detectModule(): "esm" | "cjs" {
 
 function generateConfig(): { filename: string; content: string } {
   const z = ConfigSchema.parse({});
-
   const moduleSystem = detectModule();
 
   if (moduleSystem === "esm") {
@@ -34,16 +33,14 @@ function generateConfig(): { filename: string; content: string } {
 }
 
 export function init() {
-  const status = cli.progress(message.init.success);
-
+  const status = cli.progress("Initializing config...");
+  
   try {
     const { filename, content } = generateConfig();
     writeFileSync(filename, content);
-
     status.succeed(message.init.success);
   } catch (error) {
     status.fail(message.init.fail);
-    cli.error(message.common.unknownError);
     process.exit(1);
   }
 }

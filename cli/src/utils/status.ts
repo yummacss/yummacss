@@ -1,11 +1,17 @@
 import ora from "ora";
 
-export const spinner = (text: string) =>
-  ora({ spinner: "sand", color: "white" }).start(text);
+export const progress = (msg: string) =>
+  ora({ spinner: "sand", color: "white" }).start(msg);
+
+export const fail = (msg: string) => ora().fail(msg);
+export const info = (msg: string) => ora().info(msg);
+export const success = (msg: string) => ora().succeed(msg);
+export const warn = (msg: string) => ora().warn(msg);
 
 export const cli = {
-  success: (msg: string) => console.log(`[success] ${msg}`),
-  info: (msg: string) => console.log(`[info] ${msg}`),
-  error: (msg: string) => console.log(`[error] ${msg}`),
-  progress: spinner,
+  error: fail,
+  info,
+  progress,
+  success,
+  warn,
 };

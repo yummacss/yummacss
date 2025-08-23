@@ -6,14 +6,7 @@ import { minify } from "../services/minify.js";
 import { purge } from "../services/purge.js";
 import { message } from "../utils/message.js";
 import { cli } from "../utils/status.js";
-
-type BuildCache = {
-  css?: string;
-  dependencies?: string[];
-  configHash?: string;
-};
-
-let cache: BuildCache = {};
+import { getCache, setCache, configChanged } from "../services/cache.js";
 
 export async function build(
   existingConfig?: Config,
@@ -24,36 +17,32 @@ export async function build(
 
   try {
     const config = existingConfig || (await loadConfig());
-    const configHash = JSON.stringify(config);
-    const configChanged = cache.configHash !== configHash;
+    const cache = getCache();
+    const hasConfigChanged = configChanged(config);
 
     let css: string;
-    if (forceRebuild || configChanged || !cache.css) {
+    if (forceRebuild || hasConfigChanged || !cache.css) {
       const res = await compile(config);
       css = res.css;
-      cache = {
-        configHash,
+      setCache({
+        configHash: JSON.stringify(config),
         css: res.css,
         dependencies: res.dependencies,
-      };
+      });
     } else {
       css = cache.css;
     }
 
     const purgedCSS = await purge(css, config);
-
     const finalCSS = minify(purgedCSS, config);
-
     writeFileSync(config.output, finalCSS);
 
     status.succeed(
       message.build.success(Date.now() - startTime, config.output)
-  );
+    );
+    
   } catch (error) {
     status.fail(message.build.fail);
-    cli.error(
-      error instanceof Error ? error.message : message.common.unknownError
-    );
     process.exit(1);
   }
 }
