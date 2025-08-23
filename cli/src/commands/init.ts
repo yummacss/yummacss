@@ -34,7 +34,7 @@ function generateConfig(): { filename: string; content: string } {
 
 export function init() {
   const status = cli.progress("Initializing config...");
-  
+
   try {
     const { filename, content } = generateConfig();
     writeFileSync(filename, content);

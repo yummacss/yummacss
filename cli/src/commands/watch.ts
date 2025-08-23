@@ -13,9 +13,9 @@ let changedFiles = new Set<string>();
 export async function watch() {
   try {
     currentConfig = await loadConfig();
-    
+
     await build(currentConfig, true);
-    
+
     cli.info(message.watch.start);
 
     const files = await globby(currentConfig.source);
