@@ -6,7 +6,7 @@ export const message = {
     fail: "Build failed.",
   },
   init: {
-    exists: "Config already exists.",
+    notFound: "Config not found.",
     fail: "Config failed.",
     success: "Config created.",
   },
