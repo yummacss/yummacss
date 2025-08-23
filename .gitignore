@@ -9,7 +9,7 @@
 !.yarn/versions
 
 # testing
-/coverage
+/test
 *.tgz
 
 # production

@@ -2,14 +2,14 @@
 
 All notable changes to the Yumma CSS API will be documented in this file.
 
-## Changelog for 1.2.0 🎉
+## Changelog for 1.3.0 🎉
 
-<details>
+<details open>
 <summary>
     <b>Features</b>
 </summary>
 
-- Yumma CSS 3.2 support
+- None
 
 </details>
 
@@ -19,7 +19,7 @@ All notable changes to the Yumma CSS API will be documented in this file.
     <b>Breaking changes</b>
 </summary>
 
-- None
+- Remove `cjs` support from
 
 </details>
 
@@ -28,6 +28,6 @@ All notable changes to the Yumma CSS API will be documented in this file.
     <b>Fixes</b>
 </summary>
 
-- Fix negative values for box-shadow utilities
+- None
 
 </details>
