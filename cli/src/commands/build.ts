@@ -1,17 +1,14 @@
 import { writeFileSync } from "fs";
 import type { Config } from "../config/schema.js";
+import { configChanged, getCache, setCache } from "../services/cache.js";
 import { compile } from "../services/compiler.js";
 import { loadConfig } from "../services/loader.js";
 import { minify } from "../services/minify.js";
 import { purge } from "../services/purge.js";
 import { message } from "../utils/message.js";
 import { cli } from "../utils/status.js";
-import { getCache, setCache, configChanged } from "../services/cache.js";
 
-export async function build(
-  existingConfig?: Config,
-  forceRebuild = false
-) {
+export async function build(existingConfig?: Config, forceRebuild = false) {
   const status = cli.progress(message.build.start);
   const startTime = Date.now();
 
@@ -40,7 +37,6 @@ export async function build(
     status.succeed(
       message.build.success(Date.now() - startTime, config.output)
     );
-    
   } catch (error) {
     status.fail(message.build.fail);
     process.exit(1);
