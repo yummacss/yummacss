@@ -6,8 +6,8 @@ export const message = {
     fail: "Build failed.",
   },
   init: {
-    notFound: "Config not found.",
     fail: "Config failed.",
+    notFound: "Config not found.",
     success: "Config created.",
   },
   watch: {
