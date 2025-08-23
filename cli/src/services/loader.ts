@@ -4,6 +4,7 @@ import { ConfigSchema, Config, configName } from "../config/schema.js";
 import { cli } from "../utils/status.js";
 import { message } from "../utils/message.js";
 import { existsSync } from "fs";
+import { z } from "zod";
 
 export async function loadConfig(): Promise<Config> {
   const path = join(process.cwd(), configName);
@@ -19,10 +20,13 @@ export async function loadConfig(): Promise<Config> {
   } catch (error) {
     if (!existsSync(configName)) {
       const status = cli.progress(message.init.notFound);
-      status.fail(message.init.notFound);
+      status.warn(message.init.notFound);
       process.exit(1);
-    } 
-    cli.error(message.common.unknownError);
+    } else if (error instanceof z.ZodError) {
+      const status = cli.progress(message.init.invalid);
+      status.fail(message.init.invalid);
+      process.exit(1);
+    }
     throw error;
   }
 }

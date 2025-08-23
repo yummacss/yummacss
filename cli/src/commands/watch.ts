@@ -11,12 +11,12 @@ let buildTimeout: NodeJS.Timeout | null = null;
 let changedFiles = new Set<string>();
 
 export async function watch() {
-  const status = cli.progress(message.watch.start);
-
   try {
     currentConfig = await loadConfig();
-
+    
     await build(currentConfig, true);
+    
+    cli.info(message.watch.start);
 
     const files = await globby(currentConfig.source);
     const watcher = chok.watch(files, {
@@ -44,17 +44,13 @@ export async function watch() {
       buildTimeout = setTimeout(async () => {
         if (changedFiles.size > 0) {
           await build(currentConfig, true);
-
           changedFiles.clear();
         }
         buildTimeout = null;
-      }, 500); // 500ms
+      }, 500);
     }
   } catch (error) {
-    status.fail(message.watch.fail);
-    cli.error(
-      error instanceof Error ? error.message : message.common.unknownError
-    );
+    cli.error(message.watch.fail);
     process.exit(1);
   }
 }
