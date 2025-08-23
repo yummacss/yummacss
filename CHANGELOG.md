@@ -9,7 +9,7 @@ All notable changes to the Yumma CSS API will be documented in this file.
     <b>Features</b>
 </summary>
 
-- None
+- Add Yumma CSS 3.2 support
 
 </details>
 
