@@ -7,7 +7,7 @@ const cli = new Command();
 
 cli.name("yummacss").description("Main command");
 
-cli.command("init").description("Initialize config").action(init);
+cli.command("init").action(init).alias("i").description("Initialize config");
 
 cli
   .command("build")
