@@ -1,80 +1,49 @@
 @use "abstracts/variables" as vars;
 
-/** -- Box sizing --
- * 1. Use a more intuitive box-sizing model to make the design consistent.
- * 2. Remove default margin and padding.
- * 3. Reset default border styles.
- */
-
 *,
 *::before,
 *::after {
-  box-sizing: border-box; /* 1 */
-  border: 0 solid; /* 3 */
+  box-sizing: border-box;
+  border: 0 solid;
 }
 
 * {
-  margin: 0; /* 2 */
-  padding: 0; /* 2 */
+  margin: 0;
+  padding: 0;
 }
-
-/** -- Document --
- * 1. Improve font smoothing.
- * 2. Set a default system font.
- * 3. Add accessible line-height.
- */
 
 body {
-  -webkit-font-smoothing: antialiased; /* 1 */
-  font-family: vars.$ycss-font-system; /* 2 */
-  line-height: 1.5; /* 3 */
+  -webkit-font-smoothing: antialiased;
+  font-family: vars.$ycss-font-system;
+  line-height: 1.5;
 }
-
-/** -- Media Elements --
- * 1. Ensure all media elements like images, videos, and canvases are block-level.
- * 2. Limit their maximum width to the parent container.
- */
 
 canvas,
 img,
 picture,
 svg,
 video {
-  display: block; /* 1 */
-  max-width: 100%; /* 2 */
+  display: block;
+  max-width: 100%;
 }
-
-/** -- Form Elements --
- * 1. Reset background and border styles for form elements.
- * 2. Use `inherit` to ensure font consistency within forms.
- * 3. Add default padding for usability.
- */
 
 button,
 input,
 optgroup,
 select,
 textarea {
-  background-color: vars.$ycss-color-transparent; /* 1 */
-  font-family: inherit; /* 2 */
-  padding: 0.5rem; /* 3 */
+  background-color: vars.$ycss-color-transparent;
+  font-family: inherit;
+  padding: 0.5rem;
 }
-
-/**
- * Add a default border to form elements that do not have a class attribute.
- */
 
 button:not([class]),
 input:not([class]),
 optgroup:not([class]),
 select:not([class]),
 textarea:not([class]) {
-  border: 1px solid vars.$ycss-color-silver; /* 1 */
+  border: 1px solid vars.$ycss-color-silver;
 }
-
-/**
- * Apply consistent focus styles to interactive elements.
- */
 
 a,
 button,
@@ -87,39 +56,21 @@ textarea {
   }
 }
 
-/**
- * Set a minimum height for textareas without a defined `rows` attribute.
- */
-
 textarea:not([rows]) {
   min-height: 10em;
 }
-
-/**
- * Ensure the buttons have a pointer cursor.
- */
 
 button {
   cursor: pointer;
 }
 
-/** Disabled States
- * 1. Reduce opacity and set a "not-allowed" cursor for disabled elements.
- */
-
 button:disabled,
 input:disabled,
 select:disabled,
 textarea:disabled {
-  cursor: not-allowed; /* 1 */
-  opacity: 0.5; /* 1 */
+  cursor: not-allowed;
+  opacity: 0.5;
 }
-
-/** -- Typography --
- * 1. Avoid text overflows.
- * 2. Improve line wrapping for headings.
- * 3. Add a consistent font weight for bold text.
- */
 
 h1,
 h2,
@@ -128,7 +79,7 @@ h4,
 h5,
 h6,
 p {
-  overflow-wrap: break-word; /* 1 */
+  overflow-wrap: break-word;
 }
 
 h1,
@@ -137,59 +88,37 @@ h3,
 h4,
 h5,
 h6 {
-  font-size: 1rem; /* 3 */
-  font-weight: 600; /* 3 */
-  text-wrap: balance; /* 2 */
+  font-size: 1rem;
+  font-weight: 600;
+  text-wrap: balance;
 }
 
 p {
-  text-wrap: pretty; /* 2 */
+  text-wrap: pretty;
 }
-
-/**
- * Add the correct font weight in Chrome, Edge, and Safari.
- */
 
 b,
 strong {
   font-weight: 700;
 }
 
-/**
- * Add the correct font size in all browsers.
- */
-
 small {
   font-size: 80%;
   line-height: 1.4;
 }
 
-/**
- * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
- */
-
 pre,
 code,
 kbd,
 samp {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
+  font-family: monospace, monospace;
+  font-size: 1em;
 }
-
-/** -- Links --
- * 1. Remove underline styling from links by default.
- * 3. Reset color to inherit from parent element.
- */
 
 a {
-  color: inherit; /* 3 */
-  text-decoration: none; /* 1 */
+  color: inherit;
+  text-decoration: none;
 }
-
-/** -- Lists --
- * Remove default list styling and padding.
- */
 
 ol,
 ul {
@@ -197,30 +126,16 @@ ul {
   padding: 0;
 }
 
-/** -- Tables --
-* 1. Add a consistent font weight for bold text.
- */
-
 th {
-  font-size: 1rem; /* 1 */
-  font-weight: 600; /* 1 */
+  font-size: 1rem;
+  font-weight: 600;
 }
-
-/** -- Miscellaneous --
- * 1. Add the correct height in Firefox.
- * 2. Correct text decoration.
- * 3. Add spacing around horizontal rules.
- */
 
 hr {
-  border-top: 1px solid vars.$ycss-color-silver; /* 2 */
-  height: 0; /* 1 */
-  margin: 1em 0; /* 3 */
+  border-top: 1px solid vars.$ycss-color-silver;
+  height: 0;
+  margin: 1em 0;
 }
-
-/**
- * Ensure details and summary elements display correctly.
- */
 
 details {
   display: block;
