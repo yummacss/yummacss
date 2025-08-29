@@ -12,9 +12,13 @@
   padding: 0;
 }
 
+html {
+  font-family: vars.$ycss-font-system;
+}
+
 body {
   -webkit-font-smoothing: antialiased;
-  font-family: vars.$ycss-font-system;
+  font-family: inherit;
   line-height: 1.5;
 }
 
