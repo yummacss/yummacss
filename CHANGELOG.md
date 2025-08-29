@@ -20,7 +20,7 @@ All notable changes to the Yumma CSS will be documented in this file.
     <b>Breaking changes</b>
 </summary>
 
-- None
+- Move default `font-family` to `html` tag on `_base.scss` (Base Styles)
 
 </details>
 
