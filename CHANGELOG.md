@@ -1,8 +1,8 @@
-# Changelog
+# Release notes
 
 All notable changes to the Yumma CSS will be documented in this file.
 
-## Changelog for 3.2.1 🎉
+## [3.2.1] - Aug 29, 2025
 
 <details open>
 <summary>
