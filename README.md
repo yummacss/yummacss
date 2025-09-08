@@ -11,10 +11,7 @@ Yumma CSS is a CSS framework packed with a set of abbreviated utility classes fo
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development
-environment running
-
-Install Yumma CSS
+Install `yummacss` as a dev dependency
 
 ```
 npm i yummacss -D
