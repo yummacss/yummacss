@@ -2,7 +2,7 @@
 
 All notable changes to the Yumma CSS will be documented in this file.
 
-## [3.2.2] - Set 08, 2025
+## [3.2.2] - Sep 08, 2025
 
 <details>
 <summary>
