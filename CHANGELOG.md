@@ -2,7 +2,7 @@
 
 All notable changes to the Yumma CSS will be documented in this file.
 
-## [3.2.2] - Sep 08, 2025
+## [3.3.0] - Sep 09, 2025
 
 <details>
 <summary>
@@ -18,7 +18,8 @@ All notable changes to the Yumma CSS will be documented in this file.
     <b>Breaking changes</b>
 </summary>
 
-- None
+- Remove `yumma.config.js` and replace it with `yumma.config.mjs`.
+- Remove module detection and always (Internal)
 
 </details>
 
@@ -27,6 +28,6 @@ All notable changes to the Yumma CSS will be documented in this file.
     <b>Fixes</b>
 </summary>
 
-- Remove default `font-weight` from `ff-*` (font-family) utilities
+- Fix `init` command using JSON entries instead of JavaScript objects
 
 </details>
