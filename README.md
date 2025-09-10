@@ -1,6 +1,6 @@
 # [@yummacss/api](https://www.npmjs.com/package/@yummacss/api)
 
-Yumma CSS utility classes for all your development needs.
+Yumma CSS definitions for Javascript apps.
 
 [![NPM Version](https://img.shields.io/npm/v/@yummacss/api?style=plastic&label=@yummacss/api&labelColor=eaedfc&color=413cb8)](https://www.npmjs.com/package/@yummacss/api)
 [![NPM Downloads](https://img.shields.io/npm/d18m/@yummacss/api?style=plastic&label=downloads&labelColor=eaedfc&color=413cb8)](https://www.npmjs.com/package/@yummacss/api)
