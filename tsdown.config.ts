@@ -6,4 +6,3 @@ export default defineConfig({
   minify: true,
   target: "es2020",
 });
-
