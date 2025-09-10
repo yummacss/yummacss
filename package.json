@@ -3,9 +3,6 @@
   "version": "1.3.1",
   "description": "Yumma CSS utility classes for all your development needs.",
   "keywords": [
-    "api",
-    "css-utilities",
-    "typescript-library",
     "typescript",
     "yummacss"
   ],
