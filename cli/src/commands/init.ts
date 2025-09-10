@@ -1,5 +1,5 @@
 import { writeFileSync } from "fs";
-import { stringify } from "javascript-stringify";
+import stringifyObject from "stringify-object";
 import { ConfigSchema, configName } from "../config/schema.js";
 import { message } from "../utils/message.js";
 import { cli } from "../utils/status.js";
@@ -9,7 +9,10 @@ function generateConfig(): { filename: string; content: string } {
 
   return {
     filename: configName,
-    content: `export default ${stringify(z, null, 2)};`,
+    content: `export default ${stringifyObject(z, {
+      indent: "  ",
+      singleQuotes: false,
+    })};`,
   };
 }
 
