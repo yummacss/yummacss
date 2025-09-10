@@ -7,7 +7,7 @@ A CSS framework for the web with abbreviated styles.
 
 ## Getting started
 
-Yumma CSS is a CSS framework packed with a set of abbreviated utility classes for building faster and more maintainable UIs.
+Yumma CSS is a CLI-first CSS framework packed with a set of non-opinionated, atomic utility classes designed to minimize and scale your codebase.
 
 ### Installing
 
