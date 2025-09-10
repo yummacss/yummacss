@@ -7,7 +7,7 @@ Yumma CSS definitions for Javascript apps.
 
 ## Getting started
 
-Yumma CSS API is a powerful TypeScript/JavaScript utility library that provides programmatic access to Yumma CSS class definitions.
+Yumma CSS API provides access to Yumma CSS utilities through JavaScript functions.
 
 ### Installing
 
