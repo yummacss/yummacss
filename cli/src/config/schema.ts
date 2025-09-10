@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const configName = "yumma.config.js";
+export const configName = "yumma.config.mjs";
 
 export const ConfigSchema = z.object({
   source: z.array(z.string()).default([""]),
