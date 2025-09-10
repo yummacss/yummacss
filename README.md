@@ -75,7 +75,7 @@ import type { UtilityMap, UtilityItem } from "@yummacss/api";
 
 ## Built with
 
-- [tsup](https://www.npmjs.com/package/tsup)
+- [tsdown](https://www.npmjs.com/package/tsdown)
 - [tinycolor2](https://www.npmjs.com/package/tinycolor2)
 - [typescript](https://www.npmjs.com/package/typescript)
 

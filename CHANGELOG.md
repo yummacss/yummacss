@@ -1,25 +1,24 @@
-# Changelog
+# Release notes
 
 All notable changes to the Yumma CSS API will be documented in this file.
 
-## Changelog for 1.3.0 🎉
+## [1.3.1]
 
-<details open>
+<details>
 <summary>
     <b>Features</b>
 </summary>
 
-- Add Yumma CSS 3.2 support
+- None
 
 </details>
 
 <details open>
-
 <summary>
     <b>Breaking changes</b>
 </summary>
 
-- Remove `cjs` support from
+- Migrated to [tsdown](https://www.npmjs.com/package/tsdown) (Internal)
 
 </details>
 
