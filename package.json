@@ -30,7 +30,8 @@
     "check": "tsc --noEmit",
     "dev": "tsdown --watch",
     "format": "prettier --write .",
-    "lint": "eslint src --ext .ts"
+    "lint": "eslint src --ext .ts",
+    "prepublishOnly": "pnpm build"
   },
   "packageManager": "pnpm@10.15.1",
   "dependencies": {
