@@ -7,7 +7,7 @@ Yumma CSS definitions for Javascript apps.
 
 ## Getting started
 
-Yumma CSS API provides access to Yumma CSS utilities through JavaScript functions.
+Yumma CSS API provides access to Yumma CSS utilities through Javascript functions.
 
 ### Installing
 
