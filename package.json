@@ -47,8 +47,4 @@
     "tsdown": "^0.15.0",
     "typescript": "^5.8.2"
   },
-  "publishConfig": {
-    "access": "public",
-    "provenance": true
-  }
 }
