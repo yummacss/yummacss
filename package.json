@@ -46,5 +46,5 @@
     "prettier-plugin-organize-imports": "^4.2.0",
     "tsdown": "^0.15.0",
     "typescript": "^5.8.2"
-  },
+  }
 }
