@@ -1,6 +1,7 @@
 name: Publish
 
 on:
+  workflow_dispatch:
   release:
     types: [published]
 
@@ -13,13 +14,18 @@ jobs:
     env:
       NODE_VERSION: 20
     steps:
-      - uses: actions/checkout@v5
-      - uses: pnpm/action-setup@v4
+      - name: Checkout
+        uses: actions/checkout@v4
       
-      - name: Use Node.js ${{ env.NODE_VERSION }}
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Install Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ env.NODE_VERSION }}
+          node-version: 22
           cache: 'pnpm'
 
       - run: pnpm install
