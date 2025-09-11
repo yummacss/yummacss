@@ -4,6 +4,7 @@
 .pnp.*
 
 # testing
+/coverage
 /test
 *.tgz
 
