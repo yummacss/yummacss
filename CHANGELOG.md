@@ -18,7 +18,7 @@ All notable changes to the Yumma CSS API will be documented in this file.
     <b>Breaking changes</b>
 </summary>
 
-- Migrated to [tsdown](https://www.npmjs.com/package/tsdown) (Internal)
+- Migrate build process from [tsup](https://www.npmjs.com/package/tsup) to [tsdown](https://www.npmjs.com/package/tsdown) (Internal)
 
 </details>
 
