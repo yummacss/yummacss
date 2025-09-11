@@ -13,12 +13,12 @@ All notable changes to the Yumma CSS will be documented in this file.
 
 </details>
 
-<details>
+<details open>
 <summary>
     <b>Breaking changes</b>
 </summary>
 
-- Remove `yumma.config.js` and replace it with `yumma.config.mjs`.
+- Remove `yumma.config.js` and replace it with `yumma.config.mjs`
 - Remove module detection and always (Internal)
 
 </details>
