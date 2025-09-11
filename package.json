@@ -33,11 +33,11 @@
     "lint": "eslint src --ext .ts"
   },
   "dependencies": {
-    "@types/tinycolor2": "^1.4.6",
     "tinycolor2": "^1.6.0"
   },
   "devDependencies": {
     "@types/node": "^20.17.27",
+    "@types/tinycolor2": "^1.4.6",
     "@typescript-eslint/eslint-plugin": "^7.0.0",
     "@typescript-eslint/parser": "^7.0.0",
     "eslint": "^8.57.1",
