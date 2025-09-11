@@ -32,6 +32,7 @@
     "format": "prettier --write .",
     "lint": "eslint src --ext .ts"
   },
+  "packageManager": "pnpm@10.15.1",
   "dependencies": {
     "tinycolor2": "^1.6.0"
   },
