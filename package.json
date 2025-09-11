@@ -4,12 +4,6 @@
   "description": "A CSS framework for the web with abbreviated styles.",
   "keywords": [
     "css-framework",
-    "css",
-    "design-system",
-    "framework",
-    "lightningcss",
-    "responsive-design",
-    "responsive",
     "scss",
     "typescript",
     "yummacss"
