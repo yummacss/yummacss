@@ -28,6 +28,6 @@ All notable changes to the Yumma CSS will be documented in this file.
     <b>Fixes</b>
 </summary>
 
-- Fix `init` command using JSON entries instead of JavaScript objects
+- Fix `init` command using JSON entries instead of Javascript objects
 
 </details>
