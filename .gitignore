@@ -1,10 +1,37 @@
 # dependencies
-node_modules/
+/node_modules
+/.pnp
+.pnp.*
 
-# test
-test/
+# testing
+/coverage
+/test
 *.tgz
-*.txt
 
-# vs code
+# production
+/build
+/dist
+
+# misc
+.DS_Store
+*.pem
+.npmrc
+
+# debug
+npm-debug.log*
+pnpm-debug.log*
+
+# env files
+.env*
+
+# typescript
+*.tsbuildinfo
+
+# IDE
 .vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+Thumbs.db
