@@ -11,6 +11,9 @@ jobs:
     permissions:
       contents: read
       id-token: write
+      
+    env:
+      NODE_VERSION: 22
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -21,13 +24,17 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: ${{ env.NODE_VERSION }}
           cache: 'pnpm'
+          registry-url: 'https://registry.npmjs.org'
 
-      - run: pnpm install
-      - run: pnpm build
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build package
+        run: pnpm build
 
       - name: Publish to npm
-        run: pnpm publish --provenance --access public
+        run: pnpm publish --provenance --access public --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
