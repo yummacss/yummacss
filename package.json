@@ -42,6 +42,7 @@
     "ora": "^8.2.0",
     "purgecss": "^7.0.2",
     "sass-embedded": "^1.90.0",
+    "stringify-object": "^6.0.0",
     "zod": "^4.0.17"
   },
   "devDependencies": {
@@ -49,7 +50,6 @@
     "@types/stringify-object": "^4.0.5",
     "prettier": "^3.6.2",
     "prettier-plugin-organize-imports": "^4.2.0",
-    "stringify-object": "^6.0.0",
     "tsdown": "^0.15.0",
     "typescript": "^5.9.2"
   },
