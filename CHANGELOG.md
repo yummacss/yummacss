@@ -2,7 +2,7 @@
 
 All notable changes to the Yumma CSS will be documented in this file.
 
-## [3.3.0]
+## [3.3.1]
 
 <details>
 <summary>
@@ -13,13 +13,12 @@ All notable changes to the Yumma CSS will be documented in this file.
 
 </details>
 
-<details open>
+<details>
 <summary>
     <b>Breaking changes</b>
 </summary>
 
-- Remove `yumma.config.js` and replace it with `yumma.config.mjs`
-- Remove module detection and always (Internal)
+- None
 
 </details>
 
@@ -28,6 +27,6 @@ All notable changes to the Yumma CSS will be documented in this file.
     <b>Fixes</b>
 </summary>
 
-- Fix `init` command using JSON entries instead of Javascript objects
+- Update `README.md` documentation
 
 </details>
