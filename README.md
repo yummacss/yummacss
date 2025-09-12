@@ -30,7 +30,7 @@ Our [framework guides](https://www.yummacss.com/docs/installation#framework-guid
 The Yumma CSS CLI provides several commands to help you work with your Yumma CSS files.
 
 > [!IMPORTANT]  
-> Make sure you have a `yumma.config.js` file set up before running these commands. If you haven’t, run `npx yummacss init` first.
+> Make sure you have a `yumma.config.mjs` file set up before running these commands. If you haven’t, run `npx yummacss init` first.
 
 ### Building styles
 
