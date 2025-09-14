@@ -1,8 +1,8 @@
 import { YCSS_GAP } from "@/constants/variables";
 import { createValues } from "@/helpers/create-values";
-import { UtilityMap } from "@/interfaces";
+import { Utilities } from "@/interfaces";
 
-export const gridUtils: UtilityMap = {
+export const gridUtils: Utilities = {
   "column-gap": {
     prefix: "cg",
     properties: ["column-gap"],

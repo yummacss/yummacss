@@ -1,8 +1,8 @@
 import { YCSS_BORDER, YCSS_BORDER_RADIUS, YCSS_BORDER_SPACING } from "@/constants/variables";
 import { createValues } from "@/helpers/create-values";
-import { UtilityMap } from "@/interfaces";
+import { Utilities } from "@/interfaces";
 
-export const borderUtils: UtilityMap = {
+export const borderUtils: Utilities = {
   "border-collapse": {
     prefix: "bc",
     properties: ["border-collapse"],

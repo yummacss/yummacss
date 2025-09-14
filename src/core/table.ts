@@ -1,6 +1,6 @@
-import { UtilityMap } from "@/interfaces";
+import { Utilities } from "@/interfaces";
 
-export const tableUtils: UtilityMap = {
+export const tableUtils: Utilities = {
   "caption-side": {
     prefix: "cs",
     properties: ["caption-side"],

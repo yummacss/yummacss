@@ -2,7 +2,7 @@
 
 All notable changes to the Yumma CSS API will be documented in this file.
 
-## [1.3.1]
+## [1.4.0]
 
 <details>
 <summary>
@@ -18,7 +18,11 @@ All notable changes to the Yumma CSS API will be documented in this file.
     <b>Breaking changes</b>
 </summary>
 
-- Migrate build process from [tsup](https://www.npmjs.com/package/tsup) to [tsdown](https://www.npmjs.com/package/tsdown) (Internal)
+- Rename `ColorUtilityItem` interface signature to `Color`
+- Rename `ColorUtilityMap` interface signature to `Colors`
+- Rename `UtilityItem` interface signature to `Utility`
+- Rename `UtilityMap` interface signature to `Utilities`
+- Remove `ApiResponse` type
 
 </details>
 

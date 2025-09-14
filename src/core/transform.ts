@@ -1,6 +1,6 @@
-import { UtilityMap } from "@/interfaces";
+import { Utilities } from "@/interfaces";
 
-export const transformUtils: UtilityMap = {
+export const transformUtils: Utilities = {
   rotate: {
     prefix: "t-r",
     properties: ["transform"],

@@ -1,6 +1,6 @@
-import { UtilityMap } from "@/interfaces";
+import { Utilities } from "@/interfaces";
 
-export const backgroundUtils: UtilityMap = {
+export const backgroundUtils: Utilities = {
   "background-attachment": {
     prefix: "ba",
     properties: ["background-attachment"],

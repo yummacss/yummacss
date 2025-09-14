@@ -70,7 +70,7 @@ import {
 For advanced use cases use these types:
 
 ```ts
-import type { UtilityMap, UtilityItem } from "@yummacss/api";
+import type { Utilities, Utility, Colors, Color } from "@yummacss/api";
 ```
 
 ## Built with

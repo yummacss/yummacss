@@ -8,9 +8,9 @@ import {
   YCSS_BOX_SHADOW_XS,
   YCSS_GRAYSCALE,
 } from "@/constants/variables";
-import { UtilityMap } from "@/interfaces";
+import { Utilities } from "@/interfaces";
 
-export const effectUtils: UtilityMap = {
+export const effectUtils: Utilities = {
   "backdrop-blur": {
     prefix: "bf-b",
     properties: ["backdrop-filter"],

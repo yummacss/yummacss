@@ -1,3 +1,2 @@
-export * from "./color-item";
-export * from "./response";
-export * from "./utility-item";
+export * from "./color";
+export * from "./utility";
