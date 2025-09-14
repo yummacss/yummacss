@@ -67,10 +67,16 @@ import {
 } from "@yummacss/api";
 ```
 
-For advanced use cases use these types:
+Utility types:
 
 ```ts
-import type { Utilities, Utility, Colors, Color } from "@yummacss/api";
+import type { Utilities, Utility } from "@yummacss/api";
+```
+
+Color types:
+
+```ts
+import type { Colors, Color } from "@yummacss/api";
 ```
 
 ## Built with
