@@ -1,4 +1,4 @@
-import { UtilityMap } from "@/interfaces";
+import { Utilities } from "@/interfaces";
 
 import { backgroundUtils } from "./background";
 import { borderUtils } from "./border";
@@ -16,7 +16,7 @@ import { tableUtils } from "./table";
 import { textUtils } from "./text";
 import { transformUtils } from "./transform";
 
-export const allUtilities: UtilityMap = {
+export const allUtils: Utilities = {
   ...backgroundUtils,
   ...borderUtils,
   ...boxModelUtils,

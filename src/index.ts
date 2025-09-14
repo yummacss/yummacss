@@ -1,4 +1,4 @@
-import { allUtilities } from "./core";
+import { allUtils } from "./core";
 import { backgroundUtils } from "./core/background";
 import { borderUtils } from "./core/border";
 import { boxModelUtils } from "./core/box-model";
@@ -14,27 +14,25 @@ import { svgUtils } from "./core/svg";
 import { tableUtils } from "./core/table";
 import { textUtils } from "./core/text";
 import { transformUtils } from "./core/transform";
-import { UtilityMap } from "./interfaces";
+import { Utilities } from "./interfaces";
 
-// all utilities
-export const getAllUtils = (): UtilityMap => allUtilities;
-
-// api
-export const getBackgroundUtils = (): UtilityMap => backgroundUtils;
-export const getBorderUtils = (): UtilityMap => borderUtils;
-export const getBoxModelUtils = (): UtilityMap => boxModelUtils;
-export const getColorUtils = (): UtilityMap => colorUtils;
-export const getEffectUtils = (): UtilityMap => effectUtils;
-export const getFlexboxUtils = (): UtilityMap => flexboxUtils;
-export const getFontUtils = (): UtilityMap => fontUtils;
-export const getGridUtils = (): UtilityMap => gridUtils;
-export const getInteractivityUtils = (): UtilityMap => interactivityUtils;
-export const getOutlineUtils = (): UtilityMap => outlineUtils;
-export const getPositioningUtils = (): UtilityMap => positioningUtils;
-export const getSvgUtils = (): UtilityMap => svgUtils;
-export const getTableUtils = (): UtilityMap => tableUtils;
-export const getTextUtils = (): UtilityMap => textUtils;
-export const getTransformUtils = (): UtilityMap => transformUtils;
+// functions
+export const getAllUtils = (): Utilities => allUtils;
+export const getBackgroundUtils = (): Utilities => backgroundUtils;
+export const getBorderUtils = (): Utilities => borderUtils;
+export const getBoxModelUtils = (): Utilities => boxModelUtils;
+export const getColorUtils = (): Utilities => colorUtils;
+export const getEffectUtils = (): Utilities => effectUtils;
+export const getFlexboxUtils = (): Utilities => flexboxUtils;
+export const getFontUtils = (): Utilities => fontUtils;
+export const getGridUtils = (): Utilities => gridUtils;
+export const getInteractivityUtils = (): Utilities => interactivityUtils;
+export const getOutlineUtils = (): Utilities => outlineUtils;
+export const getPositioningUtils = (): Utilities => positioningUtils;
+export const getSvgUtils = (): Utilities => svgUtils;
+export const getTableUtils = (): Utilities => tableUtils;
+export const getTextUtils = (): Utilities => textUtils;
+export const getTransformUtils = (): Utilities => transformUtils;
 
 // types
-export * from "./interfaces";
+export type * from "./interfaces";

@@ -1,11 +1,11 @@
-type ValueCreatorConfig = {
+type Values = {
   base: number;
   unit?: string;
   min?: number;
   max?: number;
 };
 
-export const createValues = ({ base, unit = "", min = 0, max = 100 }: ValueCreatorConfig): Record<string, string> => {
+export const createValues = ({ base, unit = "", min = 0, max = 100 }: Values): Record<string, string> => {
   const values: Record<string, string> = {};
 
   for (let i = min; i <= max; i++) {

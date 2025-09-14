@@ -1,9 +1,10 @@
 import { YCSS_COLOR_BLACK, YCSS_COLOR_CURRENT, YCSS_COLOR_TRANSPARENT, YCSS_COLOR_WHITE } from "@/constants/variables";
 import { createColors } from "@/helpers/create-colors";
-import { ColorUtilityMap } from "@/interfaces";
+import { Colors } from "@/interfaces";
 
 const colors = createColors();
-const v = {
+
+const defaultColors = {
   ...colors,
   black: YCSS_COLOR_BLACK,
   white: YCSS_COLOR_WHITE,
@@ -11,83 +12,83 @@ const v = {
   current: YCSS_COLOR_CURRENT,
 };
 
-export const colorUtils: ColorUtilityMap = {
+export const colorUtils: Colors = {
   "accent-color": {
     prefix: "ac",
     properties: ["accent-color"],
     slug: "accent-color",
-    values: v,
+    values: defaultColors,
   },
   "background-color": {
     prefix: "bg",
     properties: ["background-color"],
     slug: "background-color",
-    values: v,
+    values: defaultColors,
   },
   "border-color": {
     prefix: "bc",
     properties: ["border-color"],
     slug: "border-color",
-    values: v,
+    values: defaultColors,
   },
   "border-bottom-color": {
     prefix: "bc-b",
     properties: ["border-bottom-color"],
     slug: "border-bottom-color",
-    values: v,
+    values: defaultColors,
   },
   "border-left-color": {
     prefix: "bc-l",
     properties: ["border-left-color"],
     slug: "border-left-color",
-    values: v,
+    values: defaultColors,
   },
   "border-right-color": {
     prefix: "bc-r",
     properties: ["border-right-color"],
     slug: "border-right-color",
-    values: v,
+    values: defaultColors,
   },
   "border-top-color": {
     prefix: "bc-t",
     properties: ["border-top-color"],
     slug: "border-top-color",
-    values: v,
+    values: defaultColors,
   },
   "caret-color": {
     prefix: "cc",
     properties: ["caret-color"],
     slug: "caret-color",
-    values: v,
+    values: defaultColors,
   },
   color: {
     prefix: "tc",
     properties: ["color"],
     slug: "color",
-    values: v,
+    values: defaultColors,
   },
   fill: {
     prefix: "f",
     properties: ["fill"],
     slug: "fill",
-    values: v,
+    values: defaultColors,
   },
   "outline-color": {
     prefix: "oc",
     properties: ["outline-color"],
     slug: "outline-color",
-    values: v,
+    values: defaultColors,
   },
   stroke: {
     prefix: "s",
     properties: ["stroke"],
     slug: "stroke",
-    values: v,
+    values: defaultColors,
   },
   "text-decoration-color": {
     prefix: "tdc",
     properties: ["text-decoration-color"],
     slug: "text-decoration-color",
-    values: v,
+    values: defaultColors,
   },
 };

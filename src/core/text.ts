@@ -1,8 +1,8 @@
 import { YCSS_DECORATION_THICKNESS } from "@/constants/variables";
 import { createValues } from "@/helpers/create-values";
-import { UtilityMap } from "@/interfaces";
+import { Utilities } from "@/interfaces";
 
-export const textUtils: UtilityMap = {
+export const textUtils: Utilities = {
   "letter-spacing": {
     prefix: "ls",
     properties: ["letter-spacing"],

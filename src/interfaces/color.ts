@@ -1,10 +1,10 @@
-export interface UtilityItem {
+export interface Color {
   prefix: string;
   properties: string[];
   slug: string;
   values: { [key: string]: string };
 }
 
-export interface UtilityMap {
-  [key: string]: UtilityItem;
+export interface Colors {
+  [key: string]: Color;
 }

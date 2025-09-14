@@ -1,8 +1,8 @@
 import { YCSS_OUTLINE_OFFSET, YCSS_OUTLINE_WIDTH } from "@/constants/variables";
 import { createValues } from "@/helpers/create-values";
-import { UtilityMap } from "@/interfaces";
+import { Utilities } from "@/interfaces";
 
-export const outlineUtils: UtilityMap = {
+export const outlineUtils: Utilities = {
   "outline-offset": {
     prefix: "oo",
     properties: ["outline-offset"],

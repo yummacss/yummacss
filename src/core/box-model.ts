@@ -1,8 +1,8 @@
 import { YCSS_DIMENSION, YCSS_HEIGHT, YCSS_MARGIN, YCSS_PADDING, YCSS_WIDTH } from "@/constants/variables";
 import { createValues } from "@/helpers/create-values";
-import { UtilityMap } from "@/interfaces";
+import { Utilities } from "@/interfaces";
 
-export const boxModelUtils: UtilityMap = {
+export const boxModelUtils: Utilities = {
   "box-sizing": {
     prefix: "bs",
     properties: ["box-sizing"],

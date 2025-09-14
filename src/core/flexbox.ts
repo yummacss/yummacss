@@ -1,8 +1,8 @@
 import { YCSS_FLEX_BASIS } from "@/constants/variables";
 import { createValues } from "@/helpers/create-values";
-import { UtilityMap } from "@/interfaces";
+import { Utilities } from "@/interfaces";
 
-export const flexboxUtils: UtilityMap = {
+export const flexboxUtils: Utilities = {
   "align-content": {
     prefix: "ac",
     properties: ["align-content"],

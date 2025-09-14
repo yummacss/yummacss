@@ -16,9 +16,9 @@ import {
   YCSS_FONT_SIZE_XS,
   YCSS_FONT_SYSTEM,
 } from "@/constants/variables";
-import { UtilityMap } from "@/interfaces";
+import { Utilities } from "@/interfaces";
 
-export const fontUtils: UtilityMap = {
+export const fontUtils: Utilities = {
   "font-family": {
     prefix: "ff",
     properties: ["font-family"],

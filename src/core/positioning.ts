@@ -1,8 +1,8 @@
 import { YCSS_BOTTOM_LEFT_TOP_RIGHT } from "@/constants/variables";
 import { createValues } from "@/helpers/create-values";
-import { UtilityMap } from "@/interfaces";
+import { Utilities } from "@/interfaces";
 
-export const positioningUtils: UtilityMap = {
+export const positioningUtils: Utilities = {
   "aspect-ratio": {
     prefix: "ar",
     properties: ["aspect-ratio"],

@@ -1,8 +1,8 @@
 import { YCSS_MARGIN, YCSS_PADDING } from "@/constants/variables";
 import { createValues } from "@/helpers/create-values";
-import { UtilityMap } from "@/interfaces";
+import { Utilities } from "@/interfaces";
 
-export const interactivityUtils: UtilityMap = {
+export const interactivityUtils: Utilities = {
   appearance: {
     prefix: "a",
     properties: ["appearance"],

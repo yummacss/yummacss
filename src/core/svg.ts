@@ -1,6 +1,6 @@
-import { UtilityMap } from "@/interfaces";
+import { Utilities } from "@/interfaces";
 
-export const svgUtils: UtilityMap = {
+export const svgUtils: Utilities = {
   "stroke-width": {
     prefix: "sw",
     properties: ["stroke-width"],
