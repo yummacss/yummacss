@@ -42,9 +42,7 @@ const boxModel = getBoxModelUtils();
 const margin = boxModel["margin"];
 ```
 
-## Available API
-
-Import utility group functions individually:
+## Available functions
 
 ```ts
 import {
@@ -67,16 +65,11 @@ import {
 } from "@yummacss/api";
 ```
 
-Utility types:
+## Using Typescript
 
 ```ts
-import type { Utilities, Utility } from "@yummacss/api";
-```
-
-Color types:
-
-```ts
-import type { Colors, Color } from "@yummacss/api";
+import type { Utilities, Colors } from "@yummacss/api"; // returns a map of utilities
+import type { Color, Utility } from "@yummacss/api"; // returns a single object
 ```
 
 ## Built with

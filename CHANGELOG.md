@@ -23,7 +23,7 @@ All notable changes to the Yumma CSS API will be documented in this file.
 - Rename `UtilityItem` interface signature to `Utility`
 - Rename `UtilityMap` interface signature to `Utilities`
 - Remove `ApiResponse` type
-    
+
 </details>
 
 <details>
