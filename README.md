@@ -23,7 +23,7 @@ Initialize configuration
 npx yummacss init
 ```
 
-Our [framework guides](https://www.yummacss.com/docs/installation#framework-guides) will teach you how to set up your configuration file.
+Our [framework guides](https://www.yummacss.com/docs/framework-guides/) will teach you how to set up your configuration file.
 
 ## Development setup
 

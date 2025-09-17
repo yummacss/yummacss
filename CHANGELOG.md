@@ -22,11 +22,11 @@ All notable changes to the Yumma CSS will be documented in this file.
 
 </details>
 
-<details open>
+<details>
 <summary>
     <b>Fixes</b>
 </summary>
 
-- Update `README.md` documentation
+- None
 
 </details>
