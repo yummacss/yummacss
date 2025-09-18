@@ -22,7 +22,7 @@ All notable changes to the Yumma CSS will be documented in this file.
 
 </details>
 
-<details>
+<details open>
 <summary>
     <b>Fixes</b>
 </summary>
