@@ -15,62 +15,9 @@ Yumma CSS API provides access to Yumma CSS utilities through Javascript function
 npm i @yummacss/api
 ```
 
-## Usage examples
+## Documentation
 
-Get all utilities at once:
-
-```ts
-import { getAllUtils } from "@yummacss/api";
-
-const all = getAllUtils();
-```
-
-Get only background utilities:
-
-```ts
-import { getBackgroundUtils } from "@yummacss/api";
-
-const backgrounds = getBackgroundUtils();
-```
-
-Access a specific utility from a category:
-
-```ts
-import { getBoxModelUtils } from "@yummacss/api";
-
-const boxModel = getBoxModelUtils();
-const margin = boxModel["margin"];
-```
-
-## Available functions
-
-```ts
-import {
-  getAllUtils,
-  getBackgroundUtils,
-  getBorderUtils,
-  getBoxModelUtils,
-  getColorUtils,
-  getEffectUtils,
-  getFlexboxUtils,
-  getFontUtils,
-  getGridUtils,
-  getInteractivityUtils,
-  getOutlineUtils,
-  getPositioningUtils,
-  getSvgUtils,
-  getTableUtils,
-  getTextUtils,
-  getTransformUtils,
-} from "@yummacss/api";
-```
-
-## Using Typescript
-
-```ts
-import type { Utilities, Colors } from "@yummacss/api"; // returns a map of utilities
-import type { Color, Utility } from "@yummacss/api"; // returns a single object
-```
+Head over to the [Yumma CSS docs](https://www.yummacss.com/docs/dev-api) for full API to learn more.
 
 ## Built with
 
