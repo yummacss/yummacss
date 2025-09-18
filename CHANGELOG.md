@@ -27,6 +27,6 @@ All notable changes to the Yumma CSS will be documented in this file.
     <b>Fixes</b>
 </summary>
 
-- None
+- Update `README.md`
 
 </details>
