@@ -17,7 +17,7 @@ npm i @yummacss/api
 
 ## Documentation
 
-Head over to the [Yumma CSS docs](https://www.yummacss.com/docs/dev-api) for full API to learn more.
+Head over to the [Yumma CSS docs](https://www.yummacss.com/docs/dev-api) to learn more.
 
 ## Built with
 
