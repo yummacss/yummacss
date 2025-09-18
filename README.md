@@ -26,7 +26,7 @@ npx yummacss init
 
 ## Documentation
 
-Head over to [yummacss.com](https://www.yummacss.com) for the full documentation.
+Head over to the [Yumma CSS docs](https://www.yummacss.com) to learn more.
 
 ## Built with
 
