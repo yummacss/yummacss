@@ -1,6 +1,4 @@
-@use "abstracts/variables" as vars;
-
-*,
+export const BASE_CSS = `*,
 *::before,
 *::after {
   box-sizing: border-box;
@@ -13,7 +11,7 @@
 }
 
 html {
-  font-family: vars.$ycss-font-system;
+  font-family: system-ui, sans-serif;
 }
 
 body {
@@ -36,9 +34,9 @@ input,
 optgroup,
 select,
 textarea {
-  background-color: vars.$ycss-color-transparent;
+  background-color: transparent;
   font-family: inherit;
-  padding: 0.5rem;
+  padding: .5rem;
 }
 
 button:not([class]),
@@ -46,7 +44,7 @@ input:not([class]),
 optgroup:not([class]),
 select:not([class]),
 textarea:not([class]) {
-  border: 1px solid vars.$ycss-color-silver;
+  border: 1px solid #bfc2c7;
 }
 
 a,
@@ -56,7 +54,7 @@ select,
 summary,
 textarea {
   &:focus {
-    outline: 2px solid vars.$ycss-color-transparent;
+    outline: 2px solid transparent;
   }
 }
 
@@ -73,7 +71,7 @@ input:disabled,
 select:disabled,
 textarea:disabled {
   cursor: not-allowed;
-  opacity: 0.5;
+  opacity: .5;
 }
 
 h1,
@@ -115,7 +113,7 @@ pre,
 code,
 kbd,
 samp {
-  font-family: monospace, monospace;
+  font-family: monospace;
   font-size: 1em;
 }
 
@@ -136,7 +134,7 @@ th {
 }
 
 hr {
-  border-top: 1px solid vars.$ycss-color-silver;
+  border-top: 1px solid #bfc2c7;
   height: 0;
   margin: 1em 0;
 }
@@ -148,3 +146,4 @@ details {
 summary {
   display: list-item;
 }
+`;

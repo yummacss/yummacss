@@ -1,8 +1,0 @@
-@use "../theme" as *;
-@use "sass:map";
-
-@function ignore-neutral($v, $ycss-theme) {
-  @return $v != map.get($ycss-theme, "black") and $v !=
-    map.get($ycss-theme, "white") and $v != map.get($ycss-theme, "transparent")
-    and $v != map.get($ycss-theme, "current");
-}
