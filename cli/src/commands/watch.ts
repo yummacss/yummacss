@@ -10,6 +10,22 @@ let currentConfig: Config;
 let buildTimeout: NodeJS.Timeout | null = null;
 let changedFiles = new Set<string>();
 
+function handleChange(path: string, event: string) {
+  changedFiles.add(path);
+
+  if (buildTimeout) {
+    clearTimeout(buildTimeout);
+  }
+
+  buildTimeout = setTimeout(async () => {
+    if (changedFiles.size > 0) {
+      await build(currentConfig, true);
+      changedFiles.clear();
+    }
+    buildTimeout = null;
+  }, 500);
+}
+
 export async function watch() {
   try {
     currentConfig = await loadConfig();
@@ -33,22 +49,6 @@ export async function watch() {
       .on("add", (path) => handleChange(path, "added"))
       .on("change", (path) => handleChange(path, "changed"))
       .on("unlink", (path) => handleChange(path, "removed"));
-
-    function handleChange(path: string, event: string) {
-      changedFiles.add(path);
-
-      if (buildTimeout) {
-        clearTimeout(buildTimeout);
-      }
-
-      buildTimeout = setTimeout(async () => {
-        if (changedFiles.size > 0) {
-          await build(currentConfig, true);
-          changedFiles.clear();
-        }
-        buildTimeout = null;
-      }, 500);
-    }
   } catch (error) {
     cli.error(message.watch.fail);
     process.exit(1);

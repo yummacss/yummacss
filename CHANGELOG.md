@@ -2,14 +2,14 @@
 
 All notable changes to the Yumma CSS will be documented in this file.
 
-## [3.3.2]
+## [3.4.0]
 
 <details>
 <summary>
     <b>Features</b>
 </summary>
 
-- None
+- Replace `sass-embedded` with `@yummacss/api`
 
 </details>
 
@@ -18,7 +18,7 @@ All notable changes to the Yumma CSS will be documented in this file.
     <b>Breaking changes</b>
 </summary>
 
-- None
+- Remove all `.scss` files from the framework
 
 </details>
 
@@ -27,6 +27,7 @@ All notable changes to the Yumma CSS will be documented in this file.
     <b>Fixes</b>
 </summary>
 
-- Update `README.md`
+- Build times are now ridiculously fast
+- Remove `purgecss` from the build process (Internal)
 
 </details>
