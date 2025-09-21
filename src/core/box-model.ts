@@ -2,7 +2,7 @@ import { dimension, height, margin, padding, width } from "@/defaults/variables"
 import { createValues } from "@/helpers/create-values";
 import { Utilities } from "@/interfaces";
 
-export const boxModelUtils: Utilities = {
+export const boxModel: Utilities = {
   "box-sizing": {
     prefix: "bs",
     properties: ["box-sizing"],

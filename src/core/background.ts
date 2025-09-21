@@ -1,6 +1,6 @@
 import { Utilities } from "@/interfaces";
 
-export const backgroundUtils: Utilities = {
+export const background: Utilities = {
   "background-attachment": {
     prefix: "ba",
     properties: ["background-attachment"],

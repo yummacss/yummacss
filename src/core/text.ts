@@ -2,7 +2,7 @@ import { decorationThickness } from "@/defaults/variables";
 import { createValues } from "@/helpers/create-values";
 import { Utilities } from "@/interfaces";
 
-export const textUtils: Utilities = {
+export const text: Utilities = {
   "letter-spacing": {
     prefix: "ls",
     properties: ["letter-spacing"],

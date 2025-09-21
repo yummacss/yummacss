@@ -2,7 +2,7 @@ import { flexBasis } from "@/defaults/variables";
 import { createValues } from "@/helpers/create-values";
 import { Utilities } from "@/interfaces";
 
-export const flexboxUtils: Utilities = {
+export const flexbox: Utilities = {
   "align-content": {
     prefix: "ac",
     properties: ["align-content"],

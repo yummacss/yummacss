@@ -1,6 +1,6 @@
 import { Utilities } from "@/interfaces";
 
-export const svgUtils: Utilities = {
+export const svg: Utilities = {
   "stroke-width": {
     prefix: "sw",
     properties: ["stroke-width"],

@@ -2,7 +2,7 @@ import { margin, padding } from "@/defaults/variables";
 import { createValues } from "@/helpers/create-values";
 import { Utilities } from "@/interfaces";
 
-export const interactivityUtils: Utilities = {
+export const interactivity: Utilities = {
   appearance: {
     prefix: "a",
     properties: ["appearance"],

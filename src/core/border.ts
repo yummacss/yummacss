@@ -1,8 +1,8 @@
-import { border, borderRadius, borderSpacing } from "@/defaults/variables";
+import { borderRadius, borderSpacing, borderWidth } from "@/defaults/variables";
 import { createValues } from "@/helpers/create-values";
 import { Utilities } from "@/interfaces";
 
-export const borderUtils: Utilities = {
+export const border: Utilities = {
   "border-collapse": {
     prefix: "bc",
     properties: ["border-collapse"],
@@ -194,7 +194,7 @@ export const borderUtils: Utilities = {
     properties: ["border-width"],
     slug: "border-width",
     values: createValues({
-      base: border,
+      base: borderWidth,
       unit: "px",
       min: 0,
       max: 8,
@@ -206,7 +206,7 @@ export const borderUtils: Utilities = {
     properties: ["border-bottom-width"],
     slug: "border-bottom-radius",
     values: createValues({
-      base: border,
+      base: borderWidth,
       unit: "px",
       min: 0,
       max: 8,
@@ -218,7 +218,7 @@ export const borderUtils: Utilities = {
     properties: ["border-left-width"],
     slug: "border-width/#left-width",
     values: createValues({
-      base: border,
+      base: borderWidth,
       unit: "px",
       min: 0,
       max: 8,
@@ -230,7 +230,7 @@ export const borderUtils: Utilities = {
     properties: ["border-right-width"],
     slug: "border-width/#right-width",
     values: createValues({
-      base: border,
+      base: borderWidth,
       unit: "px",
       min: 0,
       max: 8,
@@ -242,7 +242,7 @@ export const borderUtils: Utilities = {
     properties: ["border-top-width"],
     slug: "border-width/#top-width",
     values: createValues({
-      base: border,
+      base: borderWidth,
       unit: "px",
       min: 0,
       max: 8,

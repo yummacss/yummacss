@@ -10,7 +10,7 @@ import {
 } from "@/defaults/variables";
 import { Utilities } from "@/interfaces";
 
-export const effectUtils: Utilities = {
+export const effect: Utilities = {
   "backdrop-blur": {
     prefix: "bf-b",
     properties: ["backdrop-filter"],

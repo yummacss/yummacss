@@ -1,6 +1,6 @@
 import { Utilities } from "@/interfaces";
 
-export const tableUtils: Utilities = {
+export const table: Utilities = {
   "caption-side": {
     prefix: "cs",
     properties: ["caption-side"],
