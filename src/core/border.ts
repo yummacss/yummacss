@@ -1,4 +1,4 @@
-import { YCSS_BORDER, YCSS_BORDER_RADIUS, YCSS_BORDER_SPACING } from "@/constants/variables";
+import { border, borderRadius, borderSpacing } from "@/defaults/variables";
 import { createValues } from "@/helpers/create-values";
 import { Utilities } from "@/interfaces";
 
@@ -19,7 +19,7 @@ export const borderUtils: Utilities = {
     slug: "border-radius",
     values: {
       ...createValues({
-        base: YCSS_BORDER_RADIUS,
+        base: borderRadius,
         unit: "rem",
         min: 0,
         max: 8,
@@ -36,7 +36,7 @@ export const borderUtils: Utilities = {
     slug: "border-radius/#bottom-radius",
     values: {
       ...createValues({
-        base: YCSS_BORDER_RADIUS,
+        base: borderRadius,
         unit: "rem",
         min: 0,
         max: 8,
@@ -53,7 +53,7 @@ export const borderUtils: Utilities = {
     slug: "border-radius/#left-radius",
     values: {
       ...createValues({
-        base: YCSS_BORDER_RADIUS,
+        base: borderRadius,
         unit: "rem",
         min: 0,
         max: 8,
@@ -70,7 +70,7 @@ export const borderUtils: Utilities = {
     slug: "border-radius/#right-radius",
     values: {
       ...createValues({
-        base: YCSS_BORDER_RADIUS,
+        base: borderRadius,
         unit: "rem",
         min: 0,
         max: 8,
@@ -87,7 +87,7 @@ export const borderUtils: Utilities = {
     slug: "border-radius/#bottom-left-radius",
     values: {
       ...createValues({
-        base: YCSS_BORDER_RADIUS,
+        base: borderRadius,
         unit: "rem",
         min: 0,
         max: 8,
@@ -104,7 +104,7 @@ export const borderUtils: Utilities = {
     slug: "border-radius/#bottom-right-radius",
     values: {
       ...createValues({
-        base: YCSS_BORDER_RADIUS,
+        base: borderRadius,
         unit: "rem",
         min: 0,
         max: 8,
@@ -121,7 +121,7 @@ export const borderUtils: Utilities = {
     slug: "border-radius/#top-radius",
     values: {
       ...createValues({
-        base: YCSS_BORDER_RADIUS,
+        base: borderRadius,
         unit: "rem",
         min: 0,
         max: 8,
@@ -138,7 +138,7 @@ export const borderUtils: Utilities = {
     slug: "border-radius/#top-left-radius",
     values: {
       ...createValues({
-        base: YCSS_BORDER_RADIUS,
+        base: borderRadius,
         unit: "rem",
         min: 0,
         max: 8,
@@ -155,7 +155,7 @@ export const borderUtils: Utilities = {
     slug: "border-radius/#top-right-radius",
     values: {
       ...createValues({
-        base: YCSS_BORDER_RADIUS,
+        base: borderRadius,
         unit: "rem",
         min: 0,
         max: 8,
@@ -171,7 +171,7 @@ export const borderUtils: Utilities = {
     properties: ["border-spacing"],
     slug: "border-spacing",
     values: createValues({
-      base: YCSS_BORDER_SPACING,
+      base: borderSpacing,
       unit: "rem",
       min: 0,
       max: 8,
@@ -194,7 +194,7 @@ export const borderUtils: Utilities = {
     properties: ["border-width"],
     slug: "border-width",
     values: createValues({
-      base: YCSS_BORDER,
+      base: border,
       unit: "px",
       min: 0,
       max: 8,
@@ -206,7 +206,7 @@ export const borderUtils: Utilities = {
     properties: ["border-bottom-width"],
     slug: "border-bottom-radius",
     values: createValues({
-      base: YCSS_BORDER,
+      base: border,
       unit: "px",
       min: 0,
       max: 8,
@@ -218,7 +218,7 @@ export const borderUtils: Utilities = {
     properties: ["border-left-width"],
     slug: "border-width/#left-width",
     values: createValues({
-      base: YCSS_BORDER,
+      base: border,
       unit: "px",
       min: 0,
       max: 8,
@@ -230,7 +230,7 @@ export const borderUtils: Utilities = {
     properties: ["border-right-width"],
     slug: "border-width/#right-width",
     values: createValues({
-      base: YCSS_BORDER,
+      base: border,
       unit: "px",
       min: 0,
       max: 8,
@@ -242,7 +242,7 @@ export const borderUtils: Utilities = {
     properties: ["border-top-width"],
     slug: "border-width/#top-width",
     values: createValues({
-      base: YCSS_BORDER,
+      base: border,
       unit: "px",
       min: 0,
       max: 8,

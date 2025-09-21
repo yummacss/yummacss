@@ -1,4 +1,4 @@
-import { YCSS_DIMENSION, YCSS_HEIGHT, YCSS_MARGIN, YCSS_PADDING, YCSS_WIDTH } from "@/constants/variables";
+import { dimension, height, margin, padding, width } from "@/defaults/variables";
 import { createValues } from "@/helpers/create-values";
 import { Utilities } from "@/interfaces";
 
@@ -19,7 +19,7 @@ export const boxModelUtils: Utilities = {
     slug: "dimension",
     values: {
       ...createValues({
-        base: YCSS_DIMENSION,
+        base: dimension,
         unit: "rem",
         min: 0,
         max: 100,
@@ -49,7 +49,7 @@ export const boxModelUtils: Utilities = {
     slug: "dimension/#max-dimension",
     values: {
       ...createValues({
-        base: YCSS_DIMENSION,
+        base: dimension,
         unit: "rem",
         min: 0,
         max: 100,
@@ -79,7 +79,7 @@ export const boxModelUtils: Utilities = {
     slug: "dimension/#min-dimension",
     values: {
       ...createValues({
-        base: YCSS_DIMENSION,
+        base: dimension,
         unit: "rem",
         min: 0,
         max: 100,
@@ -109,7 +109,7 @@ export const boxModelUtils: Utilities = {
     slug: "height",
     values: {
       ...createValues({
-        base: YCSS_HEIGHT,
+        base: height,
         unit: "rem",
         min: 0,
         max: 100,
@@ -139,7 +139,7 @@ export const boxModelUtils: Utilities = {
     slug: "height/#max-height",
     values: {
       ...createValues({
-        base: YCSS_HEIGHT,
+        base: height,
         unit: "rem",
         min: 0,
         max: 100,
@@ -169,7 +169,7 @@ export const boxModelUtils: Utilities = {
     slug: "height/#min-height",
     values: {
       ...createValues({
-        base: YCSS_HEIGHT,
+        base: height,
         unit: "rem",
         min: 0,
         max: 100,
@@ -199,7 +199,7 @@ export const boxModelUtils: Utilities = {
     slug: "margin",
     values: {
       ...createValues({
-        base: YCSS_MARGIN,
+        base: margin,
         unit: "rem",
         min: 0,
         max: 100,
@@ -215,7 +215,7 @@ export const boxModelUtils: Utilities = {
     slug: "margin/#block-end",
     values: {
       ...createValues({
-        base: YCSS_MARGIN,
+        base: margin,
         unit: "rem",
         min: 0,
         max: 100,
@@ -231,7 +231,7 @@ export const boxModelUtils: Utilities = {
     slug: "margin/#block-start",
     values: {
       ...createValues({
-        base: YCSS_MARGIN,
+        base: margin,
         unit: "rem",
         min: 0,
         max: 100,
@@ -247,7 +247,7 @@ export const boxModelUtils: Utilities = {
     slug: "margin/#bottom",
     values: {
       ...createValues({
-        base: YCSS_MARGIN,
+        base: margin,
         unit: "rem",
         min: 0,
         max: 100,
@@ -263,7 +263,7 @@ export const boxModelUtils: Utilities = {
     slug: "margin/#inline-end",
     values: {
       ...createValues({
-        base: YCSS_MARGIN,
+        base: margin,
         unit: "rem",
         min: 0,
         max: 100,
@@ -279,7 +279,7 @@ export const boxModelUtils: Utilities = {
     slug: "margin/#inline-start",
     values: {
       ...createValues({
-        base: YCSS_MARGIN,
+        base: margin,
         unit: "rem",
         min: 0,
         max: 100,
@@ -295,7 +295,7 @@ export const boxModelUtils: Utilities = {
     slug: "margin/#left",
     values: {
       ...createValues({
-        base: YCSS_MARGIN,
+        base: margin,
         unit: "rem",
         min: 0,
         max: 100,
@@ -311,7 +311,7 @@ export const boxModelUtils: Utilities = {
     slug: "margin/#right",
     values: {
       ...createValues({
-        base: YCSS_MARGIN,
+        base: margin,
         unit: "rem",
         min: 0,
         max: 100,
@@ -327,7 +327,7 @@ export const boxModelUtils: Utilities = {
     slug: "margin/#top",
     values: {
       ...createValues({
-        base: YCSS_MARGIN,
+        base: margin,
         unit: "rem",
         min: 0,
         max: 100,
@@ -343,7 +343,7 @@ export const boxModelUtils: Utilities = {
     slug: "margin/#x-axis",
     values: {
       ...createValues({
-        base: YCSS_MARGIN,
+        base: margin,
         unit: "rem",
         min: 0,
         max: 100,
@@ -359,7 +359,7 @@ export const boxModelUtils: Utilities = {
     slug: "margin/#y-axis",
     values: {
       ...createValues({
-        base: YCSS_MARGIN,
+        base: margin,
         unit: "rem",
         min: 0,
         max: 100,
@@ -375,7 +375,7 @@ export const boxModelUtils: Utilities = {
     slug: "padding",
     values: {
       ...createValues({
-        base: YCSS_PADDING,
+        base: padding,
         unit: "rem",
         min: 0,
         max: 100,
@@ -391,7 +391,7 @@ export const boxModelUtils: Utilities = {
     slug: "padding/#block-end",
     values: {
       ...createValues({
-        base: YCSS_PADDING,
+        base: padding,
         unit: "rem",
         min: 0,
         max: 100,
@@ -407,7 +407,7 @@ export const boxModelUtils: Utilities = {
     slug: "padding/#block-start",
     values: {
       ...createValues({
-        base: YCSS_PADDING,
+        base: padding,
         unit: "rem",
         min: 0,
         max: 100,
@@ -423,7 +423,7 @@ export const boxModelUtils: Utilities = {
     slug: "padding/#bottom",
     values: {
       ...createValues({
-        base: YCSS_PADDING,
+        base: padding,
         unit: "rem",
         min: 0,
         max: 100,
@@ -439,7 +439,7 @@ export const boxModelUtils: Utilities = {
     slug: "padding/#inline-end",
     values: {
       ...createValues({
-        base: YCSS_PADDING,
+        base: padding,
         unit: "rem",
         min: 0,
         max: 100,
@@ -455,7 +455,7 @@ export const boxModelUtils: Utilities = {
     slug: "padding/#inline-start",
     values: {
       ...createValues({
-        base: YCSS_PADDING,
+        base: padding,
         unit: "rem",
         min: 0,
         max: 100,
@@ -471,7 +471,7 @@ export const boxModelUtils: Utilities = {
     slug: "padding/#left",
     values: {
       ...createValues({
-        base: YCSS_PADDING,
+        base: padding,
         unit: "rem",
         min: 0,
         max: 100,
@@ -487,7 +487,7 @@ export const boxModelUtils: Utilities = {
     slug: "padding/#right",
     values: {
       ...createValues({
-        base: YCSS_PADDING,
+        base: padding,
         unit: "rem",
         min: 0,
         max: 100,
@@ -503,7 +503,7 @@ export const boxModelUtils: Utilities = {
     slug: "padding/#top",
     values: {
       ...createValues({
-        base: YCSS_PADDING,
+        base: padding,
         unit: "rem",
         min: 0,
         max: 100,
@@ -519,7 +519,7 @@ export const boxModelUtils: Utilities = {
     slug: "padding/#x-axis",
     values: {
       ...createValues({
-        base: YCSS_PADDING,
+        base: padding,
         unit: "rem",
         min: 0,
         max: 100,
@@ -535,7 +535,7 @@ export const boxModelUtils: Utilities = {
     slug: "padding/#y-axis",
     values: {
       ...createValues({
-        base: YCSS_PADDING,
+        base: padding,
         unit: "rem",
         min: 0,
         max: 100,
@@ -551,7 +551,7 @@ export const boxModelUtils: Utilities = {
     slug: "width",
     values: {
       ...createValues({
-        base: YCSS_WIDTH,
+        base: width,
         unit: "rem",
         min: 0,
         max: 100,
@@ -581,7 +581,7 @@ export const boxModelUtils: Utilities = {
     slug: "width/#max-width",
     values: {
       ...createValues({
-        base: YCSS_WIDTH,
+        base: width,
         unit: "rem",
         min: 0,
         max: 100,
@@ -611,7 +611,7 @@ export const boxModelUtils: Utilities = {
     slug: "width/#min-width",
     values: {
       ...createValues({
-        base: YCSS_WIDTH,
+        base: width,
         unit: "rem",
         min: 0,
         max: 100,

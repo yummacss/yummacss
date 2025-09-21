@@ -1,4 +1,4 @@
-import { YCSS_FLEX_BASIS } from "@/constants/variables";
+import { flexBasis } from "@/defaults/variables";
 import { createValues } from "@/helpers/create-values";
 import { Utilities } from "@/interfaces";
 
@@ -53,7 +53,7 @@ export const flexboxUtils: Utilities = {
     slug: "flex-basis",
     values: {
       ...createValues({
-        base: YCSS_FLEX_BASIS,
+        base: flexBasis,
         unit: "rem",
         min: 0,
         max: 100,

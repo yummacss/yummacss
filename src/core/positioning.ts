@@ -1,4 +1,4 @@
-import { YCSS_BOTTOM_LEFT_TOP_RIGHT } from "@/constants/variables";
+import { bottomLeftTopRight } from "@/defaults/variables";
 import { createValues } from "@/helpers/create-values";
 import { Utilities } from "@/interfaces";
 
@@ -50,7 +50,7 @@ export const positioningUtils: Utilities = {
     slug: "bottom",
     values: {
       ...createValues({
-        base: YCSS_BOTTOM_LEFT_TOP_RIGHT,
+        base: bottomLeftTopRight,
         unit: "rem",
         min: 0,
         max: 16,
@@ -66,7 +66,7 @@ export const positioningUtils: Utilities = {
     slug: "inset",
     values: {
       ...createValues({
-        base: YCSS_BOTTOM_LEFT_TOP_RIGHT,
+        base: bottomLeftTopRight,
         unit: "rem",
         min: 0,
         max: 16,
@@ -82,7 +82,7 @@ export const positioningUtils: Utilities = {
     slug: "inset-x",
     values: {
       ...createValues({
-        base: YCSS_BOTTOM_LEFT_TOP_RIGHT,
+        base: bottomLeftTopRight,
         unit: "rem",
         min: 0,
         max: 16,
@@ -98,7 +98,7 @@ export const positioningUtils: Utilities = {
     slug: "inset-y",
     values: {
       ...createValues({
-        base: YCSS_BOTTOM_LEFT_TOP_RIGHT,
+        base: bottomLeftTopRight,
         unit: "rem",
         min: 0,
         max: 16,
@@ -124,7 +124,7 @@ export const positioningUtils: Utilities = {
     slug: "left",
     values: {
       ...createValues({
-        base: YCSS_BOTTOM_LEFT_TOP_RIGHT,
+        base: bottomLeftTopRight,
         unit: "rem",
         min: 0,
         max: 16,
@@ -140,7 +140,7 @@ export const positioningUtils: Utilities = {
     slug: "right",
     values: {
       ...createValues({
-        base: YCSS_BOTTOM_LEFT_TOP_RIGHT,
+        base: bottomLeftTopRight,
         unit: "rem",
         min: 0,
         max: 16,
@@ -156,7 +156,7 @@ export const positioningUtils: Utilities = {
     slug: "top",
     values: {
       ...createValues({
-        base: YCSS_BOTTOM_LEFT_TOP_RIGHT,
+        base: bottomLeftTopRight,
         unit: "rem",
         min: 0,
         max: 16,

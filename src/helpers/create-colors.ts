@@ -1,4 +1,4 @@
-import { YCSS_THEME } from "@/constants/theme";
+import { colorTheme } from "@/defaults/theme";
 import tinycolor from "tinycolor2";
 
 const percentage = 14;
@@ -26,7 +26,7 @@ const generateShades = (color: string): string[] => {
 export const createColors = () => {
   const colors: Record<string, string> = {};
 
-  Object.entries(YCSS_THEME).forEach(([colorName, colorValue]) => {
+  Object.entries(colorTheme).forEach(([colorName, colorValue]) => {
     const shades = generateShades(colorValue);
 
     for (let i = 0; i < 6; i++) {
