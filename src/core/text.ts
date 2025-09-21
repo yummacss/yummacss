@@ -1,4 +1,4 @@
-import { YCSS_DECORATION_THICKNESS } from "@/constants/variables";
+import { decorationThickness } from "@/defaults/variables";
 import { createValues } from "@/helpers/create-values";
 import { Utilities } from "@/interfaces";
 
@@ -107,7 +107,7 @@ export const textUtils: Utilities = {
     slug: "text-decoration-thickness",
     values: {
       ...createValues({
-        base: YCSS_DECORATION_THICKNESS,
+        base: decorationThickness,
         unit: "rem",
         min: 0,
         max: 4,

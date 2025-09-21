@@ -2,7 +2,7 @@
 
 All notable changes to the Yumma CSS API will be documented in this file.
 
-## [1.4.1]
+## [1.4.2]
 
 <details>
 <summary>
@@ -20,13 +20,13 @@ All notable changes to the Yumma CSS API will be documented in this file.
 
 - None
 
-</details>
+</details open>
 
-<details open>
+<details>
 <summary>
     <b>Fixes</b>
 </summary>
 
-- Update `README.md` file
+- Use `camelCase` for exported functions instead of `UPPER_CASE`. (Internal)
 
 </details>

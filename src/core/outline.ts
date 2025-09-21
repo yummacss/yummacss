@@ -1,4 +1,4 @@
-import { YCSS_OUTLINE_OFFSET, YCSS_OUTLINE_WIDTH } from "@/constants/variables";
+import { outlineOffset, outlineWidth } from "@/defaults/variables";
 import { createValues } from "@/helpers/create-values";
 import { Utilities } from "@/interfaces";
 
@@ -8,7 +8,7 @@ export const outlineUtils: Utilities = {
     properties: ["outline-offset"],
     slug: "outline-offset",
     values: createValues({
-      base: YCSS_OUTLINE_OFFSET,
+      base: outlineOffset,
       unit: "px",
       min: 0,
       max: 4,
@@ -31,7 +31,7 @@ export const outlineUtils: Utilities = {
     properties: ["outline-width"],
     slug: "outline-width",
     values: createValues({
-      base: YCSS_OUTLINE_WIDTH,
+      base: outlineWidth,
       unit: "px",
       min: 0,
       max: 4,

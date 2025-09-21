@@ -1,6 +1,6 @@
 {
   "name": "@yummacss/api",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "Yumma CSS definitions for Javascript apps.",
   "keywords": [
     "typescript",
@@ -17,8 +17,7 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.js"
+      "import": "./dist/index.js"
     }
   },
   "repository": {

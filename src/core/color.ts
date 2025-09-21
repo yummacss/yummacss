@@ -1,4 +1,4 @@
-import { YCSS_COLOR_BLACK, YCSS_COLOR_CURRENT, YCSS_COLOR_TRANSPARENT, YCSS_COLOR_WHITE } from "@/constants/variables";
+import { black, current, transparent, white } from "@/defaults/variables";
 import { createColors } from "@/helpers/create-colors";
 import { Colors } from "@/interfaces";
 
@@ -6,10 +6,10 @@ const colors = createColors();
 
 const defaultColors = {
   ...colors,
-  black: YCSS_COLOR_BLACK,
-  white: YCSS_COLOR_WHITE,
-  transparent: YCSS_COLOR_TRANSPARENT,
-  current: YCSS_COLOR_CURRENT,
+  black,
+  current,
+  transparent,
+  white,
 };
 
 export const colorUtils: Colors = {
