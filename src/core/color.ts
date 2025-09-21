@@ -12,7 +12,7 @@ const defaultColors = {
   white,
 };
 
-export const colorUtils: Colors = {
+export const color: Colors = {
   "accent-color": {
     prefix: "ac",
     properties: ["accent-color"],

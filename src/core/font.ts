@@ -1,7 +1,6 @@
 import {
   fontCharter,
   fontMono,
-  fontSizeXxl,
   fontSize3xl,
   fontSize4xl,
   fontSize5xl,
@@ -14,11 +13,12 @@ import {
   fontSizeSm,
   fontSizeXl,
   fontSizeXs,
+  fontSizeXxl,
   fontSystem,
 } from "@/defaults/variables";
 import { Utilities } from "@/interfaces";
 
-export const fontUtils: Utilities = {
+export const font: Utilities = {
   "font-family": {
     prefix: "ff",
     properties: ["font-family"],

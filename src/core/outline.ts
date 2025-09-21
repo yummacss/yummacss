@@ -2,7 +2,7 @@ import { outlineOffset, outlineWidth } from "@/defaults/variables";
 import { createValues } from "@/helpers/create-values";
 import { Utilities } from "@/interfaces";
 
-export const outlineUtils: Utilities = {
+export const outline: Utilities = {
   "outline-offset": {
     prefix: "oo",
     properties: ["outline-offset"],

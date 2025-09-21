@@ -2,7 +2,7 @@ import { bottomLeftTopRight } from "@/defaults/variables";
 import { createValues } from "@/helpers/create-values";
 import { Utilities } from "@/interfaces";
 
-export const positioningUtils: Utilities = {
+export const positioning: Utilities = {
   "aspect-ratio": {
     prefix: "ar",
     properties: ["aspect-ratio"],

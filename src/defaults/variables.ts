@@ -1,5 +1,5 @@
 // borders
-export const border = 1;
+export const borderWidth = 1;
 export const borderRadius = 0.25;
 export const borderSpacing = 0.25;
 

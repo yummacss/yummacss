@@ -2,7 +2,7 @@ import { gap } from "@/defaults/variables";
 import { createValues } from "@/helpers/create-values";
 import { Utilities } from "@/interfaces";
 
-export const gridUtils: Utilities = {
+export const grid: Utilities = {
   "column-gap": {
     prefix: "cg",
     properties: ["column-gap"],

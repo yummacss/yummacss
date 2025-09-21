@@ -2,7 +2,7 @@
 
 All notable changes to the Yumma CSS API will be documented in this file.
 
-## [1.4.2]
+## [1.5.0]
 
 <details>
 <summary>
@@ -18,7 +18,22 @@ All notable changes to the Yumma CSS API will be documented in this file.
     <b>Breaking changes</b>
 </summary>
 
-- None
+- Rename `getAllUtils` to `coreUtils`
+- Rename `getBackgroundUtils` to `backgroundUtils`
+- Rename `getBorderUtils` to `borderUtils`
+- Rename `getBoxModelUtils` to `boxModelUtils`
+- Rename `getColorUtils` to `colorUtils`
+- Rename `getEffectUtils` to `effectUtils`
+- Rename `getFlexboxUtils` to `flexboxUtils`
+- Rename `getFontUtils` to `fontUtils`
+- Rename `getGridUtils` to `gridUtils`
+- Rename `getInteractivityUtils` to `interactivityUtils`
+- Rename `getOutlineUtils` to `outlineUtils`
+- Rename `getPositioningUtils` to `positioningUtils`
+- Rename `getSvgUtils` to `svgUtils`
+- Rename `getTableUtils` to `tableUtils`
+- Rename `getTextUtils` to `textUtils`
+- Rename `getTransformUtils` to `transformUtils`
 
 </details open>
 
