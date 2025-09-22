@@ -11,8 +11,7 @@
   "license": "MIT",
   "author": "Renildo Pereira",
   "files": [
-    "dist",
-    "src"
+    "dist"
   ],
   "type": "module",
   "exports": {
