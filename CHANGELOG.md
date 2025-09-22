@@ -13,7 +13,7 @@ All notable changes to the Yumma CSS API will be documented in this file.
 
 </details>
 
-<details>
+<details open>
 <summary>
     <b>Breaking changes</b>
 </summary>
