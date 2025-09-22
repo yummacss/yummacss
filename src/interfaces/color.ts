@@ -1,9 +1,6 @@
-export interface Color {
-  prefix: string;
-  properties: string[];
-  slug: string;
-  values: { [key: string]: string };
-}
+import { Utility } from "./utility";
+
+export interface Color extends Utility {}
 
 export interface Colors {
   [key: string]: Color;

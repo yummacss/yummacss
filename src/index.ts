@@ -16,10 +16,8 @@ import { text } from "./core/text";
 import { transform } from "./core/transform";
 import { Utilities } from "./interfaces";
 
-// all utilities
+// api
 export const coreUtils = (): Utilities => core;
-
-// individual utilities
 export const backgroundUtils = (): Utilities => background;
 export const borderUtils = (): Utilities => border;
 export const boxModelUtils = (): Utilities => boxModel;
