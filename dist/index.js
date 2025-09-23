@@ -145,8 +145,7 @@ details {
 
 summary {
   display: list-item;
-}
-`);let r=b(e);return r&&n.push(r),n.join(`
+}`);let r=b(e);return r&&n.push(r),n.join(`
 
 `)}function b(e){let t=a(),n=[],r=new Set;for(let i of e){if(r.has(i))continue;let e=S(i,t);e&&(n.push(e),r.add(i))}return n.join(`
 `)}function x(e,t){let{prefix:n,properties:r,values:i}=t;if(!e.startsWith(n+`-`))return null;let a=e.slice(n.length+1),o=i[a];if(!o)return null;let s=r.map(e=>`  ${e}: ${o};`).join(`

@@ -1,4 +1,4 @@
-export const BASE_CSS = `*,
+export const baseCSS = `*,
 *::before,
 *::after {
   box-sizing: border-box;
@@ -145,5 +145,4 @@ details {
 
 summary {
   display: list-item;
-}
-`;
+}`;
