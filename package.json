@@ -1,6 +1,6 @@
 {
   "name": "@yummacss/api",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "Yumma CSS definitions for Javascript apps.",
   "keywords": [
     "typescript",
@@ -29,19 +29,15 @@
     "check": "tsc --noEmit",
     "dev": "tsdown --watch",
     "format": "prettier --write .",
-    "lint": "eslint src --ext .ts",
     "prepublishOnly": "pnpm build"
   },
-  "packageManager": "pnpm@10.16.1",
+  "packageManager": "pnpm@10.17.1",
   "dependencies": {
     "tinycolor2": "^1.6.0"
   },
   "devDependencies": {
     "@types/node": "^20.17.27",
     "@types/tinycolor2": "^1.4.6",
-    "@typescript-eslint/eslint-plugin": "^7.0.0",
-    "@typescript-eslint/parser": "^7.0.0",
-    "eslint": "^8.57.1",
     "prettier-plugin-organize-imports": "^4.2.0",
     "tsdown": "^0.15.0",
     "typescript": "^5.8.2"
