@@ -42,7 +42,7 @@ All notable changes to the Yumma CSS API will be documented in this file.
     <b>Fixes</b>
 </summary>
 
-- Use `camelCase` for exported functions instead of `UPPER_CASE`. (Internal)
+- Use `camelCase` for exported functions instead of `UPPER_CASE` (Internal)
 - Extend `Color` interface to include `Utility` properties (Internal)
 
 </details>
