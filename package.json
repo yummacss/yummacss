@@ -33,7 +33,7 @@
   },
   "packageManager": "pnpm@10.17.1",
   "dependencies": {
-    "@yummacss/api": "^1.4.1",
+    "@yummacss/api": "^1.5.0",
     "chokidar": "^4.0.3",
     "commander": "^14.0.0",
     "globby": "^14.1.0",

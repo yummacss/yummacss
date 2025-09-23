@@ -1,12 +1,12 @@
-import { getAllUtils, type Utilities, type Utility } from "@yummacss/api";
+import { coreUtils, type Utilities, type Utility } from "@yummacss/api";
 import type { Config } from "../config/schema.js";
-import { BASE_CSS } from "../styles/base.js";
+import { baseCSS } from "../reset/base.js";
 
 export function generator(usedClasses: Set<string>, config: Config): string {
   const cssBlocks: string[] = [];
 
   if (config.buildOptions.reset) {
-    cssBlocks.push(BASE_CSS);
+    cssBlocks.push(baseCSS);
   }
 
   const util = generateUtil(usedClasses);
@@ -18,14 +18,14 @@ export function generator(usedClasses: Set<string>, config: Config): string {
 }
 
 function generateUtil(usedClasses: Set<string>): string {
-  const all = getAllUtils();
+  const utils = coreUtils();
   const cssRules: string[] = [];
   const processedClasses = new Set<string>();
 
   for (const className of usedClasses) {
     if (processedClasses.has(className)) continue;
 
-    const rule = generateCSSRule(className, all);
+    const rule = generateCSSRule(className, utils);
     if (rule) {
       cssRules.push(rule);
       processedClasses.add(className);
