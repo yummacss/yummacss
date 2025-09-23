@@ -35,9 +35,9 @@ All notable changes to the Yumma CSS API will be documented in this file.
 - Rename `getTextUtils` to `textUtils`
 - Rename `getTransformUtils` to `transformUtils`
 
-</details open>
+</details>
 
-<details>
+<details open>
 <summary>
     <b>Fixes</b>
 </summary>
