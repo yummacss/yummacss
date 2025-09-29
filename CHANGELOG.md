@@ -2,7 +2,7 @@
 
 All notable changes to the Yumma CSS API will be documented in this file.
 
-## [1.5.1]
+## [1.6.0]
 
 <details>
 <summary>
