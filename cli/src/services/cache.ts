@@ -1,4 +1,4 @@
-import type { Config } from "../config/schema.js";
+import type { Config } from "@/config/schema";
 
 export type BuildCache = {
   css?: string;

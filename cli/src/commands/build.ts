@@ -1,11 +1,11 @@
+import type { Config } from "@/config/schema";
+import { configChanged, getCache, setCache } from "@/services/cache";
+import { compiler } from "@/services/compiler";
+import { loadConfig } from "@/services/loader";
+import { minify } from "@/services/minify";
+import { message } from "@/utils/message";
+import { cli } from "@/utils/status";
 import { writeFileSync } from "fs";
-import type { Config } from "../config/schema.js";
-import { configChanged, getCache, setCache } from "../services/cache.js";
-import { compiler } from "../services/compiler.js";
-import { loadConfig } from "../services/loader.js";
-import { minify } from "../services/minify.js";
-import { message } from "../utils/message.js";
-import { cli } from "../utils/status.js";
 
 export async function build(existingConfig?: Config, forceRebuild = false) {
   const status = cli.progress(message.build.start);

@@ -1,8 +1,8 @@
+import { ConfigSchema, configName } from "@/config/schema";
+import { message } from "@/utils/message";
+import { cli } from "@/utils/status";
 import { writeFileSync } from "fs";
 import stringifyObject from "stringify-object";
-import { ConfigSchema, configName } from "../config/schema.js";
-import { message } from "../utils/message.js";
-import { cli } from "../utils/status.js";
 
 function generateConfig(): { filename: string; content: string } {
   const z = ConfigSchema.parse({});

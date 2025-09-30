@@ -1,10 +1,10 @@
+import { Config, configName, ConfigSchema } from "@/config/schema";
+import { message } from "@/utils/message";
+import { cli } from "@/utils/status";
 import { existsSync } from "fs";
 import { join } from "path";
 import { pathToFileURL } from "url";
 import { z } from "zod";
-import { Config, configName, ConfigSchema } from "../config/schema.js";
-import { message } from "../utils/message.js";
-import { cli } from "../utils/status.js";
 
 export async function loadConfig(): Promise<Config> {
   const path = join(process.cwd(), configName);
