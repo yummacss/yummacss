@@ -1,4 +1,4 @@
-import type { Config } from "../config/schema.js";
+import type { Config } from "@/config/schema";
 import { extractor } from "./extractor.js";
 import { generator } from "./generator.js";
 

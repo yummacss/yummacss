@@ -1,5 +1,5 @@
+import type { Config } from "@/config/schema";
 import { transform } from "lightningcss";
-import type { Config } from "../config/schema.js";
 
 export function minify(css: string, config: Config): string {
   const res = transform({

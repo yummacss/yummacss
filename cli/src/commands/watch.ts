@@ -1,9 +1,9 @@
+import type { Config } from "@/config/schema";
+import { loadConfig } from "@/services/loader";
+import { message } from "@/utils/message";
+import { cli } from "@/utils/status";
 import chok from "chokidar";
 import { globby } from "globby";
-import type { Config } from "../config/schema.js";
-import { loadConfig } from "../services/loader.js";
-import { message } from "../utils/message.js";
-import { cli } from "../utils/status.js";
 import { build } from "./build.js";
 
 let currentConfig: Config;
