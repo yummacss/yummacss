@@ -8,6 +8,7 @@ import {
   boxShadowXs,
   grayscale,
 } from "@/defaults/variables";
+import { mediaQueries, pseudoClasses } from "@/defaults/variants";
 import { Utilities } from "@/interfaces";
 
 export const effect: Utilities = {
@@ -23,6 +24,10 @@ export const effect: Utilities = {
       lg: `blur(${backdropBlur * 8}px)`,
       xl: `blur(${backdropBlur * 16}px)`,
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   blur: {
@@ -37,6 +42,10 @@ export const effect: Utilities = {
       lg: `blur(${blur * 8}px)`,
       xl: `blur(${blur * 16}px)`,
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "box-shadow": {
@@ -50,6 +59,10 @@ export const effect: Utilities = {
       md: boxShadowMd,
       lg: boxShadowLg,
       xl: boxShadowXl,
+    },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
     },
   },
 
@@ -70,6 +83,10 @@ export const effect: Utilities = {
       90: `grayscale(${grayscale * 9}%)`,
       100: `grayscale(100%)`,
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   opacity: {
@@ -88,6 +105,10 @@ export const effect: Utilities = {
       80: "0.8",
       90: "0.9",
       100: "1",
+    },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
     },
   },
 };

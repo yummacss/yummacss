@@ -1,4 +1,5 @@
 import { dimension, height, margin, padding, width } from "@/defaults/variables";
+import { mediaQueries, pseudoClasses } from "@/defaults/variants";
 import { createValues } from "@/helpers/create-values";
 import { Utilities } from "@/interfaces";
 
@@ -10,6 +11,10 @@ export const boxModel: Utilities = {
     values: {
       bb: "border-box",
       cb: "content-box",
+    },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
     },
   },
 
@@ -41,6 +46,10 @@ export const boxModel: Utilities = {
       xl: "80rem",
       xxl: "96rem",
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "max-dimension": {
@@ -70,6 +79,10 @@ export const boxModel: Utilities = {
       lg: "64rem",
       xl: "80rem",
       xxl: "96rem",
+    },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
     },
   },
 
@@ -101,6 +114,10 @@ export const boxModel: Utilities = {
       xl: "80rem",
       xxl: "96rem",
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   height: {
@@ -130,6 +147,10 @@ export const boxModel: Utilities = {
       lg: "64rem",
       xl: "80rem",
       xxl: "96rem",
+    },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
     },
   },
 
@@ -161,6 +182,10 @@ export const boxModel: Utilities = {
       xl: "80rem",
       xxl: "96rem",
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "min-height": {
@@ -191,6 +216,10 @@ export const boxModel: Utilities = {
       xl: "80rem",
       xxl: "96rem",
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   margin: {
@@ -206,6 +235,10 @@ export const boxModel: Utilities = {
       }),
       auto: "auto",
       px: "1px",
+    },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
     },
   },
 
@@ -223,6 +256,10 @@ export const boxModel: Utilities = {
       auto: "auto",
       px: "1px",
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "margin-block-start": {
@@ -238,6 +275,10 @@ export const boxModel: Utilities = {
       }),
       auto: "auto",
       px: "1px",
+    },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
     },
   },
 
@@ -255,6 +296,10 @@ export const boxModel: Utilities = {
       auto: "auto",
       px: "1px",
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "margin-inline-end": {
@@ -270,6 +315,10 @@ export const boxModel: Utilities = {
       }),
       auto: "auto",
       px: "1px",
+    },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
     },
   },
 
@@ -287,6 +336,10 @@ export const boxModel: Utilities = {
       auto: "auto",
       px: "1px",
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "margin-left": {
@@ -302,6 +355,10 @@ export const boxModel: Utilities = {
       }),
       auto: "auto",
       px: "1px",
+    },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
     },
   },
 
@@ -319,6 +376,10 @@ export const boxModel: Utilities = {
       auto: "auto",
       px: "1px",
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "margin-top": {
@@ -334,6 +395,10 @@ export const boxModel: Utilities = {
       }),
       auto: "auto",
       px: "1px",
+    },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
     },
   },
 
@@ -351,6 +416,10 @@ export const boxModel: Utilities = {
       auto: "auto",
       px: "1px",
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "margin-y": {
@@ -366,6 +435,10 @@ export const boxModel: Utilities = {
       }),
       auto: "auto",
       px: "1px",
+    },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
     },
   },
 
@@ -383,6 +456,10 @@ export const boxModel: Utilities = {
       auto: "auto",
       px: "1px",
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "padding-block-end": {
@@ -398,6 +475,10 @@ export const boxModel: Utilities = {
       }),
       auto: "auto",
       px: "1px",
+    },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
     },
   },
 
@@ -415,6 +496,10 @@ export const boxModel: Utilities = {
       auto: "auto",
       px: "1px",
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "padding-bottom": {
@@ -430,6 +515,10 @@ export const boxModel: Utilities = {
       }),
       auto: "auto",
       px: "1px",
+    },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
     },
   },
 
@@ -447,6 +536,10 @@ export const boxModel: Utilities = {
       auto: "auto",
       px: "1px",
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "padding-inline-start": {
@@ -462,6 +555,10 @@ export const boxModel: Utilities = {
       }),
       auto: "auto",
       px: "1px",
+    },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
     },
   },
 
@@ -479,6 +576,10 @@ export const boxModel: Utilities = {
       auto: "auto",
       px: "1px",
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "padding-right": {
@@ -494,6 +595,10 @@ export const boxModel: Utilities = {
       }),
       auto: "auto",
       px: "1px",
+    },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
     },
   },
 
@@ -511,6 +616,10 @@ export const boxModel: Utilities = {
       auto: "auto",
       px: "1px",
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "padding-x": {
@@ -527,6 +636,10 @@ export const boxModel: Utilities = {
       auto: "auto",
       px: "1px",
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "padding-y": {
@@ -542,6 +655,10 @@ export const boxModel: Utilities = {
       }),
       auto: "auto",
       px: "1px",
+    },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
     },
   },
 
@@ -573,6 +690,10 @@ export const boxModel: Utilities = {
       xl: "80rem",
       xxl: "96rem",
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "max-width": {
@@ -603,6 +724,10 @@ export const boxModel: Utilities = {
       xl: "80rem",
       xxl: "96rem",
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "min-width": {
@@ -632,6 +757,10 @@ export const boxModel: Utilities = {
       lg: "64rem",
       xl: "80rem",
       xxl: "96rem",
+    },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
     },
   },
 };

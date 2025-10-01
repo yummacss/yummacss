@@ -1,3 +1,4 @@
+import { mediaQueries, pseudoClasses } from "@/defaults/variants";
 import { Utilities } from "@/interfaces";
 
 export const background: Utilities = {
@@ -9,6 +10,10 @@ export const background: Utilities = {
       f: "fixed",
       l: "local",
       s: "scroll",
+    },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
     },
   },
 
@@ -22,6 +27,10 @@ export const background: Utilities = {
       pb: "padding-box",
       t: "text",
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "background-origin": {
@@ -32,6 +41,10 @@ export const background: Utilities = {
       bb: "border-box",
       cb: "content-box",
       pb: "padding-box",
+    },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
     },
   },
 
@@ -50,6 +63,10 @@ export const background: Utilities = {
       rt: "right top",
       t: "top",
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "background-repeat": {
@@ -64,6 +81,10 @@ export const background: Utilities = {
       ry: "repeat-y",
       s: "space",
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "background-size": {
@@ -74,6 +95,10 @@ export const background: Utilities = {
       auto: "auto",
       c: "cover",
       co: "contain",
+    },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
     },
   },
 };

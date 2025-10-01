@@ -16,6 +16,7 @@ import {
   fontSizeXxl,
   fontSystem,
 } from "@/defaults/variables";
+import { mediaQueries, pseudoClasses } from "@/defaults/variants";
 import { Utilities } from "@/interfaces";
 
 export const font: Utilities = {
@@ -27,6 +28,10 @@ export const font: Utilities = {
       c: fontCharter,
       m: fontMono,
       s: fontSystem,
+    },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
     },
   },
 
@@ -49,6 +54,10 @@ export const font: Utilities = {
       "8xl": `${fontSize8xl}rem`,
       "9xl": `${fontSize9xl}rem`,
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "font-style": {
@@ -58,6 +67,10 @@ export const font: Utilities = {
     values: {
       i: "italic",
       n: "normal",
+    },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
     },
   },
 
@@ -75,6 +88,10 @@ export const font: Utilities = {
       "700": "700",
       "800": "800",
       "900": "900",
+    },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
     },
   },
 };
