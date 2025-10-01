@@ -1,4 +1,5 @@
 import { gap } from "@/defaults/variables";
+import { mediaQueries, pseudoClasses } from "@/defaults/variants";
 import { createValues } from "@/helpers/create-values";
 import { Utilities } from "@/interfaces";
 
@@ -36,6 +37,10 @@ export const grid: Utilities = {
       max: "max-content",
       min: "min-content",
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "grid-auto-flow": {
@@ -49,6 +54,10 @@ export const grid: Utilities = {
       r: "row",
       rd: "row dense",
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "grid-auto-rows": {
@@ -59,6 +68,10 @@ export const grid: Utilities = {
       auto: "auto",
       max: "max-content",
       min: "min-content",
+    },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
     },
   },
 
@@ -83,6 +96,10 @@ export const grid: Utilities = {
       "14": "span 14 / span 14",
       "15": "span 15 / span 15",
       "16": "span 16 / span 16",
+    },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
     },
   },
 
@@ -130,6 +147,10 @@ export const grid: Utilities = {
       "15": "span 15 / span 15",
       "16": "span 16 / span 16",
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "grid-row-end": {
@@ -176,6 +197,10 @@ export const grid: Utilities = {
       "15": "repeat(15, minmax(0, 1fr))",
       "16": "repeat(16, minmax(0, 1fr))",
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "grid-template-rows": {
@@ -200,6 +225,10 @@ export const grid: Utilities = {
       "15": "repeat(15, minmax(0, 1fr))",
       "16": "repeat(16, minmax(0, 1fr))",
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "place-content": {
@@ -216,6 +245,10 @@ export const grid: Utilities = {
       se: "space-evenly",
       st: "stretch",
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "place-items": {
@@ -229,6 +262,10 @@ export const grid: Utilities = {
       s: "start",
       st: "stretch",
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "place-self": {
@@ -241,6 +278,10 @@ export const grid: Utilities = {
       e: "end",
       s: "start",
       st: "stretch",
+    },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
     },
   },
 

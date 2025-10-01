@@ -1,3 +1,4 @@
+import { mediaQueries, pseudoClasses } from "@/defaults/variants";
 import { Utilities } from "@/interfaces";
 
 export const transform: Utilities = {
@@ -28,6 +29,10 @@ export const transform: Utilities = {
       "95": "rotate(95deg)",
       "100": "rotate(100deg)",
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   scale: {
@@ -46,6 +51,10 @@ export const transform: Utilities = {
       "80": "scale(80%)",
       "90": "scale(90%)",
       "100": "scale(100%)",
+    },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
     },
   },
 
@@ -66,6 +75,10 @@ export const transform: Utilities = {
       "90": "scaleX(90%)",
       "100": "scaleX(100%)",
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "scale-y": {
@@ -85,6 +98,10 @@ export const transform: Utilities = {
       "90": "scaleY(90%)",
       "100": "scaleY(100%)",
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   skew: {
@@ -97,6 +114,10 @@ export const transform: Utilities = {
       "3": "skew(3deg)",
       "6": "skew(6deg)",
       "12": "skew(12deg)",
+    },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
     },
   },
 
@@ -111,6 +132,10 @@ export const transform: Utilities = {
       "6": "skewX(6deg)",
       "12": "skewX(12deg)",
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "skew-y": {
@@ -123,6 +148,10 @@ export const transform: Utilities = {
       "3": "skewY(3deg)",
       "6": "skewY(6deg)",
       "12": "skewY(12deg)",
+    },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
     },
   },
 
@@ -140,6 +169,10 @@ export const transform: Utilities = {
       t: "top",
       tl: "top left",
       tr: "top right",
+    },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
     },
   },
 };

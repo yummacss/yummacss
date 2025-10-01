@@ -1,4 +1,5 @@
 import { decorationThickness } from "@/defaults/variables";
+import { mediaQueries, pseudoClasses } from "@/defaults/variants";
 import { createValues } from "@/helpers/create-values";
 import { Utilities } from "@/interfaces";
 
@@ -15,6 +16,10 @@ export const text: Utilities = {
       "4": "0.05em",
       "5": "0.1em",
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "line-height": {
@@ -29,6 +34,10 @@ export const text: Utilities = {
       "5": "1.625",
       "6": "2",
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "list-style-position": {
@@ -38,6 +47,10 @@ export const text: Utilities = {
     values: {
       i: "inside",
       o: "outside",
+    },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
     },
   },
 
@@ -50,6 +63,10 @@ export const text: Utilities = {
       d: "disc",
       s: "square",
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "overflow-wrap": {
@@ -59,6 +76,10 @@ export const text: Utilities = {
     values: {
       bw: "break-word",
       n: "normal",
+    },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
     },
   },
 
@@ -76,6 +97,10 @@ export const text: Utilities = {
       r: "right",
       s: "start",
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "text-decoration-line": {
@@ -88,6 +113,10 @@ export const text: Utilities = {
       o: "overline",
       u: "underline",
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "text-decoration-style": {
@@ -98,6 +127,10 @@ export const text: Utilities = {
       d: "dashed",
       s: "solid",
       w: "wavy",
+    },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
     },
   },
 
@@ -115,6 +148,10 @@ export const text: Utilities = {
       auto: "auto",
       ff: "from-font",
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "text-decoration": {
@@ -124,6 +161,10 @@ export const text: Utilities = {
     values: {
       none: "none",
       u: "underline",
+    },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
     },
   },
 
@@ -138,6 +179,10 @@ export const text: Utilities = {
       "3": "0.5rem",
       "4": "0.75rem",
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "text-overflow": {
@@ -147,6 +192,10 @@ export const text: Utilities = {
     values: {
       c: "clip",
       e: "ellipsis",
+    },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
     },
   },
 
@@ -159,6 +208,10 @@ export const text: Utilities = {
       l: "lowercase",
       n: "none",
       u: "uppercase",
+    },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
     },
   },
 
@@ -174,6 +227,10 @@ export const text: Utilities = {
       "8": "8px",
       auto: "auto",
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "text-wrap": {
@@ -185,6 +242,10 @@ export const text: Utilities = {
       n: "nowrap",
       p: "pretty",
       w: "wrap",
+    },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
     },
   },
 
@@ -199,6 +260,10 @@ export const text: Utilities = {
       p: "pre",
       pl: "pre-line",
       pw: "pre-wrap",
+    },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
     },
   },
 };

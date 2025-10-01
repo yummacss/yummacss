@@ -1,4 +1,5 @@
 import { flexBasis } from "@/defaults/variables";
+import { mediaQueries, pseudoClasses } from "@/defaults/variants";
 import { createValues } from "@/helpers/create-values";
 import { Utilities } from "@/interfaces";
 
@@ -18,6 +19,10 @@ export const flexbox: Utilities = {
       sb: "space-between",
       se: "space-evenly",
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "align-items": {
@@ -30,6 +35,10 @@ export const flexbox: Utilities = {
       fe: "flex-end",
       fs: "flex-start",
       st: "stretch",
+    },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
     },
   },
 
@@ -44,6 +53,10 @@ export const flexbox: Utilities = {
       fe: "flex-end",
       fs: "flex-start",
       st: "stretch",
+    },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
     },
   },
 
@@ -62,6 +75,10 @@ export const flexbox: Utilities = {
       full: "100%",
       half: "50%",
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "flex-direction": {
@@ -73,6 +90,10 @@ export const flexbox: Utilities = {
       cr: "column-reverse",
       r: "row",
       rr: "row-reverse",
+    },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
     },
   },
 
@@ -107,6 +128,10 @@ export const flexbox: Utilities = {
       w: "wrap",
       wr: "wrap-reverse",
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   flex: {
@@ -122,6 +147,10 @@ export const flexbox: Utilities = {
       "6": "6 6 0%",
       auto: "1 1 auto",
       none: "none",
+    },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
     },
   },
 
@@ -139,6 +168,10 @@ export const flexbox: Utilities = {
       sb: "space-between",
       se: "space-evenly",
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "justify-items": {
@@ -150,6 +183,10 @@ export const flexbox: Utilities = {
       e: "end",
       s: "start",
       st: "stretch",
+    },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
     },
   },
 
@@ -163,6 +200,10 @@ export const flexbox: Utilities = {
       e: "end",
       s: "start",
       st: "stretch",
+    },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
     },
   },
 
@@ -184,6 +225,10 @@ export const flexbox: Utilities = {
       "9": "9",
       "10": "10",
       f: "9999",
+    },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
     },
   },
 };

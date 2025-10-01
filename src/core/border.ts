@@ -1,4 +1,5 @@
 import { borderRadius, borderSpacing, borderWidth } from "@/defaults/variables";
+import { mediaQueries, pseudoClasses } from "@/defaults/variants";
 import { createValues } from "@/helpers/create-values";
 import { Utilities } from "@/interfaces";
 
@@ -10,6 +11,10 @@ export const border: Utilities = {
     values: {
       c: "collapse",
       s: "separate",
+    },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
     },
   },
 
@@ -28,6 +33,10 @@ export const border: Utilities = {
       half: "50%",
       "9": "9999px",
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "border-bottom-radius": {
@@ -44,6 +53,10 @@ export const border: Utilities = {
       full: "100%",
       half: "50%",
       "9": "9999px",
+    },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
     },
   },
 
@@ -62,6 +75,10 @@ export const border: Utilities = {
       half: "50%",
       "9": "9999px",
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "border-right-radius": {
@@ -78,6 +95,10 @@ export const border: Utilities = {
       full: "100%",
       half: "50%",
       "9": "9999px",
+    },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
     },
   },
 
@@ -96,6 +117,10 @@ export const border: Utilities = {
       half: "50%",
       "9": "9999px",
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "border-bottom-right-radius": {
@@ -112,6 +137,10 @@ export const border: Utilities = {
       full: "100%",
       half: "50%",
       "9": "9999px",
+    },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
     },
   },
 
@@ -130,6 +159,10 @@ export const border: Utilities = {
       half: "50%",
       "9": "9999px",
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "border-top-left-radius": {
@@ -147,6 +180,10 @@ export const border: Utilities = {
       half: "50%",
       "9": "9999px",
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "border-top-right-radius": {
@@ -163,6 +200,10 @@ export const border: Utilities = {
       full: "100%",
       half: "50%",
       "9": "9999px",
+    },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
     },
   },
 
@@ -186,6 +227,10 @@ export const border: Utilities = {
       none: "none",
       d: "dashed",
       s: "solid",
+    },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
     },
   },
 

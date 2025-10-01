@@ -1,4 +1,5 @@
 import { bottomLeftTopRight } from "@/defaults/variables";
+import { mediaQueries, pseudoClasses } from "@/defaults/variants";
 import { createValues } from "@/helpers/create-values";
 import { Utilities } from "@/interfaces";
 
@@ -17,6 +18,10 @@ export const positioning: Utilities = {
       "3/2": "3/2",
       "9/16": "9/16",
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   clear: {
@@ -30,6 +35,10 @@ export const positioning: Utilities = {
       l: "left",
       none: "none",
       r: "right",
+    },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
     },
   },
 
@@ -58,6 +67,10 @@ export const positioning: Utilities = {
       full: "100%",
       half: "50%",
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   inset: {
@@ -73,6 +86,10 @@ export const positioning: Utilities = {
       }),
       full: "100%",
       half: "50%",
+    },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
     },
   },
 
@@ -90,6 +107,10 @@ export const positioning: Utilities = {
       full: "100%",
       half: "50%",
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "inset-y": {
@@ -106,6 +127,10 @@ export const positioning: Utilities = {
       full: "100%",
       half: "50%",
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   isolation: {
@@ -115,6 +140,10 @@ export const positioning: Utilities = {
     values: {
       auto: "auto",
       i: "isolate",
+    },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
     },
   },
 
@@ -132,6 +161,10 @@ export const positioning: Utilities = {
       full: "100%",
       half: "50%",
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   right: {
@@ -148,6 +181,10 @@ export const positioning: Utilities = {
       full: "100%",
       half: "50%",
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   top: {
@@ -163,6 +200,10 @@ export const positioning: Utilities = {
       }),
       full: "100%",
       half: "50%",
+    },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
     },
   },
 
@@ -186,6 +227,10 @@ export const positioning: Utilities = {
       tco: "table-column",
       tr: "table-row",
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   float: {
@@ -199,6 +244,10 @@ export const positioning: Utilities = {
       none: "none",
       r: "right",
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "object-fit": {
@@ -210,6 +259,10 @@ export const positioning: Utilities = {
       f: "fill",
       none: "none",
       sd: "scale-down",
+    },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
     },
   },
 
@@ -228,6 +281,10 @@ export const positioning: Utilities = {
       rt: "right top",
       t: "top",
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   overflow: {
@@ -240,6 +297,10 @@ export const positioning: Utilities = {
       h: "hidden",
       s: "scroll",
       v: "visible",
+    },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
     },
   },
 
@@ -254,6 +315,10 @@ export const positioning: Utilities = {
       s: "scroll",
       v: "visible",
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "overflow-y": {
@@ -266,6 +331,10 @@ export const positioning: Utilities = {
       h: "hidden",
       s: "scroll",
       v: "visible",
+    },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
     },
   },
 
@@ -280,6 +349,10 @@ export const positioning: Utilities = {
       s: "static",
       st: "sticky",
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   visibility: {
@@ -290,6 +363,10 @@ export const positioning: Utilities = {
       c: "collapse",
       h: "hidden",
       v: "visible",
+    },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
     },
   },
 
@@ -309,6 +386,10 @@ export const positioning: Utilities = {
       "80": "80",
       "90": "90",
       auto: "auto",
+    },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
     },
   },
 };

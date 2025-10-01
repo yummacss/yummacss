@@ -1,4 +1,5 @@
 import { outlineOffset, outlineWidth } from "@/defaults/variables";
+import { mediaQueries, pseudoClasses } from "@/defaults/variants";
 import { createValues } from "@/helpers/create-values";
 import { Utilities } from "@/interfaces";
 
@@ -23,6 +24,10 @@ export const outline: Utilities = {
       none: "none",
       d: "dashed",
       s: "solid",
+    },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
     },
   },
 

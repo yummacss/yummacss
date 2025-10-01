@@ -1,5 +1,5 @@
+import { mediaQueries, pseudoClasses } from "@/defaults/variants";
 import { Utilities } from "@/interfaces";
-
 export const svg: Utilities = {
   "stroke-width": {
     prefix: "sw",
@@ -12,6 +12,10 @@ export const svg: Utilities = {
       "6": "0.6",
       "8": "0.8",
       "1": "1",
+    },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
     },
   },
 };

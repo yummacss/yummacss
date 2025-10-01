@@ -1,4 +1,5 @@
 import { margin, padding } from "@/defaults/variables";
+import { mediaQueries, pseudoClasses } from "@/defaults/variants";
 import { createValues } from "@/helpers/create-values";
 import { Utilities } from "@/interfaces";
 
@@ -10,6 +11,10 @@ export const interactivity: Utilities = {
     values: {
       auto: "auto",
       none: "none",
+    },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
     },
   },
 
@@ -43,6 +48,10 @@ export const interactivity: Utilities = {
       zi: "zoom-in",
       zo: "zoom-out",
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "field-sizing": {
@@ -53,6 +62,10 @@ export const interactivity: Utilities = {
       f: "fixed",
       c: "content",
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "pointer-events": {
@@ -62,6 +75,10 @@ export const interactivity: Utilities = {
     values: {
       auto: "auto",
       none: "none",
+    },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
     },
   },
 
@@ -75,6 +92,10 @@ export const interactivity: Utilities = {
       none: "none",
       v: "vertical",
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "scroll-behavior": {
@@ -84,6 +105,10 @@ export const interactivity: Utilities = {
     values: {
       auto: "auto",
       s: "smooth",
+    },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
     },
   },
 
@@ -313,6 +338,10 @@ export const interactivity: Utilities = {
       none: "none",
       s: "start",
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "scroll-snap-stop": {
@@ -322,6 +351,10 @@ export const interactivity: Utilities = {
     values: {
       a: "always",
       n: "normal",
+    },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
     },
   },
 
@@ -337,6 +370,10 @@ export const interactivity: Utilities = {
       "y-m": "y mandatory",
       "y-p": "y proximity",
     },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "user-select": {
@@ -348,6 +385,10 @@ export const interactivity: Utilities = {
       auto: "auto",
       none: "none",
       t: "text",
+    },
+    variants: {
+      pseudoClasses,
+      mediaQueries,
     },
   },
 };
