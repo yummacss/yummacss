@@ -14,6 +14,10 @@ export const outline: Utilities = {
       min: 0,
       max: 4,
     }),
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "outline-style": {
@@ -41,5 +45,9 @@ export const outline: Utilities = {
       min: 0,
       max: 4,
     }),
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 };

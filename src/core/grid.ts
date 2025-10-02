@@ -14,6 +14,10 @@ export const grid: Utilities = {
       min: 0,
       max: 100,
     }),
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   gap: {
@@ -26,6 +30,10 @@ export const grid: Utilities = {
       min: 0,
       max: 100,
     }),
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "grid-auto-columns": {
@@ -112,6 +120,10 @@ export const grid: Utilities = {
       min: 1,
       max: 16,
     }),
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "grid-column-start": {
@@ -123,6 +135,10 @@ export const grid: Utilities = {
       min: 1,
       max: 16,
     }),
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "grid-row": {
@@ -162,6 +178,10 @@ export const grid: Utilities = {
       min: 1,
       max: 16,
     }),
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "grid-row-start": {
@@ -173,6 +193,10 @@ export const grid: Utilities = {
       min: 1,
       max: 16,
     }),
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "grid-template-columns": {
@@ -295,5 +319,9 @@ export const grid: Utilities = {
       min: 0,
       max: 100,
     }),
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 };
