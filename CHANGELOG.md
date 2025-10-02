@@ -27,6 +27,6 @@ All notable changes to the Yumma CSS API will be documented in this file.
     <b>Fixes</b>
 </summary>
 
-- Fixed `text-decoration-thickness` from using `rem` instead of `px` as unit.
+- Fixed `tdt-*` (`text-decoration-thickness`) utilities from using `rem` instead of `px` as unit.
 
 </details>
