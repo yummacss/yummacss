@@ -33,7 +33,6 @@ All notable changes to the Yumma CSS will be documented in this file.
     <b>Fixes</b>
 </summary>
 
-- Allow CLI to run using npm (`npx yummacss`)
-- Build times are now ridiculously fast
+- Fixed an issue where npm users could not run the CLI
 
 </details>
