@@ -39,7 +39,7 @@ function generateUtil(usedClasses: Set<string>): string {
     }
   }
 
-  // Media query rules
+  // media query rules
   for (const [mediaQuery, rules] of mediaQueryRules) {
     cssRules.push(`${mediaQuery} {\n${rules.join("\n")}\n}`);
   }
@@ -53,7 +53,7 @@ function tryGenerateRule(
 ): { rule: string; mediaQuery?: string } | null {
   const { properties, variants } = util;
 
-  // Check for media query prefix
+  // check for media query prefix
   if (variants?.mediaQueries) {
     for (const mq of variants.mediaQueries) {
       if (className.startsWith(`${mq.prefix}:`)) {
@@ -72,7 +72,7 @@ function tryGenerateRule(
     }
   }
 
-  // Check for pseudo-class prefix
+  // check for pseudo-class prefix
   if (variants?.pseudoClasses) {
     for (const pc of variants.pseudoClasses) {
       if (className.startsWith(`${pc.prefix}:`)) {
@@ -90,7 +90,7 @@ function tryGenerateRule(
     }
   }
 
-  // Try base rule
+  // try base rule
   const baseRule = tryGenerateBaseRule(className, util);
   if (baseRule) {
     const declarations = properties
