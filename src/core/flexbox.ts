@@ -106,6 +106,10 @@ export const flexbox: Utilities = {
       min: 0,
       max: 8,
     }),
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "flex-shrink": {
@@ -117,6 +121,10 @@ export const flexbox: Utilities = {
       min: 0,
       max: 8,
     }),
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "flex-wrap": {

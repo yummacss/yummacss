@@ -217,6 +217,10 @@ export const border: Utilities = {
       min: 0,
       max: 8,
     }),
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "border-style": {
@@ -244,6 +248,10 @@ export const border: Utilities = {
       min: 0,
       max: 8,
     }),
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "border-bottom-width": {
@@ -256,6 +264,10 @@ export const border: Utilities = {
       min: 0,
       max: 8,
     }),
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "border-left-width": {
@@ -268,6 +280,10 @@ export const border: Utilities = {
       min: 0,
       max: 8,
     }),
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "border-right-width": {
@@ -280,6 +296,10 @@ export const border: Utilities = {
       min: 0,
       max: 8,
     }),
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "border-top-width": {
@@ -292,5 +312,9 @@ export const border: Utilities = {
       min: 0,
       max: 8,
     }),
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 };

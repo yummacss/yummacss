@@ -122,6 +122,10 @@ export const interactivity: Utilities = {
       min: 0,
       max: 100,
     }),
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "scroll-margin-bottom": {
@@ -134,6 +138,10 @@ export const interactivity: Utilities = {
       min: 0,
       max: 100,
     }),
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "scroll-margin-inline-start": {
@@ -146,6 +154,10 @@ export const interactivity: Utilities = {
       min: 0,
       max: 100,
     }),
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "scroll-margin-left": {
@@ -158,6 +170,10 @@ export const interactivity: Utilities = {
       min: 0,
       max: 100,
     }),
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "scroll-margin-right": {
@@ -170,6 +186,10 @@ export const interactivity: Utilities = {
       min: 0,
       max: 100,
     }),
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "scroll-margin-top": {
@@ -182,6 +202,10 @@ export const interactivity: Utilities = {
       min: 0,
       max: 100,
     }),
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "scroll-margin-inline-end": {
@@ -194,6 +218,10 @@ export const interactivity: Utilities = {
       min: 0,
       max: 100,
     }),
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "scroll-margin-x": {
@@ -206,6 +234,10 @@ export const interactivity: Utilities = {
       min: 0,
       max: 100,
     }),
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "scroll-margin-y": {
@@ -218,6 +250,10 @@ export const interactivity: Utilities = {
       min: 0,
       max: 100,
     }),
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "scroll-padding": {
@@ -230,6 +266,10 @@ export const interactivity: Utilities = {
       min: 0,
       max: 100,
     }),
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "scroll-padding-bottom": {
@@ -242,6 +282,10 @@ export const interactivity: Utilities = {
       min: 0,
       max: 100,
     }),
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "scroll-padding-inline-start": {
@@ -254,6 +298,10 @@ export const interactivity: Utilities = {
       min: 0,
       max: 100,
     }),
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "scroll-padding-left": {
@@ -266,6 +314,10 @@ export const interactivity: Utilities = {
       min: 0,
       max: 100,
     }),
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "scroll-padding-right": {
@@ -278,6 +330,10 @@ export const interactivity: Utilities = {
       min: 0,
       max: 100,
     }),
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "scroll-padding-top": {
@@ -290,6 +346,10 @@ export const interactivity: Utilities = {
       min: 0,
       max: 100,
     }),
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "scroll-padding-inline-end": {
@@ -302,6 +362,10 @@ export const interactivity: Utilities = {
       min: 0,
       max: 100,
     }),
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "scroll-padding-x": {
@@ -314,6 +378,10 @@ export const interactivity: Utilities = {
       min: 0,
       max: 100,
     }),
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "scroll-padding-y": {
@@ -326,6 +394,10 @@ export const interactivity: Utilities = {
       min: 0,
       max: 100,
     }),
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   "scroll-snap-align": {

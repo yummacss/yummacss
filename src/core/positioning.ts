@@ -51,6 +51,10 @@ export const positioning: Utilities = {
       min: 1,
       max: 16,
     }),
+    variants: {
+      pseudoClasses,
+      mediaQueries,
+    },
   },
 
   bottom: {
