@@ -1,6 +1,6 @@
 {
   "name": "yummacss",
-  "version": "3.4.0",
+  "version": "3.4.1",
   "description": "A CSS framework for the web with abbreviated styles.",
   "keywords": [
     "css-framework",
@@ -33,7 +33,7 @@
   },
   "packageManager": "pnpm@10.17.1",
   "dependencies": {
-    "@yummacss/api": "^1.6.0",
+    "@yummacss/api": "^1.6.1",
     "chokidar": "^4.0.3",
     "commander": "^14.0.0",
     "globby": "^14.1.0",

@@ -2,29 +2,23 @@
 
 All notable changes to the Yumma CSS will be documented in this file.
 
-## [3.4.0]
+## [3.4.1]
 
-<details open>
+<details>
 <summary>
     <b>Features</b>
 </summary>
 
-- Add media query support for all color utilities
-- Full `sass-embedded` migration to `@yummacss/api`
-- Implement class token extraction
-- Improve build and rebuild times with `build` and `watch` tasks
-- Integrate `@yummacss/cli` into the CLI
+- None
 
 </details>
 
-<details open>
+<details>
 <summary>
     <b>Breaking changes</b>
 </summary>
 
-- Base styles are no longer tree shaken
-- Remove `purgecss` and `sass-embedded` dependencies
-- Remove all `scss` files from the framework (Internal)
+- None
 
 </details>
 
@@ -33,6 +27,6 @@ All notable changes to the Yumma CSS will be documented in this file.
     <b>Fixes</b>
 </summary>
 
-- Fixed an issue where npm users could not run the CLI
+- Fixed an issue where class names containing slashes or colons were not being properly escaped
 
 </details>
