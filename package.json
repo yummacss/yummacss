@@ -1,6 +1,6 @@
 {
   "name": "@yummacss/api",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "description": "Typescript definitions for Yumma CSS projects.",
   "keywords": [
     "typescript",
