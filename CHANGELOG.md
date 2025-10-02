@@ -1,15 +1,15 @@
-# Release notes
+## Release notes
 
 All notable changes to the Yumma CSS will be documented in this file.
 
-## [3.4.1]
+## [3.4.2]
 
-<details>
+<details open>
 <summary>
     <b>Features</b>
 </summary>
 
-- None
+- Update `@yummacss/api` dependency version to `1.6.2`
 
 </details>
 
@@ -27,6 +27,6 @@ All notable changes to the Yumma CSS will be documented in this file.
     <b>Fixes</b>
 </summary>
 
-- Fixed an issue where class names containing slashes or colons were not being properly escaped
+- Fixed `tdt-*` (`text-decoration-thickness`) utilities from using `rem` instead of `px` as unit (API)
 
 </details>
