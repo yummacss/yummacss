@@ -9,7 +9,7 @@ All notable changes to the Yumma CSS will be documented in this file.
     <b>Features</b>
 </summary>
 
-- Add breakpoint support for all color utilities
+- Add media query support for all color utilities
 - Full `sass-embedded` migration to `@yummacss/api`
 - Implement class token extraction and generation
 - Improve build and rebuild times with `build` and `watch` tasks
