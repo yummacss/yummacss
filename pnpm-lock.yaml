@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@yummacss/api':
-        specifier: ^1.6.0
-        version: 1.6.0
+        specifier: ^1.6.1
+        version: 1.6.1
       chokidar:
         specifier: ^4.0.3
         version: 4.0.3
@@ -217,8 +217,8 @@ packages:
   '@types/stringify-object@4.0.5':
     resolution: {integrity: sha512-TzX5V+njkbJ8iJ0mrj+Vqveep/1JBH4SSA3J2wYrE1eUrOhdsjTBCb0kao4EquSQ8KgPpqY4zSVP2vCPWKBElg==}
 
-  '@yummacss/api@1.6.0':
-    resolution: {integrity: sha512-oha+4fOt9XYDcD3nUBLjHnrrUUEkVnh4Jk7LaO1xa+/uSM1Sf7VymhPzTPzVa44dZaCr8xrhECqrdVhW1QWN6Q==}
+  '@yummacss/api@1.6.1':
+    resolution: {integrity: sha512-sS4dF8iGg0AlJ1SIAg/VlsAsqPB6ghUlvv7uyvSOpPaUZ5zzfeXMh0Wjy8jnc8tu/UUmsInWiTAJaLT3Y3R8FQ==}
 
   ansi-regex@6.1.0:
     resolution: {integrity: sha512-7HSX4QQb4CspciLpVFwyRe79O3xsIZDDLER21kERQ71oaPodF8jL725AgJMFAYbooIqolJoRLuM81SpeUkpkvA==}
@@ -811,7 +811,7 @@ snapshots:
 
   '@types/stringify-object@4.0.5': {}
 
-  '@yummacss/api@1.6.0':
+  '@yummacss/api@1.6.1':
     dependencies:
       tinycolor2: 1.6.0
 

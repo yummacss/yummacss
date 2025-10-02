@@ -120,8 +120,9 @@ function tryGenerateBaseRule(
   return { cssValue };
 }
 
+// escape semicolons and slashes in class names
 function escapeClassName(className: string): string {
-  return className.replace(/:/g, "\\:");
+  return className.replace(/:/g, "\\:").replace(/\//g, "\\/");
 }
 
 function generateCSSRule(
