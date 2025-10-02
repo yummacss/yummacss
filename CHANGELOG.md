@@ -11,7 +11,7 @@ All notable changes to the Yumma CSS will be documented in this file.
 
 - Add media query support for all color utilities
 - Full `sass-embedded` migration to `@yummacss/api`
-- Implement class token extraction and generation
+- Implement class token extraction
 - Improve build and rebuild times with `build` and `watch` tasks
 - Integrate `@yummacss/cli` into the CLI
 
@@ -23,7 +23,7 @@ All notable changes to the Yumma CSS will be documented in this file.
 </summary>
 
 - Base styles are no longer tree shaken
-- Remove `purgecss` from the build process (Internal)
+- Remove `purgecss` and `sass-embedded` dependencies
 - Remove all `scss` files from the framework (Internal)
 
 </details>
