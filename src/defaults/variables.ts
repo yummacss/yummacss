@@ -62,8 +62,8 @@ export const bottomLeftTopRight = 0.25;
 
 // font
 export const fontCharter = 'Charter, "Bitstream Charter", "Sitka Text", Cambria, serif';
-export const fontMono = 'Nimbus Mono PS", "Courier New", monospace';
-export const fontSystem = "system_ui, sans_serif";
+export const fontMono = '"Nimbus Mono PS", "Courier New", monospace';
+   export const fontSystem = "system-ui, sans-serif";
 
 export const fontSizeXs = 0.75;
 export const fontSizeSm = 0.875;
