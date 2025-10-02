@@ -141,7 +141,7 @@ export const text: Utilities = {
     values: {
       ...createValues({
         base: decorationThickness,
-        unit: "rem",
+        unit: "px",
         min: 0,
         max: 4,
       }),
