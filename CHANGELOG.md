@@ -2,14 +2,14 @@
 
 All notable changes to the Yumma CSS will be documented in this file.
 
-## [3.4.2]
+## [3.4.3]
 
-<details open>
+<details>
 <summary>
     <b>Features</b>
 </summary>
 
-- Update `@yummacss/api` dependency version to `1.6.2`
+- None
 
 </details>
 
@@ -27,6 +27,7 @@ All notable changes to the Yumma CSS will be documented in this file.
     <b>Fixes</b>
 </summary>
 
-- Fixed `tdt-*` (`text-decoration-thickness`) utilities from using `rem` instead of `px` as unit (API)
+- Escape slashes in class names like `ar-*` (`aspect-ratio`)
+- Sort CSS rules alphabetically for consistent output
 
 </details>
