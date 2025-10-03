@@ -31,7 +31,7 @@
     "format": "prettier --write .",
     "prepublishOnly": "pnpm build"
   },
-  "packageManager": "pnpm@10.17.1",
+  "packageManager": "pnpm@10.18.0",
   "dependencies": {
     "@yummacss/api": "^1.6.2",
     "chokidar": "^4.0.3",
