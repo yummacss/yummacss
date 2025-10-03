@@ -23,7 +23,10 @@ function generateUtil(usedClasses: Set<string>): string {
   const mediaQueryRules: Map<string, string[]> = new Map();
   const processedClasses = new Set<string>();
 
-  for (const className of usedClasses) {
+  // sort classes alphabetically for consistent output
+  const sortedClasses = Array.from(usedClasses).sort();
+
+  for (const className of sortedClasses) {
     if (processedClasses.has(className)) continue;
 
     const res = generateCSSRule(className, utils);
@@ -39,8 +42,12 @@ function generateUtil(usedClasses: Set<string>): string {
     }
   }
 
-  // media query rules
-  for (const [mediaQuery, rules] of mediaQueryRules) {
+  // add media query rules in a consistent order
+  const sortedMediaQueries = Array.from(mediaQueryRules.entries()).sort(
+    ([a], [b]) => a.localeCompare(b)
+  );
+
+  for (const [mediaQuery, rules] of sortedMediaQueries) {
     cssRules.push(`${mediaQuery} {\n${rules.join("\n")}\n}`);
   }
 
@@ -61,10 +68,10 @@ function tryGenerateRule(
         const res = tryGenerateBaseRule(baseClassName, util);
         if (res) {
           const declarations = properties
-            .map((prop) => `  ${prop}: ${res.cssValue};`)
+            .map((prop) => `${prop}: ${res.cssValue};`)
             .join("\n");
           return {
-            rule: `  .${escapeClassName(className)} {\n  ${declarations}\n  }`,
+            rule: `.${escapeCn(className)} {\n  ${declarations}\n  }`,
             mediaQuery: mq.value,
           };
         }
@@ -77,13 +84,13 @@ function tryGenerateRule(
     for (const pc of variants.pseudoClasses) {
       if (className.startsWith(`${pc.prefix}:`)) {
         const baseClassName = className.slice(pc.prefix.length + 1);
-        const result = tryGenerateBaseRule(baseClassName, util);
-        if (result) {
+        const res = tryGenerateBaseRule(baseClassName, util);
+        if (res) {
           const declarations = properties
-            .map((prop) => `  ${prop}: ${result.cssValue};`)
+            .map((prop) => `${prop}: ${res.cssValue};`)
             .join("\n");
           return {
-            rule: `.${escapeClassName(className)}${pc.value} {\n${declarations}\n}`,
+            rule: `.${escapeCn(className)}${pc.value} {\n${declarations}\n}`,
           };
         }
       }
@@ -94,10 +101,10 @@ function tryGenerateRule(
   const baseRule = tryGenerateBaseRule(className, util);
   if (baseRule) {
     const declarations = properties
-      .map((prop) => `  ${prop}: ${baseRule.cssValue};`)
+      .map((prop) => `${prop}: ${baseRule.cssValue};`)
       .join("\n");
     return {
-      rule: `.${escapeClassName(className)} {\n${declarations}\n}`,
+      rule: `.${escapeCn(className)} {\n${declarations}\n}`,
     };
   }
 
@@ -120,8 +127,8 @@ function tryGenerateBaseRule(
   return { cssValue };
 }
 
-// escape semicolons and slashes in class names
-function escapeClassName(className: string): string {
+// escape colons and slashes
+function escapeCn(className: string): string {
   return className.replace(/:/g, "\\:").replace(/\//g, "\\/");
 }
 
