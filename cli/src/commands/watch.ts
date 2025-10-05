@@ -50,7 +50,7 @@ export async function watch() {
       .on("change", (path) => handleChange(path, "changed"))
       .on("unlink", (path) => handleChange(path, "removed"));
   } catch (error) {
-    cli.error(message.watch.fail);
+    cli.fail(message.watch.fail);
     process.exit(1);
   }
 }
