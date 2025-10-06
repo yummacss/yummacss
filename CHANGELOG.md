@@ -1,4 +1,4 @@
-# Release notes
+## Release notes
 
 All notable changes to the Yumma CSS API will be documented in this file.
 
