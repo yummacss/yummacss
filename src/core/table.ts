@@ -10,9 +10,7 @@ export const table: Utilities = {
       t: "top",
       b: "bottom",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "table-layout": {
@@ -23,8 +21,6 @@ export const table: Utilities = {
       a: "auto",
       f: "fixed",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 };

@@ -12,9 +12,7 @@ export const boxModel: Utilities = {
       bb: "border-box",
       cb: "content-box",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   dimension: {
@@ -45,9 +43,7 @@ export const boxModel: Utilities = {
       xl: "80rem",
       xxl: "96rem",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "max-dimension": {
@@ -78,9 +74,7 @@ export const boxModel: Utilities = {
       xl: "80rem",
       xxl: "96rem",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "min-dimension": {
@@ -111,9 +105,7 @@ export const boxModel: Utilities = {
       xl: "80rem",
       xxl: "96rem",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   height: {
@@ -144,9 +136,7 @@ export const boxModel: Utilities = {
       xl: "80rem",
       xxl: "96rem",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "max-height": {
@@ -177,9 +167,7 @@ export const boxModel: Utilities = {
       xl: "80rem",
       xxl: "96rem",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "min-height": {
@@ -210,9 +198,7 @@ export const boxModel: Utilities = {
       xl: "80rem",
       xxl: "96rem",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   margin: {
@@ -229,9 +215,7 @@ export const boxModel: Utilities = {
       auto: "auto",
       px: "1px",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "margin-block-end": {
@@ -248,9 +232,7 @@ export const boxModel: Utilities = {
       auto: "auto",
       px: "1px",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "margin-block-start": {
@@ -267,9 +249,7 @@ export const boxModel: Utilities = {
       auto: "auto",
       px: "1px",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "margin-bottom": {
@@ -286,9 +266,7 @@ export const boxModel: Utilities = {
       auto: "auto",
       px: "1px",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "margin-inline-end": {
@@ -305,9 +283,7 @@ export const boxModel: Utilities = {
       auto: "auto",
       px: "1px",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "margin-inline-start": {
@@ -324,9 +300,7 @@ export const boxModel: Utilities = {
       auto: "auto",
       px: "1px",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "margin-left": {
@@ -343,9 +317,7 @@ export const boxModel: Utilities = {
       auto: "auto",
       px: "1px",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "margin-right": {
@@ -362,9 +334,7 @@ export const boxModel: Utilities = {
       auto: "auto",
       px: "1px",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "margin-top": {
@@ -381,9 +351,7 @@ export const boxModel: Utilities = {
       auto: "auto",
       px: "1px",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "margin-x": {
@@ -400,9 +368,7 @@ export const boxModel: Utilities = {
       auto: "auto",
       px: "1px",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "margin-y": {
@@ -419,9 +385,7 @@ export const boxModel: Utilities = {
       auto: "auto",
       px: "1px",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   padding: {
@@ -438,9 +402,7 @@ export const boxModel: Utilities = {
       auto: "auto",
       px: "1px",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "padding-block-end": {
@@ -457,9 +419,7 @@ export const boxModel: Utilities = {
       auto: "auto",
       px: "1px",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "padding-block-start": {
@@ -476,9 +436,7 @@ export const boxModel: Utilities = {
       auto: "auto",
       px: "1px",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "padding-bottom": {
@@ -495,9 +453,7 @@ export const boxModel: Utilities = {
       auto: "auto",
       px: "1px",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "padding-inline-end": {
@@ -514,9 +470,7 @@ export const boxModel: Utilities = {
       auto: "auto",
       px: "1px",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "padding-inline-start": {
@@ -533,9 +487,7 @@ export const boxModel: Utilities = {
       auto: "auto",
       px: "1px",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "padding-left": {
@@ -552,9 +504,7 @@ export const boxModel: Utilities = {
       auto: "auto",
       px: "1px",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "padding-right": {
@@ -571,9 +521,7 @@ export const boxModel: Utilities = {
       auto: "auto",
       px: "1px",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "padding-top": {
@@ -590,9 +538,7 @@ export const boxModel: Utilities = {
       auto: "auto",
       px: "1px",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "padding-x": {
@@ -609,9 +555,7 @@ export const boxModel: Utilities = {
       auto: "auto",
       px: "1px",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "padding-y": {
@@ -628,9 +572,7 @@ export const boxModel: Utilities = {
       auto: "auto",
       px: "1px",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   width: {
@@ -661,9 +603,7 @@ export const boxModel: Utilities = {
       xl: "80rem",
       xxl: "96rem",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "max-width": {
@@ -694,9 +634,7 @@ export const boxModel: Utilities = {
       xl: "80rem",
       xxl: "96rem",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "min-width": {
@@ -727,8 +665,6 @@ export const boxModel: Utilities = {
       xl: "80rem",
       xxl: "96rem",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 };

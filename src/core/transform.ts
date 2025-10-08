@@ -29,9 +29,7 @@ export const transform: Utilities = {
       "95": "rotate(95deg)",
       "100": "rotate(100deg)",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   scale: {
@@ -51,9 +49,7 @@ export const transform: Utilities = {
       "90": "scale(90%)",
       "100": "scale(100%)",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "scale-x": {
@@ -73,9 +69,7 @@ export const transform: Utilities = {
       "90": "scaleX(90%)",
       "100": "scaleX(100%)",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "scale-y": {
@@ -95,9 +89,7 @@ export const transform: Utilities = {
       "90": "scaleY(90%)",
       "100": "scaleY(100%)",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   skew: {
@@ -111,9 +103,7 @@ export const transform: Utilities = {
       "6": "skew(6deg)",
       "12": "skew(12deg)",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "skew-x": {
@@ -127,9 +117,7 @@ export const transform: Utilities = {
       "6": "skewX(6deg)",
       "12": "skewX(12deg)",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "skew-y": {
@@ -143,9 +131,7 @@ export const transform: Utilities = {
       "6": "skewY(6deg)",
       "12": "skewY(12deg)",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "transform-origin": {
@@ -163,8 +149,6 @@ export const transform: Utilities = {
       tl: "top left",
       tr: "top right",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 };

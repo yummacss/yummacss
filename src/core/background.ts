@@ -11,9 +11,7 @@ export const background: Utilities = {
       l: "local",
       s: "scroll",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "background-clip": {
@@ -26,9 +24,7 @@ export const background: Utilities = {
       pb: "padding-box",
       t: "text",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "background-origin": {
@@ -40,9 +36,7 @@ export const background: Utilities = {
       cb: "content-box",
       pb: "padding-box",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "background-position": {
@@ -60,9 +54,7 @@ export const background: Utilities = {
       rt: "right top",
       t: "top",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "background-repeat": {
@@ -77,9 +69,7 @@ export const background: Utilities = {
       ry: "repeat-y",
       s: "space",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "background-size": {
@@ -91,8 +81,6 @@ export const background: Utilities = {
       c: "cover",
       co: "contain",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 };

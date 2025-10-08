@@ -16,9 +16,7 @@ export const text: Utilities = {
       "4": "0.05em",
       "5": "0.1em",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "line-height": {
@@ -33,9 +31,7 @@ export const text: Utilities = {
       "5": "1.625",
       "6": "2",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "list-style-position": {
@@ -46,9 +42,7 @@ export const text: Utilities = {
       i: "inside",
       o: "outside",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "list-style-type": {
@@ -60,9 +54,7 @@ export const text: Utilities = {
       d: "disc",
       s: "square",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "overflow-wrap": {
@@ -73,9 +65,7 @@ export const text: Utilities = {
       bw: "break-word",
       n: "normal",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "text-align": {
@@ -92,9 +82,7 @@ export const text: Utilities = {
       r: "right",
       s: "start",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "text-decoration-line": {
@@ -107,9 +95,7 @@ export const text: Utilities = {
       o: "overline",
       u: "underline",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "text-decoration-style": {
@@ -121,9 +107,7 @@ export const text: Utilities = {
       s: "solid",
       w: "wavy",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "text-decoration-thickness": {
@@ -140,9 +124,7 @@ export const text: Utilities = {
       auto: "auto",
       ff: "from-font",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "text-decoration": {
@@ -153,9 +135,7 @@ export const text: Utilities = {
       none: "none",
       u: "underline",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "text-indent": {
@@ -169,9 +149,7 @@ export const text: Utilities = {
       "3": "0.5rem",
       "4": "0.75rem",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "text-overflow": {
@@ -182,9 +160,7 @@ export const text: Utilities = {
       c: "clip",
       e: "ellipsis",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "text-transform": {
@@ -197,9 +173,7 @@ export const text: Utilities = {
       n: "none",
       u: "uppercase",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "text-underline-offset": {
@@ -214,9 +188,7 @@ export const text: Utilities = {
       "8": "8px",
       auto: "auto",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "text-wrap": {
@@ -229,9 +201,7 @@ export const text: Utilities = {
       p: "pretty",
       w: "wrap",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "white-space": {
@@ -246,8 +216,6 @@ export const text: Utilities = {
       pl: "pre-line",
       pw: "pre-wrap",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 };

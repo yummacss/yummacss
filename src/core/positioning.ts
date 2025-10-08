@@ -18,9 +18,7 @@ export const positioning: Utilities = {
       "3/2": "3/2",
       "9/16": "9/16",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   clear: {
@@ -35,9 +33,7 @@ export const positioning: Utilities = {
       none: "none",
       r: "right",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   columns: {
@@ -49,9 +45,7 @@ export const positioning: Utilities = {
       min: 1,
       max: 16,
     }),
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   bottom: {
@@ -68,9 +62,7 @@ export const positioning: Utilities = {
       full: "100%",
       half: "50%",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   inset: {
@@ -87,9 +79,7 @@ export const positioning: Utilities = {
       full: "100%",
       half: "50%",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "inset-x": {
@@ -106,9 +96,7 @@ export const positioning: Utilities = {
       full: "100%",
       half: "50%",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "inset-y": {
@@ -125,9 +113,7 @@ export const positioning: Utilities = {
       full: "100%",
       half: "50%",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   isolation: {
@@ -138,9 +124,7 @@ export const positioning: Utilities = {
       auto: "auto",
       i: "isolate",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   left: {
@@ -157,9 +141,7 @@ export const positioning: Utilities = {
       full: "100%",
       half: "50%",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   right: {
@@ -176,9 +158,7 @@ export const positioning: Utilities = {
       full: "100%",
       half: "50%",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   top: {
@@ -195,9 +175,7 @@ export const positioning: Utilities = {
       full: "100%",
       half: "50%",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   display: {
@@ -220,9 +198,7 @@ export const positioning: Utilities = {
       tco: "table-column",
       tr: "table-row",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   float: {
@@ -236,9 +212,7 @@ export const positioning: Utilities = {
       none: "none",
       r: "right",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "object-fit": {
@@ -251,9 +225,7 @@ export const positioning: Utilities = {
       none: "none",
       sd: "scale-down",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "object-position": {
@@ -271,9 +243,7 @@ export const positioning: Utilities = {
       rt: "right top",
       t: "top",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   overflow: {
@@ -287,9 +257,7 @@ export const positioning: Utilities = {
       s: "scroll",
       v: "visible",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "overflow-x": {
@@ -303,9 +271,7 @@ export const positioning: Utilities = {
       s: "scroll",
       v: "visible",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "overflow-y": {
@@ -319,9 +285,7 @@ export const positioning: Utilities = {
       s: "scroll",
       v: "visible",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   position: {
@@ -335,9 +299,7 @@ export const positioning: Utilities = {
       s: "static",
       st: "sticky",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   visibility: {
@@ -349,9 +311,7 @@ export const positioning: Utilities = {
       h: "hidden",
       v: "visible",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "z-index": {
@@ -371,8 +331,6 @@ export const positioning: Utilities = {
       "90": "90",
       auto: "auto",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 };

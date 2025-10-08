@@ -14,9 +14,7 @@ export const outline: Utilities = {
       min: 0,
       max: 4,
     }),
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "outline-style": {
@@ -28,9 +26,7 @@ export const outline: Utilities = {
       d: "dashed",
       s: "solid",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "outline-width": {
@@ -43,8 +39,6 @@ export const outline: Utilities = {
       min: 0,
       max: 4,
     }),
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 };

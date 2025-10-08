@@ -13,8 +13,6 @@ export const svg: Utilities = {
       "8": "0.8",
       "1": "1",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 };
