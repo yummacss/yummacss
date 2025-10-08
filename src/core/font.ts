@@ -16,7 +16,7 @@ import {
   fontSizeXxl,
   fontSystem,
 } from "@/defaults/variables";
-import { mediaQueries, pseudoClasses } from "@/defaults/variants";
+import { variantValues } from "@/defaults/variants/core";
 import { Utilities } from "@/interfaces";
 
 export const font: Utilities = {
@@ -30,8 +30,7 @@ export const font: Utilities = {
       s: fontSystem,
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -55,8 +54,7 @@ export const font: Utilities = {
       "9xl": `${fontSize9xl}rem`,
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -69,8 +67,7 @@ export const font: Utilities = {
       n: "normal",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -90,8 +87,7 @@ export const font: Utilities = {
       "900": "900",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 };

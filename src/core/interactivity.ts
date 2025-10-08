@@ -1,5 +1,5 @@
 import { margin, padding } from "@/defaults/variables";
-import { mediaQueries, pseudoClasses } from "@/defaults/variants";
+import { variantValues } from "@/defaults/variants/core";
 import { createValues } from "@/helpers/create-values";
 import { Utilities } from "@/interfaces";
 
@@ -13,8 +13,7 @@ export const interactivity: Utilities = {
       none: "none",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -49,8 +48,7 @@ export const interactivity: Utilities = {
       zo: "zoom-out",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -63,8 +61,7 @@ export const interactivity: Utilities = {
       c: "content",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -77,8 +74,7 @@ export const interactivity: Utilities = {
       none: "none",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -93,8 +89,7 @@ export const interactivity: Utilities = {
       v: "vertical",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -107,8 +102,7 @@ export const interactivity: Utilities = {
       s: "smooth",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -123,8 +117,7 @@ export const interactivity: Utilities = {
       max: 100,
     }),
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -139,8 +132,7 @@ export const interactivity: Utilities = {
       max: 100,
     }),
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -155,8 +147,7 @@ export const interactivity: Utilities = {
       max: 100,
     }),
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -171,8 +162,7 @@ export const interactivity: Utilities = {
       max: 100,
     }),
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -187,8 +177,7 @@ export const interactivity: Utilities = {
       max: 100,
     }),
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -203,8 +192,7 @@ export const interactivity: Utilities = {
       max: 100,
     }),
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -219,8 +207,7 @@ export const interactivity: Utilities = {
       max: 100,
     }),
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -235,8 +222,7 @@ export const interactivity: Utilities = {
       max: 100,
     }),
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -251,8 +237,7 @@ export const interactivity: Utilities = {
       max: 100,
     }),
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -267,8 +252,7 @@ export const interactivity: Utilities = {
       max: 100,
     }),
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -283,8 +267,7 @@ export const interactivity: Utilities = {
       max: 100,
     }),
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -299,8 +282,7 @@ export const interactivity: Utilities = {
       max: 100,
     }),
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -315,8 +297,7 @@ export const interactivity: Utilities = {
       max: 100,
     }),
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -331,8 +312,7 @@ export const interactivity: Utilities = {
       max: 100,
     }),
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -347,8 +327,7 @@ export const interactivity: Utilities = {
       max: 100,
     }),
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -363,8 +342,7 @@ export const interactivity: Utilities = {
       max: 100,
     }),
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -379,8 +357,7 @@ export const interactivity: Utilities = {
       max: 100,
     }),
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -395,8 +372,7 @@ export const interactivity: Utilities = {
       max: 100,
     }),
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -411,8 +387,7 @@ export const interactivity: Utilities = {
       s: "start",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -425,8 +400,7 @@ export const interactivity: Utilities = {
       n: "normal",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -443,8 +417,7 @@ export const interactivity: Utilities = {
       "y-p": "y proximity",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -459,8 +432,7 @@ export const interactivity: Utilities = {
       t: "text",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 };

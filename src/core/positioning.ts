@@ -1,5 +1,5 @@
 import { bottomLeftTopRight } from "@/defaults/variables";
-import { mediaQueries, pseudoClasses } from "@/defaults/variants";
+import { variantValues } from "@/defaults/variants/core";
 import { createValues } from "@/helpers/create-values";
 import { Utilities } from "@/interfaces";
 
@@ -19,8 +19,7 @@ export const positioning: Utilities = {
       "9/16": "9/16",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -37,8 +36,7 @@ export const positioning: Utilities = {
       r: "right",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -52,8 +50,7 @@ export const positioning: Utilities = {
       max: 16,
     }),
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -72,8 +69,7 @@ export const positioning: Utilities = {
       half: "50%",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -92,8 +88,7 @@ export const positioning: Utilities = {
       half: "50%",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -112,8 +107,7 @@ export const positioning: Utilities = {
       half: "50%",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -132,8 +126,7 @@ export const positioning: Utilities = {
       half: "50%",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -146,8 +139,7 @@ export const positioning: Utilities = {
       i: "isolate",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -166,8 +158,7 @@ export const positioning: Utilities = {
       half: "50%",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -186,8 +177,7 @@ export const positioning: Utilities = {
       half: "50%",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -206,8 +196,7 @@ export const positioning: Utilities = {
       half: "50%",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -232,8 +221,7 @@ export const positioning: Utilities = {
       tr: "table-row",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -249,8 +237,7 @@ export const positioning: Utilities = {
       r: "right",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -265,8 +252,7 @@ export const positioning: Utilities = {
       sd: "scale-down",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -286,8 +272,7 @@ export const positioning: Utilities = {
       t: "top",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -303,8 +288,7 @@ export const positioning: Utilities = {
       v: "visible",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -320,8 +304,7 @@ export const positioning: Utilities = {
       v: "visible",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -337,8 +320,7 @@ export const positioning: Utilities = {
       v: "visible",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -354,8 +336,7 @@ export const positioning: Utilities = {
       st: "sticky",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -369,8 +350,7 @@ export const positioning: Utilities = {
       v: "visible",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -392,8 +372,7 @@ export const positioning: Utilities = {
       auto: "auto",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 };

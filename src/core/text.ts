@@ -1,5 +1,5 @@
 import { decorationThickness } from "@/defaults/variables";
-import { mediaQueries, pseudoClasses } from "@/defaults/variants";
+import { variantValues } from "@/defaults/variants/core";
 import { createValues } from "@/helpers/create-values";
 import { Utilities } from "@/interfaces";
 
@@ -17,8 +17,7 @@ export const text: Utilities = {
       "5": "0.1em",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -35,8 +34,7 @@ export const text: Utilities = {
       "6": "2",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -49,8 +47,7 @@ export const text: Utilities = {
       o: "outside",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -64,8 +61,7 @@ export const text: Utilities = {
       s: "square",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -78,8 +74,7 @@ export const text: Utilities = {
       n: "normal",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -98,8 +93,7 @@ export const text: Utilities = {
       s: "start",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -114,8 +108,7 @@ export const text: Utilities = {
       u: "underline",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -129,8 +122,7 @@ export const text: Utilities = {
       w: "wavy",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -149,8 +141,7 @@ export const text: Utilities = {
       ff: "from-font",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -163,8 +154,7 @@ export const text: Utilities = {
       u: "underline",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -180,8 +170,7 @@ export const text: Utilities = {
       "4": "0.75rem",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -194,8 +183,7 @@ export const text: Utilities = {
       e: "ellipsis",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -210,8 +198,7 @@ export const text: Utilities = {
       u: "uppercase",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -228,8 +215,7 @@ export const text: Utilities = {
       auto: "auto",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -244,8 +230,7 @@ export const text: Utilities = {
       w: "wrap",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -262,8 +247,7 @@ export const text: Utilities = {
       pw: "pre-wrap",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 };

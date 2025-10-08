@@ -1,4 +1,4 @@
-import { mediaQueries, pseudoClasses } from "@/defaults/variants";
+import { variantValues } from "@/defaults/variants/core";
 import { Utilities } from "@/interfaces";
 
 export const background: Utilities = {
@@ -12,8 +12,7 @@ export const background: Utilities = {
       s: "scroll",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -28,8 +27,7 @@ export const background: Utilities = {
       t: "text",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -43,8 +41,7 @@ export const background: Utilities = {
       pb: "padding-box",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -64,8 +61,7 @@ export const background: Utilities = {
       t: "top",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -82,8 +78,7 @@ export const background: Utilities = {
       s: "space",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -97,8 +92,7 @@ export const background: Utilities = {
       co: "contain",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 };

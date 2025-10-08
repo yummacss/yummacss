@@ -1,5 +1,5 @@
 import { outlineOffset, outlineWidth } from "@/defaults/variables";
-import { mediaQueries, pseudoClasses } from "@/defaults/variants";
+import { variantValues } from "@/defaults/variants/core";
 import { createValues } from "@/helpers/create-values";
 import { Utilities } from "@/interfaces";
 
@@ -15,8 +15,7 @@ export const outline: Utilities = {
       max: 4,
     }),
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -30,8 +29,7 @@ export const outline: Utilities = {
       s: "solid",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -46,8 +44,7 @@ export const outline: Utilities = {
       max: 4,
     }),
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 };

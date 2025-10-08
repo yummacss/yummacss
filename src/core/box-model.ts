@@ -1,5 +1,5 @@
 import { dimension, height, margin, padding, width } from "@/defaults/variables";
-import { mediaQueries, pseudoClasses } from "@/defaults/variants";
+import { variantValues } from "@/defaults/variants/core";
 import { createValues } from "@/helpers/create-values";
 import { Utilities } from "@/interfaces";
 
@@ -13,8 +13,7 @@ export const boxModel: Utilities = {
       cb: "content-box",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -47,8 +46,7 @@ export const boxModel: Utilities = {
       xxl: "96rem",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -81,8 +79,7 @@ export const boxModel: Utilities = {
       xxl: "96rem",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -115,8 +112,7 @@ export const boxModel: Utilities = {
       xxl: "96rem",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -149,8 +145,7 @@ export const boxModel: Utilities = {
       xxl: "96rem",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -183,8 +178,7 @@ export const boxModel: Utilities = {
       xxl: "96rem",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -217,8 +211,7 @@ export const boxModel: Utilities = {
       xxl: "96rem",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -237,8 +230,7 @@ export const boxModel: Utilities = {
       px: "1px",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -257,8 +249,7 @@ export const boxModel: Utilities = {
       px: "1px",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -277,8 +268,7 @@ export const boxModel: Utilities = {
       px: "1px",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -297,8 +287,7 @@ export const boxModel: Utilities = {
       px: "1px",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -317,8 +306,7 @@ export const boxModel: Utilities = {
       px: "1px",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -337,8 +325,7 @@ export const boxModel: Utilities = {
       px: "1px",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -357,8 +344,7 @@ export const boxModel: Utilities = {
       px: "1px",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -377,8 +363,7 @@ export const boxModel: Utilities = {
       px: "1px",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -397,8 +382,7 @@ export const boxModel: Utilities = {
       px: "1px",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -417,8 +401,7 @@ export const boxModel: Utilities = {
       px: "1px",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -437,8 +420,7 @@ export const boxModel: Utilities = {
       px: "1px",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -457,8 +439,7 @@ export const boxModel: Utilities = {
       px: "1px",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -477,8 +458,7 @@ export const boxModel: Utilities = {
       px: "1px",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -497,8 +477,7 @@ export const boxModel: Utilities = {
       px: "1px",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -517,8 +496,7 @@ export const boxModel: Utilities = {
       px: "1px",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -537,8 +515,7 @@ export const boxModel: Utilities = {
       px: "1px",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -557,8 +534,7 @@ export const boxModel: Utilities = {
       px: "1px",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -577,8 +553,7 @@ export const boxModel: Utilities = {
       px: "1px",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -597,8 +572,7 @@ export const boxModel: Utilities = {
       px: "1px",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -617,8 +591,7 @@ export const boxModel: Utilities = {
       px: "1px",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -637,8 +610,7 @@ export const boxModel: Utilities = {
       px: "1px",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -657,8 +629,7 @@ export const boxModel: Utilities = {
       px: "1px",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -691,8 +662,7 @@ export const boxModel: Utilities = {
       xxl: "96rem",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -725,8 +695,7 @@ export const boxModel: Utilities = {
       xxl: "96rem",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -759,8 +728,7 @@ export const boxModel: Utilities = {
       xxl: "96rem",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 };

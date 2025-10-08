@@ -1,4 +1,4 @@
-import { mediaQueries, pseudoClasses } from "@/defaults/variants";
+import { variantValues } from "@/defaults/variants/core";
 import { Utilities } from "@/interfaces";
 export const svg: Utilities = {
   "stroke-width": {
@@ -14,8 +14,7 @@ export const svg: Utilities = {
       "1": "1",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 };

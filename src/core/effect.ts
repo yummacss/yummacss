@@ -8,7 +8,7 @@ import {
   boxShadowXs,
   grayscale,
 } from "@/defaults/variables";
-import { mediaQueries, pseudoClasses } from "@/defaults/variants";
+import { variantValues } from "@/defaults/variants/core";
 import { Utilities } from "@/interfaces";
 
 export const effect: Utilities = {
@@ -25,8 +25,7 @@ export const effect: Utilities = {
       xl: `blur(${backdropBlur * 16}px)`,
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -43,8 +42,7 @@ export const effect: Utilities = {
       xl: `blur(${blur * 16}px)`,
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -61,8 +59,7 @@ export const effect: Utilities = {
       xl: boxShadowXl,
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -84,8 +81,7 @@ export const effect: Utilities = {
       100: `grayscale(100%)`,
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -107,8 +103,7 @@ export const effect: Utilities = {
       100: "1",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 };
