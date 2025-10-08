@@ -1,4 +1,4 @@
-import { standardSet } from "@/defaults/variants/sets";
+import { standardPreset } from "@/defaults/variants/preset";
 import { Utilities } from "@/interfaces";
 
 export const transform: Utilities = {
@@ -29,7 +29,7 @@ export const transform: Utilities = {
       "95": "rotate(95deg)",
       "100": "rotate(100deg)",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   scale: {
@@ -49,7 +49,7 @@ export const transform: Utilities = {
       "90": "scale(90%)",
       "100": "scale(100%)",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "scale-x": {
@@ -69,7 +69,7 @@ export const transform: Utilities = {
       "90": "scaleX(90%)",
       "100": "scaleX(100%)",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "scale-y": {
@@ -89,7 +89,7 @@ export const transform: Utilities = {
       "90": "scaleY(90%)",
       "100": "scaleY(100%)",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   skew: {
@@ -103,7 +103,7 @@ export const transform: Utilities = {
       "6": "skew(6deg)",
       "12": "skew(12deg)",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "skew-x": {
@@ -117,7 +117,7 @@ export const transform: Utilities = {
       "6": "skewX(6deg)",
       "12": "skewX(12deg)",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "skew-y": {
@@ -131,7 +131,7 @@ export const transform: Utilities = {
       "6": "skewY(6deg)",
       "12": "skewY(12deg)",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "transform-origin": {
@@ -149,6 +149,6 @@ export const transform: Utilities = {
       tl: "top left",
       tr: "top right",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 };

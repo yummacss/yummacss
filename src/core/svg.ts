@@ -1,4 +1,4 @@
-import { standardSet } from "@/defaults/variants/sets";
+import { standardPreset } from "@/defaults/variants/preset";
 import { Utilities } from "@/interfaces";
 export const svg: Utilities = {
   "stroke-width": {
@@ -13,6 +13,6 @@ export const svg: Utilities = {
       "8": "0.8",
       "1": "1",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 };

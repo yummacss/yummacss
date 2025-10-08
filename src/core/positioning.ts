@@ -1,5 +1,5 @@
 import { bottomLeftTopRight } from "@/defaults/variables";
-import { standardSet } from "@/defaults/variants/sets";
+import { standardPreset } from "@/defaults/variants/preset";
 import { createValues } from "@/helpers/create-values";
 import { Utilities } from "@/interfaces";
 
@@ -18,7 +18,7 @@ export const positioning: Utilities = {
       "3/2": "3/2",
       "9/16": "9/16",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   clear: {
@@ -33,7 +33,7 @@ export const positioning: Utilities = {
       none: "none",
       r: "right",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   columns: {
@@ -45,7 +45,7 @@ export const positioning: Utilities = {
       min: 1,
       max: 16,
     }),
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   bottom: {
@@ -62,7 +62,7 @@ export const positioning: Utilities = {
       full: "100%",
       half: "50%",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   inset: {
@@ -79,7 +79,7 @@ export const positioning: Utilities = {
       full: "100%",
       half: "50%",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "inset-x": {
@@ -96,7 +96,7 @@ export const positioning: Utilities = {
       full: "100%",
       half: "50%",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "inset-y": {
@@ -113,7 +113,7 @@ export const positioning: Utilities = {
       full: "100%",
       half: "50%",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   isolation: {
@@ -124,7 +124,7 @@ export const positioning: Utilities = {
       auto: "auto",
       i: "isolate",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   left: {
@@ -141,7 +141,7 @@ export const positioning: Utilities = {
       full: "100%",
       half: "50%",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   right: {
@@ -158,7 +158,7 @@ export const positioning: Utilities = {
       full: "100%",
       half: "50%",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   top: {
@@ -175,7 +175,7 @@ export const positioning: Utilities = {
       full: "100%",
       half: "50%",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   display: {
@@ -198,7 +198,7 @@ export const positioning: Utilities = {
       tco: "table-column",
       tr: "table-row",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   float: {
@@ -212,7 +212,7 @@ export const positioning: Utilities = {
       none: "none",
       r: "right",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "object-fit": {
@@ -225,7 +225,7 @@ export const positioning: Utilities = {
       none: "none",
       sd: "scale-down",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "object-position": {
@@ -243,7 +243,7 @@ export const positioning: Utilities = {
       rt: "right top",
       t: "top",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   overflow: {
@@ -257,7 +257,7 @@ export const positioning: Utilities = {
       s: "scroll",
       v: "visible",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "overflow-x": {
@@ -271,7 +271,7 @@ export const positioning: Utilities = {
       s: "scroll",
       v: "visible",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "overflow-y": {
@@ -285,7 +285,7 @@ export const positioning: Utilities = {
       s: "scroll",
       v: "visible",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   position: {
@@ -299,7 +299,7 @@ export const positioning: Utilities = {
       s: "static",
       st: "sticky",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   visibility: {
@@ -311,7 +311,7 @@ export const positioning: Utilities = {
       h: "hidden",
       v: "visible",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "z-index": {
@@ -331,6 +331,6 @@ export const positioning: Utilities = {
       "90": "90",
       auto: "auto",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 };

@@ -1,4 +1,4 @@
-import { standardSet } from "@/defaults/variants/sets";
+import { standardPreset } from "@/defaults/variants/preset";
 import { Utilities } from "@/interfaces";
 
 export const background: Utilities = {
@@ -11,7 +11,7 @@ export const background: Utilities = {
       l: "local",
       s: "scroll",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "background-clip": {
@@ -24,7 +24,7 @@ export const background: Utilities = {
       pb: "padding-box",
       t: "text",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "background-origin": {
@@ -36,7 +36,7 @@ export const background: Utilities = {
       cb: "content-box",
       pb: "padding-box",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "background-position": {
@@ -54,7 +54,7 @@ export const background: Utilities = {
       rt: "right top",
       t: "top",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "background-repeat": {
@@ -69,7 +69,7 @@ export const background: Utilities = {
       ry: "repeat-y",
       s: "space",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "background-size": {
@@ -81,6 +81,6 @@ export const background: Utilities = {
       c: "cover",
       co: "contain",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 };

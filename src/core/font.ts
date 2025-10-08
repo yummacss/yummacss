@@ -16,7 +16,7 @@ import {
   fontSizeXxl,
   fontSystem,
 } from "@/defaults/variables";
-import { standardSet } from "@/defaults/variants/sets";
+import { standardPreset } from "@/defaults/variants/preset";
 import { Utilities } from "@/interfaces";
 
 export const font: Utilities = {
@@ -29,7 +29,7 @@ export const font: Utilities = {
       m: fontMono,
       s: fontSystem,
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "font-size": {
@@ -51,7 +51,7 @@ export const font: Utilities = {
       "8xl": `${fontSize8xl}rem`,
       "9xl": `${fontSize9xl}rem`,
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "font-style": {
@@ -62,7 +62,7 @@ export const font: Utilities = {
       i: "italic",
       n: "normal",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "font-weight": {
@@ -80,6 +80,6 @@ export const font: Utilities = {
       "800": "800",
       "900": "900",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 };

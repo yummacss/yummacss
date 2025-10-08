@@ -1,12 +1,12 @@
 import { mediaQueries, opacity, pseudoClasses } from "@/defaults/variants";
 
-export const standardSet = {
+export const standardPreset = {
   pseudoClasses,
   mediaQueries,
 };
 
-export const opacitySet = {
-  pseudoClasses,
+export const opacityPreset = {
   mediaQueries,
   opacity,
+  pseudoClasses,
 };

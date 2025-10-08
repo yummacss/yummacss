@@ -1,5 +1,5 @@
 import { outlineOffset, outlineWidth } from "@/defaults/variables";
-import { standardSet } from "@/defaults/variants/sets";
+import { standardPreset } from "@/defaults/variants/preset";
 import { createValues } from "@/helpers/create-values";
 import { Utilities } from "@/interfaces";
 
@@ -14,7 +14,7 @@ export const outline: Utilities = {
       min: 0,
       max: 4,
     }),
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "outline-style": {
@@ -26,7 +26,7 @@ export const outline: Utilities = {
       d: "dashed",
       s: "solid",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "outline-width": {
@@ -39,6 +39,6 @@ export const outline: Utilities = {
       min: 0,
       max: 4,
     }),
-    variants: standardSet,
+    variants: standardPreset,
   },
 };

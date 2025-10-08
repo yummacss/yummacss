@@ -8,7 +8,7 @@ import {
   boxShadowXs,
   grayscale,
 } from "@/defaults/variables";
-import { standardSet } from "@/defaults/variants/sets";
+import { standardPreset } from "@/defaults/variants/preset";
 import { Utilities } from "@/interfaces";
 
 export const effect: Utilities = {
@@ -24,7 +24,7 @@ export const effect: Utilities = {
       lg: `blur(${backdropBlur * 8}px)`,
       xl: `blur(${backdropBlur * 16}px)`,
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   blur: {
@@ -39,7 +39,7 @@ export const effect: Utilities = {
       lg: `blur(${blur * 8}px)`,
       xl: `blur(${blur * 16}px)`,
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "box-shadow": {
@@ -54,7 +54,7 @@ export const effect: Utilities = {
       lg: boxShadowLg,
       xl: boxShadowXl,
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   grayscale: {
@@ -74,7 +74,7 @@ export const effect: Utilities = {
       90: `grayscale(${grayscale * 9}%)`,
       100: `grayscale(100%)`,
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   opacity: {
@@ -94,6 +94,6 @@ export const effect: Utilities = {
       90: "0.9",
       100: "1",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 };
