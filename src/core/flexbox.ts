@@ -19,9 +19,7 @@ export const flexbox: Utilities = {
       sb: "space-between",
       se: "space-evenly",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "align-items": {
@@ -35,9 +33,7 @@ export const flexbox: Utilities = {
       fs: "flex-start",
       st: "stretch",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "align-self": {
@@ -52,9 +48,7 @@ export const flexbox: Utilities = {
       fs: "flex-start",
       st: "stretch",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "flex-basis": {
@@ -72,9 +66,7 @@ export const flexbox: Utilities = {
       full: "100%",
       half: "50%",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "flex-direction": {
@@ -87,9 +79,7 @@ export const flexbox: Utilities = {
       r: "row",
       rr: "row-reverse",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "flex-grow": {
@@ -101,9 +91,7 @@ export const flexbox: Utilities = {
       min: 0,
       max: 8,
     }),
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "flex-shrink": {
@@ -115,9 +103,7 @@ export const flexbox: Utilities = {
       min: 0,
       max: 8,
     }),
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "flex-wrap": {
@@ -129,9 +115,7 @@ export const flexbox: Utilities = {
       w: "wrap",
       wr: "wrap-reverse",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   flex: {
@@ -148,9 +132,7 @@ export const flexbox: Utilities = {
       auto: "1 1 auto",
       none: "none",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "justify-content": {
@@ -167,9 +149,7 @@ export const flexbox: Utilities = {
       sb: "space-between",
       se: "space-evenly",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "justify-items": {
@@ -182,9 +162,7 @@ export const flexbox: Utilities = {
       s: "start",
       st: "stretch",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "justify-self": {
@@ -198,9 +176,7 @@ export const flexbox: Utilities = {
       s: "start",
       st: "stretch",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   order: {
@@ -222,8 +198,6 @@ export const flexbox: Utilities = {
       "10": "10",
       f: "9999",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 };

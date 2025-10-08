@@ -24,9 +24,7 @@ export const effect: Utilities = {
       lg: `blur(${backdropBlur * 8}px)`,
       xl: `blur(${backdropBlur * 16}px)`,
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   blur: {
@@ -41,9 +39,7 @@ export const effect: Utilities = {
       lg: `blur(${blur * 8}px)`,
       xl: `blur(${blur * 16}px)`,
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "box-shadow": {
@@ -58,9 +54,7 @@ export const effect: Utilities = {
       lg: boxShadowLg,
       xl: boxShadowXl,
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   grayscale: {
@@ -80,9 +74,7 @@ export const effect: Utilities = {
       90: `grayscale(${grayscale * 9}%)`,
       100: `grayscale(100%)`,
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   opacity: {
@@ -102,8 +94,6 @@ export const effect: Utilities = {
       90: "0.9",
       100: "1",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 };

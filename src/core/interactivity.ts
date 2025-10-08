@@ -12,9 +12,7 @@ export const interactivity: Utilities = {
       auto: "auto",
       none: "none",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   cursor: {
@@ -47,9 +45,7 @@ export const interactivity: Utilities = {
       zi: "zoom-in",
       zo: "zoom-out",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "field-sizing": {
@@ -60,9 +56,7 @@ export const interactivity: Utilities = {
       f: "fixed",
       c: "content",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "pointer-events": {
@@ -73,9 +67,7 @@ export const interactivity: Utilities = {
       auto: "auto",
       none: "none",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   resize: {
@@ -88,9 +80,7 @@ export const interactivity: Utilities = {
       none: "none",
       v: "vertical",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "scroll-behavior": {
@@ -101,9 +91,7 @@ export const interactivity: Utilities = {
       auto: "auto",
       s: "smooth",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "scroll-margin": {
@@ -116,9 +104,7 @@ export const interactivity: Utilities = {
       min: 0,
       max: 100,
     }),
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "scroll-margin-bottom": {
@@ -131,9 +117,7 @@ export const interactivity: Utilities = {
       min: 0,
       max: 100,
     }),
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "scroll-margin-inline-start": {
@@ -146,9 +130,7 @@ export const interactivity: Utilities = {
       min: 0,
       max: 100,
     }),
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "scroll-margin-left": {
@@ -161,9 +143,7 @@ export const interactivity: Utilities = {
       min: 0,
       max: 100,
     }),
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "scroll-margin-right": {
@@ -176,9 +156,7 @@ export const interactivity: Utilities = {
       min: 0,
       max: 100,
     }),
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "scroll-margin-top": {
@@ -191,9 +169,7 @@ export const interactivity: Utilities = {
       min: 0,
       max: 100,
     }),
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "scroll-margin-inline-end": {
@@ -206,9 +182,7 @@ export const interactivity: Utilities = {
       min: 0,
       max: 100,
     }),
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "scroll-margin-x": {
@@ -221,9 +195,7 @@ export const interactivity: Utilities = {
       min: 0,
       max: 100,
     }),
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "scroll-margin-y": {
@@ -236,9 +208,7 @@ export const interactivity: Utilities = {
       min: 0,
       max: 100,
     }),
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "scroll-padding": {
@@ -251,9 +221,7 @@ export const interactivity: Utilities = {
       min: 0,
       max: 100,
     }),
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "scroll-padding-bottom": {
@@ -266,9 +234,7 @@ export const interactivity: Utilities = {
       min: 0,
       max: 100,
     }),
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "scroll-padding-inline-start": {
@@ -281,9 +247,7 @@ export const interactivity: Utilities = {
       min: 0,
       max: 100,
     }),
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "scroll-padding-left": {
@@ -296,9 +260,7 @@ export const interactivity: Utilities = {
       min: 0,
       max: 100,
     }),
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "scroll-padding-right": {
@@ -311,9 +273,7 @@ export const interactivity: Utilities = {
       min: 0,
       max: 100,
     }),
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "scroll-padding-top": {
@@ -326,9 +286,7 @@ export const interactivity: Utilities = {
       min: 0,
       max: 100,
     }),
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "scroll-padding-inline-end": {
@@ -341,9 +299,7 @@ export const interactivity: Utilities = {
       min: 0,
       max: 100,
     }),
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "scroll-padding-x": {
@@ -356,9 +312,7 @@ export const interactivity: Utilities = {
       min: 0,
       max: 100,
     }),
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "scroll-padding-y": {
@@ -371,9 +325,7 @@ export const interactivity: Utilities = {
       min: 0,
       max: 100,
     }),
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "scroll-snap-align": {
@@ -386,9 +338,7 @@ export const interactivity: Utilities = {
       none: "none",
       s: "start",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "scroll-snap-stop": {
@@ -399,9 +349,7 @@ export const interactivity: Utilities = {
       a: "always",
       n: "normal",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "scroll-snap-type": {
@@ -416,9 +364,7 @@ export const interactivity: Utilities = {
       "y-m": "y mandatory",
       "y-p": "y proximity",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "user-select": {
@@ -431,8 +377,6 @@ export const interactivity: Utilities = {
       none: "none",
       t: "text",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 };

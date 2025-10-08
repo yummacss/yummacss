@@ -12,9 +12,7 @@ export const border: Utilities = {
       c: "collapse",
       s: "separate",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "border-radius": {
@@ -32,9 +30,7 @@ export const border: Utilities = {
       half: "50%",
       "9": "9999px",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "border-bottom-radius": {
@@ -52,9 +48,7 @@ export const border: Utilities = {
       half: "50%",
       "9": "9999px",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "border-left-radius": {
@@ -72,9 +66,7 @@ export const border: Utilities = {
       half: "50%",
       "9": "9999px",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "border-right-radius": {
@@ -92,9 +84,7 @@ export const border: Utilities = {
       half: "50%",
       "9": "9999px",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "border-bottom-left-radius": {
@@ -112,9 +102,7 @@ export const border: Utilities = {
       half: "50%",
       "9": "9999px",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "border-bottom-right-radius": {
@@ -132,9 +120,7 @@ export const border: Utilities = {
       half: "50%",
       "9": "9999px",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "border-top-radius": {
@@ -152,9 +138,7 @@ export const border: Utilities = {
       half: "50%",
       "9": "9999px",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "border-top-left-radius": {
@@ -172,9 +156,7 @@ export const border: Utilities = {
       half: "50%",
       "9": "9999px",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "border-top-right-radius": {
@@ -192,9 +174,7 @@ export const border: Utilities = {
       half: "50%",
       "9": "9999px",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "border-spacing": {
@@ -207,9 +187,7 @@ export const border: Utilities = {
       min: 0,
       max: 8,
     }),
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "border-style": {
@@ -221,9 +199,7 @@ export const border: Utilities = {
       d: "dashed",
       s: "solid",
     },
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "border-width": {
@@ -236,9 +212,7 @@ export const border: Utilities = {
       min: 0,
       max: 8,
     }),
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "border-bottom-width": {
@@ -251,9 +225,7 @@ export const border: Utilities = {
       min: 0,
       max: 8,
     }),
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "border-left-width": {
@@ -266,9 +238,7 @@ export const border: Utilities = {
       min: 0,
       max: 8,
     }),
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "border-right-width": {
@@ -281,9 +251,7 @@ export const border: Utilities = {
       min: 0,
       max: 8,
     }),
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 
   "border-top-width": {
@@ -296,8 +264,6 @@ export const border: Utilities = {
       min: 0,
       max: 8,
     }),
-    variants: {
-      ...standardSet,
-    },
+    variants: standardSet,
   },
 };
