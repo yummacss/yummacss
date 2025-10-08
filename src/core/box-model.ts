@@ -1,5 +1,5 @@
 import { dimension, height, margin, padding, width } from "@/defaults/variables";
-import { defaultSet } from "@/defaults/variants/sets";
+import { standardSet } from "@/defaults/variants/sets";
 import { createValues } from "@/helpers/create-values";
 import { Utilities } from "@/interfaces";
 
@@ -13,7 +13,7 @@ export const boxModel: Utilities = {
       cb: "content-box",
     },
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -46,7 +46,7 @@ export const boxModel: Utilities = {
       xxl: "96rem",
     },
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -79,7 +79,7 @@ export const boxModel: Utilities = {
       xxl: "96rem",
     },
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -112,7 +112,7 @@ export const boxModel: Utilities = {
       xxl: "96rem",
     },
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -145,7 +145,7 @@ export const boxModel: Utilities = {
       xxl: "96rem",
     },
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -178,7 +178,7 @@ export const boxModel: Utilities = {
       xxl: "96rem",
     },
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -211,7 +211,7 @@ export const boxModel: Utilities = {
       xxl: "96rem",
     },
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -230,7 +230,7 @@ export const boxModel: Utilities = {
       px: "1px",
     },
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -249,7 +249,7 @@ export const boxModel: Utilities = {
       px: "1px",
     },
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -268,7 +268,7 @@ export const boxModel: Utilities = {
       px: "1px",
     },
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -287,7 +287,7 @@ export const boxModel: Utilities = {
       px: "1px",
     },
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -306,7 +306,7 @@ export const boxModel: Utilities = {
       px: "1px",
     },
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -325,7 +325,7 @@ export const boxModel: Utilities = {
       px: "1px",
     },
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -344,7 +344,7 @@ export const boxModel: Utilities = {
       px: "1px",
     },
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -363,7 +363,7 @@ export const boxModel: Utilities = {
       px: "1px",
     },
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -382,7 +382,7 @@ export const boxModel: Utilities = {
       px: "1px",
     },
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -401,7 +401,7 @@ export const boxModel: Utilities = {
       px: "1px",
     },
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -420,7 +420,7 @@ export const boxModel: Utilities = {
       px: "1px",
     },
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -439,7 +439,7 @@ export const boxModel: Utilities = {
       px: "1px",
     },
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -458,7 +458,7 @@ export const boxModel: Utilities = {
       px: "1px",
     },
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -477,7 +477,7 @@ export const boxModel: Utilities = {
       px: "1px",
     },
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -496,7 +496,7 @@ export const boxModel: Utilities = {
       px: "1px",
     },
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -515,7 +515,7 @@ export const boxModel: Utilities = {
       px: "1px",
     },
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -534,7 +534,7 @@ export const boxModel: Utilities = {
       px: "1px",
     },
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -553,7 +553,7 @@ export const boxModel: Utilities = {
       px: "1px",
     },
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -572,7 +572,7 @@ export const boxModel: Utilities = {
       px: "1px",
     },
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -591,7 +591,7 @@ export const boxModel: Utilities = {
       px: "1px",
     },
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -610,7 +610,7 @@ export const boxModel: Utilities = {
       px: "1px",
     },
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -629,7 +629,7 @@ export const boxModel: Utilities = {
       px: "1px",
     },
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -662,7 +662,7 @@ export const boxModel: Utilities = {
       xxl: "96rem",
     },
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -695,7 +695,7 @@ export const boxModel: Utilities = {
       xxl: "96rem",
     },
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -728,7 +728,7 @@ export const boxModel: Utilities = {
       xxl: "96rem",
     },
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 };

@@ -1,5 +1,5 @@
 import { bottomLeftTopRight } from "@/defaults/variables";
-import { defaultSet } from "@/defaults/variants/sets";
+import { standardSet } from "@/defaults/variants/sets";
 import { createValues } from "@/helpers/create-values";
 import { Utilities } from "@/interfaces";
 
@@ -19,7 +19,7 @@ export const positioning: Utilities = {
       "9/16": "9/16",
     },
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -36,7 +36,7 @@ export const positioning: Utilities = {
       r: "right",
     },
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -50,7 +50,7 @@ export const positioning: Utilities = {
       max: 16,
     }),
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -69,7 +69,7 @@ export const positioning: Utilities = {
       half: "50%",
     },
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -88,7 +88,7 @@ export const positioning: Utilities = {
       half: "50%",
     },
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -107,7 +107,7 @@ export const positioning: Utilities = {
       half: "50%",
     },
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -126,7 +126,7 @@ export const positioning: Utilities = {
       half: "50%",
     },
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -139,7 +139,7 @@ export const positioning: Utilities = {
       i: "isolate",
     },
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -158,7 +158,7 @@ export const positioning: Utilities = {
       half: "50%",
     },
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -177,7 +177,7 @@ export const positioning: Utilities = {
       half: "50%",
     },
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -196,7 +196,7 @@ export const positioning: Utilities = {
       half: "50%",
     },
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -221,7 +221,7 @@ export const positioning: Utilities = {
       tr: "table-row",
     },
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -237,7 +237,7 @@ export const positioning: Utilities = {
       r: "right",
     },
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -252,7 +252,7 @@ export const positioning: Utilities = {
       sd: "scale-down",
     },
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -272,7 +272,7 @@ export const positioning: Utilities = {
       t: "top",
     },
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -288,7 +288,7 @@ export const positioning: Utilities = {
       v: "visible",
     },
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -304,7 +304,7 @@ export const positioning: Utilities = {
       v: "visible",
     },
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -320,7 +320,7 @@ export const positioning: Utilities = {
       v: "visible",
     },
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -336,7 +336,7 @@ export const positioning: Utilities = {
       st: "sticky",
     },
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -350,7 +350,7 @@ export const positioning: Utilities = {
       v: "visible",
     },
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -372,7 +372,7 @@ export const positioning: Utilities = {
       auto: "auto",
     },
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 };
