@@ -1,5 +1,5 @@
 import { decorationThickness } from "@/defaults/variables";
-import { variantValues } from "@/defaults/variants/core";
+import { defaultSet } from "@/defaults/variants/sets";
 import { createValues } from "@/helpers/create-values";
 import { Utilities } from "@/interfaces";
 
@@ -17,7 +17,7 @@ export const text: Utilities = {
       "5": "0.1em",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -34,7 +34,7 @@ export const text: Utilities = {
       "6": "2",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -47,7 +47,7 @@ export const text: Utilities = {
       o: "outside",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -61,7 +61,7 @@ export const text: Utilities = {
       s: "square",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -74,7 +74,7 @@ export const text: Utilities = {
       n: "normal",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -93,7 +93,7 @@ export const text: Utilities = {
       s: "start",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -108,7 +108,7 @@ export const text: Utilities = {
       u: "underline",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -122,7 +122,7 @@ export const text: Utilities = {
       w: "wavy",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -141,7 +141,7 @@ export const text: Utilities = {
       ff: "from-font",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -154,7 +154,7 @@ export const text: Utilities = {
       u: "underline",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -170,7 +170,7 @@ export const text: Utilities = {
       "4": "0.75rem",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -183,7 +183,7 @@ export const text: Utilities = {
       e: "ellipsis",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -198,7 +198,7 @@ export const text: Utilities = {
       u: "uppercase",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -215,7 +215,7 @@ export const text: Utilities = {
       auto: "auto",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -230,7 +230,7 @@ export const text: Utilities = {
       w: "wrap",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -247,7 +247,7 @@ export const text: Utilities = {
       pw: "pre-wrap",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 };

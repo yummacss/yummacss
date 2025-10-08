@@ -1,5 +1,5 @@
 import { borderRadius, borderSpacing, borderWidth } from "@/defaults/variables";
-import { variantValues } from "@/defaults/variants/core";
+import { defaultSet } from "@/defaults/variants/sets";
 import { createValues } from "@/helpers/create-values";
 import { Utilities } from "@/interfaces";
 
@@ -13,7 +13,7 @@ export const border: Utilities = {
       s: "separate",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -33,7 +33,7 @@ export const border: Utilities = {
       "9": "9999px",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -53,7 +53,7 @@ export const border: Utilities = {
       "9": "9999px",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -73,7 +73,7 @@ export const border: Utilities = {
       "9": "9999px",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -93,7 +93,7 @@ export const border: Utilities = {
       "9": "9999px",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -113,7 +113,7 @@ export const border: Utilities = {
       "9": "9999px",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -133,7 +133,7 @@ export const border: Utilities = {
       "9": "9999px",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -153,7 +153,7 @@ export const border: Utilities = {
       "9": "9999px",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -173,7 +173,7 @@ export const border: Utilities = {
       "9": "9999px",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -193,7 +193,7 @@ export const border: Utilities = {
       "9": "9999px",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -208,7 +208,7 @@ export const border: Utilities = {
       max: 8,
     }),
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -222,7 +222,7 @@ export const border: Utilities = {
       s: "solid",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -237,7 +237,7 @@ export const border: Utilities = {
       max: 8,
     }),
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -252,7 +252,7 @@ export const border: Utilities = {
       max: 8,
     }),
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -267,7 +267,7 @@ export const border: Utilities = {
       max: 8,
     }),
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -282,7 +282,7 @@ export const border: Utilities = {
       max: 8,
     }),
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -297,7 +297,7 @@ export const border: Utilities = {
       max: 8,
     }),
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 };

@@ -1,5 +1,5 @@
 import { dimension, height, margin, padding, width } from "@/defaults/variables";
-import { variantValues } from "@/defaults/variants/core";
+import { defaultSet } from "@/defaults/variants/sets";
 import { createValues } from "@/helpers/create-values";
 import { Utilities } from "@/interfaces";
 
@@ -13,7 +13,7 @@ export const boxModel: Utilities = {
       cb: "content-box",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -46,7 +46,7 @@ export const boxModel: Utilities = {
       xxl: "96rem",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -79,7 +79,7 @@ export const boxModel: Utilities = {
       xxl: "96rem",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -112,7 +112,7 @@ export const boxModel: Utilities = {
       xxl: "96rem",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -145,7 +145,7 @@ export const boxModel: Utilities = {
       xxl: "96rem",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -178,7 +178,7 @@ export const boxModel: Utilities = {
       xxl: "96rem",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -211,7 +211,7 @@ export const boxModel: Utilities = {
       xxl: "96rem",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -230,7 +230,7 @@ export const boxModel: Utilities = {
       px: "1px",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -249,7 +249,7 @@ export const boxModel: Utilities = {
       px: "1px",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -268,7 +268,7 @@ export const boxModel: Utilities = {
       px: "1px",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -287,7 +287,7 @@ export const boxModel: Utilities = {
       px: "1px",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -306,7 +306,7 @@ export const boxModel: Utilities = {
       px: "1px",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -325,7 +325,7 @@ export const boxModel: Utilities = {
       px: "1px",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -344,7 +344,7 @@ export const boxModel: Utilities = {
       px: "1px",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -363,7 +363,7 @@ export const boxModel: Utilities = {
       px: "1px",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -382,7 +382,7 @@ export const boxModel: Utilities = {
       px: "1px",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -401,7 +401,7 @@ export const boxModel: Utilities = {
       px: "1px",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -420,7 +420,7 @@ export const boxModel: Utilities = {
       px: "1px",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -439,7 +439,7 @@ export const boxModel: Utilities = {
       px: "1px",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -458,7 +458,7 @@ export const boxModel: Utilities = {
       px: "1px",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -477,7 +477,7 @@ export const boxModel: Utilities = {
       px: "1px",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -496,7 +496,7 @@ export const boxModel: Utilities = {
       px: "1px",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -515,7 +515,7 @@ export const boxModel: Utilities = {
       px: "1px",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -534,7 +534,7 @@ export const boxModel: Utilities = {
       px: "1px",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -553,7 +553,7 @@ export const boxModel: Utilities = {
       px: "1px",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -572,7 +572,7 @@ export const boxModel: Utilities = {
       px: "1px",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -591,7 +591,7 @@ export const boxModel: Utilities = {
       px: "1px",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -610,7 +610,7 @@ export const boxModel: Utilities = {
       px: "1px",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -629,7 +629,7 @@ export const boxModel: Utilities = {
       px: "1px",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -662,7 +662,7 @@ export const boxModel: Utilities = {
       xxl: "96rem",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -695,7 +695,7 @@ export const boxModel: Utilities = {
       xxl: "96rem",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -728,7 +728,7 @@ export const boxModel: Utilities = {
       xxl: "96rem",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 };

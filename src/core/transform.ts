@@ -1,4 +1,4 @@
-import { variantValues } from "@/defaults/variants/core";
+import { defaultSet } from "@/defaults/variants/sets";
 import { Utilities } from "@/interfaces";
 
 export const transform: Utilities = {
@@ -30,7 +30,7 @@ export const transform: Utilities = {
       "100": "rotate(100deg)",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -52,7 +52,7 @@ export const transform: Utilities = {
       "100": "scale(100%)",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -74,7 +74,7 @@ export const transform: Utilities = {
       "100": "scaleX(100%)",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -96,7 +96,7 @@ export const transform: Utilities = {
       "100": "scaleY(100%)",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -112,7 +112,7 @@ export const transform: Utilities = {
       "12": "skew(12deg)",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -128,7 +128,7 @@ export const transform: Utilities = {
       "12": "skewX(12deg)",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -144,7 +144,7 @@ export const transform: Utilities = {
       "12": "skewY(12deg)",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -164,7 +164,7 @@ export const transform: Utilities = {
       tr: "top right",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 };

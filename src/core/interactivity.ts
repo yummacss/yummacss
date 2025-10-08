@@ -1,5 +1,5 @@
 import { margin, padding } from "@/defaults/variables";
-import { variantValues } from "@/defaults/variants/core";
+import { defaultSet } from "@/defaults/variants/sets";
 import { createValues } from "@/helpers/create-values";
 import { Utilities } from "@/interfaces";
 
@@ -13,7 +13,7 @@ export const interactivity: Utilities = {
       none: "none",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -48,7 +48,7 @@ export const interactivity: Utilities = {
       zo: "zoom-out",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -61,7 +61,7 @@ export const interactivity: Utilities = {
       c: "content",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -74,7 +74,7 @@ export const interactivity: Utilities = {
       none: "none",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -89,7 +89,7 @@ export const interactivity: Utilities = {
       v: "vertical",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -102,7 +102,7 @@ export const interactivity: Utilities = {
       s: "smooth",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -117,7 +117,7 @@ export const interactivity: Utilities = {
       max: 100,
     }),
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -132,7 +132,7 @@ export const interactivity: Utilities = {
       max: 100,
     }),
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -147,7 +147,7 @@ export const interactivity: Utilities = {
       max: 100,
     }),
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -162,7 +162,7 @@ export const interactivity: Utilities = {
       max: 100,
     }),
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -177,7 +177,7 @@ export const interactivity: Utilities = {
       max: 100,
     }),
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -192,7 +192,7 @@ export const interactivity: Utilities = {
       max: 100,
     }),
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -207,7 +207,7 @@ export const interactivity: Utilities = {
       max: 100,
     }),
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -222,7 +222,7 @@ export const interactivity: Utilities = {
       max: 100,
     }),
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -237,7 +237,7 @@ export const interactivity: Utilities = {
       max: 100,
     }),
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -252,7 +252,7 @@ export const interactivity: Utilities = {
       max: 100,
     }),
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -267,7 +267,7 @@ export const interactivity: Utilities = {
       max: 100,
     }),
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -282,7 +282,7 @@ export const interactivity: Utilities = {
       max: 100,
     }),
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -297,7 +297,7 @@ export const interactivity: Utilities = {
       max: 100,
     }),
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -312,7 +312,7 @@ export const interactivity: Utilities = {
       max: 100,
     }),
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -327,7 +327,7 @@ export const interactivity: Utilities = {
       max: 100,
     }),
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -342,7 +342,7 @@ export const interactivity: Utilities = {
       max: 100,
     }),
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -357,7 +357,7 @@ export const interactivity: Utilities = {
       max: 100,
     }),
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -372,7 +372,7 @@ export const interactivity: Utilities = {
       max: 100,
     }),
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -387,7 +387,7 @@ export const interactivity: Utilities = {
       s: "start",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -400,7 +400,7 @@ export const interactivity: Utilities = {
       n: "normal",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -417,7 +417,7 @@ export const interactivity: Utilities = {
       "y-p": "y proximity",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -432,7 +432,7 @@ export const interactivity: Utilities = {
       t: "text",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 };

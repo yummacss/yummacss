@@ -1,5 +1,5 @@
 import { flexBasis } from "@/defaults/variables";
-import { variantValues } from "@/defaults/variants/core";
+import { defaultSet } from "@/defaults/variants/sets";
 import { createValues } from "@/helpers/create-values";
 import { Utilities } from "@/interfaces";
 
@@ -20,7 +20,7 @@ export const flexbox: Utilities = {
       se: "space-evenly",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -36,7 +36,7 @@ export const flexbox: Utilities = {
       st: "stretch",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -53,7 +53,7 @@ export const flexbox: Utilities = {
       st: "stretch",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -73,7 +73,7 @@ export const flexbox: Utilities = {
       half: "50%",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -88,7 +88,7 @@ export const flexbox: Utilities = {
       rr: "row-reverse",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -102,7 +102,7 @@ export const flexbox: Utilities = {
       max: 8,
     }),
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -116,7 +116,7 @@ export const flexbox: Utilities = {
       max: 8,
     }),
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -130,7 +130,7 @@ export const flexbox: Utilities = {
       wr: "wrap-reverse",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -149,7 +149,7 @@ export const flexbox: Utilities = {
       none: "none",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -168,7 +168,7 @@ export const flexbox: Utilities = {
       se: "space-evenly",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -183,7 +183,7 @@ export const flexbox: Utilities = {
       st: "stretch",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -199,7 +199,7 @@ export const flexbox: Utilities = {
       st: "stretch",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -223,7 +223,7 @@ export const flexbox: Utilities = {
       f: "9999",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 };
