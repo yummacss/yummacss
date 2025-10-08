@@ -1,4 +1,4 @@
-import { variantValues } from "@/defaults/variants/core";
+import { defaultSet } from "@/defaults/variants/sets";
 import { Utilities } from "@/interfaces";
 
 export const table: Utilities = {
@@ -11,7 +11,7 @@ export const table: Utilities = {
       b: "bottom",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -24,7 +24,7 @@ export const table: Utilities = {
       f: "fixed",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 };

@@ -1,4 +1,4 @@
-import { variantValues } from "@/defaults/variants/core";
+import { defaultSet } from "@/defaults/variants/sets";
 import { Utilities } from "@/interfaces";
 export const svg: Utilities = {
   "stroke-width": {
@@ -14,7 +14,7 @@ export const svg: Utilities = {
       "1": "1",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 };

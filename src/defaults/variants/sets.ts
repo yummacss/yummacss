@@ -1,11 +1,11 @@
 import { mediaQueries, opacity, pseudoClasses } from "@/defaults/variants";
 
-export const variantValues = {
+export const defaultSet = {
   pseudoClasses,
   mediaQueries,
 };
 
-export const colorVariantValues = {
+export const opacitySet = {
   pseudoClasses,
   mediaQueries,
   opacity,

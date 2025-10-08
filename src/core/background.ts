@@ -1,4 +1,4 @@
-import { variantValues } from "@/defaults/variants/core";
+import { defaultSet } from "@/defaults/variants/sets";
 import { Utilities } from "@/interfaces";
 
 export const background: Utilities = {
@@ -12,7 +12,7 @@ export const background: Utilities = {
       s: "scroll",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -27,7 +27,7 @@ export const background: Utilities = {
       t: "text",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -41,7 +41,7 @@ export const background: Utilities = {
       pb: "padding-box",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -61,7 +61,7 @@ export const background: Utilities = {
       t: "top",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -78,7 +78,7 @@ export const background: Utilities = {
       s: "space",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 
@@ -92,7 +92,7 @@ export const background: Utilities = {
       co: "contain",
     },
     variants: {
-      ...variantValues,
+      ...defaultSet,
     },
   },
 };

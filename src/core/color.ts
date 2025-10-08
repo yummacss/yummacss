@@ -1,5 +1,5 @@
 import { black, current, transparent, white } from "@/defaults/variables";
-import { colorVariantValues } from "@/defaults/variants/core";
+import { opacitySet } from "@/defaults/variants/sets";
 import { createColors } from "@/helpers/create-colors";
 import { Colors } from "@/interfaces";
 
@@ -20,7 +20,7 @@ export const color: Colors = {
     slug: "accent-color",
     values: defaultColors,
     variants: {
-      ...colorVariantValues,
+      ...opacitySet,
     },
   },
   "background-color": {
@@ -29,7 +29,7 @@ export const color: Colors = {
     slug: "background-color",
     values: defaultColors,
     variants: {
-      ...colorVariantValues,
+      ...opacitySet,
     },
   },
   "border-color": {
@@ -38,7 +38,7 @@ export const color: Colors = {
     slug: "border-color",
     values: defaultColors,
     variants: {
-      ...colorVariantValues,
+      ...opacitySet,
     },
   },
   "border-bottom-color": {
@@ -47,7 +47,7 @@ export const color: Colors = {
     slug: "border-bottom-color",
     values: defaultColors,
     variants: {
-      ...colorVariantValues,
+      ...opacitySet,
     },
   },
   "border-left-color": {
@@ -56,7 +56,7 @@ export const color: Colors = {
     slug: "border-left-color",
     values: defaultColors,
     variants: {
-      ...colorVariantValues,
+      ...opacitySet,
     },
   },
   "border-right-color": {
@@ -65,7 +65,7 @@ export const color: Colors = {
     slug: "border-right-color",
     values: defaultColors,
     variants: {
-      ...colorVariantValues,
+      ...opacitySet,
     },
   },
   "border-top-color": {
@@ -74,7 +74,7 @@ export const color: Colors = {
     slug: "border-top-color",
     values: defaultColors,
     variants: {
-      ...colorVariantValues,
+      ...opacitySet,
     },
   },
   "caret-color": {
@@ -83,7 +83,7 @@ export const color: Colors = {
     slug: "caret-color",
     values: defaultColors,
     variants: {
-      ...colorVariantValues,
+      ...opacitySet,
     },
   },
   color: {
@@ -92,7 +92,7 @@ export const color: Colors = {
     slug: "color",
     values: defaultColors,
     variants: {
-      ...colorVariantValues,
+      ...opacitySet,
     },
   },
   fill: {
@@ -101,7 +101,7 @@ export const color: Colors = {
     slug: "fill",
     values: defaultColors,
     variants: {
-      ...colorVariantValues,
+      ...opacitySet,
     },
   },
   "outline-color": {
@@ -110,7 +110,7 @@ export const color: Colors = {
     slug: "outline-color",
     values: defaultColors,
     variants: {
-      ...colorVariantValues,
+      ...opacitySet,
     },
   },
   stroke: {
@@ -119,7 +119,7 @@ export const color: Colors = {
     slug: "stroke",
     values: defaultColors,
     variants: {
-      ...colorVariantValues,
+      ...opacitySet,
     },
   },
   "text-decoration-color": {
@@ -128,7 +128,7 @@ export const color: Colors = {
     slug: "text-decoration-color",
     values: defaultColors,
     variants: {
-      ...colorVariantValues,
+      ...opacitySet,
     },
   },
 };
