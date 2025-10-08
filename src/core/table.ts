@@ -1,4 +1,4 @@
-import { defaultSet } from "@/defaults/variants/sets";
+import { standardSet } from "@/defaults/variants/sets";
 import { Utilities } from "@/interfaces";
 
 export const table: Utilities = {
@@ -11,7 +11,7 @@ export const table: Utilities = {
       b: "bottom",
     },
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -24,7 +24,7 @@ export const table: Utilities = {
       f: "fixed",
     },
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 };

@@ -1,5 +1,5 @@
 import { outlineOffset, outlineWidth } from "@/defaults/variables";
-import { defaultSet } from "@/defaults/variants/sets";
+import { standardSet } from "@/defaults/variants/sets";
 import { createValues } from "@/helpers/create-values";
 import { Utilities } from "@/interfaces";
 
@@ -15,7 +15,7 @@ export const outline: Utilities = {
       max: 4,
     }),
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -29,7 +29,7 @@ export const outline: Utilities = {
       s: "solid",
     },
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -44,7 +44,7 @@ export const outline: Utilities = {
       max: 4,
     }),
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 };

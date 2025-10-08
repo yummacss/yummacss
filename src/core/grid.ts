@@ -1,5 +1,5 @@
 import { gap } from "@/defaults/variables";
-import { defaultSet } from "@/defaults/variants/sets";
+import { standardSet } from "@/defaults/variants/sets";
 import { createValues } from "@/helpers/create-values";
 import { Utilities } from "@/interfaces";
 
@@ -15,7 +15,7 @@ export const grid: Utilities = {
       max: 100,
     }),
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -30,7 +30,7 @@ export const grid: Utilities = {
       max: 100,
     }),
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -44,7 +44,7 @@ export const grid: Utilities = {
       min: "min-content",
     },
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -60,7 +60,7 @@ export const grid: Utilities = {
       rd: "row dense",
     },
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -74,7 +74,7 @@ export const grid: Utilities = {
       min: "min-content",
     },
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -101,7 +101,7 @@ export const grid: Utilities = {
       "16": "span 16 / span 16",
     },
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -115,7 +115,7 @@ export const grid: Utilities = {
       max: 16,
     }),
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -129,7 +129,7 @@ export const grid: Utilities = {
       max: 16,
     }),
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -156,7 +156,7 @@ export const grid: Utilities = {
       "16": "span 16 / span 16",
     },
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -170,7 +170,7 @@ export const grid: Utilities = {
       max: 16,
     }),
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -184,7 +184,7 @@ export const grid: Utilities = {
       max: 16,
     }),
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -211,7 +211,7 @@ export const grid: Utilities = {
       "16": "repeat(16, minmax(0, 1fr))",
     },
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -238,7 +238,7 @@ export const grid: Utilities = {
       "16": "repeat(16, minmax(0, 1fr))",
     },
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -257,7 +257,7 @@ export const grid: Utilities = {
       st: "stretch",
     },
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -273,7 +273,7 @@ export const grid: Utilities = {
       st: "stretch",
     },
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -289,7 +289,7 @@ export const grid: Utilities = {
       st: "stretch",
     },
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 
@@ -304,7 +304,7 @@ export const grid: Utilities = {
       max: 100,
     }),
     variants: {
-      ...defaultSet,
+      ...standardSet,
     },
   },
 };
