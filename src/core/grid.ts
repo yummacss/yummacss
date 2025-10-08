@@ -1,5 +1,5 @@
 import { gap } from "@/defaults/variables";
-import { standardSet } from "@/defaults/variants/sets";
+import { standardPreset } from "@/defaults/variants/preset";
 import { createValues } from "@/helpers/create-values";
 import { Utilities } from "@/interfaces";
 
@@ -14,7 +14,7 @@ export const grid: Utilities = {
       min: 0,
       max: 100,
     }),
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   gap: {
@@ -27,7 +27,7 @@ export const grid: Utilities = {
       min: 0,
       max: 100,
     }),
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "grid-auto-columns": {
@@ -39,7 +39,7 @@ export const grid: Utilities = {
       max: "max-content",
       min: "min-content",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "grid-auto-flow": {
@@ -53,7 +53,7 @@ export const grid: Utilities = {
       r: "row",
       rd: "row dense",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "grid-auto-rows": {
@@ -65,7 +65,7 @@ export const grid: Utilities = {
       max: "max-content",
       min: "min-content",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "grid-column": {
@@ -90,7 +90,7 @@ export const grid: Utilities = {
       "15": "span 15 / span 15",
       "16": "span 16 / span 16",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "grid-column-end": {
@@ -102,7 +102,7 @@ export const grid: Utilities = {
       min: 1,
       max: 16,
     }),
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "grid-column-start": {
@@ -114,7 +114,7 @@ export const grid: Utilities = {
       min: 1,
       max: 16,
     }),
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "grid-row": {
@@ -139,7 +139,7 @@ export const grid: Utilities = {
       "15": "span 15 / span 15",
       "16": "span 16 / span 16",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "grid-row-end": {
@@ -151,7 +151,7 @@ export const grid: Utilities = {
       min: 1,
       max: 16,
     }),
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "grid-row-start": {
@@ -163,7 +163,7 @@ export const grid: Utilities = {
       min: 1,
       max: 16,
     }),
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "grid-template-columns": {
@@ -188,7 +188,7 @@ export const grid: Utilities = {
       "15": "repeat(15, minmax(0, 1fr))",
       "16": "repeat(16, minmax(0, 1fr))",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "grid-template-rows": {
@@ -213,7 +213,7 @@ export const grid: Utilities = {
       "15": "repeat(15, minmax(0, 1fr))",
       "16": "repeat(16, minmax(0, 1fr))",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "place-content": {
@@ -230,7 +230,7 @@ export const grid: Utilities = {
       se: "space-evenly",
       st: "stretch",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "place-items": {
@@ -244,7 +244,7 @@ export const grid: Utilities = {
       s: "start",
       st: "stretch",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "place-self": {
@@ -258,7 +258,7 @@ export const grid: Utilities = {
       s: "start",
       st: "stretch",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "row-gap": {
@@ -271,6 +271,6 @@ export const grid: Utilities = {
       min: 0,
       max: 100,
     }),
-    variants: standardSet,
+    variants: standardPreset,
   },
 };

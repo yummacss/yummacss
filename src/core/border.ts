@@ -1,5 +1,5 @@
 import { borderRadius, borderSpacing, borderWidth } from "@/defaults/variables";
-import { standardSet } from "@/defaults/variants/sets";
+import { standardPreset } from "@/defaults/variants/preset";
 import { createValues } from "@/helpers/create-values";
 import { Utilities } from "@/interfaces";
 
@@ -12,7 +12,7 @@ export const border: Utilities = {
       c: "collapse",
       s: "separate",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "border-radius": {
@@ -30,7 +30,7 @@ export const border: Utilities = {
       half: "50%",
       "9": "9999px",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "border-bottom-radius": {
@@ -48,7 +48,7 @@ export const border: Utilities = {
       half: "50%",
       "9": "9999px",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "border-left-radius": {
@@ -66,7 +66,7 @@ export const border: Utilities = {
       half: "50%",
       "9": "9999px",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "border-right-radius": {
@@ -84,7 +84,7 @@ export const border: Utilities = {
       half: "50%",
       "9": "9999px",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "border-bottom-left-radius": {
@@ -102,7 +102,7 @@ export const border: Utilities = {
       half: "50%",
       "9": "9999px",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "border-bottom-right-radius": {
@@ -120,7 +120,7 @@ export const border: Utilities = {
       half: "50%",
       "9": "9999px",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "border-top-radius": {
@@ -138,7 +138,7 @@ export const border: Utilities = {
       half: "50%",
       "9": "9999px",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "border-top-left-radius": {
@@ -156,7 +156,7 @@ export const border: Utilities = {
       half: "50%",
       "9": "9999px",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "border-top-right-radius": {
@@ -174,7 +174,7 @@ export const border: Utilities = {
       half: "50%",
       "9": "9999px",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "border-spacing": {
@@ -187,7 +187,7 @@ export const border: Utilities = {
       min: 0,
       max: 8,
     }),
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "border-style": {
@@ -199,7 +199,7 @@ export const border: Utilities = {
       d: "dashed",
       s: "solid",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "border-width": {
@@ -212,7 +212,7 @@ export const border: Utilities = {
       min: 0,
       max: 8,
     }),
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "border-bottom-width": {
@@ -225,7 +225,7 @@ export const border: Utilities = {
       min: 0,
       max: 8,
     }),
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "border-left-width": {
@@ -238,7 +238,7 @@ export const border: Utilities = {
       min: 0,
       max: 8,
     }),
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "border-right-width": {
@@ -251,7 +251,7 @@ export const border: Utilities = {
       min: 0,
       max: 8,
     }),
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "border-top-width": {
@@ -264,6 +264,6 @@ export const border: Utilities = {
       min: 0,
       max: 8,
     }),
-    variants: standardSet,
+    variants: standardPreset,
   },
 };

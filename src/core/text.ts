@@ -1,5 +1,5 @@
 import { decorationThickness } from "@/defaults/variables";
-import { standardSet } from "@/defaults/variants/sets";
+import { standardPreset } from "@/defaults/variants/preset";
 import { createValues } from "@/helpers/create-values";
 import { Utilities } from "@/interfaces";
 
@@ -16,7 +16,7 @@ export const text: Utilities = {
       "4": "0.05em",
       "5": "0.1em",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "line-height": {
@@ -31,7 +31,7 @@ export const text: Utilities = {
       "5": "1.625",
       "6": "2",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "list-style-position": {
@@ -42,7 +42,7 @@ export const text: Utilities = {
       i: "inside",
       o: "outside",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "list-style-type": {
@@ -54,7 +54,7 @@ export const text: Utilities = {
       d: "disc",
       s: "square",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "overflow-wrap": {
@@ -65,7 +65,7 @@ export const text: Utilities = {
       bw: "break-word",
       n: "normal",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "text-align": {
@@ -82,7 +82,7 @@ export const text: Utilities = {
       r: "right",
       s: "start",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "text-decoration-line": {
@@ -95,7 +95,7 @@ export const text: Utilities = {
       o: "overline",
       u: "underline",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "text-decoration-style": {
@@ -107,7 +107,7 @@ export const text: Utilities = {
       s: "solid",
       w: "wavy",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "text-decoration-thickness": {
@@ -124,7 +124,7 @@ export const text: Utilities = {
       auto: "auto",
       ff: "from-font",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "text-decoration": {
@@ -135,7 +135,7 @@ export const text: Utilities = {
       none: "none",
       u: "underline",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "text-indent": {
@@ -149,7 +149,7 @@ export const text: Utilities = {
       "3": "0.5rem",
       "4": "0.75rem",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "text-overflow": {
@@ -160,7 +160,7 @@ export const text: Utilities = {
       c: "clip",
       e: "ellipsis",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "text-transform": {
@@ -173,7 +173,7 @@ export const text: Utilities = {
       n: "none",
       u: "uppercase",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "text-underline-offset": {
@@ -188,7 +188,7 @@ export const text: Utilities = {
       "8": "8px",
       auto: "auto",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "text-wrap": {
@@ -201,7 +201,7 @@ export const text: Utilities = {
       p: "pretty",
       w: "wrap",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 
   "white-space": {
@@ -216,6 +216,6 @@ export const text: Utilities = {
       pl: "pre-line",
       pw: "pre-wrap",
     },
-    variants: standardSet,
+    variants: standardPreset,
   },
 };
