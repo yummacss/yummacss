@@ -1,5 +1,5 @@
 import { black, current, transparent, white } from "@/defaults/variables";
-import { mediaQueries, pseudoClasses } from "@/defaults/variants";
+import { colorVariantValues } from "@/defaults/variants/core";
 import { createColors } from "@/helpers/create-colors";
 import { Colors } from "@/interfaces";
 
@@ -20,8 +20,7 @@ export const color: Colors = {
     slug: "accent-color",
     values: defaultColors,
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...colorVariantValues,
     },
   },
   "background-color": {
@@ -30,8 +29,7 @@ export const color: Colors = {
     slug: "background-color",
     values: defaultColors,
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...colorVariantValues,
     },
   },
   "border-color": {
@@ -40,8 +38,7 @@ export const color: Colors = {
     slug: "border-color",
     values: defaultColors,
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...colorVariantValues,
     },
   },
   "border-bottom-color": {
@@ -50,8 +47,7 @@ export const color: Colors = {
     slug: "border-bottom-color",
     values: defaultColors,
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...colorVariantValues,
     },
   },
   "border-left-color": {
@@ -60,8 +56,7 @@ export const color: Colors = {
     slug: "border-left-color",
     values: defaultColors,
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...colorVariantValues,
     },
   },
   "border-right-color": {
@@ -70,8 +65,7 @@ export const color: Colors = {
     slug: "border-right-color",
     values: defaultColors,
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...colorVariantValues,
     },
   },
   "border-top-color": {
@@ -80,8 +74,7 @@ export const color: Colors = {
     slug: "border-top-color",
     values: defaultColors,
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...colorVariantValues,
     },
   },
   "caret-color": {
@@ -90,8 +83,7 @@ export const color: Colors = {
     slug: "caret-color",
     values: defaultColors,
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...colorVariantValues,
     },
   },
   color: {
@@ -100,8 +92,7 @@ export const color: Colors = {
     slug: "color",
     values: defaultColors,
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...colorVariantValues,
     },
   },
   fill: {
@@ -110,8 +101,7 @@ export const color: Colors = {
     slug: "fill",
     values: defaultColors,
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...colorVariantValues,
     },
   },
   "outline-color": {
@@ -120,8 +110,7 @@ export const color: Colors = {
     slug: "outline-color",
     values: defaultColors,
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...colorVariantValues,
     },
   },
   stroke: {
@@ -130,8 +119,7 @@ export const color: Colors = {
     slug: "stroke",
     values: defaultColors,
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...colorVariantValues,
     },
   },
   "text-decoration-color": {
@@ -140,8 +128,7 @@ export const color: Colors = {
     slug: "text-decoration-color",
     values: defaultColors,
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...colorVariantValues,
     },
   },
 };

@@ -1,5 +1,5 @@
 import { borderRadius, borderSpacing, borderWidth } from "@/defaults/variables";
-import { mediaQueries, pseudoClasses } from "@/defaults/variants";
+import { variantValues } from "@/defaults/variants/core";
 import { createValues } from "@/helpers/create-values";
 import { Utilities } from "@/interfaces";
 
@@ -13,8 +13,7 @@ export const border: Utilities = {
       s: "separate",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -34,8 +33,7 @@ export const border: Utilities = {
       "9": "9999px",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -55,8 +53,7 @@ export const border: Utilities = {
       "9": "9999px",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -76,8 +73,7 @@ export const border: Utilities = {
       "9": "9999px",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -97,8 +93,7 @@ export const border: Utilities = {
       "9": "9999px",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -118,8 +113,7 @@ export const border: Utilities = {
       "9": "9999px",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -139,8 +133,7 @@ export const border: Utilities = {
       "9": "9999px",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -160,8 +153,7 @@ export const border: Utilities = {
       "9": "9999px",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -181,8 +173,7 @@ export const border: Utilities = {
       "9": "9999px",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -202,8 +193,7 @@ export const border: Utilities = {
       "9": "9999px",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -218,8 +208,7 @@ export const border: Utilities = {
       max: 8,
     }),
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -233,8 +222,7 @@ export const border: Utilities = {
       s: "solid",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -249,8 +237,7 @@ export const border: Utilities = {
       max: 8,
     }),
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -265,8 +252,7 @@ export const border: Utilities = {
       max: 8,
     }),
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -281,8 +267,7 @@ export const border: Utilities = {
       max: 8,
     }),
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -297,8 +282,7 @@ export const border: Utilities = {
       max: 8,
     }),
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -313,8 +297,7 @@ export const border: Utilities = {
       max: 8,
     }),
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 };

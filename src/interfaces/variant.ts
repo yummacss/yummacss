@@ -8,7 +8,13 @@ export interface MediaQuery {
   value: string;
 }
 
+export interface Opacity {
+  prefix: string;
+  value: string;
+}
+
 export interface Variants {
   pseudoClasses?: PseudoClass[];
   mediaQueries?: MediaQuery[];
+  opacity?: Opacity[];
 }

@@ -1,5 +1,5 @@
 import { gap } from "@/defaults/variables";
-import { mediaQueries, pseudoClasses } from "@/defaults/variants";
+import { variantValues } from "@/defaults/variants/core";
 import { createValues } from "@/helpers/create-values";
 import { Utilities } from "@/interfaces";
 
@@ -15,8 +15,7 @@ export const grid: Utilities = {
       max: 100,
     }),
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -31,8 +30,7 @@ export const grid: Utilities = {
       max: 100,
     }),
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -46,8 +44,7 @@ export const grid: Utilities = {
       min: "min-content",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -63,8 +60,7 @@ export const grid: Utilities = {
       rd: "row dense",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -78,8 +74,7 @@ export const grid: Utilities = {
       min: "min-content",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -106,8 +101,7 @@ export const grid: Utilities = {
       "16": "span 16 / span 16",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -121,8 +115,7 @@ export const grid: Utilities = {
       max: 16,
     }),
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -136,8 +129,7 @@ export const grid: Utilities = {
       max: 16,
     }),
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -164,8 +156,7 @@ export const grid: Utilities = {
       "16": "span 16 / span 16",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -179,8 +170,7 @@ export const grid: Utilities = {
       max: 16,
     }),
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -194,8 +184,7 @@ export const grid: Utilities = {
       max: 16,
     }),
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -222,8 +211,7 @@ export const grid: Utilities = {
       "16": "repeat(16, minmax(0, 1fr))",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -250,8 +238,7 @@ export const grid: Utilities = {
       "16": "repeat(16, minmax(0, 1fr))",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -270,8 +257,7 @@ export const grid: Utilities = {
       st: "stretch",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -287,8 +273,7 @@ export const grid: Utilities = {
       st: "stretch",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -304,8 +289,7 @@ export const grid: Utilities = {
       st: "stretch",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -320,8 +304,7 @@ export const grid: Utilities = {
       max: 100,
     }),
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 };

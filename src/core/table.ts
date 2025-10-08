@@ -1,4 +1,4 @@
-import { mediaQueries, pseudoClasses } from "@/defaults/variants";
+import { variantValues } from "@/defaults/variants/core";
 import { Utilities } from "@/interfaces";
 
 export const table: Utilities = {
@@ -11,8 +11,7 @@ export const table: Utilities = {
       b: "bottom",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -25,8 +24,7 @@ export const table: Utilities = {
       f: "fixed",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 };

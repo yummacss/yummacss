@@ -1,4 +1,4 @@
-import { mediaQueries, pseudoClasses } from "@/defaults/variants";
+import { variantValues } from "@/defaults/variants/core";
 import { Utilities } from "@/interfaces";
 
 export const transform: Utilities = {
@@ -30,8 +30,7 @@ export const transform: Utilities = {
       "100": "rotate(100deg)",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -53,8 +52,7 @@ export const transform: Utilities = {
       "100": "scale(100%)",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -76,8 +74,7 @@ export const transform: Utilities = {
       "100": "scaleX(100%)",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -99,8 +96,7 @@ export const transform: Utilities = {
       "100": "scaleY(100%)",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -116,8 +112,7 @@ export const transform: Utilities = {
       "12": "skew(12deg)",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -133,8 +128,7 @@ export const transform: Utilities = {
       "12": "skewX(12deg)",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -150,8 +144,7 @@ export const transform: Utilities = {
       "12": "skewY(12deg)",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 
@@ -171,8 +164,7 @@ export const transform: Utilities = {
       tr: "top right",
     },
     variants: {
-      pseudoClasses,
-      mediaQueries,
+      ...variantValues,
     },
   },
 };
