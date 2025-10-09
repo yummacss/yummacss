@@ -14,7 +14,7 @@ import { svg } from "./core/svg";
 import { table } from "./core/table";
 import { text } from "./core/text";
 import { transform } from "./core/transform";
-import { Utilities } from "./interfaces";
+import type { Utilities } from "./interfaces";
 
 // api
 export const coreUtils = (): Utilities => core;
