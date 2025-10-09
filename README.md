@@ -21,8 +21,9 @@ Head over to the [Yumma CSS docs](https://www.yummacss.com/docs/dev-api) to lear
 
 ## Built with
 
-- [tsdown](https://www.npmjs.com/package/tsdown)
+- [biomejs](https://www.npmjs.com/package/@biomejs/biome)
 - [tinycolor2](https://www.npmjs.com/package/tinycolor2)
+- [tsdown](https://www.npmjs.com/package/tsdown)
 - [typescript](https://www.npmjs.com/package/typescript)
 
 ## License

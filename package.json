@@ -1,49 +1,49 @@
 {
-  "name": "@yummacss/api",
-  "version": "1.7.0",
-  "description": "Typescript definitions for Yumma CSS projects.",
-  "keywords": [
-    "typescript",
-    "yummacss"
-  ],
-  "license": "MIT",
-  "author": "Renildo Pereira",
-  "files": [
-    "dist"
-  ],
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "type": "module",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js"
-    }
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/yumma-lib/yumma-css-api.git"
-  },
-  "scripts": {
-    "build": "tsdown",
-    "check": "tsc --noEmit",
-    "dev": "tsdown --watch",
-    "format": "prettier --write .",
-    "prepublishOnly": "pnpm build"
-  },
-  "packageManager": "pnpm@10.17.1",
-  "dependencies": {
-    "tinycolor2": "^1.6.0"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "2.2.5",
-    "@types/node": "^20.17.27",
-    "@types/tinycolor2": "^1.4.6",
-    "tsdown": "^0.15.0",
-    "typescript": "^5.8.2"
-  },
-  "publishConfig": {
-    "access": "public",
-    "provenance": true
-  }
+	"name": "@yummacss/api",
+	"version": "1.7.0",
+	"description": "Typescript definitions for Yumma CSS projects.",
+	"keywords": [
+		"typescript",
+		"yummacss"
+	],
+	"license": "MIT",
+	"author": "Renildo Pereira",
+	"files": [
+		"dist"
+	],
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"type": "module",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js"
+		}
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/yumma-lib/yumma-css-api.git"
+	},
+	"scripts": {
+		"build": "tsdown",
+		"check": "tsc --noEmit",
+		"dev": "tsdown --watch",
+		"format": "biome check --write",
+		"prepublishOnly": "pnpm build"
+	},
+	"packageManager": "pnpm@10.17.1",
+	"dependencies": {
+		"tinycolor2": "^1.6.0"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.2.5",
+		"@types/node": "^20.17.27",
+		"@types/tinycolor2": "^1.4.6",
+		"tsdown": "^0.15.0",
+		"typescript": "^5.8.2"
+	},
+	"publishConfig": {
+		"access": "public",
+		"provenance": true
+	}
 }
