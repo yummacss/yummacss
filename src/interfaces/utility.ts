@@ -1,4 +1,4 @@
-import { Variants } from "./variant";
+import type { Variants } from "./variant";
 
 export interface Utility {
   prefix: string;

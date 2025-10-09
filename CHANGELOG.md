@@ -2,14 +2,14 @@
 
 All notable changes to the Yumma CSS API will be documented in this file.
 
-## [1.6.2]
+## [1.7.0]
 
 <details>
 <summary>
     <b>Features</b>
 </summary>
 
-- None
+- Add `opacity` variant to all utilities.
 
 </details>
 
@@ -27,6 +27,6 @@ All notable changes to the Yumma CSS API will be documented in this file.
     <b>Fixes</b>
 </summary>
 
-- Fixed `tdt-*` (`text-decoration-thickness`) utilities from using `rem` instead of `px` as unit.
+- Fixed missing `type` keyword in interface imports.
 
 </details>

@@ -17,7 +17,7 @@ import {
   fontSystem,
 } from "@/defaults/variables";
 import { standardPreset } from "@/defaults/variants/preset";
-import { Utilities } from "@/interfaces";
+import type { Utilities } from "@/interfaces";
 
 export const font: Utilities = {
   "font-family": {

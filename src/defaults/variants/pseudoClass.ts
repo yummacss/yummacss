@@ -1,4 +1,4 @@
-import { PseudoClass } from "@/interfaces/variant";
+import type { PseudoClass } from "@/interfaces/variant";
 
 export const pseudoClasses: PseudoClass[] = [
   { prefix: "a", value: ":active" },

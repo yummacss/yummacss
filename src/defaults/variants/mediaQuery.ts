@@ -1,4 +1,4 @@
-import { MediaQuery } from "@/interfaces/variant";
+import type { MediaQuery } from "@/interfaces/variant";
 
 export const mediaQueries: MediaQuery[] = [
   { prefix: "sm", value: "@media (width >= 40rem)" },

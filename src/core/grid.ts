@@ -1,7 +1,7 @@
 import { gap } from "@/defaults/variables";
 import { standardPreset } from "@/defaults/variants/preset";
 import { createValues } from "@/helpers/create-values";
-import { Utilities } from "@/interfaces";
+import type { Utilities } from "@/interfaces";
 
 export const grid: Utilities = {
   "column-gap": {

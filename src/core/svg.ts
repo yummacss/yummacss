@@ -1,5 +1,5 @@
 import { standardPreset } from "@/defaults/variants/preset";
-import { Utilities } from "@/interfaces";
+import type { Utilities } from "@/interfaces";
 export const svg: Utilities = {
   "stroke-width": {
     prefix: "sw",
