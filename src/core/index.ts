@@ -1,4 +1,4 @@
-import { Utilities } from "@/interfaces";
+import type { Utilities } from "@/interfaces";
 
 import { background } from "./background";
 import { border } from "./border";

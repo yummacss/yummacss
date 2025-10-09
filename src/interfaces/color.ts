@@ -1,4 +1,4 @@
-import { Utility } from "./utility";
+import type { Utility } from "./utility";
 
 export interface Color extends Utility {}
 

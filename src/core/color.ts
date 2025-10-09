@@ -1,7 +1,7 @@
 import { black, current, transparent, white } from "@/defaults/variables";
 import { opacityPreset } from "@/defaults/variants/preset";
 import { createColors } from "@/helpers/create-colors";
-import { Colors } from "@/interfaces";
+import type { Colors } from "@/interfaces";
 
 const colors = createColors();
 
