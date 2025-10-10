@@ -4,7 +4,7 @@ All notable changes to the Yumma CSS API will be documented in this file.
 
 ## [1.7.0]
 
-<details>
+<details open>
 <summary>
     <b>Features</b>
 </summary>
