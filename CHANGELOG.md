@@ -2,20 +2,11 @@
 
 All notable changes to the Yumma CSS API will be documented in this file.
 
-## [1.7.0]
-
-<details open>
-<summary>
-    <b>Features</b>
-</summary>
-
-- Add `opacity` variant to all color utilities.
-
-</details>
+## [1.7.1]
 
 <details>
 <summary>
-    <b>Breaking changes</b>
+    <b>Features</b>
 </summary>
 
 - None
@@ -24,9 +15,19 @@ All notable changes to the Yumma CSS API will be documented in this file.
 
 <details open>
 <summary>
+    <b>Breaking changes</b>
+</summary>
+
+- Use `rgb()` instead of `hex` for color utilities
+
+</details>
+
+<details open>
+<summary>
     <b>Fixes</b>
 </summary>
 
-- Fixed missing `type` keyword in interface imports.
+- Fix opacity color variants not working
+- Color type definitions now generate valid CSS
 
 </details>
