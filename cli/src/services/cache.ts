@@ -1,4 +1,4 @@
-import type { Config } from "@/config/schema";
+import type { Config } from "@yummacss/nitro";
 
 export type BuildCache = {
   css?: string;

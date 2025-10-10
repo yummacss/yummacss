@@ -1,6 +1,6 @@
-import { Config, configName, ConfigSchema } from "@/config/schema";
 import { message } from "@/utils/message";
 import { cli } from "@/utils/status";
+import { type Config, configName, ConfigSchema } from "@yummacss/nitro";
 import { existsSync } from "fs";
 import { join } from "path";
 import { pathToFileURL } from "url";

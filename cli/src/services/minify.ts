@@ -1,4 +1,4 @@
-import type { Config } from "@/config/schema";
+import type { Config } from "@yummacss/nitro";
 import { transform } from "lightningcss";
 
 export function minify(css: string, config: Config): string {
