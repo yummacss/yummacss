@@ -25,12 +25,14 @@ npx yummacss init
 
 ## Documentation
 
-Head over to the [Yumma CSS docs](https://www.yummacss.com) to learn more.
+Learn more at [yummacss.com](https://yummacss.com)
 
 ## Built with
 
-- [@yummacss/api](https://www.npmjs.com/package/@yummacss/api)
+- [@yummacss/nitro](https://www.npmjs.com/package/@yummacss/nitro)
+- [biome](https://www.npmjs.com/package/@biomejs/biome)
 - [lightningcss](https://www.npmjs.com/package/lightningcss)
+- [tsdown](https://www.npmjs.com/package/tsdown)
 - [typescript](https://www.npmjs.com/package/typescript)
 
 ## License

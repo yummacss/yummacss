@@ -1,14 +1,25 @@
 {
-  "extends": "./tsconfig.paths.json",
-  "compilerOptions": {
-    "target": "es2020",
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
-    "rootDir": "./cli",
-    "esModuleInterop": true,
-    "strict": true,
-    "skipLibCheck": true
-  },
-  "include": ["cli/**/*"],
-  "exclude": ["node_modules", "dist"]
+	"extends": "./tsconfig.paths.json",
+	"compilerOptions": {
+		// Base Options recommended for all projects
+		"esModuleInterop": true,
+		"skipLibCheck": true,
+		"target": "es2022",
+		"allowJs": true,
+		"resolveJsonModule": true,
+		"moduleDetection": "force",
+		"isolatedModules": true,
+		"verbatimModuleSyntax": true,
+		// Enable strict type checking so you can catch bugs early
+		"strict": true,
+		"noUncheckedIndexedAccess": true,
+		"noImplicitOverride": true,
+		// We are not transpiling, so preserve our source code and do not emit files
+		"module": "preserve",
+		"noEmit": true,
+		"lib": ["es2022"]
+	},
+	// Include the necessary files for your project
+	"include": ["**/*.ts"],
+	"exclude": ["node_modules"]
 }

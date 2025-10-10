@@ -1,6 +1,6 @@
-import { ConfigSchema, configName } from "@/config/schema";
 import { message } from "@/utils/message";
 import { cli } from "@/utils/status";
+import { ConfigSchema, configName } from "@yummacss/nitro";
 import { writeFileSync } from "fs";
 import stringifyObject from "stringify-object";
 
