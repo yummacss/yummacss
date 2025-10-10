@@ -1,5 +1,5 @@
-import tinycolor from "tinycolor2";
 import { colorTheme } from "@/defaults/theme";
+import tinycolor from "tinycolor2";
 
 const percentage = 14;
 
@@ -31,14 +31,23 @@ export const createColors = () => {
 
 		for (let i = 0; i < 6; i++) {
 			const variantKey = `${colorName}-${i + 1}`;
-			colors[variantKey] = shades[i];
+			const shade = shades[i];
+			if (shade) {
+				colors[variantKey] = shade;
+			}
 		}
 
-		colors[colorName] = shades[6];
+		const baseShade = shades[6];
+		if (baseShade) {
+			colors[colorName] = baseShade;
+		}
 
 		for (let i = 7; i < 13; i++) {
 			const variantKey = `${colorName}-${i}`;
-			colors[variantKey] = shades[i];
+			const shade = shades[i];
+			if (shade) {
+				colors[variantKey] = shade;
+			}
 		}
 	});
 
