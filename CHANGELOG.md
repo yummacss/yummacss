@@ -9,7 +9,7 @@ All notable changes to the Yumma CSS API will be documented in this file.
     <b>Features</b>
 </summary>
 
-- Add `opacity` variant to all utilities.
+- Add `opacity` variant to all color utilities.
 
 </details>
 
