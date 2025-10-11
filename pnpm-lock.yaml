@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@yummacss/nitro':
+        specifier: ^0.1.0
+        version: 0.1.0
       chokidar:
         specifier: ^4.0.3
         version: 4.0.3
@@ -263,6 +266,12 @@ packages:
 
   '@types/stringify-object@4.0.5':
     resolution: {integrity: sha512-TzX5V+njkbJ8iJ0mrj+Vqveep/1JBH4SSA3J2wYrE1eUrOhdsjTBCb0kao4EquSQ8KgPpqY4zSVP2vCPWKBElg==}
+
+  '@yummacss/api@1.7.2':
+    resolution: {integrity: sha512-mx53stYJ6WfVIgaq2ppOMkLpHyQ4UT2VvsAdBsgPVJ1sldrsiQtTYsQTBj2L5b3moYOBmaRLLVe0T+meSIfR6w==}
+
+  '@yummacss/nitro@0.1.0':
+    resolution: {integrity: sha512-iDFX/ujiLknnO84WQc9RFtd6vAA+pvIfwmB26rsVT/2SvzJ5bAXjAvtntYw4NGKTWcgdkFU4DTbTgp41f0zi2Q==}
 
   ansi-regex@6.1.0:
     resolution: {integrity: sha512-7HSX4QQb4CspciLpVFwyRe79O3xsIZDDLER21kERQ71oaPodF8jL725AgJMFAYbooIqolJoRLuM81SpeUkpkvA==}
@@ -648,6 +657,9 @@ packages:
     resolution: {integrity: sha512-75voc/9G4rDIJleOo4jPvN4/YC4GRZrY8yy1uU4lwrB3XEQbWve8zXoO5No4eFrGcTAMYyoY67p8jRQdtA1HbA==}
     engines: {node: '>=12'}
 
+  tinycolor2@1.6.0:
+    resolution: {integrity: sha512-XPaBkWQJdsf3pLKJV9p4qN/S+fm2Oj8AIPo1BTUhg5oxkvm9+SVEGFdhyOz7tTdUTfvxMiAs4sp6/eZO2Ew+pw==}
+
   tinyexec@1.0.1:
     resolution: {integrity: sha512-5uC6DDlmeqiOwCPmK9jMSdOuZTh8bU39Ys6yidB+UTt5hfZUPGAypSgFRiEp+jbi9qH40BLDvy85jIU88wKSqw==}
 
@@ -877,6 +889,16 @@ snapshots:
       undici-types: 7.10.0
 
   '@types/stringify-object@4.0.5': {}
+
+  '@yummacss/api@1.7.2':
+    dependencies:
+      tinycolor2: 1.6.0
+
+  '@yummacss/nitro@0.1.0':
+    dependencies:
+      '@yummacss/api': 1.7.2
+      globby: 15.0.0
+      zod: 4.1.12
 
   ansi-regex@6.1.0: {}
 
@@ -1188,6 +1210,8 @@ snapshots:
   time-span@5.1.0:
     dependencies:
       convert-hrtime: 5.0.0
+
+  tinycolor2@1.6.0: {}
 
   tinyexec@1.0.1: {}
 
