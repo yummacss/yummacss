@@ -18,7 +18,7 @@ All notable changes to the Yumma CSS API will be documented in this file.
     <b>Breaking changes</b>
 </summary>
 
-- Use `rgb()` instead of `hex` for color utilities
+- Use `toHex8String` instead of `toHexString` for color utilities to include alpha channel
 
 </details>
 
