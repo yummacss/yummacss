@@ -28,7 +28,7 @@
 	},
 	"packageManager": "pnpm@10.18.2",
 	"dependencies": {
-		"@yummacss/api": "^1.6.2",
+		"@yummacss/api": "^1.7.2",
 		"globby": "^15.0.0",
 		"zod": "^4.0.17"
 	},

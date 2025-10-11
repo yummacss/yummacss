@@ -1,6 +1,6 @@
-import { coreUtils, type Utilities, type Utility } from "@yummacss/api";
 import type { Config } from "@/config/schema";
 import { baseCSS } from "@/reset/base";
+import { coreUtils, type Utilities, type Utility } from "@yummacss/api";
 
 export function generator(usedClasses: Set<string>, config: Config): string {
 	const cssBlocks: string[] = [];
@@ -23,7 +23,7 @@ function generateUtil(usedClasses: Set<string>): string {
 	const mediaQueryRules: Map<string, string[]> = new Map();
 	const processedClasses = new Set<string>();
 
-	// sort classes alphabetically for consistent output
+	// to avoid CSS output being generated randomly when using build or watch tasks
 	const sortedClasses = Array.from(usedClasses).sort();
 
 	for (const className of sortedClasses) {
@@ -42,7 +42,7 @@ function generateUtil(usedClasses: Set<string>): string {
 		}
 	}
 
-	// add media query rules in a consistent order
+	// sort media queries alphabetically
 	const sortedMediaQueries = Array.from(mediaQueryRules.entries()).sort(
 		([a], [b]) => a.localeCompare(b),
 	);
@@ -60,7 +60,7 @@ function tryGenerateRule(
 ): { rule: string; mediaQuery?: string } | null {
 	const { properties, variants } = util;
 
-	// check for media query prefix
+	// include media queries variants
 	if (variants?.mediaQueries) {
 		for (const mq of variants.mediaQueries) {
 			if (className.startsWith(`${mq.prefix}:`)) {
@@ -68,7 +68,7 @@ function tryGenerateRule(
 				const res = tryGenerateBaseRule(baseClassName, util);
 				if (res) {
 					const declarations = properties
-						.map((prop) => `${prop}: ${res.cssValue};`)
+						.map((prop) => `${prop}: ${res.propertyValue};`)
 						.join("\n");
 					return {
 						rule: `.${escapeCn(className)} {\n  ${declarations}\n  }`,
@@ -79,7 +79,7 @@ function tryGenerateRule(
 		}
 	}
 
-	// check for pseudo-class prefix
+	// include pseudo classes variants
 	if (variants?.pseudoClasses) {
 		for (const pc of variants.pseudoClasses) {
 			if (className.startsWith(`${pc.prefix}:`)) {
@@ -87,10 +87,32 @@ function tryGenerateRule(
 				const res = tryGenerateBaseRule(baseClassName, util);
 				if (res) {
 					const declarations = properties
-						.map((prop) => `${prop}: ${res.cssValue};`)
+						.map((prop) => `${prop}: ${res.propertyValue};`)
 						.join("\n");
 					return {
 						rule: `.${escapeCn(className)}${pc.value} {\n${declarations}\n}`,
+					};
+				}
+			}
+		}
+	}
+
+	// include opacity color variants
+	if (variants?.opacity) {
+		for (const op of variants.opacity) {
+			if (className.endsWith(`/${op.prefix}`)) {
+				const baseClassName = className.slice(0, -(op.prefix.length + 1));
+				const res = tryGenerateBaseRule(baseClassName, util);
+				if (res) {
+					const modPropertyValue =
+						res.propertyValue.startsWith("#") && res.propertyValue.length === 7
+							? `${res.propertyValue}${op.value}`
+							: res.propertyValue;
+					const declarations = properties
+						.map((prop) => `${prop}: ${modPropertyValue};`)
+						.join("\n");
+					return {
+						rule: `.${escapeCn(className)} {\n${declarations}\n}`,
 					};
 				}
 			}
@@ -101,7 +123,7 @@ function tryGenerateRule(
 	const baseRule = tryGenerateBaseRule(className, util);
 	if (baseRule) {
 		const declarations = properties
-			.map((prop) => `${prop}: ${baseRule.cssValue};`)
+			.map((prop) => `${prop}: ${baseRule.propertyValue};`)
 			.join("\n");
 		return {
 			rule: `.${escapeCn(className)} {\n${declarations}\n}`,
@@ -114,7 +136,7 @@ function tryGenerateRule(
 function tryGenerateBaseRule(
 	className: string,
 	util: Utility,
-): { cssValue: string } | null {
+): { propertyValue: string } | null {
 	const { prefix, values } = util;
 
 	if (!className.startsWith(`${prefix}-`)) return null;
@@ -124,7 +146,7 @@ function tryGenerateBaseRule(
 
 	if (!cssValue) return null;
 
-	return { cssValue };
+	return { propertyValue: cssValue };
 }
 
 // escape colons and slashes
