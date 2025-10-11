@@ -4,14 +4,14 @@ All notable changes to the Yumma CSS will be documented in this file.
 
 ## [3.5.0]
 
-<details>
+<details open>
 <summary>
     <b>Features</b>
 </summary>
 
 - Add opacity support for all color utilities.
 
-</details>
+</details open>
 
 <details>
 <summary>
