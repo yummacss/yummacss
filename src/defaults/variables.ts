@@ -8,21 +8,21 @@ export const outlineOffset = 1;
 export const outlineWidth = 1;
 
 // colors
-export const red = "rgb(215, 61, 61, 1)";
-export const orange = "rgb(224, 104, 20, 1)";
-export const yellow = "rgb(211, 161, 7, 1)";
-export const green = "rgb(31, 177, 85, 1)";
-export const teal = "rgb(18, 166, 149, 1)";
-export const cyan = "rgb(5, 164, 191, 1)";
-export const blue = "rgb(53, 117, 221, 1)";
-export const indigo = "rgb(89, 92, 217, 1)";
-export const violet = "rgb(125, 83, 221, 1)";
-export const pink = "rgb(212, 65, 138, 1)";
-export const slate = "rgb(63, 63, 78, 1)";
-export const gray = "rgb(96, 103, 115, 1)";
-export const silver = "rgb(191, 194, 199, 1)";
-export const black = "rgb(0, 0, 0, 1)";
-export const white = "rgb(255, 255, 255, 1)";
+export const red = "#d73d3d";
+export const orange = "#e06814";
+export const yellow = "#d3a107";
+export const green = "#1fb155";
+export const teal = "#12a695";
+export const cyan = "#05a4bf";
+export const blue = "#3575dd";
+export const indigo = "#595cd9";
+export const violet = "#7d53dd";
+export const pink = "#d4418a";
+export const slate = "#3f3f4e";
+export const gray = "#606773";
+export const silver = "#bfc2c7";
+export const black = "#000000";
+export const white = "#ffffff";
 export const transparent = "transparent";
 export const current = "currentColor";
 
