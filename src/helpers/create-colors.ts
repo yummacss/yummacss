@@ -9,15 +9,15 @@ const generateShades = (color: string): string[] => {
 	for (let i = 1; i <= 6; i++) {
 		const weight = (7 - i) * percentage;
 		const mixedColor = tinycolor.mix(color, "white", weight);
-		shades.push(mixedColor.toRgbString());
+		shades.push(mixedColor.toHex8String());
 	}
 
-	shades.push(tinycolor(color).toRgbString());
+	shades.push(tinycolor(color).toHex8String());
 
 	for (let i = 1; i <= 6; i++) {
 		const weight = i * percentage;
 		const mixedColor = tinycolor.mix(color, "black", weight);
-		shades.push(mixedColor.toRgbString());
+		shades.push(mixedColor.toHex8String());
 	}
 
 	return shades;
