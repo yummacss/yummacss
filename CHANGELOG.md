@@ -11,9 +11,9 @@ All notable changes to the Yumma CSS will be documented in this file.
 
 - Add opacity support for all color utilities.
 
-</details open>
+</details>
 
-<details>
+<details open>
 <summary>
     <b>Breaking changes</b>
 </summary>
