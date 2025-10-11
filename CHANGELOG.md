@@ -2,7 +2,7 @@
 
 All notable changes to the Yumma CSS API will be documented in this file.
 
-## [1.7.1]
+## [1.7.2]
 
 <details>
 <summary>
@@ -18,15 +18,15 @@ All notable changes to the Yumma CSS API will be documented in this file.
     <b>Breaking changes</b>
 </summary>
 
-- Use `toHex8String()` function instead of `toHexString()` for alpha values in color utilities
+- Use `toHexString()` function instead of `toHex8String()`
 
 </details>
 
-<details open>
+<details>
 <summary>
     <b>Fixes</b>
 </summary>
 
-- Color type definitions now generate valid CSS
+- None
 
 </details>
