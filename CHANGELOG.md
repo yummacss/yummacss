@@ -13,20 +13,20 @@ All notable changes to the Yumma CSS API will be documented in this file.
 
 </details>
 
-<details open>
+<details>
 <summary>
     <b>Breaking changes</b>
 </summary>
 
-- Use `toHexString()` function instead of `toHex8String()`
+- None
 
 </details>
 
-<details>
+<details open>
 <summary>
     <b>Fixes</b>
 </summary>
 
-- None
+- Use `toHexString()` function instead of `toHex8String()`
 
 </details>
