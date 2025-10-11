@@ -2,14 +2,14 @@
 
 All notable changes to the Yumma CSS will be documented in this file.
 
-## [3.4.3]
+## [3.5.0]
 
 <details>
 <summary>
     <b>Features</b>
 </summary>
 
-- None
+- Add opacity support for all color utilities.
 
 </details>
 
@@ -18,7 +18,7 @@ All notable changes to the Yumma CSS will be documented in this file.
     <b>Breaking changes</b>
 </summary>
 
-- None
+- Migrate extraction and generation to `@yummacss/nitro` (Internal)
 
 </details>
 
@@ -27,7 +27,6 @@ All notable changes to the Yumma CSS will be documented in this file.
     <b>Fixes</b>
 </summary>
 
-- Escape slashes in class names like `ar-*` (`aspect-ratio`)
-- Sort CSS rules alphabetically for consistent output
+- None
 
 </details>
