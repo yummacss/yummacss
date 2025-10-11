@@ -18,7 +18,7 @@ All notable changes to the Yumma CSS API will be documented in this file.
     <b>Breaking changes</b>
 </summary>
 
-- Use `toHex8String` instead of `toHexString` for alpha values in color utilities
+- Use `toHex8String()` function instead of `toHexString()` for alpha values in color utilities
 
 </details>
 
