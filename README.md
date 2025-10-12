@@ -10,7 +10,7 @@ A CLI-first CSS framework for the web with abbreviated styles.
 Install `yummacss` as a dev dependency and initialize configuration
 
 ```bash
-npm i yummacss -D
+npm install yummacss -D
 npx yummacss init
 ```
 
