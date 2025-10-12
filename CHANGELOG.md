@@ -28,6 +28,5 @@ All notable changes to the Yumma CSS will be documented in this file.
 </summary>
 
 - Use `node:fs` and `node:path` instead of `fs` and `path` (Internal)
-- 
 
 </details>
