@@ -2,23 +2,23 @@
 
 All notable changes to the Yumma CSS will be documented in this file.
 
-## [3.5.0]
+## [3.5.1]
 
-<details open>
+<details>
 <summary>
     <b>Features</b>
 </summary>
 
-- Add opacity support for all color utilities.
+- None
 
 </details>
 
-<details open>
+<details>
 <summary>
     <b>Breaking changes</b>
 </summary>
 
-- Migrate extraction and generation to `@yummacss/nitro` (Internal)
+- None
 
 </details>
 
@@ -27,6 +27,7 @@ All notable changes to the Yumma CSS will be documented in this file.
     <b>Fixes</b>
 </summary>
 
-- None
+- Use `node:fs` and `node:path` instead of `fs` and `path` (Internal)
+- 
 
 </details>

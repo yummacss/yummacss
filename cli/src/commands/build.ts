@@ -1,11 +1,11 @@
+import { writeFileSync } from "node:fs";
+import type { Config } from "@yummacss/nitro";
 import { configChanged, getCache, setCache } from "@/services/cache";
 import { compiler } from "@/services/compiler";
 import { loadConfig } from "@/services/loader";
 import { minify } from "@/services/minify";
 import { message } from "@/utils/message";
 import { cli } from "@/utils/status";
-import type { Config } from "@yummacss/nitro";
-import { writeFileSync } from "fs";
 
 export async function build(existingConfig?: Config, forceRebuild = false) {
 	const status = cli.progress(message.build.start);

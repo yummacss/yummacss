@@ -1,8 +1,8 @@
 {
-  "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["cli/src/*.js"]
-    }
-  }
+	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			"@/*": ["cli/src/*.js"]
+		}
+	}
 }
