@@ -1,55 +1,55 @@
 {
-  "name": "yummacss",
-  "version": "3.5.0",
-  "description": "A CLI-first CSS framework for the web with abbreviated styles.",
-  "keywords": [
-    "css-framework",
-    "typescript",
-    "yummacss"
-  ],
-  "homepage": "https://yummacss.com",
-  "license": "MIT",
-  "author": "Renildo Pereira",
-  "files": [
-    "dist"
-  ],
-  "type": "module",
-  "exports": {
-    ".": "./dist/index.js"
-  },
-  "bin": {
-    "yummacss": "./dist/index.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/yumma-lib/yumma-css.git"
-  },
-  "scripts": {
-    "build": "tsdown",
-    "dev": "tsdown --watch",
-    "lint": "biome check --write",
-    "prepublishOnly": "pnpm build"
-  },
-  "packageManager": "pnpm@10.18.2",
-  "dependencies": {
-    "@yummacss/nitro": "^0.1.0",
-    "chokidar": "^4.0.3",
-    "commander": "^14.0.0",
-    "globby": "^15.0.0",
-    "lightningcss": "^1.30.2",
-    "ora": "^8.2.0",
-    "stringify-object": "^6.0.0"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "2.2.5",
-    "@types/node": "^24.2.0",
-    "@types/stringify-object": "^4.0.5",
-    "tsdown": "^0.15.0",
-    "typescript": "^5.9.2",
-    "zod": "^4.1.12"
-  },
-  "publishConfig": {
-    "access": "public",
-    "provenance": true
-  }
+	"name": "yummacss",
+	"version": "3.5.1",
+	"description": "A CLI-first CSS framework for the web with abbreviated styles.",
+	"keywords": [
+		"css-framework",
+		"typescript",
+		"yummacss"
+	],
+	"homepage": "https://yummacss.com",
+	"license": "MIT",
+	"author": "Renildo Pereira",
+	"files": [
+		"dist"
+	],
+	"type": "module",
+	"exports": {
+		".": "./dist/index.js"
+	},
+	"bin": {
+		"yummacss": "./dist/index.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/yumma-lib/yumma-css.git"
+	},
+	"scripts": {
+		"build": "tsdown",
+		"dev": "tsdown --watch",
+		"lint": "biome check --write",
+		"prepublishOnly": "pnpm build"
+	},
+	"packageManager": "pnpm@10.18.2",
+	"dependencies": {
+		"@yummacss/nitro": "^0.1.0",
+		"chokidar": "^4.0.3",
+		"commander": "^14.0.0",
+		"globby": "^15.0.0",
+		"lightningcss": "^1.30.2",
+		"ora": "^8.2.0",
+		"stringify-object": "^6.0.0"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.2.5",
+		"@types/node": "^24.2.0",
+		"@types/stringify-object": "^4.0.5",
+		"tsdown": "^0.15.0",
+		"typescript": "^5.9.2",
+		"zod": "^4.1.12"
+	},
+	"publishConfig": {
+		"access": "public",
+		"provenance": true
+	}
 }

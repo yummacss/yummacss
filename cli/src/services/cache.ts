@@ -1,22 +1,22 @@
 import type { Config } from "@yummacss/nitro";
 
 export type BuildCache = {
-  css?: string;
-  dependencies?: string[];
-  configHash?: string;
+	css?: string;
+	dependencies?: string[];
+	configHash?: string;
 };
 
 let cache: BuildCache = {};
 
 export function getCache(): BuildCache {
-  return cache;
+	return cache;
 }
 
 export function setCache(newCache: BuildCache): void {
-  cache = newCache;
+	cache = newCache;
 }
 
 export function configChanged(config: Config): boolean {
-  const configHash = JSON.stringify(config);
-  return cache.configHash !== configHash;
+	const configHash = JSON.stringify(config);
+	return cache.configHash !== configHash;
 }

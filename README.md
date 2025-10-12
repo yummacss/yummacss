@@ -27,10 +27,7 @@ Learn more at [yummacss.com](https://yummacss.com)
 ## Built with
 
 - [@yummacss/nitro](https://www.npmjs.com/package/@yummacss/nitro)
-- [biome](https://www.npmjs.com/package/@biomejs/biome)
 - [lightningcss](https://www.npmjs.com/package/lightningcss)
-- [tsdown](https://www.npmjs.com/package/tsdown)
-- [typescript](https://www.npmjs.com/package/typescript)
 
 ## License
 
