@@ -1,9 +1,3 @@
-## Release notes
-
-All notable changes to the Yumma CSS will be documented in this file.
-
-## [3.5.1]
-
 <details>
 <summary>
     <b>Features</b>
@@ -22,7 +16,7 @@ All notable changes to the Yumma CSS will be documented in this file.
 
 </details>
 
-<details>
+<details open>
 <summary>
     <b>Fixes</b>
 </summary>
