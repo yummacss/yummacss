@@ -1,32 +1,32 @@
 ## Release notes
 
-All notable changes to the Yumma CSS Nitro will be documented in this file.
+All notable changes to this project will be documented in this file.
 
-## [0.1.0]
+## 0.1.0
 
 <details open>
 <summary>
-    <b>Features</b>
+    <h3>Features</h3>
 </summary>
 
-- First release.
+- Initial release.
 
 </details>
 
-<details>
+<details open>
 <summary>
-    <b>Breaking changes</b>
+    <h3>Breaking changes</h3>
 </summary>
 
-- None
+- None.
 
 </details>
 
-<details>
+<details open>
 <summary>
-    <b>Fixes</b>
+    <h3>Fixes</h3>
 </summary>
 
-- None
+- None.
 
 </details>
