@@ -63,10 +63,22 @@ All notable changes to this project will be documented in this file.
 - No user-facing changes.
 
 
-## [v3.3.1] - 
+## [v3.3.1] - 2025-09-12
+
+### Fixed
+
+- No user-facing changes.
 
 
-## [v3.3.0] - 
+## [v3.3.0] - 2025-09-12
+
+### Breaking changes
+
+- Updated config file name from `yumma.config.mjs` to `yumma.config.js`.
+
+### Fixed
+
+- Fixed `init` command to use JavaScript objects instead of JSON entries.
 
 
 ## [v3.2.2] - 
