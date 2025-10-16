@@ -453,6 +453,48 @@ All notable changes to this project will be documented in this file.
 
 ## [1.0.0] - 2024-01-03
 
+### Features
+
+- Added **Align Content** utilities.
+- Added **Align Self** utilities.
+- Added **Appearance** utilities.
+- Added **Caret Colors** utilities.
+- Added **Cursor** utilities.
+- Added **Flex Basis** utilities.
+- Added **Flex Grow** utilities.
+- Added **Font Family** utilities.
+- Added **Grid Auto Columns** utilities.
+- Added **Grid Auto Flow** utilities.
+- Added **Grid Auto Rows** utilities.
+- Added **Justify Items** utilities.
+- Added **Justify Self** utilities.
+- Added **List Style Type** utilities.
+- Added **Pointer Events** utilities.
+- Added **Text Decoration** utilities.
+- Added **User Select** utilities.
+- Added `end`, `flex-start`, `flex-end`, `left`, `right`, `normal` and `stretch` property values to **Justify Content** utilities.
+- Added `flex-start` and `flex-end` property values to **Align Items** utilities.
+- Added `flow-root` property value to **Display** utilities.
+- Added `inline-start` and `inline-end` property values to **Float** utilities.
+- Added `justify-all` and `match-parent` property values to **Text Align** utilities.
+- Added `mx-*` and `my-*` **Margin** utilities.
+- Added `overline` property to **Text Decoration Line** utilities.
+- Added `px-*` and `py-*` **Padding** utilities.
+- Added Lead color utility to the color system.
+- Added viewport values for **Height** and **Width** utilities.
+
+### Breaking changes
+
+- Removed `break-all` and `keep-all` property values from **Overflow Wrap** utilities.
+- Removed class `nav-l` component.
+- Renamed **Display** utilities from `dis-*` to `d-*`.
+- Renamed `greet()` function signature to `showVer()`.
+- Renamed hover variant utilities from `*-h-*` to `h:*`.
+
+### Fixes
+
+- Small CSS resetting improvements.
+- Removed duplicated **Justify Content** utilities.
 
 ## [0.2.0] - 2023-11-23
 
