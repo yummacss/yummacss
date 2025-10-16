@@ -395,7 +395,7 @@ All notable changes to this project will be documented in this file.
 ### Breaking changes
 
 - Color system reworked.
-- Removed `bs-*` utility from **Box Shadow**.
+- Removed `bs` base utility.
 - Removed `showVer()` function.
 - Removed complement button component.
 - Removed default shadow in the `nav-*` component.
