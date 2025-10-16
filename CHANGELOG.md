@@ -8,7 +8,7 @@ All notable changes to this project will be documented in this file.
 
 - Changed `toHexString()` function instead of `toHex8String()`.
 
-### Fixed
+### Fixes
 
 - Fixed color type definitions to generate valid CSS.
 
@@ -18,7 +18,7 @@ All notable changes to this project will be documented in this file.
 
 - Changed `toHex8String()` function instead of `toHexString()`.
 
-### Fixed
+### Fixes
 
 - Fixed color type definitions to generate valid CSS.
 
@@ -28,19 +28,19 @@ All notable changes to this project will be documented in this file.
 
 - Added `opacity` variant to all color utilities.
 
-### Fixed
+### Fixes
 
 - Fixed missing `type` keyword in interface imports.
 
 ## [1.6.2] - 2025-10-02
 
-### Fixed
+### Fixes
 
 - Fixed `tdt-*` (text-decoration-thickness) utilities to use `px` instead of `rem`.
 
 ## [1.6.1] - 2025-10-02
 
-### Fixed
+### Fixes
 
 - Fixed `font-family` utilities delimiters.
 
@@ -76,7 +76,7 @@ All notable changes to this project will be documented in this file.
 
 ## [1.4.1] - 2025-09-18
 
-### Fixed
+### Fixes
 
 - No user-facing changes.
 
@@ -92,6 +92,6 @@ All notable changes to this project will be documented in this file.
 
 ## [1.3.1] - 2025-09-11
 
-### Fixed
+### Fixes
 
 - No user-facing changes.
