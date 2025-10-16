@@ -395,7 +395,7 @@ All notable changes to this project will be documented in this file.
 ### Breaking changes
 
 - Color system reworked.
-- Removed `bs` class from **Box Shadow**.
+- Removed `bs-*` utility from **Box Shadow**.
 - Removed `showVer()` function.
 - Removed complement button component.
 - Removed default shadow in the `nav-*` component.
@@ -486,7 +486,7 @@ All notable changes to this project will be documented in this file.
 ### Breaking changes
 
 - Removed `break-all` and `keep-all` property values from **Overflow Wrap** utilities.
-- Removed class `nav-l` component.
+- Removed `nav-l` component.
 - Renamed **Display** utilities from `dis-*` to `d-*`.
 - Renamed `greet()` function signature to `showVer()`.
 - Renamed hover variant utilities from `*-h-*` to `h:*`.
