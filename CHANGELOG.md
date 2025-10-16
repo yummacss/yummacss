@@ -498,6 +498,9 @@ All notable changes to this project will be documented in this file.
 
 ## [0.2.0] - 2023-11-23
 
+### Features
+
+- No user-facing changes.
 
 ## [0.1.1] - 2023-11-07
 
