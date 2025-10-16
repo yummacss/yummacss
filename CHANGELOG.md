@@ -17,7 +17,6 @@ All notable changes to this project will be documented in this file.
 
 ## [3.4.3] - 2025-10-03
 
-
 ### Fixes
 
 - Fixed CSS rules to be sorted alphabetically for consistent output.
@@ -28,7 +27,6 @@ All notable changes to this project will be documented in this file.
 ### Fixes
 
 - Fixed `tdt-*` (text-decoration-thickness) utilities to use `px` instead of `rem`.
-
 
 ## [3.4.1] - 2025-10-02
 
