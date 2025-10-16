@@ -415,8 +415,8 @@ All notable changes to this project will be documented in this file.
 
 ### Breaking changes
 
-- Renamed `box-shadow` utilities from `bs-xlg` to `bs-xl`.
-- Renamed `box-shadow` utilities from `bs-xsm` to `bs-xs`
+- Renamed `box-shadow` utility from `bs-xlg` to `bs-xl`.
+- Renamed `box-shadow` utility from `bs-xsm` to `bs-xs`
 - Renamed `box-shadow` utility from `col-*` to `cols-*`.
 - Renamed `box-shadow` utility from `fs-xlg` to `bs-xl`.
 - Updated syntax for column media query utilities.
