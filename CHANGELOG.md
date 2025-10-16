@@ -254,8 +254,51 @@ All notable changes to this project will be documented in this file.
 - Fixed duplicated utilities in CSS distribution files.
 - Fixed media query utilities not overriding as expected.
 
-## [2.1.0] - 
+## [2.1.0] - 2024-10-11
 
+### Features
+
+- Add `cursor: pointer` property value to all `<button>` elements.
+- Add the `0` value to **Opacity** utility variant.
+- Add the `auto` property to **Flex** utility variant.
+
+### Breaking changes
+
+- Added `baseline` property values for **Align Content** utilities.
+- Added `baseline` property values for **Align Items** utilities.
+- Added `cg-0` (`column-gap`) and `rg-0` (`row-gap`) utilities.
+- Added `col-resize`, `default`, `ne-resize`, `nesw-resize`, `none`, `nw-resize`, `nwse-resize`, `progress`, `row-resize`, `s-resize`, `se-resize`, `sw-resize`, .`w-resize`, `zoom-in`, `zoom-out` **Cursor** property values to **Cursor** utilities.
+- Added `f-b` (`font-size`) base utility.
+- Added `font-size: inherit` and `font-weight: inherit` properties for heading and paragraph elements..
+- Added `fs-9xl` **Font Size** utility variant.
+- Added `row dense` and `dense row` **Grid Auto Flow** property values.
+- Added `table`, `inline-table` and `inline-grid` **Display** property values.
+- Added `text` and `all` **User Select** property values.
+- Removed `end` and `start` property values from **Align Content** utilities.
+- Removed `end` and `start` property values from **Align Items** utilities.
+- Removed `end` and `start` property values from **Align Self** utilities.
+- Removed `end`, `left`, `right` and `start` property values from **Justify Content** utilities.
+- Removed `er` **Cursor** utility variant.
+- Removed `flex-end`, `flex-start`, `left`, `normal` and `right` property values from **Justify Items** utilities.
+- Removed `flex-end`, `flex-start`, `left`, `normal`, `right` and `stretch` property values from **Justify Self** utilities.
+- Removed `hidden` property in **Border Style** utilities.
+- Removed `hidden` property in **Outline Style** utilities.
+- Removed variable inside **Spacing X** and **Spacing Y** utilities.
+- Renamed **Align Content** utilities from `ac-stretch` to `ac-s`.
+- Renamed **Align Items** utilities from `ai-stretch` to `ai-s`.
+- Renamed **Align Self** utilities from `as-stretch` to `as-s`.
+- Renamed **Justify Items** utilities from `ji-stretch` to `ji-st`.
+- Renamed **Justify Self** utilities from `js-stretch` to `ji-st`.
+- Renamed **Object Position** utilities from `op-left` to `op-l`.
+- Renamed **Position** utilities from `p-t` to `p-y`.
+- Renamed **Position** utilities from `p-y` to `p-st`.
+- Updated **Border Radius** base value from `4px` to `0.25rem`.
+- Updated **Border Width** base value from `4px` to `1px`.
+- Updated **Flex Basis** base value from `1rem` to `0.25rem`.
+- Updated **Flex** property values.
+- Updated **Outline Offset** base value from `2px` to `1px`.
+- Updated **Outline Width** base value from `2px` to `1px`.
+- Updated **Spacing X** and **Spacing Y** calculations.
 
 ## [2.0.0] - 
 
