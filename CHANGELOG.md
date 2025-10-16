@@ -443,6 +443,13 @@ All notable changes to this project will be documented in this file.
 
 ## [1.0.1] - 2024-01-04
 
+### Breaking changes
+
+- Updated **Height** and **Width** utility viewport values from dynamic to standard.
+
+### Fixes
+
+- Fixed minified CSS file.
 
 ## [1.0.0] - 2024-01-03
 
