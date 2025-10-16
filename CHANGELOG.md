@@ -141,7 +141,7 @@ All notable changes to this project will be documented in this file.
 - Improved CLI messages for better user feedback.
 - Improved CLI watch command with debouncing for better performance.
 
-## [3.0.0] - 
+## [3.0.0] - 2025-04-14
 
 ### Features
 
