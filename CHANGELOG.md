@@ -21,7 +21,7 @@ All notable changes to this project will be documented in this file.
 ### Fixes
 
 - Fixed CSS rules to be sorted alphabetically for consistent output.
-- Fixed escaping of slashes in utilities like `ar-*` (aspect-ratio).
+- Fixed escaping of slashes in utilities like `ar-*` (`aspect-ratio`).
 
 ## [3.4.2] - 2025-10-03
 
