@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## 1.7.2 - 2025-10-11
+## [1.7.2] - 2025-10-11
 
 ### Breaking changes
 
@@ -12,7 +12,7 @@ All notable changes to this project will be documented in this file.
 
 - Fixed color type definitions to generate valid CSS.
 
-## 1.7.1 - 2025-10-11
+## [1.7.1] - 2025-10-11
 
 ### Breaking changes
 
@@ -22,7 +22,7 @@ All notable changes to this project will be documented in this file.
 
 - Fixed color type definitions to generate valid CSS.
 
-## 1.7.0 - 2025-10-10
+## [1.7.0] - 2025-10-10
 
 ### Features
 
@@ -32,19 +32,19 @@ All notable changes to this project will be documented in this file.
 
 - Fixed missing `type` keyword in interface imports.
 
-## 1.6.2 - 2025-10-02
+## [1.6.2] - 2025-10-02
 
 ### Fixed
 
 - Fixed `tdt-*` (text-decoration-thickness) utilities to use `px` instead of `rem`.
 
-## 1.6.1 - 2025-10-02
+## [1.6.1] - 2025-10-02
 
 ### Fixed
 
 - Fixed `font-family` utilities delimiters.
 
-## 1.6.0 - 2025-10-02
+## [1.6.0] - 2025-10-02
 
 ### Features
 
@@ -53,7 +53,7 @@ All notable changes to this project will be documented in this file.
 - Added pseudo-class variants (`a:`, `f:`, `h:`) support to all utilities.
 - Updated `Utility` interface to include `variants` property.
 
-## 1.5.0 - 2025-09-23
+## [1.5.0] - 2025-09-23
 
 ### Breaking changes
 
@@ -74,13 +74,13 @@ All notable changes to this project will be documented in this file.
 - Renamed `getTextUtils` to `textUtils`.
 - Renamed `getTransformUtils` to `transformUtils`.
 
-## 1.4.1 - 2025-09-18
+## [1.4.1] - 2025-09-18
 
 ### Fixed
 
 - No user-facing changes.
 
-## 1.4.0 - 2025-09-15
+## [1.4.0] - 2025-09-15
 
 ### Breaking changes
 
@@ -90,7 +90,7 @@ All notable changes to this project will be documented in this file.
 - Renamed `UtilityMap` interface to `Utilities`.
 - Removed `ApiResponse` type.
 
-## 1.3.1 - 2025-09-11
+## [1.3.1] - 2025-09-11
 
 ### Fixed
 
