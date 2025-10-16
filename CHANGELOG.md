@@ -510,6 +510,12 @@ All notable changes to this project will be documented in this file.
 
 ## [0.1.0] - 2023-11-06
 
+### Features
+
+- Expanded **Height** utilities from 0 to 100.
+- Expanded **Margin** utilities from 0 to 100.
+- Expanded **Padding** utilities from 0 to 100.
+- Expanded **Width** utilities from 0 to 100.
 
 ## [0.0.1] - 2023-10-02
 
