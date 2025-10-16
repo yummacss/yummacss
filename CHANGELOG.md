@@ -15,7 +15,6 @@ All notable changes to this project will be documented in this file.
 - Added opacity support for all color utilities.
 - Improved CSS generation architecture for better performance and maintainability.
 
-
 ## [3.4.3] - 2025-10-03
 
 
@@ -23,7 +22,6 @@ All notable changes to this project will be documented in this file.
 
 - Fixed CSS rules to be sorted alphabetically for consistent output.
 - Fixed escaping of slashes in utilities like `ar-*` (aspect-ratio).
-
 
 ## [3.4.2] - 2025-10-03
 
@@ -37,7 +35,6 @@ All notable changes to this project will be documented in this file.
 ### Fixed
 
 - Fixed utilities containing slashes or colons not being properly escaped.
-
 
 ## [3.4.0] - 2025-10-02
 
@@ -57,18 +54,15 @@ All notable changes to this project will be documented in this file.
 
 ## [3.3.2] - 2025-09-18
 
-
-### Fixed
+### Features
 
 - No user-facing changes.
-
 
 ## [3.3.1] - 2025-09-12
 
-### Fixed
+### Features
 
 - No user-facing changes.
-
 
 ## [3.3.0] - 2025-09-12
 
@@ -79,7 +73,6 @@ All notable changes to this project will be documented in this file.
 ### Fixed
 
 - Fixed `init` command to use JavaScript objects instead of JSON entries.
-
 
 ## [3.2.2] - 2025-09-08
 
@@ -99,23 +92,167 @@ All notable changes to this project will be documented in this file.
 
 - Default `font-family` is now applied to the `html` tag instead of the `body` tag.
 
-## [3.2.0] - 
+## [3.2.0] - 2025-08-23
 
+### Features
 
-## [3.1.0] - 
+- Added `9` value to Border Radius utility.
+- Added `currentColor` to theme colors.
+- Added `dvw` values to **Dimension**, **Height**, and **Width** utilities.
+- Added `px` value to **Dimension**, **Height**, **Width**, **Padding**, and **Margin** utilities.
+- Added `sm`, `md`, `lg`, `xl`, `xxl` values to **Dimension**, **Height**, and **Width** utilities.
+- Added `vh` and `vw` values to **Dimension**, **Height**, and **Width** utilities.
 
+### Breaking changes
 
-## [3.0.3] - 
+- Renamed the `lead` utility color to `slate`.
 
+## [3.1.0] - 2025-07-30
 
-## [3.0.2] - 
+### Features
 
+- Added `:focus` and `:active` pseudo-class variant support.
 
-## [3.0.1] - 
+### Breaking changes
 
+- Removed `yumma.css` and `yumma.min.css` distribution files.
+
+### Fixed
+
+- Fixed `init` command not generating `yumma.config.js` file.
+
+## [3.0.3] - 2025-07-22
+
+### Features
+
+- No user-facing changes.
+
+## [3.0.2] - 2025-07-20
+
+### Features
+
+- No user-facing changes.
+
+## [3.0.1] - 2025-07-17
+
+### Fixed
+
+- Excluded CSS build artifacts from the published package.
+- Improved CLI messages for better user feedback.
+- Improved CLI watch command with debouncing for better performance.
 
 ## [3.0.0] - 
 
+### Features
+
+- Added **Background Attachment** utilities.
+- Added **Background Clip** utilities.
+- Added **Background Origin** utilities.
+- Added **Background Position** utilities.
+- Added **Background Repeat** utilities.
+- Added **Background Size** utilities.
+- Added **Blur** utilities.
+- Added **Border Spacing** utilities.
+- Added **Bottom Radius** utilities.
+- Added **Top/Right/Bottom/Left (Axis)** utilities.
+- Added **Clear** utilities.
+- Added **Field Sizing** utilities.
+- Added **Fill** utilities.
+- Added **Font Family** fallbacks.
+- Added **Grayscale** utilities.
+- Added **Isolation** utilities.
+- Added **Left Radius** utilities.
+- Added **Letter Spacing** utilities.
+- Added **List Style Position** utilities.
+- Added **Margin Block End** utilities.
+- Added **Margin Block Start** utilities.
+- Added **Margin Inline End** utilities.
+- Added **Margin Inline Start** utilities.
+- Added **Order** utilities.
+- Added **Padding Block End** utilities.
+- Added **Padding Block Start** utilities.
+- Added **Padding Inline End** utilities.
+- Added **Padding Inline Start** utilities.
+- Added **Place Content** utilities.
+- Added **Place Items** utilities.
+- Added **Place Self** utilities.
+- Added **Right Radius** utilities.
+- Added **Rotate** utilities.
+- Added **Scale** utilities.
+- Added **Scroll Behavior** utilities.
+- Added **Scroll Margin Bottom** utilities.
+- Added **Scroll Margin Inline End** utilities.
+- Added **Scroll Margin Inline Start** utilities.
+- Added **Scroll Margin Left** utilities.
+- Added **Scroll Margin Right** utilities.
+- Added **Scroll Margin Top** utilities.
+- Added **Scroll Margin X** utilities.
+- Added **Scroll Margin Y** utilities.
+- Added **Scroll Margin** utilities.
+- Added **Scroll Snap Align** utilities.
+- Added **Scroll Snap Stop** utilities.
+- Added **Scroll Snap Type** utilities.
+- Added **Skew** utilities.
+- Added **Stroke Width** utilities.
+- Added **Stroke** utilities.
+- Added **Text Indent** utilities.
+- Added **Text Overflow** utilities.
+- Added **Text Transform** utilities.
+- Added **Text Underline Offset** utilities.
+- Added **Text Wrap** utilities.
+- Added **Top Radius** utilities.
+- Added **Transform Origin** utilities.
+- Added **Visibility** utilities.
+- Added **White Space** utilities.
+- Added `1/2`, `2/1`, `2/3`, `3/2`, and `9/16` values for **Aspect Ratio** utilities.
+- Added `column-dense` and `row-dense` property values for **Grid Auto Flow** utilities.
+- Added `fs-4xl`, `fs-5xl`, `fs-7xl` and `fs-8xl` values for **Font Size** utilities.
+- Added `full` and `half` values for **Top/Right/Bottom/Left** utilities.
+- Added `table-cell`, `table-column` and `table-row` values for **Display** utilities.
+- Added CLI functionality for CSS generation.
+- Expanded **Column Gap** utilities from 0 to 100.
+- Expanded **Gap** utilities from 0 to 100.
+- Expanded **Row Gap** utilities from 0 to 100.
+
+### Breaking changes
+
+- Base styles can no longer be referenced as a CSS file.
+- Removed **Spacing X** utilities.
+- Removed **Spacing Y** utilities.
+- Removed `.cnt{}` utility.
+- Removed `.ins{}` utility.
+- Removed `d-` (dark) and `l-` (light) prefixes from all color utilities.
+- Removed `d-` prefix from **Top/Right/Bottom/Left** utilities.
+- Removed `d-1/2` **Dimension** utility variant.
+- Removed `h-1/2` **Height** utility variant.
+- Removed `hidden` and `none` properties from **Text Decoration Style** utilities.
+- Removed `none` **Top/Right/Bottom/Left** invalid utilities.
+- Removed `w-1/2` **Width** utility variant.
+- Renamed **Columns** utilities from `cols-*` to `c-*`.
+- Renamed **Dimension** utilities from `dim-*` to `d-*`.
+- Renamed **Dimension** utility from `d-1/1` to `d-dvh`.
+- Renamed **Direction Bottom** utilities from `dir-b-*` to `bo-*`.
+- Renamed **Direction Inset** utilities from `dir-i-*` to `i-*`.
+- Renamed **Direction Left** utilities from `dir-l-*` to `l-*`.
+- Renamed **Direction Right** utilities from `dir-r-*` to `r-*`.
+- Renamed **Direction Top** utilities from `dir-t-*` to `t-*`.
+- Renamed **Float** utilities from `flo-*` to `fl-*`.
+- Renamed **Font Size** utilities from `fs-b` to `fs-md`.
+- Renamed **Height** utility from `h-1/1` to `h-dvh`.
+- Renamed **Max Dimension** utilities from `max-dim-*` to `max-d-*`.
+- Renamed **Min Dimension** utilities from `min-dim-*` to `min-d-*`.
+- Renamed **Overflow X** utilities from `ovf-x-*` to `o-x-*`.
+- Renamed **Overflow Y** utilities from `ovf-y-*` to `o-y-*`.
+- Renamed **Overflow** utilities from `ovf-*` to `o-*`.
+- Renamed **Width** utility from `w-1/1` to `w-dvh`.
+- Updated **Direction** utilities to use `rem` as unit.
+- Updated color shade percentage from `10%` to `14%`.
+- Updated color utility range from 1-6 to 1-12.
+
+### Fixed
+
+- Fixed duplicated utilities in CSS distribution files.
+- Fixed media query utilities not overriding as expected.
 
 ## [2.1.0] - 
 
