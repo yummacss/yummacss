@@ -300,11 +300,109 @@ All notable changes to this project will be documented in this file.
 - Updated **Outline Width** base value from `2px` to `1px`.
 - Updated **Spacing X** and **Spacing Y** calculations.
 
-## [2.0.0] - 
+## [2.0.0] - 2024-09-08
 
+### Features
 
-## [1.2.0] - 
+- Add **Accent Color** utilities.
+- Add **Aspect Ratio** utilities.
+- Add **Backdrop Filter** utilities.
+- Add **Border Collapse** utilities.
+- Add **Border Style** utilities.
+- Add **Caption Side** utilities.
+- Add **Container** utilities.
+- Add **Font Style** utilities.
+- Add **Gap** utilities.
+- Add **Grid Column** utilities.
+- Add **Grid Row** utilities.
+- Add **Object Fit** utilities.
+- Add **Object Position** utilities.
+- Add **Outline Color** utilities.
+- Add **Outline Offset** utilities.
+- Add **Outline Style** utilities.
+- Add **Outline Width** utilities.
+- Add **Silver** color to the color system.
+- Add **Spacing** utilities.
+- Add **Table Layout** utilities.
+- Add **Text Decoration Color** utilities.
+- Add **Text Decoration Style** utilities.
+- Add **Text Decoration Thickness** utilities.
+- Add `auto` property in **Margin** and **Padding** utilities.
+- Add `fb-full`, `fb-half` property values to **Flex Basis** utilities .
+- Add `max-content` and `min-content` property values for **Flex Basis** utilities.
+- Add `max-content` and `min-content` property values for **Grid Auto Columns** utilities.
+- Add `max-content` and `min-content` property values for **Grid Auto Rows** utilities.
+- Add `max-content` and `min-content` property values for **Height** utilities.
+- Add `max-content` and `min-content` property values for **Width** utilities.
+- Add `xxl` breakpoint value.
+- Add support for hover utilities.
+- Add support for media query utilities.
 
+### Breaking changes
+
+- Base styles are now optional.
+- Base styles now covers the `<optgroup>`.
+- Breakpoint system values reworked.
+- Removed **Column** utilities.
+- Removed **Offset Gap** utilities.
+- Removed **Row** utility.
+- Removed `badge-*` component.
+- Removed `border-style` and `border-width` property values from **Border Color** utilities.
+- Removed `btn-*` component.
+- Removed `btn-otl-*` component.
+- Removed `card-*` component.
+- Removed `ff-i` utility.
+- Removed `nav-*` component.
+- Removed Components folder.
+- Removed extra small value for breakpoint utilities.
+- Renamed **Container** utility from `cnn` to `cnt`.
+- Renamed **Float** utility from `f-*static*` to `flo-*`.
+- Renamed **Font Family** utility from `ff-d` to `ff-s`.
+- Renamed **Font Size** Extra large utility from `fs-2xl` to `fs-xxl`.
+- Renamed **Position** utility from `pos-*` to `p-*`.
+- Renamed **Position** utility from `pos-static` to `p-s`.
+- Renamed **Position** utility from `pos-sticky` to `p-t`.
+- Simplify **Font Family** fallbacks.
+- Updated **Margin** and **Padding** property values from `0.75rem` to `0.25rem`.
+- Updated `cnt` utility with new responsive utility rules.
+
+### Fixed
+
+- Fix `transparent` having color variants.
+- Fix conflict between `f-none` (`float: none;`) utility and `f-none` (`flex: none;`) utility.
+
+## [1.2.0] - 2024-03-22
+
+### Features
+
+- Added **Line Height** utilities.
+- Added **Max Dimension** and **Min Dimension** utilities.
+- Added **Max Height** and **Min Height** utilities.
+- Added **Max Width** and **Min Width** utilities.
+- Added `auto`, `full`, and `half` property values to the **Flex** utilities.
+- Added `fit-content` property values to **Height** and **Width** utilities.
+- Added `none` property value to **Box Shadow** utilities.
+- Added `transparent` color variant to all color utilities.
+- Added Indigo color variant to all color utilities.
+- Added support for media queries for all **Dimension** utilities.
+- Improved **Direction** utilities.
+- Improved **Flex Shrink** utilities.
+- Improved **Flex** utilities.
+- Improved **Font Sizes** utilities.
+- Improved **Grid Template Columns** utilities.
+- Improved **Grid Template Rows** utilities.
+
+### Breaking changes
+
+- **Border Radius** default value is now `4px` instead of `8px`.
+- Color system reworked.
+- Removed `.bs{}` class from **Box Shadow**.
+- Removed `showVer()` function.
+- Removed complement button component.
+- Removed default shadow in the `.nav{}` component.
+- Removed Magenta color from the color system.
+- Reworked `.btn{}` component size.
+- Viewports units are no longer dynamic.
 
 ## [1.1.0] - 
 
