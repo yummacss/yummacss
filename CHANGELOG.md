@@ -204,11 +204,11 @@ All notable changes to this project will be documented in this file.
 - Added **Transform Origin** utilities.
 - Added **Visibility** utilities.
 - Added **White Space** utilities.
-- Added `1/2`, `2/1`, `2/3`, `3/2`, and `9/16` values for **Aspect Ratio** utilities.
+- Added `1/2`, `2/1`, `2/3`, `3/2`, and `9/16` property values for **Aspect Ratio** utilities.
 - Added `column-dense` and `row-dense` property values for **Grid Auto Flow** utilities.
-- Added `fs-4xl`, `fs-5xl`, `fs-7xl` and `fs-8xl` values for **Font Size** utilities.
-- Added `full` and `half` values for **Top/Right/Bottom/Left** utilities.
-- Added `table-cell`, `table-column` and `table-row` values for **Display** utilities.
+- Added `fs-4xl`, `fs-5xl`, `fs-7xl` and `fs-8xl` property values for **Font Size** utilities.
+- Added `full` and `half` property values for **Top/Right/Bottom/Left** utilities.
+- Added `table-cell`, `table-column` and `table-row` property values for **Display** utilities.
 - Added CLI functionality for CSS generation.
 - Expanded **Column Gap** utilities from 0 to 100.
 - Expanded **Gap** utilities from 0 to 100.
