@@ -394,14 +394,14 @@ All notable changes to this project will be documented in this file.
 
 ### Breaking changes
 
-- **Border Radius** default value is now `4px` instead of `8px`.
 - Color system reworked.
-- Removed `.bs{}` class from **Box Shadow**.
+- Removed `bs` class from **Box Shadow**.
 - Removed `showVer()` function.
 - Removed complement button component.
-- Removed default shadow in the `.nav{}` component.
+- Removed default shadow in the `nav-*` component.
 - Removed Magenta color from the color system.
-- Reworked `.btn{}` component size.
+- Reworked `btn-*` component size.
+- Update **Border Radius** default value from `4px` to `8px`.
 - Viewports units are no longer dynamic.
 
 ## [1.1.0] - 2024-01-24
