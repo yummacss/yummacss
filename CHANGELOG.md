@@ -18,21 +18,21 @@ All notable changes to this project will be documented in this file.
 ## [3.4.3] - 2025-10-03
 
 
-### Fixed
+### Fixes
 
 - Fixed CSS rules to be sorted alphabetically for consistent output.
 - Fixed escaping of slashes in utilities like `ar-*` (aspect-ratio).
 
 ## [3.4.2] - 2025-10-03
 
-### Fixed
+### Fixes
 
 - Fixed `tdt-*` (text-decoration-thickness) utilities to use `px` instead of `rem`.
 
 
 ## [3.4.1] - 2025-10-02
 
-### Fixed
+### Fixes
 
 - Fixed utilities containing slashes or colons not being properly escaped.
 
@@ -48,7 +48,7 @@ All notable changes to this project will be documented in this file.
 
 - Base styles are no longer tree-shaken.
 
-### Fixed
+### Fixes
 
 - Fixed NPM users not being able to run the CLI.
 
@@ -70,13 +70,13 @@ All notable changes to this project will be documented in this file.
 
 - Updated config file name from `yumma.config.mjs` to `yumma.config.js`.
 
-### Fixed
+### Fixes
 
 - Fixed `init` command to use JavaScript objects instead of JSON entries.
 
 ## [3.2.2] - 2025-09-08
 
-### Fixed
+### Fixes
 
 - Removed default `font-weight` property from `ff-*` (`font-family`) utilities.
 
@@ -117,7 +117,7 @@ All notable changes to this project will be documented in this file.
 
 - Removed `yumma.css` and `yumma.min.css` distribution files.
 
-### Fixed
+### Fixes
 
 - Fixed `init` command not generating `yumma.config.js` file.
 
@@ -135,7 +135,7 @@ All notable changes to this project will be documented in this file.
 
 ## [3.0.1] - 2025-07-17
 
-### Fixed
+### Fixes
 
 - Excluded CSS build artifacts from the published package.
 - Improved CLI messages for better user feedback.
@@ -249,7 +249,7 @@ All notable changes to this project will be documented in this file.
 - Updated color shade percentage from `10%` to `14%`.
 - Updated color utility range from 1-6 to 1-12.
 
-### Fixed
+### Fixes
 
 - Fixed duplicated utilities in CSS distribution files.
 - Fixed media query utilities not overriding as expected.
@@ -366,7 +366,7 @@ All notable changes to this project will be documented in this file.
 - Updated **Margin** and **Padding** property values from `0.75rem` to `0.25rem`.
 - Updated `cnt` utility with new responsive utility rules.
 
-### Fixed
+### Fixes
 
 - Fix `transparent` having color variants.
 - Fix conflict between `f-none` (`float: none;`) utility and `f-none` (`flex: none;`) utility.
@@ -404,8 +404,28 @@ All notable changes to this project will be documented in this file.
 - Reworked `.btn{}` component size.
 - Viewports units are no longer dynamic.
 
-## [1.1.0] - 
+## [1.1.0] - 2024-01-24
 
+### Features
+
+- Added **Dimension** utilities.
+- Added extra small variant for font size utilities.
+- Added media query support for utilities.
+- Added transition property to button components.
+
+### Breaking changes
+
+- Renamed `box-shadow` utilities from `bs-xlg` to `bs-xl`.
+- Renamed `box-shadow` utilities from `bs-xsm` to `bs-xs`
+- Renamed `box-shadow` utility from `col-*` to `cols-*`.
+- Renamed `box-shadow` utility from `fs-xlg` to `bs-xl`.
+- Updated syntax for column media query utilities.
+
+### Fixes
+
+- Fixed `caret-color` utility variants not working as expected.
+- Fixed `fs-md` not working as expected.
+- Fixed `list-style-type` syntax from `tst-*` to `lst-*`.
 
 ## [1.0.3] - 
 
