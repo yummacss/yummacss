@@ -429,9 +429,17 @@ All notable changes to this project will be documented in this file.
 
 ## [1.0.3] - 2024-01-09
 
+### Breaking changes
+
+- Minified CSS file moved to the `/dist` folder.
 
 ## [1.0.2] - 2024-01-05
 
+### Fixes
+
+- Fixed `caret-color` light and dark color utilities variations.
+- Fixed viewport classes not working as expected.
+- Small base style improvements.
 
 ## [1.0.1] - 2024-01-04
 
