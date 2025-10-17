@@ -21,9 +21,7 @@ Learn more at [yummacss.com](https://yummacss.com)
 
 ## Built with
 
-- [@biomejs](https://www.npmjs.com/package/@biomejs/biome)
 - [tinycolor2](https://www.npmjs.com/package/tinycolor2)
-- [tsdown](https://www.npmjs.com/package/tsdown)
 - [typescript](https://www.npmjs.com/package/typescript)
 
 ## License
