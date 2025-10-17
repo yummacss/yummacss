@@ -28,6 +28,7 @@ Learn more at [yummacss.com](https://yummacss.com)
 
 - [@yummacss/nitro](https://www.npmjs.com/package/@yummacss/nitro)
 - [lightningcss](https://www.npmjs.com/package/lightningcss)
+- [typescript](https://www.npmjs.com/package/typescript)
 
 ## License
 
