@@ -30,7 +30,6 @@ Learn more at [yummacss.com](https://yummacss.com)
 ## Built with
 
 - [@yummacss/api](https://www.npmjs.com/package/@yummacss/api)
-- [@biomejs](https://www.npmjs.com/package/@biomejs/biome)
 - [typescript](https://www.npmjs.com/package/typescript)
 
 ## License
