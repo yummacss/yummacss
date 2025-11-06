@@ -4,11 +4,11 @@ import { configChanged, getCache, setCache } from "@/services/cache";
 import { compiler } from "@/services/compiler";
 import { loadConfig } from "@/services/loader";
 import { minify } from "@/services/minify";
-import { message } from "@/utils/message";
+import { feedback } from "@/utils/feedback";
 import { cli } from "@/utils/status";
 
 export async function build(existingConfig?: Config, forceRebuild = false) {
-	const status = cli.progress(message.build.start);
+	const status = cli.progress(feedback.build.start);
 	const startTime = Date.now();
 
 	try {
@@ -33,11 +33,11 @@ export async function build(existingConfig?: Config, forceRebuild = false) {
 		writeFileSync(config.output, finalCSS);
 
 		status.succeed(
-			message.build.success(Date.now() - startTime, config.output),
+			feedback.build.success(Date.now() - startTime, config.output),
 		);
 	} catch (error) {
 		status.fail(
-			`${message.build.fail} ${error instanceof Error ? error.message : String(error)}`,
+			`${feedback.build.fail} ${error instanceof Error ? error.message : String(error)}`,
 		);
 		process.exit(1);
 	}

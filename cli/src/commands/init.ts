@@ -1,7 +1,7 @@
 import { writeFileSync } from "node:fs";
 import { ConfigSchema, configName } from "@yummacss/nitro";
 import stringifyObject from "stringify-object";
-import { message } from "@/utils/message";
+import { feedback } from "@/utils/feedback";
 import { cli } from "@/utils/status";
 
 function generateConfig(): { filename: string; content: string } {
@@ -22,9 +22,9 @@ export function init() {
 	try {
 		const { filename, content } = generateConfig();
 		writeFileSync(filename, content);
-		status.succeed(message.init.success);
+		status.succeed(feedback.init.success);
 	} catch (_error) {
-		status.fail(message.init.fail);
+		status.fail(feedback.init.fail);
 		process.exit(1);
 	}
 }

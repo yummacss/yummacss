@@ -2,7 +2,7 @@ import type { Config } from "@yummacss/nitro";
 import chok from "chokidar";
 import { globby } from "globby";
 import { loadConfig } from "@/services/loader";
-import { message } from "@/utils/message";
+import { feedback } from "@/utils/feedback";
 import { cli } from "@/utils/status";
 import { build } from "./build.js";
 
@@ -32,7 +32,7 @@ export async function watch() {
 
 		await build(currentConfig, true);
 
-		cli.info(message.watch.start);
+		cli.info(feedback.watch.start);
 
 		const files = await globby(currentConfig.source);
 		const watcher = chok.watch(files, {
@@ -50,7 +50,7 @@ export async function watch() {
 			.on("change", (path) => handleChange(path, "changed"))
 			.on("unlink", (path) => handleChange(path, "removed"));
 	} catch (_error) {
-		cli.fail(message.watch.fail);
+		cli.fail(feedback.watch.fail);
 		process.exit(1);
 	}
 }
