@@ -2,8 +2,7 @@ import { existsSync } from "node:fs";
 import { join } from "node:path";
 import { pathToFileURL } from "node:url";
 import { type Config, ConfigSchema, configName } from "@yummacss/nitro";
-import { z } from "zod";
-import { message } from "@/utils/message";
+import { feedback } from "@/utils/feedback";
 import { cli } from "@/utils/status";
 
 export async function loadConfig(): Promise<Config> {
@@ -17,16 +16,14 @@ export async function loadConfig(): Promise<Config> {
 
 		const config = ConfigSchema.parse(userConfig);
 		return config;
-	} catch (error) {
+	} catch (_error) {
 		if (!existsSync(configName)) {
-			const status = cli.progress(message.init.notFound);
-			status.warn(message.init.notFound);
-			process.exit(1);
-		} else if (error instanceof z.ZodError) {
-			const status = cli.progress(message.init.invalid);
-			status.fail(message.init.invalid);
+			const status = cli.progress(feedback.init.notFound);
+			status.warn(feedback.init.notFound);
 			process.exit(1);
 		}
-		throw error;
+		const status = cli.progress(feedback.init.invalid);
+		status.fail(feedback.init.invalid);
+		process.exit(1);
 	}
 }

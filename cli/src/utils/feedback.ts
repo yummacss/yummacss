@@ -1,4 +1,4 @@
-export const message = {
+export const feedback = {
 	build: {
 		start: "Building...",
 		success: (time: number, output: string) =>
