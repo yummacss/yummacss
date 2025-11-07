@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [Unreleased]
+
+### Features
+
+- No user-facing changes.
+
 ## [1.7.2] - 2025-10-11
 
 ### Breaking changes
@@ -95,3 +101,39 @@ All notable changes to this project will be documented in this file.
 ### Fixes
 
 - No user-facing changes.
+
+## [1.3.0] - 2025-08-23
+
+### Features
+
+- ?
+
+## [1.2.0] - 2025-08-23
+
+### Features
+
+- ?
+
+## [1.1.2] - 2025-07-31
+
+### Features
+
+- ?
+
+## [1.1.1] - 2025-07-29
+
+### Features
+
+- ?
+
+## [1.1.0] - 2025-07-29
+
+### Features
+
+- ?
+
+## [1.0.0] - 2025-07-11
+
+### Features
+
+- Initial release.
