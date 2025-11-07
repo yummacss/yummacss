@@ -113,7 +113,7 @@ All notable changes to this project will be documented in this file.
 ### Features
 
 - Added new palette tokens (`slate`, `black`, `white`, `transparent`, `current`) and exposed them across all color utilities.
-- Expanded dimension utilities with viewport aliases, breakpoint shortcuts, and `px` helpers.
+- Expanded dimension utilities with viewport aliases, breakpoint shortcuts, and `px` utility values.
 
 ### Breaking changes
 
