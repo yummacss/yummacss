@@ -117,7 +117,7 @@ All notable changes to this project will be documented in this file.
 
 ### Breaking changes
 
-- Renamed the `lead` palette key with `slate`.
+- Renamed the `lead` color utility to `slate`.
 
 ### Fixes
 
