@@ -121,7 +121,7 @@ All notable changes to this project will be documented in this file.
 
 ### Fixes
 
-- Normalized box-shadow presets to use valid negative spread values.
+- Normalized `box-shadow` utilities to use valid negative spread values.
 
 ## [1.1.2] - 2025-07-31
 
