@@ -104,33 +104,42 @@ All notable changes to this project will be documented in this file.
 
 ## [1.3.0] - 2025-08-23
 
-### Features
+### Breaking changes
 
-- ?
+- Removed the CommonJS build output.
 
 ## [1.2.0] - 2025-08-23
 
 ### Features
 
-- ?
+- Added new palette tokens (`slate`, `black`, `white`, `transparent`, `current`) and exposed them across all color utilities.
+- Expanded dimension utilities with viewport aliases, breakpoint shortcuts, and `px` helpers.
+
+### Breaking changes
+
+- Renamed the `lead` palette key with `slate`.
+
+### Fixes
+
+- Normalized box-shadow presets to use valid negative spread values.
 
 ## [1.1.2] - 2025-07-31
 
-### Features
+### Fixes
 
-- ?
+- No user-facing changes.
 
 ## [1.1.1] - 2025-07-29
 
-### Features
+### Fixes
 
-- ?
+- Converted the exported base color tokens to hexadecimal strings.
 
 ## [1.1.0] - 2025-07-29
 
-### Features
+### Breaking changes
 
-- ?
+- Regenerated the theme palette so utilities emit hexadecimal colors.
 
 ## [1.0.0] - 2025-07-11
 
