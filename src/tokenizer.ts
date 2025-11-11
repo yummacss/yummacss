@@ -1,4 +1,3 @@
-// we will probably isolate this into its own package later
 export function tokenizer(content: string): string[] {
 	const tokens = new Set<string>();
 

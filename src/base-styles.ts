@@ -1,4 +1,4 @@
-export const baseCSS = `*,
+export const baseStyles = `*,
 *::before,
 *::after {
   box-sizing: border-box;
