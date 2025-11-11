@@ -15,7 +15,8 @@
 	],
 	"type": "module",
 	"exports": {
-		".": "./dist/index.js"
+		".": "./dist/index.js",
+		"./browser": "./dist/browser.js"
 	},
 	"repository": {
 		"type": "git",
