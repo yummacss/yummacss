@@ -1,6 +1,6 @@
+import { coreUtils, type Utilities, type Utility } from "@yummacss/api";
 import type { Config } from "@/config/schema";
 import { baseCSS } from "@/reset/base";
-import { coreUtils, type Utilities, type Utility } from "@yummacss/api";
 
 export function generator(usedClasses: Set<string>, config: Config): string {
 	const cssBlocks: string[] = [];
