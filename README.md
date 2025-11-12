@@ -1,6 +1,6 @@
 # [@yummacss/nitro](https://www.npmjs.com/package/@yummacss/nitro)
 
-The engine behind Yumma CSS.
+The generator engine for Yumma CSS.
 
 [![NPM Version](https://img.shields.io/npm/v/@yummacss/nitro?style=plastic&label=@yummacss/nitro&labelColor=eaedfc&color=413cb8)](https://www.npmjs.com/package/@yummacss/nitro)
 [![NPM Downloads](https://img.shields.io/npm/d18m/@yummacss/nitro?style=plastic&label=downloads&labelColor=eaedfc&color=413cb8)](https://www.npmjs.com/package/@yummacss/nitro)
