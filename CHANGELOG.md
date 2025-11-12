@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 
 ## [0.2.1] - 2025-11-12
 
-### Features
+### Fixes
 
 - Improve TypeScript types support.
 
