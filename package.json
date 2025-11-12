@@ -27,7 +27,7 @@
 		"dev": "tsdown --watch",
 		"lint": "biome check --write"
 	},
-	"packageManager": "pnpm@10.18.2",
+	"packageManager": "pnpm@10.21.0",
 	"dependencies": {
 		"@yummacss/api": "^1.7.2",
 		"globby": "^15.0.0",
