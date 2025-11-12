@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.2.2]
+
+### Features
+
+- No user-facing changes.
+
 ## [0.2.1] - 2025-11-12
 
 ### Fixes
