@@ -6,7 +6,7 @@ All notable changes to this project will be documented in this file.
 
 ### Features
 
-- Add browser-safe exports
+- Add browser-safe exports.
 
 ## [0.1.0] - 2025-10-11
 
