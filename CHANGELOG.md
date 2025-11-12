@@ -6,7 +6,7 @@ All notable changes to this project will be documented in this file.
 
 ### Features
 
-- Add `dts` support for better type support.
+- Improve TypeScript types support.
 
 ## [0.2.0] - 2025-11-12
 
