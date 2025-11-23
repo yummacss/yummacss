@@ -30,7 +30,7 @@
 		"lint": "biome check --write",
 		"prepublishOnly": "pnpm build"
 	},
-	"packageManager": "pnpm@10.18.2",
+	"packageManager": "pnpm@10.23.0",
 	"dependencies": {
 		"@yummacss/nitro": "^0.1.0",
 		"chokidar": "^4.0.3",
