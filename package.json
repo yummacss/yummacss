@@ -1,6 +1,6 @@
 {
 	"name": "yummacss",
-	"version": "3.5.1",
+	"version": "3.5.0",
 	"description": "A CLI-first CSS framework for the web with abbreviated styles.",
 	"keywords": [
 		"css-framework",
