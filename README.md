@@ -22,7 +22,7 @@ npx yummacss build
 
 ## Documentation
 
-Learn more at [yummacss.com](https://yummacss.com/api-reference)
+Learn more at [yummacss.com/api-reference](https://yummacss.com/api-reference)
 
 ## License
 
