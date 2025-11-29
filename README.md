@@ -11,13 +11,13 @@ Install `yummacss` as a dev dependency and initialize configuration
 
 ```bash
 npm install yummacss -D
-npx yummacss i
+npx yummacss init
 ```
 
 Build styles
 
-```
-npx yummacss b
+```bash
+npx yummacss build
 ```
 
 ## Documentation
