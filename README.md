@@ -1,19 +1,29 @@
-# [@yummacss/nitro](https://www.npmjs.com/package/@yummacss/nitro)
+# [@yummacss](www.yummacss.com)
 
-The generator engine for Yumma CSS.
+A CLI-first CSS framework for the web with abbreviated styles.
 
-[![NPM Version](https://img.shields.io/npm/v/@yummacss/nitro?style=plastic&label=@yummacss/nitro&labelColor=eaedfc&color=413cb8)](https://www.npmjs.com/package/@yummacss/nitro)
-[![NPM Downloads](https://img.shields.io/npm/d18m/@yummacss/nitro?style=plastic&label=downloads&labelColor=eaedfc&color=413cb8)](https://www.npmjs.com/package/@yummacss/nitro)
+[![NPM Version](https://img.shields.io/npm/v/yummacss?style=plastic&label=yummacss&labelColor=eaedfc&color=413cb8)](https://www.npmjs.com/package/yummacss)
+[![NPM Downloads](https://img.shields.io/npm/d18m/yummacss?style=plastic&label=downloads&labelColor=eaedfc&color=413cb8)](https://www.npmjs.com/package/yummacss)
+
+## Installing
+
+Install `yummacss` as a dev dependency and initialize configuration
+
+```bash
+npm install yummacss -D
+npx yummacss init
+```
+
+Build styles
+
+```bash
+npx yummacss build
+```
 
 ## Documentation
 
 Learn more at [yummacss.com](https://yummacss.com)
 
-## Built with
-
-- [@yummacss/api](https://www.npmjs.com/package/@yummacss/api)
-- [typescript](https://www.npmjs.com/package/typescript)
-
 ## License
 
-This project is licensed under the [MIT License](LICENSE)
+This project is licensed under the [MIT License](LICENSE).
