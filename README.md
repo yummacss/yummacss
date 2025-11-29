@@ -1,4 +1,4 @@
-# [yummacss](https://www.npmjs.com/package/yummacss)
+# [@yummacss](www.yummacss.com)
 
 A CLI-first CSS framework for the web with abbreviated styles.
 
@@ -11,24 +11,18 @@ Install `yummacss` as a dev dependency and initialize configuration
 
 ```bash
 npm install yummacss -D
-npx yummacss init
+npx yummacss i
 ```
 
 Build styles
 
 ```
-npx yummacss build
+npx yummacss b
 ```
 
 ## Documentation
 
 Learn more at [yummacss.com](https://yummacss.com)
-
-## Built with
-
-- [@yummacss/nitro](https://www.npmjs.com/package/@yummacss/nitro)
-- [lightningcss](https://www.npmjs.com/package/lightningcss)
-- [typescript](https://www.npmjs.com/package/typescript)
 
 ## License
 
