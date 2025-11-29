@@ -1,8 +1,9 @@
 {
   "name": "@yummacss/api",
-  "version": "1.7.3",
+  "version": "3.5.0",
   "description": "The API behind Yumma CSS.",
   "keywords": [
+    "css-framework",
     "typescript",
     "yummacss"
   ],
