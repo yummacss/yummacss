@@ -26,4 +26,4 @@ Learn more at [yummacss.com](https://yummacss.com)
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE)
+This project is licensed under the [MIT License](LICENSE).
