@@ -1,29 +1,29 @@
-# [@yummacss/api](https://www.npmjs.com/package/@yummacss/api)
+# [@yummacss](www.yummacss.com)
 
-Typescript definitions for Yumma CSS projects.
+A CLI-first CSS framework for the web with abbreviated styles.
 
-[![NPM Version](https://img.shields.io/npm/v/@yummacss/api?style=plastic&label=@yummacss/api&labelColor=eaedfc&color=413cb8)](https://www.npmjs.com/package/@yummacss/api)
-[![NPM Downloads](https://img.shields.io/npm/d18m/@yummacss/api?style=plastic&label=downloads&labelColor=eaedfc&color=413cb8)](https://www.npmjs.com/package/@yummacss/api)
+[![NPM Version](https://img.shields.io/npm/v/yummacss?style=plastic&label=yummacss&labelColor=eaedfc&color=413cb8)](https://www.npmjs.com/package/yummacss)
+[![NPM Downloads](https://img.shields.io/npm/d18m/yummacss?style=plastic&label=downloads&labelColor=eaedfc&color=413cb8)](https://www.npmjs.com/package/yummacss)
 
-## Getting started
+## Installing
 
-Yumma CSS API provides access to Yumma CSS utilities through Javascript functions.
-
-### Installing
+Install `yummacss` as a dev dependency and initialize configuration
 
 ```bash
-npm i @yummacss/api
+npm install yummacss -D
+npx yummacss init
+```
+
+Build styles
+
+```bash
+npx yummacss build
 ```
 
 ## Documentation
 
-Learn more at [yummacss.com](https://yummacss.com)
-
-## Built with
-
-- [tinycolor2](https://www.npmjs.com/package/tinycolor2)
-- [typescript](https://www.npmjs.com/package/typescript)
+Learn more at [yummacss.com](https://yummacss.com/api-reference)
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE)
+This project is licensed under the [MIT License](LICENSE).
