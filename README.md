@@ -1,27 +1,29 @@
-# [@yummacss/runtime](https://www.npmjs.com/package/@yummacss/runtime)
+# [@yummacss](www.yummacss.com)
 
-Zero-config browser runtime for Yumma CSS.
+A CLI-first CSS framework for the web with abbreviated styles.
 
-[![NPM Version](https://img.shields.io/npm/v/@yummacss/runtime?style=plastic&label=@yummacss/runtime&labelColor=eaedfc&color=413cb8)](https://www.npmjs.com/package/@yummacss/runtime)
-[![NPM Downloads](https://img.shields.io/npm/d18m/@yummacss/runtime?style=plastic&label=downloads&labelColor=eaedfc&color=413cb8)](https://www.npmjs.com/package/@yummacss/runtime)
+[![NPM Version](https://img.shields.io/npm/v/yummacss?style=plastic&label=yummacss&labelColor=eaedfc&color=413cb8)](https://www.npmjs.com/package/yummacss)
+[![NPM Downloads](https://img.shields.io/npm/d18m/yummacss?style=plastic&label=downloads&labelColor=eaedfc&color=413cb8)](https://www.npmjs.com/package/yummacss)
 
-## Using the CDN
+## Installing
 
-Copy the following script tag into your HTML file:
+Install `yummacss` as a dev dependency and initialize configuration
 
 ```bash
-<script src="https://cdn.jsdelivr.net/npm/@yummacss/runtime@0"></script>
+npm install yummacss -D
+npx yummacss init
+```
+
+Build styles
+
+```bash
+npx yummacss build
 ```
 
 ## Documentation
 
 Learn more at [yummacss.com](https://yummacss.com)
 
-## Built with
-
-- [@yummacss/nitro](https://www.npmjs.com/package/@yummacss/nitro)
-- [typescript](https://www.npmjs.com/package/typescript)
-
 ## License
 
-This project is licensed under the [MIT License](LICENSE)
+This project is licensed under the [MIT License](LICENSE).

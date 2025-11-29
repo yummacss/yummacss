@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [3.5.0] - 2025-11-28
+
+### Features
+
+- Synchronize versioning with Yumma CSS.
+
 ## [0.1.1] - 2025-11-13
 
 ### Features
