@@ -58,95 +58,86 @@ function tryGenerateRule(
 	className: string,
 	util: Utility,
 ): { rule: string; mediaQuery?: string } | null {
-	const { properties, variants } = util;
+	const { properties, variants, prefix, values } = util;
+	let currentClassName = className;
+	let mediaQuery: string | undefined;
+	let pseudoClasses = "";
+	let opacityValue = "";
 
-	// include media queries variants
-	if (variants?.mediaQueries) {
-		for (const mq of variants.mediaQueries) {
-			if (className.startsWith(`${mq.prefix}:`)) {
-				const baseClassName = className.slice(mq.prefix.length + 1);
-				const res = tryGenerateBaseRule(baseClassName, util);
-				if (res) {
-					const declarations = properties
-						.map((prop) => `${prop}: ${res.propertyValue};`)
-						.join("\n");
-					return {
-						rule: `.${escapeCn(className)} {\n  ${declarations}\n  }`,
-						mediaQuery: mq.value,
-					};
+	// 1. Extract variants (prefixes)
+	let foundPrefix = true;
+	while (foundPrefix) {
+		foundPrefix = false;
+
+		// Handle media queries
+		if (variants?.mediaQueries) {
+			for (const mq of variants.mediaQueries) {
+				if (currentClassName.startsWith(`${mq.prefix}:`)) {
+					mediaQuery = mq.value; // Note: currently only supports one media query (the last one)
+					currentClassName = currentClassName.slice(mq.prefix.length + 1);
+					foundPrefix = true;
+					break;
+				}
+			}
+		}
+
+		if (foundPrefix) continue;
+
+		// Handle pseudo classes
+		if (variants?.pseudoClasses) {
+			for (const pc of variants.pseudoClasses) {
+				if (currentClassName.startsWith(`${pc.prefix}:`)) {
+					pseudoClasses += pc.value;
+					currentClassName = currentClassName.slice(pc.prefix.length + 1);
+					foundPrefix = true;
+					break;
 				}
 			}
 		}
 	}
 
-	// include pseudo classes variants
-	if (variants?.pseudoClasses) {
-		for (const pc of variants.pseudoClasses) {
-			if (className.startsWith(`${pc.prefix}:`)) {
-				const baseClassName = className.slice(pc.prefix.length + 1);
-				const res = tryGenerateBaseRule(baseClassName, util);
-				if (res) {
-					const declarations = properties
-						.map((prop) => `${prop}: ${res.propertyValue};`)
-						.join("\n");
-					return {
-						rule: `.${escapeCn(className)}${pc.value} {\n${declarations}\n}`,
-					};
-				}
-			}
-		}
-	}
-
-	// include opacity color variants
+	// 2. Handle opacity (suffix)
 	if (variants?.opacity) {
 		for (const op of variants.opacity) {
-			if (className.endsWith(`/${op.prefix}`)) {
-				const baseClassName = className.slice(0, -(op.prefix.length + 1));
-				const res = tryGenerateBaseRule(baseClassName, util);
-				if (res) {
-					const modPropertyValue =
-						res.propertyValue.startsWith("#") && res.propertyValue.length === 7
-							? `${res.propertyValue}${op.value}`
-							: res.propertyValue;
-					const declarations = properties
-						.map((prop) => `${prop}: ${modPropertyValue};`)
-						.join("\n");
-					return {
-						rule: `.${escapeCn(className)} {\n${declarations}\n}`,
-					};
-				}
+			if (currentClassName.endsWith(`/${op.prefix}`)) {
+				opacityValue = op.value;
+				currentClassName = currentClassName.slice(0, -(op.prefix.length + 1));
+				break;
 			}
 		}
 	}
 
-	// try base rule
-	const baseRule = tryGenerateBaseRule(className, util);
-	if (baseRule) {
-		const declarations = properties
-			.map((prop) => `${prop}: ${baseRule.propertyValue};`)
-			.join("\n");
-		return {
-			rule: `.${escapeCn(className)} {\n${declarations}\n}`,
-		};
+	// 3. Match base utility
+	if (
+		!currentClassName.startsWith(`${prefix}-`) &&
+		currentClassName !== prefix
+	) {
+		return null;
 	}
 
-	return null;
-}
+	const valuePart =
+		currentClassName === prefix
+			? ""
+			: currentClassName.slice(prefix.length + 1);
+	const propertyValue =
+		values[valuePart === "" ? "base" : valuePart] || values[valuePart];
 
-function tryGenerateBaseRule(
-	className: string,
-	util: Utility,
-): { propertyValue: string } | null {
-	const { prefix, values } = util;
+	if (!propertyValue) return null;
 
-	if (!className.startsWith(`${prefix}-`)) return null;
+	// 4. Apply opacity
+	const finalPropertyValue =
+		opacityValue && propertyValue.startsWith("#") && propertyValue.length === 7
+			? `${propertyValue}${opacityValue}`
+			: propertyValue;
 
-	const valuePart = className.slice(prefix.length + 1);
-	const cssValue = values[valuePart];
+	const declarations = properties
+		.map((prop) => `${prop}: ${finalPropertyValue};`)
+		.join("\n  ");
 
-	if (!cssValue) return null;
-
-	return { propertyValue: cssValue };
+	return {
+		rule: `.${escapeCn(className)}${pseudoClasses} {\n  ${declarations}\n}`,
+		mediaQuery,
+	};
 }
 
 // escape colons and slashes

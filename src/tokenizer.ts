@@ -9,16 +9,12 @@ export function tokenizer(content: string): string[] {
 	];
 
 	// template literals
-	const templateRegexes = [
-		/`[^`]*\b([a-z]+-[a-z0-9-]+)\b[^`]*`/g,
-		/"[^"]*\b([a-z]+-[a-z0-9-]+)\b[^"]*"/g,
-		/'[^']*\b([a-z]+-[a-z0-9-]+)\b[^']*'/g,
-	];
+	const templateRegexes = [/`([^`]+)`/g, /"([^"]+)"/g, /'([^']+)'/g];
 
 	// cva (class variance authority)
 	const cvaRegexes = [
 		/cva\s*\(\s*["'`]([^"'`]+)["'`]/g,
-		/:\s*["'`]([^"'`]*\b[a-z]+-[a-z0-9-]+[^"'`]*)["'`]/g,
+		/:\s*["'`]([^"'`]+)["'`]/g,
 	];
 
 	// cn utility

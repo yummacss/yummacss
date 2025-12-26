@@ -1,46 +1,46 @@
 {
-  "name": "@yummacss/nitro",
-  "version": "3.5.0",
-  "description": "The engine behind Yumma CSS.",
-  "keywords": [
-    "css-framework",
-    "typescript",
-    "yummacss"
-  ],
-  "homepage": "https://yummacss.com",
-  "license": "MIT",
-  "author": "Renildo Pereira",
-  "files": [
-    "dist"
-  ],
-  "type": "module",
-  "exports": {
-    ".": "./dist/index.js",
-    "./browser": "./dist/browser.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/yumma-lib/yumma-css-nitro.git"
-  },
-  "scripts": {
-    "build": "tsdown",
-    "dev": "tsdown --watch",
-    "lint": "biome check --write"
-  },
-  "packageManager": "pnpm@10.21.0",
-  "dependencies": {
-    "@yummacss/api": "^1.7.2",
-    "globby": "^15.0.0",
-    "zod": "^4.0.17"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "2.2.5",
-    "@types/node": "^24.2.0",
-    "tsdown": "^0.15.0",
-    "typescript": "^5.9.2"
-  },
-  "publishConfig": {
-    "access": "public",
-    "provenance": false
-  }
+	"name": "@yummacss/nitro",
+	"version": "0.3.0",
+	"description": "The engine behind Yumma CSS.",
+	"keywords": [
+		"css-framework",
+		"typescript",
+		"yummacss"
+	],
+	"homepage": "https://yummacss.com",
+	"license": "MIT",
+	"author": "Renildo Pereira",
+	"files": [
+		"dist"
+	],
+	"type": "module",
+	"exports": {
+		".": "./dist/index.js",
+		"./browser": "./dist/browser.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/yumma-lib/yumma-css-nitro.git"
+	},
+	"scripts": {
+		"build": "tsdown",
+		"dev": "tsdown --watch",
+		"lint": "biome check --write"
+	},
+	"packageManager": "pnpm@10.21.0",
+	"dependencies": {
+		"@yummacss/api": "^1.7.2",
+		"globby": "^15.0.0",
+		"zod": "^4.0.17"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.2.5",
+		"@types/node": "^24.2.0",
+		"tsdown": "^0.15.0",
+		"typescript": "^5.9.2"
+	},
+	"publishConfig": {
+		"access": "public",
+		"provenance": false
+	}
 }

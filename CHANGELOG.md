@@ -2,7 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
-## [3.5.0] - 2025-11-28
+## [0.3.0] - 2025-12-26
+
+### Features
+
+- Add support for chainable modifiers.
 
 ### Features
 
