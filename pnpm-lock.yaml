@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@yummacss/nitro':
-        specifier: ^0.3.0
-        version: 0.3.0
+        specifier: ^0.3.1
+        version: 0.3.1
     devDependencies:
       '@biomejs/biome':
         specifier: 2.3.10
@@ -237,8 +237,8 @@ packages:
   '@yummacss/api@1.7.2':
     resolution: {integrity: sha512-mx53stYJ6WfVIgaq2ppOMkLpHyQ4UT2VvsAdBsgPVJ1sldrsiQtTYsQTBj2L5b3moYOBmaRLLVe0T+meSIfR6w==}
 
-  '@yummacss/nitro@0.3.0':
-    resolution: {integrity: sha512-IokQJ3e1B92F4p6hJI+/vOZSeHHwG6DA+1lJvZ8Yumuakw1fbiLnYaMIOoz0ROrwkUgyqGkVjgXCTXaIA3Yrig==}
+  '@yummacss/nitro@0.3.1':
+    resolution: {integrity: sha512-plUXPFh0QR4A7cPPi6A3B1nyKogKVJaOeuEPuUPisLrT50hwqb7sL4hGCCvEd/qO6+AZOdxn8kqYb+iTch4/yg==}
 
   ansis@4.2.0:
     resolution: {integrity: sha512-HqZ5rWlFjGiV0tDm3UxxgNRqsOTniqoKZu0pIAfh7TZQMGuZK+hH0drySty0si0QXj1ieop4+SkSfPZBPPkHig==}
@@ -655,7 +655,7 @@ snapshots:
     dependencies:
       tinycolor2: 1.6.0
 
-  '@yummacss/nitro@0.3.0':
+  '@yummacss/nitro@0.3.1':
     dependencies:
       '@yummacss/api': 1.7.2
       globby: 16.1.0

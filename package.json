@@ -32,7 +32,7 @@
   },
   "packageManager": "pnpm@10.26.2",
   "dependencies": {
-    "@yummacss/nitro": "^0.3.0"
+    "@yummacss/nitro": "^0.3.1"
   },
   "devDependencies": {
     "@biomejs/biome": "2.3.10",
