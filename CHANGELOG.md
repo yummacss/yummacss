@@ -2,11 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
-## [Unreleased]
+## [3.6.0] - 2025-12-26
 
 ### Features
 
-- No user-facing changes.
+- Add support for arbitrary, chainable variants (e.g. `lg:h:bg-red/50`).
 
 ## [3.5.0] - 2025-10-11
 
