@@ -6,7 +6,7 @@ All notable changes to this project will be documented in this file.
 
 ### Fixes
 
-- Fixed exports to use `mjs` instead of `js`.
+- Update exports to use `iife.js`.
 
 ## [0.2.0] - 2025-12-26
 

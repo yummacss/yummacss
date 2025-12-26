@@ -13,12 +13,12 @@
   "files": [
     "dist"
   ],
-  "main": "./dist/index.iife.mjs",
-  "jsdelivr": "./dist/index.iife.mjs",
-  "unpkg": "./dist/index.iife.mjs",
+  "main": "./dist/index.iife.js",
+  "jsdelivr": "./dist/index.iife.js",
+  "unpkg": "./dist/index.iife.js",
   "type": "module",
   "exports": {
-    ".": "./dist/index.mjs"
+    ".": "./dist/index.iife.js"
   },
   "repository": {
     "type": "git",
