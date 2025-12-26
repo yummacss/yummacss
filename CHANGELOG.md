@@ -2,11 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
-## [3.5.0] - 2025-11-28
+## [0.2.0] - 2025-12-26
 
 ### Features
 
-- Synchronize versioning with Yumma CSS.
+- Add support for arbitrary, chainable variants (e.g. `lg:h:bg-red/50`).
 
 ## [0.1.1] - 2025-11-13
 
