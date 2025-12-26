@@ -1,6 +1,6 @@
 {
 	"name": "yummacss",
-	"version": "3.6.0",
+	"version": "3.6.1",
 	"description": "A CLI-first CSS framework for the web with abbreviated styles.",
 	"keywords": [
 		"css-framework",
@@ -15,10 +15,10 @@
 	],
 	"type": "module",
 	"exports": {
-		".": "./dist/index.js"
+		".": "./dist/index.mjs"
 	},
 	"bin": {
-		"yummacss": "./dist/index.js"
+		"yummacss": "./dist/index.mjs"
 	},
 	"repository": {
 		"type": "git",

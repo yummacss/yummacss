@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [3.6.1] - 2025-12-26
+
+### Fixes
+
+- Fixed exports to use `mjs` instead of `js`.
+
 ## [3.6.0] - 2025-12-26
 
 ### Features
