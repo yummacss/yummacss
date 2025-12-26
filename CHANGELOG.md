@@ -6,7 +6,7 @@ All notable changes to this project will be documented in this file.
 
 ### Features
 
-- Add support for chainable modifiers.
+- Add support for chainable modifiers (e.g. `lg:h:bg-red/50`).
 
 ### Features
 
