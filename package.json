@@ -1,6 +1,6 @@
 {
 	"name": "@yummacss/nitro",
-	"version": "0.3.1",
+	"version": "0.4.0",
 	"description": "The engine behind Yumma CSS.",
 	"keywords": [
 		"css-framework",
@@ -13,10 +13,17 @@
 	"files": [
 		"dist"
 	],
+	"types": "./dist/index.d.mts",
 	"type": "module",
 	"exports": {
-		".": "./dist/index.mjs",
-		"./browser": "./dist/browser.mjs"
+		".": {
+			"types": "./dist/index.d.mts",
+			"import": "./dist/index.mjs"
+		},
+		"./browser": {
+			"types": "./dist/browser.d.mts",
+			"import": "./dist/browser.mjs"
+		}
 	},
 	"repository": {
 		"type": "git",
