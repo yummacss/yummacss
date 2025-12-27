@@ -2,8 +2,8 @@
 
 A CLI-first CSS framework for the web with abbreviated styles.
 
-[![NPM Version](https://img.shields.io/npm/v/yummacss?style=flat-square&label=yummacss&labelColor=151724&color=31365e)](https://www.npmjs.com/package/yummacss)
-[![NPM Downloads](https://img.shields.io/npm/d18m/yummacss?style=flat-square&label=downloads&labelColor=151724&color=31365e)](https://www.npmjs.com/package/yummacss)
+[![NPM Version](https://img.shields.io/npm/v/yummacss?style=flat&label=yummacss&labelColor=f7f7f7&color=cb3837)](https://www.npmjs.com/package/yummacss)
+[![NPM Downloads](https://img.shields.io/npm/d18m/yummacss?style=flat&label=downloads&labelColor=f7f7f7&color=cb3837)](https://www.npmjs.com/package/yummacss)
 
 ## Installing
 
