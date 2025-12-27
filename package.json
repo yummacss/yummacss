@@ -1,6 +1,6 @@
 {
   "name": "@yummacss/runtime",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Zero-config browser runtime for Yumma CSS.",
   "keywords": [
     "css-framework",
@@ -32,7 +32,7 @@
   },
   "packageManager": "pnpm@10.26.2",
   "dependencies": {
-    "@yummacss/nitro": "^0.3.1"
+    "@yummacss/nitro": "^0.4.0"
   },
   "devDependencies": {
     "@biomejs/biome": "2.3.10",
