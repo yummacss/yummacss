@@ -16,6 +16,6 @@ export const feedback = {
 		fail: "Watch failed.",
 	},
 	common: {
-		unknownError: "Something went wrong, and we don't know what.",
+		unknownError: "Something went wrong",
 	},
 };

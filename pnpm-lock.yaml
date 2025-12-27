@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@yummacss/nitro':
-        specifier: ^0.3.0
-        version: 0.3.0
+        specifier: ^0.4.0
+        version: 0.4.0
       chokidar:
         specifier: ^5.0.0
         version: 5.0.0
@@ -261,8 +261,8 @@ packages:
   '@yummacss/api@1.7.2':
     resolution: {integrity: sha512-mx53stYJ6WfVIgaq2ppOMkLpHyQ4UT2VvsAdBsgPVJ1sldrsiQtTYsQTBj2L5b3moYOBmaRLLVe0T+meSIfR6w==}
 
-  '@yummacss/nitro@0.3.0':
-    resolution: {integrity: sha512-IokQJ3e1B92F4p6hJI+/vOZSeHHwG6DA+1lJvZ8Yumuakw1fbiLnYaMIOoz0ROrwkUgyqGkVjgXCTXaIA3Yrig==}
+  '@yummacss/nitro@0.4.0':
+    resolution: {integrity: sha512-sHloX2C+5IASA1n7L/5DKvuXjBf0MjPL+HQ0jLNHXOtOlT5s3zV09Pewqu8WFRz4yrp2K5empp/GFcTQUMZBiA==}
 
   ansi-regex@6.2.2:
     resolution: {integrity: sha512-Bq3SmSpyFHaWjPk8If9yc6svM8c56dB5BAtW4Qbw5jHTwwXXcTLoRMkpDJp6VL0XzlWaCHTXrkFURMYmD0sLqg==}
@@ -898,7 +898,7 @@ snapshots:
     dependencies:
       tinycolor2: 1.6.0
 
-  '@yummacss/nitro@0.3.0':
+  '@yummacss/nitro@0.4.0':
     dependencies:
       '@yummacss/api': 1.7.2
       globby: 16.1.0
