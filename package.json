@@ -1,6 +1,6 @@
 {
 	"name": "yummacss",
-	"version": "3.6.1",
+	"version": "3.6.2",
 	"description": "A CLI-first CSS framework for the web with abbreviated styles.",
 	"keywords": [
 		"css-framework",
@@ -32,7 +32,7 @@
 	},
 	"packageManager": "pnpm@10.26.2",
 	"dependencies": {
-		"@yummacss/nitro": "^0.3.0",
+		"@yummacss/nitro": "^0.4.0",
 		"chokidar": "^5.0.0",
 		"commander": "^14.0.2",
 		"globby": "^16.1.0",

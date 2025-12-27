@@ -14,12 +14,12 @@ cli
 	.command("build")
 	.action(() => build().catch(() => process.exit(1)))
 	.alias("b")
-	.description("Build styles once");
+	.description("Build styles once.");
 
 cli
 	.command("watch")
 	.action(() => watch().catch(() => process.exit(1)))
 	.alias("w")
-	.description("Build styles continuously");
+	.description("Build styles continuously.");
 
 cli.parse(process.argv);
