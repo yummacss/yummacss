@@ -17,12 +17,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Breaking changes
 
-- Renamed `b-*` utilities to `bw-*` (border-width).
+- Renamed `b-*` utilities to `bw-*` (`border-width`).
 - Renamed `b-*` variants (e.g., `bt`, `br`) to `bw-*` equivalents (e.g., `btw`, `brw`).
-- Renamed `b` utility to `bs` (border-style).
-- Renamed `rad-*` utilities to `br-*` (border-radius).
-- Renamed `tc-*` utilities to `c-*` (color).
-- Renamed `bo-*` utilities to `b-*` (bottom).
+- Renamed `b` utility to `bs` (`border-style`).
+- Renamed `rad-*` utilities to `br-*` (`border-radius`).
+- Renamed `tc-*` utilities to `c-*` (`color`).
+- Renamed `bo-*` utilities to `b-*` (`bottom`).
 - Extended `top`, `right`, `bottom`, `left`, `inset`, `inset-x`, `inset-y` utilities range from `16` to `100`.
 
 ## [1.7.2] - 2025-10-11
