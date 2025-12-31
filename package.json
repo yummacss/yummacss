@@ -32,7 +32,7 @@
 	},
 	"packageManager": "pnpm@10.26.2",
 	"dependencies": {
-		"@yummacss/nitro": "^0.4.0",
+		"@yummacss/nitro": "^0.5.0",
 		"chokidar": "^5.0.0",
 		"commander": "^14.0.2",
 		"globby": "^16.1.0",
