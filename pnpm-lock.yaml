@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@yummacss/nitro':
-        specifier: ^0.4.0
-        version: 0.4.0
+        specifier: ^0.5.0
+        version: 0.5.0
     devDependencies:
       '@biomejs/biome':
         specifier: 2.3.10
@@ -19,8 +19,8 @@ importers:
         specifier: ^25.0.3
         version: 25.0.3
       tsdown:
-        specifier: ^0.18.3
-        version: 0.18.3(typescript@5.9.3)
+        specifier: ^0.18.4
+        version: 0.18.4(typescript@5.9.3)
       typescript:
         specifier: ^5.9.3
         version: 5.9.3
@@ -123,8 +123,8 @@ packages:
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
 
-  '@napi-rs/wasm-runtime@1.1.0':
-    resolution: {integrity: sha512-Fq6DJW+Bb5jaWE69/qOE0D1TUN9+6uWhCeZpdnSBk14pjLcCWR7Q8n49PTSPHazM37JqrsdpEthXy2xn6jWWiA==}
+  '@napi-rs/wasm-runtime@1.1.1':
+    resolution: {integrity: sha512-p64ah1M1ld8xjWv3qbvFwHiFVWrq1yFvV4f7w+mzaqiR4IlSgkqhcRdHwsGgomwzBH51sRY4NEowLxnaBjcW/A==}
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -234,11 +234,11 @@ packages:
   '@types/node@25.0.3':
     resolution: {integrity: sha512-W609buLVRVmeW693xKfzHeIV6nJGGz98uCPfeXI1ELMLXVeKYZ9m15fAMSaUPBHYLGFsVRcMmSCksQOrZV9BYA==}
 
-  '@yummacss/api@1.7.2':
-    resolution: {integrity: sha512-mx53stYJ6WfVIgaq2ppOMkLpHyQ4UT2VvsAdBsgPVJ1sldrsiQtTYsQTBj2L5b3moYOBmaRLLVe0T+meSIfR6w==}
+  '@yummacss/api@1.8.0':
+    resolution: {integrity: sha512-25TGiA95QrqZAaICuxpmHD6e896THz26qjXPl6IXLDhqJGx+UU269Ks8gcE5eqdbWqEN99/Us18optaEWvNfDA==}
 
-  '@yummacss/nitro@0.4.0':
-    resolution: {integrity: sha512-sHloX2C+5IASA1n7L/5DKvuXjBf0MjPL+HQ0jLNHXOtOlT5s3zV09Pewqu8WFRz4yrp2K5empp/GFcTQUMZBiA==}
+  '@yummacss/nitro@0.5.0':
+    resolution: {integrity: sha512-ZqbPWEaH3V+ZO3ulIFHG1eUTn5CHfPz5QrZ0+0A0tity0cOUTLjMJBoe+QWzXzg8e4LJpBGd9gKByaTXJXfsAw==}
 
   ansis@4.2.0:
     resolution: {integrity: sha512-HqZ5rWlFjGiV0tDm3UxxgNRqsOTniqoKZu0pIAfh7TZQMGuZK+hH0drySty0si0QXj1ieop4+SkSfPZBPPkHig==}
@@ -428,8 +428,8 @@ packages:
     resolution: {integrity: sha512-L0Orpi8qGpRG//Nd+H90vFB+3iHnue1zSSGmNOOCh1GLJ7rUKVwV2HvijphGQS2UmhUZewS9VgvxYIdgr+fG1A==}
     hasBin: true
 
-  tsdown@0.18.3:
-    resolution: {integrity: sha512-OVFzktKDTglFAUh/WO8WamBUbZoBlJ9m7NgZZrVyIKe32BfXBeRZ+soFFpuOGVP8g8OU4tOLOpTyPTELWvcTFw==}
+  tsdown@0.18.4:
+    resolution: {integrity: sha512-J/tRS6hsZTkvqmt4+xdELUCkQYDuUCXgBv0fw3ImV09WPGbEKfsPD65E+WUjSu3E7Z6tji9XZ1iWs8rbGqB/ZA==}
     engines: {node: '>=20.19.0'}
     hasBin: true
     peerDependencies:
@@ -481,8 +481,8 @@ packages:
       synckit:
         optional: true
 
-  zod@4.2.1:
-    resolution: {integrity: sha512-0wZ1IRqGGhMP76gLqz8EyfBXKk0J2qo2+H3fi4mcUP/KtTocoX08nmIAHl1Z2kJIZbZee8KOpBCSNPRgauucjw==}
+  zod@4.3.2:
+    resolution: {integrity: sha512-b8L8yn4rIVfiXyHAmnr52/ZEpDumlT0bmxiq3Ws1ybrinhflGpt12Hvv54kYnEsGPRs6o/Ka3/ppA2OWY21IVg==}
 
 snapshots:
 
@@ -572,7 +572,7 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
 
-  '@napi-rs/wasm-runtime@1.1.0':
+  '@napi-rs/wasm-runtime@1.1.1':
     dependencies:
       '@emnapi/core': 1.7.1
       '@emnapi/runtime': 1.7.1
@@ -629,7 +629,7 @@ snapshots:
 
   '@rolldown/binding-wasm32-wasi@1.0.0-beta.57':
     dependencies:
-      '@napi-rs/wasm-runtime': 1.1.0
+      '@napi-rs/wasm-runtime': 1.1.1
     optional: true
 
   '@rolldown/binding-win32-arm64-msvc@1.0.0-beta.57':
@@ -651,15 +651,15 @@ snapshots:
     dependencies:
       undici-types: 7.16.0
 
-  '@yummacss/api@1.7.2':
+  '@yummacss/api@1.8.0':
     dependencies:
       tinycolor2: 1.6.0
 
-  '@yummacss/nitro@0.4.0':
+  '@yummacss/nitro@0.5.0':
     dependencies:
-      '@yummacss/api': 1.7.2
+      '@yummacss/api': 1.8.0
       globby: 16.1.0
-      zod: 4.2.1
+      zod: 4.3.2
 
   ansis@4.2.0: {}
 
@@ -818,7 +818,7 @@ snapshots:
 
   tree-kill@1.2.2: {}
 
-  tsdown@0.18.3(typescript@5.9.3):
+  tsdown@0.18.4(typescript@5.9.3):
     dependencies:
       ansis: 4.2.0
       cac: 6.7.14
@@ -863,4 +863,4 @@ snapshots:
     dependencies:
       rolldown: 1.0.0-beta.57
 
-  zod@4.2.1: {}
+  zod@4.3.2: {}
