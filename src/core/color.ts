@@ -71,7 +71,7 @@ export const color: Colors = {
 		variants: opacityPreset,
 	},
 	color: {
-		prefix: "tc",
+		prefix: "c",
 		properties: ["color"],
 		slug: "color",
 		values: defaultColors,

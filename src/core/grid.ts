@@ -8,12 +8,15 @@ export const grid: Utilities = {
 		prefix: "cg",
 		properties: ["column-gap"],
 		slug: "column-gap",
-		values: createValues({
-			base: gap,
-			unit: "rem",
-			min: 0,
-			max: 100,
-		}),
+		values: {
+			...createValues({
+				base: gap,
+				unit: "rem",
+				min: 0,
+				max: 100,
+			}),
+			px: "1px",
+		},
 		variants: standardPreset,
 	},
 
@@ -21,12 +24,15 @@ export const grid: Utilities = {
 		prefix: "g",
 		properties: ["gap"],
 		slug: "gap",
-		values: createValues({
-			base: gap,
-			unit: "rem",
-			min: 0,
-			max: 100,
-		}),
+		values: {
+			...createValues({
+				base: gap,
+				unit: "rem",
+				min: 0,
+				max: 100,
+			}),
+			px: "1px",
+		},
 		variants: standardPreset,
 	},
 
@@ -265,12 +271,15 @@ export const grid: Utilities = {
 		prefix: "rg",
 		properties: ["row-gap"],
 		slug: "row-gap",
-		values: createValues({
-			base: gap,
-			unit: "rem",
-			min: 0,
-			max: 100,
-		}),
+		values: {
+			...createValues({
+				base: gap,
+				unit: "rem",
+				min: 0,
+				max: 100,
+			}),
+			px: "1px",
+		},
 		variants: standardPreset,
 	},
 };
