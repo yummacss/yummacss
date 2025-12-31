@@ -18,7 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Breaking changes
 
 - Renamed `b-*` utilities to `bw-*` (`border-width`).
-- Renamed `b-*` variants (e.g., `bt`, `br`) to `bw-*` equivalents (e.g., `btw`, `brw`).
+- Renamed `b-*` variants (e.g., `bt`, `br`) to `bw-*` equivalents (e.g. `btw`, `brw`).
 - Renamed `b` utility to `bs` (`border-style`).
 - Renamed `rad-*` utilities to `br-*` (`border-radius`).
 - Renamed `tc-*` utilities to `c-*` (`color`).
