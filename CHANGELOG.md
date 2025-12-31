@@ -10,14 +10,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Features
 
 - Added `px` variants to all `border` and `gap` utilities.
-- Added `wm-*` utilities (`writing-mode`).
-- Added `va-*` utilities (`vertical-align`).
-- Added `ts-*` utilities (`tab-size`).
 - Added `s` value (`stretch`) to `height`, `width` and Dimension utilities.
+- Added `ts-*` utilities (`tab-size`).
+- Added `va-*` utilities (`vertical-align`).
+- Added `wm-*` utilities (`writing-mode`).
+- Extended `top`, `right`, `bottom`, `left`, `inset`, `inset-x`, `inset-y` utilities range from `16` to `100`.
 
 ### Breaking changes
 
-- Extended `top`, `right`, `bottom`, `left`, `inset`, `inset-x`, `inset-y` utilities range from `16` to `100`.
 - Renamed `9` to `pill` in all `border-radius` utilities.
 - Renamed `b-*` utilities to `bw-*` (`border-width`).
 - Renamed `b-*` variants (e.g., `bt`, `br`) to `bw-*` equivalents (e.g. `btw`, `brw`).
