@@ -57,6 +57,19 @@ export const text: Utilities = {
 		variants: standardPreset,
 	},
 
+	"tab-size": {
+		prefix: "ts",
+		properties: ["tab-size"],
+		slug: "tab-size",
+		values: {
+			"0": "0",
+			"2": "2",
+			"4": "4",
+			"8": "8",
+		},
+		variants: standardPreset,
+	},
+
 	"overflow-wrap": {
 		prefix: "ow",
 		properties: ["overflow-wrap"],
@@ -215,6 +228,37 @@ export const text: Utilities = {
 			p: "pre",
 			pl: "pre-line",
 			pw: "pre-wrap",
+		},
+		variants: standardPreset,
+	},
+
+	"vertical-align": {
+		prefix: "va",
+		properties: ["vertical-align"],
+		slug: "vertical-align",
+		values: {
+			b: "bottom",
+			ba: "baseline",
+			m: "middle",
+			s: "sub",
+			su: "super",
+			t: "top",
+			tb: "text-bottom",
+			tt: "text-top",
+		},
+		variants: standardPreset,
+	},
+
+	"writing-mode": {
+		prefix: "wm",
+		properties: ["writing-mode"],
+		slug: "writing-mode",
+		values: {
+			htb: "horizontal-tb",
+			slr: "sideways-lr",
+			srl: "sideways-rl",
+			vlr: "vertical-lr",
+			vrl: "vertical-rl",
 		},
 		variants: standardPreset,
 	},
