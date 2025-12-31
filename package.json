@@ -22,7 +22,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/yumma-lib/yumma-css.git"
+		"url": "git+https://github.com/yumma-css/yumma-css.git"
 	},
 	"scripts": {
 		"build": "tsdown",
