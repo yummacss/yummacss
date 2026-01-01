@@ -722,8 +722,8 @@ packages:
     resolution: {integrity: sha512-CzhO+pFNo8ajLM2d2IW/R93ipy99LWjtwblvC1RsoSUMZgyLbYFr221TnSNT7GjGdYui6P459mw9JH/g/zW2ug==}
     engines: {node: '>=18'}
 
-  zod@4.3.2:
-    resolution: {integrity: sha512-b8L8yn4rIVfiXyHAmnr52/ZEpDumlT0bmxiq3Ws1ybrinhflGpt12Hvv54kYnEsGPRs6o/Ka3/ppA2OWY21IVg==}
+  zod@4.3.4:
+    resolution: {integrity: sha512-Zw/uYiiyF6pUT1qmKbZziChgNPRu+ZRneAsMUDU6IwmXdWt5JwcUfy2bvLOCUtz5UniaN/Zx5aFttZYbYc7O/A==}
 
 snapshots:
 
@@ -902,7 +902,7 @@ snapshots:
     dependencies:
       '@yummacss/api': 1.8.0
       globby: 16.1.0
-      zod: 4.3.2
+      zod: 4.3.4
 
   ansi-regex@6.2.2: {}
 
@@ -1278,4 +1278,4 @@ snapshots:
 
   yoctocolors@2.1.2: {}
 
-  zod@4.3.2: {}
+  zod@4.3.4: {}
