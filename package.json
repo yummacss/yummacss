@@ -1,6 +1,6 @@
 {
 	"name": "yummacss",
-	"version": "3.7.1",
+	"version": "3.7.2",
 	"description": "A CLI-first CSS framework for the web with abbreviated styles.",
 	"keywords": [
 		"css-framework",
@@ -22,7 +22,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/yumma-css/yumma-css.git"
+		"url": "git+https://github.com/yummacss/yummacss.git"
 	},
 	"scripts": {
 		"build": "tsdown",
