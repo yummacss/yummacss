@@ -15,8 +15,8 @@ importers:
         specifier: ^16.1.0
         version: 16.1.0
       zod:
-        specifier: ^4.3.2
-        version: 4.3.2
+        specifier: ^4.3.4
+        version: 4.3.4
     devDependencies:
       '@biomejs/biome':
         specifier: 2.3.10
@@ -484,8 +484,8 @@ packages:
       synckit:
         optional: true
 
-  zod@4.3.2:
-    resolution: {integrity: sha512-b8L8yn4rIVfiXyHAmnr52/ZEpDumlT0bmxiq3Ws1ybrinhflGpt12Hvv54kYnEsGPRs6o/Ka3/ppA2OWY21IVg==}
+  zod@4.3.4:
+    resolution: {integrity: sha512-Zw/uYiiyF6pUT1qmKbZziChgNPRu+ZRneAsMUDU6IwmXdWt5JwcUfy2bvLOCUtz5UniaN/Zx5aFttZYbYc7O/A==}
 
 snapshots:
 
@@ -860,4 +860,4 @@ snapshots:
     dependencies:
       rolldown: 1.0.0-beta.57
 
-  zod@4.3.2: {}
+  zod@4.3.4: {}

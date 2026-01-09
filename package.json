@@ -1,6 +1,6 @@
 {
 	"name": "@yummacss/nitro",
-	"version": "0.5.0",
+	"version": "0.5.1",
 	"description": "The engine behind Yumma CSS.",
 	"keywords": [
 		"css-framework",
@@ -27,18 +27,18 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/yumma-css/nitro.git"
+		"url": "git+https://github.com/yummacss/nitro.git"
 	},
 	"scripts": {
 		"build": "tsdown",
 		"dev": "tsdown --watch",
 		"lint": "biome check --write"
 	},
-	"packageManager": "pnpm@10.26.2",
+	"packageManager": "pnpm@10.27.0",
 	"dependencies": {
 		"@yummacss/api": "^1.8.0",
 		"globby": "^16.1.0",
-		"zod": "^4.3.2"
+		"zod": "^4.3.4"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.3.10",
