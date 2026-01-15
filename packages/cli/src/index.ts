@@ -1,5 +1,5 @@
 import { Command } from "commander";
-import { version } from "../../package.json";
+import { version } from "../package.json";
 import { build } from "./commands/build.js";
 import { init } from "./commands/init.js";
 import { watch } from "./commands/watch.js";

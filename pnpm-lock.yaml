@@ -7,10 +7,35 @@ settings:
 importers:
 
   .:
+    devDependencies:
+      '@biomejs/biome':
+        specifier: 2.3.10
+        version: 2.3.10
+      '@types/node':
+        specifier: ^25.0.3
+        version: 25.0.3
+      tsdown:
+        specifier: ^0.18.4
+        version: 0.18.4(typescript@5.9.3)
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/api:
+    dependencies:
+      tinycolor2:
+        specifier: ^1.6.0
+        version: 1.6.0
+    devDependencies:
+      '@types/tinycolor2':
+        specifier: ^1.4.6
+        version: 1.4.6
+
+  packages/cli:
     dependencies:
       '@yummacss/nitro':
-        specifier: ^0.5.0
-        version: 0.5.0
+        specifier: workspace:*
+        version: link:../nitro
       chokidar:
         specifier: ^5.0.0
         version: 5.0.0
@@ -30,21 +55,27 @@ importers:
         specifier: ^6.0.0
         version: 6.0.0
     devDependencies:
-      '@biomejs/biome':
-        specifier: 2.3.10
-        version: 2.3.10
-      '@types/node':
-        specifier: ^25.0.3
-        version: 25.0.3
       '@types/stringify-object':
         specifier: ^4.0.5
         version: 4.0.5
-      tsdown:
-        specifier: ^0.18.4
-        version: 0.18.4(typescript@5.9.3)
-      typescript:
-        specifier: ^5.9.3
-        version: 5.9.3
+
+  packages/nitro:
+    dependencies:
+      '@yummacss/api':
+        specifier: workspace:*
+        version: link:../api
+      globby:
+        specifier: ^16.1.0
+        version: 16.1.0
+      zod:
+        specifier: ^4.3.4
+        version: 4.3.4
+
+  packages/runtime:
+    dependencies:
+      '@yummacss/nitro':
+        specifier: workspace:*
+        version: link:../nitro
 
 packages:
 
@@ -258,11 +289,8 @@ packages:
   '@types/stringify-object@4.0.5':
     resolution: {integrity: sha512-TzX5V+njkbJ8iJ0mrj+Vqveep/1JBH4SSA3J2wYrE1eUrOhdsjTBCb0kao4EquSQ8KgPpqY4zSVP2vCPWKBElg==}
 
-  '@yummacss/api@1.8.0':
-    resolution: {integrity: sha512-25TGiA95QrqZAaICuxpmHD6e896THz26qjXPl6IXLDhqJGx+UU269Ks8gcE5eqdbWqEN99/Us18optaEWvNfDA==}
-
-  '@yummacss/nitro@0.5.0':
-    resolution: {integrity: sha512-ZqbPWEaH3V+ZO3ulIFHG1eUTn5CHfPz5QrZ0+0A0tity0cOUTLjMJBoe+QWzXzg8e4LJpBGd9gKByaTXJXfsAw==}
+  '@types/tinycolor2@1.4.6':
+    resolution: {integrity: sha512-iEN8J0BoMnsWBqjVbWH/c0G0Hh7O21lpR2/+PrvAVgWdzL7eexIFm4JN/Wn10PTcmNdtS6U67r499mlWMXOxNw==}
 
   ansi-regex@6.2.2:
     resolution: {integrity: sha512-Bq3SmSpyFHaWjPk8If9yc6svM8c56dB5BAtW4Qbw5jHTwwXXcTLoRMkpDJp6VL0XzlWaCHTXrkFURMYmD0sLqg==}
@@ -894,15 +922,7 @@ snapshots:
 
   '@types/stringify-object@4.0.5': {}
 
-  '@yummacss/api@1.8.0':
-    dependencies:
-      tinycolor2: 1.6.0
-
-  '@yummacss/nitro@0.5.0':
-    dependencies:
-      '@yummacss/api': 1.8.0
-      globby: 16.1.0
-      zod: 4.3.4
+  '@types/tinycolor2@1.4.6': {}
 
   ansi-regex@6.2.2: {}
 
