@@ -1,6 +1,6 @@
 {
 	"name": "yummacss",
-	"version": "3.8.0",
+	"version": "3.8.1",
 	"description": "A CLI-first CSS framework for the web with abbreviated styles.",
 	"keywords": [
 		"css-framework",
@@ -31,7 +31,6 @@
 		"lint": "biome check --write",
 		"prepublishOnly": "pnpm build"
 	},
-	"packageManager": "pnpm@10.27.0",
 	"dependencies": {
 		"@yummacss/nitro": "workspace:*",
 		"chokidar": "^5.0.0",
