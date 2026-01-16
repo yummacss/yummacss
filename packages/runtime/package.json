@@ -32,7 +32,6 @@
     "lint": "biome check --write",
     "prepublishOnly": "pnpm build"
   },
-  "packageManager": "pnpm@10.27.0",
   "dependencies": {
     "@yummacss/nitro": "workspace:*"
   },
