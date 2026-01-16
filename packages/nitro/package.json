@@ -37,7 +37,6 @@
 		"lint": "biome check --write",
 		"prepublishOnly": "pnpm build"
 	},
-	"packageManager": "pnpm@10.27.0",
 	"dependencies": {
 		"@yummacss/api": "workspace:*",
 		"globby": "^16.1.0",
