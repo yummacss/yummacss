@@ -3,7 +3,7 @@
 A CLI-first CSS framework for the web with abbreviated styles.
 
 [![NPM Version](https://img.shields.io/npm/v/yummacss?style=flat&label=yummacss&labelColor=f7f7f7&color=cb3837)](https://www.npmjs.com/package/yummacss)
-[![NPM Downloads](https://img.shields.io/npm/d18m/yummacss?style=flat&label=downloads&labelColor=f7f7f7&color=cb3837)](https://www.npmjs.com/package/yummacss)
+[![License](https://img.shields.io/npm/l/yummacss?style=flat&label=license&labelColor=f7f7f7&color=cb3837)](https://github.com/nicksotto/yummacss/blob/main/LICENSE)
 
 ## Installing
 
