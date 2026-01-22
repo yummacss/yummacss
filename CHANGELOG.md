@@ -15,6 +15,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added `fw:*` pseudo-class variant (`:focus-within`).
 - Added `p::*` pseudo-element variant (`::placeholder`).
 - Added `s::*` pseudo-element variant (`::selection`).
+- Added `pc:*` media query variant for touch devices (`@media (pointer: coarse)`).
+- Added 11 new cursor values: `alias`, `all-scroll`, `cell`, `context-menu`, `copy`, `grab`, `grabbing`, `ew-resize`, `ns-resize`, and `vertical-text`.
+- Added `ta-*` utilities (`touch-action`) with all 9 values.
+- Added `auto` value to `b-*` (`bottom`), `i-*` (`inset`), `ix-*` (`inset-x`), `iy-*` (`inset-y`), `l-*` (`left`), `r-*` (`right`), and `t-*` (`top`) utilities.
+- Extended `t-r-*` (`rotate`) utility range from 0-100 to 0-360 degrees (steps of 5).
+- Added `t-tx-*` and `t-ty-*` utilities for `translateX` and `translateY` with full/half values.
+- Added support for negative values using `--` syntax (e.g., `m--1` for `margin: -0.25rem`).
+
+### Breaking changes
+
+- Updated `mx-*` (`margin-x`) to use `margin-inline` instead of `margin-left` and `margin-right`.
+- Updated `my-*` (`margin-y`) to use `margin-block` instead of `margin-top` and `margin-bottom`.
+- Updated `px-*` (`padding-x`) to use `padding-inline` instead of `padding-left` and `padding-right`.
+- Updated `py-*` (`padding-y`) to use `padding-block` instead of `padding-top` and `padding-bottom`.
 
 ## [3.8.1] - 2026-01-16
 

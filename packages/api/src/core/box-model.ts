@@ -1,4 +1,10 @@
-import { dimension, height, margin, padding, width } from "@/defaults/variables";
+import {
+	dimension,
+	height,
+	margin,
+	padding,
+	width,
+} from "@/defaults/variables";
 import { standardPreset } from "@/defaults/variants/preset";
 import { createValues } from "@/helpers/create-values";
 import type { Utilities } from "@/interfaces";
@@ -362,7 +368,7 @@ export const boxModel: Utilities = {
 
 	"margin-x": {
 		prefix: "mx",
-		properties: ["margin-left", "margin-right"],
+		properties: ["margin-inline"],
 		slug: "margin/#x-axis",
 		values: {
 			...createValues({
@@ -379,7 +385,7 @@ export const boxModel: Utilities = {
 
 	"margin-y": {
 		prefix: "my",
-		properties: ["margin-top", "margin-bottom"],
+		properties: ["margin-block"],
 		slug: "margin/#y-axis",
 		values: {
 			...createValues({
@@ -549,7 +555,7 @@ export const boxModel: Utilities = {
 
 	"padding-x": {
 		prefix: "px",
-		properties: ["padding-left", "padding-right"],
+		properties: ["padding-inline"],
 		slug: "padding/#x-axis",
 		values: {
 			...createValues({
@@ -566,7 +572,7 @@ export const boxModel: Utilities = {
 
 	"padding-y": {
 		prefix: "py",
-		properties: ["padding-top", "padding-bottom"],
+		properties: ["padding-block"],
 		slug: "padding/#y-axis",
 		values: {
 			...createValues({

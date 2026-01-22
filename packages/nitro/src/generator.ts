@@ -134,16 +134,37 @@ function tryGenerateRule(
 		currentClassName === prefix
 			? ""
 			: currentClassName.slice(prefix.length + 1);
+
+	// 4. Handle negative values (e.g., m--1 -> margin: -0.25rem)
+	let isNegative = false;
+	let cleanValuePart = valuePart;
+	if (valuePart.startsWith("-")) {
+		isNegative = true;
+		cleanValuePart = valuePart.slice(1); // Remove leading -
+	}
+
 	const propertyValue =
-		values[valuePart === "" ? "base" : valuePart] || values[valuePart];
+		values[cleanValuePart === "" ? "base" : cleanValuePart] ||
+		values[cleanValuePart];
 
 	if (!propertyValue) return null;
 
-	// 4. Apply opacity
+	// Apply negative sign if needed (only to numeric values)
+	let finalValue = propertyValue;
+	if (isNegative) {
+		// Only apply negative to numeric values (starting with numbers or -)
+		if (/^-?\d/.test(propertyValue)) {
+			finalValue = propertyValue.startsWith("-")
+				? propertyValue.slice(1) // Remove existing negative
+				: `-${propertyValue}`; // Add negative
+		}
+	}
+
+	// 5. Apply opacity
 	const finalPropertyValue =
-		opacityValue && propertyValue.startsWith("#") && propertyValue.length === 7
-			? `${propertyValue}${opacityValue}`
-			: propertyValue;
+		opacityValue && finalValue.startsWith("#") && finalValue.length === 7
+			? `${finalValue}${opacityValue}`
+			: finalValue;
 
 	const declarations = properties
 		.map((prop) => `${prop}: ${finalPropertyValue};`)
