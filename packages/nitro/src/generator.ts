@@ -1,6 +1,6 @@
-import { coreUtils, type Utilities, type Utility } from "@yummacss/api";
 import { baseStyles } from "@/base-styles";
 import type { Config } from "@/config/schema";
+import { coreUtils, type Utilities, type Utility } from "@yummacss/api";
 
 export function generator(usedClasses: Set<string>, config: Config): string {
 	const cssBlocks: string[] = [];
@@ -62,6 +62,7 @@ function tryGenerateRule(
 	let currentClassName = className;
 	let mediaQuery: string | undefined;
 	let pseudoClasses = "";
+	let pseudoElements = "";
 	let opacityValue = "";
 
 	// 1. Extract variants (prefixes)
@@ -89,6 +90,20 @@ function tryGenerateRule(
 				if (currentClassName.startsWith(`${pc.prefix}:`)) {
 					pseudoClasses += pc.value;
 					currentClassName = currentClassName.slice(pc.prefix.length + 1);
+					foundPrefix = true;
+					break;
+				}
+			}
+		}
+
+		if (foundPrefix) continue;
+
+		// Handle pseudo elements (uses :: separator)
+		if (variants?.pseudoElements) {
+			for (const pe of variants.pseudoElements) {
+				if (currentClassName.startsWith(`${pe.prefix}::`)) {
+					pseudoElements += pe.value;
+					currentClassName = currentClassName.slice(pe.prefix.length + 2);
 					foundPrefix = true;
 					break;
 				}
@@ -135,7 +150,7 @@ function tryGenerateRule(
 		.join("\n  ");
 
 	return {
-		rule: `.${escapeCn(className)}${pseudoClasses} {\n  ${declarations}\n}`,
+		rule: `.${escapeCn(className)}${pseudoClasses}${pseudoElements} {\n  ${declarations}\n}`,
 		mediaQuery,
 	};
 }
