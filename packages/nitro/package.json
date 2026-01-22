@@ -1,6 +1,6 @@
 {
 	"name": "@yummacss/nitro",
-	"version": "3.8.1",
+	"version": "3.9.0",
 	"description": "The engine behind Yumma CSS.",
 	"keywords": [
 		"css-framework",

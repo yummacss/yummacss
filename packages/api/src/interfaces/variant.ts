@@ -3,6 +3,11 @@ export interface PseudoClass {
 	value: string;
 }
 
+export interface PseudoElement {
+	prefix: string;
+	value: string;
+}
+
 export interface MediaQuery {
 	prefix: string;
 	value: string;
@@ -15,6 +20,7 @@ export interface Opacity {
 
 export interface Variants {
 	pseudoClasses?: PseudoClass[];
+	pseudoElements?: PseudoElement[];
 	mediaQueries?: MediaQuery[];
 	opacity?: Opacity[];
 }

@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Features
+
+- Added `a::*` pseudo-element variant (`::after`).
+- Added `b::*` pseudo-element variant (`::before`).
+- Added `fv:*` pseudo-class variant (`:focus-visible`).
+- Added `fw:*` pseudo-class variant (`:focus-within`).
+- Added `p::*` pseudo-element variant (`::placeholder`).
+- Added `s::*` pseudo-element variant (`::selection`).
+
 ## [3.8.1] - 2026-01-16
 
 ### Fixes
