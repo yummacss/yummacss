@@ -1,4 +1,4 @@
-import type { PseudoElement } from "@/interfaces/variant";
+import type { PseudoElement } from "@/interfaces/variants";
 
 export const pseudoElements: PseudoElement[] = [
 	{ prefix: "a", value: "::after" },

@@ -1,5 +1,5 @@
 import { bottomLeftTopRight } from "@/defaults/variables";
-import { standardPreset } from "@/defaults/variants/preset";
+import { standardPreset } from "@/defaults/variants/presets";
 import { createValues } from "@/helpers/create-values";
 import type { Utilities } from "@/interfaces";
 
@@ -121,7 +121,7 @@ export const positioning: Utilities = {
 	},
 
 	isolation: {
-		prefix: "i",
+		prefix: "is",
 		properties: ["isolation"],
 		slug: "isolation",
 		values: {

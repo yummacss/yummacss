@@ -1,4 +1,4 @@
-import type { MediaQuery } from "@/interfaces/variant";
+import type { MediaQuery } from "@/interfaces/variants";
 
 export const mediaQueries: MediaQuery[] = [
 	{ prefix: "pc", value: "@media (pointer: coarse)" },

@@ -5,30 +5,32 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [3.9.0] - 2026-01-22
+## [3.9.0] - 2026-01-23
 
 ### Features
 
-- Added `a::*` pseudo-element variant (`::after`).
-- Added `b::*` pseudo-element variant (`::before`).
-- Added `fv:*` pseudo-class variant (`:focus-visible`).
-- Added `fw:*` pseudo-class variant (`:focus-within`).
-- Added `p::*` pseudo-element variant (`::placeholder`).
-- Added `s::*` pseudo-element variant (`::selection`).
-- Added `pc:*` media query variant for touch devices (`@media (pointer: coarse)`).
-- Added 11 new cursor values: `alias`, `all-scroll`, `cell`, `context-menu`, `copy`, `grab`, `grabbing`, `ew-resize`, `ns-resize`, and `vertical-text`.
-- Added `ta-*` utilities (`touch-action`) with all 9 values.
-- Added `auto` value to `b-*` (`bottom`), `i-*` (`inset`), `ix-*` (`inset-x`), `iy-*` (`inset-y`), `l-*` (`left`), `r-*` (`right`), and `t-*` (`top`) utilities.
-- Extended `t-r-*` (`rotate`) utility range from 0-100 to 0-360 degrees (steps of 5).
-- Added `t-tx-*` and `t-ty-*` utilities for `translateX` and `translateY` with full/half values.
-- Added support for negative values using `--` syntax (e.g., `m--1` for `margin: -0.25rem`).
+- **[api]** Added `a::*` pseudo-element variant (`::after`).
+- **[api]** Added `b::*` pseudo-element variant (`::before`).
+- **[api]** Added `fv:*` pseudo-class variant (`:focus-visible`).
+- **[api]** Added `fw:*` pseudo-class variant (`:focus-within`).
+- **[api]** Added `p::*` pseudo-element variant (`::placeholder`).
+- **[api]** Added `s::*` pseudo-element variant (`::selection`).
+- **[api]** Added `pc:*` media query variant for touch devices (`@media (pointer: coarse)`).
+- **[api]** Added 11 new cursor values: `alias`, `all-scroll`, `cell`, `context-menu`, `copy`, `grab`, `grabbing`, `ew-resize`, `ns-resize`, and `vertical-text`.
+- **[api]** Added `ta-*` utilities (`touch-action`) with all 9 values.
+- **[api]** Added `auto` value to `b-*` (`bottom`), `i-*` (`inset`), `ix-*` (`inset-x`), `iy-*` (`inset-y`), `l-*` (`left`), `r-*` (`right`), and `t-*` (`top`) utilities.
+- **[api]** Extended `t-r-*` (`rotate`) utility range from 0-100 to 0-360 degrees (steps of 5).
+- **[api]** Added `t-tx-*` and `t-ty-*` utilities for `translateX` and `translateY` with full/half values.
+- **[nitro]** Added support for negative values using `--` syntax (e.g., `m--1` for `margin: -0.25rem`).
 
 ### Breaking changes
 
-- Updated `mx-*` (`margin-x`) to use `margin-inline` instead of `margin-left` and `margin-right`.
-- Updated `my-*` (`margin-y`) to use `margin-block` instead of `margin-top` and `margin-bottom`.
-- Updated `px-*` (`padding-x`) to use `padding-inline` instead of `padding-left` and `padding-right`.
-- Updated `py-*` (`padding-y`) to use `padding-block` instead of `padding-top` and `padding-bottom`.
+- **[api]** Updated `mx-*` (`margin-x`) to use `margin-inline` instead of `margin-left` and `margin-right`.
+- **[api]** Updated `my-*` (`margin-y`) to use `margin-block` instead of `margin-top` and `margin-bottom`.
+- **[api]** Updated `px-*` (`padding-x`) to use `padding-inline` instead of `padding-left` and `padding-right`.
+- **[api]** Updated `py-*` (`padding-y`) to use `padding-block` instead of `padding-top` and `padding-bottom`.
+- **[api]** Renamed `bs-*` (`box-shadow`) to `bsh-*` to resolve collision with `border-style` and `border-spacing`.
+- **[api]** Renamed `i-*` (`isolation`) to `is-*` to resolve collision with `inset`.
 
 ## [3.8.1] - 2026-01-16
 

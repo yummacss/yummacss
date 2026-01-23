@@ -8,7 +8,7 @@ import {
 	boxShadowXs,
 	grayscale,
 } from "@/defaults/variables";
-import { standardPreset } from "@/defaults/variants/preset";
+import { standardPreset } from "@/defaults/variants/presets";
 import type { Utilities } from "@/interfaces";
 
 export const effect: Utilities = {
@@ -43,7 +43,7 @@ export const effect: Utilities = {
 	},
 
 	"box-shadow": {
-		prefix: "bs",
+		prefix: "bsh",
 		properties: ["box-shadow"],
 		slug: "box-shadow",
 		values: {

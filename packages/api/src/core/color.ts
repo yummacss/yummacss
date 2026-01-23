@@ -1,5 +1,5 @@
 import { black, current, transparent, white } from "@/defaults/variables";
-import { opacityPreset } from "@/defaults/variants/preset";
+import { opacityPreset } from "@/defaults/variants/presets";
 import { createColors } from "@/helpers/create-colors";
 import type { Colors } from "@/interfaces";
 
