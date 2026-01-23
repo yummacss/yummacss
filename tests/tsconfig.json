@@ -1,0 +1,12 @@
+{
+	"extends": "../tsconfig.base.json",
+	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			"@yummacss/api": ["../packages/api/src"],
+			"@/*": ["../packages/api/src/*"]
+		},
+		"types": ["vitest/globals"]
+	},
+	"include": ["./**/*.ts"]
+}

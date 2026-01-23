@@ -4,6 +4,7 @@
 		{ "path": "./packages/api" },
 		{ "path": "./packages/cli" },
 		{ "path": "./packages/nitro" },
-		{ "path": "./packages/runtime" }
+		{ "path": "./packages/runtime" },
+		{ "path": "./tests" }
 	]
 }

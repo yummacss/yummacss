@@ -1,4 +1,4 @@
-export * from "./mediaQuery";
+export * from "./mediaQueries";
 export * from "./opacity";
-export * from "./pseudoClass";
-export * from "./pseudoElement";
+export * from "./pseudoClasses";
+export * from "./pseudoElements";
