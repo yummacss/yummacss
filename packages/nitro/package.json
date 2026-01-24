@@ -38,7 +38,7 @@
 		"prepublishOnly": "pnpm build"
 	},
 	"dependencies": {
-		"@yummacss/api": "workspace:*",
+		"@yummacss/core": "workspace:*",
 		"globby": "^16.1.0",
 		"zod": "^4.3.4"
 	},
