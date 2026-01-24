@@ -1,29 +1,15 @@
-# [@yummacss](www.yummacss.com)
+# @yummacss/runtime
 
-A CLI-first CSS framework for the web with abbreviated styles.
+Zero-config browser runtime for Yumma CSS.
 
-[![NPM Version](https://img.shields.io/npm/v/yummacss?style=flat&label=yummacss&labelColor=f7f7f7&color=cb3837)](https://www.npmjs.com/package/yummacss)
-[![License](https://img.shields.io/npm/l/yummacss?style=flat&label=license&labelColor=f7f7f7&color=cb3837)](https://github.com/nicksotto/yummacss/blob/main/LICENSE)
-
-## Installing
-
-Install `yummacss` as a dev dependency and initialize configuration
-
-```bash
-npm install yummacss -D
-npx yummacss init
+## Usage
+```html
+<script src="https://unpkg.com/@yummacss/runtime"></script>
+<div class="bg-blue p-4 br-2">Hello World</div>
 ```
 
-Build styles
-
-```bash
-npx yummacss build
-```
+For build-time optimization, use the [CLI package](../cli) instead.
 
 ## Documentation
 
 Learn more at [yummacss.com](https://yummacss.com)
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).

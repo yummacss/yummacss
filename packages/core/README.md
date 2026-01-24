@@ -1,29 +1,45 @@
-# [@yummacss](www.yummacss.com)
+# @yummacss/core
 
-A CLI-first CSS framework for the web with abbreviated styles.
+Core utility definitions for Yumma CSS.
 
-[![NPM Version](https://img.shields.io/npm/v/yummacss?style=flat&label=yummacss&labelColor=f7f7f7&color=cb3837)](https://www.npmjs.com/package/yummacss)
-[![License](https://img.shields.io/npm/l/yummacss?style=flat&label=license&labelColor=f7f7f7&color=cb3837)](https://github.com/nicksotto/yummacss/blob/main/LICENSE)
+## Use cases
 
-## Installing
+- Building editor extensions or IDE plugins
+- Creating custom build tools or integrations
+- Analyzing or documenting Yumma CSS utilities
+- Generating utility references programmatically
 
-Install `yummacss` as a dev dependency and initialize configuration
+**For styling projects, use [yummacss](https://www.npmjs.com/package/yummacss) instead.**
 
-```bash
-npm install yummacss -D
-npx yummacss init
+## Usage
+```typescript
+import { coreUtils, colorUtils, boxModelUtils } from '@yummacss/core';
+
+// Get all utilities
+const allUtils = coreUtils();
+
+// Get specific utility groups
+const colors = colorUtils();
+const spacing = boxModelUtils();
+
+// Access utility definitions
+console.log(allUtils['background-color']);
+// {
+//   prefix: 'bg',
+//   properties: ['background-color'],
+//   values: { ... },
+//   variants: { ... }
+// }
 ```
 
-Build styles
+## Utility Reference
 
-```bash
-npx yummacss build
-```
+Each utility export returns a `Utilities` object containing utility definitions with:
 
-## Documentation
+- `prefix` - Class name prefix (e.g., `bg` for `bg-red`)
+- `properties` - CSS properties this utility controls
+- `values` - Available values and their CSS outputs
+- `variants` - Supported variants (hover, media queries, etc.)
 
-Learn more at [yummacss.com](https://yummacss.com)
 
-## License
-
-This project is licensed under the [MIT License](LICENSE).
+Learn more at [yummacss.com/docs/core-library](https://yummacss.com/docs/core-library)
