@@ -16,8 +16,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **[core]** Added `p::*` pseudo-element variant (`::placeholder`).
 - **[core]** Added `s::*` pseudo-element variant (`::selection`).
 - **[core]** Added `pc:*` media query variant for touch devices (`@media (pointer: coarse)`).
-- **[core]** Added 11 new cursor values: `alias`, `all-scroll`, `cell`, `context-menu`, `copy`, `grab`, `grabbing`, `ew-resize`, `ns-resize`, and `vertical-text`.
-- **[core]** Added `ta-*` utilities (`touch-action`) with all 9 values.
+- **[core]** Added 10 new cursor values: `alias`, `all-scroll`, `cell`, `context-menu`, `copy`, `grab`, `grabbing`, `ew-resize`, `ns-resize`, and `vertical-text`.
+- **[core]** Added `ta-*` utilities (`touch-action`) with all 10 values.
 - **[core]** Added `auto` value to `b-*` (`bottom`), `i-*` (`inset`), `ix-*` (`inset-x`), `iy-*` (`inset-y`), `l-*` (`left`), `r-*` (`right`), and `t-*` (`top`) utilities.
 - **[core]** Extended `t-r-*` (`rotate`) utility range from 0-100 to 0-360 degrees (steps of 5).
 - **[core]** Added `t-tx-*` and `t-ty-*` utilities for `translateX` and `translateY` with full/half values.
