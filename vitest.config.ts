@@ -8,8 +8,8 @@ export default defineConfig({
 	},
 	resolve: {
 		alias: {
-			"@yummacss/api": path.resolve(__dirname, "./packages/api/src"),
-			"@": path.resolve(__dirname, "./packages/api/src"),
+			"@yummacss/core": path.resolve(__dirname, "./packages/core/src"),
+			"@": path.resolve(__dirname, "./packages/core/src"),
 		},
 	},
 });

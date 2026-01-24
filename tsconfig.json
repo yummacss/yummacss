@@ -1,7 +1,7 @@
 {
 	"files": [],
 	"references": [
-		{ "path": "./packages/api" },
+		{ "path": "./packages/core" },
 		{ "path": "./packages/cli" },
 		{ "path": "./packages/nitro" },
 		{ "path": "./packages/runtime" },

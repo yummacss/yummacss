@@ -1,20 +1,20 @@
-import { core } from "./core";
-import { background } from "./core/background";
-import { border } from "./core/border";
-import { boxModel } from "./core/box-model";
-import { color } from "./core/color";
-import { effect } from "./core/effect";
-import { flexbox } from "./core/flexbox";
-import { font } from "./core/font";
-import { grid } from "./core/grid";
-import { interactivity } from "./core/interactivity";
-import { outline } from "./core/outline";
-import { positioning } from "./core/positioning";
-import { svg } from "./core/svg";
-import { table } from "./core/table";
-import { text } from "./core/text";
-import { transform } from "./core/transform";
 import type { Utilities } from "./interfaces";
+import { core } from "./utilities";
+import { background } from "./utilities/background";
+import { border } from "./utilities/border";
+import { boxModel } from "./utilities/box-model";
+import { color } from "./utilities/color";
+import { effect } from "./utilities/effect";
+import { flexbox } from "./utilities/flexbox";
+import { font } from "./utilities/font";
+import { grid } from "./utilities/grid";
+import { interactivity } from "./utilities/interactivity";
+import { outline } from "./utilities/outline";
+import { positioning } from "./utilities/positioning";
+import { svg } from "./utilities/svg";
+import { table } from "./utilities/table";
+import { text } from "./utilities/text";
+import { transform } from "./utilities/transform";
 
 // api
 export const coreUtils = (): Utilities => core;

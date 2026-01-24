@@ -1,7 +1,7 @@
 {
-  "name": "@yummacss/api",
+  "name": "@yummacss/core",
   "version": "3.9.0",
-  "description": "The API behind Yumma CSS.",
+  "description": "Core utility definitions for Yumma CSS.",
   "keywords": [
     "css-framework",
     "typescript",

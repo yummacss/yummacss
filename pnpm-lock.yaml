@@ -24,16 +24,6 @@ importers:
         specifier: ^4.0.18
         version: 4.0.18(@types/node@25.0.3)(lightningcss@1.30.2)
 
-  packages/api:
-    dependencies:
-      tinycolor2:
-        specifier: ^1.6.0
-        version: 1.6.0
-    devDependencies:
-      '@types/tinycolor2':
-        specifier: ^1.4.6
-        version: 1.4.6
-
   packages/cli:
     dependencies:
       '@yummacss/nitro':
@@ -62,11 +52,21 @@ importers:
         specifier: ^4.0.5
         version: 4.0.5
 
+  packages/core:
+    dependencies:
+      tinycolor2:
+        specifier: ^1.6.0
+        version: 1.6.0
+    devDependencies:
+      '@types/tinycolor2':
+        specifier: ^1.4.6
+        version: 1.4.6
+
   packages/nitro:
     dependencies:
-      '@yummacss/api':
+      '@yummacss/core':
         specifier: workspace:*
-        version: link:../api
+        version: link:../core
       globby:
         specifier: ^16.1.0
         version: 16.1.0

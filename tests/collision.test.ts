@@ -1,5 +1,5 @@
-import type { Utility } from "@yummacss/api";
-import { coreUtils } from "@yummacss/api";
+import type { Utility } from "@yummacss/core";
+import { coreUtils } from "@yummacss/core";
 import { describe, expect, it } from "vitest";
 
 describe("Check for class name collisions", () => {
