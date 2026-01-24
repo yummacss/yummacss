@@ -1,29 +1,10 @@
-# [@yummacss](www.yummacss.com)
+# @yummacss/nitro
 
-A CLI-first CSS framework for the web with abbreviated styles.
+The engine behind Yumma CSS.
 
-[![NPM Version](https://img.shields.io/npm/v/yummacss?style=flat&label=yummacss&labelColor=f7f7f7&color=cb3837)](https://www.npmjs.com/package/yummacss)
-[![License](https://img.shields.io/npm/l/yummacss?style=flat&label=license&labelColor=f7f7f7&color=cb3837)](https://github.com/nicksotto/yummacss/blob/main/LICENSE)
+> [!WARNING]
+> This is an internal package. Most users should install [yummacss](https://www.npmjs.com/package/yummacss) instead.
 
-## Installing
-
-Install `yummacss` as a dev dependency and initialize configuration
-
-```bash
-npm install yummacss -D
-npx yummacss init
-```
-
-Build styles
-
-```bash
-npx yummacss build
-```
-
-## Documentation
+This package contains the core CSS generation engine (extractor, generator, tokenizer). It's used internally by the CLI and runtime packages.
 
 Learn more at [yummacss.com](https://yummacss.com)
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
