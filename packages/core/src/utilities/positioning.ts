@@ -1,4 +1,4 @@
-import { bottomLeftTopRight } from "@/defaults/variables";
+import { topRightBottomLeft } from "@/defaults/variables";
 import { standardPreset } from "@/defaults/variants/presets";
 import { createValues } from "@/helpers/create-values";
 import type { Utilities } from "@/interfaces";
@@ -54,7 +54,7 @@ export const positioning: Utilities = {
 		slug: "bottom",
 		values: {
 			...createValues({
-				base: bottomLeftTopRight,
+				base: topRightBottomLeft,
 				unit: "rem",
 				min: 0,
 				max: 100,
@@ -72,7 +72,7 @@ export const positioning: Utilities = {
 		slug: "inset",
 		values: {
 			...createValues({
-				base: bottomLeftTopRight,
+				base: topRightBottomLeft,
 				unit: "rem",
 				min: 0,
 				max: 100,
@@ -90,7 +90,7 @@ export const positioning: Utilities = {
 		slug: "inset-x",
 		values: {
 			...createValues({
-				base: bottomLeftTopRight,
+				base: topRightBottomLeft,
 				unit: "rem",
 				min: 0,
 				max: 100,
@@ -108,7 +108,7 @@ export const positioning: Utilities = {
 		slug: "inset-y",
 		values: {
 			...createValues({
-				base: bottomLeftTopRight,
+				base: topRightBottomLeft,
 				unit: "rem",
 				min: 0,
 				max: 100,
@@ -137,7 +137,7 @@ export const positioning: Utilities = {
 		slug: "left",
 		values: {
 			...createValues({
-				base: bottomLeftTopRight,
+				base: topRightBottomLeft,
 				unit: "rem",
 				min: 0,
 				max: 100,
@@ -155,7 +155,7 @@ export const positioning: Utilities = {
 		slug: "right",
 		values: {
 			...createValues({
-				base: bottomLeftTopRight,
+				base: topRightBottomLeft,
 				unit: "rem",
 				min: 0,
 				max: 100,
@@ -173,7 +173,7 @@ export const positioning: Utilities = {
 		slug: "top",
 		values: {
 			...createValues({
-				base: bottomLeftTopRight,
+				base: topRightBottomLeft,
 				unit: "rem",
 				min: 0,
 				max: 100,
