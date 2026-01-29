@@ -16,7 +16,7 @@ import { table } from "./utilities/table";
 import { text } from "./utilities/text";
 import { transform } from "./utilities/transform";
 
-// api
+// functions
 export const coreUtils = (): Utilities => core;
 export const backgroundUtils = (): Utilities => background;
 export const borderUtils = (): Utilities => border;

@@ -1,6 +1,6 @@
 # @yummacss/nitro
 
-The engine behind Yumma CSS.
+Fast CSS generation for Yumma CSS.
 
 > [!WARNING]
 > This is an internal package. Most users should install [yummacss](https://www.npmjs.com/package/yummacss) instead.
