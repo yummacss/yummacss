@@ -8,19 +8,25 @@ export const outlineOffset = 1;
 export const outlineWidth = 1;
 
 // colors
-export const red = "#d73d3d";
-export const orange = "#e06814";
-export const yellow = "#d3a107";
-export const green = "#1fb155";
-export const teal = "#12a695";
-export const cyan = "#05a4bf";
-export const blue = "#3575dd";
-export const indigo = "#595cd9";
-export const violet = "#7d53dd";
-export const pink = "#d4418a";
-export const slate = "#3f3f4e";
-export const gray = "#606773";
-export const silver = "#bfc2c7";
+export const red = "#e63946";
+export const orange = "#ff6b35";
+export const yellow = "#ffb81c";
+export const lime = "#84cc16";
+export const mint = "#10b981";
+export const green = "#06d6a0";
+export const cyan = "#06b6d4";
+export const sky = "#38bdf8";
+export const blue = "#2563eb";
+export const indigo = "#6366f1";
+export const violet = "#8b5cf6";
+export const lavender = "#a78bfa";
+export const magenta = "#d946ef";
+export const pink = "#ec4899";
+export const coral = "#ff6f91";
+export const zinc = "#52525b";
+export const gray = "#6b7280";
+export const slate = "#64748b";
+export const silver = "#9ca3af";
 export const black = "#000000";
 export const white = "#ffffff";
 export const transparent = "transparent";
@@ -58,10 +64,11 @@ export const grayscale = 10;
 export const opacity = 0.1;
 
 // positioning
-export const bottomLeftTopRight = 0.25;
+export const topRightBottomLeft = 0.25;
 
 // font
-export const fontCharter = 'Charter, "Bitstream Charter", "Sitka Text", Cambria, serif';
+export const fontCharter =
+	'Charter, "Bitstream Charter", "Sitka Text", Cambria, serif';
 export const fontMono = '"Nimbus Mono PS", "Courier New", monospace';
 export const fontSystem = "system-ui, sans-serif";
 
