@@ -2,6 +2,8 @@
 
 A CLI-first CSS framework for the web with abbreviated styles.
 
+---
+
 ## Installation
 
 Install `yummacss` as a dev dependency and initialize configuration
