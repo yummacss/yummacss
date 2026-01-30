@@ -13,7 +13,7 @@ npm install yummacss -D
 npx yummacss init
 ```
 
-Build styles
+## Build
 
 ```bash
 npx yummacss build
