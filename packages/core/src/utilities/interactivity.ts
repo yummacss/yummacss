@@ -1,6 +1,5 @@
-import { margin, padding } from "@/defaults/variables";
+import { scrollMarginValues, scrollPaddingValues } from "@/defaults/values";
 import { standardPreset } from "@/defaults/variants/presets";
-import { createValues } from "@/helpers/create-values";
 import type { Utilities } from "@/interfaces";
 
 export const interactivity: Utilities = {
@@ -108,12 +107,7 @@ export const interactivity: Utilities = {
 		prefix: "sm",
 		properties: ["scroll-margin"],
 		slug: "scroll-margin",
-		values: createValues({
-			base: margin,
-			unit: "rem",
-			min: 0,
-			max: 100,
-		}),
+		values: scrollMarginValues,
 		variants: standardPreset,
 	},
 
@@ -121,12 +115,7 @@ export const interactivity: Utilities = {
 		prefix: "smb",
 		properties: ["scroll-margin-bottom"],
 		slug: "scroll-margin/#bottom",
-		values: createValues({
-			base: margin,
-			unit: "rem",
-			min: 0,
-			max: 100,
-		}),
+		values: scrollMarginValues,
 		variants: standardPreset,
 	},
 
@@ -134,12 +123,7 @@ export const interactivity: Utilities = {
 		prefix: "smis",
 		properties: ["scroll-margin-inline-start"],
 		slug: "scroll-margin/#inline-start",
-		values: createValues({
-			base: margin,
-			unit: "rem",
-			min: 0,
-			max: 100,
-		}),
+		values: scrollMarginValues,
 		variants: standardPreset,
 	},
 
@@ -147,12 +131,7 @@ export const interactivity: Utilities = {
 		prefix: "sml",
 		properties: ["scroll-margin-left"],
 		slug: "scroll-margin/#scroll-margin-left",
-		values: createValues({
-			base: margin,
-			unit: "rem",
-			min: 0,
-			max: 100,
-		}),
+		values: scrollMarginValues,
 		variants: standardPreset,
 	},
 
@@ -160,12 +139,7 @@ export const interactivity: Utilities = {
 		prefix: "smr",
 		properties: ["scroll-margin-right"],
 		slug: "scroll-margin/#scroll-margin-right",
-		values: createValues({
-			base: margin,
-			unit: "rem",
-			min: 0,
-			max: 100,
-		}),
+		values: scrollMarginValues,
 		variants: standardPreset,
 	},
 
@@ -173,12 +147,7 @@ export const interactivity: Utilities = {
 		prefix: "smt",
 		properties: ["scroll-margin-top"],
 		slug: "scroll-margin/#scroll-margin-top",
-		values: createValues({
-			base: margin,
-			unit: "rem",
-			min: 0,
-			max: 100,
-		}),
+		values: scrollMarginValues,
 		variants: standardPreset,
 	},
 
@@ -186,12 +155,7 @@ export const interactivity: Utilities = {
 		prefix: "smie",
 		properties: ["scroll-margin-inline-end"],
 		slug: "scroll-margin/#scroll-margin-inline-end",
-		values: createValues({
-			base: margin,
-			unit: "rem",
-			min: 0,
-			max: 100,
-		}),
+		values: scrollMarginValues,
 		variants: standardPreset,
 	},
 
@@ -199,12 +163,7 @@ export const interactivity: Utilities = {
 		prefix: "smx",
 		properties: ["scroll-margin-left", "scroll-margin-right"],
 		slug: "scroll-margin/#scroll-margin-x",
-		values: createValues({
-			base: margin,
-			unit: "rem",
-			min: 0,
-			max: 100,
-		}),
+		values: scrollMarginValues,
 		variants: standardPreset,
 	},
 
@@ -212,12 +171,7 @@ export const interactivity: Utilities = {
 		prefix: "smy",
 		properties: ["scroll-margin-bottom", "scroll-margin-top"],
 		slug: "scroll-margin/#scroll-margin-y",
-		values: createValues({
-			base: margin,
-			unit: "rem",
-			min: 0,
-			max: 100,
-		}),
+		values: scrollMarginValues,
 		variants: standardPreset,
 	},
 
@@ -225,12 +179,7 @@ export const interactivity: Utilities = {
 		prefix: "sp",
 		properties: ["scroll-padding"],
 		slug: "scroll-padding",
-		values: createValues({
-			base: padding,
-			unit: "rem",
-			min: 0,
-			max: 100,
-		}),
+		values: scrollPaddingValues,
 		variants: standardPreset,
 	},
 
@@ -238,12 +187,7 @@ export const interactivity: Utilities = {
 		prefix: "spb",
 		properties: ["scroll-padding-bottom"],
 		slug: "scroll-padding/#bottom",
-		values: createValues({
-			base: padding,
-			unit: "rem",
-			min: 0,
-			max: 100,
-		}),
+		values: scrollPaddingValues,
 		variants: standardPreset,
 	},
 
@@ -251,12 +195,7 @@ export const interactivity: Utilities = {
 		prefix: "spis",
 		properties: ["scroll-padding-inline-start"],
 		slug: "scroll-padding/#scroll-padding-inline-start",
-		values: createValues({
-			base: padding,
-			unit: "rem",
-			min: 0,
-			max: 100,
-		}),
+		values: scrollPaddingValues,
 		variants: standardPreset,
 	},
 
@@ -264,12 +203,7 @@ export const interactivity: Utilities = {
 		prefix: "spl",
 		properties: ["scroll-padding-left"],
 		slug: "scroll-padding/#scroll-padding-left",
-		values: createValues({
-			base: padding,
-			unit: "rem",
-			min: 0,
-			max: 100,
-		}),
+		values: scrollPaddingValues,
 		variants: standardPreset,
 	},
 
@@ -277,12 +211,7 @@ export const interactivity: Utilities = {
 		prefix: "spr",
 		properties: ["scroll-padding-right"],
 		slug: "scroll-padding/#scroll-padding-right",
-		values: createValues({
-			base: padding,
-			unit: "rem",
-			min: 0,
-			max: 100,
-		}),
+		values: scrollPaddingValues,
 		variants: standardPreset,
 	},
 
@@ -290,12 +219,7 @@ export const interactivity: Utilities = {
 		prefix: "spt",
 		properties: ["scroll-padding-top"],
 		slug: "scroll-padding/#scroll-padding-top",
-		values: createValues({
-			base: padding,
-			unit: "rem",
-			min: 0,
-			max: 100,
-		}),
+		values: scrollPaddingValues,
 		variants: standardPreset,
 	},
 
@@ -303,12 +227,7 @@ export const interactivity: Utilities = {
 		prefix: "spie",
 		properties: ["scroll-padding-inline-end"],
 		slug: "scroll-padding/#scroll-padding-inline-end",
-		values: createValues({
-			base: padding,
-			unit: "rem",
-			min: 0,
-			max: 100,
-		}),
+		values: scrollPaddingValues,
 		variants: standardPreset,
 	},
 
@@ -316,12 +235,7 @@ export const interactivity: Utilities = {
 		prefix: "spx",
 		properties: ["scroll-padding-left", "scroll-padding-right"],
 		slug: "scroll-padding/#scroll-padding-x",
-		values: createValues({
-			base: padding,
-			unit: "rem",
-			min: 0,
-			max: 100,
-		}),
+		values: scrollPaddingValues,
 		variants: standardPreset,
 	},
 
@@ -329,12 +243,7 @@ export const interactivity: Utilities = {
 		prefix: "spy",
 		properties: ["scroll-padding-bottom", "scroll-padding-top"],
 		slug: "scroll-padding/#scroll-padding-y",
-		values: createValues({
-			base: padding,
-			unit: "rem",
-			min: 0,
-			max: 100,
-		}),
+		values: scrollPaddingValues,
 		variants: standardPreset,
 	},
 
