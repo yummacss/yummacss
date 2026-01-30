@@ -1,6 +1,9 @@
-import { borderRadius, borderSpacing, borderWidth } from "@/defaults/variables";
+import {
+	borderRadiusValues,
+	borderSpacingValues,
+	borderWidthValues,
+} from "@/defaults/values";
 import { standardPreset } from "@/defaults/variants/presets";
-import { createValues } from "@/helpers/create-values";
 import type { Utilities } from "@/interfaces";
 
 export const border: Utilities = {
@@ -19,18 +22,7 @@ export const border: Utilities = {
 		prefix: "br",
 		properties: ["border-radius"],
 		slug: "border-radius",
-		values: {
-			...createValues({
-				base: borderRadius,
-				unit: "rem",
-				min: 0,
-				max: 8,
-			}),
-			full: "100%",
-			half: "50%",
-			pill: "9999px",
-			px: "1px",
-		},
+		values: borderRadiusValues,
 		variants: standardPreset,
 	},
 
@@ -38,18 +30,7 @@ export const border: Utilities = {
 		prefix: "br-b",
 		properties: ["border-bottom-left-radius", "border-bottom-right-radius"],
 		slug: "border-radius/#bottom-radius",
-		values: {
-			...createValues({
-				base: borderRadius,
-				unit: "rem",
-				min: 0,
-				max: 8,
-			}),
-			full: "100%",
-			half: "50%",
-			pill: "9999px",
-			px: "1px",
-		},
+		values: borderRadiusValues,
 		variants: standardPreset,
 	},
 
@@ -57,18 +38,7 @@ export const border: Utilities = {
 		prefix: "br-l",
 		properties: ["border-bottom-left-radius", "border-top-left-radius"],
 		slug: "border-radius/#left-radius",
-		values: {
-			...createValues({
-				base: borderRadius,
-				unit: "rem",
-				min: 0,
-				max: 8,
-			}),
-			full: "100%",
-			half: "50%",
-			pill: "9999px",
-			px: "1px",
-		},
+		values: borderRadiusValues,
 		variants: standardPreset,
 	},
 
@@ -76,18 +46,7 @@ export const border: Utilities = {
 		prefix: "br-r",
 		properties: ["border-bottom-right-radius", "border-top-right-radius"],
 		slug: "border-radius/#right-radius",
-		values: {
-			...createValues({
-				base: borderRadius,
-				unit: "rem",
-				min: 0,
-				max: 8,
-			}),
-			full: "100%",
-			half: "50%",
-			pill: "9999px",
-			px: "1px",
-		},
+		values: borderRadiusValues,
 		variants: standardPreset,
 	},
 
@@ -95,18 +54,7 @@ export const border: Utilities = {
 		prefix: "br-bl",
 		properties: ["border-bottom-left-radius"],
 		slug: "border-radius/#bottom-left-radius",
-		values: {
-			...createValues({
-				base: borderRadius,
-				unit: "rem",
-				min: 0,
-				max: 8,
-			}),
-			full: "100%",
-			half: "50%",
-			pill: "9999px",
-			px: "1px",
-		},
+		values: borderRadiusValues,
 		variants: standardPreset,
 	},
 
@@ -114,18 +62,7 @@ export const border: Utilities = {
 		prefix: "br-br",
 		properties: ["border-bottom-right-radius"],
 		slug: "border-radius/#bottom-right-radius",
-		values: {
-			...createValues({
-				base: borderRadius,
-				unit: "rem",
-				min: 0,
-				max: 8,
-			}),
-			full: "100%",
-			half: "50%",
-			pill: "9999px",
-			px: "1px",
-		},
+		values: borderRadiusValues,
 		variants: standardPreset,
 	},
 
@@ -133,18 +70,7 @@ export const border: Utilities = {
 		prefix: "br-t",
 		properties: ["border-top-left-radius", "border-top-right-radius"],
 		slug: "border-radius/#top-radius",
-		values: {
-			...createValues({
-				base: borderRadius,
-				unit: "rem",
-				min: 0,
-				max: 8,
-			}),
-			full: "100%",
-			half: "50%",
-			pill: "9999px",
-			px: "1px",
-		},
+		values: borderRadiusValues,
 		variants: standardPreset,
 	},
 
@@ -152,18 +78,7 @@ export const border: Utilities = {
 		prefix: "br-tl",
 		properties: ["border-top-left-radius"],
 		slug: "border-radius/#top-left-radius",
-		values: {
-			...createValues({
-				base: borderRadius,
-				unit: "rem",
-				min: 0,
-				max: 8,
-			}),
-			full: "100%",
-			half: "50%",
-			pill: "9999px",
-			px: "1px",
-		},
+		values: borderRadiusValues,
 		variants: standardPreset,
 	},
 
@@ -171,18 +86,7 @@ export const border: Utilities = {
 		prefix: "br-tr",
 		properties: ["border-top-right-radius"],
 		slug: "border-radius/#top-right-radius",
-		values: {
-			...createValues({
-				base: borderRadius,
-				unit: "rem",
-				min: 0,
-				max: 8,
-			}),
-			full: "100%",
-			half: "50%",
-			pill: "9999px",
-			px: "1px",
-		},
+		values: borderRadiusValues,
 		variants: standardPreset,
 	},
 
@@ -190,15 +94,7 @@ export const border: Utilities = {
 		prefix: "bs",
 		properties: ["border-spacing"],
 		slug: "border-spacing",
-		values: {
-			...createValues({
-				base: borderSpacing,
-				unit: "rem",
-				min: 0,
-				max: 8,
-			}),
-			px: "1px",
-		},
+		values: borderSpacingValues,
 		variants: standardPreset,
 	},
 
@@ -218,12 +114,7 @@ export const border: Utilities = {
 		prefix: "bw",
 		properties: ["border-width"],
 		slug: "border-width",
-		values: createValues({
-			base: borderWidth,
-			unit: "px",
-			min: 0,
-			max: 8,
-		}),
+		values: borderWidthValues,
 		variants: standardPreset,
 	},
 
@@ -231,12 +122,7 @@ export const border: Utilities = {
 		prefix: "bbw",
 		properties: ["border-bottom-width"],
 		slug: "border-bottom-radius",
-		values: createValues({
-			base: borderWidth,
-			unit: "px",
-			min: 0,
-			max: 8,
-		}),
+		values: borderWidthValues,
 		variants: standardPreset,
 	},
 
@@ -244,12 +130,7 @@ export const border: Utilities = {
 		prefix: "blw",
 		properties: ["border-left-width"],
 		slug: "border-width/#left-width",
-		values: createValues({
-			base: borderWidth,
-			unit: "px",
-			min: 0,
-			max: 8,
-		}),
+		values: borderWidthValues,
 		variants: standardPreset,
 	},
 
@@ -257,12 +138,7 @@ export const border: Utilities = {
 		prefix: "brw",
 		properties: ["border-right-width"],
 		slug: "border-width/#right-width",
-		values: createValues({
-			base: borderWidth,
-			unit: "px",
-			min: 0,
-			max: 8,
-		}),
+		values: borderWidthValues,
 		variants: standardPreset,
 	},
 
@@ -270,12 +146,7 @@ export const border: Utilities = {
 		prefix: "btw",
 		properties: ["border-top-width"],
 		slug: "border-width/#top-width",
-		values: createValues({
-			base: borderWidth,
-			unit: "px",
-			min: 0,
-			max: 8,
-		}),
+		values: borderWidthValues,
 		variants: standardPreset,
 	},
 };
