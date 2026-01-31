@@ -65,10 +65,12 @@ export const opacity = 0.1;
 export const topRightBottomLeft = 0.25;
 
 // font
-export const fontCharter =
-	'Charter, "Bitstream Charter", "Sitka Text", Cambria, serif';
-export const fontMono = '"Nimbus Mono PS", "Courier New", monospace';
-export const fontSystem = "system-ui, sans-serif";
+export const fontMono =
+	"ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, 'Roboto Mono', 'Ubuntu Mono', Consolas, 'Liberation Mono', 'Courier New', monospace";
+export const fontSerif =
+	"'Iowan Old Style', 'Palatino Linotype', 'URW Palladio L', P052, serif";
+export const fontDefault =
+	"system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', 'Liberation Sans', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'";
 
 export const fontSizeXs = 0.75;
 export const fontSizeSm = 0.875;
