@@ -1,5 +1,5 @@
-import { colorTheme } from "@/defaults/theme";
 import tinycolor from "tinycolor2";
+import { colorTheme } from "@/defaults/theme";
 
 const percentage = 14;
 

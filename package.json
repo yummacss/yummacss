@@ -17,12 +17,12 @@
 	},
 	"packageManager": "pnpm@10.27.0",
 	"scripts": {
-		"build": "pnpm -r --filter './packages/**' build",
-		"dev": "pnpm -r --filter './packages/**' --parallel dev",
-		"lint": "pnpm -r --filter './packages/**' lint",
-		"check": "pnpm -r --filter './packages/**' check",
-		"clean": "pnpm -r --filter './packages/**' exec rm -rf dist node_modules",
-		"publish-packages": "pnpm -r --filter './packages/**' publish",
+		"build": "pnpm -r build",
+		"dev": "pnpm -r --parallel dev",
+		"lint": "pnpm -r lint",
+		"check": "pnpm -r check",
+		"clean": "pnpm -r clean",
+		"publish-packages": "pnpm -r publish",
 		"test": "vitest run",
 		"test:watch": "vitest"
 	},
