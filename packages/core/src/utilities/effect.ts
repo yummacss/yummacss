@@ -1,6 +1,5 @@
+import { blurValues } from "@/defaults/values";
 import {
-	backdropBlur,
-	blur,
 	boxShadowLg,
 	boxShadowMd,
 	boxShadowSm,
@@ -16,14 +15,7 @@ export const effect: Utilities = {
 		prefix: "bf-b",
 		properties: ["backdrop-filter"],
 		slug: "backdrop-blur",
-		values: {
-			none: `blur(${backdropBlur * 0}px)`,
-			xs: `blur(${backdropBlur}px)`,
-			sm: `blur(${backdropBlur * 2}px)`,
-			md: `blur(${backdropBlur * 4}px)`,
-			lg: `blur(${backdropBlur * 8}px)`,
-			xl: `blur(${backdropBlur * 16}px)`,
-		},
+		values: blurValues,
 		variants: standardPreset,
 	},
 
@@ -31,14 +23,7 @@ export const effect: Utilities = {
 		prefix: "f-b",
 		properties: ["filter"],
 		slug: "blur",
-		values: {
-			none: `blur(${blur * 0}px)`,
-			xs: `blur(${blur}px)`,
-			sm: `blur(${blur * 2}px)`,
-			md: `blur(${blur * 4}px)`,
-			lg: `blur(${blur * 8}px)`,
-			xl: `blur(${blur * 16}px)`,
-		},
+		values: blurValues,
 		variants: standardPreset,
 	},
 

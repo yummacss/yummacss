@@ -49,8 +49,6 @@ export const columnGap = 0.25;
 export const rowGap = 0.25;
 
 // effect
-export const backdropBlur = 4;
-
 export const blur = 4;
 
 export const boxShadowXs = "1px 3px 5px -3px #0000001a";
