@@ -1,6 +1,11 @@
-import { gapValues, repeatValues, spanValues } from "@/defaults/values";
+import {
+	gapValues,
+	gridAutoValues,
+	gridValues,
+	repeatValues,
+	spanValues,
+} from "@/defaults/values";
 import { standardPreset } from "@/defaults/variants/presets";
-import { createValues } from "@/helpers/create-values";
 import type { Utilities } from "@/interfaces";
 
 export const grid: Utilities = {
@@ -24,11 +29,7 @@ export const grid: Utilities = {
 		prefix: "gac",
 		properties: ["grid-auto-columns"],
 		slug: "grid-auto-columns",
-		values: {
-			auto: "auto",
-			max: "max-content",
-			min: "min-content",
-		},
+		values: gridAutoValues,
 		variants: standardPreset,
 	},
 
@@ -50,11 +51,7 @@ export const grid: Utilities = {
 		prefix: "gar",
 		properties: ["grid-auto-rows"],
 		slug: "grid-auto-rows",
-		values: {
-			auto: "auto",
-			max: "max-content",
-			min: "min-content",
-		},
+		values: gridAutoValues,
 		variants: standardPreset,
 	},
 
@@ -70,11 +67,7 @@ export const grid: Utilities = {
 		prefix: "gce",
 		properties: ["grid-column-end"],
 		slug: "grid-column-end",
-		values: createValues({
-			base: 1,
-			min: 1,
-			max: 16,
-		}),
+		values: gridValues,
 		variants: standardPreset,
 	},
 
@@ -82,11 +75,7 @@ export const grid: Utilities = {
 		prefix: "gcs",
 		properties: ["grid-column-start"],
 		slug: "grid-column-start",
-		values: createValues({
-			base: 1,
-			min: 1,
-			max: 16,
-		}),
+		values: gridValues,
 		variants: standardPreset,
 	},
 
@@ -102,11 +91,7 @@ export const grid: Utilities = {
 		prefix: "gre",
 		properties: ["grid-row-end"],
 		slug: "grid-row-end",
-		values: createValues({
-			base: 1,
-			min: 1,
-			max: 16,
-		}),
+		values: gridValues,
 		variants: standardPreset,
 	},
 
@@ -114,11 +99,7 @@ export const grid: Utilities = {
 		prefix: "grs",
 		properties: ["grid-row-start"],
 		slug: "grid-row-start",
-		values: createValues({
-			base: 1,
-			min: 1,
-			max: 16,
-		}),
+		values: gridValues,
 		variants: standardPreset,
 	},
 

@@ -1,5 +1,5 @@
+import { transitionValues } from "@/defaults/values";
 import { standardPreset } from "@/defaults/variants/presets";
-import { createValues } from "@/helpers/create-values";
 import type { Utilities } from "@/interfaces";
 
 export const transition: Utilities = {
@@ -22,14 +22,7 @@ export const transition: Utilities = {
 		prefix: "td",
 		properties: ["transition-duration"],
 		slug: "transition-duration",
-		values: {
-			...createValues({
-				base: 50,
-				unit: "ms",
-				min: 0,
-				max: 20,
-			}),
-		},
+		values: transitionValues,
 		variants: standardPreset,
 	},
 
@@ -50,14 +43,7 @@ export const transition: Utilities = {
 		prefix: "trd",
 		properties: ["transition-delay"],
 		slug: "transition-delay",
-		values: {
-			...createValues({
-				base: 50,
-				unit: "ms",
-				min: 0,
-				max: 20,
-			}),
-		},
+		values: transitionValues,
 		variants: standardPreset,
 	},
 };
