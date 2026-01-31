@@ -2,5 +2,8 @@ export * from "./border-values";
 export * from "./box-model-values";
 export * from "./color-values";
 export * from "./effect-values";
+export * from "./flexbox-values";
 export * from "./grid-values";
 export * from "./interactivity-values";
+export * from "./positioning-values";
+export * from "./transition-values";

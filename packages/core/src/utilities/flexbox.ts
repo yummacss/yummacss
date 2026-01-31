@@ -1,3 +1,4 @@
+import { flexGrowShrinkValues } from "@/defaults/values";
 import { flexBasis } from "@/defaults/variables";
 import { standardPreset } from "@/defaults/variants/presets";
 import { createValues } from "@/helpers/create-values";
@@ -86,11 +87,7 @@ export const flexbox: Utilities = {
 		prefix: "fg",
 		properties: ["flex-grow"],
 		slug: "flex-grow",
-		values: createValues({
-			base: 1,
-			min: 0,
-			max: 8,
-		}),
+		values: flexGrowShrinkValues,
 		variants: standardPreset,
 	},
 
@@ -98,11 +95,7 @@ export const flexbox: Utilities = {
 		prefix: "fs",
 		properties: ["flex-shrink"],
 		slug: "flex-shrink",
-		values: createValues({
-			base: 1,
-			min: 0,
-			max: 8,
-		}),
+		values: flexGrowShrinkValues,
 		variants: standardPreset,
 	},
 

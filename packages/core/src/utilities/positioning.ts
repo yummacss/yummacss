@@ -1,4 +1,4 @@
-import { topRightBottomLeft } from "@/defaults/variables";
+import { topRightBottomLeftValues } from "@/defaults/values";
 import { standardPreset } from "@/defaults/variants/presets";
 import { createValues } from "@/helpers/create-values";
 import type { Utilities } from "@/interfaces";
@@ -52,17 +52,7 @@ export const positioning: Utilities = {
 		prefix: "b",
 		properties: ["bottom"],
 		slug: "bottom",
-		values: {
-			...createValues({
-				base: topRightBottomLeft,
-				unit: "rem",
-				min: 0,
-				max: 100,
-			}),
-			auto: "auto",
-			full: "100%",
-			half: "50%",
-		},
+		values: topRightBottomLeftValues,
 		variants: standardPreset,
 	},
 
@@ -70,17 +60,7 @@ export const positioning: Utilities = {
 		prefix: "i",
 		properties: ["inset"],
 		slug: "inset",
-		values: {
-			...createValues({
-				base: topRightBottomLeft,
-				unit: "rem",
-				min: 0,
-				max: 100,
-			}),
-			auto: "auto",
-			full: "100%",
-			half: "50%",
-		},
+		values: topRightBottomLeftValues,
 		variants: standardPreset,
 	},
 
@@ -88,17 +68,7 @@ export const positioning: Utilities = {
 		prefix: "ix",
 		properties: ["left", "right"],
 		slug: "inset-x",
-		values: {
-			...createValues({
-				base: topRightBottomLeft,
-				unit: "rem",
-				min: 0,
-				max: 100,
-			}),
-			auto: "auto",
-			full: "100%",
-			half: "50%",
-		},
+		values: topRightBottomLeftValues,
 		variants: standardPreset,
 	},
 
@@ -106,17 +76,7 @@ export const positioning: Utilities = {
 		prefix: "iy",
 		properties: ["top", "bottom"],
 		slug: "inset-y",
-		values: {
-			...createValues({
-				base: topRightBottomLeft,
-				unit: "rem",
-				min: 0,
-				max: 100,
-			}),
-			auto: "auto",
-			full: "100%",
-			half: "50%",
-		},
+		values: topRightBottomLeftValues,
 		variants: standardPreset,
 	},
 
@@ -135,17 +95,7 @@ export const positioning: Utilities = {
 		prefix: "l",
 		properties: ["left"],
 		slug: "left",
-		values: {
-			...createValues({
-				base: topRightBottomLeft,
-				unit: "rem",
-				min: 0,
-				max: 100,
-			}),
-			auto: "auto",
-			full: "100%",
-			half: "50%",
-		},
+		values: topRightBottomLeftValues,
 		variants: standardPreset,
 	},
 
@@ -153,17 +103,7 @@ export const positioning: Utilities = {
 		prefix: "r",
 		properties: ["right"],
 		slug: "right",
-		values: {
-			...createValues({
-				base: topRightBottomLeft,
-				unit: "rem",
-				min: 0,
-				max: 100,
-			}),
-			auto: "auto",
-			full: "100%",
-			half: "50%",
-		},
+		values: topRightBottomLeftValues,
 		variants: standardPreset,
 	},
 
@@ -171,17 +111,7 @@ export const positioning: Utilities = {
 		prefix: "t",
 		properties: ["top"],
 		slug: "top",
-		values: {
-			...createValues({
-				base: topRightBottomLeft,
-				unit: "rem",
-				min: 0,
-				max: 100,
-			}),
-			auto: "auto",
-			full: "100%",
-			half: "50%",
-		},
+		values: topRightBottomLeftValues,
 		variants: standardPreset,
 	},
 

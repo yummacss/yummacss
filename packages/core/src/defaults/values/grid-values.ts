@@ -48,3 +48,17 @@ export const repeatValues: Record<string, string> = {
 	"15": "repeat(15, minmax(0, 1fr))",
 	"16": "repeat(16, minmax(0, 1fr))",
 };
+
+export const gridAutoValues: Record<string, string> = {
+	auto: "auto",
+	max: "max-content",
+	min: "min-content",
+};
+
+export const gridValues: Record<string, string> = {
+	...createValues({
+		base: 1,
+		min: 1,
+		max: 16,
+	}),
+};
