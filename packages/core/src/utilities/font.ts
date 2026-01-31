@@ -1,6 +1,7 @@
 import {
-	fontCharter,
+	fontDefault,
 	fontMono,
+	fontSerif,
 	fontSize3xl,
 	fontSize4xl,
 	fontSize5xl,
@@ -14,7 +15,6 @@ import {
 	fontSizeXl,
 	fontSizeXs,
 	fontSizeXxl,
-	fontSystem,
 } from "@/defaults/variables";
 import { standardPreset } from "@/defaults/variants/presets";
 import type { Utilities } from "@/interfaces";
@@ -25,9 +25,9 @@ export const font: Utilities = {
 		properties: ["font-family"],
 		slug: "font-family",
 		values: {
-			c: fontCharter,
+			d: fontDefault,
 			m: fontMono,
-			s: fontSystem,
+			s: fontSerif,
 		},
 		variants: standardPreset,
 	},

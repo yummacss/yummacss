@@ -12,6 +12,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **[core]** Added `lime`, `mint`, `sky`, `lavender`, `magenta`, `coral`, and `zinc` colors options.
 - **[core]** Added 11 new pseudo-class variants: `c:` (checked), `d:` (disabled), `e:` (empty), `fc:` (first-child), `i:` (invalid), `in:` (indeterminate), `lc:` (last-child), `nc:` (nth-child), `r:` (required), `ro:` (read-only), and `v:` (valid).
 - **[core]** Added `ro-*` (rotate) utilities as a shorthand for `t-r-*`.
+- **[core]** Expanded `ar-*` utilities (`aspect-ratio`) with 15 common values.
+- **[core]** Updated font family variables (`fontDefault`, `fontMono`, `fontSerif`) with more modern and comprehensive stacks.
 - **[core]** Introduced **Transitions** category
 - **[core]** Added `tp-*` utilities (`transition-property`)
 - **[core]** Added `td-*` utilities (`transition-duration`) (steps of 50).
@@ -22,6 +24,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - **[core]** Removed `teal` color option.
 - **[core]** Replaced `t-r-*` (`transform: rotate()`) with `ro-*` utilities using the standalone `rotate` property.
+- **[core]** Replaced `ff-s` (System) with `ff-d` (Default).
+- **[core]** Replaced `ff-c` (Charters) with `ff-s` (Serif).
 
 ## [3.9.0] - 2026-01-24
 
