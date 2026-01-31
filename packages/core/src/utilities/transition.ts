@@ -3,6 +3,22 @@ import { standardPreset } from "@/defaults/variants/presets";
 import type { Utilities } from "@/interfaces";
 
 export const transition: Utilities = {
+	"transition-delay": {
+		prefix: "td",
+		properties: ["transition-delay"],
+		slug: "transition-delay",
+		values: transitionValues,
+		variants: standardPreset,
+	},
+
+	"transition-duration": {
+		prefix: "tdu",
+		properties: ["transition-duration"],
+		slug: "transition-duration",
+		values: transitionValues,
+		variants: standardPreset,
+	},
+
 	"transition-property": {
 		prefix: "tp",
 		properties: ["transition-property"],
@@ -18,14 +34,6 @@ export const transition: Utilities = {
 		variants: standardPreset,
 	},
 
-	"transition-duration": {
-		prefix: "td",
-		properties: ["transition-duration"],
-		slug: "transition-duration",
-		values: transitionValues,
-		variants: standardPreset,
-	},
-
 	"transition-timing-function": {
 		prefix: "ttf",
 		properties: ["transition-timing-function"],
@@ -38,12 +46,4 @@ export const transition: Utilities = {
 		},
 		variants: standardPreset,
 	},
-
-	"transition-delay": {
-		prefix: "tde",
-		properties: ["transition-delay"],
-		slug: "transition-delay",
-		values: transitionValues,
-		variants: standardPreset,
-	},
-};
+}
