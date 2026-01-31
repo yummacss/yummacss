@@ -1,47 +1,47 @@
 {
-  "name": "@yummacss/core",
-  "version": "3.10.1",
-  "description": "Core utility definitions for Yumma CSS.",
-  "keywords": [
-    "css-framework",
-    "typescript",
-    "yummacss"
-  ],
-  "homepage": "https://yummacss.com",
-  "license": "MIT",
-  "author": "Renildo Pereira",
-  "files": [
-    "dist"
-  ],
-  "main": "dist/index.mjs",
-  "types": "dist/index.d.mts",
-  "type": "module",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.mts",
-      "import": "./dist/index.mjs"
-    }
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/yummacss/yummacss.git",
-    "directory": "packages/api"
-  },
-  "scripts": {
-    "build": "tsdown",
-    "check": "tsc --noEmit",
-    "dev": "tsdown --watch",
-    "lint": "biome check --write",
-    "prepublishOnly": "pnpm build"
-  },
-  "dependencies": {
-    "tinycolor2": "^1.6.0"
-  },
-  "devDependencies": {
-    "@types/tinycolor2": "^1.4.6"
-  },
-  "publishConfig": {
-    "access": "public",
-    "provenance": true
-  }
+	"name": "@yummacss/core",
+	"version": "3.10.1",
+	"description": "Core utility definitions for Yumma CSS.",
+	"keywords": [
+		"css-framework",
+		"typescript",
+		"yummacss"
+	],
+	"homepage": "https://yummacss.com",
+	"license": "MIT",
+	"author": "Renildo Pereira",
+	"files": [
+		"dist"
+	],
+	"main": "dist/index.mjs",
+	"types": "dist/index.d.mts",
+	"type": "module",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.mts",
+			"import": "./dist/index.mjs"
+		}
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/yummacss/yummacss.git",
+		"directory": "packages/api"
+	},
+	"scripts": {
+		"build": "tsdown",
+		"check": "tsc --noEmit",
+		"dev": "tsdown --watch",
+		"lint": "biome check --write",
+		"prepublishOnly": "pnpm build"
+	},
+	"dependencies": {
+		"tinycolor2": "^1.6.0"
+	},
+	"devDependencies": {
+		"@types/tinycolor2": "^1.4.6"
+	},
+	"publishConfig": {
+		"access": "public",
+		"provenance": true
+	}
 }
