@@ -4,6 +4,7 @@
 		"baseUrl": ".",
 		"paths": {
 			"@yummacss/core": ["../packages/core/src"],
+			"@yummacss/nitro": ["../packages/nitro/src"],
 			"@/*": ["../packages/core/src/*"]
 		},
 		"types": ["vitest/globals"]

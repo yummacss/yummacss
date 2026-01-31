@@ -15,6 +15,7 @@ import { svg } from "./utilities/svg";
 import { table } from "./utilities/table";
 import { text } from "./utilities/text";
 import { transform } from "./utilities/transform";
+import { transition } from "./utilities/transition";
 
 // functions
 export const coreUtils = (): Utilities => core;
@@ -33,6 +34,7 @@ export const svgUtils = (): Utilities => svg;
 export const tableUtils = (): Utilities => table;
 export const textUtils = (): Utilities => text;
 export const transformUtils = (): Utilities => transform;
+export const transitionUtils = (): Utilities => transition;
 
 // types
 export type * from "./interfaces";

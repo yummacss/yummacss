@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.10.1] - 2026-01-31
+
+## Breaking Changes
+
+- **[core]** Renamed `trd-*` (`transition-delay`) utilities prefix to `tde-*`.
+
+### Fixes
+
+- **[core]** Fixed transition utilities not being generated.
+- **[nitro]** Fixed a bug in the generator where pseudo-class prefixes incorrectly matched pseudo-element separators.
+
 ## [3.10.0] - 2026-01-31
 
 ### Features

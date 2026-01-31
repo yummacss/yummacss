@@ -9,6 +9,7 @@ export default defineConfig({
 	resolve: {
 		alias: {
 			"@yummacss/core": path.resolve(__dirname, "./packages/core/src"),
+			"@yummacss/nitro": path.resolve(__dirname, "./packages/nitro/src"),
 			"@": path.resolve(__dirname, "./packages/core/src"),
 		},
 	},
