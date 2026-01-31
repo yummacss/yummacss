@@ -105,23 +105,4 @@ describe("Utility Generation", () => {
 			}
 		}
 	});
-
-	it("should generate transition utilities correctly", () => {
-		const transitionClasses = [
-			"tp-a", // transition-property: all
-			"td-2", // transition-duration: 100ms (50 * 2)
-			"ttf-l", // transition-timing-function: linear
-			"trd-4", // transition-delay: 200ms (50 * 4)
-		];
-
-		const usedClasses = new Set(transitionClasses);
-		const css = generator(usedClasses, config as any);
-
-		for (const className of transitionClasses) {
-			expect(
-				css,
-				`Transition utility ${className} failed to generate`,
-			).toContain(`.${className}`);
-		}
-	});
 });

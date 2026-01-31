@@ -43,3 +43,4 @@ Each utility export returns a `Utilities` object containing utility definitions 
 
 
 Learn more at [yummacss.com/docs/core-library](https://yummacss.com/docs/core-library)
+
