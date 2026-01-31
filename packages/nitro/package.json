@@ -8,12 +8,13 @@
 		"yummacss"
 	],
 	"homepage": "https://yummacss.com",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/yummacss/yummacss.git",
+		"directory": "packages/nitro"
+	},
 	"license": "MIT",
 	"author": "Renildo Pereira",
-	"files": [
-		"dist"
-	],
-	"types": "./dist/index.d.mts",
 	"type": "module",
 	"exports": {
 		".": {
@@ -25,11 +26,10 @@
 			"import": "./dist/browser.mjs"
 		}
 	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/yummacss/yummacss.git",
-		"directory": "packages/nitro"
-	},
+	"types": "./dist/index.d.mts",
+	"files": [
+		"dist"
+	],
 	"scripts": {
 		"build": "tsdown",
 		"check": "tsc --noEmit",
