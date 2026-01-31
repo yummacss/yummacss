@@ -40,7 +40,7 @@ export const transition: Utilities = {
 	},
 
 	"transition-delay": {
-		prefix: "trd",
+		prefix: "tde",
 		properties: ["transition-delay"],
 		slug: "transition-delay",
 		values: transitionValues,

@@ -1,6 +1,6 @@
 import { coreUtils, type Utilities, type Utility } from "@yummacss/core";
-import { baseStyles } from "@/base-styles";
-import type { Config } from "@/config/schema";
+import { baseStyles } from "./base-styles";
+import type { Config } from "./config/schema";
 
 export function generator(usedClasses: Set<string>, config: Config): string {
 	const cssBlocks: string[] = [];
@@ -74,7 +74,7 @@ function tryGenerateRule(
 		if (variants?.mediaQueries) {
 			for (const mq of variants.mediaQueries) {
 				if (currentClassName.startsWith(`${mq.prefix}:`)) {
-					mediaQuery = mq.value; // Note: currently only supports one media query (the last one)
+					mediaQuery = mq.value;
 					currentClassName = currentClassName.slice(mq.prefix.length + 1);
 					foundPrefix = true;
 					break;
@@ -84,12 +84,12 @@ function tryGenerateRule(
 
 		if (foundPrefix) continue;
 
-		// Handle pseudo classes
-		if (variants?.pseudoClasses) {
-			for (const pc of variants.pseudoClasses) {
-				if (currentClassName.startsWith(`${pc.prefix}:`)) {
-					pseudoClasses += pc.value;
-					currentClassName = currentClassName.slice(pc.prefix.length + 1);
+		// Handle pseudo elements (uses :: separator) - Check this BEFORE pseudo classes
+		if (variants?.pseudoElements) {
+			for (const pe of variants.pseudoElements) {
+				if (currentClassName.startsWith(`${pe.prefix}::`)) {
+					pseudoElements += pe.value;
+					currentClassName = currentClassName.slice(pe.prefix.length + 2);
 					foundPrefix = true;
 					break;
 				}
@@ -98,12 +98,15 @@ function tryGenerateRule(
 
 		if (foundPrefix) continue;
 
-		// Handle pseudo elements (uses :: separator)
-		if (variants?.pseudoElements) {
-			for (const pe of variants.pseudoElements) {
-				if (currentClassName.startsWith(`${pe.prefix}::`)) {
-					pseudoElements += pe.value;
-					currentClassName = currentClassName.slice(pe.prefix.length + 2);
+		// Handle pseudo classes (uses : separator) - Ensure it doesn't match ::
+		if (variants?.pseudoClasses) {
+			for (const pc of variants.pseudoClasses) {
+				if (
+					currentClassName.startsWith(`${pc.prefix}:`) &&
+					!currentClassName.startsWith(`${pc.prefix}::`)
+				) {
+					pseudoClasses += pc.value;
+					currentClassName = currentClassName.slice(pc.prefix.length + 1);
 					foundPrefix = true;
 					break;
 				}
