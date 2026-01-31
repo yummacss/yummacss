@@ -5,15 +5,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [3.10.0] - 2026-01-30
+## [3.10.0] - 2026-01-31
 
 ### Features
 
-- **[core]** Overhauled the color palette with 19 base colors: Added `lime`, `mint`, `sky`, `lavender`, `magenta`, `coral`, and `zinc`.
+- **[core]** Added `lime`, `mint`, `sky`, `lavender`, `magenta`, `coral`, and `zinc` colors options.
+- **[core]** Added 11 new pseudo-class variants: `c:` (checked), `d:` (disabled), `e:` (empty), `fc:` (first-child), `i:` (invalid), `in:` (indeterminate), `lc:` (last-child), `nc:` (nth-child), `r:` (required), `ro:` (read-only), and `v:` (valid).
+- **[core]** Added `ro-*` (rotate) utilities as a shorthand for `t-r-*`.
+- **[core]** Introduced **Transitions** category
+- **[core]** Added `tp-*` utilities (`transition-property`)
+- **[core]** Added `td-*` utilities (`transition-duration`) (steps of 50).
+- **[core]** Added `ttf-*` utilities (`transition-timing-function`)
+- **[core]** Added `trd-*` utilities (`transition-delay`) (steps of 50).
 
 ### Breaking changes
 
 - **[core]** Removed `teal` color option.
+- **[core]** Replaced `t-r-*` (`transform: rotate()`) with `ro-*` utilities using the standalone `rotate` property.
 
 ## [3.9.0] - 2026-01-24
 

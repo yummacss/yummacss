@@ -15,6 +15,7 @@ import { svg } from "./svg";
 import { table } from "./table";
 import { text } from "./text";
 import { transform } from "./transform";
+import { transition } from "./transition";
 
 export const core: Utilities = {
 	...background,
@@ -32,4 +33,5 @@ export const core: Utilities = {
 	...table,
 	...text,
 	...transform,
+	...transition,
 };
