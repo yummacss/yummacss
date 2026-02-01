@@ -7,12 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [3.10.2] - 2026-01-31
 
+## Features
+
+- **[core]** Extended `translateX` and `translateY` utilities to 0-100 scale.
+  
 ## Breaking Changes
 
 - **[core]** Renamed `tde-*` (`transition-delay`) utilities prefix to `td-*`.
 - **[core]** Renamed `td-*` (`transition-duration`) utilities prefix to `tdu-*`.
 - **[core]** The `td-*` and `tdu-*` utility suffix now matches its property value for better usability.
-- **[core]** Extended `translateX` and `translateY` utilities to 0-100 scale.
 
 ## [3.10.1] - 2026-01-31
 
