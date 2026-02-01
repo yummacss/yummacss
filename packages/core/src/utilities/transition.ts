@@ -46,4 +46,4 @@ export const transition: Utilities = {
 		},
 		variants: standardPreset,
 	},
-}
+};
