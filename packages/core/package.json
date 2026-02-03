@@ -1,6 +1,6 @@
 {
 	"name": "@yummacss/core",
-	"version": "3.10.3",
+	"version": "3.11.0",
 	"description": "Core utility definitions for Yumma CSS.",
 	"keywords": [
 		"css-framework",
