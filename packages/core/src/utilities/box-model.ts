@@ -31,7 +31,7 @@ export const boxModel: Utilities = {
 	"max-dimension": {
 		prefix: "max-d",
 		properties: ["max-height", "max-width"],
-		slug: "dimension/#max-dimension",
+		slug: "dimension#max-dimension",
 		values: dimensionValues,
 		variants: standardPreset,
 	},
@@ -39,7 +39,7 @@ export const boxModel: Utilities = {
 	"min-dimension": {
 		prefix: "min-d",
 		properties: ["min-height", "min-width"],
-		slug: "dimension/#min-dimension",
+		slug: "dimension#min-dimension",
 		values: dimensionValues,
 		variants: standardPreset,
 	},
@@ -55,7 +55,7 @@ export const boxModel: Utilities = {
 	"max-height": {
 		prefix: "max-h",
 		properties: ["max-height"],
-		slug: "height/#max-height",
+		slug: "height#max-height",
 		values: heightValues,
 		variants: standardPreset,
 	},
@@ -63,7 +63,7 @@ export const boxModel: Utilities = {
 	"min-height": {
 		prefix: "min-h",
 		properties: ["min-height"],
-		slug: "height/#min-height",
+		slug: "height#min-height",
 		values: heightValues,
 		variants: standardPreset,
 	},
@@ -79,7 +79,7 @@ export const boxModel: Utilities = {
 	"margin-block-end": {
 		prefix: "mbe",
 		properties: ["margin-block-end"],
-		slug: "margin/#block-end",
+		slug: "margin#block-end",
 		values: marginValues,
 		variants: standardPreset,
 	},
@@ -87,7 +87,7 @@ export const boxModel: Utilities = {
 	"margin-block-start": {
 		prefix: "mbs",
 		properties: ["margin-block-start"],
-		slug: "margin/#block-start",
+		slug: "margin#block-start",
 		values: marginValues,
 		variants: standardPreset,
 	},
@@ -95,7 +95,7 @@ export const boxModel: Utilities = {
 	"margin-bottom": {
 		prefix: "mb",
 		properties: ["margin-bottom"],
-		slug: "margin/#bottom",
+		slug: "margin#bottom",
 		values: marginValues,
 		variants: standardPreset,
 	},
@@ -103,7 +103,7 @@ export const boxModel: Utilities = {
 	"margin-inline-end": {
 		prefix: "mie",
 		properties: ["margin-inline-end"],
-		slug: "margin/#inline-end",
+		slug: "margin#inline-end",
 		values: marginValues,
 		variants: standardPreset,
 	},
@@ -111,7 +111,7 @@ export const boxModel: Utilities = {
 	"margin-inline-start": {
 		prefix: "mis",
 		properties: ["margin-inline-start"],
-		slug: "margin/#inline-start",
+		slug: "margin#inline-start",
 		values: marginValues,
 		variants: standardPreset,
 	},
@@ -119,7 +119,7 @@ export const boxModel: Utilities = {
 	"margin-left": {
 		prefix: "ml",
 		properties: ["margin-left"],
-		slug: "margin/#left",
+		slug: "margin#left",
 		values: marginValues,
 		variants: standardPreset,
 	},
@@ -127,7 +127,7 @@ export const boxModel: Utilities = {
 	"margin-right": {
 		prefix: "mr",
 		properties: ["margin-right"],
-		slug: "margin/#right",
+		slug: "margin#right",
 		values: marginValues,
 		variants: standardPreset,
 	},
@@ -135,23 +135,23 @@ export const boxModel: Utilities = {
 	"margin-top": {
 		prefix: "mt",
 		properties: ["margin-top"],
-		slug: "margin/#top",
+		slug: "margin#top",
 		values: marginValues,
 		variants: standardPreset,
 	},
 
-	"margin-x": {
+	"margin-inline": {
 		prefix: "mx",
 		properties: ["margin-inline"],
-		slug: "margin/#x-axis",
+		slug: "margin#margin-inline",
 		values: marginValues,
 		variants: standardPreset,
 	},
 
-	"margin-y": {
+	"margin-block": {
 		prefix: "my",
 		properties: ["margin-block"],
-		slug: "margin/#y-axis",
+		slug: "margin#margin-block",
 		values: marginValues,
 		variants: standardPreset,
 	},
@@ -167,7 +167,7 @@ export const boxModel: Utilities = {
 	"padding-block-end": {
 		prefix: "pbe",
 		properties: ["padding-block-end"],
-		slug: "padding/#block-end",
+		slug: "padding#block-end",
 		values: paddingValues,
 		variants: standardPreset,
 	},
@@ -175,7 +175,7 @@ export const boxModel: Utilities = {
 	"padding-block-start": {
 		prefix: "pbs",
 		properties: ["padding-block-start"],
-		slug: "padding/#block-start",
+		slug: "padding#block-start",
 		values: paddingValues,
 		variants: standardPreset,
 	},
@@ -183,7 +183,7 @@ export const boxModel: Utilities = {
 	"padding-bottom": {
 		prefix: "pb",
 		properties: ["padding-bottom"],
-		slug: "padding/#bottom",
+		slug: "padding#bottom",
 		values: paddingValues,
 		variants: standardPreset,
 	},
@@ -191,7 +191,7 @@ export const boxModel: Utilities = {
 	"padding-inline-end": {
 		prefix: "pie",
 		properties: ["padding-inline-end"],
-		slug: "padding/#inline-end",
+		slug: "padding#inline-end",
 		values: paddingValues,
 		variants: standardPreset,
 	},
@@ -199,7 +199,7 @@ export const boxModel: Utilities = {
 	"padding-inline-start": {
 		prefix: "pis",
 		properties: ["padding-inline-start"],
-		slug: "padding/#inline-start",
+		slug: "padding#inline-start",
 		values: paddingValues,
 		variants: standardPreset,
 	},
@@ -207,7 +207,7 @@ export const boxModel: Utilities = {
 	"padding-left": {
 		prefix: "pl",
 		properties: ["padding-left"],
-		slug: "padding/#left",
+		slug: "padding#left",
 		values: paddingValues,
 		variants: standardPreset,
 	},
@@ -215,7 +215,7 @@ export const boxModel: Utilities = {
 	"padding-right": {
 		prefix: "pr",
 		properties: ["padding-right"],
-		slug: "padding/#right",
+		slug: "padding#right",
 		values: paddingValues,
 		variants: standardPreset,
 	},
@@ -223,23 +223,23 @@ export const boxModel: Utilities = {
 	"padding-top": {
 		prefix: "pt",
 		properties: ["padding-top"],
-		slug: "padding/#top",
+		slug: "padding#top",
 		values: paddingValues,
 		variants: standardPreset,
 	},
 
-	"padding-x": {
+	"padding-inline": {
 		prefix: "px",
 		properties: ["padding-inline"],
-		slug: "padding/#x-axis",
+		slug: "padding#padding-inline",
 		values: paddingValues,
 		variants: standardPreset,
 	},
 
-	"padding-y": {
+	"padding-block": {
 		prefix: "py",
 		properties: ["padding-block"],
-		slug: "padding/#y-axis",
+		slug: "padding#padding-block",
 		values: paddingValues,
 		variants: standardPreset,
 	},
@@ -255,7 +255,7 @@ export const boxModel: Utilities = {
 	"max-width": {
 		prefix: "max-w",
 		properties: ["max-width"],
-		slug: "width/#max-width",
+		slug: "width#max-width",
 		values: widthValues,
 		variants: standardPreset,
 	},
@@ -263,7 +263,7 @@ export const boxModel: Utilities = {
 	"min-width": {
 		prefix: "min-w",
 		properties: ["min-width"],
-		slug: "width/#min-width",
+		slug: "width#min-width",
 		values: widthValues,
 		variants: standardPreset,
 	},

@@ -5,13 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [3.11.0]
 
 ## Features
 
 - **[core]** Added `tp-h` (`transition-property: height;`) utility.
 - **[core]** Added `tp-w` (`transition-property: width;`) utility.
 - **[core]** Added `tp-d` (`transition-property: height, width;`) utility.
+
+## Breaking Changes
+
+- **[core]** Update `margin-block` and `margin-inline` property and slug map data.
+- **[core]** Update `padding-block` and `padding-inline` property and slug map data.
+
+## Breaking Changes
 
 ## [3.10.3] - 2026-02-01
 
@@ -57,7 +64,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **[core]** Added `ttf-*` utilities (`transition-timing-function`)
 - **[core]** Added `trd-*` utilities (`transition-delay`) (steps of 50).
 
-### Breaking changes
+### Breaking Changes
 
 - **[core]** Removed `teal` color option.
 - **[core]** Replaced `t-r-*` (`transform: rotate()`) with `ro-*` utilities using the standalone `rotate` property.
@@ -82,7 +89,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **[core]** Added `t-tx-*` and `t-ty-*` utilities for `translateX` and `translateY` with full/half values.
 - **[nitro]** Added support for negative values using `--` syntax (e.g., `m--1` for `margin: -0.25rem`).
 
-### Breaking changes
+### Breaking Changes
 
 - **[core]** Renamed package from `@yummacss/api` to `@yummacss/core`.
 - **[core]** Updated `mx-*` (`margin-x`) to use `margin-inline` instead of `margin-left` and `margin-right`.
@@ -108,7 +115,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - `@yummacss/runtime` - Zero-config browser runtime for Yumma CSS
   - `yummacss` - The CLI tool
 
-### Breaking changes
+### Breaking Changes
 
 - All packages now share version `3.8.0` for consistency.
 - Package repository URLs now point to the monorepo with a `directory` field.
@@ -136,7 +143,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added `wm-*` utilities (`writing-mode`).
 - Extended `top`, `right`, `bottom`, `left`, `inset`, `inset-x`, `inset-y` utilities range from `16` to `100`.
 
-### Breaking changes
+### Breaking Changes
 
 - Renamed `9` to `pill` in all `border-radius` utilities.
 - Renamed `b-*` utilities to `bw-*` (`border-width`).
@@ -198,7 +205,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Improved build and rebuild times with `build` and `watch` tasks.
 - Improved CSS generation architecture for better performance and maintainability.
 
-### Breaking changes
+### Breaking Changes
 
 - Base styles are no longer tree-shaken.
 
@@ -220,7 +227,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [3.3.0] - 2025-09-12
 
-### Breaking changes
+### Breaking Changes
 
 - Updated config file name from `yumma.config.mjs` to `yumma.config.js`.
 
@@ -242,7 +249,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added `i` as an alias for the `init` command.
 - Added `w` as an alias for the `watch` command.
 
-### Breaking changes
+### Breaking Changes
 
 - Default `font-family` is now applied to the `html` tag instead of the `body` tag.
 
@@ -257,7 +264,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added `sm`, `md`, `lg`, `xl`, `xxl` values to **Dimension**, **Height**, and **Width** utilities.
 - Added `vh` and `vw` values to **Dimension**, **Height**, and **Width** utilities.
 
-### Breaking changes
+### Breaking Changes
 
 - Renamed the `lead` utility color to `slate`.
 
@@ -267,7 +274,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Added `:focus` and `:active` pseudo-class variant support.
 
-### Breaking changes
+### Breaking Changes
 
 - Removed `yumma.css` and `yumma.min.css` distribution files.
 
@@ -368,7 +375,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Expanded **Gap** utilities from 0 to 100.
 - Expanded **Row Gap** utilities from 0 to 100.
 
-### Breaking changes
+### Breaking Changes
 
 - Base styles can no longer be referenced as a CSS file.
 - Removed **Spacing X** utilities.
@@ -416,7 +423,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add the `0` value to **Opacity** utility variant.
 - Add the `auto` property to **Flex** utility variant.
 
-### Breaking changes
+### Breaking Changes
 
 - Added `baseline` property values for **Align Content** utilities.
 - Added `baseline` property values for **Align Items** utilities.
@@ -492,7 +499,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add support for hover utilities.
 - Add support for media query utilities.
 
-### Breaking changes
+### Breaking Changes
 
 - Base styles are now optional.
 - Base styles now covers the `<optgroup>`.
@@ -546,7 +553,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Improved **Grid Template Columns** utilities.
 - Improved **Grid Template Rows** utilities.
 
-### Breaking changes
+### Breaking Changes
 
 - Color system reworked.
 - Removed `bs` base utility.
@@ -567,7 +574,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added media query support for utilities.
 - Added transition property to button components.
 
-### Breaking changes
+### Breaking Changes
 
 - Renamed `box-shadow` utility from `bs-xlg` to `bs-xl`.
 - Renamed `box-shadow` utility from `bs-xsm` to `bs-xs`
@@ -583,7 +590,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.0.3] - 2024-01-09
 
-### Breaking changes
+### Breaking Changes
 
 - Minified CSS file moved to the `/dist` folder.
 
@@ -597,7 +604,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.0.1] - 2024-01-04
 
-### Breaking changes
+### Breaking Changes
 
 - Updated **Height** and **Width** utility viewport values from dynamic to standard.
 
@@ -637,7 +644,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added Lead color utility to the color system.
 - Added viewport values for **Height** and **Width** utilities.
 
-### Breaking changes
+### Breaking Changes
 
 - Removed `break-all` and `keep-all` property values from **Overflow Wrap** utilities.
 - Removed `nav-l` component.

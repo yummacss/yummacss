@@ -114,7 +114,7 @@ export const interactivity: Utilities = {
 	"scroll-margin-bottom": {
 		prefix: "smb",
 		properties: ["scroll-margin-bottom"],
-		slug: "scroll-margin/#bottom",
+		slug: "scroll-margin#bottom",
 		values: scrollMarginValues,
 		variants: standardPreset,
 	},
@@ -122,7 +122,7 @@ export const interactivity: Utilities = {
 	"scroll-margin-inline-start": {
 		prefix: "smis",
 		properties: ["scroll-margin-inline-start"],
-		slug: "scroll-margin/#inline-start",
+		slug: "scroll-margin#inline-start",
 		values: scrollMarginValues,
 		variants: standardPreset,
 	},
@@ -130,7 +130,7 @@ export const interactivity: Utilities = {
 	"scroll-margin-left": {
 		prefix: "sml",
 		properties: ["scroll-margin-left"],
-		slug: "scroll-margin/#scroll-margin-left",
+		slug: "scroll-margin#scroll-margin-left",
 		values: scrollMarginValues,
 		variants: standardPreset,
 	},
@@ -138,7 +138,7 @@ export const interactivity: Utilities = {
 	"scroll-margin-right": {
 		prefix: "smr",
 		properties: ["scroll-margin-right"],
-		slug: "scroll-margin/#scroll-margin-right",
+		slug: "scroll-margin#scroll-margin-right",
 		values: scrollMarginValues,
 		variants: standardPreset,
 	},
@@ -146,7 +146,7 @@ export const interactivity: Utilities = {
 	"scroll-margin-top": {
 		prefix: "smt",
 		properties: ["scroll-margin-top"],
-		slug: "scroll-margin/#scroll-margin-top",
+		slug: "scroll-margin#scroll-margin-top",
 		values: scrollMarginValues,
 		variants: standardPreset,
 	},
@@ -154,7 +154,7 @@ export const interactivity: Utilities = {
 	"scroll-margin-inline-end": {
 		prefix: "smie",
 		properties: ["scroll-margin-inline-end"],
-		slug: "scroll-margin/#scroll-margin-inline-end",
+		slug: "scroll-margin#scroll-margin-inline-end",
 		values: scrollMarginValues,
 		variants: standardPreset,
 	},
@@ -162,7 +162,7 @@ export const interactivity: Utilities = {
 	"scroll-margin-x": {
 		prefix: "smx",
 		properties: ["scroll-margin-left", "scroll-margin-right"],
-		slug: "scroll-margin/#scroll-margin-x",
+		slug: "scroll-margin#scroll-margin-x",
 		values: scrollMarginValues,
 		variants: standardPreset,
 	},
@@ -170,7 +170,7 @@ export const interactivity: Utilities = {
 	"scroll-margin-y": {
 		prefix: "smy",
 		properties: ["scroll-margin-bottom", "scroll-margin-top"],
-		slug: "scroll-margin/#scroll-margin-y",
+		slug: "scroll-margin#scroll-margin-y",
 		values: scrollMarginValues,
 		variants: standardPreset,
 	},
@@ -186,7 +186,7 @@ export const interactivity: Utilities = {
 	"scroll-padding-bottom": {
 		prefix: "spb",
 		properties: ["scroll-padding-bottom"],
-		slug: "scroll-padding/#bottom",
+		slug: "scroll-padding#bottom",
 		values: scrollPaddingValues,
 		variants: standardPreset,
 	},
@@ -194,7 +194,7 @@ export const interactivity: Utilities = {
 	"scroll-padding-inline-start": {
 		prefix: "spis",
 		properties: ["scroll-padding-inline-start"],
-		slug: "scroll-padding/#scroll-padding-inline-start",
+		slug: "scroll-padding#scroll-padding-inline-start",
 		values: scrollPaddingValues,
 		variants: standardPreset,
 	},
@@ -202,7 +202,7 @@ export const interactivity: Utilities = {
 	"scroll-padding-left": {
 		prefix: "spl",
 		properties: ["scroll-padding-left"],
-		slug: "scroll-padding/#scroll-padding-left",
+		slug: "scroll-padding#scroll-padding-left",
 		values: scrollPaddingValues,
 		variants: standardPreset,
 	},
@@ -210,7 +210,7 @@ export const interactivity: Utilities = {
 	"scroll-padding-right": {
 		prefix: "spr",
 		properties: ["scroll-padding-right"],
-		slug: "scroll-padding/#scroll-padding-right",
+		slug: "scroll-padding#scroll-padding-right",
 		values: scrollPaddingValues,
 		variants: standardPreset,
 	},
@@ -218,7 +218,7 @@ export const interactivity: Utilities = {
 	"scroll-padding-top": {
 		prefix: "spt",
 		properties: ["scroll-padding-top"],
-		slug: "scroll-padding/#scroll-padding-top",
+		slug: "scroll-padding#scroll-padding-top",
 		values: scrollPaddingValues,
 		variants: standardPreset,
 	},
@@ -226,7 +226,7 @@ export const interactivity: Utilities = {
 	"scroll-padding-inline-end": {
 		prefix: "spie",
 		properties: ["scroll-padding-inline-end"],
-		slug: "scroll-padding/#scroll-padding-inline-end",
+		slug: "scroll-padding#scroll-padding-inline-end",
 		values: scrollPaddingValues,
 		variants: standardPreset,
 	},
@@ -234,7 +234,7 @@ export const interactivity: Utilities = {
 	"scroll-padding-x": {
 		prefix: "spx",
 		properties: ["scroll-padding-left", "scroll-padding-right"],
-		slug: "scroll-padding/#scroll-padding-x",
+		slug: "scroll-padding#scroll-padding-x",
 		values: scrollPaddingValues,
 		variants: standardPreset,
 	},
@@ -242,7 +242,7 @@ export const interactivity: Utilities = {
 	"scroll-padding-y": {
 		prefix: "spy",
 		properties: ["scroll-padding-bottom", "scroll-padding-top"],
-		slug: "scroll-padding/#scroll-padding-y",
+		slug: "scroll-padding#scroll-padding-y",
 		values: scrollPaddingValues,
 		variants: standardPreset,
 	},

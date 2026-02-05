@@ -29,7 +29,7 @@ export const border: Utilities = {
 	"border-bottom-radius": {
 		prefix: "br-b",
 		properties: ["border-bottom-left-radius", "border-bottom-right-radius"],
-		slug: "border-radius/#bottom-radius",
+		slug: "border-radius#bottom-radius",
 		values: borderRadiusValues,
 		variants: standardPreset,
 	},
@@ -37,7 +37,7 @@ export const border: Utilities = {
 	"border-left-radius": {
 		prefix: "br-l",
 		properties: ["border-bottom-left-radius", "border-top-left-radius"],
-		slug: "border-radius/#left-radius",
+		slug: "border-radius#left-radius",
 		values: borderRadiusValues,
 		variants: standardPreset,
 	},
@@ -45,7 +45,7 @@ export const border: Utilities = {
 	"border-right-radius": {
 		prefix: "br-r",
 		properties: ["border-bottom-right-radius", "border-top-right-radius"],
-		slug: "border-radius/#right-radius",
+		slug: "border-radius#right-radius",
 		values: borderRadiusValues,
 		variants: standardPreset,
 	},
@@ -53,7 +53,7 @@ export const border: Utilities = {
 	"border-bottom-left-radius": {
 		prefix: "br-bl",
 		properties: ["border-bottom-left-radius"],
-		slug: "border-radius/#bottom-left-radius",
+		slug: "border-radius#bottom-left-radius",
 		values: borderRadiusValues,
 		variants: standardPreset,
 	},
@@ -61,7 +61,7 @@ export const border: Utilities = {
 	"border-bottom-right-radius": {
 		prefix: "br-br",
 		properties: ["border-bottom-right-radius"],
-		slug: "border-radius/#bottom-right-radius",
+		slug: "border-radius#bottom-right-radius",
 		values: borderRadiusValues,
 		variants: standardPreset,
 	},
@@ -69,7 +69,7 @@ export const border: Utilities = {
 	"border-top-radius": {
 		prefix: "br-t",
 		properties: ["border-top-left-radius", "border-top-right-radius"],
-		slug: "border-radius/#top-radius",
+		slug: "border-radius#top-radius",
 		values: borderRadiusValues,
 		variants: standardPreset,
 	},
@@ -77,7 +77,7 @@ export const border: Utilities = {
 	"border-top-left-radius": {
 		prefix: "br-tl",
 		properties: ["border-top-left-radius"],
-		slug: "border-radius/#top-left-radius",
+		slug: "border-radius#top-left-radius",
 		values: borderRadiusValues,
 		variants: standardPreset,
 	},
@@ -85,7 +85,7 @@ export const border: Utilities = {
 	"border-top-right-radius": {
 		prefix: "br-tr",
 		properties: ["border-top-right-radius"],
-		slug: "border-radius/#top-right-radius",
+		slug: "border-radius#top-right-radius",
 		values: borderRadiusValues,
 		variants: standardPreset,
 	},
@@ -129,7 +129,7 @@ export const border: Utilities = {
 	"border-left-width": {
 		prefix: "blw",
 		properties: ["border-left-width"],
-		slug: "border-width/#left-width",
+		slug: "border-width#left-width",
 		values: borderWidthValues,
 		variants: standardPreset,
 	},
@@ -137,7 +137,7 @@ export const border: Utilities = {
 	"border-right-width": {
 		prefix: "brw",
 		properties: ["border-right-width"],
-		slug: "border-width/#right-width",
+		slug: "border-width#right-width",
 		values: borderWidthValues,
 		variants: standardPreset,
 	},
@@ -145,7 +145,7 @@ export const border: Utilities = {
 	"border-top-width": {
 		prefix: "btw",
 		properties: ["border-top-width"],
-		slug: "border-width/#top-width",
+		slug: "border-width#top-width",
 		values: borderWidthValues,
 		variants: standardPreset,
 	},
