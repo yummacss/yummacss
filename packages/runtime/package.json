@@ -1,6 +1,6 @@
 {
 	"name": "@yummacss/runtime",
-	"version": "3.11.0",
+	"version": "3.12.0",
 	"description": "Zero-config browser runtime for Yumma CSS.",
 	"keywords": [
 		"css-framework",
@@ -17,11 +17,16 @@
 	"author": "Renildo Pereira",
 	"type": "module",
 	"exports": {
-		".": "./dist/index.iife.js"
+		".": {
+			"import": "./dist/index.mjs",
+			"require": "./dist/index.cjs",
+			"default": "./dist/index.iife.js"
+		}
 	},
-	"main": "./dist/index.iife.js",
-	"jsdelivr": "./dist/index.iife.js",
+	"main": "./dist/index.cjs",
+	"module": "./dist/index.mjs",
 	"unpkg": "./dist/index.iife.js",
+	"jsdelivr": "./dist/index.iife.js",
 	"files": [
 		"dist"
 	],
