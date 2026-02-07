@@ -7,32 +7,32 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [3.11.0]
 
-## Features
+### Added
 
 - **[core]** Added `tp-h` (`transition-property: height;`) utility.
 - **[core]** Added `tp-w` (`transition-property: width;`) utility.
 - **[core]** Added `tp-d` (`transition-property: height, width;`) utility.
 
-## Breaking Changes
+### Changed
 
 - **[core]** Update `margin-block` and `margin-inline` property and slug map data.
 - **[core]** Update `padding-block` and `padding-inline` property and slug map data.
 
-## Breaking Changes
+### Changed
 
 ## [3.10.3] - 2026-02-01
 
-## Features
+### Added
 
 - No user-facing changes.
 
 ## [3.10.2] - 2026-02-01
 
-## Features
+### Added
 
 - **[core]** Extended `translateX` and `translateY` utilities to 0-100 scale.
   
-## Breaking Changes
+### Changed
 
 - **[core]** Renamed `tde-*` (`transition-delay`) utilities prefix to `td-*`.
 - **[core]** Renamed `td-*` (`transition-duration`) utilities prefix to `tdu-*`.
@@ -40,18 +40,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [3.10.1] - 2026-01-31
 
-## Breaking Changes
+### Changed
 
 - **[core]** Renamed `trd-*` (`transition-delay`) utilities prefix to `tde-*`.
 
-### Fixes
+### Fixed
 
 - **[core]** Fixed transition utilities not being generated.
 - **[nitro]** Fixed a bug in the generator where pseudo-class prefixes incorrectly matched pseudo-element separators.
 
 ## [3.10.0] - 2026-01-31
 
-### Features
+### Added
 
 - **[core]** Added `lime`, `mint`, `sky`, `lavender`, `magenta`, `coral`, and `zinc` colors options.
 - **[core]** Added 11 new pseudo-class variants: `c:` (checked), `d:` (disabled), `e:` (empty), `fc:` (first-child), `i:` (invalid), `in:` (indeterminate), `lc:` (last-child), `nc:` (nth-child), `r:` (required), `ro:` (read-only), and `v:` (valid).
@@ -64,7 +64,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **[core]** Added `ttf-*` utilities (`transition-timing-function`)
 - **[core]** Added `trd-*` utilities (`transition-delay`) (steps of 50).
 
-### Breaking Changes
+### Changed
 
 - **[core]** Removed `teal` color option.
 - **[core]** Replaced `t-r-*` (`transform: rotate()`) with `ro-*` utilities using the standalone `rotate` property.
@@ -73,7 +73,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [3.9.0] - 2026-01-24
 
-### Features
+### Added
 
 - **[core]** Added `a::*` pseudo-element variant (`::after`).
 - **[core]** Added `b::*` pseudo-element variant (`::before`).
@@ -89,7 +89,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **[core]** Added `t-tx-*` and `t-ty-*` utilities for `translateX` and `translateY` with full/half values.
 - **[nitro]** Added support for negative values using `--` syntax (e.g., `m--1` for `margin: -0.25rem`).
 
-### Breaking Changes
+### Changed
 
 - **[core]** Renamed package from `@yummacss/api` to `@yummacss/core`.
 - **[core]** Updated `mx-*` (`margin-x`) to use `margin-inline` instead of `margin-left` and `margin-right`.
@@ -101,13 +101,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [3.8.1] - 2026-01-16
 
-### Fixes
+### Fixed
 
 - **[cli]** Restored `README.md` file.
 
 ## [3.8.0] - 2026-01-15
 
-### Features
+### Added
 
 - **Monorepo migration**: All packages are now unified under a single repository.
   - `@yummacss/api` - The API behind Yumma CSS
@@ -115,26 +115,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - `@yummacss/runtime` - Zero-config browser runtime for Yumma CSS
   - `yummacss` - The CLI tool
 
-### Breaking Changes
+### Changed
 
 - All packages now share version `3.8.0` for consistency.
 - Package repository URLs now point to the monorepo with a `directory` field.
 
 ## [3.7.2] - 2026-01-09
 
-### Features
+### Added
 
 - No user-facing changes.
 
 ## [3.7.1] - 2025-12-31
 
-### Fixes
+### Fixed
 
 - Update `@yummacss/nitro` to `0.5.0`.
 
 ## [3.7.0] - 2025-12-31
 
-### Features
+### Added
 
 - Added `px` variants to all `border` and `gap` utilities.
 - Added `s` value (`stretch`) to `height`, `width` and Dimension utilities.
@@ -143,7 +143,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added `wm-*` utilities (`writing-mode`).
 - Extended `top`, `right`, `bottom`, `left`, `inset`, `inset-x`, `inset-y` utilities range from `16` to `100`.
 
-### Breaking Changes
+### Changed
 
 - Renamed `9` to `pill` in all `border-radius` utilities.
 - Renamed `b-*` utilities to `bw-*` (`border-width`).
@@ -155,107 +155,107 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [3.6.2] - 2025-12-27
 
-### Features
+### Added
 
 - No user-facing changes.
 
 ## [3.6.1] - 2025-12-26
 
-### Fixes
+### Fixed
 
 - Fixed exports to use `mjs` instead of `js`.
 
 ## [3.6.0] - 2025-12-26
 
-### Features
+### Added
 
 - Add support for arbitrary, chainable variants (e.g. `lg:h:bg-red/50`).
 
 ## [3.5.0] - 2025-10-11
 
-### Features
+### Added
 
 - Added opacity support for all color utilities.
 - Improved CSS generation architecture for better performance and maintainability.
 
 ## [3.4.3] - 2025-10-03
 
-### Fixes
+### Fixed
 
 - Fixed CSS rules to be sorted alphabetically for consistent output.
 - Fixed escaping of slashes in utilities like `ar-*` (`aspect-ratio`).
 
 ## [3.4.2] - 2025-10-03
 
-### Fixes
+### Fixed
 
 - Fixed `tdt-*` (text-decoration-thickness) utilities to use `px` instead of `rem`.
 
 ## [3.4.1] - 2025-10-02
 
-### Fixes
+### Fixed
 
 - Fixed utilities containing slashes or colons not being properly escaped.
 
 ## [3.4.0] - 2025-10-02
 
-### Features
+### Added
 
 - Added media query support for all color utilities.
 - Improved build and rebuild times with `build` and `watch` tasks.
 - Improved CSS generation architecture for better performance and maintainability.
 
-### Breaking Changes
+### Changed
 
 - Base styles are no longer tree-shaken.
 
-### Fixes
+### Fixed
 
 - Fixed NPM users not being able to run the CLI.
 
 ## [3.3.2] - 2025-09-18
 
-### Features
+### Added
 
 - No user-facing changes.
 
 ## [3.3.1] - 2025-09-12
 
-### Features
+### Added
 
 - No user-facing changes.
 
 ## [3.3.0] - 2025-09-12
 
-### Breaking Changes
+### Changed
 
 - Updated config file name from `yumma.config.mjs` to `yumma.config.js`.
 
-### Fixes
+### Fixed
 
 - Fixed `init` command to use JavaScript objects instead of JSON entries.
 
 ## [3.2.2] - 2025-09-08
 
-### Fixes
+### Fixed
 
 - Removed default `font-weight` property from `ff-*` (`font-family`) utilities.
 
 ## [3.2.1] - 2025-09-03
 
-### Features
+### Added
 
 - Added `b` as an alias for the `build` command.
 - Added `i` as an alias for the `init` command.
 - Added `w` as an alias for the `watch` command.
 
-### Breaking Changes
+### Changed
 
 - Default `font-family` is now applied to the `html` tag instead of the `body` tag.
 
 ## [3.2.0] - 2025-08-23
 
-### Features
+### Added
 
 - Added `9` value to Border Radius utility.
 - Added `currentColor` to theme colors.
@@ -264,39 +264,39 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added `sm`, `md`, `lg`, `xl`, `xxl` values to **Dimension**, **Height**, and **Width** utilities.
 - Added `vh` and `vw` values to **Dimension**, **Height**, and **Width** utilities.
 
-### Breaking Changes
+### Changed
 
 - Renamed the `lead` utility color to `slate`.
 
 ## [3.1.0] - 2025-07-30
 
-### Features
+### Added
 
 - Added `:focus` and `:active` pseudo-class variant support.
 
-### Breaking Changes
+### Changed
 
 - Removed `yumma.css` and `yumma.min.css` distribution files.
 
-### Fixes
+### Fixed
 
 - Fixed `init` command not generating `yumma.config.js` file.
 
 ## [3.0.3] - 2025-07-22
 
-### Features
+### Added
 
 - No user-facing changes.
 
 ## [3.0.2] - 2025-07-20
 
-### Features
+### Added
 
 - No user-facing changes.
 
 ## [3.0.1] - 2025-07-17
 
-### Fixes
+### Fixed
 
 - Excluded CSS build artifacts from the published package.
 - Improved CLI messages for better user feedback.
@@ -304,7 +304,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [3.0.0] - 2025-04-14
 
-### Features
+### Added
 
 - Added **Background Attachment** utilities.
 - Added **Background Clip** utilities.
@@ -375,7 +375,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Expanded **Gap** utilities from 0 to 100.
 - Expanded **Row Gap** utilities from 0 to 100.
 
-### Breaking Changes
+### Changed
 
 - Base styles can no longer be referenced as a CSS file.
 - Removed **Spacing X** utilities.
@@ -410,20 +410,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updated color shade percentage from `10%` to `14%`.
 - Updated color utility range from 1-6 to 1-12.
 
-### Fixes
+### Fixed
 
 - Fixed duplicated utilities in CSS distribution files.
 - Fixed media query utilities not overriding as expected.
 
 ## [2.1.0] - 2024-10-11
 
-### Features
+### Added
 
 - Add `cursor: pointer` property value to all `<button>` elements.
 - Add the `0` value to **Opacity** utility variant.
 - Add the `auto` property to **Flex** utility variant.
 
-### Breaking Changes
+### Changed
 
 - Added `baseline` property values for **Align Content** utilities.
 - Added `baseline` property values for **Align Items** utilities.
@@ -463,7 +463,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [2.0.0] - 2024-09-08
 
-### Features
+### Added
 
 - Add **Accent Color** utilities.
 - Add **Aspect Ratio** utilities.
@@ -499,7 +499,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add support for hover utilities.
 - Add support for media query utilities.
 
-### Breaking Changes
+### Changed
 
 - Base styles are now optional.
 - Base styles now covers the `<optgroup>`.
@@ -527,14 +527,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updated **Margin** and **Padding** property values from `0.75rem` to `0.25rem`.
 - Updated `cnt` utility with new responsive utility rules.
 
-### Fixes
+### Fixed
 
 - Fix `transparent` having color variants.
 - Fix conflict between `f-none` (`float: none;`) utility and `f-none` (`flex: none;`) utility.
 
 ## [1.2.0] - 2024-03-22
 
-### Features
+### Added
 
 - Added **Line Height** utilities.
 - Added **Max Dimension** and **Min Dimension** utilities.
@@ -553,7 +553,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Improved **Grid Template Columns** utilities.
 - Improved **Grid Template Rows** utilities.
 
-### Breaking Changes
+### Changed
 
 - Color system reworked.
 - Removed `bs` base utility.
@@ -567,14 +567,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.1.0] - 2024-01-24
 
-### Features
+### Added
 
 - Added **Dimension** utilities.
 - Added extra small variant for font size utilities.
 - Added media query support for utilities.
 - Added transition property to button components.
 
-### Breaking Changes
+### Changed
 
 - Renamed `box-shadow` utility from `bs-xlg` to `bs-xl`.
 - Renamed `box-shadow` utility from `bs-xsm` to `bs-xs`
@@ -582,7 +582,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Renamed `box-shadow` utility from `fs-xlg` to `bs-xl`.
 - Updated syntax for column media query utilities.
 
-### Fixes
+### Fixed
 
 - Fixed `caret-color` utility variants not working as expected.
 - Fixed `fs-md` not working as expected.
@@ -590,13 +590,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.0.3] - 2024-01-09
 
-### Breaking Changes
+### Changed
 
 - Minified CSS file moved to the `/dist` folder.
 
 ## [1.0.2] - 2024-01-05
 
-### Fixes
+### Fixed
 
 - Fixed `caret-color` light and dark color utilities variations.
 - Fixed viewport classes not working as expected.
@@ -604,17 +604,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.0.1] - 2024-01-04
 
-### Breaking Changes
+### Changed
 
 - Updated **Height** and **Width** utility viewport values from dynamic to standard.
 
-### Fixes
+### Fixed
 
 - Fixed minified CSS file.
 
 ## [1.0.0] - 2024-01-03
 
-### Features
+### Added
 
 - Added **Align Content** utilities.
 - Added **Align Self** utilities.
@@ -644,7 +644,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added Lead color utility to the color system.
 - Added viewport values for **Height** and **Width** utilities.
 
-### Breaking Changes
+### Changed
 
 - Removed `break-all` and `keep-all` property values from **Overflow Wrap** utilities.
 - Removed `nav-l` component.
@@ -652,26 +652,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Renamed `greet()` function signature to `showVer()`.
 - Renamed hover variant utilities from `*-h-*` to `h:*`.
 
-### Fixes
+### Fixed
 
 - Small CSS resetting improvements.
 - Removed duplicated **Justify Content** utilities.
 
 ## [0.2.0] - 2023-11-23
 
-### Features
+### Added
 
 - No user-facing changes.
 
 ## [0.1.1] - 2023-11-07
 
-### Features
+### Added
 
 - No user-facing changes.
 
 ## [0.1.0] - 2023-11-06
 
-### Features
+### Added
 
 - Expanded **Height** utilities from 0 to 100.
 - Expanded **Margin** utilities from 0 to 100.
@@ -680,6 +680,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.0.1] - 2023-10-02
 
-### Features
+### Added
 
 - Initial release.
