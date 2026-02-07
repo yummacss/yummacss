@@ -1,6 +1,6 @@
 {
 	"name": "yummacss",
-	"version": "3.11.0",
+	"version": "3.12.0",
 	"description": "An atomic CSS framework with abbreviated class names.",
 	"keywords": [
 		"css-framework",
@@ -17,8 +17,13 @@
 	"author": "Renildo Pereira",
 	"type": "module",
 	"exports": {
-		".": "./dist/index.mjs"
+		".": {
+			"import": "./dist/index.mjs",
+			"require": "./dist/index.cjs"
+		}
 	},
+	"main": "dist/index.cjs",
+	"module": "dist/index.mjs",
 	"bin": {
 		"yummacss": "./dist/index.mjs"
 	},
