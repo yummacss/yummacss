@@ -209,12 +209,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Implement media query support for all color utilities.
-- Improve build and rebuild times with `build` and `watch` tasks.
-- Improve CSS generation architecture for better performance and maintainability.
 
 ### Changed
 
 - Base styles are no longer tree-shaken.
+- Improve build and rebuild times with `build` and `watch` tasks.
+- Improve CSS generation architecture for better performance and maintainability.
 
 ### Fixed
 
