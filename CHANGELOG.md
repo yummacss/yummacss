@@ -176,7 +176,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Add support for arbitrary, chainable variants (e.g. `lg:h:bg-red/50`).
+- Implement support for arbitrary, chainable variants (e.g. `lg:h:bg-red/50`).
 
 ## [3.5.0] - 2025-10-11
 
@@ -471,39 +471,39 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Add **Accent Color** utilities.
-- Add **Aspect Ratio** utilities.
-- Add **Backdrop Filter** utilities.
-- Add **Border Collapse** utilities.
-- Add **Border Style** utilities.
-- Add **Caption Side** utilities.
-- Add **Container** utilities.
-- Add **Font Style** utilities.
-- Add **Gap** utilities.
-- Add **Grid Column** utilities.
-- Add **Grid Row** utilities.
-- Add **Object Fit** utilities.
-- Add **Object Position** utilities.
-- Add **Outline Color** utilities.
-- Add **Outline Offset** utilities.
-- Add **Outline Style** utilities.
-- Add **Outline Width** utilities.
-- Add **Silver** color to the color system.
-- Add **Spacing** utilities.
-- Add **Table Layout** utilities.
-- Add **Text Decoration Color** utilities.
-- Add **Text Decoration Style** utilities.
-- Add **Text Decoration Thickness** utilities.
-- Add `auto` property in **Margin** and **Padding** utilities.
-- Add `fb-full`, `fb-half` property values to **Flex Basis** utilities .
-- Add `max-content` and `min-content` property values for **Flex Basis** utilities.
-- Add `max-content` and `min-content` property values for **Grid Auto Columns** utilities.
-- Add `max-content` and `min-content` property values for **Grid Auto Rows** utilities.
-- Add `max-content` and `min-content` property values for **Height** utilities.
-- Add `max-content` and `min-content` property values for **Width** utilities.
-- Add `xxl` breakpoint value.
-- Add support for hover utilities.
-- Add support for media query utilities.
+- Implement **Accent Color** utilities.
+- Implement **Aspect Ratio** utilities.
+- Implement **Backdrop Filter** utilities.
+- Implement **Border Collapse** utilities.
+- Implement **Border Style** utilities.
+- Implement **Caption Side** utilities.
+- Implement **Container** utilities.
+- Implement **Font Style** utilities.
+- Implement **Gap** utilities.
+- Implement **Grid Column** utilities.
+- Implement **Grid Row** utilities.
+- Implement **Object Fit** utilities.
+- Implement **Object Position** utilities.
+- Implement **Outline Color** utilities.
+- Implement **Outline Offset** utilities.
+- Implement **Outline Style** utilities.
+- Implement **Outline Width** utilities.
+- Implement **Silver** color to the color system.
+- Implement **Spacing** utilities.
+- Implement **Table Layout** utilities.
+- Implement **Text Decoration Color** utilities.
+- Implement **Text Decoration Style** utilities.
+- Implement **Text Decoration Thickness** utilities.
+- Implement `auto` property in **Margin** and **Padding** utilities.
+- Implement `fb-full`, `fb-half` property values to **Flex Basis** utilities .
+- Implement `max-content` and `min-content` property values for **Flex Basis** utilities.
+- Implement `max-content` and `min-content` property values for **Grid Auto Columns** utilities.
+- Implement `max-content` and `min-content` property values for **Grid Auto Rows** utilities.
+- Implement `max-content` and `min-content` property values for **Height** utilities.
+- Implement `max-content` and `min-content` property values for **Width** utilities.
+- Implement `xxl` breakpoint value.
+- Implement support for hover utilities.
+- Implement support for media query utilities.
 
 ### Changed
 
@@ -535,8 +535,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- Fix `transparent` having color variants.
-- Fix conflict between `f-none` (`float: none;`) utility and `f-none` (`flex: none;`) utility.
+- `transparent` having color variants.
+- Conflict between `f-none` (`float: none;`) utility and `f-none` (`flex: none;`) utility.
 
 ## [1.2.0] - 2024-03-22
 
