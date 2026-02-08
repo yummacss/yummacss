@@ -303,7 +303,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [3.0.1] - 2025-07-17
 
-## Changed
+### Changed
 
 - Improve CLI messages for better user feedback.
 - Improve CLI watch command with debouncing for better performance.
@@ -425,12 +425,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Add `cursor: pointer` property value to all `<button>` elements.
-- Add the `0` value to **Opacity** utility variant.
-- Add the `auto` property to **Flex** utility variant.
-
-### Changed
-
+- Implement `cursor: pointer` property value to all `<button>` elements.
+- Implement `0` value to **Opacity** utility variant.
+- Implement `auto` property to **Flex** utility variant.
 - Implement `baseline` property values for **Align Content** utilities.
 - Implement `baseline` property values for **Align Items** utilities.
 - Implement `cg-0` (`column-gap`) and `rg-0` (`row-gap`) utilities.
@@ -441,6 +438,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Implement `row dense` and `dense row` **Grid Auto Flow** property values.
 - Implement `table`, `inline-table` and `inline-grid` **Display** property values.
 - Implement `text` and `all` **User Select** property values.
+
+### Changed
+
 - Remove `end` and `start` property values from **Align Content** utilities.
 - Remove `end` and `start` property values from **Align Items** utilities.
 - Remove `end` and `start` property values from **Align Self** utilities.
