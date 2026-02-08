@@ -27,8 +27,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **[core]** Update `margin-block` and `margin-inline` property and slug map data.
 - **[core]** Update `padding-block` and `padding-inline` property and slug map data.
 
-### Changed
-
 ## [3.10.3] - 2026-02-01
 
 ### Added
