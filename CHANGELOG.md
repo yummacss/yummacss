@@ -303,9 +303,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [3.0.1] - 2025-07-17
 
-### Fixed
+## Changed
 
-- Exclude CSS build artifacts from the published package.
 - Improve CLI messages for better user feedback.
 - Improve CLI watch command with debouncing for better performance.
 
