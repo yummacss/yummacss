@@ -23,7 +23,7 @@
 		"lint": "pnpm -r lint",
 		"pnpm:update": "pnpm self-update",
 		"publish-packages": "pnpm -r publish",
-		"sort": "sort-package-json package.json packages/*/package.json",
+		"sort": "sort-package-json \"package.json\" \"packages/**/package.json\"",
 		"test": "vitest run",
 		"test:watch": "vitest"
 	},
