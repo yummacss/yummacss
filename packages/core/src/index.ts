@@ -38,3 +38,5 @@ export const transitionUtils = (): Utilities => transition;
 
 // types
 export type * from "./interfaces";
+// variants
+export * from "./variants";
