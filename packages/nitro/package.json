@@ -1,6 +1,6 @@
 {
 	"name": "@yummacss/nitro",
-	"version": "3.13.0",
+	"version": "3.14.0",
 	"description": "Fast CSS generation for Yumma CSS.",
 	"keywords": [
 		"css-framework",
@@ -18,24 +18,14 @@
 	"type": "module",
 	"exports": {
 		".": {
-			"types": {
-				"import": "./dist/index.d.mts",
-				"require": "./dist/index.d.cts"
-			},
-			"import": "./dist/index.mjs",
-			"require": "./dist/index.cjs"
+			"types": "./dist/index.d.mts",
+			"import": "./dist/index.mjs"
 		},
 		"./browser": {
-			"types": {
-				"import": "./dist/browser.d.mts",
-				"require": "./dist/browser.d.cts"
-			},
-			"import": "./dist/browser.mjs",
-			"require": "./dist/browser.cjs"
+			"types": "./dist/browser.d.mts",
+			"import": "./dist/browser.mjs"
 		}
 	},
-	"main": "dist/index.cjs",
-	"module": "dist/index.mjs",
 	"types": "dist/index.d.mts",
 	"files": [
 		"dist"
