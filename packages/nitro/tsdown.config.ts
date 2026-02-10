@@ -4,6 +4,6 @@ export default defineConfig({
 	dts: true,
 	entry: ["src/index.ts", "src/browser.ts"],
 	clean: true,
-	format: ["esm", "cjs"],
+	format: ["esm"],
 	minify: true,
 });
