@@ -24,9 +24,9 @@
 		}
 	},
 	"main": "./dist/index.cjs",
-	"module": "./dist/index.mjs",
-	"unpkg": "./dist/index.iife.js",
 	"jsdelivr": "./dist/index.iife.js",
+	"unpkg": "./dist/index.iife.js",
+	"module": "./dist/index.mjs",
 	"files": [
 		"dist"
 	],
