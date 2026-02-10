@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - **[core]** Expose `mediaQueries`, `opacity`, `pseudoClasses`, and `pseudoElements` variants with improved type safety.
-  - **Variant Literal Types:** We now export literal types for every variant prefix (e.g., `MediaQueryPrefix`, `VariantPrefix`). This enables full IntelliSense autocompletion and prevents invalid prefixes from being used in developer tools and IDE extensions.
+  - **Variant Literal Types:** We now export literal types for every variant prefix (e.g., `MediaQueryPrefix`, `VariantPrefix`).
   - **Readonly Interfaces:** Integrated `readonly` properties into core interfaces (`Utility`, `Utilities`, `Variants`) to support immutable variant definitions and ensure strict type compatibility with literal constants.
 
 ## [3.12.0] - 2026-02-07
