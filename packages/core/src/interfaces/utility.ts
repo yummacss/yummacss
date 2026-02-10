@@ -1,13 +1,13 @@
 import type { Variants } from "./variants";
 
 export interface Utility {
-	prefix: string;
-	properties: string[];
-	slug: string;
-	values: { [key: string]: string };
-	variants?: Variants;
+	readonly prefix: string;
+	readonly properties: readonly string[];
+	readonly slug: string;
+	readonly values: { readonly [key: string]: string };
+	readonly variants?: Variants;
 }
 
 export interface Utilities {
-	[key: string]: Utility;
+	readonly [key: string]: Utility;
 }

@@ -1,6 +1,4 @@
-import type { PseudoClass } from "@/interfaces/variants";
-
-export const pseudoClasses: PseudoClass[] = [
+export const pseudoClasses = [
 	{ prefix: "a", value: ":active" },
 	{ prefix: "c", value: ":checked" },
 	{ prefix: "d", value: ":disabled" },
@@ -17,4 +15,4 @@ export const pseudoClasses: PseudoClass[] = [
 	{ prefix: "r", value: ":required" },
 	{ prefix: "ro", value: ":read-only" },
 	{ prefix: "v", value: ":valid" },
-];
+] as const;

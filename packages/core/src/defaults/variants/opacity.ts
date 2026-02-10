@@ -1,6 +1,4 @@
-import type { Opacity } from "@/interfaces/variants";
-
-export const opacity: Opacity[] = [
+export const opacity = [
 	{ prefix: "0", value: "00" },
 	{ prefix: "5", value: "0d" },
 	{ prefix: "10", value: "1a" },
@@ -21,4 +19,4 @@ export const opacity: Opacity[] = [
 	{ prefix: "85", value: "d9" },
 	{ prefix: "90", value: "e6" },
 	{ prefix: "95", value: "f2" },
-];
+] as const;

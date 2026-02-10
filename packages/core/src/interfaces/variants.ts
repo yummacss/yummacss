@@ -1,26 +1,26 @@
 export interface PseudoClass {
-	prefix: string;
-	value: string;
+	readonly prefix: string;
+	readonly value: string;
 }
 
 export interface PseudoElement {
-	prefix: string;
-	value: string;
+	readonly prefix: string;
+	readonly value: string;
 }
 
 export interface MediaQuery {
-	prefix: string;
-	value: string;
+	readonly prefix: string;
+	readonly value: string;
 }
 
 export interface Opacity {
-	prefix: string;
-	value: string;
+	readonly prefix: string;
+	readonly value: string;
 }
 
 export interface Variants {
-	pseudoClasses?: PseudoClass[];
-	pseudoElements?: PseudoElement[];
-	mediaQueries?: MediaQuery[];
-	opacity?: Opacity[];
+	readonly pseudoClasses?: readonly PseudoClass[];
+	readonly pseudoElements?: readonly PseudoElement[];
+	readonly mediaQueries?: readonly MediaQuery[];
+	readonly opacity?: readonly Opacity[];
 }
