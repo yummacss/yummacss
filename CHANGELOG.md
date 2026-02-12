@@ -5,9 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+
 ## [3.14.0] - 2026-02-10
 
-### Changed
+### Removed
 
 - **[core]**, **[nitro]**, **[cli]**, **[runtime]** Removed CommonJS (CJS) support (again) to optimize bundle size.
 
@@ -43,9 +46,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [3.10.3] - 2026-02-01
 
-### Added
-
-- No user-facing changes.
+No notable changes.
 
 ## [3.10.2] - 2026-02-01
 
@@ -143,9 +144,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [3.7.2] - 2026-01-09
 
-### Added
+No notable changes.
 
-- No user-facing changes.
 
 ## [3.7.1] - 2025-12-31
 
@@ -176,9 +176,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [3.6.2] - 2025-12-27
 
-### Added
+No notable changes.
 
-- No user-facing changes.
 
 ## [3.6.1] - 2025-12-26
 
@@ -236,15 +235,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [3.3.2] - 2025-09-18
 
-### Added
+No notable changes.
 
-- No user-facing changes.
 
 ## [3.3.1] - 2025-09-12
 
-### Added
+No notable changes.
 
-- No user-facing changes.
 
 ## [3.3.0] - 2025-09-12
 
@@ -305,15 +302,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [3.0.3] - 2025-07-22
 
-### Added
+No notable changes.
 
-- No user-facing changes.
 
 ## [3.0.2] - 2025-07-20
 
-### Added
+No notable changes.
 
-- No user-facing changes.
 
 ## [3.0.1] - 2025-07-17
 
@@ -398,17 +393,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Base styles can no longer be referenced as a CSS file.
-- Remove **Spacing X** utilities.
-- Remove **Spacing Y** utilities.
-- Remove `.cnt{}` utility.
-- Remove `.ins{}` utility.
-- Remove `d-` (dark) and `l-` (light) prefixes from all color utilities.
-- Remove `d-` prefix from **Top/Right/Bottom/Left** utilities.
-- Remove `d-1/2` **Dimension** utility variant.
-- Remove `h-1/2` **Height** utility variant.
-- Remove `hidden` and `none` properties from **Text Decoration Style** utilities.
-- Remove `none` **Top/Right/Bottom/Left** invalid utilities.
-- Remove `w-1/2` **Width** utility variant.
 - Rename **Columns** utilities from `cols-*` to `c-*`.
 - Rename **Dimension** utilities from `dim-*` to `d-*`.
 - Rename **Dimension** utility from `d-1/1` to `d-dvh`.
@@ -430,6 +414,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Update color shade percentage from `10%` to `14%`.
 - Update color utility range from 1-6 to 1-12.
 
+### Removed
+
+- Remove **Spacing X** utilities.
+- Remove **Spacing Y** utilities.
+- Remove `.cnt{}` utility.
+- Remove `.ins{}` utility.
+- Remove `d-` (dark) and `l-` (light) prefixes from all color utilities.
+- Remove `d-` prefix from **Top/Right/Bottom/Left** utilities.
+- Remove `d-1/2` **Dimension** utility variant.
+- Remove `h-1/2` **Height** utility variant.
+- Remove `hidden` and `none` properties from **Text Decoration Style** utilities.
+- Remove `none` **Top/Right/Bottom/Left** invalid utilities.
+- Remove `w-1/2` **Width** utility variant.
+
 ### Fixed
 
 - Duplicated utilities in CSS distribution files fixed.
@@ -445,15 +443,33 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Implement `baseline` property values for **Align Content** utilities.
 - Implement `baseline` property values for **Align Items** utilities.
 - Implement `cg-0` (`column-gap`) and `rg-0` (`row-gap`) utilities.
-- Implement `col-resize`, `default`, `ne-resize`, `nesw-resize`, `none`, `nw-resize`, `nwse-resize`, `progress`, `row-resize`, `s-resize`, `se-resize`, `sw-resize`, .`w-resize`, `zoom-in`, `zoom-out` **Cursor** property values to **Cursor** utilities.
+- Implement `col-resize`, `default`, `ne-resize`, `nesw-resize`, `none`, `nw-resize`, `nwse-resize`, `progress`, `row-resize`, `s-resize`, `se-resize`, `sw-resize`, `w-resize`, `zoom-in`, `zoom-out` **Cursor** property values to **Cursor** utilities.
 - Implement `f-b` (`font-size`) base utility.
-- Implement `font-size: inherit` and `font-weight: inherit` properties for heading and paragraph elements..
+- Implement `font-size: inherit` and `font-weight: inherit` properties for heading and paragraph elements.
 - Implement `fs-9xl` **Font Size** utility variant.
 - Implement `row dense` and `dense row` **Grid Auto Flow** property values.
 - Implement `table`, `inline-table` and `inline-grid` **Display** property values.
 - Implement `text` and `all` **User Select** property values.
 
 ### Changed
+
+- Update **Border Radius** base value from `4px` to `0.25rem`.
+- Update **Border Width** base value from `4px` to `1px`.
+- Update **Flex Basis** base value from `1rem` to `0.25rem`.
+- Update **Flex** property values.
+- Update **Outline Offset** base value from `2px` to `1px`.
+- Update **Outline Width** base value from `2px` to `1px`.
+- Update **Spacing X** and **Spacing Y** calculations.
+- Rename **Align Content** utilities from `ac-stretch` to `ac-s`.
+- Rename **Align Items** utilities from `ai-stretch` to `ai-s`.
+- Rename **Align Self** utilities from `as-stretch` to `as-s`.
+- Rename **Justify Items** utilities from `ji-stretch` to `ji-st`.
+- Rename **Justify Self** utilities from `js-stretch` to `ji-st`.
+- Rename **Object Position** utilities from `op-left` to `op-l`.
+- Rename **Position** utilities from `p-t` to `p-y`.
+- Rename **Position** utilities from `p-y` to `p-st`.
+
+### Removed
 
 - Remove `end` and `start` property values from **Align Content** utilities.
 - Remove `end` and `start` property values from **Align Items** utilities.
@@ -465,21 +481,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Remove `hidden` property in **Border Style** utilities.
 - Remove `hidden` property in **Outline Style** utilities.
 - Remove variable inside **Spacing X** and **Spacing Y** utilities.
-- Rename **Align Content** utilities from `ac-stretch` to `ac-s`.
-- Rename **Align Items** utilities from `ai-stretch` to `ai-s`.
-- Rename **Align Self** utilities from `as-stretch` to `as-s`.
-- Rename **Justify Items** utilities from `ji-stretch` to `ji-st`.
-- Rename **Justify Self** utilities from `js-stretch` to `ji-st`.
-- Rename **Object Position** utilities from `op-left` to `op-l`.
-- Rename **Position** utilities from `p-t` to `p-y`.
-- Rename **Position** utilities from `p-y` to `p-st`.
-- Update **Border Radius** base value from `4px` to `0.25rem`.
-- Update **Border Width** base value from `4px` to `1px`.
-- Update **Flex Basis** base value from `1rem` to `0.25rem`.
-- Update **Flex** property values.
-- Update **Outline Offset** base value from `2px` to `1px`.
-- Update **Outline Width** base value from `2px` to `1px`.
-- Update **Spacing X** and **Spacing Y** calculations.
 
 ## [2.0.0] - 2024-09-08
 
@@ -524,6 +525,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Base styles are now optional.
 - Base styles now covers the `<optgroup>`.
 - Breakpoint system values reworked.
+- Simplify **Font Family** fallbacks.
+- Update **Margin** and **Padding** property values from `0.75rem` to `0.25rem`.
+- Update `cnt` utility with new responsive utility rules.
+- Rename **Container** utility from `cnn` to `cnt`.
+- Rename **Float** utility from `f-*static*` to `flo-*`.
+- Rename **Font Family** utility from `ff-d` to `ff-s`.
+- Rename **Font Size** Extra large utility from `fs-2xl` to `fs-xxl`.
+- Rename **Position** utility from `pos-*` to `p-*`.
+- Rename **Position** utility from `pos-static` to `p-s`.
+- Rename **Position** utility from `pos-sticky` to `p-t`.
+
+### Removed
+
 - Remove **Column** utilities.
 - Remove **Offset Gap** utilities.
 - Remove **Row** utility.
@@ -536,16 +550,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Remove `nav-*` component.
 - Remove Components folder.
 - Remove extra small value for breakpoint utilities.
-- Rename **Container** utility from `cnn` to `cnt`.
-- Rename **Float** utility from `f-*static*` to `flo-*`.
-- Rename **Font Family** utility from `ff-d` to `ff-s`.
-- Rename **Font Size** Extra large utility from `fs-2xl` to `fs-xxl`.
-- Rename **Position** utility from `pos-*` to `p-*`.
-- Rename **Position** utility from `pos-static` to `p-s`.
-- Rename **Position** utility from `pos-sticky` to `p-t`.
-- Simplify **Font Family** fallbacks.
-- Update **Margin** and **Padding** property values from `0.75rem` to `0.25rem`.
-- Update `cnt` utility with new responsive utility rules.
 
 ### Fixed
 
@@ -576,14 +580,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Color system reworked.
+- Reworked `btn-*` component size.
+- Update **Border Radius** default value from `4px` to `8px`.
+- Viewports units are no longer dynamic.
+
+### Removed
+
 - Remove `bs` base utility.
 - Remove `showVer()` function.
 - Remove complement button component.
 - Remove default shadow in the `nav-*` component.
 - Remove Magenta color from the color system.
-- Reworked `btn-*` component size.
-- Update **Border Radius** default value from `4px` to `8px`.
-- Viewports units are no longer dynamic.
 
 ## [1.1.0] - 2024-01-24
 
@@ -597,7 +604,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Rename `box-shadow` utility from `bs-xlg` to `bs-xl`.
-- Rename `box-shadow` utility from `bs-xsm` to `bs-xs`
+- Rename `box-shadow` utility from `bs-xsm` to `bs-xs`.
 - Rename `box-shadow` utility from `col-*` to `cols-*`.
 - Rename `box-shadow` utility from `fs-xlg` to `bs-xl`.
 - Update syntax for column media query utilities.
@@ -606,7 +613,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - `caret-color` utility variants were fixed so that they work as expected.
 - `fs-md` now works as expected.
-- `list-style-type` syntax corrected from 'tst-*' to 'lst-*'.
+- `list-style-type` syntax corrected from `tst-*` to `lst-*`.
 
 ## [1.0.3] - 2024-01-09
 
@@ -665,11 +672,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Remove `break-all` and `keep-all` property values from **Overflow Wrap** utilities.
-- Remove `nav-l` component.
 - Rename **Display** utilities from `dis-*` to `d-*`.
 - Rename `greet()` function signature to `showVer()`.
 - Rename hover variant utilities from `*-h-*` to `h:*`.
+
+### Removed
+
+- Remove `break-all` and `keep-all` property values from **Overflow Wrap** utilities.
+- Remove `nav-l` component.
 
 ### Fixed
 
@@ -678,15 +688,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.2.0] - 2023-11-23
 
-### Added
+No notable changes.
 
-- No user-facing changes.
 
 ## [0.1.1] - 2023-11-07
 
-### Added
+No notable changes.
 
-- No user-facing changes.
 
 ## [0.1.0] - 2023-11-06
 
@@ -702,3 +710,50 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Initial release.
+
+[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.14.0...HEAD
+[3.14.0]: https://github.com/yummacss/yummacss/compare/v3.13.0...v3.14.0
+[3.13.0]: https://github.com/yummacss/yummacss/compare/v3.12.0...v3.13.0
+[3.12.0]: https://github.com/yummacss/yummacss/compare/v3.11.0...v3.12.0
+[3.11.0]: https://github.com/yummacss/yummacss/compare/v3.10.3...v3.11.0
+[3.10.3]: https://github.com/yummacss/yummacss/compare/v3.10.2...v3.10.3
+[3.10.2]: https://github.com/yummacss/yummacss/compare/v3.10.1...v3.10.2
+[3.10.1]: https://github.com/yummacss/yummacss/compare/v3.10.0...v3.10.1
+[3.10.0]: https://github.com/yummacss/yummacss/compare/v3.9.0...v3.10.0
+[3.9.0]: https://github.com/yummacss/yummacss/compare/v3.8.1...v3.9.0
+[3.8.1]: https://github.com/yummacss/yummacss/compare/v3.8.0...v3.8.1
+[3.8.0]: https://github.com/yummacss/yummacss/compare/v3.7.2...v3.8.0
+[3.7.2]: https://github.com/yummacss/yummacss/compare/v3.7.1...v3.7.2
+[3.7.1]: https://github.com/yummacss/yummacss/compare/v3.7.0...v3.7.1
+[3.7.0]: https://github.com/yummacss/yummacss/compare/v3.6.2...v3.7.0
+[3.6.2]: https://github.com/yummacss/yummacss/compare/v3.6.1...v3.6.2
+[3.6.1]: https://github.com/yummacss/yummacss/compare/v3.6.0...v3.6.1
+[3.6.0]: https://github.com/yummacss/yummacss/compare/v3.5.0...v3.6.0
+[3.5.0]: https://github.com/yummacss/yummacss/compare/v3.4.3...v3.5.0
+[3.4.3]: https://github.com/yummacss/yummacss/compare/v3.4.2...v3.4.3
+[3.4.2]: https://github.com/yummacss/yummacss/compare/v3.4.1...v3.4.2
+[3.4.1]: https://github.com/yummacss/yummacss/compare/v3.4.0...v3.4.1
+[3.4.0]: https://github.com/yummacss/yummacss/compare/v3.3.2...v3.4.0
+[3.3.2]: https://github.com/yummacss/yummacss/compare/v3.3.1...v3.3.2
+[3.3.1]: https://github.com/yummacss/yummacss/compare/v3.3.0...v3.3.1
+[3.3.0]: https://github.com/yummacss/yummacss/compare/v3.2.2...v3.3.0
+[3.2.2]: https://github.com/yummacss/yummacss/compare/v3.2.1...v3.2.2
+[3.2.1]: https://github.com/yummacss/yummacss/compare/v3.2.0...v3.2.1
+[3.2.0]: https://github.com/yummacss/yummacss/compare/v3.1.0...v3.2.0
+[3.1.0]: https://github.com/yummacss/yummacss/compare/v3.0.3...v3.1.0
+[3.0.3]: https://github.com/yummacss/yummacss/compare/v3.0.2...v3.0.3
+[3.0.2]: https://github.com/yummacss/yummacss/compare/v3.0.1...v3.0.2
+[3.0.1]: https://github.com/yummacss/yummacss/compare/v3.0.0...v3.0.1
+[3.0.0]: https://github.com/yummacss/yummacss/compare/v2.1.0...v3.0.0
+[2.1.0]: https://github.com/yummacss/yummacss/compare/v2.0.0...v2.1.0
+[2.0.0]: https://github.com/yummacss/yummacss/compare/v1.2.0...v2.0.0
+[1.2.0]: https://github.com/yummacss/yummacss/compare/v1.1.0...v1.2.0
+[1.1.0]: https://github.com/yummacss/yummacss/compare/v1.0.3...v1.1.0
+[1.0.3]: https://github.com/yummacss/yummacss/compare/v1.0.2...v1.0.3
+[1.0.2]: https://github.com/yummacss/yummacss/compare/v1.0.1...v1.0.2
+[1.0.1]: https://github.com/yummacss/yummacss/compare/v1.0.0...v1.0.1
+[1.0.0]: https://github.com/yummacss/yummacss/compare/v0.2.0...v1.0.0
+[0.2.0]: https://github.com/yummacss/yummacss/compare/v0.1.1...v0.2.0
+[0.1.1]: https://github.com/yummacss/yummacss/compare/v0.1.0...v0.1.1
+[0.1.0]: https://github.com/yummacss/yummacss/compare/v0.0.1...v0.1.0
+[0.0.1]: https://github.com/yummacss/yummacss/releases/tag/v0.0.1
