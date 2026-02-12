@@ -42,5 +42,5 @@ Each utility export returns a `Utilities` object containing utility definitions 
 - `variants` - Supported variants (hover, media queries, etc.)
 
 
-Learn more at [yummacss.com/docs/core-library](https://yummacss.com/docs/core-library)
+Learn more at [yummacss.com/docs/core-module](https://yummacss.com/docs/core-module)
 
