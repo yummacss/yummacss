@@ -7,12 +7,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- **[runtime]** Rename browser `globalName` from `YummaCSS` to `yummacss`.
+
+### Added
+
+- **[core]**, **[cli]**, **[nitro]**, **[runtime]** Implement CommonJS (CJS) support using the `default` field in `package.json`.
+- **[core]** Expand viewport unit support: Add `vi`, `vb`, `svh`, `svw`, `lvh`, `lvw`, `vmin`, and `vmax` to Box Model and Border Radius utilities.
+
+### Removed
+
+- **[core]** Remove `dimension` (`d-`), `max-dimension` (`max-d-`), and `min-dimension` (`min-d-`) utilities.
+- **[core]** Remove `br-pill` utility (breaking change; replaced by `br-vh` and `br-vw`).
 
 ## [3.14.0] - 2026-02-10
 
 ### Removed
 
-- **[core]**, **[nitro]**, **[cli]**, **[runtime]** Removed CommonJS (CJS) support (again) to optimize bundle size.
+- **[core]**, **[nitro]**, **[cli]**, **[runtime]** Remove CommonJS (CJS) support (again) to optimize bundle size.
 
 ## [3.13.0] - 2026-02-10
 
@@ -88,10 +101,13 @@ No notable changes.
 
 ### Changed
 
-- **[core]** Remove `teal` color option.
 - **[core]** Replace `t-r-*` (`transform: rotate()`) with `ro-*` utilities using the standalone `rotate` property.
 - **[core]** Replace `ff-s` (System) with `ff-d` (Default).
 - **[core]** Replace `ff-c` (Charters) with `ff-s` (Serif).
+
+### Removed
+
+- **[core]** Remove `teal` color option.
 
 ## [3.9.0] - 2026-01-24
 

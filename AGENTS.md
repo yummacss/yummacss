@@ -105,29 +105,21 @@ Each color has shades `1-9` (1 = lightest, 5 = base, 9 = darkest)
 
 ## Box Model
 
-### Dimension (Height + Width)
-
-| Property        | Prefix   | Values                                                                                                                             |
-| --------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| `dimension`     | `d-`     | `0-100` (×0.25rem), `auto`, `full`, `half`, `dvh`, `dvw`, `vh`, `vw`, `fc`, `max`, `min`, `px`, `s`, `sm`, `md`, `lg`, `xl`, `xxl` |
-| `max-dimension` | `max-d-` | Same as dimension                                                                                                                  |
-| `min-dimension` | `min-d-` | Same as dimension                                                                                                                  |
-
 ### Height
 
-| Property     | Prefix   | Values                                                                                                                             |
-| ------------ | -------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| `height`     | `h-`     | `0-100` (×0.25rem), `auto`, `full`, `half`, `dvh`, `dvw`, `vh`, `vw`, `fc`, `max`, `min`, `px`, `s`, `sm`, `md`, `lg`, `xl`, `xxl` |
-| `max-height` | `max-h-` | Same as height                                                                                                                     |
-| `min-height` | `min-h-` | Same as height                                                                                                                     |
+| Property     | Prefix   | Values                                                                                                                                                                                     |
+| ------------ | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `height`     | `h-`     | `0-100` (×0.25rem), `auto`, `full`, `half`, `dvh`, `dvw`, `vh`, `vw`, `vi`, `vb`, `svh`, `svw`, `lvh`, `lvw`, `vmin`, `vmax`, `fc`, `max`, `min`, `px`, `s`, `sm`, `md`, `lg`, `xl`, `xxl` |
+| `max-height` | `max-h-` | Same as height                                                                                                                                                                             |
+| `min-height` | `min-h-` | Same as height                                                                                                                                                                             |
 
 ### Width
 
-| Property    | Prefix   | Values                                                                                                                             |
-| ----------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| `width`     | `w-`     | `0-100` (×0.25rem), `auto`, `full`, `half`, `dvh`, `dvw`, `vh`, `vw`, `fc`, `max`, `min`, `px`, `s`, `sm`, `md`, `lg`, `xl`, `xxl` |
-| `max-width` | `max-w-` | Same as width                                                                                                                      |
-| `min-width` | `min-w-` | Same as width                                                                                                                      |
+| Property    | Prefix   | Values                                                                                                                                                                                     |
+| ----------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `width`     | `w-`     | `0-100` (×0.25rem), `auto`, `full`, `half`, `dvh`, `dvw`, `vh`, `vw`, `vi`, `vb`, `svh`, `svw`, `lvh`, `lvw`, `vmin`, `vmax`, `fc`, `max`, `min`, `px`, `s`, `sm`, `md`, `lg`, `xl`, `xxl` |
+| `max-width` | `max-w-` | Same as width                                                                                                                                                                              |
+| `min-width` | `min-w-` | Same as width                                                                                                                                                                              |
 
 ### Margin
 
@@ -762,17 +754,17 @@ Example: `c-3` → `columns: 3`
 
 ### Border Radius
 
-| Property                     | Prefix   | Values            |
-| ---------------------------- | -------- | ----------------- |
-| `border-radius`              | `br-`    | `0-16` (×0.25rem) |
-| `border-top-radius`          | `br-t-`  | Same              |
-| `border-bottom-radius`       | `br-b-`  | Same              |
-| `border-left-radius`         | `br-l-`  | Same              |
-| `border-right-radius`        | `br-r-`  | Same              |
-| `border-top-left-radius`     | `br-tl-` | Same              |
-| `border-top-right-radius`    | `br-tr-` | Same              |
-| `border-bottom-left-radius`  | `br-bl-` | Same              |
-| `border-bottom-right-radius` | `br-br-` | Same              |
+| Property                     | Prefix   | Values                                                                                                      |
+| ---------------------------- | -------- | ----------------------------------------------------------------------------------------------------------- |
+| `border-radius`              | `br-`    | `0-16` (×0.25rem), `full`, `half`, `vh`, `vw`, `vi`, `vb`, `svh`, `svw`, `lvh`, `lvw`, `vmin`, `vmax`, `px` |
+| `border-top-radius`          | `br-t-`  | Same                                                                                                        |
+| `border-bottom-radius`       | `br-b-`  | Same                                                                                                        |
+| `border-left-radius`         | `br-l-`  | Same                                                                                                        |
+| `border-right-radius`        | `br-r-`  | Same                                                                                                        |
+| `border-top-left-radius`     | `br-tl-` | Same                                                                                                        |
+| `border-top-right-radius`    | `br-tr-` | Same                                                                                                        |
+| `border-bottom-left-radius`  | `br-bl-` | Same                                                                                                        |
+| `border-bottom-right-radius` | `br-br-` | Same                                                                                                        |
 
 ### Border Width
 

@@ -33,7 +33,6 @@ export const transparent = "transparent";
 export const current = "currentColor";
 
 // box model
-export const dimension = 0.25;
 export const height = 0.25;
 export const width = 0.25;
 export const padding = 0.25;

@@ -1,5 +1,4 @@
 import {
-	dimensionValues,
 	heightValues,
 	marginValues,
 	paddingValues,
@@ -17,30 +16,6 @@ export const boxModel: Utilities = {
 			bb: "border-box",
 			cb: "content-box",
 		},
-		variants: standardPreset,
-	},
-
-	dimension: {
-		prefix: "d",
-		properties: ["height", "width"],
-		slug: "dimension",
-		values: dimensionValues,
-		variants: standardPreset,
-	},
-
-	"max-dimension": {
-		prefix: "max-d",
-		properties: ["max-height", "max-width"],
-		slug: "dimension#max-dimension",
-		values: dimensionValues,
-		variants: standardPreset,
-	},
-
-	"min-dimension": {
-		prefix: "min-d",
-		properties: ["min-height", "min-width"],
-		slug: "dimension#min-dimension",
-		values: dimensionValues,
 		variants: standardPreset,
 	},
 
