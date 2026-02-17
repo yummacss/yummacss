@@ -1,4 +1,4 @@
-import { standardPreset } from "@/defaults/variants/presets";
+import { standard } from "@/defaults/variants/presets";
 import { createValues } from "@/helpers/create-values";
 import type { Utilities } from "@/interfaces";
 
@@ -13,7 +13,7 @@ export const transform: Utilities = {
 			min: 0,
 			max: 360,
 		}),
-		variants: standardPreset,
+		variants: standard,
 	},
 
 	scale: {
@@ -33,7 +33,7 @@ export const transform: Utilities = {
 			"90": "scale(90%)",
 			"100": "scale(100%)",
 		},
-		variants: standardPreset,
+		variants: standard,
 	},
 
 	"scale-x": {
@@ -53,7 +53,7 @@ export const transform: Utilities = {
 			"90": "scaleX(90%)",
 			"100": "scaleX(100%)",
 		},
-		variants: standardPreset,
+		variants: standard,
 	},
 
 	"scale-y": {
@@ -73,7 +73,7 @@ export const transform: Utilities = {
 			"90": "scaleY(90%)",
 			"100": "scaleY(100%)",
 		},
-		variants: standardPreset,
+		variants: standard,
 	},
 
 	skew: {
@@ -87,7 +87,7 @@ export const transform: Utilities = {
 			"6": "skew(6deg)",
 			"12": "skew(12deg)",
 		},
-		variants: standardPreset,
+		variants: standard,
 	},
 
 	"skew-x": {
@@ -101,7 +101,7 @@ export const transform: Utilities = {
 			"6": "skewX(6deg)",
 			"12": "skewX(12deg)",
 		},
-		variants: standardPreset,
+		variants: standard,
 	},
 
 	"skew-y": {
@@ -115,7 +115,7 @@ export const transform: Utilities = {
 			"6": "skewY(6deg)",
 			"12": "skewY(12deg)",
 		},
-		variants: standardPreset,
+		variants: standard,
 	},
 
 	"transform-origin": {
@@ -133,7 +133,7 @@ export const transform: Utilities = {
 			tl: "top left",
 			tr: "top right",
 		},
-		variants: standardPreset,
+		variants: standard,
 	},
 
 	"translate-x": {
@@ -148,7 +148,7 @@ export const transform: Utilities = {
 			wrapper: (v) => `translateX(${v})`,
 			extras: { full: "translateX(100%)", half: "translateX(50%)" },
 		}),
-		variants: standardPreset,
+		variants: standard,
 	},
 
 	"translate-y": {
@@ -163,6 +163,6 @@ export const transform: Utilities = {
 			wrapper: (v) => `translateY(${v})`,
 			extras: { full: "translateY(100%)", half: "translateY(50%)" },
 		}),
-		variants: standardPreset,
+		variants: standard,
 	},
 };
