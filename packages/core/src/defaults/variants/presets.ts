@@ -1,4 +1,5 @@
 import {
+	containerQueries,
 	mediaQueries,
 	opacity,
 	pseudoClasses,
@@ -9,10 +10,12 @@ export const standard = {
 	pseudoClasses,
 	pseudoElements,
 	mediaQueries,
+	containerQueries,
 };
 
 export const withOpacity = {
 	mediaQueries,
+	containerQueries,
 	opacity,
 	pseudoClasses,
 	pseudoElements,
