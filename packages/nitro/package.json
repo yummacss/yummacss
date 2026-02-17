@@ -19,13 +19,19 @@
 	"exports": {
 		".": {
 			"types": "./dist/index.d.mts",
-			"import": "./dist/index.mjs"
+			"import": "./dist/index.mjs",
+			"require": "./dist/index.cjs",
+			"default": "./dist/index.mjs"
 		},
 		"./browser": {
 			"types": "./dist/browser.d.mts",
-			"import": "./dist/browser.mjs"
+			"import": "./dist/browser.mjs",
+			"require": "./dist/browser.cjs",
+			"default": "./dist/browser.mjs"
 		}
 	},
+	"main": "dist/index.cjs",
+	"module": "dist/index.mjs",
 	"types": "dist/index.d.mts",
 	"files": [
 		"dist"

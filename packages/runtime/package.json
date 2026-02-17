@@ -17,9 +17,14 @@
 	"author": "Renildo Pereira",
 	"type": "module",
 	"exports": {
-		".": "./dist/index.iife.js"
+		".": {
+			"import": "./dist/index.mjs",
+			"require": "./dist/index.cjs",
+			"default": "./dist/index.iife.js"
+		}
 	},
-	"main": "./dist/index.iife.js",
+	"main": "./dist/index.cjs",
+	"module": "./dist/index.mjs",
 	"jsdelivr": "./dist/index.iife.js",
 	"unpkg": "./dist/index.iife.js",
 	"files": [
