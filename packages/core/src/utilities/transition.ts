@@ -1,5 +1,5 @@
 import { transitionValues } from "@/defaults/values";
-import { standardPreset } from "@/defaults/variants/presets";
+import { standard } from "@/defaults/variants/presets";
 import type { Utilities } from "@/interfaces";
 
 export const transition: Utilities = {
@@ -8,7 +8,7 @@ export const transition: Utilities = {
 		properties: ["transition-delay"],
 		slug: "transition-delay",
 		values: transitionValues,
-		variants: standardPreset,
+		variants: standard,
 	},
 
 	"transition-duration": {
@@ -16,7 +16,7 @@ export const transition: Utilities = {
 		properties: ["transition-duration"],
 		slug: "transition-duration",
 		values: transitionValues,
-		variants: standardPreset,
+		variants: standard,
 	},
 
 	"transition-property": {
@@ -34,7 +34,7 @@ export const transition: Utilities = {
 			t: "transform",
 			w: "width",
 		},
-		variants: standardPreset,
+		variants: standard,
 	},
 
 	"transition-timing-function": {
@@ -47,6 +47,6 @@ export const transition: Utilities = {
 			eo: "ease-out",
 			io: "ease-in-out",
 		},
-		variants: standardPreset,
+		variants: standard,
 	},
 };

@@ -5,13 +5,13 @@ import {
 	pseudoElements,
 } from "@/defaults/variants";
 
-export const standardPreset = {
+export const standard = {
 	pseudoClasses,
 	pseudoElements,
 	mediaQueries,
 };
 
-export const opacityPreset = {
+export const withOpacity = {
 	mediaQueries,
 	opacity,
 	pseudoClasses,

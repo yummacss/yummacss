@@ -3,7 +3,7 @@ import {
 	borderSpacingValues,
 	borderWidthValues,
 } from "@/defaults/values";
-import { standardPreset } from "@/defaults/variants/presets";
+import { standard } from "@/defaults/variants/presets";
 import type { Utilities } from "@/interfaces";
 
 export const border: Utilities = {
@@ -15,7 +15,7 @@ export const border: Utilities = {
 			c: "collapse",
 			s: "separate",
 		},
-		variants: standardPreset,
+		variants: standard,
 	},
 
 	"border-radius": {
@@ -23,7 +23,7 @@ export const border: Utilities = {
 		properties: ["border-radius"],
 		slug: "border-radius",
 		values: borderRadiusValues,
-		variants: standardPreset,
+		variants: standard,
 	},
 
 	"border-bottom-radius": {
@@ -31,7 +31,7 @@ export const border: Utilities = {
 		properties: ["border-bottom-left-radius", "border-bottom-right-radius"],
 		slug: "border-radius#bottom-radius",
 		values: borderRadiusValues,
-		variants: standardPreset,
+		variants: standard,
 	},
 
 	"border-left-radius": {
@@ -39,7 +39,7 @@ export const border: Utilities = {
 		properties: ["border-bottom-left-radius", "border-top-left-radius"],
 		slug: "border-radius#left-radius",
 		values: borderRadiusValues,
-		variants: standardPreset,
+		variants: standard,
 	},
 
 	"border-right-radius": {
@@ -47,7 +47,7 @@ export const border: Utilities = {
 		properties: ["border-bottom-right-radius", "border-top-right-radius"],
 		slug: "border-radius#right-radius",
 		values: borderRadiusValues,
-		variants: standardPreset,
+		variants: standard,
 	},
 
 	"border-bottom-left-radius": {
@@ -55,7 +55,7 @@ export const border: Utilities = {
 		properties: ["border-bottom-left-radius"],
 		slug: "border-radius#bottom-left-radius",
 		values: borderRadiusValues,
-		variants: standardPreset,
+		variants: standard,
 	},
 
 	"border-bottom-right-radius": {
@@ -63,7 +63,7 @@ export const border: Utilities = {
 		properties: ["border-bottom-right-radius"],
 		slug: "border-radius#bottom-right-radius",
 		values: borderRadiusValues,
-		variants: standardPreset,
+		variants: standard,
 	},
 
 	"border-top-radius": {
@@ -71,7 +71,7 @@ export const border: Utilities = {
 		properties: ["border-top-left-radius", "border-top-right-radius"],
 		slug: "border-radius#top-radius",
 		values: borderRadiusValues,
-		variants: standardPreset,
+		variants: standard,
 	},
 
 	"border-top-left-radius": {
@@ -79,7 +79,7 @@ export const border: Utilities = {
 		properties: ["border-top-left-radius"],
 		slug: "border-radius#top-left-radius",
 		values: borderRadiusValues,
-		variants: standardPreset,
+		variants: standard,
 	},
 
 	"border-top-right-radius": {
@@ -87,7 +87,7 @@ export const border: Utilities = {
 		properties: ["border-top-right-radius"],
 		slug: "border-radius#top-right-radius",
 		values: borderRadiusValues,
-		variants: standardPreset,
+		variants: standard,
 	},
 
 	"border-spacing": {
@@ -95,7 +95,7 @@ export const border: Utilities = {
 		properties: ["border-spacing"],
 		slug: "border-spacing",
 		values: borderSpacingValues,
-		variants: standardPreset,
+		variants: standard,
 	},
 
 	"border-style": {
@@ -107,7 +107,7 @@ export const border: Utilities = {
 			d: "dashed",
 			s: "solid",
 		},
-		variants: standardPreset,
+		variants: standard,
 	},
 
 	"border-width": {
@@ -115,7 +115,7 @@ export const border: Utilities = {
 		properties: ["border-width"],
 		slug: "border-width",
 		values: borderWidthValues,
-		variants: standardPreset,
+		variants: standard,
 	},
 
 	"border-bottom-width": {
@@ -123,7 +123,7 @@ export const border: Utilities = {
 		properties: ["border-bottom-width"],
 		slug: "border-bottom-radius",
 		values: borderWidthValues,
-		variants: standardPreset,
+		variants: standard,
 	},
 
 	"border-left-width": {
@@ -131,7 +131,7 @@ export const border: Utilities = {
 		properties: ["border-left-width"],
 		slug: "border-width#left-width",
 		values: borderWidthValues,
-		variants: standardPreset,
+		variants: standard,
 	},
 
 	"border-right-width": {
@@ -139,7 +139,7 @@ export const border: Utilities = {
 		properties: ["border-right-width"],
 		slug: "border-width#right-width",
 		values: borderWidthValues,
-		variants: standardPreset,
+		variants: standard,
 	},
 
 	"border-top-width": {
@@ -147,6 +147,6 @@ export const border: Utilities = {
 		properties: ["border-top-width"],
 		slug: "border-width#top-width",
 		values: borderWidthValues,
-		variants: standardPreset,
+		variants: standard,
 	},
 };
