@@ -35,6 +35,20 @@ This document provides **complete reference** for using Yumma CSS utility classe
 
 ---
 
+## Container Query Variants
+
+Container queries allow you to change styles based on the size of a parent container rather than the viewport. They use the `@` prefix.
+
+| Prefix  | Breakpoint                     |
+| ------- | ------------------------------ |
+| `@sm:`  | `@container (width >= 40rem)`  |
+| `@md:`  | `@container (width >= 48rem)`  |
+| `@lg:`  | `@container (width >= 64rem)`  |
+| `@xl:`  | `@container (width >= 80rem) ` |
+| `@xxl:` | `@container (width >= 96rem) ` |
+
+---
+
 ## Pseudo-Class Variants
 
 | Prefix | Selector         |

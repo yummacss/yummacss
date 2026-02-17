@@ -70,6 +70,20 @@ function tryGenerateRule(
 	while (foundPrefix) {
 		foundPrefix = false;
 
+		// Handle container queries
+		if (variants?.containerQueries) {
+			for (const cq of variants.containerQueries) {
+				if (currentClassName.startsWith(`${cq.prefix}:`)) {
+					mediaQuery = cq.value;
+					currentClassName = currentClassName.slice(cq.prefix.length + 1);
+					foundPrefix = true;
+					break;
+				}
+			}
+		}
+
+		if (foundPrefix) continue;
+
 		// Handle media queries
 		if (variants?.mediaQueries) {
 			for (const mq of variants.mediaQueries) {
@@ -179,9 +193,12 @@ function tryGenerateRule(
 	};
 }
 
-// escape colons and slashes
+// escape colons, slashes and @ symbols
 function escapeCn(className: string): string {
-	return className.replace(/:/g, "\\:").replace(/\//g, "\\/");
+	return className
+		.replace(/:/g, "\\:")
+		.replace(/\//g, "\\/")
+		.replace(/@/g, "\\@");
 }
 
 function generateCSSRule(
