@@ -14,14 +14,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - **[core]**, **[cli]**, **[nitro]**, **[runtime]** Implement CommonJS (CJS) support using the `default` field in `package.json`.
-- **[core]** Expand viewport unit support: Add `vi`, `vb`, `svh`, `svw`, `lvh`, `lvw`, `vmin`, and `vmax` to Box Model and Border Radius utilities.
+- **[core]** Expand viewport unit support: Add `vi`, `vb`, `svh`, `svw`, `lvh`, `lvw`, `vmin`, and `vmax` to Box Model utilities.
 - **[core]**, **[nitro]** Implement Container Query variants (e.g., `@sm:w-full`) for container-based responsive design.
 - **[core]** Refactor scale utilities: move from `transform: scale()` to standalone `scale` property. New prefixes: `s-`, `sx-`, `sy-`, and `sz-`.
 
 ### Removed
 
 - **[core]** Remove `dimension` (`d-`), `max-dimension` (`max-d-`), and `min-dimension` (`min-d-`) utilities.
-- **[core]** Remove `br-pill` utility (breaking change; replaced by `br-vh` and `br-vw`).
 - **[core]** Remove legacy transform scale prefixes: `t-s-`, `t-sx-`, `t-sy-`.
 
 ## [3.14.0] - 2026-02-10

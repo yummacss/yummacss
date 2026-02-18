@@ -10,16 +10,7 @@ export const borderRadiusValues: Record<string, string> = {
 	}),
 	full: "100%",
 	half: "50%",
-	vh: "100vh",
-	vw: "100vw",
-	vi: "100vi",
-	vb: "100vb",
-	svh: "100svh",
-	svw: "100svw",
-	lvh: "100lvh",
-	lvw: "100lvw",
-	vmin: "100vmin",
-	vmax: "100vmax",
+	pill: "9999px",
 	px: "1px",
 };
 
