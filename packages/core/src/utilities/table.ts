@@ -1,4 +1,4 @@
-import { standard } from "@/defaults/variants/presets";
+import { base } from "@/defaults/variants/stacks";
 import type { Utilities } from "@/interfaces";
 
 export const table: Utilities = {
@@ -10,7 +10,7 @@ export const table: Utilities = {
 			t: "top",
 			b: "bottom",
 		},
-		variants: standard,
+		variants: base,
 	},
 
 	"table-layout": {
@@ -21,6 +21,6 @@ export const table: Utilities = {
 			a: "auto",
 			f: "fixed",
 		},
-		variants: standard,
+		variants: base,
 	},
 };
