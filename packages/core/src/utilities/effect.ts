@@ -1,11 +1,10 @@
-import { blurValues } from "@/defaults/values";
+import { blurValues, grayscaleValues } from "@/defaults/values";
 import {
 	boxShadowLg,
 	boxShadowMd,
 	boxShadowSm,
 	boxShadowXl,
 	boxShadowXs,
-	grayscale,
 } from "@/defaults/variables";
 import { base } from "@/defaults/variants/stacks";
 import type { Utilities } from "@/interfaces";
@@ -16,6 +15,14 @@ export const effect: Utilities = {
 		properties: ["backdrop-filter"],
 		slug: "backdrop-blur",
 		values: blurValues,
+		variants: base,
+	},
+
+	"backdrop-grayscale": {
+		prefix: "bf-g",
+		properties: ["backdrop-filter"],
+		slug: "backdrop-grayscale",
+		values: grayscaleValues,
 		variants: base,
 	},
 
@@ -46,19 +53,7 @@ export const effect: Utilities = {
 		prefix: "f-g",
 		properties: ["filter"],
 		slug: "grayscale",
-		values: {
-			0: `grayscale(${grayscale * 0}%)`,
-			10: `grayscale(${grayscale}%)`,
-			20: `grayscale(${grayscale * 2}%)`,
-			30: `grayscale(${grayscale * 3}%)`,
-			40: `grayscale(${grayscale * 4}%)`,
-			50: `grayscale(${grayscale * 5}%)`,
-			60: `grayscale(${grayscale * 6}%)`,
-			70: `grayscale(${grayscale * 7}%)`,
-			80: `grayscale(${grayscale * 8}%)`,
-			90: `grayscale(${grayscale * 9}%)`,
-			100: `grayscale(100%)`,
-		},
+		values: grayscaleValues,
 		variants: base,
 	},
 

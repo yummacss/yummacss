@@ -25,6 +25,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- **[core]** Add `backdrop-grayscale` utility (`bf-g-`).
 - **[core]**, **[cli]**, **[nitro]**, **[runtime]** Implement CommonJS (CJS) support using the `default` field in `package.json`.
 - **[core]** Expand viewport unit support: Add `vi`, `vb`, `svh`, `svw`, `lvh`, `lvw`, `vmin`, and `vmax` to Box Model utilities.
 - **[core]**, **[nitro]** Implement Container Query variants (e.g., `@sm:w-full`) for container-based responsive design.

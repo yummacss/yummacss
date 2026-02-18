@@ -927,9 +927,10 @@ Example: `c-3` → `columns: 3`
 
 ### Grayscale
 
-| Class                | CSS                                                                |
-| -------------------- | ------------------------------------------------------------------ |
-| `f-g-0` to `f-g-100` | `filter: grayscale(0%)` to `filter: grayscale(100%)` (steps of 10) |
+| Property                       | Prefix  | Values                |
+| ------------------------------ | ------- | --------------------- |
+| `filter: grayscale()`          | `f-g-`  | `0-100` (steps of 10) |
+| `backdrop-filter: grayscale()` | `bf-g-` | `0-100` (steps of 10) |
 
 ---
 
