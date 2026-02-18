@@ -1,5 +1,5 @@
 import { topRightBottomLeftValues } from "@/defaults/values";
-import { standard } from "@/defaults/variants/presets";
+import { base } from "@/defaults/variants/stacks";
 import { createValues } from "@/helpers/create-values";
 import type { Utilities } from "@/interfaces";
 
@@ -26,7 +26,7 @@ export const positioning: Utilities = {
 			"21/9": "21/9",
 			"9/21": "9/21",
 		},
-		variants: standard,
+		variants: base,
 	},
 
 	clear: {
@@ -41,7 +41,7 @@ export const positioning: Utilities = {
 			none: "none",
 			r: "right",
 		},
-		variants: standard,
+		variants: base,
 	},
 
 	columns: {
@@ -53,7 +53,7 @@ export const positioning: Utilities = {
 			min: 1,
 			max: 16,
 		}),
-		variants: standard,
+		variants: base,
 	},
 
 	bottom: {
@@ -61,7 +61,7 @@ export const positioning: Utilities = {
 		properties: ["bottom"],
 		slug: "bottom",
 		values: topRightBottomLeftValues,
-		variants: standard,
+		variants: base,
 	},
 
 	inset: {
@@ -69,7 +69,7 @@ export const positioning: Utilities = {
 		properties: ["inset"],
 		slug: "inset",
 		values: topRightBottomLeftValues,
-		variants: standard,
+		variants: base,
 	},
 
 	"inset-x": {
@@ -77,7 +77,7 @@ export const positioning: Utilities = {
 		properties: ["left", "right"],
 		slug: "inset-x",
 		values: topRightBottomLeftValues,
-		variants: standard,
+		variants: base,
 	},
 
 	"inset-y": {
@@ -85,7 +85,7 @@ export const positioning: Utilities = {
 		properties: ["top", "bottom"],
 		slug: "inset-y",
 		values: topRightBottomLeftValues,
-		variants: standard,
+		variants: base,
 	},
 
 	isolation: {
@@ -96,7 +96,7 @@ export const positioning: Utilities = {
 			auto: "auto",
 			i: "isolate",
 		},
-		variants: standard,
+		variants: base,
 	},
 
 	left: {
@@ -104,7 +104,7 @@ export const positioning: Utilities = {
 		properties: ["left"],
 		slug: "left",
 		values: topRightBottomLeftValues,
-		variants: standard,
+		variants: base,
 	},
 
 	right: {
@@ -112,7 +112,7 @@ export const positioning: Utilities = {
 		properties: ["right"],
 		slug: "right",
 		values: topRightBottomLeftValues,
-		variants: standard,
+		variants: base,
 	},
 
 	top: {
@@ -120,7 +120,7 @@ export const positioning: Utilities = {
 		properties: ["top"],
 		slug: "top",
 		values: topRightBottomLeftValues,
-		variants: standard,
+		variants: base,
 	},
 
 	display: {
@@ -143,7 +143,7 @@ export const positioning: Utilities = {
 			tco: "table-column",
 			tr: "table-row",
 		},
-		variants: standard,
+		variants: base,
 	},
 
 	float: {
@@ -157,7 +157,7 @@ export const positioning: Utilities = {
 			none: "none",
 			r: "right",
 		},
-		variants: standard,
+		variants: base,
 	},
 
 	"object-fit": {
@@ -170,7 +170,7 @@ export const positioning: Utilities = {
 			none: "none",
 			sd: "scale-down",
 		},
-		variants: standard,
+		variants: base,
 	},
 
 	"object-position": {
@@ -188,7 +188,7 @@ export const positioning: Utilities = {
 			rt: "right top",
 			t: "top",
 		},
-		variants: standard,
+		variants: base,
 	},
 
 	overflow: {
@@ -202,7 +202,7 @@ export const positioning: Utilities = {
 			s: "scroll",
 			v: "visible",
 		},
-		variants: standard,
+		variants: base,
 	},
 
 	"overflow-x": {
@@ -216,7 +216,7 @@ export const positioning: Utilities = {
 			s: "scroll",
 			v: "visible",
 		},
-		variants: standard,
+		variants: base,
 	},
 
 	"overflow-y": {
@@ -230,7 +230,7 @@ export const positioning: Utilities = {
 			s: "scroll",
 			v: "visible",
 		},
-		variants: standard,
+		variants: base,
 	},
 
 	position: {
@@ -244,7 +244,7 @@ export const positioning: Utilities = {
 			s: "static",
 			st: "sticky",
 		},
-		variants: standard,
+		variants: base,
 	},
 
 	visibility: {
@@ -256,7 +256,7 @@ export const positioning: Utilities = {
 			h: "hidden",
 			v: "visible",
 		},
-		variants: standard,
+		variants: base,
 	},
 
 	"z-index": {
@@ -276,6 +276,6 @@ export const positioning: Utilities = {
 			"90": "90",
 			auto: "auto",
 		},
-		variants: standard,
+		variants: base,
 	},
 };

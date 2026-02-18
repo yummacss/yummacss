@@ -5,7 +5,7 @@ import {
 	repeatValues,
 	spanValues,
 } from "@/defaults/values";
-import { standard } from "@/defaults/variants/presets";
+import { base } from "@/defaults/variants/stacks";
 import type { Utilities } from "@/interfaces";
 
 export const grid: Utilities = {
@@ -14,7 +14,7 @@ export const grid: Utilities = {
 		properties: ["column-gap"],
 		slug: "column-gap",
 		values: gapValues,
-		variants: standard,
+		variants: base,
 	},
 
 	gap: {
@@ -22,7 +22,7 @@ export const grid: Utilities = {
 		properties: ["gap"],
 		slug: "gap",
 		values: gapValues,
-		variants: standard,
+		variants: base,
 	},
 
 	"grid-auto-columns": {
@@ -30,7 +30,7 @@ export const grid: Utilities = {
 		properties: ["grid-auto-columns"],
 		slug: "grid-auto-columns",
 		values: gridAutoValues,
-		variants: standard,
+		variants: base,
 	},
 
 	"grid-auto-flow": {
@@ -44,7 +44,7 @@ export const grid: Utilities = {
 			r: "row",
 			rd: "row dense",
 		},
-		variants: standard,
+		variants: base,
 	},
 
 	"grid-auto-rows": {
@@ -52,7 +52,7 @@ export const grid: Utilities = {
 		properties: ["grid-auto-rows"],
 		slug: "grid-auto-rows",
 		values: gridAutoValues,
-		variants: standard,
+		variants: base,
 	},
 
 	"grid-column": {
@@ -60,7 +60,7 @@ export const grid: Utilities = {
 		properties: ["grid-column"],
 		slug: "grid-column",
 		values: spanValues,
-		variants: standard,
+		variants: base,
 	},
 
 	"grid-column-end": {
@@ -68,7 +68,7 @@ export const grid: Utilities = {
 		properties: ["grid-column-end"],
 		slug: "grid-column-end",
 		values: gridValues,
-		variants: standard,
+		variants: base,
 	},
 
 	"grid-column-start": {
@@ -76,7 +76,7 @@ export const grid: Utilities = {
 		properties: ["grid-column-start"],
 		slug: "grid-column-start",
 		values: gridValues,
-		variants: standard,
+		variants: base,
 	},
 
 	"grid-row": {
@@ -84,7 +84,7 @@ export const grid: Utilities = {
 		properties: ["grid-row"],
 		slug: "grid-row",
 		values: spanValues,
-		variants: standard,
+		variants: base,
 	},
 
 	"grid-row-end": {
@@ -92,7 +92,7 @@ export const grid: Utilities = {
 		properties: ["grid-row-end"],
 		slug: "grid-row-end",
 		values: gridValues,
-		variants: standard,
+		variants: base,
 	},
 
 	"grid-row-start": {
@@ -100,7 +100,7 @@ export const grid: Utilities = {
 		properties: ["grid-row-start"],
 		slug: "grid-row-start",
 		values: gridValues,
-		variants: standard,
+		variants: base,
 	},
 
 	"grid-template-columns": {
@@ -108,7 +108,7 @@ export const grid: Utilities = {
 		properties: ["grid-template-columns"],
 		slug: "grid-template-columns",
 		values: repeatValues,
-		variants: standard,
+		variants: base,
 	},
 
 	"grid-template-rows": {
@@ -116,7 +116,7 @@ export const grid: Utilities = {
 		properties: ["grid-template-rows"],
 		slug: "grid-template-rows",
 		values: repeatValues,
-		variants: standard,
+		variants: base,
 	},
 
 	"place-content": {
@@ -133,7 +133,7 @@ export const grid: Utilities = {
 			se: "space-evenly",
 			st: "stretch",
 		},
-		variants: standard,
+		variants: base,
 	},
 
 	"place-items": {
@@ -147,7 +147,7 @@ export const grid: Utilities = {
 			s: "start",
 			st: "stretch",
 		},
-		variants: standard,
+		variants: base,
 	},
 
 	"place-self": {
@@ -161,7 +161,7 @@ export const grid: Utilities = {
 			s: "start",
 			st: "stretch",
 		},
-		variants: standard,
+		variants: base,
 	},
 
 	"row-gap": {
@@ -169,6 +169,6 @@ export const grid: Utilities = {
 		properties: ["row-gap"],
 		slug: "row-gap",
 		values: gapValues,
-		variants: standard,
+		variants: base,
 	},
 };

@@ -1,6 +1,6 @@
 import { flexGrowShrinkValues } from "@/defaults/values";
 import { flexBasis } from "@/defaults/variables";
-import { standard } from "@/defaults/variants/presets";
+import { base } from "@/defaults/variants/stacks";
 import { createValues } from "@/helpers/create-values";
 import type { Utilities } from "@/interfaces";
 
@@ -20,7 +20,7 @@ export const flexbox: Utilities = {
 			sb: "space-between",
 			se: "space-evenly",
 		},
-		variants: standard,
+		variants: base,
 	},
 
 	"align-items": {
@@ -34,7 +34,7 @@ export const flexbox: Utilities = {
 			fs: "flex-start",
 			st: "stretch",
 		},
-		variants: standard,
+		variants: base,
 	},
 
 	"align-self": {
@@ -49,7 +49,7 @@ export const flexbox: Utilities = {
 			fs: "flex-start",
 			st: "stretch",
 		},
-		variants: standard,
+		variants: base,
 	},
 
 	"flex-basis": {
@@ -67,7 +67,7 @@ export const flexbox: Utilities = {
 			full: "100%",
 			half: "50%",
 		},
-		variants: standard,
+		variants: base,
 	},
 
 	"flex-direction": {
@@ -80,7 +80,7 @@ export const flexbox: Utilities = {
 			r: "row",
 			rr: "row-reverse",
 		},
-		variants: standard,
+		variants: base,
 	},
 
 	"flex-grow": {
@@ -88,7 +88,7 @@ export const flexbox: Utilities = {
 		properties: ["flex-grow"],
 		slug: "flex-grow",
 		values: flexGrowShrinkValues,
-		variants: standard,
+		variants: base,
 	},
 
 	"flex-shrink": {
@@ -96,7 +96,7 @@ export const flexbox: Utilities = {
 		properties: ["flex-shrink"],
 		slug: "flex-shrink",
 		values: flexGrowShrinkValues,
-		variants: standard,
+		variants: base,
 	},
 
 	"flex-wrap": {
@@ -108,7 +108,7 @@ export const flexbox: Utilities = {
 			w: "wrap",
 			wr: "wrap-reverse",
 		},
-		variants: standard,
+		variants: base,
 	},
 
 	flex: {
@@ -125,7 +125,7 @@ export const flexbox: Utilities = {
 			auto: "1 1 auto",
 			none: "none",
 		},
-		variants: standard,
+		variants: base,
 	},
 
 	"justify-content": {
@@ -142,7 +142,7 @@ export const flexbox: Utilities = {
 			sb: "space-between",
 			se: "space-evenly",
 		},
-		variants: standard,
+		variants: base,
 	},
 
 	"justify-items": {
@@ -155,7 +155,7 @@ export const flexbox: Utilities = {
 			s: "start",
 			st: "stretch",
 		},
-		variants: standard,
+		variants: base,
 	},
 
 	"justify-self": {
@@ -169,7 +169,7 @@ export const flexbox: Utilities = {
 			s: "start",
 			st: "stretch",
 		},
-		variants: standard,
+		variants: base,
 	},
 
 	order: {
@@ -191,6 +191,6 @@ export const flexbox: Utilities = {
 			"10": "10",
 			f: "9999",
 		},
-		variants: standard,
+		variants: base,
 	},
 };

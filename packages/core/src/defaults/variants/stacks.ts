@@ -6,14 +6,14 @@ import {
 	pseudoElements,
 } from "@/defaults/variants";
 
-export const standard = {
+export const base = {
 	pseudoClasses,
 	pseudoElements,
 	mediaQueries,
 	containerQueries,
 };
 
-export const withOpacity = {
+export const all = {
 	mediaQueries,
 	containerQueries,
 	opacity,

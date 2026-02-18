@@ -1,4 +1,4 @@
-import { standard } from "@/defaults/variants/presets";
+import { base } from "@/defaults/variants/stacks";
 import { createValues } from "@/helpers/create-values";
 import type { Utilities } from "@/interfaces";
 
@@ -13,7 +13,7 @@ export const transform: Utilities = {
 			min: 0,
 			max: 360,
 		}),
-		variants: standard,
+		variants: base,
 	},
 
 	scale: {
@@ -33,7 +33,7 @@ export const transform: Utilities = {
 			"90": "90%",
 			"100": "100%",
 		},
-		variants: standard,
+		variants: base,
 	},
 
 	"scale-x": {
@@ -53,7 +53,7 @@ export const transform: Utilities = {
 			"90": "90% 1",
 			"100": "100% 1",
 		},
-		variants: standard,
+		variants: base,
 	},
 
 	"scale-y": {
@@ -73,7 +73,7 @@ export const transform: Utilities = {
 			"90": "1 90%",
 			"100": "1 100%",
 		},
-		variants: standard,
+		variants: base,
 	},
 
 	"scale-z": {
@@ -93,7 +93,7 @@ export const transform: Utilities = {
 			"90": "1 1 90%",
 			"100": "1 1 100%",
 		},
-		variants: standard,
+		variants: base,
 	},
 
 	skew: {
@@ -107,7 +107,7 @@ export const transform: Utilities = {
 			"6": "skew(6deg)",
 			"12": "skew(12deg)",
 		},
-		variants: standard,
+		variants: base,
 	},
 
 	"skew-x": {
@@ -121,7 +121,7 @@ export const transform: Utilities = {
 			"6": "skewX(6deg)",
 			"12": "skewX(12deg)",
 		},
-		variants: standard,
+		variants: base,
 	},
 
 	"skew-y": {
@@ -135,7 +135,7 @@ export const transform: Utilities = {
 			"6": "skewY(6deg)",
 			"12": "skewY(12deg)",
 		},
-		variants: standard,
+		variants: base,
 	},
 
 	"transform-origin": {
@@ -153,7 +153,7 @@ export const transform: Utilities = {
 			tl: "top left",
 			tr: "top right",
 		},
-		variants: standard,
+		variants: base,
 	},
 
 	"translate-x": {
@@ -168,7 +168,7 @@ export const transform: Utilities = {
 			wrapper: (v) => `translateX(${v})`,
 			extras: { full: "translateX(100%)", half: "translateX(50%)" },
 		}),
-		variants: standard,
+		variants: base,
 	},
 
 	"translate-y": {
@@ -183,6 +183,6 @@ export const transform: Utilities = {
 			wrapper: (v) => `translateY(${v})`,
 			extras: { full: "translateY(100%)", half: "translateY(50%)" },
 		}),
-		variants: standard,
+		variants: base,
 	},
 };

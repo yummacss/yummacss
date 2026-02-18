@@ -7,7 +7,7 @@ import {
 	boxShadowXs,
 	grayscale,
 } from "@/defaults/variables";
-import { standard } from "@/defaults/variants/presets";
+import { base } from "@/defaults/variants/stacks";
 import type { Utilities } from "@/interfaces";
 
 export const effect: Utilities = {
@@ -16,7 +16,7 @@ export const effect: Utilities = {
 		properties: ["backdrop-filter"],
 		slug: "backdrop-blur",
 		values: blurValues,
-		variants: standard,
+		variants: base,
 	},
 
 	blur: {
@@ -24,7 +24,7 @@ export const effect: Utilities = {
 		properties: ["filter"],
 		slug: "blur",
 		values: blurValues,
-		variants: standard,
+		variants: base,
 	},
 
 	"box-shadow": {
@@ -39,7 +39,7 @@ export const effect: Utilities = {
 			lg: boxShadowLg,
 			xl: boxShadowXl,
 		},
-		variants: standard,
+		variants: base,
 	},
 
 	grayscale: {
@@ -59,7 +59,7 @@ export const effect: Utilities = {
 			90: `grayscale(${grayscale * 9}%)`,
 			100: `grayscale(100%)`,
 		},
-		variants: standard,
+		variants: base,
 	},
 
 	opacity: {
@@ -79,6 +79,6 @@ export const effect: Utilities = {
 			90: "0.9",
 			100: "1",
 		},
-		variants: standard,
+		variants: base,
 	},
 };

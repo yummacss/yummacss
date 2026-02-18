@@ -1,5 +1,5 @@
 import { scrollMarginValues, scrollPaddingValues } from "@/defaults/values";
-import { standard } from "@/defaults/variants/presets";
+import { base } from "@/defaults/variants/stacks";
 import type { Utilities } from "@/interfaces";
 
 export const interactivity: Utilities = {
@@ -11,7 +11,7 @@ export const interactivity: Utilities = {
 			auto: "auto",
 			none: "none",
 		},
-		variants: standard,
+		variants: base,
 	},
 
 	cursor: {
@@ -54,7 +54,7 @@ export const interactivity: Utilities = {
 			zi: "zoom-in",
 			zo: "zoom-out",
 		},
-		variants: standard,
+		variants: base,
 	},
 
 	"field-sizing": {
@@ -65,7 +65,7 @@ export const interactivity: Utilities = {
 			f: "fixed",
 			c: "content",
 		},
-		variants: standard,
+		variants: base,
 	},
 
 	"pointer-events": {
@@ -76,7 +76,7 @@ export const interactivity: Utilities = {
 			auto: "auto",
 			none: "none",
 		},
-		variants: standard,
+		variants: base,
 	},
 
 	resize: {
@@ -89,7 +89,7 @@ export const interactivity: Utilities = {
 			none: "none",
 			v: "vertical",
 		},
-		variants: standard,
+		variants: base,
 	},
 
 	"scroll-behavior": {
@@ -100,7 +100,7 @@ export const interactivity: Utilities = {
 			auto: "auto",
 			s: "smooth",
 		},
-		variants: standard,
+		variants: base,
 	},
 
 	"scroll-margin": {
@@ -108,7 +108,7 @@ export const interactivity: Utilities = {
 		properties: ["scroll-margin"],
 		slug: "scroll-margin",
 		values: scrollMarginValues,
-		variants: standard,
+		variants: base,
 	},
 
 	"scroll-margin-bottom": {
@@ -116,7 +116,7 @@ export const interactivity: Utilities = {
 		properties: ["scroll-margin-bottom"],
 		slug: "scroll-margin#bottom",
 		values: scrollMarginValues,
-		variants: standard,
+		variants: base,
 	},
 
 	"scroll-margin-inline-start": {
@@ -124,7 +124,7 @@ export const interactivity: Utilities = {
 		properties: ["scroll-margin-inline-start"],
 		slug: "scroll-margin#inline-start",
 		values: scrollMarginValues,
-		variants: standard,
+		variants: base,
 	},
 
 	"scroll-margin-left": {
@@ -132,7 +132,7 @@ export const interactivity: Utilities = {
 		properties: ["scroll-margin-left"],
 		slug: "scroll-margin#scroll-margin-left",
 		values: scrollMarginValues,
-		variants: standard,
+		variants: base,
 	},
 
 	"scroll-margin-right": {
@@ -140,7 +140,7 @@ export const interactivity: Utilities = {
 		properties: ["scroll-margin-right"],
 		slug: "scroll-margin#scroll-margin-right",
 		values: scrollMarginValues,
-		variants: standard,
+		variants: base,
 	},
 
 	"scroll-margin-top": {
@@ -148,7 +148,7 @@ export const interactivity: Utilities = {
 		properties: ["scroll-margin-top"],
 		slug: "scroll-margin#scroll-margin-top",
 		values: scrollMarginValues,
-		variants: standard,
+		variants: base,
 	},
 
 	"scroll-margin-inline-end": {
@@ -156,7 +156,7 @@ export const interactivity: Utilities = {
 		properties: ["scroll-margin-inline-end"],
 		slug: "scroll-margin#scroll-margin-inline-end",
 		values: scrollMarginValues,
-		variants: standard,
+		variants: base,
 	},
 
 	"scroll-margin-x": {
@@ -164,7 +164,7 @@ export const interactivity: Utilities = {
 		properties: ["scroll-margin-left", "scroll-margin-right"],
 		slug: "scroll-margin#scroll-margin-x",
 		values: scrollMarginValues,
-		variants: standard,
+		variants: base,
 	},
 
 	"scroll-margin-y": {
@@ -172,7 +172,7 @@ export const interactivity: Utilities = {
 		properties: ["scroll-margin-bottom", "scroll-margin-top"],
 		slug: "scroll-margin#scroll-margin-y",
 		values: scrollMarginValues,
-		variants: standard,
+		variants: base,
 	},
 
 	"scroll-padding": {
@@ -180,7 +180,7 @@ export const interactivity: Utilities = {
 		properties: ["scroll-padding"],
 		slug: "scroll-padding",
 		values: scrollPaddingValues,
-		variants: standard,
+		variants: base,
 	},
 
 	"scroll-padding-bottom": {
@@ -188,7 +188,7 @@ export const interactivity: Utilities = {
 		properties: ["scroll-padding-bottom"],
 		slug: "scroll-padding#bottom",
 		values: scrollPaddingValues,
-		variants: standard,
+		variants: base,
 	},
 
 	"scroll-padding-inline-start": {
@@ -196,7 +196,7 @@ export const interactivity: Utilities = {
 		properties: ["scroll-padding-inline-start"],
 		slug: "scroll-padding#scroll-padding-inline-start",
 		values: scrollPaddingValues,
-		variants: standard,
+		variants: base,
 	},
 
 	"scroll-padding-left": {
@@ -204,7 +204,7 @@ export const interactivity: Utilities = {
 		properties: ["scroll-padding-left"],
 		slug: "scroll-padding#scroll-padding-left",
 		values: scrollPaddingValues,
-		variants: standard,
+		variants: base,
 	},
 
 	"scroll-padding-right": {
@@ -212,7 +212,7 @@ export const interactivity: Utilities = {
 		properties: ["scroll-padding-right"],
 		slug: "scroll-padding#scroll-padding-right",
 		values: scrollPaddingValues,
-		variants: standard,
+		variants: base,
 	},
 
 	"scroll-padding-top": {
@@ -220,7 +220,7 @@ export const interactivity: Utilities = {
 		properties: ["scroll-padding-top"],
 		slug: "scroll-padding#scroll-padding-top",
 		values: scrollPaddingValues,
-		variants: standard,
+		variants: base,
 	},
 
 	"scroll-padding-inline-end": {
@@ -228,7 +228,7 @@ export const interactivity: Utilities = {
 		properties: ["scroll-padding-inline-end"],
 		slug: "scroll-padding#scroll-padding-inline-end",
 		values: scrollPaddingValues,
-		variants: standard,
+		variants: base,
 	},
 
 	"scroll-padding-x": {
@@ -236,7 +236,7 @@ export const interactivity: Utilities = {
 		properties: ["scroll-padding-left", "scroll-padding-right"],
 		slug: "scroll-padding#scroll-padding-x",
 		values: scrollPaddingValues,
-		variants: standard,
+		variants: base,
 	},
 
 	"scroll-padding-y": {
@@ -244,7 +244,7 @@ export const interactivity: Utilities = {
 		properties: ["scroll-padding-bottom", "scroll-padding-top"],
 		slug: "scroll-padding#scroll-padding-y",
 		values: scrollPaddingValues,
-		variants: standard,
+		variants: base,
 	},
 
 	"scroll-snap-align": {
@@ -257,7 +257,7 @@ export const interactivity: Utilities = {
 			none: "none",
 			s: "start",
 		},
-		variants: standard,
+		variants: base,
 	},
 
 	"scroll-snap-stop": {
@@ -268,7 +268,7 @@ export const interactivity: Utilities = {
 			a: "always",
 			n: "normal",
 		},
-		variants: standard,
+		variants: base,
 	},
 
 	"scroll-snap-type": {
@@ -283,7 +283,7 @@ export const interactivity: Utilities = {
 			"y-m": "y mandatory",
 			"y-p": "y proximity",
 		},
-		variants: standard,
+		variants: base,
 	},
 
 	"user-select": {
@@ -296,7 +296,7 @@ export const interactivity: Utilities = {
 			none: "none",
 			t: "text",
 		},
-		variants: standard,
+		variants: base,
 	},
 
 	"touch-action": {
@@ -315,6 +315,6 @@ export const interactivity: Utilities = {
 			py: "pan-y",
 			pz: "pinch-zoom",
 		},
-		variants: standard,
+		variants: base,
 	},
 };
