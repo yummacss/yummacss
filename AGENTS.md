@@ -945,11 +945,14 @@ Example: `ro-45` → `rotate: 45deg`
 
 ### Scale
 
-| Class                  | CSS                                                   |
-| ---------------------- | ----------------------------------------------------- |
-| `t-s-0` to `t-s-100`   | `transform: scale(0%)` to `scale(100%)` (steps of 10) |
-| `t-sx-0` to `t-sx-100` | `transform: scaleX(0%)` to `scaleX(100%)`             |
-| `t-sy-0` to `t-sy-100` | `transform: scaleY(0%)` to `scaleY(100%)`             |
+| Property | Prefix | Values                                |
+| -------- | ------ | ------------------------------------- |
+| `scale`  | `s-`   | `0-100` (steps of 10), e.g., `s-50`   |
+| `scale`  | `sx-`  | `0-100` (steps of 10), e.g., `sx-100` |
+| `scale`  | `sy-`  | `0-100` (steps of 10), e.g., `sy-50`  |
+| `scale`  | `sz-`  | `0-100` (steps of 10), e.g., `sz-100` |
+
+Example: `s-50` → `scale: 50%`, `sx-50` → `scale: 50% 1`
 
 ### Skew
 
@@ -1239,7 +1242,7 @@ Example: `td-100` → `transition-delay: 100ms`
 
 ### Smooth Transition
 ```html
-<div class="tp-a tdu-150 ttf-io h:t-s-105">
+<div class="tp-a tdu-150 ttf-io h:s-100">
   Hover to scale
 </div>
 ```
