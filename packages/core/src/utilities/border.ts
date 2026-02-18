@@ -27,7 +27,7 @@ export const border: Utilities = {
 	},
 
 	"border-bottom-radius": {
-		prefix: "br-b",
+		prefix: "bbr",
 		properties: ["border-bottom-left-radius", "border-bottom-right-radius"],
 		slug: "border-radius#bottom-radius",
 		values: borderRadiusValues,
@@ -35,7 +35,7 @@ export const border: Utilities = {
 	},
 
 	"border-left-radius": {
-		prefix: "br-l",
+		prefix: "blr",
 		properties: ["border-bottom-left-radius", "border-top-left-radius"],
 		slug: "border-radius#left-radius",
 		values: borderRadiusValues,
@@ -43,7 +43,7 @@ export const border: Utilities = {
 	},
 
 	"border-right-radius": {
-		prefix: "br-r",
+		prefix: "brr",
 		properties: ["border-bottom-right-radius", "border-top-right-radius"],
 		slug: "border-radius#right-radius",
 		values: borderRadiusValues,
@@ -51,7 +51,7 @@ export const border: Utilities = {
 	},
 
 	"border-bottom-left-radius": {
-		prefix: "br-bl",
+		prefix: "bblr",
 		properties: ["border-bottom-left-radius"],
 		slug: "border-radius#bottom-left-radius",
 		values: borderRadiusValues,
@@ -59,7 +59,7 @@ export const border: Utilities = {
 	},
 
 	"border-bottom-right-radius": {
-		prefix: "br-br",
+		prefix: "bbrr",
 		properties: ["border-bottom-right-radius"],
 		slug: "border-radius#bottom-right-radius",
 		values: borderRadiusValues,
@@ -67,7 +67,7 @@ export const border: Utilities = {
 	},
 
 	"border-top-radius": {
-		prefix: "br-t",
+		prefix: "btr",
 		properties: ["border-top-left-radius", "border-top-right-radius"],
 		slug: "border-radius#top-radius",
 		values: borderRadiusValues,
@@ -75,7 +75,7 @@ export const border: Utilities = {
 	},
 
 	"border-top-left-radius": {
-		prefix: "br-tl",
+		prefix: "btlr",
 		properties: ["border-top-left-radius"],
 		slug: "border-radius#top-left-radius",
 		values: borderRadiusValues,
@@ -83,7 +83,7 @@ export const border: Utilities = {
 	},
 
 	"border-top-right-radius": {
-		prefix: "br-tr",
+		prefix: "btrr",
 		properties: ["border-top-right-radius"],
 		slug: "border-radius#top-right-radius",
 		values: borderRadiusValues,
@@ -121,7 +121,7 @@ export const border: Utilities = {
 	"border-bottom-width": {
 		prefix: "bbw",
 		properties: ["border-bottom-width"],
-		slug: "border-bottom-radius",
+		slug: "border-width#bottom-width",
 		values: borderWidthValues,
 		variants: base,
 	},

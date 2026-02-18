@@ -9,6 +9,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- **[core]** Renamed border-radius sub-utility prefixes for consistency:
+    - `br-t` -> `btr`
+    - `br-b` -> `bbr`
+    - `br-l` -> `blr`
+    - `br-r` -> `brr`
+    - `br-tl` -> `btlr`
+    - `br-tr` -> `btrr`
+    - `br-bl` -> `bblr`
+    - `br-br` -> `bbrr`
 - **[runtime]** Rename browser `globalName` from `YummaCSS` to `yummacss`.
 
 ### Added
