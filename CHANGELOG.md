@@ -7,8 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Changed
-
+- **[core]** Renamed border-color sub-utility prefixes for consistency:
+    - `bc-t` -> `btc`
+    - `bc-b` -> `bbc`
+    - `bc-l` -> `blc`
+    - `bc-r` -> `brc`
 - **[core]** Renamed border-radius sub-utility prefixes for consistency:
     - `br-t` -> `btr`
     - `br-b` -> `bbr`

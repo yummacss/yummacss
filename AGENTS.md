@@ -99,21 +99,21 @@ Each color has shades `1-9` (1 = lightest, 5 = base, 9 = darkest)
 
 ### Color Utilities
 
-| Property                | Prefix  | Example                 |
-| ----------------------- | ------- | ----------------------- |
-| `background-color`      | `bg-`   | `bg-blue-5`, `bg-red-3` |
-| `color`                 | `c-`    | `c-white`, `c-gray-7`   |
-| `border-color`          | `bc-`   | `bc-slate-4`            |
-| `border-bottom-color`   | `bc-b-` | `bc-b-red-5`            |
-| `border-left-color`     | `bc-l-` | `bc-l-blue-5`           |
-| `border-right-color`    | `bc-r-` | `bc-r-green-5`          |
-| `border-top-color`      | `bc-t-` | `bc-t-yellow-5`         |
-| `accent-color`          | `ac-`   | `ac-blue-5`             |
-| `caret-color`           | `cc-`   | `cc-red-5`              |
-| `outline-color`         | `oc-`   | `oc-blue-5`             |
-| `text-decoration-color` | `tdc-`  | `tdc-red-5`             |
-| `fill`                  | `f-`    | `f-blue-5`              |
-| `stroke`                | `s-`    | `s-red-5`               |
+| Property                | Prefix | Example                 |
+| ----------------------- | ------ | ----------------------- |
+| `background-color`      | `bg-`  | `bg-blue-5`, `bg-red-3` |
+| `color`                 | `c-`   | `c-white`, `c-gray-7`   |
+| `border-color`          | `bc-`  | `bc-slate-4`            |
+| `border-bottom-color`   | `bbc-` | `bbc-red-5`             |
+| `border-left-color`     | `blc-` | `blc-blue-5`            |
+| `border-right-color`    | `brc-` | `brc-green-5`           |
+| `border-top-color`      | `btc-` | `btc-yellow-5`          |
+| `accent-color`          | `ac-`  | `ac-blue-5`             |
+| `caret-color`           | `cc-`  | `cc-red-5`              |
+| `outline-color`         | `oc-`  | `oc-blue-5`             |
+| `text-decoration-color` | `tdc-` | `tdc-red-5`             |
+| `fill`                  | `f-`   | `f-blue-5`              |
+| `stroke`                | `s-`   | `s-red-5`               |
 
 ---
 
