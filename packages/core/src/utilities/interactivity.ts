@@ -1,4 +1,8 @@
-import { scrollMarginValues, scrollPaddingValues } from "@/defaults/values";
+import {
+	overscrollBehaviorValues,
+	scrollMarginValues,
+	scrollPaddingValues,
+} from "@/defaults/values";
 import { base } from "@/defaults/variants/stacks";
 import type { Utilities } from "@/interfaces";
 
@@ -83,11 +87,7 @@ export const interactivity: Utilities = {
 		prefix: "ob",
 		properties: ["overscroll-behavior"],
 		slug: "overscroll-behavior",
-		values: {
-			auto: "auto",
-			c: "contain",
-			none: "none",
-		},
+		values: overscrollBehaviorValues,
 		variants: base,
 	},
 
@@ -95,11 +95,7 @@ export const interactivity: Utilities = {
 		prefix: "obb",
 		properties: ["overscroll-behavior-block"],
 		slug: "overscroll-behavior#block",
-		values: {
-			auto: "auto",
-			c: "contain",
-			none: "none",
-		},
+		values: overscrollBehaviorValues,
 		variants: base,
 	},
 
@@ -107,11 +103,7 @@ export const interactivity: Utilities = {
 		prefix: "obi",
 		properties: ["overscroll-behavior-inline"],
 		slug: "overscroll-behavior#inline",
-		values: {
-			auto: "auto",
-			c: "contain",
-			none: "none",
-		},
+		values: overscrollBehaviorValues,
 		variants: base,
 	},
 
@@ -119,11 +111,7 @@ export const interactivity: Utilities = {
 		prefix: "obx",
 		properties: ["overscroll-behavior-x"],
 		slug: "overscroll-behavior#x",
-		values: {
-			auto: "auto",
-			c: "contain",
-			none: "none",
-		},
+		values: overscrollBehaviorValues,
 		variants: base,
 	},
 
@@ -131,11 +119,7 @@ export const interactivity: Utilities = {
 		prefix: "oby",
 		properties: ["overscroll-behavior-y"],
 		slug: "overscroll-behavior#y",
-		values: {
-			auto: "auto",
-			c: "contain",
-			none: "none",
-		},
+		values: overscrollBehaviorValues,
 		variants: base,
 	},
 
