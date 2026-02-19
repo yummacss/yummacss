@@ -1,12 +1,11 @@
-import ora from "ora";
+import { createSpinner } from "nanospinner";
 
-export const progress = (msg: string) =>
-	ora({ spinner: "sand", color: "white" }).start(msg);
+export const progress = (msg: string) => createSpinner(msg).start();
 
-export const fail = (msg: string) => ora().fail(msg);
-export const info = (msg: string) => ora().info(msg);
-export const success = (msg: string) => ora().succeed(msg);
-export const warn = (msg: string) => ora().warn(msg);
+export const fail = (msg: string) => createSpinner().error({ text: msg });
+export const info = (msg: string) => createSpinner().warn({ text: msg });
+export const success = (msg: string) => createSpinner().success({ text: msg });
+export const warn = (msg: string) => createSpinner().warn({ text: msg });
 
 export const cli = {
 	fail,

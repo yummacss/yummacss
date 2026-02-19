@@ -1,9 +1,9 @@
 import { readFileSync } from "node:fs";
-import { globby } from "globby";
+import { glob } from "tinyglobby";
 import { tokenizer } from "./tokenizer";
 
 export async function extractor(patterns: string[]): Promise<Set<string>> {
-	const files = await globby(patterns);
+	const files = await glob(patterns);
 	const classSet = new Set<string>();
 
 	for (const file of files) {
