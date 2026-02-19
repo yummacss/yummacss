@@ -1011,16 +1011,21 @@ Example: `c-3` → `columns: 3`
 
 ## Effects
 
-### Box Shadow
+### Box Shadow (Outset)
 
-| Class      | CSS                                      |
-| ---------- | ---------------------------------------- |
-| `bsh-none` | `box-shadow: none`                       |
-| `bsh-xs`   | `box-shadow: 1px 3px 5px -3px #0000001a` |
-| `bsh-sm`   | `box-shadow: 1px 3px 5px -2px #0000001a` |
-| `bsh-md`   | `box-shadow: 1px 3px 5px -1px #0000001a` |
-| `bsh-lg`   | `box-shadow: 1px 3px 5px 1px #0000001a`  |
-| `bsh-xl`   | `box-shadow: 1px 3px 5px 2px #0000001a`  |
+| Prefix  | Values                                     |
+| ------- | ------------------------------------------ |
+| `bs-o-` | `xs`, `sm`, `md`, `lg`, `xl`, `xxl`, `3xl` |
+
+Example: `bs-o-md` → `box-shadow: 0 4px 6px -1px #0000001a, ...`
+
+### Box Shadow (Inset)
+
+| Prefix  | Values                                     |
+| ------- | ------------------------------------------ |
+| `bs-i-` | `xs`, `sm`, `md`, `lg`, `xl`, `xxl`, `3xl` |
+
+Example: `bs-i-md` → `box-shadow: inset 0 2px 4px 0 #0000001a`
 
 ### Opacity
 

@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- **[core]** Renamed `box-shadow` prefix from `bsh-` to `bs-o-` (outset) and `bs-i-` (inset).
+- **[core]** Added refined outset and inset `box-shadow` values from `xs` to `3xl`.
 - **[core]** Implement `overscroll-behavior` utilities (`ob-`, `obb-`, `obi-`, `obx-`, `oby-`).
 - **[core]** Implement `empty-cells` utility (`ec-s`, `ec-h`).
 - **[core]** Implement `word-break` utility (`wb-`).
