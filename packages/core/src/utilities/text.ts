@@ -262,4 +262,17 @@ export const text: Utilities = {
 		},
 		variants: base,
 	},
+
+	"word-break": {
+		prefix: "wb",
+		properties: ["word-break"],
+		slug: "word-break",
+		values: {
+			ap: "auto-phrase",
+			ba: "break-all",
+			ka: "keep-all",
+			n: "normal",
+		},
+		variants: base,
+	},
 };
