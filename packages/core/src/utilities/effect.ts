@@ -57,6 +57,33 @@ export const effect: Utilities = {
 		variants: base,
 	},
 
+	"mix-blend-mode": {
+		prefix: "mbm",
+		properties: ["mix-blend-mode"],
+		slug: "mix-blend-mode",
+		values: {
+			n: "normal",
+			m: "multiply",
+			s: "screen",
+			o: "overlay",
+			d: "darken",
+			l: "lighten",
+			cd: "color-dodge",
+			cb: "color-burn",
+			hl: "hard-light",
+			sl: "soft-light",
+			df: "difference",
+			e: "exclusion",
+			h: "hue",
+			st: "saturation",
+			c: "color",
+			lu: "luminosity",
+			pd: "plus-darker",
+			pl: "plus-lighter",
+		},
+		variants: base,
+	},
+
 	opacity: {
 		prefix: "o",
 		properties: ["opacity"],

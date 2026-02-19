@@ -434,6 +434,29 @@ Example: `gc-s-2` → `grid-column: span 2 / span 2`
 | `zi-auto`         | `z-index: auto`                             |
 | `zi-0` to `zi-90` | `z-index: 0` to `z-index: 90` (steps of 10) |
 
+### Mix Blend Mode
+
+| Class    | CSS                            |
+| -------- | ------------------------------ |
+| `mbm-n`  | `mix-blend-mode: normal`       |
+| `mbm-m`  | `mix-blend-mode: multiply`     |
+| `mbm-s`  | `mix-blend-mode: screen`       |
+| `mbm-o`  | `mix-blend-mode: overlay`      |
+| `mbm-d`  | `mix-blend-mode: darken`       |
+| `mbm-l`  | `mix-blend-mode: lighten`      |
+| `mbm-cd` | `mix-blend-mode: color-dodge`  |
+| `mbm-cb` | `mix-blend-mode: color-burn`   |
+| `mbm-hl` | `mix-blend-mode: hard-light`   |
+| `mbm-sl` | `mix-blend-mode: soft-light`   |
+| `mbm-df` | `mix-blend-mode: difference`   |
+| `mbm-e`  | `mix-blend-mode: exclusion`    |
+| `mbm-h`  | `mix-blend-mode: hue`          |
+| `mbm-st` | `mix-blend-mode: saturation`   |
+| `mbm-c`  | `mix-blend-mode: color`        |
+| `mbm-lu` | `mix-blend-mode: luminosity`   |
+| `mbm-pd` | `mix-blend-mode: plus-darker`  |
+| `mbm-pl` | `mix-blend-mode: plus-lighter` |
+
 ### Display
 
 | Class    | CSS                     |
