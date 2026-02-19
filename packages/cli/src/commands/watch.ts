@@ -1,6 +1,6 @@
 import type { Config } from "@yummacss/nitro";
 import chok from "chokidar";
-import { globby } from "globby";
+import { glob } from "tinyglobby";
 import { loadConfig } from "@/services/loader";
 import { feedback } from "@/utils/feedback";
 import { cli } from "@/utils/status";
@@ -34,7 +34,7 @@ export async function watch() {
 
 		cli.info(feedback.watch.start);
 
-		const files = await globby(currentConfig.source);
+		const files = await glob(currentConfig.source);
 		const watcher = chok.watch(files, {
 			awaitWriteFinish: {
 				pollInterval: 50,
