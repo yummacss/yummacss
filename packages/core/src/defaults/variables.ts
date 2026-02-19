@@ -50,11 +50,25 @@ export const rowGap = 0.25;
 // effect
 export const blur = 4;
 
-export const boxShadowXs = "1px 3px 5px -3px #0000001a";
-export const boxShadowSm = "1px 3px 5px -2px #0000001a";
-export const boxShadowMd = "1px 3px 5px -1px #0000001a";
-export const boxShadowLg = "1px 3px 5px 1px #0000001a";
-export const boxShadowXl = "1px 3px 5px 2px #0000001a";
+export const boxShadowOutsetXs = "0 1px 2px 0 #0000000d";
+export const boxShadowOutsetSm =
+	"0 1px 3px 0 #0000001a, 0 1px 2px -1px #0000001a";
+export const boxShadowOutsetMd =
+	"0 4px 6px -1px #0000001a, 0 2px 4px -2px #0000001a";
+export const boxShadowOutsetLg =
+	"0 10px 15px -3px #0000001a, 0 4px 6px -4px #0000001a";
+export const boxShadowOutsetXl =
+	"0 20px 25px -5px #0000001a, 0 8px 10px -6px #0000001a";
+export const boxShadowOutsetXxl = "0 25px 50px -12px #00000040";
+export const boxShadowOutset3xl = "0 35px 60px -15px #0000004d";
+
+export const boxShadowInsetXs = "inset 0 1px 2px 0 #0000000d";
+export const boxShadowInsetSm = "inset 0 2px 4px 0 #0000000f";
+export const boxShadowInsetMd = "inset 0 2px 4px 0 #0000001a";
+export const boxShadowInsetLg = "inset 0 4px 6px 0 #0000001a";
+export const boxShadowInsetXl = "inset 0 6px 10px 0 #0000001f";
+export const boxShadowInsetXxl = "inset 0 8px 16px 0 #00000026";
+export const boxShadowInset3xl = "inset 0 12px 24px 0 #00000033";
 
 export const grayscale = 10;
 

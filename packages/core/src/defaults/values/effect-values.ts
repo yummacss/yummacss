@@ -1,4 +1,21 @@
-import { blur, grayscale } from "../variables";
+import {
+	blur,
+	boxShadowInset3xl,
+	boxShadowInsetLg,
+	boxShadowInsetMd,
+	boxShadowInsetSm,
+	boxShadowInsetXl,
+	boxShadowInsetXs,
+	boxShadowInsetXxl,
+	boxShadowOutset3xl,
+	boxShadowOutsetLg,
+	boxShadowOutsetMd,
+	boxShadowOutsetSm,
+	boxShadowOutsetXl,
+	boxShadowOutsetXs,
+	boxShadowOutsetXxl,
+	grayscale,
+} from "../variables";
 
 export const blurValues: Record<string, string> = {
 	none: `blur(${blur * 0}px)`,
@@ -7,6 +24,28 @@ export const blurValues: Record<string, string> = {
 	md: `blur(${blur * 4}px)`,
 	lg: `blur(${blur * 8}px)`,
 	xl: `blur(${blur * 16}px)`,
+};
+
+export const boxShadowOutsetValues: Record<string, string> = {
+	none: "none",
+	xs: boxShadowOutsetXs,
+	sm: boxShadowOutsetSm,
+	md: boxShadowOutsetMd,
+	lg: boxShadowOutsetLg,
+	xl: boxShadowOutsetXl,
+	xxl: boxShadowOutsetXxl,
+	"3xl": boxShadowOutset3xl,
+};
+
+export const boxShadowInsetValues: Record<string, string> = {
+	none: "none",
+	xs: boxShadowInsetXs,
+	sm: boxShadowInsetSm,
+	md: boxShadowInsetMd,
+	lg: boxShadowInsetLg,
+	xl: boxShadowInsetXl,
+	xxl: boxShadowInsetXxl,
+	"3xl": boxShadowInset3xl,
 };
 
 export const grayscaleValues: Record<string, string> = {

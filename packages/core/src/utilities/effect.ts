@@ -1,11 +1,9 @@
-import { blurValues, grayscaleValues } from "@/defaults/values";
 import {
-	boxShadowLg,
-	boxShadowMd,
-	boxShadowSm,
-	boxShadowXl,
-	boxShadowXs,
-} from "@/defaults/variables";
+	blurValues,
+	boxShadowInsetValues,
+	boxShadowOutsetValues,
+	grayscaleValues,
+} from "@/defaults/values";
 import { base } from "@/defaults/variants/stacks";
 import type { Utilities } from "@/interfaces";
 
@@ -34,18 +32,19 @@ export const effect: Utilities = {
 		variants: base,
 	},
 
-	"box-shadow": {
-		prefix: "bsh",
+	"box-shadow-outset": {
+		prefix: "bs-o",
 		properties: ["box-shadow"],
-		slug: "box-shadow",
-		values: {
-			none: "none",
-			xs: boxShadowXs,
-			sm: boxShadowSm,
-			md: boxShadowMd,
-			lg: boxShadowLg,
-			xl: boxShadowXl,
-		},
+		slug: "box-shadow#outset",
+		values: boxShadowOutsetValues,
+		variants: base,
+	},
+
+	"box-shadow-inset": {
+		prefix: "bs-i",
+		properties: ["box-shadow"],
+		slug: "box-shadow#inset",
+		values: boxShadowInsetValues,
 		variants: base,
 	},
 
