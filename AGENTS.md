@@ -434,6 +434,10 @@ Example: `gc-s-2` → `grid-column: span 2 / span 2`
 | `zi-auto`         | `z-index: auto`                             |
 | `zi-0` to `zi-90` | `z-index: 0` to `z-index: 90` (steps of 10) |
 
+---
+
+## Effects
+
 ### Mix Blend Mode
 
 | Class    | CSS                            |
@@ -457,6 +461,79 @@ Example: `gc-s-2` → `grid-column: span 2 / span 2`
 | `mbm-pd` | `mix-blend-mode: plus-darker`  |
 | `mbm-pl` | `mix-blend-mode: plus-lighter` |
 
+---
+
+## Typography
+
+### Font Family
+
+| Class  | CSS                                                |
+| ------ | -------------------------------------------------- |
+| `ff-d` | `font-family: system-ui, ...` (default sans-serif) |
+| `ff-m` | `font-family: ui-monospace, ...` (monospace)       |
+| `ff-s` | `font-family: 'Iowan Old Style', ...` (serif)      |
+
+### Font Size
+
+| Class    | CSS                   |
+| -------- | --------------------- |
+| `fs-xs`  | `font-size: 0.75rem`  |
+| `fs-sm`  | `font-size: 0.875rem` |
+| `fs-md`  | `font-size: 1rem`     |
+| `fs-lg`  | `font-size: 1.125rem` |
+| `fs-xl`  | `font-size: 1.25rem`  |
+| `fs-xxl` | `font-size: 1.5rem`   |
+| `fs-3xl` | `font-size: 1.875rem` |
+| `fs-4xl` | `font-size: 2.25rem`  |
+| `fs-5xl` | `font-size: 3rem`     |
+| `fs-6xl` | `font-size: 3.75rem`  |
+| `fs-7xl` | `font-size: 4.5rem`   |
+| `fs-8xl` | `font-size: 6rem`     |
+| `fs-9xl` | `font-size: 8rem`     |
+
+### Font Style
+
+| Class  | CSS                  |
+| ------ | -------------------- |
+| `fs-i` | `font-style: italic` |
+| `fs-n` | `font-style: normal` |
+
+### Font Weight
+
+| Class                | CSS                                      |
+| -------------------- | ---------------------------------------- |
+| `fw-100` to `fw-900` | `font-weight: 100` to `font-weight: 900` |
+
+### Text Align
+
+| Class   | CSS                        |
+| ------- | -------------------------- |
+| `ta-l`  | `text-align: left`         |
+| `ta-r`  | `text-align: right`        |
+| `ta-c`  | `text-align: center`       |
+| `ta-j`  | `text-align: justify`      |
+| `ta-ja` | `text-align: justify-all`  |
+| `ta-s`  | `text-align: start`        |
+| `ta-e`  | `text-align: end`          |
+| `ta-mp` | `text-align: match-parent` |
+
+### Text Transform
+
+| Class  | CSS                          |
+| ------ | ---------------------------- |
+| `tt-u` | `text-transform: uppercase`  |
+| `tt-l` | `text-transform: lowercase`  |
+| `tt-c` | `text-transform: capitalize` |
+| `tt-n` | `text-transform: none`       |
+
+### Text Decoration
+
+| Class     | CSS                                  |
+| --------- | ------------------------------------ |
+| `td-none` | `text-decoration: none`              |
+| `td-u`    | `text-decoration: underline`         |
+| `tdl-u`   | `text-decoration-line: underline`    |
+| `tdl-lt`  | `text-decoration-line: line-through` |
 ### Display
 
 | Class    | CSS                     |
@@ -954,6 +1031,30 @@ Example: `c-3` → `columns: 3`
 | ------------------------------ | ------- | --------------------- |
 | `filter: grayscale()`          | `f-g-`  | `0-100` (steps of 10) |
 | `backdrop-filter: grayscale()` | `bf-g-` | `0-100` (steps of 10) |
+
+### Mix Blend Mode
+
+| Class    | CSS                            |
+| -------- | ------------------------------ |
+| `mbm-n`  | `mix-blend-mode: normal`       |
+| `mbm-m`  | `mix-blend-mode: multiply`     |
+| `mbm-s`  | `mix-blend-mode: screen`       |
+| `mbm-o`  | `mix-blend-mode: overlay`      |
+| `mbm-d`  | `mix-blend-mode: darken`       |
+| `mbm-l`  | `mix-blend-mode: lighten`      |
+| `mbm-cd` | `mix-blend-mode: color-dodge`  |
+| `mbm-cb` | `mix-blend-mode: color-burn`   |
+| `mbm-hl` | `mix-blend-mode: hard-light`   |
+| `mbm-sl` | `mix-blend-mode: soft-light`   |
+| `mbm-df` | `mix-blend-mode: difference`   |
+| `mbm-e`  | `mix-blend-mode: exclusion`    |
+| `mbm-h`  | `mix-blend-mode: hue`          |
+| `mbm-st` | `mix-blend-mode: saturation`   |
+| `mbm-c`  | `mix-blend-mode: color`        |
+| `mbm-lu` | `mix-blend-mode: luminosity`   |
+| `mbm-pd` | `mix-blend-mode: plus-darker`  |
+| `mbm-pl` | `mix-blend-mode: plus-lighter` |
+
 
 ---
 
