@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- **[core]** Implement `overscroll-behavior` utilities (`ob-`, `obb-`, `obi-`, `obx-`, `oby-`).
+- **[core]** Implement `empty-cells` utility (`ec-s`, `ec-h`).
+- **[core]** Implement `word-break` utility (`wb-`).
+- **[core]** Implement `9999` `z-index` utility value.
 - **[core]** Renamed border-color sub-utility prefixes for consistency:
     - `bc-t` -> `btc`
     - `bc-b` -> `bbc`

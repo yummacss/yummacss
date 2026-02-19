@@ -433,6 +433,7 @@ Example: `gc-s-2` → `grid-column: span 2 / span 2`
 | ----------------- | ------------------------------------------- |
 | `zi-auto`         | `z-index: auto`                             |
 | `zi-0` to `zi-90` | `z-index: 0` to `z-index: 90` (steps of 10) |
+| `zi-9999`         | `z-index: 9999`                             |
 
 ---
 
@@ -819,6 +820,15 @@ Example: `c-3` → `columns: 3`
 | ------- | --------------------------- |
 | `ow-n`  | `overflow-wrap: normal`     |
 | `ow-bw` | `overflow-wrap: break-word` |
+
+### Word Break
+
+| Class   | CSS                       |
+| ------- | ------------------------- |
+| `wb-n`  | `word-break: normal`      |
+| `wb-ba` | `word-break: break-all`   |
+| `wb-ka` | `word-break: keep-all`    |
+| `wb-ap` | `word-break: auto-phrase` |
 
 ### Vertical Align
 
@@ -1301,6 +1311,16 @@ Example: `td-100` → `transition-delay: 100ms`
 | `sst-y-p`  | `scroll-snap-type: y proximity`    |
 | `sst-b-m`  | `scroll-snap-type: both mandatory` |
 
+### Overscroll Behavior
+
+| Property                     | Prefix | Values                    |
+| ---------------------------- | ------ | ------------------------- |
+| `overscroll-behavior`        | `ob-`  | `auto`, `contain`, `none` |
+| `overscroll-behavior-block`  | `obb-` | Same                      |
+| `overscroll-behavior-inline` | `obi-` | Same                      |
+| `overscroll-behavior-x`      | `obx-` | Same                      |
+| `overscroll-behavior-y`      | `oby-` | Same                      |
+
 ---
 
 ## SVG
@@ -1333,6 +1353,13 @@ Example: `td-100` → `transition-delay: 100ms`
 | ------ | ---------------------- |
 | `cs-t` | `caption-side: top`    |
 | `cs-b` | `caption-side: bottom` |
+
+### Empty Cells
+
+| Class  | CSS                 |
+| ------ | ------------------- |
+| `ec-s` | `empty-cells: show` |
+| `ec-h` | `empty-cells: hide` |
 
 ---
 

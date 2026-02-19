@@ -274,6 +274,7 @@ export const positioning: Utilities = {
 			"70": "70",
 			"80": "80",
 			"90": "90",
+			"9999": "9999",
 			auto: "auto",
 		},
 		variants: base,

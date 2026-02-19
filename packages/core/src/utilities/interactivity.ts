@@ -79,6 +79,66 @@ export const interactivity: Utilities = {
 		variants: base,
 	},
 
+	"overscroll-behavior": {
+		prefix: "ob",
+		properties: ["overscroll-behavior"],
+		slug: "overscroll-behavior",
+		values: {
+			auto: "auto",
+			c: "contain",
+			none: "none",
+		},
+		variants: base,
+	},
+
+	"overscroll-behavior-block": {
+		prefix: "obb",
+		properties: ["overscroll-behavior-block"],
+		slug: "overscroll-behavior#block",
+		values: {
+			auto: "auto",
+			c: "contain",
+			none: "none",
+		},
+		variants: base,
+	},
+
+	"overscroll-behavior-inline": {
+		prefix: "obi",
+		properties: ["overscroll-behavior-inline"],
+		slug: "overscroll-behavior#inline",
+		values: {
+			auto: "auto",
+			c: "contain",
+			none: "none",
+		},
+		variants: base,
+	},
+
+	"overscroll-behavior-x": {
+		prefix: "obx",
+		properties: ["overscroll-behavior-x"],
+		slug: "overscroll-behavior#x",
+		values: {
+			auto: "auto",
+			c: "contain",
+			none: "none",
+		},
+		variants: base,
+	},
+
+	"overscroll-behavior-y": {
+		prefix: "oby",
+		properties: ["overscroll-behavior-y"],
+		slug: "overscroll-behavior#y",
+		values: {
+			auto: "auto",
+			c: "contain",
+			none: "none",
+		},
+		variants: base,
+	},
+
 	resize: {
 		prefix: "r",
 		properties: ["resize"],
