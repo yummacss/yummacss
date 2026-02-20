@@ -1,4 +1,5 @@
-import { writeFileSync } from "node:fs";
+import { mkdirSync, writeFileSync } from "node:fs";
+import { dirname } from "node:path";
 import type { Config } from "@yummacss/nitro";
 import { configChanged, getCache, setCache } from "@/services/cache";
 import { compiler } from "@/services/compiler";
@@ -30,6 +31,7 @@ export async function build(existingConfig?: Config, forceRebuild = false) {
 		}
 
 		const finalCSS = minify(css, config);
+		mkdirSync(dirname(config.output), { recursive: true });
 		writeFileSync(config.output, finalCSS);
 
 		status.succeed(
