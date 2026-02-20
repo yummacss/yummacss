@@ -19,7 +19,7 @@ export async function loadConfig(): Promise<Config> {
 	} catch (_error) {
 		if (!existsSync(configName)) {
 			const status = cli.progress(feedback.init.notFound);
-			status.warn(feedback.init.notFound);
+			status.fail(feedback.init.notFound);
 			process.exit(1);
 		}
 		const status = cli.progress(feedback.init.invalid);
