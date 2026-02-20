@@ -8,6 +8,31 @@ import { base } from "@/defaults/variants/stacks";
 import type { Utilities } from "@/interfaces";
 
 export const boxModel: Utilities = {
+	"aspect-ratio": {
+		prefix: "ar",
+		properties: ["aspect-ratio"],
+		slug: "aspect-ratio",
+		values: {
+			auto: "auto",
+			"1/1": "1/1",
+			"1/2": "1/2",
+			"2/1": "2/1",
+			"2/3": "2/3",
+			"3/2": "3/2",
+			"3/4": "3/4",
+			"4/3": "4/3",
+			"4/5": "4/5",
+			"5/4": "5/4",
+			"5/7": "5/7",
+			"7/5": "7/5",
+			"9/16": "9/16",
+			"16/9": "16/9",
+			"21/9": "21/9",
+			"9/21": "9/21",
+		},
+		variants: base,
+	},
+
 	"box-sizing": {
 		prefix: "bs",
 		properties: ["box-sizing"],
