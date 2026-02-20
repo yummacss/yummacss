@@ -9,6 +9,7 @@ import { flexbox } from "./flexbox";
 import { font } from "./font";
 import { grid } from "./grid";
 import { interactivity } from "./interactivity";
+import { layout } from "./layout";
 import { outline } from "./outline";
 import { positioning } from "./positioning";
 import { svg } from "./svg";
@@ -27,6 +28,7 @@ export const core: Utilities = {
 	...font,
 	...grid,
 	...interactivity,
+	...layout,
 	...outline,
 	...positioning,
 	...svg,
