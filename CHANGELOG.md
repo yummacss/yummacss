@@ -7,39 +7,36 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-- **[core]** Renamed `box-shadow` prefix from `bsh-` to `bs-o-` (outset) and `bs-i-` (inset).
-- **[core]** Added refined outset and inset `box-shadow` values from `xs` to `3xl`.
+## [3.15.0] - 2026-02-20
+
+### Added
+
+- **[core]** Add refined outset and inset `box-shadow` values from `xs` to `3xl`.
 - **[core]** Implement `overscroll-behavior` utilities (`ob-`, `obb-`, `obi-`, `obx-`, `oby-`).
 - **[core]** Implement `empty-cells` utility (`ec-s`, `ec-h`).
 - **[core]** Implement `word-break` utility (`wb-`).
 - **[core]** Implement `9999` `z-index` utility value.
-- **[core]** Renamed border-color sub-utility prefixes for consistency:
-    - `bc-t` -> `btc`
-    - `bc-b` -> `bbc`
-    - `bc-l` -> `blc`
-    - `bc-r` -> `brc`
-- **[core]** Renamed border-radius sub-utility prefixes for consistency:
-    - `br-t` -> `btr`
-    - `br-b` -> `bbr`
-    - `br-l` -> `blr`
-    - `br-r` -> `brr`
-    - `br-tl` -> `btlr`
-    - `br-tr` -> `btrr`
-    - `br-bl` -> `bblr`
-    - `br-br` -> `bbrr`
-- **[runtime]** Rename browser `globalName` from `YummaCSS` to `yummacss`.
-
-### Added
-
 - **[core]** Add `mix-blend-mode` utility (`mbm-`).
 - **[core]** Add `backdrop-grayscale` utility (`bf-g-`).
 - **[core]**, **[cli]**, **[nitro]**, **[runtime]** Implement CommonJS (CJS) support using the `default` field in `package.json`.
 - **[core]** Expand viewport unit support: Add `vi`, `vb`, `svh`, `svw`, `lvh`, `lvw`, `vmin`, and `vmax` to Box Model utilities.
 - **[core]**, **[nitro]** Implement Container Query variants (e.g., `@sm:w-full`) for container-based responsive design.
+
+### Changed
+
+- **[core]** Rename `box-shadow` prefix from `bsh-` to `bs-o-` (outset) and `bs-i-` (inset).
+- **[core]** Rename border-color sub-utility prefixes for consistency (`bc-t` -> `btc`, `bc-b` -> `bbc`, `bc-l` -> `blc`, `bc-r` -> `brc`).
+- **[core]** Rename border-radius sub-utility prefixes for consistency (`br-t` -> `btr`, `br-b` -> `bbr`, `br-l` -> `blr`, `br-r` -> `brr`, etc.).
+- **[runtime]** Rename browser `globalName` from `YummaCSS` to `yummacss`.
 - **[core]** Refactor scale utilities: move from `transform: scale()` to standalone `scale` property. New prefixes: `s-`, `sx-`, `sy-`, and `sz-`.
+
+### Fixed
+
+- **[cli]** Create output directory automatically if it does not exist.
 
 ### Removed
 
+- **[core]** Remove `bsh-` (box-shadow) utilities.
 - **[core]** Remove `dimension` (`d-`), `max-dimension` (`max-d-`), and `min-dimension` (`min-d-`) utilities.
 - **[core]** Remove legacy transform scale prefixes: `t-s-`, `t-sx-`, `t-sy-`.
 
@@ -747,7 +744,8 @@ No notable changes.
 
 - Initial release.
 
-[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.14.0...HEAD
+[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.15.0...HEAD
+[3.15.0]: https://github.com/yummacss/yummacss/compare/v3.14.0...v3.15.0
 [3.14.0]: https://github.com/yummacss/yummacss/compare/v3.13.0...v3.14.0
 [3.13.0]: https://github.com/yummacss/yummacss/compare/v3.12.0...v3.13.0
 [3.12.0]: https://github.com/yummacss/yummacss/compare/v3.11.0...v3.12.0
