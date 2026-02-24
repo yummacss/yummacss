@@ -1110,6 +1110,7 @@ Example: `s-50` → `scale: 50%`, `sx-50` → `scale: 50% 1`
 
 | Property     | Prefix  | Values                             |
 | ------------ | ------- | ---------------------------------- |
+| `translate`  | `t-t-`  | `0-100` (×0.25rem), `half`, `full` |
 | `translateX` | `t-tx-` | `0-100` (×0.25rem), `half`, `full` |
 | `translateY` | `t-ty-` | `0-100` (×0.25rem), `half`, `full` |
 

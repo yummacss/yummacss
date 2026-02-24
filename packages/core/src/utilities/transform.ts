@@ -156,6 +156,21 @@ export const transform: Utilities = {
 		variants: base,
 	},
 
+	translate: {
+		prefix: "t-t",
+		properties: ["translate"],
+		slug: "translate",
+		values: createValues({
+			base: 0.25,
+			unit: "rem",
+			min: 0,
+			max: 100,
+			wrapper: (v) => `${v} ${v}`,
+			extras: { full: "100% 100%", half: "50% 50%" },
+		}),
+		variants: base,
+	},
+
 	"translate-x": {
 		prefix: "t-tx",
 		properties: ["transform"],

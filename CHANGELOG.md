@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.16.0] - 2026-02-24
+
+### Added
+
+- **[core]** Add `translate` utility (`t-t-`).
+
 ## [3.15.0] - 2026-02-20
 
 ### Added
@@ -744,7 +750,8 @@ No notable changes.
 
 - Initial release.
 
-[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.15.0...HEAD
+[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.16.0...HEAD
+[3.16.0]: https://github.com/yummacss/yummacss/compare/v3.15.0...v3.16.0
 [3.15.0]: https://github.com/yummacss/yummacss/compare/v3.14.0...v3.15.0
 [3.14.0]: https://github.com/yummacss/yummacss/compare/v3.13.0...v3.14.0
 [3.13.0]: https://github.com/yummacss/yummacss/compare/v3.12.0...v3.13.0

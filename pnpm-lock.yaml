@@ -37,7 +37,7 @@ importers:
         version: 5.0.0
       commander:
         specifier: ^14.0.2
-        version: 14.0.2
+        version: 14.0.3
       lightningcss:
         specifier: ^1.30.2
         version: 1.30.2
@@ -74,7 +74,7 @@ importers:
         version: 0.2.15
       zod:
         specifier: ^4.3.4
-        version: 4.3.4
+        version: 4.3.6
 
   packages/runtime:
     dependencies:
@@ -651,8 +651,8 @@ packages:
     resolution: {integrity: sha512-TQMmc3w+5AxjpL8iIiwebF73dRDF4fBIieAqGn9RGCWaEVwQ6Fb2cGe31Yns0RRIzii5goJ1Y7xbMwo1TxMplw==}
     engines: {node: '>= 20.19.0'}
 
-  commander@14.0.2:
-    resolution: {integrity: sha512-TywoWNNRbhoD0BXs1P3ZEScW8W5iKrnbithIl0YH+uCmBd0QpPOA8yc82DS3BIE5Ma6FnBVUsJ7wVUDz4dvOWQ==}
+  commander@14.0.3:
+    resolution: {integrity: sha512-H+y0Jo/T1RZ9qPP4Eh1pkcQcLRglraJaSLoyOtHxu6AapkjWVCy2Sit1QQ4x3Dng8qDlSsZEet7g5Pq06MvTgw==}
     engines: {node: '>=20'}
 
   convert-hrtime@5.0.0:
@@ -839,8 +839,8 @@ packages:
   magic-string@0.30.21:
     resolution: {integrity: sha512-vd2F4YUyEXKGcLHoq+TEyCjxueSeHnFxyyjNp80yg0XV4vUhnDer/lvvlqM/arB5bXQN5K2/3oinyCRyx8T2CQ==}
 
-  make-asynchronous@1.0.1:
-    resolution: {integrity: sha512-T9BPOmEOhp6SmV25SwLVcHK4E6JyG/coH3C6F1NjNXSziv/fd4GmsqMk8YR6qpPOswfaOCApSNkZv6fxoaYFcQ==}
+  make-asynchronous@1.1.0:
+    resolution: {integrity: sha512-ayF7iT+44LXdxJLTrTd3TLQpFDDvPCBxXxbv+pMUSuHA5Q8zyAfwkRP6aHHwNVFBUFWtxAHqwNJxF8vMZLAbVg==}
     engines: {node: '>=18'}
 
   nanoid@3.3.11:
@@ -1106,16 +1106,16 @@ packages:
       jsdom:
         optional: true
 
-  web-worker@1.2.0:
-    resolution: {integrity: sha512-PgF341avzqyx60neE9DD+XS26MMNMoUQRz9NOZwW32nPQrF6p77f1htcnjBSEV8BGMKZ16choqUG4hyI0Hx7mA==}
+  web-worker@1.5.0:
+    resolution: {integrity: sha512-RiMReJrTAiA+mBjGONMnjVDP2u3p9R1vkcGz6gDIrOMT3oGuYwX2WRMYI9ipkphSuE5XKEhydbhNEJh4NY9mlw==}
 
   why-is-node-running@2.3.0:
     resolution: {integrity: sha512-hUrmaWBdVDcxvYqnyh09zunKzROWjbZTiNy8dBEjkS7ehEDQibXJ7XvlmtbwuTclUiIyN+CyXQD4Vmko8fNm8w==}
     engines: {node: '>=8'}
     hasBin: true
 
-  zod@4.3.4:
-    resolution: {integrity: sha512-Zw/uYiiyF6pUT1qmKbZziChgNPRu+ZRneAsMUDU6IwmXdWt5JwcUfy2bvLOCUtz5UniaN/Zx5aFttZYbYc7O/A==}
+  zod@4.3.6:
+    resolution: {integrity: sha512-rftlrkhHZOcjDwkGlnUtZZkvaPHCsDATp4pGpuOOMDaTdDDXF91wuVDJoWoPsKX/3YPQ5fHuF3STjcYyKr+Qhg==}
 
 snapshots:
 
@@ -1496,7 +1496,7 @@ snapshots:
     dependencies:
       readdirp: 5.0.0
 
-  commander@14.0.2: {}
+  commander@14.0.3: {}
 
   convert-hrtime@5.0.0: {}
 
@@ -1640,11 +1640,11 @@ snapshots:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.5
 
-  make-asynchronous@1.0.1:
+  make-asynchronous@1.1.0:
     dependencies:
       p-event: 6.0.1
       type-fest: 4.41.0
-      web-worker: 1.2.0
+      web-worker: 1.5.0
 
   nanoid@3.3.11: {}
 
@@ -1778,7 +1778,7 @@ snapshots:
   super-regex@1.1.0:
     dependencies:
       function-timeout: 1.0.2
-      make-asynchronous: 1.0.1
+      make-asynchronous: 1.1.0
       time-span: 5.1.0
 
   time-span@5.1.0:
@@ -1895,11 +1895,11 @@ snapshots:
       - tsx
       - yaml
 
-  web-worker@1.2.0: {}
+  web-worker@1.5.0: {}
 
   why-is-node-running@2.3.0:
     dependencies:
       siginfo: 2.0.0
       stackback: 0.0.2
 
-  zod@4.3.4: {}
+  zod@4.3.6: {}
