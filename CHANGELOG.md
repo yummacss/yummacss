@@ -5,13 +5,30 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
-
-## [3.16.0] - 2026-02-24
+## [3.16.0] - 2026-02-26
 
 ### Added
 
 - **[core]** Add `translate` utility (`t-t-`).
+- **[core]** Implement `border-block-width` utility (`byw-`).
+- **[core]** Implement `border-inline-width` utility (`bxw-`).
+
+### Changed
+
+- **[core]** Replace physical `border-radius` utilities with logical properties:
+  - `border-top-radius` -> `border-block-start-radius` (`bbsr-`)
+  - `border-bottom-radius` -> `border-block-end-radius` (`bber-`)
+  - `border-left-radius` -> `border-inline-start-radius` (`bisr-`)
+  - `border-right-radius` -> `border-inline-end-radius` (`bier-`)
+  - `border-top-left-radius` -> `border-start-start-radius` (`bssr-`)
+  - `border-top-right-radius` -> `border-start-end-radius` (`bser-`)
+  - `border-bottom-left-radius` -> `border-end-start-radius` (`besr-`)
+  - `border-bottom-right-radius` -> `border-end-end-radius` (`beer-`)
+- **[core]** Replace physical `border-width` utilities with logical properties:
+  - `border-top-width` -> `border-block-start-width` (`bbsw-`)
+  - `border-bottom-width` -> `border-block-end-width` (`bbew-`)
+  - `border-left-width` -> `border-inline-start-width` (`bisw-`)
+  - `border-right-width` -> `border-inline-end-width` (`biew-`)
 
 ## [3.15.0] - 2026-02-20
 
