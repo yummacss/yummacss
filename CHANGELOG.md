@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.17.0] - 2026-02-26
+
+### Changed
+
+- **[core]** Restore physical `border-radius` & `border-width` utilities previously replaced in 3.16.0.
+
 ## [3.16.0] - 2026-02-26
 
 ### Added
@@ -767,7 +773,8 @@ No notable changes.
 
 - Initial release.
 
-[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.16.0...HEAD
+[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.17.0...HEAD
+[3.17.0]: https://github.com/yummacss/yummacss/compare/v3.16.0...v3.17.0
 [3.16.0]: https://github.com/yummacss/yummacss/compare/v3.15.0...v3.16.0
 [3.15.0]: https://github.com/yummacss/yummacss/compare/v3.14.0...v3.15.0
 [3.14.0]: https://github.com/yummacss/yummacss/compare/v3.13.0...v3.14.0
