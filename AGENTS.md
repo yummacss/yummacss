@@ -889,16 +889,30 @@ Example: `c-3` → `columns: 3`
 | `border-top-right-radius`    | `btrr-` | Same                                            |
 | `border-bottom-left-radius`  | `bblr-` | Same                                            |
 | `border-bottom-right-radius` | `bbrr-` | Same                                            |
+| `border-block-start-radius`  | `bbsr-` | Same                                            |
+| `border-block-end-radius`    | `bber-` | Same                                            |
+| `border-inline-start-radius` | `bisr-` | Same                                            |
+| `border-inline-end-radius`   | `bier-` | Same                                            |
+| `border-start-start-radius`  | `bssr-` | Same                                            |
+| `border-start-end-radius`    | `bser-` | Same                                            |
+| `border-end-start-radius`    | `besr-` | Same                                            |
+| `border-end-end-radius`      | `beer-` | Same                                            |
 
 ### Border Width
 
-| Property              | Prefix | Values     |
-| --------------------- | ------ | ---------- |
-| `border-width`        | `bw-`  | `0-4` (px) |
-| `border-top-width`    | `btw-` | Same       |
-| `border-right-width`  | `brw-` | Same       |
-| `border-bottom-width` | `bbw-` | Same       |
-| `border-left-width`   | `blw-` | Same       |
+| Property                    | Prefix  | Values     |
+| --------------------------- | ------- | ---------- |
+| `border-width`              | `bw-`   | `0-4` (px) |
+| `border-top-width`          | `btw-`  | Same       |
+| `border-right-width`        | `brw-`  | Same       |
+| `border-bottom-width`       | `bbw-`  | Same       |
+| `border-left-width`         | `blw-`  | Same       |
+| `border-block-width`        | `byw-`  | Same       |
+| `border-inline-width`       | `bxw-`  | Same       |
+| `border-block-start-width`  | `bbsw-` | Same       |
+| `border-block-end-width`    | `bbew-` | Same       |
+| `border-inline-start-width` | `bisw-` | Same       |
+| `border-inline-end-width`   | `biew-` | Same       |
 
 ### Border Style
 
