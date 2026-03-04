@@ -1,6 +1,6 @@
 {
 	"name": "@yummacss/runtime",
-	"version": "3.17.0",
+	"version": "3.18.0",
 	"description": "Zero-config browser runtime for Yumma CSS.",
 	"keywords": [
 		"css-framework",

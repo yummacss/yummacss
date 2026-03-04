@@ -64,6 +64,19 @@ importers:
         specifier: ^1.6.0
         version: 1.6.0
 
+  packages/intellisense:
+    dependencies:
+      '@yummacss/core':
+        specifier: workspace:*
+        version: link:../core
+      tinycolor2:
+        specifier: ^1.6.0
+        version: 1.6.0
+    devDependencies:
+      '@types/tinycolor2':
+        specifier: ^1.4.6
+        version: 1.4.6
+
   packages/nitro:
     dependencies:
       '@yummacss/core':
