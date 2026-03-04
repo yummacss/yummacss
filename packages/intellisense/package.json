@@ -57,14 +57,6 @@
 		"@types/tinycolor2": "^1.4.6",
 		"@types/vscode": "^1.100.0"
 	},
-	"peerDependencies": {
-		"vscode": "*"
-	},
-	"peerDependenciesMeta": {
-		"vscode": {
-			"optional": true
-		}
-	},
 	"publishConfig": {
 		"access": "public",
 		"provenance": true
