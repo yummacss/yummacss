@@ -1,7 +1,7 @@
 {
-	"name": "@yummacss/core",
+	"name": "@yummacss/intellisense",
 	"version": "3.18.0",
-	"description": "Core utility definitions for Yumma CSS.",
+	"description": "Shared editor intellisense for Yumma CSS.",
 	"keywords": [
 		"css-framework",
 		"typescript",
@@ -11,7 +11,7 @@
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/yummacss/yummacss.git",
-		"directory": "packages/api"
+		"directory": "packages/intellisense"
 	},
 	"license": "MIT",
 	"author": "Renildo Pereira",
@@ -22,6 +22,18 @@
 			"import": "./dist/index.mjs",
 			"require": "./dist/index.cjs",
 			"default": "./dist/index.mjs"
+		},
+		"./monaco": {
+			"types": "./dist/adapters/monaco.d.mts",
+			"import": "./dist/adapters/monaco.mjs",
+			"require": "./dist/adapters/monaco.cjs",
+			"default": "./dist/adapters/monaco.mjs"
+		},
+		"./vscode": {
+			"types": "./dist/adapters/vscode.d.mts",
+			"import": "./dist/adapters/vscode.mjs",
+			"require": "./dist/adapters/vscode.cjs",
+			"default": "./dist/adapters/vscode.mjs"
 		}
 	},
 	"main": "dist/index.cjs",
@@ -37,9 +49,21 @@
 		"lint": "biome check --write",
 		"prepublishOnly": "pnpm build"
 	},
+	"dependencies": {
+		"@yummacss/core": "workspace:*",
+		"tinycolor2": "^1.6.0"
+	},
 	"devDependencies": {
 		"@types/tinycolor2": "^1.4.6",
-		"tinycolor2": "^1.6.0"
+		"@types/vscode": "^1.100.0"
+	},
+	"peerDependencies": {
+		"vscode": "*"
+	},
+	"peerDependenciesMeta": {
+		"vscode": {
+			"optional": true
+		}
 	},
 	"publishConfig": {
 		"access": "public",
