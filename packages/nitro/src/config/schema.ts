@@ -14,3 +14,7 @@ export const ConfigSchema = z.object({
 });
 
 export type Config = z.infer<typeof ConfigSchema>;
+
+export function defineConfig(config: Config): Config {
+	return config;
+}
