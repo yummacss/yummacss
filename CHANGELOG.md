@@ -9,15 +9,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- **[core]**, **[nitro]**, **[cli]**, **[intellisense]**, **[runtime]** Achieved zero 3rd party `dependencies` across all packages
-- **[core]**, **[cli]** Removed `lightningcss` — CSS value normalization now happens at generation time in `createValues`
-- **[cli]** Replaced `chokidar` with native Node.js `fs.watch`
-- **[cli]** Replaced `commander` with a native `process.argv` argument parser
-- **[cli]** Replaced `nanospinner` with an inlined spinner implementation
-- **[cli]** Replaced `stringify-object` with an inlined object serializer
-- **[core]**, **[nitro]**, **[cli]**, **[intellisense]** Bundled `zod`, `tinyglobby`, and `tinycolor2` into their respective packages
-- **[core]**, **[nitro]**, **[cli]**, **[intellisense]**, **[runtime]** Switched all packages to ESM-only output
-- **[nitro]**, **[runtime]** Removed `buildOptions.minify` from config schema
+- **[core]**, **[nitro]**, **[cli]**, **[intellisense]**, **[runtime]** Achieved zero 3rd party `dependencies` across all packages.
+- **[core]**, **[cli]** Removed `lightningcss` - CSS value normalization now happens at generation time in `createValues`
+- **[cli]** Replaced `chokidar` with native Node.js `fs.watch`.
+- **[cli]** Replaced `commander` with a native `process.argv` argument parser.
+- **[cli]** Replaced `nanospinner` with an inlined spinner implementation.
+- **[cli]** Replaced `stringify-object` with an inlined object serializer.
+- **[core]**, **[nitro]**, **[cli]**, **[intellisense]** Bundled `zod`, `tinyglobby`, and `tinycolor2` into their respective packages.
+- **[core]**, **[nitro]**, **[cli]**, **[intellisense]**, **[runtime]** Switched all packages to ESM-only output.
+- **[nitro]**, **[runtime]** Removed `buildOptions.minify` from config schema.
 
 ## [3.19.0] - 2026-03-06
 
