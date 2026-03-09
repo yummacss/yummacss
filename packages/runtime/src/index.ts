@@ -29,7 +29,7 @@ class YummaCSS {
 			const css = generator(newClasses, {
 				source: [],
 				output: "",
-				buildOptions: { reset: false, minify: false },
+				buildOptions: { reset: false },
 			});
 			this.injectCSS(css);
 		}

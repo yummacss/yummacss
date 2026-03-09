@@ -1,6 +1,6 @@
 {
 	"name": "@yummacss/core",
-	"version": "3.19.0",
+	"version": "3.20.0",
 	"description": "Core utility definitions for Yumma CSS.",
 	"keywords": [
 		"css-framework",
@@ -19,12 +19,9 @@
 	"exports": {
 		".": {
 			"types": "./dist/index.d.mts",
-			"import": "./dist/index.mjs",
-			"require": "./dist/index.cjs",
 			"default": "./dist/index.mjs"
 		}
 	},
-	"main": "dist/index.cjs",
 	"module": "dist/index.mjs",
 	"types": "dist/index.d.mts",
 	"files": [

@@ -1,6 +1,6 @@
 {
 	"name": "@yummacss/intellisense",
-	"version": "3.19.0",
+	"version": "3.20.0",
 	"description": "Shared editor intellisense for Yumma CSS.",
 	"keywords": [
 		"css-framework",
@@ -19,24 +19,17 @@
 	"exports": {
 		".": {
 			"types": "./dist/index.d.mts",
-			"import": "./dist/index.mjs",
-			"require": "./dist/index.cjs",
 			"default": "./dist/index.mjs"
 		},
 		"./monaco": {
 			"types": "./dist/adapters/monaco.d.mts",
-			"import": "./dist/adapters/monaco.mjs",
-			"require": "./dist/adapters/monaco.cjs",
 			"default": "./dist/adapters/monaco.mjs"
 		},
 		"./vscode": {
 			"types": "./dist/adapters/vscode.d.mts",
-			"import": "./dist/adapters/vscode.mjs",
-			"require": "./dist/adapters/vscode.cjs",
 			"default": "./dist/adapters/vscode.mjs"
 		}
 	},
-	"main": "dist/index.cjs",
 	"module": "dist/index.mjs",
 	"types": "dist/index.d.mts",
 	"files": [
@@ -50,12 +43,12 @@
 		"prepublishOnly": "pnpm build"
 	},
 	"dependencies": {
-		"@yummacss/core": "workspace:*",
-		"tinycolor2": "^1.6.0"
+		"@yummacss/core": "workspace:*"
 	},
 	"devDependencies": {
 		"@types/tinycolor2": "^1.4.6",
-		"@types/vscode": "^1.100.0"
+		"@types/vscode": "^1.100.0",
+		"tinycolor2": "^1.6.0"
 	},
 	"publishConfig": {
 		"access": "public",

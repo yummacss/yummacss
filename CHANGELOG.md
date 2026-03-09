@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.20.0] - 2026-03-09
+
+### Changed
+
+- **[core]**, **[nitro]**, **[cli]**, **[intellisense]**, **[runtime]** Achieved zero 3rd party `dependencies` across all packages
+- **[core]**, **[cli]** Removed `lightningcss` — CSS value normalization now happens at generation time in `createValues`
+- **[cli]** Replaced `chokidar` with native Node.js `fs.watch`
+- **[cli]** Replaced `commander` with a native `process.argv` argument parser
+- **[cli]** Replaced `nanospinner` with an inlined spinner implementation
+- **[cli]** Replaced `stringify-object` with an inlined object serializer
+- **[core]**, **[nitro]**, **[cli]**, **[intellisense]** Bundled `zod`, `tinyglobby`, and `tinycolor2` into their respective packages
+- **[core]**, **[nitro]**, **[cli]**, **[intellisense]**, **[runtime]** Switched all packages to ESM-only output
+- **[nitro]**, **[runtime]** Removed `buildOptions.minify` from config schema
+
 ## [3.19.0] - 2026-03-06
 
 ### Added
@@ -788,7 +802,8 @@ No notable changes.
 
 - Initial release.
 
-[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.19.0...HEAD
+[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.20.0...HEAD
+[3.20.0]: https://github.com/yummacss/yummacss/compare/v3.19.0...v3.20.0
 [3.19.0]: https://github.com/yummacss/yummacss/compare/v3.18.0...v3.19.0
 [3.18.0]: https://github.com/yummacss/yummacss/compare/v3.17.0...v3.18.0
 [3.17.0]: https://github.com/yummacss/yummacss/compare/v3.16.0...v3.17.0
