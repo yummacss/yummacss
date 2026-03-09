@@ -27,8 +27,8 @@ export const zinc = "#52525b";
 export const gray = "#6b7280";
 export const slate = "#64748b";
 export const silver = "#9ca3af";
-export const black = "#000000";
-export const white = "#ffffff";
+export const black = "#000";
+export const white = "#fff";
 export const transparent = "transparent";
 export const current = "currentColor";
 
