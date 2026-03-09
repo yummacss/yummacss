@@ -1,6 +1,4 @@
-export const baseStyles = `*,
-*::before,
-*::after {
+export const baseStyles = `*, :before, :after {
   box-sizing: border-box;
   border: 0 solid;
 }
@@ -11,7 +9,7 @@ export const baseStyles = `*,
 }
 
 html {
-  font-family: system-ui, sans-serif;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
 }
 
 body {
@@ -20,42 +18,23 @@ body {
   line-height: 1.5;
 }
 
-canvas,
-img,
-picture,
-svg,
-video {
-  display: block;
+canvas, img, picture, svg, video {
   max-width: 100%;
+  display: block;
 }
 
-button,
-input,
-optgroup,
-select,
-textarea {
-  background-color: transparent;
-  font-family: inherit;
+button, input, optgroup, select, textarea {
+  background-color: #0000;
   padding: .5rem;
+  font-family: inherit;
 }
 
-button:not([class]),
-input:not([class]),
-optgroup:not([class]),
-select:not([class]),
-textarea:not([class]) {
+button:not([class]), input:not([class]), optgroup:not([class]), select:not([class]), textarea:not([class]) {
   border: 1px solid #bfc2c7;
 }
 
-a,
-button,
-input,
-select,
-summary,
-textarea {
-  &:focus {
-    outline: 2px solid transparent;
-  }
+:is(a, button, input, select, summary, textarea):focus {
+  outline: 2px solid #0000;
 }
 
 textarea:not([rows]) {
@@ -66,41 +45,26 @@ button {
   cursor: pointer;
 }
 
-button:disabled,
-input:disabled,
-select:disabled,
-textarea:disabled {
+button:disabled, input:disabled, select:disabled, textarea:disabled {
   cursor: not-allowed;
   opacity: .5;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
+h1, h2, h3, h4, h5, h6, p {
   overflow-wrap: break-word;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
   font-size: 1rem;
   font-weight: 600;
-  text-wrap: balance;
 }
 
 p {
   text-wrap: pretty;
 }
 
-b,
-strong {
+b, strong {
   font-weight: 700;
 }
 
@@ -109,10 +73,7 @@ small {
   line-height: 1.4;
 }
 
-pre,
-code,
-kbd,
-samp {
+pre, code, kbd, samp {
   font-family: monospace;
   font-size: 1em;
 }
@@ -122,10 +83,9 @@ a {
   text-decoration: none;
 }
 
-ol,
-ul {
-  list-style: none;
+ol, ul {
   padding: 0;
+  list-style: none;
 }
 
 th {
