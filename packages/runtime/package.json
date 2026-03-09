@@ -16,6 +16,8 @@
 	"license": "MIT",
 	"author": "Renildo Pereira",
 	"type": "module",
+	"unpkg": "./dist/index.iife.js",
+	"jsdelivr": "./dist/index.iife.js",
 	"exports": {
 		".": {
 			"default": "./dist/index.js"
