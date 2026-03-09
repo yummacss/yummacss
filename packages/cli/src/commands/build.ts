@@ -4,7 +4,6 @@ import type { Config } from "@yummacss/nitro";
 import { configChanged, getCache, setCache } from "@/services/cache";
 import { compiler } from "@/services/compiler";
 import { loadConfig } from "@/services/loader";
-import { minify } from "@/services/minify";
 import { feedback } from "@/utils/feedback";
 import { cli } from "@/utils/status";
 
@@ -30,9 +29,8 @@ export async function build(existingConfig?: Config, forceRebuild = false) {
 			css = cache.css;
 		}
 
-		const finalCSS = minify(css, config);
 		mkdirSync(dirname(config.output), { recursive: true });
-		writeFileSync(config.output, finalCSS);
+		writeFileSync(config.output, css);
 
 		status.succeed(
 			feedback.build.success(Date.now() - startTime, config.output),

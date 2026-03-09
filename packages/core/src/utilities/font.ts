@@ -19,6 +19,8 @@ import {
 import { base } from "@/defaults/variants/stacks";
 import type { Utilities } from "@/interfaces";
 
+const sz = (val: number) => val.toString().replace(/^(-?)0\./, "$1.");
+
 export const font: Utilities = {
 	"font-family": {
 		prefix: "ff",
@@ -37,19 +39,19 @@ export const font: Utilities = {
 		properties: ["font-size"],
 		slug: "font-size",
 		values: {
-			xs: `${fontSizeXs}rem`,
-			sm: `${fontSizeSm}rem`,
-			md: `${fontSizeMd}rem`,
-			lg: `${fontSizeLg}rem`,
-			xl: `${fontSizeXl}rem`,
-			xxl: `${fontSizeXxl}rem`,
-			"3xl": `${fontSize3xl}rem`,
-			"4xl": `${fontSize4xl}rem`,
-			"5xl": `${fontSize5xl}rem`,
-			"6xl": `${fontSize6xl}rem`,
-			"7xl": `${fontSize7xl}rem`,
-			"8xl": `${fontSize8xl}rem`,
-			"9xl": `${fontSize9xl}rem`,
+			xs: `${sz(fontSizeXs)}rem`,
+			sm: `${sz(fontSizeSm)}rem`,
+			md: `${sz(fontSizeMd)}rem`,
+			lg: `${sz(fontSizeLg)}rem`,
+			xl: `${sz(fontSizeXl)}rem`,
+			xxl: `${sz(fontSizeXxl)}rem`,
+			"3xl": `${sz(fontSize3xl)}rem`,
+			"4xl": `${sz(fontSize4xl)}rem`,
+			"5xl": `${sz(fontSize5xl)}rem`,
+			"6xl": `${sz(fontSize6xl)}rem`,
+			"7xl": `${sz(fontSize7xl)}rem`,
+			"8xl": `${sz(fontSize8xl)}rem`,
+			"9xl": `${sz(fontSize9xl)}rem`,
 		},
 		variants: base,
 	},

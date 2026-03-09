@@ -1,5 +1,5 @@
+import { watch as fsWatch } from "node:fs";
 import type { Config } from "@yummacss/nitro";
-import chok from "chokidar";
 import { glob } from "tinyglobby";
 import { loadConfig } from "@/services/loader";
 import { feedback } from "@/utils/feedback";
@@ -35,20 +35,11 @@ export async function watch() {
 		cli.info(feedback.watch.start);
 
 		const files = await glob(currentConfig.source);
-		const watcher = chok.watch(files, {
-			awaitWriteFinish: {
-				pollInterval: 50,
-				stabilityThreshold: 200,
-			},
-			ignored: /(^|[/\\])\../,
-			ignoreInitial: true,
-			persistent: true,
-		});
-
-		watcher
-			.on("add", (path) => handleChange(path, "added"))
-			.on("change", (path) => handleChange(path, "changed"))
-			.on("unlink", (path) => handleChange(path, "removed"));
+		for (const file of files) {
+			fsWatch(file, (event) => {
+				handleChange(file, event);
+			});
+		}
 	} catch (_error) {
 		cli.fail(feedback.watch.fail);
 		process.exit(1);

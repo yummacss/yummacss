@@ -8,9 +8,8 @@ export const ConfigSchema = z.object({
 	buildOptions: z
 		.object({
 			reset: z.boolean().default(true),
-			minify: z.boolean().default(false),
 		})
-		.default({ reset: true, minify: false }),
+		.default({ reset: true }),
 });
 
 export type Config = z.infer<typeof ConfigSchema>;

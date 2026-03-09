@@ -24,7 +24,16 @@ export const createValues = ({
 	for (let i = min; i <= max; i += step) {
 		const computedValue = base * i;
 		const key = keyAsValue ? computedValue.toString() : i.toString();
-		let value = `${computedValue}${unit}`;
+
+		let stringifiedValue = computedValue.toString();
+		if (stringifiedValue.startsWith("0.")) {
+			stringifiedValue = stringifiedValue.slice(1);
+		} else if (stringifiedValue.startsWith("-0.")) {
+			stringifiedValue = `-${stringifiedValue.slice(2)}`;
+		}
+
+		let value = computedValue === 0 ? "0" : `${stringifiedValue}${unit}`;
+
 		if (wrapper) {
 			value = wrapper(value);
 		}

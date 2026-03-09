@@ -1,24 +1,57 @@
-import { createSpinner } from "nanospinner";
+const frames = ["⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏"];
+
+function clearLine() {
+	if (process.stdout.isTTY) {
+		process.stdout.write("\x1b[2K\x1b[0G");
+	}
+}
 
 export const progress = (msg: string) => {
-	const spinner = createSpinner(msg).start();
+	let i = 0;
+	let interval: NodeJS.Timeout | null = null;
+
+	if (process.stdout.isTTY) {
+		interval = setInterval(() => {
+			clearLine();
+			process.stdout.write(`\x1b[36m${frames[i]}\x1b[0m ${msg}`);
+			i = (i + 1) % frames.length;
+		}, 80);
+	} else {
+		console.log(`\x1b[36m⠋\x1b[0m ${msg}`);
+	}
+
 	return {
-		succeed: (text?: string) => spinner.success({ text: text || msg }),
-		fail: (text?: string) => spinner.error({ text: text || msg }),
-		warn: (text?: string) => spinner.warn({ text: text || msg }),
-		info: (text?: string) =>
-			spinner.reset().update({ text: `ℹ ${text || msg}` }),
-		stop: () => spinner.reset(),
+		succeed: (text?: string) => {
+			if (interval) clearInterval(interval);
+			clearLine();
+			console.log(`\x1b[32m✔\x1b[0m ${text || msg}`);
+		},
+		fail: (text?: string) => {
+			if (interval) clearInterval(interval);
+			clearLine();
+			console.log(`\x1b[31m✖\x1b[0m ${text || msg}`);
+		},
+		warn: (text?: string) => {
+			if (interval) clearInterval(interval);
+			clearLine();
+			console.log(`\x1b[33m⚠\x1b[0m ${text || msg}`);
+		},
+		info: (text?: string) => {
+			if (interval) clearInterval(interval);
+			clearLine();
+			console.log(`\x1b[34mℹ\x1b[0m ${text || msg}`);
+		},
+		stop: () => {
+			if (interval) clearInterval(interval);
+			clearLine();
+		},
 	};
 };
 
-export const fail = (msg: string) => createSpinner().error({ text: msg });
-export const info = (msg: string) =>
-	createSpinner()
-		.reset()
-		.update({ text: `ℹ ${msg}` });
-export const success = (msg: string) => createSpinner().success({ text: msg });
-export const warn = (msg: string) => createSpinner().warn({ text: msg });
+export const fail = (msg: string) => console.log(`\x1b[31m✖\x1b[0m ${msg}`);
+export const info = (msg: string) => console.log(`\x1b[34mℹ\x1b[0m ${msg}`);
+export const success = (msg: string) => console.log(`\x1b[32m✔\x1b[0m ${msg}`);
+export const warn = (msg: string) => console.log(`\x1b[33m⚠\x1b[0m ${msg}`);
 
 export const cli = {
 	fail,

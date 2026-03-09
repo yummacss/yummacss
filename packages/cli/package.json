@@ -1,6 +1,6 @@
 {
 	"name": "yummacss",
-	"version": "3.19.0",
+	"version": "3.20.0",
 	"description": "An atomic CSS framework with abbreviated class names.",
 	"keywords": [
 		"css-framework",
@@ -18,12 +18,9 @@
 	"type": "module",
 	"exports": {
 		".": {
-			"import": "./dist/index.mjs",
-			"require": "./dist/index.cjs",
 			"default": "./dist/index.mjs"
 		}
 	},
-	"main": "./dist/index.cjs",
 	"module": "./dist/index.mjs",
 	"bin": {
 		"yummacss": "./dist/cli.mjs"
@@ -38,16 +35,10 @@
 		"prepublishOnly": "pnpm build"
 	},
 	"dependencies": {
-		"@yummacss/nitro": "workspace:*",
-		"chokidar": "^5.0.0",
-		"commander": "^14.0.2",
-		"lightningcss": "^1.30.2",
-		"nanospinner": "^1.2.2",
-		"stringify-object": "^6.0.0",
-		"tinyglobby": "^0.2.15"
+		"@yummacss/nitro": "workspace:*"
 	},
 	"devDependencies": {
-		"@types/stringify-object": "^4.0.5"
+		"tinyglobby": "^0.2.15"
 	},
 	"packageManager": "pnpm@10.27.0",
 	"publishConfig": {
