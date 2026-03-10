@@ -7,6 +7,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.20.2] - 2026-03-10
+
+### Changed
+
+- **[core]** Normalize CSS output to match browser-optimized values
+  - `::before` / `::after` pseudo-elements -> `:before` / `:after`.
+  - `scale` values normalized from percentages to decimals (e.g. `70%` -> `.7`).
+  - `letter-spacing: 0em` and `text-indent: 0px` -> unitless `0`.
+  - `font-size` values no longer emit a leading zero (e.g. `0.875rem` -> `.875rem`).
+  - Font family strings no longer quote single or multi-word names unnecessarily.
+  - `place-self: stretch` -> `stretch stretch` for spec-correct shorthand expansion.
+
+### Changed
+
+- **[core]** Update `blur` utility to use `rem` units instead of `px` units.
+
 ## [3.20.1] - 2026-03-10
 
 ### Changed

@@ -1,6 +1,6 @@
 export const baseStyles = `*,
-*::before,
-*::after {
+*:before,
+*:after {
   box-sizing: border-box;
   border: 0 solid;
 }
