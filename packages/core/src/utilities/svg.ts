@@ -7,11 +7,11 @@ export const svg: Utilities = {
 		slug: "stroke-width",
 		values: {
 			"0": "0",
-			"2": ".2",
-			"4": ".4",
-			"6": ".6",
-			"8": ".8",
-			"10": "1",
+			"2": ".2px", 
+			"4": ".4px", 
+			"6": ".6px", 
+			"8": ".8px", 
+			"10": "1px"
 		},
 		variants: base,
 	},

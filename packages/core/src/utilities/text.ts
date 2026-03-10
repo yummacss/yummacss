@@ -9,7 +9,7 @@ export const text: Utilities = {
 		properties: ["letter-spacing"],
 		slug: "letter-spacing",
 		values: {
-			"0": "0em",
+			"0": "0",
 			"1": "-.05em",
 			"2": "-.025em",
 			"3": ".025em",
@@ -156,7 +156,7 @@ export const text: Utilities = {
 		properties: ["text-indent"],
 		slug: "text-indent",
 		values: {
-			"0": "0px",
+			"0": "0",
 			"1": "1px",
 			"2": ".25rem",
 			"3": ".5rem",
