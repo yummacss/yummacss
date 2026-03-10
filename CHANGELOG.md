@@ -5,12 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
 ## [3.20.1] - 2026-03-10
 
 ### Changed
 
 - **[cli]** Update CLI status logs to use semantic logging (`console.info`, `console.warn`, `console.error`) and replace unicode/ANSI-based output with a plain text `[Yumma CSS]` prefix (e.g. `[Yumma CSS] Info: ...`, `[Yumma CSS] Error: ...`).
-
 
 ## [3.20.0] - 2026-03-09
 
