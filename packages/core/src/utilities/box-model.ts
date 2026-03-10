@@ -44,6 +44,54 @@ export const boxModel: Utilities = {
 		variants: base,
 	},
 
+	"block-size": {
+		prefix: "bs",
+		properties: ["block-size"],
+		slug: "block-size",
+		values: heightValues,
+		variants: base,
+	},
+
+	"max-block-size": {
+		prefix: "max-bs",
+		properties: ["max-block-size"],
+		slug: "block-size#max-block-size",
+		values: heightValues,
+		variants: base,
+	},
+
+	"min-block-size": {
+		prefix: "min-bs",
+		properties: ["min-block-size"],
+		slug: "block-size#min-block-size",
+		values: heightValues,
+		variants: base,
+	},
+
+	"inline-size": {
+		prefix: "is",
+		properties: ["inline-size"],
+		slug: "inline-size",
+		values: widthValues,
+		variants: base,
+	},
+
+	"max-inline-size": {
+		prefix: "max-is",
+		properties: ["max-inline-size"],
+		slug: "inline-size#max-inline-size",
+		values: widthValues,
+		variants: base,
+	},
+
+	"min-inline-size": {
+		prefix: "min-is",
+		properties: ["min-inline-size"],
+		slug: "inline-size#min-inline-size",
+		values: widthValues,
+		variants: base,
+	},
+
 	height: {
 		prefix: "h",
 		properties: ["height"],
