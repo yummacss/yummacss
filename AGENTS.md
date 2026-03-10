@@ -934,6 +934,7 @@ Example: `c-3` → `columns: 3`
 | Prefix | Values            |
 | ------ | ----------------- |
 | `bs-`  | `0-16` (×0.25rem) |
+| `bs-px` | `1px`            |
 
 ---
 

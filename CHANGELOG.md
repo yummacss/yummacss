@@ -5,17 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [3.21.0] - 2026-03-09
-
-### Added
-
-- **[core]** Implement `block-size` (`bs-`), `max-block-size` (`max-bs-`), and `min-block-size` (`min-bs-`) utilities.
-- **[core]** Implement `inline-size` (`is-`), `max-inline-size` (`max-is-`), and `min-inline-size` (`min-is-`) utilities.
+## [3.20.1] - 2026-03-10
 
 ### Changed
 
-- **[core]** Update `border-spacing` (`bs-`) utility values to use a t-shirt sizing scale (e.g., `sm`, `md`, `lg`) instead of numbers to prevent prefix collisions with `block-size`.
 - **[cli]** Update CLI status logs to use semantic logging (`console.info`, `console.warn`, `console.error`) and replace unicode/ANSI-based output with a plain text `[Yumma CSS]` prefix (e.g. `[Yumma CSS] Info: ...`, `[Yumma CSS] Error: ...`).
+
 
 ## [3.20.0] - 2026-03-09
 
@@ -817,8 +812,8 @@ No notable changes.
 
 - Initial release.
 
-[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.20.0...HEAD
-[3.21.0]: https://github.com/yummacss/yummacss/compare/v3.20.0...v3.21.0
+[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.20.1...HEAD
+[3.20.1]: https://github.com/yummacss/yummacss/compare/v3.20.0...v3.20.1
 [3.20.0]: https://github.com/yummacss/yummacss/compare/v3.19.0...v3.20.0
 [3.19.0]: https://github.com/yummacss/yummacss/compare/v3.18.0...v3.19.0
 [3.18.0]: https://github.com/yummacss/yummacss/compare/v3.17.0...v3.18.0
