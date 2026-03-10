@@ -31,7 +31,7 @@ export const transform: Utilities = {
 			"70": ".7",
 			"80": ".8",
 			"90": ".9",
-			"100": "1"
+			"100": "1",
 		},
 		variants: base,
 	},
@@ -51,7 +51,7 @@ export const transform: Utilities = {
 			"70": ".7",
 			"80": ".8",
 			"90": ".9",
-			"100": "1"
+			"100": "1",
 		},
 		variants: base,
 	},
@@ -71,7 +71,7 @@ export const transform: Utilities = {
 			"70": ".7",
 			"80": ".8",
 			"90": ".9",
-			"100": "1"
+			"100": "1",
 		},
 		variants: base,
 	},
@@ -91,7 +91,7 @@ export const transform: Utilities = {
 			"70": ".7",
 			"80": ".8",
 			"90": ".9",
-			"100": "1"
+			"100": "1",
 		},
 		variants: base,
 	},
