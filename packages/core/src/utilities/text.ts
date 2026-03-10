@@ -194,7 +194,7 @@ export const text: Utilities = {
 		properties: ["text-underline-offset"],
 		slug: "text-underline-offset",
 		values: {
-			"0": "0px",
+			"0": "0",
 			"1": "1px",
 			"2": "2px",
 			"4": "4px",

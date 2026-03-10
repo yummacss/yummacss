@@ -76,10 +76,10 @@ Container queries allow you to change styles based on the size of a parent conta
 
 | Prefix | Selector        |
 | ------ | --------------- |
-| `::a:` | `::after`       |
-| `::b:` | `::before`      |
-| `::p:` | `::placeholder` |
-| `::s:` | `::selection`   |
+| `:a:`  | `:after`        |
+| `:b:`  | `:before`       |
+| `:p:`  | `::placeholder` |
+| `:s:`  | `::selection`   |
 
 ---
 
@@ -740,7 +740,7 @@ Example: `c-3` → `columns: 3`
 | `tds-s`            | `text-decoration-style: solid`            |
 | `tds-d`            | `text-decoration-style: dashed`           |
 | `tds-w`            | `text-decoration-style: wavy`             |
-| `tdt-0` to `tdt-4` | `text-decoration-thickness: 0px` to `4px` |
+| `tdt-0` to `tdt-4` | `text-decoration-thickness: 0` to `4px` |
 | `tdt-auto`         | `text-decoration-thickness: auto`         |
 | `tdt-ff`           | `text-decoration-thickness: from-font`    |
 
@@ -749,7 +749,7 @@ Example: `c-3` → `columns: 3`
 | Class      | CSS                           |
 | ---------- | ----------------------------- |
 | `tuo-auto` | `text-underline-offset: auto` |
-| `tuo-0`    | `text-underline-offset: 0px`  |
+| `tuo-0`    | `text-underline-offset: 0`  |
 | `tuo-1`    | `text-underline-offset: 1px`  |
 | `tuo-2`    | `text-underline-offset: 2px`  |
 | `tuo-4`    | `text-underline-offset: 4px`  |
@@ -770,7 +770,7 @@ Example: `c-3` → `columns: 3`
 
 | Class  | CSS                        |
 | ------ | -------------------------- |
-| `ls-0` | `letter-spacing: 0em`      |
+| `ls-0` | `letter-spacing: 0`      |
 | `ls-1` | `letter-spacing: -0.05em`  |
 | `ls-2` | `letter-spacing: -0.025em` |
 | `ls-3` | `letter-spacing: 0.025em`  |
@@ -797,7 +797,7 @@ Example: `c-3` → `columns: 3`
 
 | Class  | CSS                    |
 | ------ | ---------------------- |
-| `ti-0` | `text-indent: 0px`     |
+| `ti-0` | `text-indent: 0`     |
 | `ti-1` | `text-indent: 1px`     |
 | `ti-2` | `text-indent: 0.25rem` |
 | `ti-3` | `text-indent: 0.5rem`  |
@@ -931,10 +931,10 @@ Example: `c-3` → `columns: 3`
 
 ### Border Spacing
 
-| Prefix | Values            |
-| ------ | ----------------- |
-| `bs-`  | `0-16` (×0.25rem) |
-| `bs-px` | `1px`            |
+| Prefix  | Values            |
+| ------- | ----------------- |
+| `bs-`   | `0-16` (×0.25rem) |
+| `bs-px` | `1px`             |
 
 ---
 
