@@ -48,10 +48,11 @@ function generateUtil(usedClasses: Set<string>): string {
 	);
 
 	for (const [mediaQuery, rules] of sortedMediaQueries) {
-		cssRules.push(`${mediaQuery} {\n${rules.join("\n")}\n}`);
+		const indented = rules.map((r) => r.replace(/^/gm, "  ")).join("\n\n");
+		cssRules.push(`${mediaQuery} {\n${indented}\n}`);
 	}
 
-	return cssRules.join("\n");
+	return cssRules.join("\n\n");
 }
 
 function tryGenerateRule(
@@ -170,7 +171,7 @@ function tryGenerateRule(
 	let finalValue = propertyValue;
 	if (isNegative) {
 		// Only apply negative to numeric values (starting with numbers or -)
-		if (/^-?\d/.test(propertyValue)) {
+		if (/^-?[\d.]/.test(propertyValue)) {
 			finalValue = propertyValue.startsWith("-")
 				? propertyValue.slice(1) // Remove existing negative
 				: `-${propertyValue}`; // Add negative

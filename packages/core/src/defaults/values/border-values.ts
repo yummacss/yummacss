@@ -1,5 +1,5 @@
 import { createValues } from "@/helpers/create-values";
-import { borderRadius, borderWidth } from "../variables";
+import { borderRadius, borderSpacing, borderWidth } from "../variables";
 
 export const borderRadiusValues: Record<string, string> = {
 	...createValues({
@@ -15,14 +15,12 @@ export const borderRadiusValues: Record<string, string> = {
 };
 
 export const borderSpacingValues: Record<string, string> = {
-	auto: "auto",
-	xs: "0.125rem",
-	sm: "0.25rem",
-	md: "0.5rem",
-	lg: "1rem",
-	xl: "1.5rem",
-	"xxl": "2rem",
-	"3xl": "3rem",
+	...createValues({
+		base: borderSpacing,
+		unit: "rem",
+		min: 0,
+		max: 8,
+	}),
 	px: "1px",
 };
 
