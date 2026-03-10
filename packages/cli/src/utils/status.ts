@@ -1,4 +1,4 @@
-const frames = ["⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏"];
+const prefix = "[Yumma CSS]";
 
 function clearLine() {
 	if (process.stdout.isTTY) {
@@ -7,51 +7,35 @@ function clearLine() {
 }
 
 export const progress = (msg: string) => {
-	let i = 0;
-	let interval: NodeJS.Timeout | null = null;
-
-	if (process.stdout.isTTY) {
-		interval = setInterval(() => {
-			clearLine();
-			process.stdout.write(`\x1b[36m${frames[i]}\x1b[0m ${msg}`);
-			i = (i + 1) % frames.length;
-		}, 80);
-	} else {
-		console.log(`\x1b[36m⠋\x1b[0m ${msg}`);
-	}
+	console.log(`${prefix}: ${msg}`);
 
 	return {
 		succeed: (text?: string) => {
-			if (interval) clearInterval(interval);
 			clearLine();
-			console.log(`\x1b[32m✔\x1b[0m ${text || msg}`);
+			console.log(`${prefix} Done: ${text || msg}`);
 		},
 		fail: (text?: string) => {
-			if (interval) clearInterval(interval);
 			clearLine();
-			console.log(`\x1b[31m✖\x1b[0m ${text || msg}`);
+			console.error(`${prefix} Error: ${text || msg}`);
 		},
 		warn: (text?: string) => {
-			if (interval) clearInterval(interval);
 			clearLine();
-			console.log(`\x1b[33m⚠\x1b[0m ${text || msg}`);
+			console.warn(`${prefix} Warn: ${text || msg}`);
 		},
 		info: (text?: string) => {
-			if (interval) clearInterval(interval);
 			clearLine();
-			console.log(`\x1b[34mℹ\x1b[0m ${text || msg}`);
+			console.info(`${prefix} Info: ${text || msg}`);
 		},
 		stop: () => {
-			if (interval) clearInterval(interval);
 			clearLine();
 		},
 	};
 };
 
-export const fail = (msg: string) => console.log(`\x1b[31m✖\x1b[0m ${msg}`);
-export const info = (msg: string) => console.log(`\x1b[34mℹ\x1b[0m ${msg}`);
-export const success = (msg: string) => console.log(`\x1b[32m✔\x1b[0m ${msg}`);
-export const warn = (msg: string) => console.log(`\x1b[33m⚠\x1b[0m ${msg}`);
+export const fail = (msg: string) => console.error(`${prefix} Error: ${msg}`);
+export const info = (msg: string) => console.info(`${prefix} Info: ${msg}`);
+export const success = (msg: string) => console.log(`${prefix} Done: ${msg}`);
+export const warn = (msg: string) => console.warn(`${prefix} Warn: ${msg}`);
 
 export const cli = {
 	fail,
