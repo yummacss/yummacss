@@ -59,5 +59,5 @@ export const grayscaleValues: Record<string, string> = {
 	70: `grayscale(${grayscale * 7}%)`,
 	80: `grayscale(${grayscale * 8}%)`,
 	90: `grayscale(${grayscale * 9}%)`,
-	100: `grayscale(100%)`,
+	100: `grayscale()`,
 };
