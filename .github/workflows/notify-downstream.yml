@@ -1,4 +1,4 @@
-name: Notify Downstream Repos
+name: Notify Downstream Repositories
 
 on:
   release:
