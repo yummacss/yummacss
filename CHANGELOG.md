@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.20.3] - 2026-03-11
+
+### Fixed
+
+- **[intellisense]** Resolved an issue where purely numeric utility values incorrectly received color decorators.
+
 ## [3.20.2] - 2026-03-10
 
 ### Changed
@@ -829,7 +835,9 @@ No notable changes.
 
 - Initial release.
 
-[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.20.1...HEAD
+[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.20.3...HEAD
+[3.20.3]: https://github.com/yummacss/yummacss/compare/v3.20.2...v3.20.3
+[3.20.2]: https://github.com/yummacss/yummacss/compare/v3.20.1...v3.20.2
 [3.20.1]: https://github.com/yummacss/yummacss/compare/v3.20.0...v3.20.1
 [3.20.0]: https://github.com/yummacss/yummacss/compare/v3.19.0...v3.20.0
 [3.19.0]: https://github.com/yummacss/yummacss/compare/v3.18.0...v3.19.0
