@@ -11,7 +11,7 @@ jobs:
       matrix:
         repo:
           - yummacss/docs
-          - yummacss/playground
+          - yummacss/play
           - yummacss/intellisense-vscode
 
     steps:
