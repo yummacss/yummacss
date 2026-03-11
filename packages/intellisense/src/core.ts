@@ -44,10 +44,13 @@ export function buildUtilityMap(): Map<string, UtilityInfo> {
 }
 
 export function isHexColor(cssValue: string): boolean {
+	if (!Number.isNaN(Number(cssValue))) return false;
 	return tinycolor(cssValue).isValid() && cssValue.trim().startsWith("#");
 }
 
 export function hexToRgba(cssValue: string): RgbaColor | null {
+	if (!Number.isNaN(Number(cssValue))) return null;
+
 	const color = tinycolor(cssValue);
 	if (!color.isValid()) return null;
 
