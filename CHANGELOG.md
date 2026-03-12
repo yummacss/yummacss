@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.20.4] - 2026-03-12
+
+### Changed
+
+- **[core]** Normalize `blur(0)` values to `blur()`.
+- **[core]** Reorder font family variables (`fontDefault`, `fontMono`, `fontSerif`).
+- **[core]** Update media query syntax to use `min-width` instead of standard comparison operators for broader browser compatibility.
+- **[core]** Reorder property definitions for `border-bottom-radius`, `border-left-radius`, `border-right-radius`, and `border-block-end-radius` for consistency.
+- **[nitro]** Optimize `base-styles` CSS.
+
 ## [3.20.3] - 2026-03-11
 
 ### Fixed

@@ -1,6 +1,6 @@
 {
 	"name": "@yummacss/intellisense",
-	"version": "3.20.3",
+	"version": "3.20.4",
 	"description": "Shared editor intellisense for Yumma CSS.",
 	"keywords": [
 		"css-framework",

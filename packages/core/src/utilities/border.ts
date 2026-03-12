@@ -28,7 +28,7 @@ export const border: Utilities = {
 
 	"border-bottom-radius": {
 		prefix: "bbr",
-		properties: ["border-bottom-left-radius", "border-bottom-right-radius"],
+		properties: ["border-bottom-right-radius", "border-bottom-left-radius"],
 		slug: "border-radius#bottom-radius",
 		values: borderRadiusValues,
 		variants: base,
@@ -36,7 +36,7 @@ export const border: Utilities = {
 
 	"border-left-radius": {
 		prefix: "blr",
-		properties: ["border-bottom-left-radius", "border-top-left-radius"],
+		properties: ["border-top-left-radius", "border-bottom-left-radius"],
 		slug: "border-radius#left-radius",
 		values: borderRadiusValues,
 		variants: base,
@@ -44,7 +44,7 @@ export const border: Utilities = {
 
 	"border-right-radius": {
 		prefix: "brr",
-		properties: ["border-bottom-right-radius", "border-top-right-radius"],
+		properties: ["border-top-right-radius", "border-bottom-right-radius"],
 		slug: "border-radius#right-radius",
 		values: borderRadiusValues,
 		variants: base,
@@ -92,7 +92,7 @@ export const border: Utilities = {
 
 	"border-block-end-radius": {
 		prefix: "bber",
-		properties: ["border-end-start-radius", "border-end-end-radius"],
+		properties: ["border-end-end-radius", "border-end-start-radius"],
 		slug: "border-radius#block-end-radius",
 		values: borderRadiusValues,
 		variants: base,
