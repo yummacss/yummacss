@@ -27,11 +27,11 @@ This document provides **complete reference** for using Yumma CSS utility classe
 | Prefix | Breakpoint                        |
 | ------ | --------------------------------- |
 | `pc:`  | `pointer: coarse` (touch devices) |
-| `sm:`  | `width >= 40rem` (640px)          |
-| `md:`  | `width >= 48rem` (768px)          |
-| `lg:`  | `width >= 64rem` (1024px)         |
-| `xl:`  | `width >= 80rem` (1280px)         |
-| `xxl:` | `width >= 96rem` (1536px)         |
+| `sm:`  | `min-width: 40rem` (640px)          |
+| `md:`  | `min-width: 48rem` (768px)          |
+| `lg:`  | `min-width: 64rem` (1024px)         |
+| `xl:`  | `min-width: 80rem` (1280px)         |
+| `xxl:` | `min-width: 96rem` (1536px)         |
 
 ---
 
