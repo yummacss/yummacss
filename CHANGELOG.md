@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.20.5] - 2026-03-13
+
+### Fixed
+
+- **[core]** Resolved an issue where font family variables (`fontSans`, `fontMono`) had swapped or incorrect values.
+
 ## [3.20.4] - 2026-03-12
 
 ### Changed
