@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.20.6] - 2026-03-13
+
+### Fixed
+
+- **[core]** Resolved an issue where font family variables had incorrect signatures.
+
 ## [3.20.5] - 2026-03-13
 
 ### Fixed
@@ -851,7 +857,10 @@ No notable changes.
 
 - Initial release.
 
-[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.20.3...HEAD
+[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.20.6...HEAD
+[3.20.6]: https://github.com/yummacss/yummacss/compare/v3.20.5...v3.20.6
+[3.20.5]: https://github.com/yummacss/yummacss/compare/v3.20.4...v3.20.5
+[3.20.4]: https://github.com/yummacss/yummacss/compare/v3.20.3...v3.20.4
 [3.20.3]: https://github.com/yummacss/yummacss/compare/v3.20.2...v3.20.3
 [3.20.2]: https://github.com/yummacss/yummacss/compare/v3.20.1...v3.20.2
 [3.20.1]: https://github.com/yummacss/yummacss/compare/v3.20.0...v3.20.1

@@ -32,6 +32,9 @@ jobs:
       - name: Build package
         run: pnpm build
 
+      - name: Run tests
+        run: pnpm test
+
       - name: Publish to npm
         run: pnpm -r publish --no-git-checks
         env:
