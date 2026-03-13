@@ -1,6 +1,6 @@
 {
 	"name": "yummacss",
-	"version": "3.20.5",
+	"version": "3.20.6",
 	"private": true,
 	"description": "An atomic CSS framework with abbreviated class names.",
 	"keywords": [

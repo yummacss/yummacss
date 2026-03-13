@@ -77,10 +77,10 @@ export const opacity = 0.1;
 export const topRightBottomLeft = 0.25;
 
 // font
+export const fontDefault =
+	"system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji";
 export const fontMono =
 	"ui-monospace, Cascadia Code, Source Code Pro, Menlo, Roboto Mono, Ubuntu Mono, Consolas, Liberation Mono, Courier New, monospace";
-export const fontSans =
-	"system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji";
 export const fontSerif =
 	"Iowan Old Style, Palatino Linotype, URW Palladio L, P052, serif";
 
