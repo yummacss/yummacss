@@ -3,6 +3,11 @@ name: Notify Downstream Repositories
 on:
   release:
     types: [published]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version to dispatch (e.g. v3.20.7)"
+        required: true
 
 jobs:
   notify:
@@ -20,11 +25,13 @@ jobs:
         with:
           github-token: ${{ secrets.DISPATCH_TOKEN }}
           script: |
+            const version = context.eventName === 'workflow_dispatch'
+              ? context.payload.inputs.version
+              : context.payload.release.tag_name;
+
             await github.rest.repos.createDispatchEvent({
               owner: context.repo.owner,
               repo: '${{ matrix.repo }}'.split('/')[1],
               event_type: 'yummacss-released',
-              client_payload: {
-                version: context.payload.release.tag_name
-              }
+              client_payload: { version }
             });
