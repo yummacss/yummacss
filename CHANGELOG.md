@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.20.7] - 2026-03-14
+
+### Changed
+
+- **[cli]** Update `init` command to use `defineConfig` inside the generated configuration file.
+
 ## [3.20.6] - 2026-03-13
 
 ### Fixed
@@ -857,7 +863,8 @@ No notable changes.
 
 - Initial release.
 
-[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.20.6...HEAD
+[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.20.7...HEAD
+[3.20.7]: https://github.com/yummacss/yummacss/compare/v3.20.6...v3.20.7
 [3.20.6]: https://github.com/yummacss/yummacss/compare/v3.20.5...v3.20.6
 [3.20.5]: https://github.com/yummacss/yummacss/compare/v3.20.4...v3.20.5
 [3.20.4]: https://github.com/yummacss/yummacss/compare/v3.20.3...v3.20.4

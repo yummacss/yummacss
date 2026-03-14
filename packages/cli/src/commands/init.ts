@@ -28,11 +28,11 @@ function stringify(obj: any, depth = 1): string {
 }
 
 function generateConfig(): { filename: string; content: string } {
-	const z = ConfigSchema.parse({});
+	const config = ConfigSchema.parse({});
 
 	return {
 		filename: configName,
-		content: `export default ${stringify(z)};\n`,
+		content: `import { defineConfig } from "yummacss";\n\nexport default defineConfig(${stringify(config)});\n`,
 	};
 }
 
