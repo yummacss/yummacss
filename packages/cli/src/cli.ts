@@ -24,9 +24,9 @@ switch (command) {
 Yumma CSS v${version}
 
 Commands:
-  init, i    Initialize config
-  build, b   Build styles once.
-  watch, w   Build styles continuously.
+  init, i    Initialize the configuration.
+  build, b   Build the styles once.
+  watch, w   Watch for file changes continuously.
 `);
 		break;
 }

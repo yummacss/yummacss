@@ -37,7 +37,7 @@ function generateConfig(): { filename: string; content: string } {
 }
 
 export function init() {
-	const status = cli.progress("Initializing config...");
+	const status = cli.progress("Initialize the configuration...");
 
 	try {
 		const { filename, content } = generateConfig();
