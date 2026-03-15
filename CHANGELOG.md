@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.21.0] - 2026-03-15
+
+### Added
+
+- **[nitro]** Add `prefix` configuration option to namespace generated classes.
+- **[nitro]** Add `safelist` configuration option to always generate specific classes.
+- **[nitro]** Add `normalize` configuration option, replacing `buildOptions.reset`.
+- **[nitro]** Add `theme.colors` configuration option with configurable shade percentages to extend and override the color palette.
+- **[nitro]** Add `theme.screens` configuration option to extend and override default media query breakpoints.
+
+### Changed
+
+- **[nitro]** Improve the configuration file schema with comprehensive JSDoc comments, providing inline documentation and Intellisense for all options.
+
 ## [3.20.8] - 2026-03-15
 
 ### Changed
@@ -869,7 +883,8 @@ No notable changes.
 
 - Initial release.
 
-[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.20.8...HEAD
+[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.21.0...HEAD
+[3.21.0]: https://github.com/yummacss/yummacss/compare/v3.20.8...v3.21.0
 [3.20.8]: https://github.com/yummacss/yummacss/compare/v3.20.7...v3.20.8
 [3.20.7]: https://github.com/yummacss/yummacss/compare/v3.20.6...v3.20.7
 [3.20.6]: https://github.com/yummacss/yummacss/compare/v3.20.5...v3.20.6
