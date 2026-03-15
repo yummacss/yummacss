@@ -1,7 +1,7 @@
 {
 	"name": "@yummacss/runtime",
-	"version": "3.20.7",
-	"description": "Zero-config browser runtime for Yumma CSS.",
+	"version": "3.20.8",
+	"description": "Run Yumma CSS without Node.js.",
 	"keywords": [
 		"css-framework",
 		"typescript",
@@ -16,13 +16,13 @@
 	"license": "MIT",
 	"author": "Renildo Pereira",
 	"type": "module",
-	"unpkg": "./dist/index.iife.js",
-	"jsdelivr": "./dist/index.iife.js",
 	"exports": {
 		".": {
 			"default": "./dist/index.js"
 		}
 	},
+	"jsdelivr": "./dist/index.iife.js",
+	"unpkg": "./dist/index.iife.js",
 	"module": "./dist/index.js",
 	"files": [
 		"dist"

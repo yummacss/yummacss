@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.20.8] - 2026-03-15
+
+### Changed
+
+- **[cli]** Update CLI messages to comply with Vercel Guidelines.
+
 ## [3.20.7] - 2026-03-14
 
 ### Changed
@@ -863,7 +869,8 @@ No notable changes.
 
 - Initial release.
 
-[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.20.7...HEAD
+[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.20.8...HEAD
+[3.20.8]: https://github.com/yummacss/yummacss/compare/v3.20.7...v3.20.8
 [3.20.7]: https://github.com/yummacss/yummacss/compare/v3.20.6...v3.20.7
 [3.20.6]: https://github.com/yummacss/yummacss/compare/v3.20.5...v3.20.6
 [3.20.5]: https://github.com/yummacss/yummacss/compare/v3.20.4...v3.20.5
