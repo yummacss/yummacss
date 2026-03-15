@@ -1,13 +1,15 @@
 import tinycolor from "tinycolor2";
 import { colorTheme } from "@/defaults/theme";
 
-const percentage = 14;
-
-const generateShades = (color: string): string[] => {
+const generateShades = (
+	color: string,
+	lightPercentage: number = 14,
+	darkPercentage: number = 14,
+): string[] => {
 	const shades: string[] = [];
 
 	for (let i = 1; i <= 6; i++) {
-		const weight = (7 - i) * percentage;
+		const weight = (7 - i) * lightPercentage;
 		const mixedColor = tinycolor.mix(color, "white", weight);
 		shades.push(mixedColor.toHexString());
 	}
@@ -15,7 +17,7 @@ const generateShades = (color: string): string[] => {
 	shades.push(tinycolor(color).toHexString());
 
 	for (let i = 1; i <= 6; i++) {
-		const weight = i * percentage;
+		const weight = i * darkPercentage;
 		const mixedColor = tinycolor.mix(color, "black", weight);
 		shades.push(mixedColor.toHexString());
 	}
@@ -23,11 +25,16 @@ const generateShades = (color: string): string[] => {
 	return shades;
 };
 
-export const createColors = () => {
+export const createColors = (
+	userColors?: Record<string, string>,
+	lightPercentage?: number,
+	darkPercentage?: number,
+) => {
 	const colors: Record<string, string> = {};
+	const mergedTheme = { ...colorTheme, ...userColors };
 
-	Object.entries(colorTheme).forEach(([colorName, colorValue]) => {
-		const shades = generateShades(colorValue);
+	Object.entries(mergedTheme).forEach(([colorName, colorValue]) => {
+		const shades = generateShades(colorValue, lightPercentage, darkPercentage);
 
 		for (let i = 0; i < 6; i++) {
 			const variantKey = `${colorName}-${i + 1}`;

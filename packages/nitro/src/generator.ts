@@ -1,15 +1,31 @@
-import { coreUtils, type Utilities, type Utility } from "@yummacss/core";
+import {
+	coreUtils,
+	createColors,
+	defaultMediaQueries,
+	type Utilities,
+	type Utility,
+} from "@yummacss/core";
 import { baseStyles } from "./base-styles";
 import type { Config } from "./config/schema";
 
 export function generator(usedClasses: Set<string>, config: Config): string {
 	const cssBlocks: string[] = [];
 
-	if (config.buildOptions.reset) {
+	if (config.safelist) {
+		for (const className of config.safelist) {
+			const finalClass =
+				config.prefix && !className.startsWith(config.prefix)
+					? config.prefix + className
+					: className;
+			usedClasses.add(finalClass);
+		}
+	}
+
+	if (config.normalize ?? true) {
 		cssBlocks.push(baseStyles);
 	}
 
-	const util = generateUtil(usedClasses);
+	const util = generateUtil(usedClasses, config);
 	if (util) {
 		cssBlocks.push(util);
 	}
@@ -17,8 +33,63 @@ export function generator(usedClasses: Set<string>, config: Config): string {
 	return cssBlocks.join("\n\n");
 }
 
-function generateUtil(usedClasses: Set<string>): string {
-	const utils = coreUtils();
+function generateUtil(usedClasses: Set<string>, config: Config): string {
+	const baseUtils = coreUtils();
+	const utils: Record<string, Utility> = { ...baseUtils };
+
+	let customColors: Record<string, string> | null = null;
+	if (config.theme?.colors) {
+		const { percentage, ...userColors } = config.theme.colors as any;
+		customColors = createColors(
+			userColors,
+			percentage?.light,
+			percentage?.dark,
+		);
+	}
+
+	const mergedMediaQueries: { prefix: string; value: string }[] = [
+		...defaultMediaQueries,
+	];
+	if (config.theme?.screens) {
+		const userScreens = Object.entries(config.theme.screens).map(
+			([prefix, width]) => ({
+				prefix,
+				value: `@media (min-width: ${width})`,
+			}),
+		);
+		for (const qs of userScreens) {
+			const idx = mergedMediaQueries.findIndex((q) => q.prefix === qs.prefix);
+			if (idx !== -1) mergedMediaQueries[idx] = qs;
+			else mergedMediaQueries.push(qs);
+		}
+	}
+
+	for (const [key, util] of Object.entries(utils)) {
+		let modified = false;
+		const newUtil = { ...util };
+
+		if (
+			customColors &&
+			"black" in newUtil.values &&
+			"white" in newUtil.values
+		) {
+			newUtil.values = { ...newUtil.values, ...customColors };
+			modified = true;
+		}
+
+		if (config.theme?.screens && newUtil.variants) {
+			newUtil.variants = {
+				...newUtil.variants,
+				mediaQueries: mergedMediaQueries,
+			};
+			modified = true;
+		}
+
+		if (modified) {
+			utils[key] = newUtil;
+		}
+	}
+
 	const cssRules: string[] = [];
 	const mediaQueryRules: Map<string, string[]> = new Map();
 	const processedClasses = new Set<string>();
@@ -26,10 +97,17 @@ function generateUtil(usedClasses: Set<string>): string {
 	// to avoid CSS output being generated randomly when using build or watch tasks
 	const sortedClasses = Array.from(usedClasses).sort();
 
-	for (const className of sortedClasses) {
-		if (processedClasses.has(className)) continue;
+	for (const originalClassName of sortedClasses) {
+		let classNameToProcess = originalClassName;
+		if (config.prefix && classNameToProcess.startsWith(config.prefix)) {
+			classNameToProcess = classNameToProcess.slice(config.prefix.length);
+		} else if (config.prefix) {
+			continue;
+		}
 
-		const res = generateCSSRule(className, utils);
+		if (processedClasses.has(originalClassName)) continue;
+
+		const res = generateCSSRule(classNameToProcess, utils, originalClassName);
 		if (res) {
 			if (res.mediaQuery) {
 				const existing = mediaQueryRules.get(res.mediaQuery) || [];
@@ -38,7 +116,7 @@ function generateUtil(usedClasses: Set<string>): string {
 			} else {
 				cssRules.push(res.rule);
 			}
-			processedClasses.add(className);
+			processedClasses.add(originalClassName);
 		}
 	}
 
@@ -58,6 +136,7 @@ function generateUtil(usedClasses: Set<string>): string {
 function tryGenerateRule(
 	className: string,
 	util: Utility,
+	originalClassName: string,
 ): { rule: string; mediaQuery?: string } | null {
 	const { properties, variants, prefix, values } = util;
 	let currentClassName = className;
@@ -189,7 +268,7 @@ function tryGenerateRule(
 		.join("\n  ");
 
 	return {
-		rule: `.${escapeCn(className)}${pseudoClasses}${pseudoElements} {\n  ${declarations}\n}`,
+		rule: `.${escapeCn(originalClassName)}${pseudoClasses}${pseudoElements} {\n  ${declarations}\n}`,
 		mediaQuery,
 	};
 }
@@ -205,9 +284,10 @@ function escapeCn(className: string): string {
 function generateCSSRule(
 	className: string,
 	utils: Utilities,
+	originalClassName: string,
 ): { rule: string; mediaQuery?: string } | null {
 	for (const [_, util] of Object.entries(utils)) {
-		const result = tryGenerateRule(className, util);
+		const result = tryGenerateRule(className, util, originalClassName);
 		if (result) return result;
 	}
 	return null;

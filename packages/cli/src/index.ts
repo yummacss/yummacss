@@ -1,1 +1,1 @@
-export { defineConfig } from "@yummacss/nitro";
+export { type Config, defineConfig } from "@yummacss/nitro";

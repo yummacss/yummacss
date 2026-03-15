@@ -38,7 +38,10 @@ export const textUtils = (): Utilities => text;
 export const transformUtils = (): Utilities => transform;
 export const transitionUtils = (): Utilities => transition;
 
+// variants
+export { mediaQueries as defaultMediaQueries } from "./defaults/variants/media-queries";
+// helpers
+export { createColors } from "./helpers/create-colors";
 // types
 export type * from "./interfaces";
-// variants
 export * from "./variants";
