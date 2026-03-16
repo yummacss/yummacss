@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [3.21.0] - 2026-03-15
+## [3.21.0] - 2026-03-16
 
 ### Added
 
@@ -20,6 +20,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - **[nitro]** Improve the configuration file schema with comprehensive JSDoc comments, providing inline documentation and Intellisense for all options.
+- **[cli]** Update `init` command to generate a minimal configuration file containing only `source` and `output`.
+- **[cli]** Export `Config` type alongside `defineConfig` for more reliable Intellisense type definitions.
+
+### Removed
+
+- **[nitro]** Remove `buildOptions` configuration object in favor of `normalize`.
 
 ## [3.20.8] - 2026-03-15
 
