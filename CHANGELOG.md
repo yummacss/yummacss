@@ -11,11 +11,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- **[nitro]** Add `prefix` configuration option to namespace generated classes.
-- **[nitro]** Add `safelist` configuration option to always generate specific classes.
-- **[nitro]** Add `normalize` configuration option, replacing `buildOptions.reset`.
-- **[nitro]** Add `theme.colors` configuration option with configurable shade percentages to extend and override the color palette.
-- **[nitro]** Add `theme.screens` configuration option to extend and override default media query breakpoints.
+- **[nitro]** Implement `prefix` configuration option to namespace generated classes.
+- **[nitro]** Implement `safelist` configuration option to always generate specific classes.
+- **[nitro]** Implement `normalize` configuration option, replacing `buildOptions.reset`.
+- **[nitro]** Implement `theme.colors` configuration option with configurable shade percentages to extend and override the color palette.
+- **[nitro]** Implement `theme.screens` configuration option to extend and override default media query breakpoints.
 
 ### Changed
 
