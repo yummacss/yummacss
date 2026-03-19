@@ -24,7 +24,7 @@ export const layout: Utilities = {
 		slug: "container-type",
 		values: {
 			is: "inline-size",
-			n: "none",
+			none: "none",
 			s: "size",
 		},
 		variants: base,
