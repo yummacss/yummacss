@@ -1,6 +1,6 @@
 {
 	"name": "@yummacss/runtime",
-	"version": "3.21.0",
+	"version": "3.21.1",
 	"description": "Run Yumma CSS without Node.js.",
 	"keywords": [
 		"css-framework",
