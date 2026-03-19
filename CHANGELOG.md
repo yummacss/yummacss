@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.21.1] - 2026-03-19
+
+### Fixed
+
+- **[core]** Complete Container Query implementation by adding missing `container-type` utilities (`ct-*`).
+
 ## [3.21.0] - 2026-03-16
 
 ### Added
