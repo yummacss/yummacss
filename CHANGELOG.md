@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.21.2] - 2026-03-19
+
+### Fixed
+
+- **[core]** Rename `none` property value in `container-type` utilities from `ct-n` to `ct-none` to follow the convention where `auto` and `none` are not abbreviated.
+
 ## [3.21.1] - 2026-03-19
 
 ### Fixed
