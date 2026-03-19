@@ -18,6 +18,18 @@ export const layout: Utilities = {
 		variants: base,
 	},
 
+	"container-type": {
+		prefix: "ct",
+		properties: ["container-type"],
+		slug: "container-type",
+		values: {
+			is: "inline-size",
+			n: "none",
+			s: "size",
+		},
+		variants: base,
+	},
+
 	columns: {
 		prefix: "c",
 		properties: ["columns"],
