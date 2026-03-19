@@ -1035,10 +1035,6 @@ packages:
     engines: {node: '>=8'}
     hasBin: true
 
-  yummacss@file:packages/cli:
-    resolution: {directory: packages/cli, type: directory}
-    hasBin: true
-
   zod@4.3.6:
     resolution: {integrity: sha512-rftlrkhHZOcjDwkGlnUtZZkvaPHCsDATp4pGpuOOMDaTdDDXF91wuVDJoWoPsKX/3YPQ5fHuF3STjcYyKr+Qhg==}
 
@@ -1762,9 +1758,5 @@ snapshots:
     dependencies:
       siginfo: 2.0.0
       stackback: 0.0.2
-
-  yummacss@file:packages/cli:
-    dependencies:
-      '@yummacss/nitro': link:packages/nitro
 
   zod@4.3.6: {}
