@@ -1,6 +1,12 @@
 // borders
 export const borderWidth = 1;
-export const borderRadius = 0.25;
+export const borderRadiusXs = 0.125;
+export const borderRadiusSm = 0.25;
+export const borderRadiusMd = 0.375;
+export const borderRadiusLg = 0.5;
+export const borderRadiusXl = 0.75;
+export const borderRadiusXxl = 1;
+export const borderRadius3xl = 1.5;
 export const borderSpacing = 0.25;
 
 // outlines
