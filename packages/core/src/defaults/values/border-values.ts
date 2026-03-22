@@ -12,6 +12,7 @@ import {
 } from "../variables";
 
 export const borderRadiusValues: Record<string, string> = {
+	0: "0",
 	xs: `${borderRadiusXs}rem`,
 	sm: `${borderRadiusSm}rem`,
 	md: `${borderRadiusMd}rem`,
