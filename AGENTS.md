@@ -880,7 +880,7 @@ Example: `c-3` > `columns: 3`
 
 | Property                     | Prefix  | Values                                          |
 | ---------------------------- | ------- | ----------------------------------------------- |
-| `border-radius`              | `br-`   | `xs`, `sm`, `md`, `lg`, `xl`, `xxl`, `3xl`, `full`, `half`, `pill`, `px` |
+| `border-radius`              | `br-`   | `0`, `xs`, `sm`, `md`, `lg`, `xl`, `xxl`, `3xl`, `full`, `half`, `pill`, `px` |
 | `border-top-radius`          | `btr-`  | Same                                            |
 | `border-bottom-radius`       | `bbr-`  | Same                                            |
 | `border-left-radius`         | `blr-`  | Same                                            |

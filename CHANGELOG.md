@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
  
+## [3.22.1] - 2026-03-22
+
+### Added
+
+- **[core]** Add `0` value to `border-radius` utilities to allow resetting borders.
+
 ## [3.22.0] - 2026-03-22
 
 ### Changed
@@ -907,7 +913,8 @@ No notable changes.
 
 - Initial release.
 
-[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.22.0...HEAD
+[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.22.1...HEAD
+[3.22.1]: https://github.com/yummacss/yummacss/compare/v3.22.0...v3.22.1
 [3.22.0]: https://github.com/yummacss/yummacss/compare/v3.21.2...v3.22.0
 [3.21.2]: https://github.com/yummacss/yummacss/compare/v3.21.1...v3.21.2
 [3.21.1]: https://github.com/yummacss/yummacss/compare/v3.21.0...v3.21.1
