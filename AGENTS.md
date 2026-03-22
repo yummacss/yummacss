@@ -880,7 +880,7 @@ Example: `c-3` > `columns: 3`
 
 | Property                     | Prefix  | Values                                          |
 | ---------------------------- | ------- | ----------------------------------------------- |
-| `border-radius`              | `br-`   | `0-16` (×0.25rem), `full`, `half`, `pill`, `px` |
+| `border-radius`              | `br-`   | `xs`, `sm`, `md`, `lg`, `xl`, `xxl`, `3xl`, `full`, `half`, `pill`, `px` |
 | `border-top-radius`          | `btr-`  | Same                                            |
 | `border-bottom-radius`       | `bbr-`  | Same                                            |
 | `border-left-radius`         | `blr-`  | Same                                            |
@@ -1403,12 +1403,12 @@ Example: `td-100` > `transition-delay: 100ms`
 
 ### Card with Shadow
 ```html
-<div class="bg-white br-2 bsh-md p-4">Card content</div>
+<div class="bg-white br-md bsh-md p-4">Card content</div>
 ```
 
 ### Button with Hover
 ```html
-<button class="bg-blue-5 h:bg-blue-6 c-white px-4 py-2 br-1 c-p">
+<button class="bg-blue-5 h:bg-blue-6 c-white px-4 py-2 br-sm c-p">
   Click me
 </button>
 ```
