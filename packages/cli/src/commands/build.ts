@@ -4,11 +4,10 @@ import type { Config } from "@yummacss/nitro";
 import { configChanged, getCache, setCache } from "@/services/cache";
 import { compiler } from "@/services/compiler";
 import { loadConfig } from "@/services/loader";
-import { feedback } from "@/utils/feedback";
-import { cli } from "@/utils/status";
+import { logger } from "@/utils/logger";
 
 export async function build(existingConfig?: Config, forceRebuild = false) {
-	const status = cli.progress(feedback.build.start);
+	const status = logger.build.start();
 	const startTime = Date.now();
 
 	try {
@@ -29,16 +28,14 @@ export async function build(existingConfig?: Config, forceRebuild = false) {
 			css = cache.css;
 		}
 
+		if (!config.output) throw new Error("No output path specified in config.");
+
 		mkdirSync(dirname(config.output), { recursive: true });
 		writeFileSync(config.output, css);
 
-		status.succeed(
-			feedback.build.success(Date.now() - startTime, config.output),
-		);
+		status.succeed(logger.build.success(Date.now() - startTime, config.output));
 	} catch (error) {
-		status.fail(
-			`${feedback.build.fail} ${error instanceof Error ? error.message : String(error)}`,
-		);
+		status.fail(logger.build.fail(error));
 		process.exit(1);
 	}
 }
