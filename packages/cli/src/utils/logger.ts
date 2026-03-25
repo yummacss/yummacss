@@ -16,7 +16,7 @@ function print(
 	msg: string,
 	stream: "stdout" | "stderr" = "stdout",
 ) {
-	const line = `  ${symbol} ${msg}`;
+	const line = ` ${symbol} ${msg}`;
 	if (stream === "stderr") {
 		process.stderr.write(`${line}\n`);
 	} else {
@@ -44,7 +44,7 @@ function spinner(msg: string) {
 
 export const logger = {
 	header(version: string) {
-		process.stdout.write(`\n  ${S.brand} Yumma CSS ${version}\n\n`);
+		process.stdout.write(`\n \x1b[1m${S.brand} Yumma CSS ${version}\x1b[22m\n\n`);
 	},
 	fail(msg: string) {
 		print(S.error, msg, "stderr");
