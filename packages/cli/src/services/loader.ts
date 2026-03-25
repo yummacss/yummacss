@@ -2,8 +2,7 @@ import { existsSync } from "node:fs";
 import { join } from "node:path";
 import { pathToFileURL } from "node:url";
 import { type Config, ConfigSchema, configName } from "@yummacss/nitro";
-import { feedback } from "@/utils/feedback";
-import { cli } from "@/utils/status";
+import { logger } from "@/utils/logger";
 
 export async function loadConfig(): Promise<Config> {
 	const path = join(process.cwd(), configName);
@@ -18,12 +17,10 @@ export async function loadConfig(): Promise<Config> {
 		return config;
 	} catch (_error) {
 		if (!existsSync(configName)) {
-			const status = cli.progress(feedback.init.notFound);
-			status.fail(feedback.init.notFound);
+			logger.fail(logger.init.notFound());
 			process.exit(1);
 		}
-		const status = cli.progress(feedback.init.invalid);
-		status.fail(feedback.init.invalid);
+		logger.fail(logger.init.invalid());
 		process.exit(1);
 	}
 }

@@ -5,7 +5,7 @@ import { glob } from "tinyglobby";
 import { configChanged, getCache, setCache } from "@/services/cache";
 import { compiler } from "@/services/compiler";
 import { loadConfig } from "@/services/loader";
-import { logger } from "@/utils/logger.js";
+import { logger } from "@/utils/logger";
 import { build } from "./build.js";
 
 let currentConfig: Config;

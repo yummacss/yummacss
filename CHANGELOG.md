@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
  
+## [3.22.3] - 2026-03-25
+
+### Fixed
+
+- **[cli]** Fix `services/loader` still importing from the removed `utils/status` and `utils/feedback` modules, causing a runtime `ERR_MODULE_NOT_FOUND` crash.
+
 ## [3.22.2] - 2026-03-25
 
 ### Changed
@@ -921,7 +927,8 @@ No notable changes.
 
 - Initial release.
 
-[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.22.2...HEAD
+[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.22.3...HEAD
+[3.22.3]: https://github.com/yummacss/yummacss/compare/v3.22.2...v3.22.3
 [3.22.2]: https://github.com/yummacss/yummacss/compare/v3.22.1...v3.22.2
 [3.22.1]: https://github.com/yummacss/yummacss/compare/v3.22.0...v3.22.1
 [3.22.0]: https://github.com/yummacss/yummacss/compare/v3.21.2...v3.22.0
