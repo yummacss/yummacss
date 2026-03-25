@@ -1,9 +1,11 @@
-import { watch as fsWatch } from "node:fs";
+import { watch as fsWatch, mkdirSync, writeFileSync } from "node:fs";
+import { dirname } from "node:path";
 import type { Config } from "@yummacss/nitro";
 import { glob } from "tinyglobby";
+import { configChanged, getCache, setCache } from "@/services/cache";
+import { compiler } from "@/services/compiler";
 import { loadConfig } from "@/services/loader";
-import { feedback } from "@/utils/feedback";
-import { cli } from "@/utils/status";
+import { logger } from "@/utils/logger.js";
 import { build } from "./build.js";
 
 let currentConfig: Config;
@@ -30,9 +32,39 @@ export async function watch() {
 	try {
 		currentConfig = await loadConfig();
 
-		await build(currentConfig, true);
+		const status = logger.watch.start();
 
-		cli.info(feedback.watch.start);
+		try {
+			const cache = getCache();
+			const hasConfigChanged = configChanged(currentConfig);
+
+			let css: string;
+			if (hasConfigChanged || !cache.css) {
+				const res = await compiler(currentConfig);
+				css = res.css;
+				setCache({
+					configHash: JSON.stringify(currentConfig),
+					css: res.css,
+					dependencies: res.dependencies,
+				});
+			} else {
+				css = cache.css;
+			}
+
+			if (!currentConfig.output)
+				throw new Error("No output path specified in config.");
+
+			mkdirSync(dirname(currentConfig.output), { recursive: true });
+			writeFileSync(currentConfig.output, css);
+
+			status.succeed(logger.watch.success(currentConfig.output));
+		} catch (_err) {
+			status.fail(logger.watch.fail());
+			process.exit(1);
+		}
+
+		if (!currentConfig.source)
+			throw new Error("No source patterns specified in config.");
 
 		const files = await glob(currentConfig.source);
 		for (const file of files) {
@@ -41,7 +73,7 @@ export async function watch() {
 			});
 		}
 	} catch (_error) {
-		cli.fail(feedback.watch.fail);
+		logger.fail(logger.watch.fail());
 		process.exit(1);
 	}
 }

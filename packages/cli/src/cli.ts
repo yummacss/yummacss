@@ -2,6 +2,7 @@ import { version } from "../package.json";
 import { build } from "./commands/build.js";
 import { init } from "./commands/init.js";
 import { watch } from "./commands/watch.js";
+import { logger } from "./utils/logger.js";
 
 const args = process.argv.slice(2);
 const command = args[0];
@@ -13,15 +14,17 @@ switch (command) {
 		break;
 	case "build":
 	case "b":
+		logger.header(version);
 		build().catch(() => process.exit(1));
 		break;
 	case "watch":
 	case "w":
+		logger.header(version);
 		watch().catch(() => process.exit(1));
 		break;
 	default:
 		console.log(`
-Yumma CSS v${version}
+  ◪ Yumma CSS ${version}
 
 Commands:
   init, i    Initialize the configuration.
