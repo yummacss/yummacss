@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
  
+## [3.22.4] - 2026-03-25
+
+### Changed
+
+- **[cli]** Reduce CLI output indentation from 2 spaces to 1 space.
+- **[cli]** Make the branded header (`◪ Yumma CSS {version}`) **bold** using ANSI escape codes.
+
 ## [3.22.3] - 2026-03-25
 
 ### Fixed
@@ -927,7 +934,8 @@ No notable changes.
 
 - Initial release.
 
-[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.22.3...HEAD
+[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.22.4...HEAD
+[3.22.4]: https://github.com/yummacss/yummacss/compare/v3.22.3...v3.22.4
 [3.22.3]: https://github.com/yummacss/yummacss/compare/v3.22.2...v3.22.3
 [3.22.2]: https://github.com/yummacss/yummacss/compare/v3.22.1...v3.22.2
 [3.22.1]: https://github.com/yummacss/yummacss/compare/v3.22.0...v3.22.1
