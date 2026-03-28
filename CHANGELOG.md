@@ -6,7 +6,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
- 
+
+## [3.23.0] - 2026-03-28
+
+### Added
+
+- **[core]** Implement `inline-size` utility (`xs-`).
+- **[core]** Implement `max-inline-size` utility (`max-xs-`).
+- **[core]** Implement `min-inline-size` utility (`min-xs-`).
+- **[core]** Implement `block-size` utility (`ys-`).
+- **[core]** Implement `max-block-size` utility (`max-ys-`).
+- **[core]** Implement `min-block-size` utility (`min-ys-`).
+
 ## [3.22.4] - 2026-03-25
 
 ### Changed
@@ -934,7 +945,8 @@ No notable changes.
 
 - Initial release.
 
-[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.22.4...HEAD
+[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.23.0...HEAD
+[3.23.0]: https://github.com/yummacss/yummacss/compare/v3.22.4...v3.23.0
 [3.22.4]: https://github.com/yummacss/yummacss/compare/v3.22.3...v3.22.4
 [3.22.3]: https://github.com/yummacss/yummacss/compare/v3.22.2...v3.22.3
 [3.22.2]: https://github.com/yummacss/yummacss/compare/v3.22.1...v3.22.2
