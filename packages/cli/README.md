@@ -1,6 +1,6 @@
 # yummacss
 
-An atomic CSS framework with abbreviated class names.
+The ergonomic CSS framework.
 
 ## Installation
 ```bash

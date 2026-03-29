@@ -1,7 +1,7 @@
 {
 	"name": "@yummacss/nitro",
 	"version": "3.23.0",
-	"description": "Fast CSS generation for Yumma CSS.",
+	"description": "Fast CSS generation for Yumma CSS",
 	"keywords": [
 		"css-framework",
 		"typescript",
