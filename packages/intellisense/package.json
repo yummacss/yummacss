@@ -1,7 +1,7 @@
 {
 	"name": "@yummacss/intellisense",
 	"version": "3.23.0",
-	"description": "Shared Intellisense for Yumma CSS.",
+	"description": "Shared Intellisense for Yumma CSS",
 	"keywords": [
 		"css-framework",
 		"typescript",
