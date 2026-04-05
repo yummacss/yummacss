@@ -11,8 +11,6 @@ import {
 	layoutUtils,
 	outlineUtils,
 	positioningUtils,
-	svgUtils,
-	tableUtils,
 	textUtils,
 	transformUtils,
 	transitionUtils,
@@ -31,10 +29,8 @@ enum Category {
 	Effects = 8,
 	Transition = 9,
 	Interactivity = 10,
-	Table = 11,
-	SVG = 12,
-	Unknown = 13,
-	OrphanVariant = 14,
+	Unknown = 11,
+	OrphanVariant = 12,
 }
 
 function buildMaps(): {
@@ -60,8 +56,6 @@ function buildMaps(): {
 		[effectUtils(), Category.Effects],
 		[transitionUtils(), Category.Transition],
 		[interactivityUtils(), Category.Interactivity],
-		[tableUtils(), Category.Table],
-		[svgUtils(), Category.SVG],
 	];
 
 	Object.values(colorUtils()).forEach((util, index) => {
