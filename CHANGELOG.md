@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.24.1] - 2026-04-05
+
+### Fix
+
+- **[intellisense]** Resolve sort importing none-existing categories.
+
 ## [3.24.0] - 2026-04-05
 
 ### Added
@@ -971,7 +977,9 @@ No notable changes.
 
 - Initial release.
 
-[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.23.0...HEAD
+[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.24.1...HEAD
+[3.24.1]: https://github.com/yummacss/yummacss/compare/v3.22.4...v3.21.1
+[3.24.0]: https://github.com/yummacss/yummacss/compare/v3.22.4...v3.24.0
 [3.23.0]: https://github.com/yummacss/yummacss/compare/v3.22.4...v3.23.0
 [3.22.4]: https://github.com/yummacss/yummacss/compare/v3.22.3...v3.22.4
 [3.22.3]: https://github.com/yummacss/yummacss/compare/v3.22.2...v3.22.3
