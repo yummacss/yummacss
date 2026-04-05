@@ -7,6 +7,32 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.24.0] - 2026-04-05
+
+### Added
+
+- **[core]** Move `table-layout` utility to the `layout` category.
+
+### Changed
+
+- **[core]** Update utility prefixes for better consistency:
+  - `t-ty` -> `tty` (Translate Y)
+  - `t-tx` -> `ttx` (Translate X)
+  - `t-t` -> `tr` (Translate)
+  - `t-o` -> `tor` (Transform Origin)
+  - `t-sk` -> `ts` (Skew)
+  - `t-sky` -> `tsy` (Skew Y)
+  - `t-skx` -> `tsx` (Skew X)
+  - `o-y` -> `oy` (Overflow Y)
+  - `o-x` -> `ox` (Overflow X)
+  - `f-g` -> `fgr` (Grayscale)
+- **[core]** Update `scroll-snap-type` value keys to remove hyphens (`bm`, `xm`, `xp`, `ym`, `yp`).
+
+### Removed
+
+- **[core]** Remove `tab-size`, `columns`, `caption-side`, and `empty-cells` utilities.
+- **[core]** Remove `svg` category and `stroke-width` utility.
+
 ## [3.23.0] - 2026-03-28
 
 ### Added

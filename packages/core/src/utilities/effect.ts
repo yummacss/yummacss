@@ -49,7 +49,7 @@ export const effect: Utilities = {
 	},
 
 	grayscale: {
-		prefix: "f-g",
+		prefix: "fgr",
 		properties: ["filter"],
 		slug: "grayscale",
 		values: grayscaleValues,

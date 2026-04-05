@@ -44,7 +44,9 @@ function spinner(msg: string) {
 
 export const logger = {
 	header(version: string) {
-		process.stdout.write(`\n \x1b[1m${S.brand} Yumma CSS ${version}\x1b[22m\n\n`);
+		process.stdout.write(
+			`\n \x1b[1m${S.brand} Yumma CSS ${version}\x1b[22m\n\n`,
+		);
 	},
 	fail(msg: string) {
 		print(S.error, msg, "stderr");

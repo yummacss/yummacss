@@ -105,7 +105,7 @@ export const positioning: Utilities = {
 	},
 
 	"overflow-x": {
-		prefix: "o-x",
+		prefix: "ox",
 		properties: ["overflow-x"],
 		slug: "overflow-x",
 		values: {
@@ -119,7 +119,7 @@ export const positioning: Utilities = {
 	},
 
 	"overflow-y": {
-		prefix: "o-y",
+		prefix: "oy",
 		properties: ["overflow-y"],
 		slug: "overflow-y",
 		values: {

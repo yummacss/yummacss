@@ -12,8 +12,6 @@ import { interactivity } from "./interactivity";
 import { layout } from "./layout";
 import { outline } from "./outline";
 import { positioning } from "./positioning";
-import { svg } from "./svg";
-import { table } from "./table";
 import { text } from "./text";
 import { transform } from "./transform";
 import { transition } from "./transition";
@@ -31,8 +29,6 @@ export const core: Utilities = {
 	...layout,
 	...outline,
 	...positioning,
-	...svg,
-	...table,
 	...text,
 	...transform,
 	...transition,
