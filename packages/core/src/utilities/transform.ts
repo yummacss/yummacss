@@ -97,7 +97,7 @@ export const transform: Utilities = {
 	},
 
 	skew: {
-		prefix: "t-sk",
+		prefix: "ts",
 		properties: ["transform"],
 		slug: "skew",
 		values: {
@@ -111,7 +111,7 @@ export const transform: Utilities = {
 	},
 
 	"skew-x": {
-		prefix: "t-skx",
+		prefix: "tsx",
 		properties: ["transform"],
 		slug: "skew-x",
 		values: {
@@ -125,7 +125,7 @@ export const transform: Utilities = {
 	},
 
 	"skew-y": {
-		prefix: "t-sky",
+		prefix: "tsy",
 		properties: ["transform"],
 		slug: "skew-y",
 		values: {
@@ -139,7 +139,7 @@ export const transform: Utilities = {
 	},
 
 	"transform-origin": {
-		prefix: "t-o",
+		prefix: "tor",
 		properties: ["transform-origin"],
 		slug: "transform-origin",
 		values: {
@@ -157,7 +157,7 @@ export const transform: Utilities = {
 	},
 
 	translate: {
-		prefix: "t-t",
+		prefix: "tr",
 		properties: ["translate"],
 		slug: "translate",
 		values: createValues({
@@ -172,7 +172,7 @@ export const transform: Utilities = {
 	},
 
 	"translate-x": {
-		prefix: "t-tx",
+		prefix: "ttx",
 		properties: ["transform"],
 		slug: "translate-x",
 		values: createValues({
@@ -187,7 +187,7 @@ export const transform: Utilities = {
 	},
 
 	"translate-y": {
-		prefix: "t-ty",
+		prefix: "tty",
 		properties: ["transform"],
 		slug: "translate-y",
 		values: createValues({

@@ -30,15 +30,14 @@ export const layout: Utilities = {
 		variants: base,
 	},
 
-	columns: {
-		prefix: "c",
-		properties: ["columns"],
-		slug: "columns",
-		values: createValues({
-			base: 1,
-			min: 1,
-			max: 16,
-		}),
+	"table-layout": {
+		prefix: "tl",
+		properties: ["table-layout"],
+		slug: "table-layout",
+		values: {
+			a: "auto",
+			f: "fixed",
+		},
 		variants: base,
 	},
 

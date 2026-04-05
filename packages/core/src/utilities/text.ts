@@ -57,19 +57,6 @@ export const text: Utilities = {
 		variants: base,
 	},
 
-	"tab-size": {
-		prefix: "ts",
-		properties: ["tab-size"],
-		slug: "tab-size",
-		values: {
-			"0": "0",
-			"2": "2",
-			"4": "4",
-			"8": "8",
-		},
-		variants: base,
-	},
-
 	"overflow-wrap": {
 		prefix: "ow",
 		properties: ["overflow-wrap"],
