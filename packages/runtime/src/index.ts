@@ -1,4 +1,4 @@
-import { baseStyles, generator } from "@yummacss/nitro/browser";
+import { generator, normalizeCSS } from "@yummacss/nitro/browser";
 import { extractor } from "./extractor";
 import { watcher } from "./watcher";
 
@@ -29,7 +29,7 @@ class YummaCSS {
 			const css = generator(newClasses, {
 				source: [],
 				output: "",
-				buildOptions: { reset: false },
+				normalize: false,
 			});
 			this.injectCSS(css);
 		}
@@ -39,8 +39,8 @@ class YummaCSS {
 		if (this.resetInjected) return;
 
 		const resetStyle = document.createElement("style");
-		resetStyle.setAttribute("data-yummacss-reset", "");
-		resetStyle.textContent = baseStyles;
+		resetStyle.setAttribute("data-yummacss-normalize", "");
+		resetStyle.textContent = normalizeCSS;
 		document.head.appendChild(resetStyle);
 
 		this.resetInjected = true;

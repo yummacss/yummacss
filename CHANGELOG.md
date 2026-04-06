@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.24.2] - 2026-04-06
+
+### Fix
+
+No notable changes.
+
 ## [3.24.1] - 2026-04-05
 
 ### Fix
@@ -414,7 +420,6 @@ No notable changes.
 
 No notable changes.
 
-
 ## [3.7.1] - 2025-12-31
 
 ### Fixed
@@ -445,7 +450,6 @@ No notable changes.
 ## [3.6.2] - 2025-12-27
 
 No notable changes.
-
 
 ## [3.6.1] - 2025-12-26
 
@@ -505,11 +509,9 @@ No notable changes.
 
 No notable changes.
 
-
 ## [3.3.1] - 2025-09-12
 
 No notable changes.
-
 
 ## [3.3.0] - 2025-09-12
 
@@ -572,11 +574,9 @@ No notable changes.
 
 No notable changes.
 
-
 ## [3.0.2] - 2025-07-20
 
 No notable changes.
-
 
 ## [3.0.1] - 2025-07-17
 
@@ -977,9 +977,10 @@ No notable changes.
 
 - Initial release.
 
-[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.24.1...HEAD
-[3.24.1]: https://github.com/yummacss/yummacss/compare/v3.22.4...v3.21.1
-[3.24.0]: https://github.com/yummacss/yummacss/compare/v3.22.4...v3.24.0
+[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.24.2...HEAD
+[3.24.2]: https://github.com/yummacss/yummacss/compare/v3.24.1...v3.24.2
+[3.24.1]: https://github.com/yummacss/yummacss/compare/v3.24.0...v3.24.1
+[3.24.0]: https://github.com/yummacss/yummacss/compare/v3.23.0...v3.24.0
 [3.23.0]: https://github.com/yummacss/yummacss/compare/v3.22.4...v3.23.0
 [3.22.4]: https://github.com/yummacss/yummacss/compare/v3.22.3...v3.22.4
 [3.22.3]: https://github.com/yummacss/yummacss/compare/v3.22.2...v3.22.3

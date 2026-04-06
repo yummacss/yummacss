@@ -5,8 +5,8 @@ import {
 	type Utilities,
 	type Utility,
 } from "@yummacss/core";
-import { baseStyles } from "./base-styles";
 import type { Config } from "./config/schema";
+import { normalizeCSS } from "./normalize";
 
 export function generator(usedClasses: Set<string>, config: Config): string {
 	const cssBlocks: string[] = [];
@@ -22,7 +22,7 @@ export function generator(usedClasses: Set<string>, config: Config): string {
 	}
 
 	if (config.normalize ?? true) {
-		cssBlocks.push(baseStyles);
+		cssBlocks.push(normalizeCSS);
 	}
 
 	const util = generateUtil(usedClasses, config);
