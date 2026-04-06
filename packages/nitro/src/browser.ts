@@ -1,4 +1,5 @@
 // browser-safe exports
-export { baseStyles } from "./base-styles";
+
 export { generator } from "./generator";
+export { normalizeCSS } from "./normalize";
 export { tokenizer } from "./tokenizer";

@@ -1,4 +1,4 @@
-export const baseStyles = `*, :before, :after {
+export const normalizeCSS = `*, :before, :after {
   box-sizing: border-box;
   border: 0 solid;
 }
