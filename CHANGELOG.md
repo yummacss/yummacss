@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.24.3] - 2026-04-19
+
+### Added
+
+- **[core]** Implement `xs` value to Box Model dimension utilities.
+
 ## [3.24.2] - 2026-04-06
 
 ### Fix
@@ -977,7 +983,8 @@ No notable changes.
 
 - Initial release.
 
-[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.24.2...HEAD
+[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.24.3...HEAD
+[3.24.3]: https://github.com/yummacss/yummacss/compare/v3.24.2...v3.24.3
 [3.24.2]: https://github.com/yummacss/yummacss/compare/v3.24.1...v3.24.2
 [3.24.1]: https://github.com/yummacss/yummacss/compare/v3.24.0...v3.24.1
 [3.24.0]: https://github.com/yummacss/yummacss/compare/v3.23.0...v3.24.0
