@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.24.4] - 2026-04-22
+
+### Added
+
+- **[core]** Implement `s` (`subgrid`) property value for **Grid Template Columns** and **Grid Template Rows** utilities.
+
 ## [3.24.3] - 2026-04-19
 
 ### Added
@@ -981,7 +987,8 @@ No notable changes.
 
 - Initial release.
 
-[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.24.3...HEAD
+[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.24.4...HEAD
+[3.24.4]: https://github.com/yummacss/yummacss/compare/v3.24.3...v3.24.4
 [3.24.3]: https://github.com/yummacss/yummacss/compare/v3.24.2...v3.24.3
 [3.24.2]: https://github.com/yummacss/yummacss/compare/v3.24.1...v3.24.2
 [3.24.1]: https://github.com/yummacss/yummacss/compare/v3.24.0...v3.24.1
