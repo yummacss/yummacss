@@ -18,7 +18,7 @@ function print(
 	msg: string,
 	stream: "stdout" | "stderr" = "stdout",
 ) {
-	const line = ` ${symbol} ${msg}`;
+	const line = `${symbol} ${msg}`;
 	if (stream === "stderr") {
 		process.stderr.write(`${line}\n`);
 	} else {
@@ -52,7 +52,7 @@ function printTree(files: string[], basePath: string = "") {
 
 	displayFiles.forEach((file, index) => {
 		const isLast = index === displayFiles.length - 1 && remaining <= 0;
-		const prefix = isLast ? "└ " : "├ ";
+		const prefix = isLast ? "└" : "├";
 
 		const relativePath = basePath
 			? file.replace(basePath, "").replace(/^[/\\]/, "")
@@ -62,14 +62,14 @@ function printTree(files: string[], basePath: string = "") {
 	});
 
 	if (remaining > 0) {
-		print(" ", `+ ${remaining} more files`);
+		print("", `+ ${remaining} more files`);
 	}
 }
 
 export const logger = {
 	header(version: string) {
 		process.stdout.write(
-			`\n ${S.brand} Yumma CSS ${version}\n\n`,
+			`\n${S.brand} Yumma CSS ${version}\n\n`,
 		);
 	},
 	fail(msg: string) {
