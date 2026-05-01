@@ -68,9 +68,7 @@ function printTree(files: string[], basePath: string = "") {
 
 export const logger = {
 	header(version: string) {
-		process.stdout.write(
-			`\n${S.brand} Yumma CSS ${version}\n\n`,
-		);
+		process.stdout.write(`${S.brand} Yumma CSS ${version}\n`);
 	},
 	fail(msg: string) {
 		print(S.error, msg, "stderr");
@@ -85,7 +83,9 @@ export const logger = {
 		},
 		fail(error?: unknown) {
 			const msg =
-				error instanceof Error ? error.message : "Check your files & try again.";
+				error instanceof Error
+					? error.message
+					: "Check your files & try again.";
 			return `Something went wrong. ${msg}`;
 		},
 		compiling(files: string[]) {
