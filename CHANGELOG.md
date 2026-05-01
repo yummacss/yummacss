@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.24.5] - 2026-05-01
+
+### Changed
+
+- **[cli]** Redesign CLI output with Next.js-inspired design:
+  - New tree structure view showing source files.
+- **[cli]** Update `init` command to generate a plain JavaScript object config.=
+- **[cli]** Add source file tree view to `build` and `watch` commands.
+
 ## [3.24.4] - 2026-04-22
 
 ### Added
@@ -987,7 +996,8 @@ No notable changes.
 
 - Initial release.
 
-[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.24.4...HEAD
+[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.24.5...HEAD
+[3.24.5]: https://github.com/yummacss/yummacss/compare/v3.24.4...v3.24.5
 [3.24.4]: https://github.com/yummacss/yummacss/compare/v3.24.3...v3.24.4
 [3.24.3]: https://github.com/yummacss/yummacss/compare/v3.24.2...v3.24.3
 [3.24.2]: https://github.com/yummacss/yummacss/compare/v3.24.1...v3.24.2
