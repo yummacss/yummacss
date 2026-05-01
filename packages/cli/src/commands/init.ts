@@ -5,7 +5,11 @@ import { logger } from "@/utils/logger";
 function generateConfig(): { filename: string; content: string } {
 	return {
 		filename: configName,
-		content: `import { defineConfig } from "yummacss";\n\nexport default defineConfig({\n  source: [""],\n  output: "",\n});\n`,
+		content: `export default {
+  source: [""],
+  output: "",
+};
+`,
 	};
 }
 

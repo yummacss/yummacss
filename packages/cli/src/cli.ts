@@ -23,13 +23,11 @@ switch (command) {
 		watch().catch(() => process.exit(1));
 		break;
 	default:
-		console.log(`
-  ◪ Yumma CSS ${version}
-
-Commands:
+		logger.header(version);
+		console.log(`Commands:
   init, i    Initialize the configuration.
   build, b   Build the styles once.
-  watch, w   Watch for file changes continuously.
+  watch, w  Watch for file changes continuously.
 `);
 		break;
 }

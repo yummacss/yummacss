@@ -1,2 +1,0 @@
-- `flex-flow`
-- `corner-shape`
