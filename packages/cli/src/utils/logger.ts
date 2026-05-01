@@ -1,8 +1,10 @@
 const S = {
-	brand: "◪",
+	brand: "●",
+	waiting: "○",
+	active: "●",
+	processing: "◉",
 	done: "✓",
-	error: "✕",
-	progress: "-",
+	error: "✗",
 } as const;
 
 function clearLine() {
@@ -25,7 +27,7 @@ function print(
 }
 
 function spinner(msg: string) {
-	print(S.progress, msg);
+	print(S.waiting, msg);
 
 	return {
 		succeed: (text: string) => {
@@ -42,10 +44,32 @@ function spinner(msg: string) {
 	};
 }
 
+function printTree(files: string[], basePath: string = "") {
+	if (files.length === 0) return;
+
+	const displayFiles = files.slice(0, 10);
+	const remaining = files.length - 10;
+
+	displayFiles.forEach((file, index) => {
+		const isLast = index === displayFiles.length - 1 && remaining <= 0;
+		const prefix = isLast ? "└ " : "├ ";
+
+		const relativePath = basePath
+			? file.replace(basePath, "").replace(/^[/\\]/, "")
+			: file;
+
+		print(prefix, relativePath);
+	});
+
+	if (remaining > 0) {
+		print(" ", `+ ${remaining} more files`);
+	}
+}
+
 export const logger = {
 	header(version: string) {
 		process.stdout.write(
-			`\n \x1b[1m${S.brand} Yumma CSS ${version}\x1b[22m\n\n`,
+			`\n ${S.brand} Yumma CSS ${version}\n\n`,
 		);
 	},
 	fail(msg: string) {
@@ -54,32 +78,67 @@ export const logger = {
 
 	build: {
 		start() {
-			return spinner("Extracting classes...");
+			return spinner("Collecting classes...");
 		},
-		success(time: number, output: string) {
-			return `Done in ${time} ms. (${output})`;
+		success(time: number, collected: number) {
+			return `Collected ${collected.toLocaleString()} classes in ${time}ms`;
 		},
 		fail(error?: unknown) {
-			return `Something went wrong. ${error instanceof Error ? error.message : "Check your files & try again."}`;
+			const msg =
+				error instanceof Error ? error.message : "Check your files & try again.";
+			return `Something went wrong. ${msg}`;
+		},
+		compiling(files: string[]) {
+			print(S.processing, "Compiling CSS...");
+			printTree(files);
+			return {
+				success: (output: string, size: number) => {
+					print(S.done, `Generated ${output} (${(size / 1024).toFixed(1)}KB)`);
+				},
+				fail: (error?: unknown) => {
+					const msg =
+						error instanceof Error
+							? error.message
+							: "Check your files & try again.";
+					return `Compilation failed. ${msg}`;
+				},
+			};
+		},
+		written(time: number) {
+			return `Done in ${time}ms`;
 		},
 	},
+
 	watch: {
 		start() {
-			return spinner("Extracting classes...");
+			return spinner("Collecting classes...");
 		},
-		success(output: string) {
-			return `Watching for changes. (${output})`;
+		success(collected: number) {
+			return `Watching for changes. (${collected.toLocaleString()} classes)`;
 		},
 		fail() {
 			return "Something went wrong. Check your files & try again.";
 		},
+		compiling(files: string[]) {
+			print(S.processing, "Compiling CSS...");
+			printTree(files);
+			return {
+				success: (output: string, size: number) => {
+					print(S.done, `${output} (${(size / 1024).toFixed(1)}KB)`);
+				},
+				fail: () => {
+					print(S.error, "Failed to compile. Check your files.");
+				},
+			};
+		},
 	},
+
 	init: {
 		start() {
 			return spinner("Initializing...");
 		},
 		success(filename: string) {
-			return `Created ${filename}.`;
+			return `Created ${filename}`;
 		},
 		fail() {
 			return "Something went wrong. Check the docs & try again.";

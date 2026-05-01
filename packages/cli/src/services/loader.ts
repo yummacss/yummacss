@@ -18,9 +18,9 @@ export async function loadConfig(): Promise<Config> {
 	} catch (_error) {
 		if (!existsSync(configName)) {
 			logger.fail(logger.init.notFound());
-			process.exit(1);
+			return process.exit(1);
 		}
 		logger.fail(logger.init.invalid());
-		process.exit(1);
+		return process.exit(1);
 	}
 }

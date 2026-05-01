@@ -48,16 +48,28 @@ export async function watch() {
 					dependencies: res.dependencies,
 				});
 			} else {
-				css = cache.css;
+				css = cache.css ?? "";
 			}
+
+			const collected = Array.from(
+				await glob(currentConfig.source ?? []),
+			).length;
+
+			status.succeed(logger.watch.success(collected));
 
 			if (!currentConfig.output)
 				throw new Error("No output path specified in config.");
 
+			const sourceFiles = await glob(currentConfig.source ?? []);
+			const compileResult = logger.watch.compiling(sourceFiles);
+
 			mkdirSync(dirname(currentConfig.output), { recursive: true });
 			writeFileSync(currentConfig.output, css);
 
-			status.succeed(logger.watch.success(currentConfig.output));
+			compileResult.success(
+				currentConfig.output,
+				Buffer.byteLength(css, "utf-8"),
+			);
 		} catch (_err) {
 			status.fail(logger.watch.fail());
 			process.exit(1);
