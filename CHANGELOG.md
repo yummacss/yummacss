@@ -13,7 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - **[cli]** Redesign CLI output with Next.js-inspired design:
   - New tree structure view showing source files.
-- **[cli]** Update `init` command to generate a plain JavaScript object config.=
+- **[cli]** Update `init` command to generate a plain JavaScript object
 - **[cli]** Add source file tree view to `build` and `watch` commands.
 
 ## [3.24.4] - 2026-04-22
