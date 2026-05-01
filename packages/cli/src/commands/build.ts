@@ -50,7 +50,7 @@ export async function build(existingConfig?: Config, forceRebuild = false) {
 		compileResult.success(config.output, Buffer.byteLength(css, "utf-8"));
 
 		process.stdout.write(
-			`\n ${logger.build.written(Date.now() - compileStart)}\n`,
+			`\n\n${logger.build.written(Date.now() - compileStart)}\n\n`,
 		);
 	} catch (error) {
 		collectStatus.fail(logger.build.fail(error));

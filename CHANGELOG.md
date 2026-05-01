@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.24.6] - 2026-05-01
+
+### Changed
+
+- **[cli]** Remove leading space from CLI output.
+- **[cli]** Add visual gap after build completion.
+
 ## [3.24.5] - 2026-05-01
 
 ### Changed
@@ -996,7 +1003,8 @@ No notable changes.
 
 - Initial release.
 
-[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.24.5...HEAD
+[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.24.6...HEAD
+[3.24.6]: https://github.com/yummacss/yummacss/compare/v3.24.5...v3.24.6
 [3.24.5]: https://github.com/yummacss/yummacss/compare/v3.24.4...v3.24.5
 [3.24.4]: https://github.com/yummacss/yummacss/compare/v3.24.3...v3.24.4
 [3.24.3]: https://github.com/yummacss/yummacss/compare/v3.24.2...v3.24.3
