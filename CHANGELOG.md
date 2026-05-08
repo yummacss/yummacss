@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.24.8] - 2026-05-08
+
+### Added
+
+- **[core]** Implement `text-orientation` utilities (`to-`).
+
 ## [3.24.7] - 2026-05-01
 
 ## Changed
@@ -1009,7 +1015,9 @@ No notable changes.
 
 - Initial release.
 
-[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.24.6...HEAD
+[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.24.8...HEAD
+[3.24.8]: https://github.com/yummacss/yummacss/compare/v3.24.7...v3.24.8
+[3.24.7]: https://github.com/yummacss/yummacss/compare/v3.24.6...v3.24.7
 [3.24.6]: https://github.com/yummacss/yummacss/compare/v3.24.5...v3.24.6
 [3.24.5]: https://github.com/yummacss/yummacss/compare/v3.24.4...v3.24.5
 [3.24.4]: https://github.com/yummacss/yummacss/compare/v3.24.3...v3.24.4
