@@ -204,6 +204,19 @@ export const text: Utilities = {
 		variants: base,
 	},
 
+	"text-orientation": {
+		prefix: "to",
+		properties: ["text-orientation"],
+		slug: "text-orientation",
+		values: {
+			m: "mixed",
+			u: "upright",
+			sr: "sideways-right",
+			v: "sideways",
+		},
+		variants: base,
+	},
+
 	"white-space": {
 		prefix: "ws",
 		properties: ["white-space"],
