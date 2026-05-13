@@ -2,6 +2,7 @@ import {
 	borderRadiusValues,
 	borderSpacingValues,
 	borderWidthValues,
+	cornerShapeValues,
 } from "@/defaults/values";
 import { base } from "@/defaults/variants/stacks";
 import type { Utilities } from "@/interfaces";
@@ -259,6 +260,142 @@ export const border: Utilities = {
 		properties: ["border-inline-width"],
 		slug: "border-width#inline-width",
 		values: borderWidthValues,
+		variants: base,
+	},
+
+	"corner-shape": {
+		prefix: "cs",
+		properties: ["corner-shape"],
+		slug: "corner-shape",
+		values: cornerShapeValues,
+		variants: base,
+	},
+
+	"corner-block-end-shape": {
+		prefix: "cbes",
+		properties: ["corner-block-end-shape"],
+		slug: "corner-shape#block-end",
+		values: cornerShapeValues,
+		variants: base,
+	},
+
+	"corner-block-start-shape": {
+		prefix: "cbss",
+		properties: ["corner-block-start-shape"],
+		slug: "corner-shape#block-start",
+		values: cornerShapeValues,
+		variants: base,
+	},
+
+	"corner-bottom-left-shape": {
+		prefix: "cbls",
+		properties: ["corner-bottom-left-shape"],
+		slug: "corner-shape#bottom-left",
+		values: cornerShapeValues,
+		variants: base,
+	},
+
+	"corner-bottom-right-shape": {
+		prefix: "cbrs",
+		properties: ["corner-bottom-right-shape"],
+		slug: "corner-shape#bottom-right",
+		values: cornerShapeValues,
+		variants: base,
+	},
+
+	"corner-bottom-shape": {
+		prefix: "cbs",
+		properties: ["corner-bottom-shape"],
+		slug: "corner-shape#bottom",
+		values: cornerShapeValues,
+		variants: base,
+	},
+
+	"corner-end-end-shape": {
+		prefix: "cees",
+		properties: ["corner-end-end-shape"],
+		slug: "corner-shape#end-end",
+		values: cornerShapeValues,
+		variants: base,
+	},
+
+	"corner-end-start-shape": {
+		prefix: "cests",
+		properties: ["corner-end-start-shape"],
+		slug: "corner-shape#end-start",
+		values: cornerShapeValues,
+		variants: base,
+	},
+
+	"corner-inline-end-shape": {
+		prefix: "cies",
+		properties: ["corner-inline-end-shape"],
+		slug: "corner-shape#inline-end",
+		values: cornerShapeValues,
+		variants: base,
+	},
+
+	"corner-inline-start-shape": {
+		prefix: "ciss",
+		properties: ["corner-inline-start-shape"],
+		slug: "corner-shape#inline-start",
+		values: cornerShapeValues,
+		variants: base,
+	},
+
+	"corner-left-shape": {
+		prefix: "cls",
+		properties: ["corner-left-shape"],
+		slug: "corner-shape#left",
+		values: cornerShapeValues,
+		variants: base,
+	},
+
+	"corner-right-shape": {
+		prefix: "crs",
+		properties: ["corner-right-shape"],
+		slug: "corner-shape#right",
+		values: cornerShapeValues,
+		variants: base,
+	},
+
+	"corner-start-end-shape": {
+		prefix: "cses",
+		properties: ["corner-start-end-shape"],
+		slug: "corner-shape#start-end",
+		values: cornerShapeValues,
+		variants: base,
+	},
+
+	"corner-start-start-shape": {
+		prefix: "csss",
+		properties: ["corner-start-start-shape"],
+		slug: "corner-shape#start-start",
+		values: cornerShapeValues,
+		variants: base,
+	},
+
+	"corner-top-left-shape": {
+		prefix: "ctls",
+		properties: ["corner-top-left-shape"],
+		slug: "corner-shape#top-left",
+		values: cornerShapeValues,
+		variants: base,
+	},
+
+	"corner-top-right-shape": {
+		prefix: "ctrs",
+		properties: ["corner-top-right-shape"],
+		slug: "corner-shape#top-right",
+		values: cornerShapeValues,
+		variants: base,
+	},
+
+	"corner-top-shape": {
+		prefix: "cts",
+		properties: ["corner-top-shape"],
+		slug: "corner-shape#top",
+		values: cornerShapeValues,
 		variants: base,
 	},
 };

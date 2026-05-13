@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.24.10] - 2026-05-13
+
+### Added
+
+- **[core]** Implement `corner-shape` utilities (`cs-`).
+
 ## [3.24.9] - 2026-05-13
 
 ### Added
@@ -1028,7 +1034,8 @@ No notable changes.
 
 - Initial release.
 
-[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.24.9...HEAD
+[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.24.10...HEAD
+[3.24.10]: https://github.com/yummacss/yummacss/compare/v3.24.9...v3.24.10
 [3.24.9]: https://github.com/yummacss/yummacss/compare/v3.24.8...v3.24.9
 [3.24.8]: https://github.com/yummacss/yummacss/compare/v3.24.7...v3.24.8
 [3.24.7]: https://github.com/yummacss/yummacss/compare/v3.24.6...v3.24.7
