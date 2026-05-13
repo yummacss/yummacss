@@ -273,12 +273,13 @@ function tryGenerateRule(
 	};
 }
 
-// escape colons, slashes and @ symbols
+// escape colons, slashes, @ symbols and percentage
 function escapeCn(className: string): string {
 	return className
 		.replace(/:/g, "\\:")
 		.replace(/\//g, "\\/")
-		.replace(/@/g, "\\@");
+		.replace(/@/g, "\\@")
+		.replace(/%/g, "\\%");
 }
 
 function generateCSSRule(
