@@ -11,6 +11,13 @@ import {
 	borderWidth,
 } from "../variables";
 
+export const cornerShapeValues: Record<string, string> = {
+	b: "bevel",
+	n: "notch",
+	r: "round",
+	s: "squircle",
+};
+
 export const borderRadiusValues: Record<string, string> = {
 	0: "0",
 	xs: `${borderRadiusXs}rem`,
