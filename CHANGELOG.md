@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.24.11] - 2026-05-13
+
+### Fixed
+
+- **[nitro]** Escape percentage symbol (`%`) in generated CSS class names.
+
 ## [3.24.10] - 2026-05-13
 
 ### Added
@@ -1034,7 +1040,8 @@ No notable changes.
 
 - Initial release.
 
-[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.24.10...HEAD
+[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.24.11...HEAD
+[3.24.11]: https://github.com/yummacss/yummacss/compare/v3.24.10...v3.24.11
 [3.24.10]: https://github.com/yummacss/yummacss/compare/v3.24.9...v3.24.10
 [3.24.9]: https://github.com/yummacss/yummacss/compare/v3.24.8...v3.24.9
 [3.24.8]: https://github.com/yummacss/yummacss/compare/v3.24.7...v3.24.8

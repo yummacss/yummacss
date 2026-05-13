@@ -25,7 +25,9 @@ describe("Utility Generation", () => {
 				expect(
 					css,
 					`Utility ${utilityName} for class ${className} failed to generate`,
-				).toContain(`.${className.replace(/:/g, "\\:").replace(/\//g, "\\/")}`);
+				).toContain(
+					`.${className.replace(/:/g, "\\:").replace(/\//g, "\\/").replace(/%/g, "\\%")}`,
+				);
 			}
 
 			// 2. Test variants (pick one of each type if they exist)
@@ -48,7 +50,7 @@ describe("Utility Generation", () => {
 							`Media query variant ${mq.prefix} for ${baseClass} failed`,
 						).toContain(mq.value);
 						expect(css).toContain(
-							`.${className.replace(/:/g, "\\:").replace(/\//g, "\\/")}`,
+							`.${className.replace(/:/g, "\\:").replace(/\//g, "\\/").replace(/%/g, "\\%")}`,
 						);
 					}
 				}
@@ -65,7 +67,7 @@ describe("Utility Generation", () => {
 							`Pseudo class variant ${pc.prefix} for ${baseClass} failed`,
 						).toContain(`${pc.value}`);
 						expect(css).toContain(
-							`.${className.replace(/:/g, "\\:").replace(/\//g, "\\/")}`,
+							`.${className.replace(/:/g, "\\:").replace(/\//g, "\\/").replace(/%/g, "\\%")}`,
 						);
 					}
 				}
@@ -82,7 +84,7 @@ describe("Utility Generation", () => {
 							`Pseudo element variant ${pe.prefix} for ${baseClass} failed`,
 						).toContain(`${pe.value}`);
 						expect(css).toContain(
-							`.${className.replace(/:/g, "\\:").replace(/\//g, "\\/")}`,
+							`.${className.replace(/:/g, "\\:").replace(/\//g, "\\/").replace(/%/g, "\\%")}`,
 						);
 					}
 				}
@@ -98,7 +100,7 @@ describe("Utility Generation", () => {
 							css,
 							`Opacity variant ${op.prefix} for ${baseClass} failed`,
 						).toContain(
-							`.${className.replace(/:/g, "\\:").replace(/\//g, "\\/")}`,
+							`.${className.replace(/:/g, "\\:").replace(/\//g, "\\/").replace(/%/g, "\\%")}`,
 						);
 					}
 				}
