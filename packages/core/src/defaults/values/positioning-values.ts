@@ -9,6 +9,6 @@ export const topRightBottomLeftValues: Record<string, string> = {
 		max: 100,
 	}),
 	auto: "auto",
-	full: "100%",
-	half: "50%",
+	"100%": "100%",
+	"50%": "50%",
 };

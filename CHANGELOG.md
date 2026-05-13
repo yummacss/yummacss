@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.24.9] - 2026-05-13
+
+### Added
+
+- **[core]** Implement percentage values (`10%`-`100%`) for height and width utilities.
+
+### Changed
+
+- **[core]** Update utility suffixes for better consistency:
+  - `*-full` -> `*-100%`
+  - `*-half` -> `*-50%`
+  - `*-pill` -> `*-9999`
+
 ## [3.24.8] - 2026-05-08
 
 ### Added
@@ -1015,7 +1028,8 @@ No notable changes.
 
 - Initial release.
 
-[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.24.8...HEAD
+[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.24.9...HEAD
+[3.24.9]: https://github.com/yummacss/yummacss/compare/v3.24.8...v3.24.9
 [3.24.8]: https://github.com/yummacss/yummacss/compare/v3.24.7...v3.24.8
 [3.24.7]: https://github.com/yummacss/yummacss/compare/v3.24.6...v3.24.7
 [3.24.6]: https://github.com/yummacss/yummacss/compare/v3.24.5...v3.24.6

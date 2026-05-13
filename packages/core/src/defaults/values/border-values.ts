@@ -20,9 +20,9 @@ export const borderRadiusValues: Record<string, string> = {
 	xl: `${borderRadiusXl}rem`,
 	xxl: `${borderRadiusXxl}rem`,
 	"3xl": `${borderRadius3xl}rem`,
-	full: "100%",
-	half: "50%",
-	pill: "9999px",
+	"100%": "100%",
+	"50%": "50%",
+	9999: "9999px",
 	px: "1px",
 };
 
