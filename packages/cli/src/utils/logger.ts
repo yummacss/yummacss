@@ -1,9 +1,9 @@
 const S = {
-	waiting: "○",
-	active: "●",
+ active: "●",
+ done: "✓",
+ error: "✗",
 	processing: "◉",
-	done: "✓",
-	error: "✗",
+	waiting: "○",
 } as const;
 
 function clearLine() {
