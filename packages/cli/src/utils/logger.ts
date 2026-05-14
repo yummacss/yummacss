@@ -1,5 +1,4 @@
 const S = {
-	brand: "●",
 	waiting: "○",
 	active: "●",
 	processing: "◉",
@@ -68,7 +67,7 @@ function printTree(files: string[], basePath: string = "") {
 
 export const logger = {
 	header(version: string) {
-		process.stdout.write(`${S.brand} Yumma CSS ${version}\n`);
+		process.stdout.write(`${S.active} Yumma CSS ${version}\n`);
 	},
 	fail(msg: string) {
 		print(S.error, msg, "stderr");
