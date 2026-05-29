@@ -1,5 +1,4 @@
 import {
-	containerQueries,
 	mediaQueries,
 	opacity,
 	pseudoClasses,
@@ -10,12 +9,10 @@ export const base = {
 	pseudoClasses,
 	pseudoElements,
 	mediaQueries,
-	containerQueries,
 };
 
 export const all = {
 	mediaQueries,
-	containerQueries,
 	opacity,
 	pseudoClasses,
 	pseudoElements,
