@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.24.15] - 2026-05-29
+
+### Changed
+
+- **[nitro]** The `@` symbol is now **mandatory** for media query variants (e.g. `@sm:d-f`). The bare prefix syntax (`sm:d-f`) no longer generates CSS.
+- **[intellisense]** Hover and target-finding now reject unknown variants — hovering over `@foobar:d-f` will no longer show fake hover info.
+
 ## [3.24.14] - 2026-05-29
 
 ### Added
@@ -1068,7 +1075,8 @@ No notable changes.
 
 - Initial release.
 
-[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.24.14...HEAD
+[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.24.15...HEAD
+[3.24.15]: https://github.com/yummacss/yummacss/compare/v3.24.14...v3.24.15
 [3.24.14]: https://github.com/yummacss/yummacss/compare/v3.24.13...v3.24.14
 [3.24.13]: https://github.com/yummacss/yummacss/compare/v3.24.12...v3.24.13
 [3.24.12]: https://github.com/yummacss/yummacss/compare/v3.24.11...v3.24.12

@@ -115,6 +115,19 @@ export function getHoverMarkdown(
 
 	const mediaVariants = buildMediaVariants(config);
 	const colorMap = buildColorMap(config);
+
+	// Reject unknown variants (e.g. @foobar:d-f where foobar is not a known screen)
+	for (const v of variants) {
+		if (
+			!mediaVariants[v] &&
+			!pseudoClassVariants[v] &&
+			!pseudoElementVariants[v] &&
+			!opacityVariants[v]
+		) {
+			return null;
+		}
+	}
+
 	let content = "";
 
 	if (variants.length > 0) {
@@ -131,8 +144,6 @@ export function getHoverMarkdown(
 				);
 			} else if (opacityVariants[v]) {
 				descriptions.push(`**Opacity:** \`${opacityVariants[v]}\``);
-			} else {
-				descriptions.push(`**Variant:** \`${v}\``);
 			}
 		}
 
@@ -184,10 +195,18 @@ export function findHoverTarget(
 			const end = start + cls.length;
 
 			if (cursorIndex >= start && cursorIndex <= end) {
-				const { baseUtility } = parseUtility(cls);
-				if (utilityMap.has(baseUtility)) {
-					return { className: cls, startIndex: start, endIndex: end };
-				}
+				const { variants, baseUtility } = parseUtility(cls);
+				if (!utilityMap.has(baseUtility)) continue;
+				const mediaVariants = buildMediaVariants(config);
+				const allValid = variants.every(
+					(v) =>
+						mediaVariants[v] ||
+						pseudoClassVariants[v] ||
+						pseudoElementVariants[v] ||
+						opacityVariants[v],
+				);
+				if (!allValid) continue;
+				return { className: cls, startIndex: start, endIndex: end };
 			}
 
 			searchFrom = idx + cls.length;

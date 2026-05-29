@@ -42,7 +42,7 @@ describe("Utility Generation", () => {
 				if (variants.mediaQueries && variants.mediaQueries.length > 0) {
 					const mq = variants.mediaQueries[0];
 					if (mq) {
-						const className = `${mq.prefix}:${baseClass}`;
+						const className = `@${mq.prefix}:${baseClass}`;
 						const usedClasses = new Set([className]);
 						const css = generator(usedClasses, config as any);
 						expect(
@@ -50,7 +50,7 @@ describe("Utility Generation", () => {
 							`Media query variant ${mq.prefix} for ${baseClass} failed`,
 						).toContain(mq.value);
 						expect(css).toContain(
-							`.${className.replace(/:/g, "\\:").replace(/\//g, "\\/").replace(/%/g, "\\%")}`,
+							`.${className.replace(/@/g, "\\@").replace(/:/g, "\\:").replace(/\//g, "\\/").replace(/%/g, "\\%")}`,
 						);
 					}
 				}
