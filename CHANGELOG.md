@@ -12,6 +12,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - **[core]** Fix `cursor: row-resize` utility suffix (`rs` → `rr`).
+- **[play]** Preview iframe now loads the local runtime bundle (`/runtime.js`) instead of the old published version from unpkg, so `@` media query syntax works in the generated CSS panel.
+
+### Removed
+
+- **[core]** Remove `container-type` utilities (`ct-*`) — leftover from the container query variant removal in 3.24.12.
 
 ## [3.24.15] - 2026-05-29
 

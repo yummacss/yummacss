@@ -17,18 +17,6 @@ export const layout: Utilities = {
 		variants: base,
 	},
 
-	"container-type": {
-		prefix: "ct",
-		properties: ["container-type"],
-		slug: "container-type",
-		values: {
-			is: "inline-size",
-			none: "none",
-			s: "size",
-		},
-		variants: base,
-	},
-
 	"table-layout": {
 		prefix: "tl",
 		properties: ["table-layout"],
