@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.24.12] - 2026-05-29
+
+### Changed
+
+- **[core]** Media Query utility variants now use an `@` prefix (e.g. `@sm:d-f` instead of `sm:d-f`).
+
+### Removed
+
+- **[core]** Remove Container Query utility variants support.
+
 ## [3.24.11] - 2026-05-13
 
 ### Fixed
@@ -1040,7 +1050,8 @@ No notable changes.
 
 - Initial release.
 
-[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.24.11...HEAD
+[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.24.12...HEAD
+[3.24.12]: https://github.com/yummacss/yummacss/compare/v3.24.11...v3.24.12
 [3.24.11]: https://github.com/yummacss/yummacss/compare/v3.24.10...v3.24.11
 [3.24.10]: https://github.com/yummacss/yummacss/compare/v3.24.9...v3.24.10
 [3.24.9]: https://github.com/yummacss/yummacss/compare/v3.24.8...v3.24.9

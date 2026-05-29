@@ -1,7 +1,7 @@
 const S = {
- active: "●",
- done: "✓",
- error: "✗",
+	active: "●",
+	done: "✓",
+	error: "✗",
 	processing: "◉",
 	waiting: "○",
 } as const;

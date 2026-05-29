@@ -1,4 +1,3 @@
-export * from "./container-queries";
 export * from "./media-queries";
 export * from "./opacity";
 export * from "./pseudo-classes";
