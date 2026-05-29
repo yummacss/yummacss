@@ -34,3 +34,6 @@ pnpm-debug.log*
 
 # OS
 Thumbs.db
+
+# playground
+playground/

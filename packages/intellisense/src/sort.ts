@@ -3,6 +3,7 @@ import {
 	borderUtils,
 	boxModelUtils,
 	colorUtils,
+	createColors,
 	effectUtils,
 	flexboxUtils,
 	fontUtils,
@@ -16,6 +17,7 @@ import {
 	transitionUtils,
 } from "@yummacss/core";
 import { CLASS_ATTR_REGEX, extractClassContent } from "./constants";
+import type { IntellisenseConfig } from "./core";
 
 enum Category {
 	Layout = 0,
@@ -33,23 +35,68 @@ enum Category {
 	OrphanVariant = 12,
 }
 
-function buildMaps(): {
+function mergeColorsIntoUtils(
+	utils: Record<string, any>,
+	colors: Record<string, string>,
+): Record<string, any> {
+	const { percentage, ...userColors } = colors as any;
+	if (Object.keys(userColors).length === 0) return utils;
+
+	const customColors = createColors(
+		userColors,
+		percentage?.light,
+		percentage?.dark,
+	);
+
+	const merged: Record<string, any> = {};
+	for (const [key, util] of Object.entries(utils)) {
+		if ("black" in util.values && "white" in util.values) {
+			merged[key] = { ...util, values: { ...util.values, ...customColors } };
+		} else {
+			merged[key] = util;
+		}
+	}
+	return merged;
+}
+
+function buildMaps(config?: IntellisenseConfig): {
 	prefixCategoryMap: Map<string, Category>;
 	colorIndexMap: Map<string, number>;
 } {
 	const prefixCategoryMap = new Map<string, Category>();
 	const colorIndexMap = new Map<string, number>();
 
-	const groups: [ReturnType<typeof layoutUtils>, Category][] = [
+	let colorUtilsMerged = colorUtils();
+	let bgUtilsMerged = backgroundUtils();
+	let borderUtilsMerged = borderUtils();
+	let outlineUtilsMerged = outlineUtils();
+
+	if (config?.theme?.colors) {
+		colorUtilsMerged = mergeColorsIntoUtils(
+			colorUtilsMerged,
+			config.theme.colors,
+		);
+		bgUtilsMerged = mergeColorsIntoUtils(bgUtilsMerged, config.theme.colors);
+		borderUtilsMerged = mergeColorsIntoUtils(
+			borderUtilsMerged,
+			config.theme.colors,
+		);
+		outlineUtilsMerged = mergeColorsIntoUtils(
+			outlineUtilsMerged,
+			config.theme.colors,
+		);
+	}
+
+	const groups: [Record<string, any>, Category][] = [
 		[layoutUtils(), Category.Layout],
 		[positioningUtils(), Category.Positioning],
 		[flexboxUtils(), Category.FlexboxGrid],
 		[gridUtils(), Category.FlexboxGrid],
 		[boxModelUtils(), Category.BoxModel],
-		[backgroundUtils(), Category.Background],
-		[colorUtils(), Category.Colors],
-		[borderUtils(), Category.BorderOutline],
-		[outlineUtils(), Category.BorderOutline],
+		[bgUtilsMerged, Category.Background],
+		[colorUtilsMerged, Category.Colors],
+		[borderUtilsMerged, Category.BorderOutline],
+		[outlineUtilsMerged, Category.BorderOutline],
 		[fontUtils(), Category.Typography],
 		[textUtils(), Category.Typography],
 		[transformUtils(), Category.Typography],
@@ -58,12 +105,12 @@ function buildMaps(): {
 		[interactivityUtils(), Category.Interactivity],
 	];
 
-	Object.values(colorUtils()).forEach((util, index) => {
+	Object.values(colorUtilsMerged).forEach((util: any, index: number) => {
 		colorIndexMap.set(util.prefix, index);
 	});
 
 	for (const [utils, category] of groups) {
-		Object.values(utils).forEach((util) => {
+		Object.values(utils).forEach((util: any) => {
 			for (const suffix of Object.keys(util.values)) {
 				const fullClass =
 					suffix === "" ? util.prefix : `${util.prefix}-${suffix}`;
@@ -80,7 +127,13 @@ function buildMaps(): {
 	return { prefixCategoryMap, colorIndexMap };
 }
 
-const { prefixCategoryMap, colorIndexMap } = buildMaps();
+let { prefixCategoryMap, colorIndexMap } = buildMaps();
+
+export function updateSortConfig(config?: IntellisenseConfig): void {
+	const maps = buildMaps(config);
+	prefixCategoryMap = maps.prefixCategoryMap;
+	colorIndexMap = maps.colorIndexMap;
+}
 
 function getCategoryOrder(cls: string): Category {
 	if (prefixCategoryMap.has(cls)) return prefixCategoryMap.get(cls)!;

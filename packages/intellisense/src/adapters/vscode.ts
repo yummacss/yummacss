@@ -1,13 +1,21 @@
 import * as vscode from "vscode";
-import { findConflicts } from "@/conflicts";
+import { buildPropertyMap, findConflicts } from "@/conflicts";
 import { CLASS_ATTR_REGEX, extractClassContent } from "@/constants";
+import type { IntellisenseConfig } from "@/core";
 import { buildUtilityMap, getSuggestions, hexToRgba } from "@/core";
 import { findHoverTarget, getHoverMarkdown } from "@/hover";
-import { sortUtilityClasses } from "@/sort";
+import { sortUtilityClasses, updateSortConfig } from "@/sort";
 
-const utilityMap = buildUtilityMap();
+let propertyMap = buildPropertyMap();
+
+export function updateIntellisenseConfig(config?: IntellisenseConfig): void {
+	propertyMap = buildPropertyMap(config);
+	updateSortConfig(config);
+}
 
 export class CompletionProvider implements vscode.CompletionItemProvider {
+	constructor(private config?: IntellisenseConfig) {}
+
 	provideCompletionItems(
 		document: vscode.TextDocument,
 		position: vscode.Position,
@@ -20,7 +28,7 @@ export class CompletionProvider implements vscode.CompletionItemProvider {
 			return undefined;
 		}
 
-		return getSuggestions().map((s) => {
+		return getSuggestions(this.config).map((s) => {
 			const item = new vscode.CompletionItem(
 				{ label: s.label, description: s.detail } as vscode.CompletionItemLabel,
 				s.isColor
@@ -36,15 +44,17 @@ export class CompletionProvider implements vscode.CompletionItemProvider {
 }
 
 export class HoverProvider implements vscode.HoverProvider {
+	constructor(private config?: IntellisenseConfig) {}
+
 	provideHover(
 		document: vscode.TextDocument,
 		position: vscode.Position,
 	): vscode.Hover | undefined {
 		const line = document.lineAt(position).text;
-		const target = findHoverTarget(line, position.character);
+		const target = findHoverTarget(line, position.character, this.config);
 		if (!target) return undefined;
 
-		const markdown = getHoverMarkdown(target.className);
+		const markdown = getHoverMarkdown(target.className, this.config);
 		if (!markdown) return undefined;
 
 		const range = new vscode.Range(
@@ -61,10 +71,13 @@ export class HoverProvider implements vscode.HoverProvider {
 }
 
 export class ColorProvider implements vscode.DocumentColorProvider {
+	constructor(private config?: IntellisenseConfig) {}
+
 	provideDocumentColors(
 		document: vscode.TextDocument,
 	): vscode.ColorInformation[] {
 		const result: vscode.ColorInformation[] = [];
+		const colorUtilityMap = buildUtilityMap(this.config);
 
 		for (let i = 0; i < document.lineCount; i++) {
 			const line = document.lineAt(i).text;
@@ -87,7 +100,7 @@ export class ColorProvider implements vscode.DocumentColorProvider {
 					const base = cls.includes(":")
 						? cls.slice(cls.lastIndexOf(":") + 1)
 						: cls;
-					const info = utilityMap.get(base);
+					const info = colorUtilityMap.get(base);
 
 					if (info) {
 						const rgba = hexToRgba(info.cssValue);
@@ -203,12 +216,14 @@ export class ActionProvider implements vscode.CodeActionProvider {
 export function refreshDiagnostics(
 	document: vscode.TextDocument,
 	collection: vscode.DiagnosticCollection,
+	config?: IntellisenseConfig,
 ): void {
 	const diagnostics: vscode.Diagnostic[] = [];
+	const pm = config ? buildPropertyMap(config) : propertyMap;
 
 	for (let i = 0; i < document.lineCount; i++) {
 		const line = document.lineAt(i).text;
-		const conflicts = findConflicts(line);
+		const conflicts = findConflicts(line, pm);
 
 		for (const conflict of conflicts) {
 			const range = new vscode.Range(
@@ -221,7 +236,7 @@ export function refreshDiagnostics(
 
 			const diagnostic = new vscode.Diagnostic(
 				range,
-				`${uniqueUtils.map((u) => `"${u}"`).join(", ")} conflict — both set \`${conflict.property}\``,
+				`${uniqueUtils.map((u) => `"${u}"`).join(", ")} conflict - both set \`${conflict.property}\``,
 				vscode.DiagnosticSeverity.Warning,
 			);
 			diagnostic.source = "yummacss";
@@ -242,17 +257,22 @@ export function subscribeToDocChanges(
 	context: vscode.ExtensionContext,
 	collection: vscode.DiagnosticCollection,
 	languages: string[],
+	config?: IntellisenseConfig,
 ): void {
 	if (vscode.window.activeTextEditor) {
-		refreshDiagnostics(vscode.window.activeTextEditor.document, collection);
+		refreshDiagnostics(
+			vscode.window.activeTextEditor.document,
+			collection,
+			config,
+		);
 	}
 
 	context.subscriptions.push(
 		vscode.window.onDidChangeActiveTextEditor((editor) => {
-			if (editor) refreshDiagnostics(editor.document, collection);
+			if (editor) refreshDiagnostics(editor.document, collection, config);
 		}),
 		vscode.workspace.onDidChangeTextDocument((e) =>
-			refreshDiagnostics(e.document, collection),
+			refreshDiagnostics(e.document, collection, config),
 		),
 		vscode.workspace.onDidCloseTextDocument((doc) =>
 			collection.delete(doc.uri),
@@ -263,7 +283,9 @@ export function subscribeToDocChanges(
 export function registerSortCommand(
 	context: vscode.ExtensionContext,
 	languages: string[],
+	config?: IntellisenseConfig,
 ): void {
+	if (config) updateSortConfig(config);
 	const sortCommand = vscode.commands.registerCommand(
 		"yummacss.sortClasses",
 		async () => {
