@@ -47,7 +47,7 @@ export const interactivity: Utilities = {
 			nwser: "nwse-resize",
 			p: "pointer",
 			pr: "progress",
-			rs: "row-resize",
+			rr: "row-resize",
 			ser: "se-resize",
 			sr: "s-resize",
 			swr: "sw-resize",

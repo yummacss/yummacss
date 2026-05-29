@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.24.16] - 2026-05-29
+
+### Fixed
+
+- **[core]** Fix `cursor: row-resize` utility suffix (`rs` → `rr`).
+
 ## [3.24.15] - 2026-05-29
 
 ### Changed
@@ -1075,7 +1081,8 @@ No notable changes.
 
 - Initial release.
 
-[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.24.15...HEAD
+[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.24.16...HEAD
+[3.24.16]: https://github.com/yummacss/yummacss/compare/v3.24.15...v3.24.16
 [3.24.15]: https://github.com/yummacss/yummacss/compare/v3.24.14...v3.24.15
 [3.24.14]: https://github.com/yummacss/yummacss/compare/v3.24.13...v3.24.14
 [3.24.13]: https://github.com/yummacss/yummacss/compare/v3.24.12...v3.24.13
