@@ -145,22 +145,17 @@ function tryGenerateRule(
 	let pseudoElements = "";
 	let opacityValue = "";
 
-	// Strip @ prefix (media query syntactic marker)
-	if (currentClassName.startsWith("@")) {
-		currentClassName = currentClassName.slice(1);
-	}
-
 	// 1. Extract variants (prefixes)
 	let foundPrefix = true;
 	while (foundPrefix) {
 		foundPrefix = false;
 
-		// Handle media queries
+		// Handle media queries - require @ prefix (e.g. @sm:d-f)
 		if (variants?.mediaQueries) {
 			for (const mq of variants.mediaQueries) {
-				if (currentClassName.startsWith(`${mq.prefix}:`)) {
+				if (currentClassName.startsWith(`@${mq.prefix}:`)) {
 					mediaQuery = mq.value;
-					currentClassName = currentClassName.slice(mq.prefix.length + 1);
+					currentClassName = currentClassName.slice(mq.prefix.length + 2);
 					foundPrefix = true;
 					break;
 				}
