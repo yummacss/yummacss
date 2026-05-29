@@ -1,6 +1,6 @@
 {
 	"name": "@yummacss/nitro",
-	"version": "3.24.13",
+	"version": "3.24.14",
 	"description": "Fast CSS generation for Yumma CSS",
 	"keywords": [
 		"css-framework",

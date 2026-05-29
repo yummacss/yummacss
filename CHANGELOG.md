@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [3.24.13] - 2026-05-29
+## [3.24.14] - 2026-05-29
 
 ### Added
 
@@ -18,6 +18,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - **[intellisense]** Hover provider now correctly recognizes `@sm`, `@md`, etc. media query variant prefixes in the new `@` syntax.
 - **[intellisense]** Hover target finder now matches classes in all `className` syntax forms (`"..."`, `'...'`, `{'...'}`, `{"..."}`, ``{`...`}``) instead of only straight quotes.
+- **[nitro]** CSS class selectors with `@` prefix (e.g. `@sm:p-4`) are now properly escaped as `.\@sm\:p-4` in the generated output.
+- **[nitro]** Tokenizer now correctly extracts classes with `@` prefix from template literals and JSX expressions.
+
+## [3.24.13] - 2026-05-29
+
+No notable changes.
 
 ## [3.24.12] - 2026-05-29
 
@@ -1062,7 +1068,8 @@ No notable changes.
 
 - Initial release.
 
-[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.24.13...HEAD
+[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.24.14...HEAD
+[3.24.14]: https://github.com/yummacss/yummacss/compare/v3.24.13...v3.24.14
 [3.24.13]: https://github.com/yummacss/yummacss/compare/v3.24.12...v3.24.13
 [3.24.12]: https://github.com/yummacss/yummacss/compare/v3.24.11...v3.24.12
 [3.24.11]: https://github.com/yummacss/yummacss/compare/v3.24.10...v3.24.11
