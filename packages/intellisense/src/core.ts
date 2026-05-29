@@ -1,5 +1,12 @@
-import { coreUtils } from "@yummacss/core";
+import { coreUtils, createColors } from "@yummacss/core";
 import tinycolor from "tinycolor2";
+
+export interface IntellisenseConfig {
+	theme?: {
+		colors?: Record<string, string>;
+		screens?: Record<string, string>;
+	};
+}
 
 export interface UtilityInfo {
 	cssValue: string;
@@ -21,9 +28,39 @@ export interface Suggestion {
 	isColor: boolean;
 }
 
-export function buildUtilityMap(): Map<string, UtilityInfo> {
+function mergeCustomColors(
+	utils: Record<string, any>,
+	colors: Record<string, string>,
+): Record<string, any> {
+	const { percentage, ...userColors } = colors as any;
+	if (Object.keys(userColors).length === 0) return utils;
+
+	const customColors = createColors(
+		userColors,
+		percentage?.light,
+		percentage?.dark,
+	);
+
+	const merged: Record<string, any> = {};
+	for (const [key, util] of Object.entries(utils)) {
+		if ("black" in util.values && "white" in util.values) {
+			merged[key] = { ...util, values: { ...util.values, ...customColors } };
+		} else {
+			merged[key] = util;
+		}
+	}
+	return merged;
+}
+
+export function buildUtilityMap(
+	config?: IntellisenseConfig,
+): Map<string, UtilityInfo> {
 	const map = new Map<string, UtilityInfo>();
-	const allUtils = coreUtils();
+	let allUtils = coreUtils();
+
+	if (config?.theme?.colors) {
+		allUtils = mergeCustomColors(allUtils, config.theme.colors);
+	}
 
 	Object.values(allUtils).forEach((util: any) => {
 		const slug = util.slug || "";
@@ -58,9 +95,13 @@ export function hexToRgba(cssValue: string): RgbaColor | null {
 	return { r: r / 255, g: g / 255, b: b / 255, a };
 }
 
-export function getSuggestions(): Suggestion[] {
-	const allUtils = coreUtils();
+export function getSuggestions(config?: IntellisenseConfig): Suggestion[] {
+	let allUtils = coreUtils();
 	const suggestions: Suggestion[] = [];
+
+	if (config?.theme?.colors) {
+		allUtils = mergeCustomColors(allUtils, config.theme.colors);
+	}
 
 	Object.values(allUtils).forEach((util: any) => {
 		Object.entries(util.values as Record<string, string>).forEach(

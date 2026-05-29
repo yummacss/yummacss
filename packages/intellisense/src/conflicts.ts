@@ -1,5 +1,6 @@
-import { coreUtils } from "@yummacss/core";
+import { coreUtils, createColors } from "@yummacss/core";
 import { CLASS_ATTR_REGEX, extractClassContent } from "./constants";
+import type { IntellisenseConfig } from "./core";
 
 export interface Conflict {
 	utilities: string[];
@@ -13,9 +14,34 @@ export interface ConflictGroup {
 	property: string;
 }
 
-function buildPropertyMap(): Map<string, string[]> {
+export function buildPropertyMap(
+	config?: IntellisenseConfig,
+): Map<string, string[]> {
 	const map = new Map<string, string[]>();
-	const allUtils = coreUtils();
+	let allUtils = coreUtils();
+
+	if (config?.theme?.colors) {
+		const { percentage, ...userColors } = config.theme.colors as any;
+		if (Object.keys(userColors).length > 0) {
+			const customColors = createColors(
+				userColors,
+				percentage?.light,
+				percentage?.dark,
+			);
+			const merged: Record<string, any> = {};
+			for (const [key, util] of Object.entries(allUtils)) {
+				if ("black" in util.values && "white" in util.values) {
+					merged[key] = {
+						...util,
+						values: { ...util.values, ...customColors },
+					};
+				} else {
+					merged[key] = util;
+				}
+			}
+			allUtils = merged as any;
+		}
+	}
 
 	Object.values(allUtils).forEach((util: any) => {
 		Object.entries(util.values as Record<string, string>).forEach(
@@ -32,7 +58,11 @@ function buildPropertyMap(): Map<string, string[]> {
 
 export const propertyMap = buildPropertyMap();
 
-export function findConflicts(line: string): Conflict[] {
+export function findConflicts(
+	line: string,
+	propMap?: Map<string, string[]>,
+): Conflict[] {
+	const pm = propMap ?? propertyMap;
 	const results: Conflict[] = [];
 	const regex = new RegExp(CLASS_ATTR_REGEX.source, "g");
 	let match: RegExpExecArray | null;
@@ -53,7 +83,7 @@ export function findConflicts(line: string): Conflict[] {
 			const baseUtility = parts.pop() || utility;
 			const variant = parts.join(":");
 
-			const properties = propertyMap.get(baseUtility);
+			const properties = pm.get(baseUtility);
 			if (!properties) continue;
 
 			for (const prop of properties) {

@@ -45,9 +45,10 @@ export function tokenizer(content: string): string[] {
 		while (match !== null) {
 			const classString = match[1];
 			if (classString) {
-				const individualClasses = classString
-					.split(/\s+/)
-					.filter((cls) => cls && /^[a-z]/.test(cls) && cls.includes("-"));
+				const individualClasses = classString.split(/\s+/).filter((cls) => {
+					const clean = cls.replace(/^@+/, "");
+					return clean && /^[a-z]/.test(clean) && clean.includes("-");
+				});
 
 				individualClasses.forEach((cls) => {
 					tokens.add(cls);

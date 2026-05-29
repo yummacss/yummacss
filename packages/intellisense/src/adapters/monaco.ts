@@ -1,10 +1,14 @@
-import { findConflicts } from "@/conflicts";
+import { buildPropertyMap, findConflicts } from "@/conflicts";
 import { CLASS_ATTR_REGEX } from "@/constants";
+import type { IntellisenseConfig } from "@/core";
 import { buildUtilityMap, getSuggestions, hexToRgba } from "@/core";
 import { findHoverTarget, getHoverMarkdown } from "@/hover";
-import { sortUtilityClasses } from "@/sort";
+import { sortUtilityClasses, updateSortConfig } from "@/sort";
 
-export function registerCompletionProvider(monaco: any): any {
+export function registerCompletionProvider(
+	monaco: any,
+	config?: IntellisenseConfig,
+): any {
 	return monaco.languages.registerCompletionItemProvider("html", {
 		provideCompletionItems: (model: any, position: any) => {
 			const textUntilPosition = model.getValueInRange({
@@ -27,7 +31,7 @@ export function registerCompletionProvider(monaco: any): any {
 			};
 
 			return {
-				suggestions: getSuggestions().map((s) => ({
+				suggestions: getSuggestions(config).map((s) => ({
 					label: s.label,
 					insertText: s.insertText,
 					detail: s.detail,
@@ -41,15 +45,18 @@ export function registerCompletionProvider(monaco: any): any {
 	});
 }
 
-export function registerHoverProvider(monaco: any): any {
+export function registerHoverProvider(
+	monaco: any,
+	config?: IntellisenseConfig,
+): any {
 	return monaco.languages.registerHoverProvider("html", {
 		provideHover: (model: any, position: any) => {
 			const line = model.getLineContent(position.lineNumber);
 			// Monaco columns are 1-indexed
-			const target = findHoverTarget(line, position.column - 1);
+			const target = findHoverTarget(line, position.column - 1, config);
 			if (!target) return null;
 
-			const markdown = getHoverMarkdown(target.className);
+			const markdown = getHoverMarkdown(target.className, config);
 			if (!markdown) return null;
 
 			return {
@@ -65,8 +72,11 @@ export function registerHoverProvider(monaco: any): any {
 	});
 }
 
-export function registerColorProvider(monaco: any): any {
-	const utilityMap = buildUtilityMap();
+export function registerColorProvider(
+	monaco: any,
+	config?: IntellisenseConfig,
+): any {
+	const utilityMap = buildUtilityMap(config);
 
 	return monaco.languages.registerColorProvider("html", {
 		provideColorPresentations: () => [],
@@ -80,7 +90,7 @@ export function registerColorProvider(monaco: any): any {
 
 				match = regex.exec(line);
 				while (match !== null) {
-					const classContent = match[2] ?? match[4] ?? match[5];
+					const classContent = extractContent(match);
 					if (!classContent) {
 						match = regex.exec(line);
 						continue;
@@ -131,7 +141,25 @@ export function registerColorProvider(monaco: any): any {
 	});
 }
 
-export function registerConflictMarkers(monaco: any, editor: any): void {
+function extractContent(match: RegExpExecArray): string | null {
+	const content = match[2] ?? match[4] ?? match[5] ?? null;
+	if (!content) return null;
+	if (match[5] !== undefined) {
+		return content
+			.replace(/\$\{[^}]*\}/g, "")
+			.replace(/\s+/g, " ")
+			.trim();
+	}
+	return content;
+}
+
+export function registerConflictMarkers(
+	monaco: any,
+	editor: any,
+	config?: IntellisenseConfig,
+): void {
+	const pm = config ? buildPropertyMap(config) : buildPropertyMap();
+
 	function update() {
 		const model = editor.getModel();
 		if (!model) return;
@@ -140,12 +168,12 @@ export function registerConflictMarkers(monaco: any, editor: any): void {
 
 		for (let lineNumber = 1; lineNumber <= model.getLineCount(); lineNumber++) {
 			const line = model.getLineContent(lineNumber);
-			const conflicts = findConflicts(line);
+			const conflicts = findConflicts(line, pm);
 
 			for (const conflict of conflicts) {
 				markers.push({
 					severity: monaco.MarkerSeverity.Warning,
-					message: `${[...new Set(conflict.utilities)].map((u) => `"${u}"`).join(", ")} conflict — both set \`${conflict.property}\``,
+					message: `${[...new Set(conflict.utilities)].map((u) => `"${u}"`).join(", ")} conflict - both set \`${conflict.property}\``,
 					startLineNumber: lineNumber,
 					startColumn: conflict.startIndex + 1,
 					endLineNumber: lineNumber,
@@ -162,7 +190,10 @@ export function registerConflictMarkers(monaco: any, editor: any): void {
 	editor.onDidChangeModelContent(update);
 }
 
-export function registerCodeActionsProvider(monaco: any): any {
+export function registerCodeActionsProvider(
+	monaco: any,
+	config?: IntellisenseConfig,
+): any {
 	return monaco.languages.registerCodeActionProvider("html", {
 		provideCodeActions: (model: any, _range: any, context: any) => {
 			const actions: any[] = [];
@@ -171,7 +202,7 @@ export function registerCodeActionsProvider(monaco: any): any {
 			);
 
 			for (const marker of markers) {
-				const match = marker.message.match(/^(.*) conflict — both set/);
+				const match = marker.message.match(/^(.*) conflict - both set/);
 				if (!match) continue;
 
 				const utilities = (match[1] as string)
@@ -214,7 +245,13 @@ export function registerCodeActionsProvider(monaco: any): any {
 	});
 }
 
-export function registerSortAction(monaco: any, editor: any): void {
+export function registerSortAction(
+	monaco: any,
+	editor: any,
+	config?: IntellisenseConfig,
+): void {
+	if (config) updateSortConfig(config);
+
 	editor.addAction({
 		id: "yummacss.sortClasses",
 		label: "Yumma CSS: Sort Classes",

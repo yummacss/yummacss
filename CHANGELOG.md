@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.24.13] - 2026-05-29
+
+### Added
+
+- **[intellisense]** Added support for custom values through `IntellisenseConfig` - all features (completion, hover, sorting, conflict detection, color decorators) now accept custom colors (`theme.colors`) and custom screens (`theme.screens`).
+- **[intellisense]** Completion, hover, sorting, and conflict features now work with `className={`...`}` template literals containing `${}` expressions (static class names only).
+
+### Fixed
+
+- **[intellisense]** Hover provider now correctly recognizes `@sm`, `@md`, etc. media query variant prefixes in the new `@` syntax.
+- **[intellisense]** Hover target finder now matches classes in all `className` syntax forms (`"..."`, `'...'`, `{'...'}`, `{"..."}`, ``{`...`}``) instead of only straight quotes.
+
 ## [3.24.12] - 2026-05-29
 
 ### Changed
@@ -284,7 +296,7 @@ No notable changes.
 
 ### Added
 
-- `@yummacss/intellisense` — shared editor intellisense package for Yumma CSS.
+- `@yummacss/intellisense` - shared editor intellisense package for Yumma CSS.
   Provides hover, completions, conflict detection, color decorations, and class
   sorting via framework-agnostic core with adapters for Monaco and VS Code.
 
@@ -1050,7 +1062,8 @@ No notable changes.
 
 - Initial release.
 
-[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.24.12...HEAD
+[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.24.13...HEAD
+[3.24.13]: https://github.com/yummacss/yummacss/compare/v3.24.12...v3.24.13
 [3.24.12]: https://github.com/yummacss/yummacss/compare/v3.24.11...v3.24.12
 [3.24.11]: https://github.com/yummacss/yummacss/compare/v3.24.10...v3.24.11
 [3.24.10]: https://github.com/yummacss/yummacss/compare/v3.24.9...v3.24.10
