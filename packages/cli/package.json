@@ -1,48 +1,48 @@
 {
-    "name":  "yummacss",
-    "version":  "3.24.17",
-    "description":  "The ergonomic CSS framework",
-    "keywords":  [
-                     "css-framework",
-                     "typescript",
-                     "yummacss"
-                 ],
-    "homepage":  "https://yummacss.com",
-    "repository":  {
-                       "type":  "git",
-                       "url":  "git+https://github.com/yummacss/yummacss.git",
-                       "directory":  "packages/cli"
-                   },
-    "license":  "MIT",
-    "author":  "Renildo Pereira",
-    "type":  "module",
-    "exports":  {
-                    ".":  {
-                              "default":  "./dist/index.mjs"
-                          }
-                },
-    "module":  "./dist/index.mjs",
-    "bin":  {
-                "yummacss":  "./dist/cli.mjs"
-            },
-    "files":  [
-                  "dist"
-              ],
-    "scripts":  {
-                    "build":  "tsdown",
-                    "dev":  "tsdown --watch",
-                    "lint":  "biome check --write",
-                    "prepublishOnly":  "pnpm build"
-                },
-    "dependencies":  {
-                         "@yummacss/nitro":  "workspace:*"
-                     },
-    "devDependencies":  {
-                            "tinyglobby":  "^0.2.15"
-                        },
-    "packageManager":  "pnpm@10.27.0",
-    "publishConfig":  {
-                          "access":  "public",
-                          "provenance":  true
-                      }
+	"name": "yummacss",
+	"version": "3.24.17",
+	"description": "The ergonomic CSS framework",
+	"keywords": [
+		"css-framework",
+		"typescript",
+		"yummacss"
+	],
+	"homepage": "https://yummacss.com",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/yummacss/yummacss.git",
+		"directory": "packages/cli"
+	},
+	"license": "MIT",
+	"author": "Renildo Pereira",
+	"type": "module",
+	"exports": {
+		".": {
+			"default": "./dist/index.mjs"
+		}
+	},
+	"module": "./dist/index.mjs",
+	"bin": {
+		"yummacss": "./dist/cli.mjs"
+	},
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"build": "tsdown",
+		"dev": "tsdown --watch",
+		"lint": "biome check --write",
+		"prepublishOnly": "pnpm build"
+	},
+	"dependencies": {
+		"@yummacss/nitro": "workspace:*"
+	},
+	"devDependencies": {
+		"tinyglobby": "^0.2.15"
+	},
+	"packageManager": "pnpm@10.27.0",
+	"publishConfig": {
+		"access": "public",
+		"provenance": false
+	}
 }
