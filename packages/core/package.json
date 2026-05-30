@@ -1,45 +1,45 @@
 {
-	"name": "@yummacss/core",
-	"version": "3.24.16",
-	"description": "Core utility definitions for Yumma CSS",
-	"keywords": [
-		"css-framework",
-		"typescript",
-		"yummacss"
-	],
-	"homepage": "https://yummacss.com",
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/yummacss/yummacss.git",
-		"directory": "packages/api"
-	},
-	"license": "MIT",
-	"author": "Renildo Pereira",
-	"type": "module",
-	"exports": {
-		".": {
-			"types": "./dist/index.d.mts",
-			"default": "./dist/index.mjs"
-		}
-	},
-	"module": "dist/index.mjs",
-	"types": "dist/index.d.mts",
-	"files": [
-		"dist"
-	],
-	"scripts": {
-		"build": "tsdown",
-		"check": "tsc --noEmit",
-		"dev": "tsdown --watch",
-		"lint": "biome check --write",
-		"prepublishOnly": "pnpm build"
-	},
-	"devDependencies": {
-		"@types/tinycolor2": "^1.4.6",
-		"tinycolor2": "^1.6.0"
-	},
-	"publishConfig": {
-		"access": "public",
-		"provenance": true
-	}
+    "name":  "@yummacss/core",
+    "version":  "3.24.17",
+    "description":  "Core utility definitions for Yumma CSS",
+    "keywords":  [
+                     "css-framework",
+                     "typescript",
+                     "yummacss"
+                 ],
+    "homepage":  "https://yummacss.com",
+    "repository":  {
+                       "type":  "git",
+                       "url":  "git+https://github.com/yummacss/yummacss.git",
+                       "directory":  "packages/api"
+                   },
+    "license":  "MIT",
+    "author":  "Renildo Pereira",
+    "type":  "module",
+    "exports":  {
+                    ".":  {
+                              "types":  "./dist/index.d.mts",
+                              "default":  "./dist/index.mjs"
+                          }
+                },
+    "module":  "dist/index.mjs",
+    "types":  "dist/index.d.mts",
+    "files":  [
+                  "dist"
+              ],
+    "scripts":  {
+                    "build":  "tsdown",
+                    "check":  "tsc --noEmit",
+                    "dev":  "tsdown --watch",
+                    "lint":  "biome check --write",
+                    "prepublishOnly":  "pnpm build"
+                },
+    "devDependencies":  {
+                            "@types/tinycolor2":  "^1.4.6",
+                            "tinycolor2":  "^1.6.0"
+                        },
+    "publishConfig":  {
+                          "access":  "public",
+                          "provenance":  true
+                      }
 }

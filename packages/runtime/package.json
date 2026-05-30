@@ -1,44 +1,44 @@
 {
-	"name": "@yummacss/runtime",
-	"version": "3.24.16",
-	"description": "Run Yumma CSS without Node.js",
-	"keywords": [
-		"css-framework",
-		"typescript",
-		"yummacss"
-	],
-	"homepage": "https://yummacss.com",
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/yummacss/yummacss.git",
-		"directory": "packages/runtime"
-	},
-	"license": "MIT",
-	"author": "Renildo Pereira",
-	"type": "module",
-	"exports": {
-		".": {
-			"default": "./dist/index.js"
-		}
-	},
-	"jsdelivr": "./dist/index.iife.js",
-	"unpkg": "./dist/index.iife.js",
-	"module": "./dist/index.js",
-	"files": [
-		"dist"
-	],
-	"scripts": {
-		"build": "tsdown",
-		"check": "tsc --noEmit",
-		"dev": "tsdown --watch",
-		"lint": "biome check --write",
-		"prepublishOnly": "pnpm build"
-	},
-	"dependencies": {
-		"@yummacss/nitro": "workspace:*"
-	},
-	"publishConfig": {
-		"access": "public",
-		"provenance": true
-	}
+    "name":  "@yummacss/runtime",
+    "version":  "3.24.17",
+    "description":  "Run Yumma CSS without Node.js",
+    "keywords":  [
+                     "css-framework",
+                     "typescript",
+                     "yummacss"
+                 ],
+    "homepage":  "https://yummacss.com",
+    "repository":  {
+                       "type":  "git",
+                       "url":  "git+https://github.com/yummacss/yummacss.git",
+                       "directory":  "packages/runtime"
+                   },
+    "license":  "MIT",
+    "author":  "Renildo Pereira",
+    "type":  "module",
+    "exports":  {
+                    ".":  {
+                              "default":  "./dist/index.js"
+                          }
+                },
+    "jsdelivr":  "./dist/index.iife.js",
+    "unpkg":  "./dist/index.iife.js",
+    "module":  "./dist/index.js",
+    "files":  [
+                  "dist"
+              ],
+    "scripts":  {
+                    "build":  "tsdown",
+                    "check":  "tsc --noEmit",
+                    "dev":  "tsdown --watch",
+                    "lint":  "biome check --write",
+                    "prepublishOnly":  "pnpm build"
+                },
+    "dependencies":  {
+                         "@yummacss/nitro":  "workspace:*"
+                     },
+    "publishConfig":  {
+                          "access":  "public",
+                          "provenance":  true
+                      }
 }
