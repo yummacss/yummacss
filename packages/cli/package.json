@@ -1,7 +1,7 @@
 {
 	"name": "yummacss",
 	"version": "3.25.0",
-	"description": "The ergonomic CSS framework",
+	"description": "Utility CSS with no new vocabulary. Class names are derived from CSS property names, so if you know CSS, you already know Yumma.",
 	"keywords": [
 		"css-framework",
 		"typescript",
