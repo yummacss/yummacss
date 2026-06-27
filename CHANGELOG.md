@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.25.0] - 2026-06-27
+
+### Changed
+
+- **[core]** Extend the spacing and sizing scale from `0-100` to `0-384` (up to `96rem`). This covers width and height (including `min-*`/`max-*`, `block-size`, `inline-size`), `margin`, `padding`, insets (`top`/`right`/`bottom`/`left`), `gap` (including `column-gap`/`row-gap`), `flex-basis`, and `scroll-margin`/`scroll-padding`.
+
 ## [3.24.17] - 2026-06-30
 
 ### Removed

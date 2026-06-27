@@ -6,7 +6,7 @@ export const topRightBottomLeftValues: Record<string, string> = {
 		base: topRightBottomLeft,
 		unit: "rem",
 		min: 0,
-		max: 100,
+		max: 384,
 	}),
 	auto: "auto",
 	"100%": "100%",

@@ -6,7 +6,7 @@ export const gapValues: Record<string, string> = {
 		base: gap,
 		unit: "rem",
 		min: 0,
-		max: 100,
+		max: 384,
 	}),
 	px: "1px",
 };
