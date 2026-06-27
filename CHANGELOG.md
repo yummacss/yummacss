@@ -1097,7 +1097,8 @@ No notable changes.
 
 - Initial release.
 
-[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.24.17...HEAD
+[Unreleased]: https://github.com/yummacss/yummacss/compare/HEAD
+[3.25.0]: https://github.com/yummacss/yummacss/compare/v3.24.17...v3.25.0
 [3.24.17]: https://github.com/yummacss/yummacss/compare/v3.24.16...v3.24.17
 [3.24.16]: https://github.com/yummacss/yummacss/compare/v3.24.15...v3.24.16
 [3.24.15]: https://github.com/yummacss/yummacss/compare/v3.24.14...v3.24.15
