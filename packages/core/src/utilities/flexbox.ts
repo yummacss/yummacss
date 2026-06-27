@@ -61,7 +61,7 @@ export const flexbox: Utilities = {
 				base: flexBasis,
 				unit: "rem",
 				min: 0,
-				max: 100,
+				max: 384,
 			}),
 			auto: "auto",
 			"100%": "100%",
