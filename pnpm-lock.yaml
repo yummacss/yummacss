@@ -14,6 +14,9 @@ importers:
       '@types/node':
         specifier: ^25.0.3
         version: 25.0.3
+      postcss:
+        specifier: ^8.5.6
+        version: 8.5.15
       sort-package-json:
         specifier: ^3.6.1
         version: 3.6.1
@@ -67,7 +70,6 @@ importers:
       '@yummacss/core':
         specifier: workspace:*
         version: link:../core
-    devDependencies:
       tinyglobby:
         specifier: ^0.2.15
         version: 0.2.15
@@ -75,11 +77,37 @@ importers:
         specifier: ^4.3.4
         version: 4.3.6
 
+  packages/postcss:
+    dependencies:
+      '@yummacss/nitro':
+        specifier: workspace:*
+        version: link:../nitro
+    devDependencies:
+      postcss:
+        specifier: ^8.5.6
+        version: 8.5.15
+
   packages/runtime:
     dependencies:
       '@yummacss/nitro':
         specifier: workspace:*
         version: link:../nitro
+
+  packages/vite:
+    dependencies:
+      '@yummacss/nitro':
+        specifier: workspace:*
+        version: link:../nitro
+      picomatch:
+        specifier: ^4.0.4
+        version: 4.0.4
+    devDependencies:
+      '@types/picomatch':
+        specifier: ^4.0.2
+        version: 4.0.3
+      vite:
+        specifier: ^7.3.1
+        version: 7.3.1(@types/node@25.0.3)(lightningcss@1.30.2)
 
 packages:
 
@@ -587,6 +615,9 @@ packages:
 
   '@types/node@25.0.3':
     resolution: {integrity: sha512-W609buLVRVmeW693xKfzHeIV6nJGGz98uCPfeXI1ELMLXVeKYZ9m15fAMSaUPBHYLGFsVRcMmSCksQOrZV9BYA==}
+
+  '@types/picomatch@4.0.3':
+    resolution: {integrity: sha512-iG0T6+nYJ9FAPmx9SsUlnwcq1ZVRuCXcVEvWnntoPlrOpwtSTKNDC9uVAxTsC3PUvJ+99n4RpAcNgBbHX3JSnQ==}
 
   '@types/tinycolor2@1.4.6':
     resolution: {integrity: sha512-iEN8J0BoMnsWBqjVbWH/c0G0Hh7O21lpR2/+PrvAVgWdzL7eexIFm4JN/Wn10PTcmNdtS6U67r499mlWMXOxNw==}
@@ -1370,6 +1401,8 @@ snapshots:
   '@types/node@25.0.3':
     dependencies:
       undici-types: 7.16.0
+
+  '@types/picomatch@4.0.3': {}
 
   '@types/tinycolor2@1.4.6': {}
 
