@@ -1,0 +1,54 @@
+{
+	"name": "@yummacss/vite",
+	"version": "3.25.0",
+	"description": "Vite plugin for Yumma CSS",
+	"keywords": [
+		"css-framework",
+		"typescript",
+		"vite",
+		"vite-plugin",
+		"yummacss"
+	],
+	"homepage": "https://yummacss.com",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/yummacss/yummacss.git",
+		"directory": "packages/vite"
+	},
+	"license": "MIT",
+	"author": "Renildo Pereira",
+	"type": "module",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.mts",
+			"default": "./dist/index.mjs"
+		}
+	},
+	"module": "dist/index.mjs",
+	"types": "dist/index.d.mts",
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"build": "tsdown",
+		"check": "tsc --noEmit",
+		"dev": "tsdown --watch",
+		"lint": "biome check --write",
+		"prepublishOnly": "pnpm build"
+	},
+	"dependencies": {
+		"@yummacss/nitro": "workspace:*",
+		"picomatch": "^4.0.4"
+	},
+	"devDependencies": {
+		"@types/picomatch": "^4.0.2",
+		"vite": "^7.3.1"
+	},
+	"peerDependencies": {
+		"vite": "^5.0.0 || ^6.0.0 || ^7.0.0"
+	},
+	"publishConfig": {
+		"access": "public",
+		"provenance": true
+	}
+}

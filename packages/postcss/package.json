@@ -1,0 +1,53 @@
+{
+	"name": "@yummacss/postcss",
+	"version": "3.25.0",
+	"description": "PostCSS plugin for Yumma CSS",
+	"keywords": [
+		"css-framework",
+		"nextjs",
+		"postcss",
+		"postcss-plugin",
+		"typescript",
+		"yummacss"
+	],
+	"homepage": "https://yummacss.com",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/yummacss/yummacss.git",
+		"directory": "packages/postcss"
+	},
+	"license": "MIT",
+	"author": "Renildo Pereira",
+	"type": "module",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.mts",
+			"default": "./dist/index.mjs"
+		}
+	},
+	"module": "dist/index.mjs",
+	"types": "dist/index.d.mts",
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"build": "tsdown",
+		"check": "tsc --noEmit",
+		"dev": "tsdown --watch",
+		"lint": "biome check --write",
+		"prepublishOnly": "pnpm build"
+	},
+	"dependencies": {
+		"@yummacss/nitro": "workspace:*"
+	},
+	"devDependencies": {
+		"postcss": "^8.5.6"
+	},
+	"peerDependencies": {
+		"postcss": "^8.0.0"
+	},
+	"publishConfig": {
+		"access": "public",
+		"provenance": true
+	}
+}
