@@ -1,7 +1,7 @@
 import tinycolor from "tinycolor2";
 import { colorTheme } from "@/defaults/theme";
 
-const generateShades = (
+export const generateShades = (
 	color: string,
 	lightPercentage: number = 14,
 	darkPercentage: number = 14,

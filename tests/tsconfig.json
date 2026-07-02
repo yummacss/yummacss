@@ -4,6 +4,8 @@
 		"paths": {
 			"@yummacss/core": ["../packages/core/src"],
 			"@yummacss/nitro": ["../packages/nitro/src"],
+			"@yummacss/postcss": ["../packages/postcss/src"],
+			"@yummacss/vite": ["../packages/vite/src"],
 			"@/*": ["../packages/core/src/*"]
 		},
 		"types": ["vitest/globals"]

@@ -7,6 +7,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.26.0] - 2026-07-02
+
+### Added
+
+- `@yummacss/postcss` - New PostCSS plugin for Yumma CSS.
+- `@yummacss/vite` - New Vite plugin for Yumma CSS.
+- **[nitro]** Export `loadConfig` - reusable config loader with `cwd`, `path`, and inline `config` options. Busts the ESM import cache on config file changes so long-running dev servers pick up edits.
+- **[nitro]** Export `scan` - like `extractor`, but also returns the resolved file list so bundler plugins can register watchers and dependencies.
+
+### Changed
+
+- **[cli]** Config loading now delegates to `loadConfig` from `@yummacss/nitro`.
+
+### Fixed
+
+- **[nitro]** Move `tinyglobby` and `zod` from `devDependencies` to `dependencies` - standalone installs of `@yummacss/nitro` previously failed at runtime (masked by workspace hoisting in the monorepo).
+
 ## [3.25.0] - 2026-06-27
 
 ### Changed
@@ -1097,7 +1114,8 @@ No notable changes.
 
 - Initial release.
 
-[Unreleased]: https://github.com/yummacss/yummacss/compare/HEAD
+[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.26.0...HEAD
+[3.26.0]: https://github.com/yummacss/yummacss/compare/v3.25.0...v3.26.0
 [3.25.0]: https://github.com/yummacss/yummacss/compare/v3.24.17...v3.25.0
 [3.24.17]: https://github.com/yummacss/yummacss/compare/v3.24.16...v3.24.17
 [3.24.16]: https://github.com/yummacss/yummacss/compare/v3.24.15...v3.24.16
