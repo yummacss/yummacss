@@ -33,7 +33,7 @@ export function generator(usedClasses: Set<string>, config: Config): string {
 	return cssBlocks.join("\n\n");
 }
 
-function generateUtil(usedClasses: Set<string>, config: Config): string {
+function buildUtils(config: Config): Record<string, Utility> {
 	const baseUtils = coreUtils();
 	const utils: Record<string, Utility> = { ...baseUtils };
 
@@ -89,6 +89,63 @@ function generateUtil(usedClasses: Set<string>, config: Config): string {
 			utils[key] = newUtil;
 		}
 	}
+
+	return utils;
+}
+
+export interface ValidationResult {
+	valid: string[];
+	invalid: string[];
+}
+
+/**
+ * Check class names against the same matching rules the generator uses,
+ * so a class is valid exactly when it produces CSS. Safelist entries
+ * always count as valid.
+ */
+export function validateClasses(
+	classNames: Iterable<string>,
+	config: Config,
+): ValidationResult {
+	const utils = buildUtils(config);
+	const safelist = new Set<string>();
+	for (const entry of config.safelist ?? []) {
+		safelist.add(entry);
+		if (config.prefix && !entry.startsWith(config.prefix)) {
+			safelist.add(config.prefix + entry);
+		}
+	}
+
+	const valid: string[] = [];
+	const invalid: string[] = [];
+
+	for (const originalClassName of classNames) {
+		if (safelist.has(originalClassName)) {
+			valid.push(originalClassName);
+			continue;
+		}
+
+		let className = originalClassName;
+		if (config.prefix) {
+			if (!className.startsWith(config.prefix)) {
+				invalid.push(originalClassName);
+				continue;
+			}
+			className = className.slice(config.prefix.length);
+		}
+
+		if (generateCSSRule(className, utils, originalClassName)) {
+			valid.push(originalClassName);
+		} else {
+			invalid.push(originalClassName);
+		}
+	}
+
+	return { valid, invalid };
+}
+
+function generateUtil(usedClasses: Set<string>, config: Config): string {
+	const utils = buildUtils(config);
 
 	const cssRules: string[] = [];
 	const mediaQueryRules: Map<string, string[]> = new Map();

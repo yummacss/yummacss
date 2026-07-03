@@ -11,6 +11,7 @@ export default defineConfig({
 			"@": path.resolve(__dirname, "./packages/core/src"),
 			"@yummacss/core": path.resolve(__dirname, "./packages/core/src"),
 			"@yummacss/nitro": path.resolve(__dirname, "./packages/nitro/src"),
+			"@yummacss/canon": path.resolve(__dirname, "./packages/canon/src"),
 			"@yummacss/postcss": path.resolve(__dirname, "./packages/postcss/src"),
 			"@yummacss/vite": path.resolve(__dirname, "./packages/vite/src"),
 		},

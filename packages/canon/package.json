@@ -1,17 +1,21 @@
 {
-	"name": "@yummacss/core",
+	"name": "@yummacss/canon",
 	"version": "3.27.0",
-	"description": "Core utility definitions for Yumma CSS",
+	"description": "Class validator for Yumma CSS",
 	"keywords": [
+		"ai",
+		"canon",
 		"css-framework",
+		"linter",
 		"typescript",
+		"validator",
 		"yummacss"
 	],
 	"homepage": "https://yummacss.com",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/yummacss/yummacss.git",
-		"directory": "packages/api"
+		"directory": "packages/canon"
 	},
 	"license": "MIT",
 	"author": "Renildo Pereira",
@@ -24,6 +28,9 @@
 	},
 	"module": "dist/index.mjs",
 	"types": "dist/index.d.mts",
+	"bin": {
+		"yummacss-canon": "./dist/cli.mjs"
+	},
 	"files": [
 		"dist"
 	],
@@ -34,9 +41,9 @@
 		"lint": "biome check --write",
 		"prepublishOnly": "pnpm build"
 	},
-	"devDependencies": {
-		"@types/tinycolor2": "^1.4.6",
-		"tinycolor2": "^1.6.0"
+	"dependencies": {
+		"@yummacss/nitro": "workspace:*",
+		"tinyglobby": "^0.2.15"
 	},
 	"publishConfig": {
 		"access": "public",
