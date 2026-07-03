@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.27.0] - 2026-07-03
+
+### Added
+
+- `@yummacss/canon` - New class validator for Yumma CSS. Reports classes that are not part of the Yumma CSS canon (Tailwind habits, typos, AI hallucinations); `npx @yummacss/canon` exits with code 1 on unknown classes. Supports `--allow` for custom classes.
+- **[nitro]** Export `validateClasses` - checks class names against the same matching rules the generator uses, so a class is valid exactly when it produces CSS.
+
 ## [3.26.0] - 2026-07-02
 
 ### Added
@@ -1114,7 +1121,8 @@ No notable changes.
 
 - Initial release.
 
-[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.26.0...HEAD
+[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.27.0...HEAD
+[3.27.0]: https://github.com/yummacss/yummacss/compare/v3.26.0...v3.27.0
 [3.26.0]: https://github.com/yummacss/yummacss/compare/v3.25.0...v3.26.0
 [3.25.0]: https://github.com/yummacss/yummacss/compare/v3.24.17...v3.25.0
 [3.24.17]: https://github.com/yummacss/yummacss/compare/v3.24.16...v3.24.17
