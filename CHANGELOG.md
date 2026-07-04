@@ -51,14 +51,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 
-- **[core]** Remove `container-type` utilities (`ct-*`) — leftover from the container query variant removal in 3.24.12.
+- **[core]** Remove `container-type` utilities (`ct-*`)
 
 ## [3.24.15] - 2026-05-29
 
 ### Changed
 
 - **[nitro]** The `@` symbol is now **mandatory** for media query variants (e.g. `@sm:d-f`). The bare prefix syntax (`sm:d-f`) no longer generates CSS.
-- **[intellisense]** Hover and target-finding now reject unknown variants — hovering over `@foobar:d-f` will no longer show fake hover info.
+- **[intellisense]** Hover and target-finding now reject unknown variants
 
 ## [3.24.14] - 2026-05-29
 

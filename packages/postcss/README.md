@@ -1,6 +1,6 @@
 # @yummacss/postcss
 
-PostCSS plugin for [Yumma CSS](https://yummacss.com). Works anywhere PostCSS runs — including Next.js with both Turbopack and Webpack — with no extra watcher process.
+PostCSS plugin for [Yumma CSS](https://yummacss.com). Works anywhere PostCSS runs! Next.js with both Turbopack and Webpack.
 
 ## Installation
 
@@ -38,7 +38,7 @@ export default defineConfig({
 });
 ```
 
-That's it — run `next dev` (Turbopack or Webpack) and the CSS regenerates automatically as you edit your source files. The `output` option is not used by the plugin.
+That's it! Now run `next dev` (Turbopack or Webpack) and the CSS regenerates automatically as you edit your source files. The `output` option is not used by the plugin.
 
 ## Options
 
