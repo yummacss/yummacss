@@ -1,6 +1,6 @@
 # @yummacss/vite
 
-Vite plugin for [Yumma CSS](https://yummacss.com). Works with any Vite-based setup — SvelteKit, Astro, Nuxt, Solid, plain Vite — with no extra watcher process.
+Vite plugin for [Yumma CSS](https://yummacss.com). Works with any Vite-based setup like SvelteKit, Astro, Nuxt, Solid, plain Vite.
 
 ## Installation
 
@@ -39,7 +39,7 @@ export default defineConfig({
 });
 ```
 
-That's it — `vite dev` hot-swaps the generated CSS as you edit your source files, without a full page reload. The `output` option is not used by the plugin.
+That's it! Now `vite dev` hot-swaps the generated CSS as you edit your source files, without a full page reload. The `output` option is not used by the plugin.
 
 ## Options
 
