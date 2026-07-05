@@ -1,6 +1,6 @@
 {
 	"name": "yummacss",
-	"version": "3.28.0",
+	"version": "3.28.1",
 	"private": true,
 	"description": "Utility CSS with no new vocabulary. Class names are derived from CSS property names, so if you know CSS, you already know Yumma.",
 	"keywords": [
@@ -17,6 +17,7 @@
 	"author": "Renildo Pereira",
 	"scripts": {
 		"build": "pnpm -r build",
+		"bump": "node scripts/bump-version.mjs",
 		"check": "pnpm -r check",
 		"clean": "pnpm -r clean",
 		"dev": "pnpm -r --parallel dev",

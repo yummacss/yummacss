@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.28.1] - 2026-07-05
+
+### Fixed
+
+- Corrected a version mismatch from the 3.28.0 release: `@yummacss/language-server` was published depending on an outdated `@yummacss/intellisense` that did not yet include the `./lsp` export, crashing on startup. All packages are now republished in sync at 3.28.1.
+
 ## [3.28.0]
 
 ### Added
@@ -1140,7 +1146,8 @@ No notable changes.
 
 - Initial release.
 
-[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.28.0...HEAD
+[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.28.1...HEAD
+[3.28.1]: https://github.com/yummacss/yummacss/compare/v3.28.0...v3.28.1
 [3.28.0]: https://github.com/yummacss/yummacss/compare/v3.27.0...v3.28.0
 [3.27.0]: https://github.com/yummacss/yummacss/compare/v3.26.0...v3.27.0
 [3.26.0]: https://github.com/yummacss/yummacss/compare/v3.25.0...v3.26.0
