@@ -1,9 +1,11 @@
+import type { Config } from "@yummacss/nitro";
 import { buildPropertyMap, findConflicts } from "@/conflicts";
 import { CLASS_ATTR_REGEX } from "@/constants";
 import type { IntellisenseConfig } from "@/core";
 import { buildUtilityMap, getSuggestions, hexToRgba } from "@/core";
 import { findHoverTarget, getHoverMarkdown } from "@/hover";
 import { sortUtilityClasses, updateSortConfig } from "@/sort";
+import { findUnknownClasses } from "@/validate";
 
 export function registerCompletionProvider(
 	monaco: any,
@@ -157,6 +159,7 @@ export function registerConflictMarkers(
 	monaco: any,
 	editor: any,
 	config?: IntellisenseConfig,
+	validationConfig?: Config,
 ): void {
 	const pm = config ? buildPropertyMap(config) : buildPropertyMap();
 
@@ -183,6 +186,25 @@ export function registerConflictMarkers(
 			}
 		}
 
+		for (const unknown of findUnknownClasses(
+			model.getValue(),
+			validationConfig,
+		)) {
+			const suggestion = unknown.suggestion
+				? ` Did you mean "${unknown.suggestion}"?`
+				: "";
+
+			markers.push({
+				severity: monaco.MarkerSeverity.Warning,
+				message: `"${unknown.className}" is not a Yumma CSS class.${suggestion}`,
+				startLineNumber: unknown.line + 1,
+				startColumn: unknown.startIndex + 1,
+				endLineNumber: unknown.line + 1,
+				endColumn: unknown.endIndex + 1,
+				source: "yummacss",
+			});
+		}
+
 		monaco.editor.setModelMarkers(model, "yummacss", markers);
 	}
 
@@ -202,6 +224,30 @@ export function registerCodeActionsProvider(
 			);
 
 			for (const marker of markers) {
+				const suggestionMatch = marker.message.match(
+					/Did you mean "([^"]+)"\?$/,
+				);
+				if (suggestionMatch) {
+					actions.push({
+						title: `Replace with "${suggestionMatch[1]}"`,
+						kind: "quickfix",
+						diagnostics: [marker],
+						isPreferred: true,
+						edit: {
+							edits: [
+								{
+									resource: model.uri,
+									textEdit: {
+										range: marker,
+										text: suggestionMatch[1],
+									},
+								},
+							],
+						},
+					});
+					continue;
+				}
+
 				const match = marker.message.match(/^(.*) conflict - both set/);
 				if (!match) continue;
 

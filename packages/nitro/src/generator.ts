@@ -144,6 +144,179 @@ export function validateClasses(
 	return { valid, invalid };
 }
 
+function levenshtein(a: string, b: string, max: number): number {
+	if (Math.abs(a.length - b.length) > max) return max + 1;
+
+	const row: number[] = Array.from({ length: b.length + 1 }, (_, j) => j);
+
+	for (let i = 1; i <= a.length; i++) {
+		let diagonal = row[0] ?? 0;
+		let best = i;
+		row[0] = i;
+
+		for (let j = 1; j <= b.length; j++) {
+			const previous = row[j] ?? 0;
+			const value = Math.min(
+				previous + 1,
+				(row[j - 1] ?? 0) + 1,
+				diagonal + (a[i - 1] === b[j - 1] ? 0 : 1),
+			);
+			row[j] = value;
+			diagonal = previous;
+			if (value < best) best = value;
+		}
+
+		if (best > max) return max + 1;
+	}
+
+	return row[b.length] ?? 0;
+}
+
+function isSubsequence(needle: string, haystack: string): boolean {
+	let i = 0;
+	for (const char of haystack) {
+		if (char === needle[i]) i++;
+		if (i === needle.length) return true;
+	}
+	return needle.length === 0;
+}
+
+function commonPrefixLength(a: string, b: string): number {
+	let n = 0;
+	while (n < a.length && n < b.length && a[n] === b[n]) {
+		n++;
+	}
+	return n;
+}
+
+function compareScores(a: number[], b: number[]): number {
+	for (let i = 0; i < a.length; i++) {
+		const diff = (a[i] ?? 0) - (b[i] ?? 0);
+		if (diff !== 0) return diff;
+	}
+	return 0;
+}
+
+/**
+ * Suggest the closest valid class for each unknown class name, e.g.
+ * "gap-4" suggests "g-4". Variant prefixes (`@sm:`, `h:`), opacity
+ * suffixes (`/50`), and the configured prefix are preserved around the
+ * suggested base class. Classes with no close match are omitted from
+ * the result.
+ */
+export function suggestClasses(
+	classNames: Iterable<string>,
+	config: Config = {},
+): Map<string, string> {
+	const utils = buildUtils(config);
+	const candidates: string[] = [];
+	for (const util of Object.values(utils)) {
+		for (const key of Object.keys(util.values)) {
+			candidates.push(key === "base" ? util.prefix : `${util.prefix}-${key}`);
+		}
+	}
+	const candidateSet = new Set(candidates);
+
+	const tentative = new Map<string, string[]>();
+
+	for (const originalClassName of classNames) {
+		let className = originalClassName;
+		let variantPrefix = "";
+		let opacitySuffix = "";
+
+		const lastColon = className.lastIndexOf(":");
+		if (lastColon !== -1) {
+			variantPrefix = className.slice(0, lastColon + 1);
+			className = className.slice(lastColon + 1);
+		}
+
+		const opacityMatch = className.match(/\/\d+$/);
+		if (opacityMatch) {
+			opacitySuffix = opacityMatch[0];
+			className = className.slice(0, -opacitySuffix.length);
+		}
+
+		let prefix = "";
+		if (config.prefix) {
+			prefix = config.prefix;
+			if (className.startsWith(prefix)) {
+				className = className.slice(prefix.length);
+			} else if (candidateSet.has(className)) {
+				// The class is only missing the configured prefix.
+				tentative.set(originalClassName, [
+					variantPrefix + prefix + className + opacitySuffix,
+					variantPrefix + prefix + className,
+				]);
+				continue;
+			}
+		}
+
+		if (!className) continue;
+
+		// Short classes only tolerate one edit - two edits away from
+		// "cp" is a different class, not a typo.
+		const maxDistance = className.length <= 4 ? 1 : 2;
+		let best: string | undefined;
+		let bestScore = [maxDistance + 1, 1, 1, 0];
+
+		for (const candidate of candidates) {
+			const distance = levenshtein(className, candidate, maxDistance);
+			if (distance === 0 || distance > maxDistance) continue;
+
+			// Ties are broken by preferring candidates that share every
+			// character with the typo in either direction ("g-4" inside
+			// "gap-4", "cp" inside "c-p"), then by matching first char
+			// (utilities abbreviate from the property name's first
+			// letters), then by the longest shared prefix, then
+			// alphabetically.
+			const score = [
+				distance,
+				isSubsequence(candidate, className) ||
+				isSubsequence(className, candidate)
+					? 0
+					: 1,
+				candidate[0] === className[0] ? 0 : 1,
+				-commonPrefixLength(candidate, className),
+			];
+
+			const comparison = compareScores(score, bestScore);
+			if (
+				comparison < 0 ||
+				(comparison === 0 && best !== undefined && candidate < best)
+			) {
+				bestScore = score;
+				best = candidate;
+			}
+		}
+
+		if (best !== undefined) {
+			// The opacity suffix is only valid on some utilities - fall
+			// back to the bare suggestion when it does not apply.
+			tentative.set(originalClassName, [
+				variantPrefix + prefix + best + opacitySuffix,
+				variantPrefix + prefix + best,
+			]);
+		}
+	}
+
+	// Reassembled suggestions can still be invalid (e.g. an unknown
+	// variant chain) - validate them in one pass and keep the first
+	// valid option per class.
+	const options = Array.from(tentative.values()).flat();
+	const { valid } = validateClasses(options, config);
+	const validSet = new Set(valid);
+
+	const suggestions = new Map<string, string>();
+	for (const [className, candidatesForClass] of tentative) {
+		const match = candidatesForClass.find((option) => validSet.has(option));
+		if (match) {
+			suggestions.set(className, match);
+		}
+	}
+
+	return suggestions;
+}
+
 function generateUtil(usedClasses: Set<string>, config: Config): string {
 	const utils = buildUtils(config);
 

@@ -1,4 +1,30 @@
 /**
+ * Language identifiers where Yumma CSS features (completion, hover,
+ * diagnostics, color decorators, sorting) apply. Shared across every
+ * editor integration (VS Code, Monaco, the language server) so the
+ * supported-language list only exists once.
+ */
+export const SUPPORTED_LANGUAGES: string[] = [
+	"astro",
+	"ejs",
+	"haml",
+	"handlebars",
+	"hbs",
+	"html",
+	"jade",
+	"javascript",
+	"javascriptreact",
+	"liquid",
+	"mdx",
+	"php",
+	"svelte",
+	"twig",
+	"typescript",
+	"typescriptreact",
+	"vue",
+];
+
+/**
  * Matches class/className attribute values across all supported syntaxes:
  *
  *   class="..."         className="..."

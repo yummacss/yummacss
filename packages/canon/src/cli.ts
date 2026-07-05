@@ -33,8 +33,12 @@ try {
 		console.error(
 			`Found ${result.invalid.length} classes Yumma CSS does not recognize:`,
 		);
-		for (const { className, files } of result.invalid) {
-			console.error(` "${className}"`);
+		for (const { className, files, suggestion } of result.invalid) {
+			console.error(
+				suggestion
+					? ` "${className}" - did you mean "${suggestion}"?`
+					: ` "${className}"`,
+			);
 			for (const file of files) {
 				console.error(`  - ${relative(process.cwd(), file)}`);
 			}
