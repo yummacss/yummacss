@@ -84,6 +84,7 @@ describe("validate (canon)", () => {
 		const gap = result.invalid.find((entry) => entry.className === "gap-4");
 		expect(gap?.files).toHaveLength(1);
 		expect(gap?.files[0]?.endsWith("Bad.tsx")).toBe(true);
+		expect(gap?.suggestion).toBe("g-4");
 	});
 
 	it("should not report valid classes, variants, or safelist entries", async () => {

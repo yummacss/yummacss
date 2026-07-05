@@ -1,3 +1,4 @@
+import type { Config } from "@yummacss/nitro";
 import * as vscode from "vscode";
 import { buildPropertyMap, findConflicts } from "@/conflicts";
 import { CLASS_ATTR_REGEX, extractClassContent } from "@/constants";
@@ -5,10 +6,18 @@ import type { IntellisenseConfig } from "@/core";
 import { buildUtilityMap, getSuggestions, hexToRgba } from "@/core";
 import { findHoverTarget, getHoverMarkdown } from "@/hover";
 import { sortUtilityClasses, updateSortConfig } from "@/sort";
+import { findUnknownClasses } from "@/validate";
 
 let propertyMap = buildPropertyMap();
+let currentConfig: IntellisenseConfig | undefined;
+let currentValidationConfig: Config | undefined;
 
-export function updateIntellisenseConfig(config?: IntellisenseConfig): void {
+export function updateIntellisenseConfig(
+	config?: IntellisenseConfig,
+	validationConfig?: Config,
+): void {
+	currentConfig = config;
+	currentValidationConfig = validationConfig;
 	propertyMap = buildPropertyMap(config);
 	updateSortConfig(config);
 }
@@ -28,7 +37,7 @@ export class CompletionProvider implements vscode.CompletionItemProvider {
 			return undefined;
 		}
 
-		return getSuggestions(this.config).map((s) => {
+		return getSuggestions(this.config ?? currentConfig).map((s) => {
 			const item = new vscode.CompletionItem(
 				{ label: s.label, description: s.detail } as vscode.CompletionItemLabel,
 				s.isColor
@@ -50,11 +59,12 @@ export class HoverProvider implements vscode.HoverProvider {
 		document: vscode.TextDocument,
 		position: vscode.Position,
 	): vscode.Hover | undefined {
+		const config = this.config ?? currentConfig;
 		const line = document.lineAt(position).text;
-		const target = findHoverTarget(line, position.character, this.config);
+		const target = findHoverTarget(line, position.character, config);
 		if (!target) return undefined;
 
-		const markdown = getHoverMarkdown(target.className, this.config);
+		const markdown = getHoverMarkdown(target.className, config);
 		if (!markdown) return undefined;
 
 		const range = new vscode.Range(
@@ -77,7 +87,7 @@ export class ColorProvider implements vscode.DocumentColorProvider {
 		document: vscode.TextDocument,
 	): vscode.ColorInformation[] {
 		const result: vscode.ColorInformation[] = [];
-		const colorUtilityMap = buildUtilityMap(this.config);
+		const colorUtilityMap = buildUtilityMap(this.config ?? currentConfig);
 
 		for (let i = 0; i < document.lineCount; i++) {
 			const line = document.lineAt(i).text;
@@ -145,11 +155,28 @@ export class ActionProvider implements vscode.CodeActionProvider {
 			.filter((d) => d.source === "yummacss")
 			.flatMap((diagnostic) => {
 				const data = (diagnostic as any).data as
-					| { conflicts: string[] }
+					| { conflicts?: string[]; suggestion?: string }
 					| undefined;
 				if (!data) return [];
 
-				const { conflicts } = data;
+				if (diagnostic.code === "unknown_class") {
+					if (!data.suggestion) return [];
+
+					const action = new vscode.CodeAction(
+						`Replace with "${data.suggestion}"`,
+						vscode.CodeActionKind.QuickFix,
+					);
+					action.diagnostics = [diagnostic];
+					action.isPreferred = true;
+
+					const edit = new vscode.WorkspaceEdit();
+					edit.replace(document.uri, diagnostic.range, data.suggestion);
+					action.edit = edit;
+					return [action];
+				}
+
+				const conflicts = data.conflicts;
+				if (!conflicts) return [];
 				const lineText = document.lineAt(diagnostic.range.start.line).text;
 
 				const regex = new RegExp(CLASS_ATTR_REGEX.source, "g");
@@ -250,6 +277,39 @@ export function refreshDiagnostics(
 		}
 	}
 
+	const message = (className: string, suggestion?: string) => {
+		const base = currentValidationConfig
+			? `"${className}" is not a Yumma CSS class or covered by your yumma.config.mjs (prefix, safelist, theme)`
+			: `"${className}" is not a Yumma CSS class`;
+		return suggestion ? `${base}. Did you mean "${suggestion}"?` : base;
+	};
+
+	for (const unknown of findUnknownClasses(
+		document.getText(),
+		currentValidationConfig,
+	)) {
+		const range = new vscode.Range(
+			unknown.line,
+			unknown.startIndex,
+			unknown.line,
+			unknown.endIndex,
+		);
+
+		const diagnostic = new vscode.Diagnostic(
+			range,
+			message(unknown.className, unknown.suggestion),
+			vscode.DiagnosticSeverity.Warning,
+		);
+		diagnostic.source = "yummacss";
+		diagnostic.code = "unknown_class";
+		(diagnostic as any).data = {
+			className: unknown.className,
+			suggestion: unknown.suggestion,
+		};
+
+		diagnostics.push(diagnostic);
+	}
+
 	collection.set(document.uri, diagnostics);
 }
 
@@ -259,21 +319,20 @@ export function subscribeToDocChanges(
 	languages: string[],
 	config?: IntellisenseConfig,
 ): void {
+	const refresh = (document: vscode.TextDocument) => {
+		if (!languages.includes(document.languageId)) return;
+		refreshDiagnostics(document, collection, config);
+	};
+
 	if (vscode.window.activeTextEditor) {
-		refreshDiagnostics(
-			vscode.window.activeTextEditor.document,
-			collection,
-			config,
-		);
+		refresh(vscode.window.activeTextEditor.document);
 	}
 
 	context.subscriptions.push(
 		vscode.window.onDidChangeActiveTextEditor((editor) => {
-			if (editor) refreshDiagnostics(editor.document, collection, config);
+			if (editor) refresh(editor.document);
 		}),
-		vscode.workspace.onDidChangeTextDocument((e) =>
-			refreshDiagnostics(e.document, collection, config),
-		),
+		vscode.workspace.onDidChangeTextDocument((e) => refresh(e.document)),
 		vscode.workspace.onDidCloseTextDocument((doc) =>
 			collection.delete(doc.uri),
 		),

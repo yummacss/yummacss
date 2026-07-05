@@ -1,6 +1,11 @@
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
-import { type Config, loadConfig, validateClasses } from "@yummacss/nitro";
+import {
+	type Config,
+	loadConfig,
+	suggestClasses,
+	validateClasses,
+} from "@yummacss/nitro";
 import { glob } from "tinyglobby";
 
 export interface ValidateOptions {
@@ -35,6 +40,10 @@ export interface InvalidClass {
 	 * Absolute paths of the files the class appears in.
 	 */
 	files: string[];
+	/**
+	 * The closest valid class, when one exists (e.g. "g-4" for "gap-4").
+	 */
+	suggestion?: string;
 }
 
 export interface ValidateResult {
@@ -125,6 +134,7 @@ export async function validate(
 		(className) => !allowlist.has(className),
 	);
 	const { invalid } = validateClasses(candidates, config);
+	const suggestions = suggestClasses(invalid, config);
 
 	return {
 		files: files.length,
@@ -132,6 +142,7 @@ export async function validate(
 		invalid: invalid.sort().map((className) => ({
 			className,
 			files: Array.from(classFiles.get(className) ?? []).sort(),
+			suggestion: suggestions.get(className),
 		})),
 	};
 }

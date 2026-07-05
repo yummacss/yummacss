@@ -1,17 +1,21 @@
 {
-	"name": "@yummacss/intellisense",
+	"name": "@yummacss/language-server",
 	"version": "3.27.0",
-	"description": "Shared Intellisense for Yumma CSS",
+	"description": "Language server for Yumma CSS - completion, hover, diagnostics, color decorators, and sorting for any LSP-compatible editor",
 	"keywords": [
 		"css-framework",
+		"editor",
+		"language-server",
+		"lsp",
 		"typescript",
-		"yummacss"
+		"yummacss",
+		"zed"
 	],
 	"homepage": "https://yummacss.com",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/yummacss/yummacss.git",
-		"directory": "packages/intellisense"
+		"directory": "packages/language-server"
 	},
 	"license": "MIT",
 	"author": "Renildo Pereira",
@@ -20,22 +24,13 @@
 		".": {
 			"types": "./dist/index.d.mts",
 			"default": "./dist/index.mjs"
-		},
-		"./lsp": {
-			"types": "./dist/adapters/lsp.d.mts",
-			"default": "./dist/adapters/lsp.mjs"
-		},
-		"./monaco": {
-			"types": "./dist/adapters/monaco.d.mts",
-			"default": "./dist/adapters/monaco.mjs"
-		},
-		"./vscode": {
-			"types": "./dist/adapters/vscode.d.mts",
-			"default": "./dist/adapters/vscode.mjs"
 		}
 	},
 	"module": "dist/index.mjs",
 	"types": "dist/index.d.mts",
+	"bin": {
+		"yummacss-language-server": "./dist/cli.mjs"
+	},
 	"files": [
 		"dist"
 	],
@@ -47,14 +42,10 @@
 		"prepublishOnly": "pnpm build"
 	},
 	"dependencies": {
-		"@yummacss/core": "workspace:*",
+		"@yummacss/intellisense": "workspace:*",
 		"@yummacss/nitro": "workspace:*",
-		"tinycolor2": "^1.6.0",
-		"vscode-languageserver-types": "^3.18.0"
-	},
-	"devDependencies": {
-		"@types/tinycolor2": "^1.4.6",
-		"@types/vscode": "^1.100.0"
+		"vscode-languageserver": "^10.1.0",
+		"vscode-languageserver-textdocument": "^1.0.12"
 	},
 	"publishConfig": {
 		"access": "public",

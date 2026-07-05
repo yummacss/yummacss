@@ -7,6 +7,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.28.0]
+
+### Added
+
+- `@yummacss/language-server` - New language server exposing Yumma CSS completion, hover, diagnostics, color decorators, and class sorting over the Language Server Protocol, for any LSP-compatible editor (Zed, Neovim, Helix, Sublime Text). Reuses `@yummacss/intellisense` so features never drift between editors.
+- **[intellisense]** New `./lsp` adapter export - editor-agnostic LSP-shaped completion, hover, diagnostics, code actions, color, and formatting functions, consumed by `@yummacss/language-server`.
+- **[intellisense]** Export `SUPPORTED_LANGUAGES` - the shared list of language IDs Yumma CSS features apply to, now used by both the VS Code extension and the language server instead of being duplicated.
+- **[nitro]** Export `suggestClasses` - suggests the closest valid class for unknown class names (e.g. `g-4` for `gap-4`), preserving variant prefixes, opacity suffixes, and the configured prefix. Suggestions are verified against the generator, so an invalid reassembly (like opacity on a non-color utility) falls back or is omitted.
+- **[intellisense]** Unknown-class diagnostics - classes that are not part of the Yumma CSS canon are underlined as warnings in the editor, powered by the same `validateClasses` matching rules the generator and `@yummacss/canon` use. Diagnostics include a "Did you mean" suggestion with a one-click quick fix.
+- **[intellisense]** Export `findUnknownClasses` - scans class attributes in a document and returns unknown classes with their positions and suggestions.
+- **[intellisense]** `updateIntellisenseConfig` now also accepts a full Yumma CSS `Config` so validation understands `prefix`, `safelist`, and `theme`; completion, hover, and color features fall back to the shared config when providers are constructed without one.
+- **[intellisense]** Monaco adapter parity - `registerConflictMarkers` now also emits unknown-class markers (with suggestions), and the Monaco code actions provider offers the same "Replace with" quick fix.
+- **[intellisense]** Diagnostics now only run on supported languages instead of every open document.
+- **[canon]** Unknown classes now include a `suggestion` in the `validate()` result, and the CLI prints "did you mean" hints - AI agents can self-correct in one pass.
+
+### Fixed
+
+- **[intellisense]** Move `tinycolor2` from `devDependencies` to `dependencies` - it is a runtime import, so standalone installs previously relied on hoisting.
+
 ## [3.27.0] - 2026-07-03
 
 ### Added
@@ -1121,7 +1140,8 @@ No notable changes.
 
 - Initial release.
 
-[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.27.0...HEAD
+[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.28.0...HEAD
+[3.28.0]: https://github.com/yummacss/yummacss/compare/v3.27.0...v3.28.0
 [3.27.0]: https://github.com/yummacss/yummacss/compare/v3.26.0...v3.27.0
 [3.26.0]: https://github.com/yummacss/yummacss/compare/v3.25.0...v3.26.0
 [3.25.0]: https://github.com/yummacss/yummacss/compare/v3.24.17...v3.25.0
