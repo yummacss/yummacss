@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.28.2] - 2026-07-09
+
+### Fixed
+
+- **[nitro]** Negative-value syntax (e.g. `tsy--6`) silently produced the wrong sign for function-wrapped transform values like `skewY(6deg)`/`skewX(3deg)` - the check only recognized values whose entire string started with a number, so `tsy--6` generated `skewY(6deg)` instead of `skewY(-6deg)`. Fixed generally: the negation logic now also matches `function(number...)` values and negates the number inside the parens, not the whole string.
+
 ## [3.28.1] - 2026-07-05
 
 ### Fixed
@@ -1146,7 +1152,8 @@ No notable changes.
 
 - Initial release.
 
-[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.28.1...HEAD
+[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.28.2...HEAD
+[3.28.2]: https://github.com/yummacss/yummacss/compare/v3.28.1...v3.28.2
 [3.28.1]: https://github.com/yummacss/yummacss/compare/v3.28.0...v3.28.1
 [3.28.0]: https://github.com/yummacss/yummacss/compare/v3.27.0...v3.28.0
 [3.27.0]: https://github.com/yummacss/yummacss/compare/v3.26.0...v3.27.0

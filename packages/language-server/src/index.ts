@@ -145,7 +145,10 @@ export function createServer(connection: Connection): void {
 
 	connection.onDidCloseTextDocument((params) => {
 		documents.delete(params.textDocument.uri);
-		connection.sendDiagnostics({ uri: params.textDocument.uri, diagnostics: [] });
+		connection.sendDiagnostics({
+			uri: params.textDocument.uri,
+			diagnostics: [],
+		});
 	});
 
 	connection.listen();

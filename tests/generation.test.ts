@@ -108,3 +108,29 @@ describe("Utility Generation", () => {
 		}
 	});
 });
+
+describe("Negative value handling", () => {
+	const config = { buildOptions: { reset: false } };
+
+	it("should negate plain numeric values", () => {
+		const css = generator(new Set(["m--4"]), config as any);
+		expect(css).toContain(".m--4");
+		expect(css).toMatch(/margin:\s*-1rem;/);
+	});
+
+	it("should negate the number inside a function-wrapped transform value, not the whole string", () => {
+		const skewY = generator(new Set(["tsy--6"]), config as any);
+		expect(skewY).toContain(".tsy--6");
+		expect(skewY).toMatch(/transform:\s*skewY\(-6deg\);/);
+		expect(skewY).not.toContain("-skewY(6deg)");
+
+		const skewX = generator(new Set(["tsx--3"]), config as any);
+		expect(skewX).toMatch(/transform:\s*skewX\(-3deg\);/);
+	});
+
+	it("should leave non-numeric values unchanged", () => {
+		const css = generator(new Set(["d--f"]), config as any);
+		// "d-f" has no negatable form - "d--f" should not match any rule
+		expect(css).not.toContain("display: -flex");
+	});
+});

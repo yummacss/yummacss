@@ -463,15 +463,7 @@ function tryGenerateRule(
 	if (!propertyValue) return null;
 
 	// Apply negative sign if needed (only to numeric values)
-	let finalValue = propertyValue;
-	if (isNegative) {
-		// Only apply negative to numeric values (starting with numbers or -)
-		if (/^-?[\d.]/.test(propertyValue)) {
-			finalValue = propertyValue.startsWith("-")
-				? propertyValue.slice(1) // Remove existing negative
-				: `-${propertyValue}`; // Add negative
-		}
-	}
+	const finalValue = isNegative ? negateValue(propertyValue) : propertyValue;
 
 	// 5. Apply opacity
 	const finalPropertyValue =
@@ -487,6 +479,28 @@ function tryGenerateRule(
 		rule: `.${escapeCn(originalClassName)}${pseudoClasses}${pseudoElements} {\n  ${declarations}\n}`,
 		mediaQuery,
 	};
+}
+
+// Flip the sign of a CSS value's leading number, e.g. "0.25rem" ->
+// "-0.25rem", or of the first number inside a function call, e.g.
+// "skewY(6deg)" -> "skewY(-6deg)" (negating the whole string would
+// produce invalid CSS like "-skewY(6deg)"). Values with no leading or
+// wrapped number (colors, keywords) are returned unchanged.
+function negateValue(value: string): string {
+	if (/^-?[\d.]/.test(value)) {
+		return value.startsWith("-") ? value.slice(1) : `-${value}`;
+	}
+
+	const functionMatch = value.match(/^([a-zA-Z]+\()(-?[\d.]+)(.*)$/);
+	if (functionMatch) {
+		const [, prefix, number, suffix] = functionMatch;
+		const negatedNumber = number.startsWith("-")
+			? number.slice(1)
+			: `-${number}`;
+		return `${prefix}${negatedNumber}${suffix}`;
+	}
+
+	return value;
 }
 
 // escape colons, slashes, @ symbols and percentage

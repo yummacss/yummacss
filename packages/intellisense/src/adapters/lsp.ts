@@ -110,7 +110,9 @@ export function getDocumentColors(
 			let searchFrom = 0;
 
 			for (const cls of classes) {
-				const base = cls.includes(":") ? cls.slice(cls.lastIndexOf(":") + 1) : cls;
+				const base = cls.includes(":")
+					? cls.slice(cls.lastIndexOf(":") + 1)
+					: cls;
 				const info = colorUtilityMap.get(base);
 				if (info) {
 					const rgba = hexToRgba(info.cssValue);
