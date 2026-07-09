@@ -1,6 +1,6 @@
 {
 	"name": "@yummacss/vite",
-	"version": "3.28.1",
+	"version": "3.28.2",
 	"description": "Vite plugin for Yumma CSS",
 	"keywords": [
 		"css-framework",
