@@ -7,7 +7,7 @@
 ## Installation
 
 ```bash
-pnpm install yummacss -D
+pnpm add yummacss -D
 pnpx yummacss init
 ```
 
