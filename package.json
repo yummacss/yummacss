@@ -1,6 +1,6 @@
 {
 	"name": "yummacss",
-	"version": "3.28.2",
+	"version": "3.28.3",
 	"private": true,
 	"description": "A utility CSS framework derived from CSS property names.",
 	"keywords": [
