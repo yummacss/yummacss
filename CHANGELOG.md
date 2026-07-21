@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.28.3] - 2026-07-21
+
+### Changed
+
+- Update all README.md files.
+
 ## [3.28.2] - 2026-07-09
 
 ### Fixed
@@ -1152,7 +1158,8 @@ No notable changes.
 
 - Initial release.
 
-[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.28.2...HEAD
+[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.28.3...HEAD
+[3.28.3]: https://github.com/yummacss/yummacss/compare/v3.28.2...v3.28.3
 [3.28.2]: https://github.com/yummacss/yummacss/compare/v3.28.1...v3.28.2
 [3.28.1]: https://github.com/yummacss/yummacss/compare/v3.28.0...v3.28.1
 [3.28.0]: https://github.com/yummacss/yummacss/compare/v3.27.0...v3.28.0
