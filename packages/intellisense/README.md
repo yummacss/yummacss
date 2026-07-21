@@ -2,13 +2,14 @@
 
 Shared editor intellisense for Yumma CSS.
 
-## Use cases
+## Features
 
-- Building editor extensions or IDE plugins
-- Adding Yumma CSS intellisense to a Monaco-based playground or editor
-- Extending support to new editors via the framework-agnostic core
-
-**For styling projects, use [yummacss](https://www.npmjs.com/package/yummacss) instead.**
+- **Completions**: Auto-complete for all Yumma CSS utility classes.
+- **Hover**: CSS output and variant context on hover.
+- **Color Decorations**: Inline color swatches for color utilities.
+- **Conflict Detection**: Warnings when utilities set the same CSS property.
+- **Quick Fixes**: One-click resolution for conflicting utilities.
+- **Class Sorting**: Opinionated sort by property category.
 
 ## Usage
 
@@ -45,13 +46,8 @@ import {
 } from '@yummacss/intellisense/vscode';
 ```
 
-## Features
+**For styling projects, use [yummacss](https://www.npmjs.com/package/yummacss) instead.**
 
-- **Completions** - autocomplete for all Yumma CSS utility classes
-- **Hover** - CSS output, variant context, and docs link on hover
-- **Color decorations** - color swatches inline for color utilities
-- **Conflict detection** - warnings when utilities set the same CSS property
-- **Quick fixes** - one-click resolution for conflicting utilities
-- **Class sorting** - opinionated sort order based on property category
+## Documentation
 
 Learn more at [yummacss.com](https://yummacss.com)
