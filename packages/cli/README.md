@@ -1,8 +1,9 @@
 # yummacss
 
-The ergonomic CSS framework.
+A utility CSS framework derived from CSS property names.
 
 ## Installation
+
 ```bash
 npm install yummacss -D
 npx yummacss init
@@ -10,23 +11,9 @@ npx yummacss init
 
 ## Commands
 
-### `init`
-Initialize configuration file
-```bash
-npx yummacss init
-```
-
-### `build`
-Build styles once
-```bash
-npx yummacss build
-```
-
-### `watch`
-Build styles continuously
-```bash
-npx yummacss watch
-```
+- `init`: Initialize configuration file.
+- `build`: Build styles once.
+- `watch`: Build styles continuously.
 
 ## Documentation
 
