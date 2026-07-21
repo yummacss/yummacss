@@ -7,8 +7,8 @@
 ## Installation
 
 ```bash
-npm install yummacss -D
-npx yummacss init
+pnpm install yummacss -D
+pnpx yummacss init
 ```
 
 ## Documentation
