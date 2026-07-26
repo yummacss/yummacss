@@ -1,7 +1,9 @@
 import {
+	type ColorValue,
 	coreUtils,
 	createColors,
 	defaultMediaQueries,
+	isColorPair,
 	type Utilities,
 	type Utility,
 } from "@yummacss/core";
@@ -25,12 +27,38 @@ export function generator(usedClasses: Set<string>, config: Config): string {
 		cssBlocks.push(normalizeCSS);
 	}
 
+	const colorScheme = buildColorScheme(config);
+	if (colorScheme) {
+		cssBlocks.push(colorScheme);
+	}
+
 	const util = generateUtil(usedClasses, config);
 	if (util) {
 		cssBlocks.push(util);
 	}
 
 	return cssBlocks.join("\n\n");
+}
+
+/**
+ * `light-dark()` resolves against the used value of `color-scheme`. If nothing
+ * declares it, every paired color silently resolves to its light side and dark
+ * mode never happens - so the declaration is emitted automatically as soon as
+ * the theme contains at least one pair, and not at all otherwise.
+ *
+ * `light dark` follows the OS preference. `color-scheme` is an ordinary
+ * inherited property, so setting it on any subtree flips every paired color
+ * beneath it - that is what a manual theme toggle hooks into.
+ */
+function buildColorScheme(config: Config): string | null {
+	const colors = config.theme?.colors;
+	if (!colors) return null;
+
+	const hasPair = Object.entries(colors).some(
+		([key, value]) => key !== "percentage" && isColorPair(value as ColorValue),
+	);
+
+	return hasPair ? ":root {\n  color-scheme: light dark;\n}" : null;
 }
 
 function buildUtils(config: Config): Record<string, Utility> {
@@ -466,10 +494,9 @@ function tryGenerateRule(
 	const finalValue = isNegative ? negateValue(propertyValue) : propertyValue;
 
 	// 5. Apply opacity
-	const finalPropertyValue =
-		opacityValue && finalValue.startsWith("#") && finalValue.length === 7
-			? `${finalValue}${opacityValue}`
-			: finalValue;
+	const finalPropertyValue = opacityValue
+		? applyOpacity(finalValue, opacityValue)
+		: finalValue;
 
 	const declarations = properties
 		.map((prop) => `${prop}: ${finalPropertyValue};`)
@@ -479,6 +506,27 @@ function tryGenerateRule(
 		rule: `.${escapeCn(originalClassName)}${pseudoClasses}${pseudoElements} {\n  ${declarations}\n}`,
 		mediaQuery,
 	};
+}
+
+// Values the opacity suffix (e.g. `bg-blue/50`) can be applied to. Anything
+// else - lengths, keywords, `transparent`, `currentColor` - is left untouched,
+// so a suffix on a non-color utility stays a no-op instead of producing
+// invalid CSS. `light-dark()` is included so paired theme colors accept
+// opacity; it is inert until those ship.
+function isColorValue(value: string): boolean {
+	return /^#[0-9a-f]{6}$/i.test(value) || value.startsWith("light-dark(");
+}
+
+// `color-mix()` accepts any <color>, which hex-alpha concatenation did not:
+// appending "80" to `light-dark(#fff, #000)` produces garbage. Mixing against
+// `transparent` in sRGB yields the color at the requested alpha.
+//
+// Note this is a small precision change - the old "1a" suffix was 26/255, or
+// 10.196%, where `10%` is now exact. Visually identical, but computed values
+// differ.
+function applyOpacity(value: string, percentage: string): string {
+	if (!isColorValue(value)) return value;
+	return `color-mix(in srgb, ${value} ${percentage}, transparent)`;
 }
 
 // Flip the sign of a CSS value's leading number, e.g. "0.25rem" ->

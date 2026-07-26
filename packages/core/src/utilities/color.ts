@@ -1,5 +1,5 @@
-import { colorValues } from "@/defaults/values";
-import { all } from "@/defaults/variants/stacks";
+import { colorSchemeValues, colorValues } from "@/defaults/values";
+import { all, base } from "@/defaults/variants/stacks";
 import type { Colors } from "@/interfaces";
 
 export const color: Colors = {
@@ -9,6 +9,18 @@ export const color: Colors = {
 		slug: "accent-color",
 		values: colorValues,
 		variants: all,
+	},
+	/**
+	 * Shares the `cs` prefix with `corner-shape`, the way `c` is already shared
+	 * by `color` and `cursor` - the value sets are disjoint, so a class resolves
+	 * to exactly one of them.
+	 */
+	"color-scheme": {
+		prefix: "cs",
+		properties: ["color-scheme"],
+		slug: "color-scheme",
+		values: colorSchemeValues,
+		variants: base,
 	},
 	"background-color": {
 		prefix: "bg",

@@ -51,9 +51,14 @@ export interface Config {
 		 * Add custom colors to the palette.
 		 * Provide base colors and Yumma CSS generates the full shade scale automatically.
 		 *
+		 * A color may also be a light/dark pair, which resolves per color scheme
+		 * via CSS `light-dark()`. Both sides are scaled independently, so every
+		 * shade of a paired color is itself a pair.
+		 *
 		 * @example { purple: "#9333EA" }
+		 * @example { surface: { light: "#ffffff", dark: "#111214" } }
 		 */
-		colors?: Record<string, string> & {
+		colors?: Record<string, string | { light: string; dark: string }> & {
 			/**
 			 * Control shade generation aggressiveness.
 			 */
