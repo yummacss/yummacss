@@ -1,4 +1,5 @@
-import { statSync } from "node:fs";
+import { createHash } from "node:crypto";
+import { readFileSync } from "node:fs";
 import { isAbsolute, join } from "node:path";
 import { pathToFileURL } from "node:url";
 import { type Config, ConfigSchema, configName } from "./schema";
@@ -44,10 +45,14 @@ export async function loadConfig(
 			: join(cwd, options.path)
 		: join(cwd, configName);
 
-	// The mtime query busts the ESM import cache so config edits are
-	// picked up by long-running dev servers.
-	const mtime = statSync(path).mtimeMs;
-	const url = `${pathToFileURL(path).href}?t=${mtime}`;
+	// The query busts the ESM import cache so config edits are picked up by
+	// long-running dev servers. It hashes the file's contents rather than its
+	// mtime: mtime is only as fine-grained as the filesystem's clock, so two
+	// edits landing in the same tick would reuse the stale module. Identical
+	// contents still resolve to the same URL, so unchanged configs reuse the
+	// cached module instead of leaking a new one on every call.
+	const digest = createHash("sha1").update(readFileSync(path)).digest("hex");
+	const url = `${pathToFileURL(path).href}?t=${digest}`;
 
 	const { default: userConfig } = (await import(url)) as { default: Config };
 

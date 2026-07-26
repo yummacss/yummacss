@@ -1,4 +1,4 @@
-import { mkdtempSync, rmSync, writeFileSync } from "node:fs";
+import { mkdtempSync, rmSync, utimesSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { loadConfig } from "@yummacss/nitro";
@@ -26,13 +26,22 @@ describe("config reload", () => {
 		expect(second.config.theme?.colors?.brand).toBe("#222222");
 	});
 
-	it("survives two edits inside the same millisecond", async () => {
-		// The cache key is the file's mtime. Two writes close enough together
-		// to share an mtime would collide and serve the stale module.
+	it("survives two edits that share an mtime", async () => {
+		// Regression: the cache key used to be the file's mtime, so two edits
+		// inside one filesystem clock tick served the stale module. That is
+		// timing-dependent - it passed on NTFS and failed on ext4 in CI - so
+		// the mtime is pinned here to reproduce the collision deterministically
+		// on any platform.
+		const pinned = new Date("2020-01-01T00:00:00Z");
+
 		write({ brand: "#333333" });
+		utimesSync(configPath, pinned, pinned);
 		await loadConfig({ cwd: dir });
+
 		write({ brand: "#444444" });
+		utimesSync(configPath, pinned, pinned);
 		const after = await loadConfig({ cwd: dir });
+
 		expect(after.config.theme?.colors?.brand).toBe("#444444");
 	});
 
