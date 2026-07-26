@@ -39,7 +39,14 @@ export { colorTheme } from "./defaults/theme";
 // variants
 export { mediaQueries as defaultMediaQueries } from "./defaults/variants/media-queries";
 // helpers
-export { createColors, generateShades } from "./helpers/create-colors";
+export {
+	type ColorPair,
+	type ColorValue,
+	createColors,
+	generatePairedShades,
+	generateShades,
+	isColorPair,
+} from "./helpers/create-colors";
 // types
 export type * from "./interfaces";
 export * from "./variants";
