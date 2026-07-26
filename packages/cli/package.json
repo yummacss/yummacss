@@ -1,6 +1,6 @@
 {
 	"name": "yummacss",
-	"version": "3.28.3",
+	"version": "3.29.0",
 	"description": "Utility CSS with no new vocabulary. Class names are derived from CSS property names, so if you know CSS, you already know Yumma.",
 	"keywords": [
 		"css-framework",
