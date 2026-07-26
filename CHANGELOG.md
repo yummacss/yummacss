@@ -25,6 +25,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - **[intellisense]** Hover returned nothing for negative values (`m--4`), pseudo elements (`s::bg-red`), and opacity suffixes (`bg-blue/50`), or any class combining them.
 - **[intellisense]** A pseudo element is no longer described as the pseudo class of the same name - `a::` is `:after`, `a:` is `:active`.
+- **[nitro]** `loadConfig` busted the ESM import cache using the config file's mtime, so two edits inside one filesystem clock tick reused the stale module. It now keys on a hash of the file contents.
 
 ## [3.28.3] - 2026-07-21
 
