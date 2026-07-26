@@ -7,6 +7,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- **[core]** Theme colors can be a light/dark pair - `{ surface: { light: "#ffffff", dark: "#111214" } }` - compiling to `light-dark()`. Both sides are scaled, so every shade is a pair too.
+- **[core]** Export `isColorPair`, `generatePairedShades`, and the `ColorPair` / `ColorValue` types.
+- **[nitro]** Emit `:root { color-scheme: light dark; }` when the theme contains a paired color, so `light-dark()` resolves.
+- **[core]** `color-scheme` utility - `cs-l`, `cs-d`, `cs-ld`. Shares the `cs` prefix with `corner-shape`; the value sets are disjoint.
+
+### Changed
+
+- **[nitro]** The opacity suffix now generates `color-mix()` instead of appending hex alpha, so it works on any color value - `light-dark()` included. `/10` is now exactly 10% rather than `1a` (10.196%).
+- **[core]** The `opacity` variant table holds percentages (`"50%"`) instead of hex alpha pairs (`"80"`). Prefixes are unchanged.
+
+### Fixed
+
+- **[intellisense]** Hover returned nothing for negative values (`m--4`), pseudo elements (`s::bg-red`), and opacity suffixes (`bg-blue/50`), or any class combining them.
+- **[intellisense]** A pseudo element is no longer described as the pseudo class of the same name - `a::` is `:after`, `a:` is `:active`.
+
 ## [3.28.3] - 2026-07-21
 
 ### Changed
