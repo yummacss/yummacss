@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.29.0] - 2026-07-27
+
 ### Added
 
 - **[core]** Theme colors can be a light/dark pair - `{ surface: { light: "#ffffff", dark: "#111214" } }` - compiling to `light-dark()`. Both sides are scaled, so every shade is a pair too.
