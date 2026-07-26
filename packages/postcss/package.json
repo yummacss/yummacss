@@ -41,7 +41,7 @@
 		"@yummacss/nitro": "workspace:*"
 	},
 	"devDependencies": {
-		"postcss": "^8.5.6"
+		"postcss": "^8.5.18"
 	},
 	"peerDependencies": {
 		"postcss": "^8.0.0"
