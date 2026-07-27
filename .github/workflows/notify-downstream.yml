@@ -26,7 +26,7 @@ jobs:
     steps:
       - name: Get version
         id: version
-        uses: actions/github-script@v8
+        uses: actions/github-script@v9
         with:
           github-token: ${{ secrets.DISPATCH_TOKEN }}
           script: |
@@ -43,7 +43,7 @@ jobs:
           result-encoding: string
 
       - name: Trigger update in ${{ matrix.repo }}
-        uses: actions/github-script@v8
+        uses: actions/github-script@v9
         with:
           github-token: ${{ secrets.DISPATCH_TOKEN }}
           script: |
