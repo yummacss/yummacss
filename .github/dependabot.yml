@@ -1,0 +1,15 @@
+version: 2
+updates:
+  # Without this, action versions never move - they drifted two to three majors
+  # behind & only surfaced as a Node 20 deprecation warning. Grouped into a
+  # single weekly PR so it stays quiet.
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    labels:
+      - "dependencies"
+    groups:
+      actions:
+        patterns:
+          - "*"
