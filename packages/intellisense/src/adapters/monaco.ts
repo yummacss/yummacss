@@ -1,4 +1,4 @@
-import type { Config } from "@yummacss/nitro";
+import type { Config } from "@yummacss/nitro/browser";
 import { buildPropertyMap, findConflicts } from "@/conflicts";
 import { CLASS_ATTR_REGEX } from "@/constants";
 import type { IntellisenseConfig } from "@/core";

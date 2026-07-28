@@ -1,4 +1,11 @@
-import { type Config, suggestClasses, validateClasses } from "@yummacss/nitro";
+// The browser entry, not the root one: this module is reachable from the
+// Monaco adapter, and `@yummacss/nitro` pulls in `node:fs` via `loadConfig`
+// & `scan`.
+import {
+	type Config,
+	suggestClasses,
+	validateClasses,
+} from "@yummacss/nitro/browser";
 import { CLASS_ATTR_REGEX, extractClassContent } from "./constants";
 
 export interface UnknownClass {
