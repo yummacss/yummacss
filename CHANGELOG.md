@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.29.2] - 2026-07-29
+
+### Fixed
+
+- **[runtime]** Responsive utilities were dropped before reaching the generator. The extractor filtered class names with `/^[a-z]/`, so every media query variant (`@sm:d-f`, `@md:bg-red-1`) was discarded because it starts with `@`. Only `@`-prefixed variants were affected, which is why pseudo class variants like `h:bg-white` kept working. This is why the playground's Generated CSS panel never showed responsive rules.
+
 ## [3.29.1] - 2026-07-29
 
 ### Fixed
@@ -1188,7 +1194,8 @@ No notable changes.
 
 - Initial release.
 
-[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.29.1...HEAD
+[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.29.2...HEAD
+[3.29.2]: https://github.com/yummacss/yummacss/compare/v3.29.1...v3.29.2
 [3.29.1]: https://github.com/yummacss/yummacss/compare/v3.29.0...v3.29.1
 [3.29.0]: https://github.com/yummacss/yummacss/compare/v3.28.3...v3.29.0
 [3.28.3]: https://github.com/yummacss/yummacss/compare/v3.28.2...v3.28.3
