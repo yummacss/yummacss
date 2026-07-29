@@ -1,6 +1,6 @@
 {
 	"name": "@yummacss/language-server",
-	"version": "3.29.0",
+	"version": "3.29.1",
 	"description": "Language server for Yumma CSS - completion, hover, diagnostics, color decorators, and sorting for any LSP-compatible editor",
 	"keywords": [
 		"css-framework",
