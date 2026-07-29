@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.29.1] - 2026-07-29
+
 ### Fixed
 
 - **[intellisense]** `node:fs` was pulled into browser bundles. `validate.ts` imported `suggestClasses` / `validateClasses` from `@yummacss/nitro` instead of `@yummacss/nitro/browser`, and the root entry re-exports `loadConfig` & `scan` - which reach `node:fs`, `node:crypto` and `tinyglobby`. Since the Monaco adapter reaches `validate.ts`, any bundler following it failed with `the chunking context does not support external modules (request: node:fs)`. This broke every playground deploy from 3.26.0 onward.
@@ -1186,7 +1188,9 @@ No notable changes.
 
 - Initial release.
 
-[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.28.3...HEAD
+[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.29.1...HEAD
+[3.29.1]: https://github.com/yummacss/yummacss/compare/v3.29.0...v3.29.1
+[3.29.0]: https://github.com/yummacss/yummacss/compare/v3.28.3...v3.29.0
 [3.28.3]: https://github.com/yummacss/yummacss/compare/v3.28.2...v3.28.3
 [3.28.2]: https://github.com/yummacss/yummacss/compare/v3.28.1...v3.28.2
 [3.28.1]: https://github.com/yummacss/yummacss/compare/v3.28.0...v3.28.1
