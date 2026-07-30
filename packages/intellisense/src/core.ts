@@ -1,12 +1,31 @@
 import { coreUtils, createColors } from "@yummacss/core";
+// `/browser`, never the root entry: that one re-exports loadConfig & scan and
+// so reaches node:fs, and this module is in the Monaco adapter's browser graph.
+// Type-only, so nothing is emitted either way, but the import path is load
+// bearing if it ever stops being type-only.
+import type { Config } from "@yummacss/nitro/browser";
 import tinycolor from "tinycolor2";
 
-export interface IntellisenseConfig {
-	theme?: {
-		colors?: Record<string, string>;
-		screens?: Record<string, string>;
-	};
-}
+/**
+ * Derived from nitro's Config rather than restated.
+ *
+ * This was a hand-maintained copy declaring `colors?: Record<string, string>`,
+ * which stopped matching when 3.29 added paired `{ light, dark }` colors. Every
+ * call site passing a real Config failed to typecheck, while the consumers
+ * below already cast to `any`, so the runtime was correct the whole time and
+ * only the declaration was wrong. Deriving it means the next theme change
+ * cannot reintroduce the drift.
+ */
+export type IntellisenseConfig = Pick<Config, "theme">;
+
+/**
+ * The user's `theme.colors` exactly as nitro types it: plain values, paired
+ * `{ light, dark }` values, and the `percentage` tuning key alongside them.
+ * Helpers take this rather than restating `Record<string, string>`.
+ */
+export type ThemeColors = NonNullable<
+	NonNullable<Config["theme"]>["colors"]
+>;
 
 export interface UtilityInfo {
 	cssValue: string;
@@ -30,7 +49,7 @@ export interface Suggestion {
 
 function mergeCustomColors(
 	utils: Record<string, any>,
-	colors: Record<string, string>,
+	colors: ThemeColors,
 ): Record<string, any> {
 	const { percentage, ...userColors } = colors as any;
 	if (Object.keys(userColors).length === 0) return utils;
