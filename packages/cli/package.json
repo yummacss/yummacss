@@ -1,7 +1,7 @@
 {
 	"name": "yummacss",
 	"version": "3.29.2",
-	"description": "Utility CSS with no new vocabulary. Class names are derived from CSS property names, so if you know CSS, you already know Yumma.",
+	"description": "A utility CSS framework where every class maps to exactly one CSS property. Initials of the property, initials of the value, drawn from a fixed scale.",
 	"keywords": [
 		"css-framework",
 		"typescript",
