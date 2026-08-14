@@ -16,7 +16,7 @@ describe("validateClasses (nitro)", () => {
 		expect(valid).toHaveLength(6);
 	});
 
-	it("should reject Tailwind syntax and unknown classes", () => {
+	it("should reject unknown classes", () => {
 		const { invalid } = validateClasses(
 			["gap-4", "items-center", "flex-col", "docs-card"],
 			{},
