@@ -1,6 +1,6 @@
 # yummacss
 
-A utility CSS framework where every class maps to exactly one CSS property.
+An atomic CSS framework.
 
 `d-f` is `display: flex`. `jc-sb` is `justify-content: space-between`. Initials
 of the property, initials of the value, drawn from a fixed scale rather than
