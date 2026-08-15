@@ -18,4 +18,5 @@ Each utility export returns a `Utilities` object with prefix, CSS properties, va
 
 ## Documentation
 
-Learn more at [yummacss.com/docs/core-module](https://yummacss.com/docs/core-module)
+Learn more at [yummacss.com](https://yummacss.com). For how prefixes map to CSS
+properties, see [the naming rule](https://yummacss.com/docs/naming).
