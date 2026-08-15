@@ -1,7 +1,7 @@
 {
 	"name": "yummacss",
 	"version": "3.29.2",
-	"description": "A utility CSS framework where every class maps to exactly one CSS property. Initials of the property, initials of the value, drawn from a fixed scale.",
+	"description": "An atomic CSS framework.",
 	"keywords": [
 		"css-framework",
 		"typescript",

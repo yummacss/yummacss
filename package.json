@@ -2,7 +2,7 @@
 	"name": "yummacss",
 	"version": "3.29.2",
 	"private": true,
-	"description": "A utility CSS framework where every class maps to exactly one CSS property.",
+	"description": "An atomic CSS framework.",
 	"keywords": [
 		"css-framework",
 		"typescript",
