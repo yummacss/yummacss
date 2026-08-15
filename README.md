@@ -1,6 +1,6 @@
 # Yumma CSS
 
-**A utility CSS framework derived from CSS property names.**
+**Fixed scales for spacing, colors, type and radius. No arbitrary values to drift.**
 
 `d-f` is `display: flex`, `jc-sb` is `justify-content: space-between`: initials of the property, initials of the value. If you know CSS, you already know Yumma CSS.
 
