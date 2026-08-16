@@ -21,7 +21,6 @@ jobs:
         repo:
           - yummacss/docs
           - yummacss/play
-          - yummacss/intellisense-vscode
 
     steps:
       - name: Get version
