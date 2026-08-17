@@ -17,7 +17,7 @@ import {
 	transitionUtils,
 } from "@yummacss/core";
 import { CLASS_ATTR_REGEX, extractClassContent } from "./constants";
-import type { IntellisenseConfig } from "./core";
+import type { IntellisenseConfig, ThemeColors } from "./core";
 
 enum Category {
 	Layout = 0,
@@ -37,7 +37,7 @@ enum Category {
 
 function mergeColorsIntoUtils(
 	utils: Record<string, any>,
-	colors: Record<string, string>,
+	colors: ThemeColors,
 ): Record<string, any> {
 	const { percentage, ...userColors } = colors as any;
 	if (Object.keys(userColors).length === 0) return utils;
