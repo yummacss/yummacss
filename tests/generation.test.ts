@@ -8,7 +8,11 @@ describe("Utility Generation", () => {
 		buildOptions: { reset: false },
 	};
 
-	it("should generate all core utilities and their variants", () => {
+	// Explicit timeout: this walks every utility, every value & every variant,
+	// which lands around 4.8s against vitest's 5000ms default - so it passed or
+	// failed on machine speed. `pnpm test` gates the publish workflow, and a
+	// coin-flip failure there blocks a release for no reason.
+	it("should generate all core utilities and their variants", { timeout: 30000 }, () => {
 		for (const [utilityName, utility] of Object.entries(utils)) {
 			const { prefix, values, variants } = utility;
 
