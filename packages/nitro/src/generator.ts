@@ -541,7 +541,11 @@ function negateValue(value: string): string {
 
 	const functionMatch = value.match(/^([a-zA-Z]+\()(-?[\d.]+)(.*)$/);
 	if (functionMatch) {
-		const [, prefix, number, suffix] = functionMatch;
+		// Defaults, not assertions: none of the three groups is optional, so a
+		// successful match always fills them. `noUncheckedIndexedAccess` still
+		// types them as possibly undefined, and this satisfies it without
+		// claiming anything the regex does not already guarantee.
+		const [, prefix = "", number = "", suffix = ""] = functionMatch;
 		const negatedNumber = number.startsWith("-")
 			? number.slice(1)
 			: `-${number}`;
