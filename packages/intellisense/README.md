@@ -33,19 +33,6 @@ registerConflictMarkers(monaco, editor);
 registerSortAction(monaco, editor);
 ```
 
-### VS Code
-
-```typescript
-import {
-  CompletionProvider,
-  HoverProvider,
-  ColorProvider,
-  ActionProvider,
-  subscribeToDocChanges,
-  registerSortCommand,
-} from '@yummacss/intellisense/vscode';
-```
-
 **For styling projects, use [yummacss](https://www.npmjs.com/package/yummacss) instead.**
 
 ## Documentation
