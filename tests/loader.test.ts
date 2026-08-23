@@ -36,7 +36,7 @@ describe("loadConfig", () => {
 
 		expect(path).toBe(join(fixtureDir, "yumma.config.mjs"));
 		expect(config.source).toEqual(["src/**/*.tsx"]);
-		expect(config.safelist).toEqual(["c-white"]);
+		expect(config.safelist).toEqual(["c:white"]);
 	});
 
 	it("should load a config from an explicit relative path", async () => {
@@ -86,11 +86,11 @@ describe("scan", () => {
 			cwd: fixtureDir,
 		});
 
-		expect(classes.has("d-f")).toBe(true);
-		expect(classes.has("ai-c")).toBe(true);
-		expect(classes.has("bg-red-5")).toBe(true);
-		expect(classes.has("p-4")).toBe(true);
-		expect(classes.has("m-2")).toBe(true);
+		expect(classes.has("d:f")).toBe(true);
+		expect(classes.has("ai:c")).toBe(true);
+		expect(classes.has("bg:red-5")).toBe(true);
+		expect(classes.has("p:4")).toBe(true);
+		expect(classes.has("m:2")).toBe(true);
 
 		expect(files).toHaveLength(2);
 		for (const file of files) {

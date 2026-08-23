@@ -16,21 +16,23 @@ describe("@yummacss/postcss", () => {
 		const result = await run("@yummacss;");
 
 		expect(result.css).not.toContain("@yummacss");
-		expect(result.css).toContain(".d-f");
-		expect(result.css).toContain(".ai-c");
-		expect(result.css).toContain(".bg-red-5");
-		expect(result.css).toContain(".p-4");
-		expect(result.css).toContain(".m-2");
+		expect(result.css).toContain(".d\\:f");
+		expect(result.css).toContain(".ai\\:c");
+		expect(result.css).toContain(".bg\\:red-5");
+		expect(result.css).toContain(".p\\:4");
+		expect(result.css).toContain(".m\\:2");
 		// safelist entry from the fixture config
-		expect(result.css).toContain(".c-white");
+		expect(result.css).toContain(".c\\:white");
 	});
 
 	it("should preserve surrounding CSS", async () => {
-		const result = await run("body { margin: 0; }\n@yummacss;\n.after { color: red; }");
+		const result = await run(
+			"body { margin: 0; }\n@yummacss;\n.after { color: red; }",
+		);
 
 		expect(result.css).toContain("body { margin: 0; }");
 		expect(result.css).toContain(".after { color: red; }");
-		expect(result.css).toContain(".d-f");
+		expect(result.css).toContain(".d\\:f");
 	});
 
 	it("should register file, config, and directory dependencies", async () => {
@@ -65,13 +67,13 @@ describe("@yummacss/postcss", () => {
 		const result = await run("@yummacss;", {
 			config: {
 				source: ["src/**/*.tsx"],
-				safelist: ["c-black"],
+				safelist: ["c:black"],
 				normalize: false,
 			},
 		});
 
-		expect(result.css).toContain(".c-black");
-		expect(result.css).toContain(".d-f");
+		expect(result.css).toContain(".c\\:black");
+		expect(result.css).toContain(".d\\:f");
 		// no config file dependency for inline configs
 		const files = result.messages
 			.filter((message) => message.type === "dependency")

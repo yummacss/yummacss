@@ -8,7 +8,7 @@ const fixtureDir = join(__dirname, "fixtures", "canon-app");
 describe("validateClasses (nitro)", () => {
 	it("should accept classes the generator understands", () => {
 		const { valid, invalid } = validateClasses(
-			["d-f", "@sm:d-b", "h:bg-red-5", "m--4", "bg-blue-5/50", "c-white"],
+			["d:f", "@sm:d:b", "h:bg:red-5", "m:-4", "bg:blue-5/50", "c:white"],
 			{},
 		);
 
@@ -46,7 +46,7 @@ describe("validateClasses (nitro)", () => {
 		const config = { prefix: "ui-" };
 
 		expect(validateClasses(["ui-d-f"], config).valid).toEqual(["ui-d-f"]);
-		expect(validateClasses(["d-f"], config).invalid).toEqual(["d-f"]);
+		expect(validateClasses(["d:f"], config).invalid).toEqual(["d:f"]);
 	});
 });
 
@@ -56,10 +56,10 @@ describe("extractClasses (canon)", () => {
 			'const s = "not-a-class"; <div className="d-f p-4">, cn("m-2 c-white")',
 		);
 
-		expect(classes.has("d-f")).toBe(true);
-		expect(classes.has("p-4")).toBe(true);
-		expect(classes.has("m-2")).toBe(true);
-		expect(classes.has("c-white")).toBe(true);
+		expect(classes.has("d:f")).toBe(true);
+		expect(classes.has("p:4")).toBe(true);
+		expect(classes.has("m:2")).toBe(true);
+		expect(classes.has("c:white")).toBe(true);
 		expect(classes.has("not-a-class")).toBe(false);
 	});
 
@@ -68,8 +68,8 @@ describe("extractClasses (canon)", () => {
 			`<div className={\`d-f \${isActive ? 'bg-red-5' : ''} p-4\`}>`,
 		);
 
-		expect(classes.has("d-f")).toBe(true);
-		expect(classes.has("p-4")).toBe(true);
+		expect(classes.has("d:f")).toBe(true);
+		expect(classes.has("p:4")).toBe(true);
 	});
 });
 
@@ -84,14 +84,14 @@ describe("validate (canon)", () => {
 		const gap = result.invalid.find((entry) => entry.className === "gap-4");
 		expect(gap?.files).toHaveLength(1);
 		expect(gap?.files[0]?.endsWith("Bad.tsx")).toBe(true);
-		expect(gap?.suggestion).toBe("g-4");
+		expect(gap?.suggestion).toBe("g:4");
 	});
 
 	it("should not report valid classes, variants, or safelist entries", async () => {
 		const result = await validate({ cwd: fixtureDir });
 		const invalidNames = result.invalid.map((entry) => entry.className);
 
-		for (const cls of ["d-f", "@sm:d-b", "h:bg-red-5", "m--4", "c-white"]) {
+		for (const cls of ["d:f", "@sm:d:b", "h:bg:red-5", "m:-4", "c:white"]) {
 			expect(invalidNames).not.toContain(cls);
 		}
 	});

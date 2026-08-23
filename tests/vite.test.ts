@@ -31,9 +31,9 @@ describe("@yummacss/vite", () => {
 
 		expect(result).toBeDefined();
 		expect(result?.code).not.toContain("@yummacss");
-		expect(result?.code).toContain(".d-f");
-		expect(result?.code).toContain(".bg-red-5");
-		expect(result?.code).toContain(".c-white");
+		expect(result?.code).toContain(".d\\:f");
+		expect(result?.code).toContain(".bg\\:red-5");
+		expect(result?.code).toContain(".c\\:white");
 		expect(result?.map).toBeNull();
 	});
 
@@ -46,7 +46,7 @@ describe("@yummacss/vite", () => {
 		);
 
 		expect(result?.code).toContain("body { margin: 0; }");
-		expect(result?.code).toContain(".d-f");
+		expect(result?.code).toContain(".d\\:f");
 	});
 
 	it("should handle CSS ids with query strings", async () => {
@@ -57,7 +57,7 @@ describe("@yummacss/vite", () => {
 			"/app/main.css?direct",
 		);
 
-		expect(result?.code).toContain(".d-f");
+		expect(result?.code).toContain(".d\\:f");
 	});
 
 	it("should ignore non-CSS modules", async () => {
@@ -86,13 +86,13 @@ describe("@yummacss/vite", () => {
 		const plugin = await createPlugin({
 			config: {
 				source: ["src/**/*.tsx"],
-				safelist: ["c-black"],
+				safelist: ["c:black"],
 				normalize: false,
 			},
 		});
 		const result = await transform(plugin, "@yummacss;", "/app/main.css");
 
-		expect(result?.code).toContain(".c-black");
-		expect(result?.code).toContain(".d-f");
+		expect(result?.code).toContain(".c\\:black");
+		expect(result?.code).toContain(".d\\:f");
 	});
 });

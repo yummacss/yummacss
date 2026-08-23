@@ -75,7 +75,7 @@ describe("color-scheme emission", () => {
 	});
 
 	it("stays out of the output when there is no theme at all", () => {
-		const css = generator(new Set(["bg-blue"]), { normalize: false } as never);
+		const css = generator(new Set(["bg:blue"]), { normalize: false } as never);
 		expect(css).not.toContain("color-scheme");
 	});
 
@@ -94,14 +94,14 @@ describe("color-scheme utility", () => {
 	const config = { normalize: false } as never;
 
 	it("generates each value", () => {
-		const css = generator(new Set(["cs-l", "cs-d", "cs-ld"]), config);
+		const css = generator(new Set(["cs:l", "cs:d", "cs:ld"]), config);
 		expect(css).toMatch(/\.cs-l\s*\{\s*color-scheme:\s*light;/);
 		expect(css).toMatch(/\.cs-d\s*\{\s*color-scheme:\s*dark;/);
 		expect(css).toMatch(/\.cs-ld\s*\{\s*color-scheme:\s*light dark;/);
 	});
 
 	it("still resolves corner-shape on the shared cs prefix", () => {
-		const css = generator(new Set(["cs-s", "cs-r", "cs-b", "cs-n"]), config);
+		const css = generator(new Set(["cs:s", "cs:r", "cs:b", "cs:n"]), config);
 		expect(css).toMatch(/\.cs-s\s*\{\s*corner-shape:\s*squircle;/);
 		expect(css).toMatch(/\.cs-n\s*\{\s*corner-shape:\s*notch;/);
 		expect(css).not.toContain("color-scheme");
