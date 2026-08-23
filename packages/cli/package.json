@@ -35,6 +35,7 @@
 		"prepublishOnly": "pnpm build"
 	},
 	"dependencies": {
+		"@yummacss/core": "workspace:*",
 		"@yummacss/nitro": "workspace:*"
 	},
 	"devDependencies": {
