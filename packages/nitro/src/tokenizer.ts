@@ -47,7 +47,8 @@ export function tokenizer(content: string): string[] {
 			if (classString) {
 				const individualClasses = classString.split(/\s+/).filter((cls) => {
 					const clean = cls.replace(/^@+/, "");
-					return clean && /^[a-z]/.test(clean) && clean.includes("-");
+					// A 4.0 class carries a colon, not a dash: `d:f` has no hyphen at all.
+					return clean && /^[a-z]/.test(clean) && clean.includes(":");
 				});
 
 				individualClasses.forEach((cls) => {

@@ -10,7 +10,7 @@ export function extractor(root: HTMLElement = document.body): Set<string> {
 			// `@` has to be allowed: media query variants are written `@sm:d-f`,
 			// and requiring a leading letter silently dropped every responsive
 			// utility before it reached the generator.
-			return cls && /^[a-z@]/.test(cls) && cls.includes("-");
+			return cls && /^[a-z@]/.test(cls) && cls.includes(":");
 		});
 
 		for (const cls of classes) {
