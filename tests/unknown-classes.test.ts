@@ -14,9 +14,9 @@ describe("findUnknownClasses", () => {
 		const unknown = findUnknownClasses('<div className="gap-4 cp z-10">');
 
 		const byName = new Map(unknown.map((u) => [u.className, u.suggestion]));
-		expect(byName.get("gap-4")).toBe("g-4");
-		expect(byName.get("cp")).toBe("c-p");
-		expect(byName.get("z-10")).toBe("zi-10");
+		expect(byName.get("gap-4")).toBe("g:4");
+		expect(byName.get("cp")).toBe("c:p");
+		expect(byName.get("z-10")).toBe("zi:10");
 	});
 
 	it("should preserve variants and opacity in suggestions", () => {
@@ -25,13 +25,13 @@ describe("findUnknownClasses", () => {
 		);
 
 		const byName = new Map(unknown.map((u) => [u.className, u.suggestion]));
-		expect(byName.get("@sm:gap-4")).toBe("@sm:g-4");
-		expect(byName.get("h:gap-4")).toBe("h:g-4");
+		expect(byName.get("@sm:gap-4")).toBe("@sm:g:4");
+		expect(byName.get("h:gap-4")).toBe("h:g:4");
 		// Opacity is preserved where it is valid (colors)...
-		expect(byName.get("c-whte/50")).toBe("c-white/50");
-		// ...and dropped where it is not - "g-4/50" would itself be
+		expect(byName.get("c-whte/50")).toBe("c:white/50");
+		// ...and dropped where it is not - "g:4/50" would itself be
 		// flagged, so the suggestion falls back to the bare class.
-		expect(byName.get("gap-4/50")).toBe("g-4");
+		expect(byName.get("gap-4/50")).toBe("g:4");
 	});
 
 	it("should report accurate positions", () => {
@@ -64,7 +64,7 @@ describe("findUnknownClasses", () => {
 		);
 
 		// d-f is unprefixed, so it is not canon in a prefixed project.
-		expect(unknown.map((u) => u.className)).toEqual(["d-f"]);
+		expect(unknown.map((u) => u.className)).toEqual(["d:f"]);
 	});
 
 	it("should not flag mid-typing fragments", () => {
