@@ -41,6 +41,9 @@ importers:
 
   packages/cli:
     dependencies:
+      '@yummacss/core':
+        specifier: workspace:*
+        version: link:../core
       '@yummacss/nitro':
         specifier: workspace:*
         version: link:../nitro
