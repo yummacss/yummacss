@@ -23,9 +23,7 @@ export type IntellisenseConfig = Pick<Config, "theme">;
  * `{ light, dark }` values, and the `percentage` tuning key alongside them.
  * Helpers take this rather than restating `Record<string, string>`.
  */
-export type ThemeColors = NonNullable<
-	NonNullable<Config["theme"]>["colors"]
->;
+export type ThemeColors = NonNullable<NonNullable<Config["theme"]>["colors"]>;
 
 export interface UtilityInfo {
 	cssValue: string;
@@ -87,7 +85,7 @@ export function buildUtilityMap(
 
 		Object.entries(util.values).forEach(([suffix, cssValue]) => {
 			const fullClass =
-				suffix === "" ? util.prefix : `${util.prefix}-${suffix}`;
+				suffix === "" ? util.prefix : `${util.prefix}:${suffix}`;
 			map.set(fullClass, {
 				cssValue: String(cssValue),
 				slug,
@@ -126,7 +124,7 @@ export function getSuggestions(config?: IntellisenseConfig): Suggestion[] {
 		Object.entries(util.values as Record<string, string>).forEach(
 			([suffix, cssValue]) => {
 				const fullClass =
-					suffix === "" ? util.prefix : `${util.prefix}-${suffix}`;
+					suffix === "" ? util.prefix : `${util.prefix}:${suffix}`;
 				const cssProperty: string = util.properties[0];
 
 				suggestions.push({

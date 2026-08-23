@@ -47,7 +47,7 @@ export function buildPropertyMap(
 		Object.entries(util.values as Record<string, string>).forEach(
 			([suffix]) => {
 				const fullClass =
-					suffix === "" ? util.prefix : `${util.prefix}-${suffix}`;
+					suffix === "" ? util.prefix : `${util.prefix}:${suffix}`;
 				map.set(fullClass, util.properties as string[]);
 			},
 		);
