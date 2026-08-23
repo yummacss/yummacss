@@ -8,6 +8,7 @@ import {
 	outlineUtils,
 	pseudoClasses,
 	pseudoElements,
+	splitVariants,
 } from "@yummacss/core";
 import { CLASS_ATTR_REGEX, extractClassContent } from "./constants";
 import type { IntellisenseConfig } from "./core";
@@ -78,7 +79,7 @@ function buildColorMap(config?: IntellisenseConfig): Map<string, string> {
 			Object.entries(util.values as Record<string, string>).forEach(
 				([suffix, cssValue]) => {
 					const fullClass =
-						suffix === "" ? util.prefix : `${util.prefix}-${suffix}`;
+						suffix === "" ? util.prefix : `${util.prefix}:${suffix}`;
 					map.set(fullClass, cssValue);
 				},
 			);
@@ -99,24 +100,9 @@ export function parseUtility(className: string): {
 	variants: string[];
 	baseUtility: string;
 } {
-	const variants: string[] = [];
-	let rest = className;
-
-	// Pseudo-element variants keep their `::` so they stay distinguishable
-	// from pseudo classes - `a` means `:active` as a pseudo class and
-	// `:after` as a pseudo element, so the bare prefix is ambiguous.
-	while (true) {
-		const colon = rest.indexOf(":");
-		if (colon === -1) break;
-
-		if (rest.startsWith("::", colon)) {
-			variants.push(`${rest.slice(0, colon)}::`);
-			rest = rest.slice(colon + 2);
-		} else {
-			variants.push(rest.slice(0, colon));
-			rest = rest.slice(colon + 1);
-		}
-	}
+	// A variant is only peeled when what remains is not already a utility, or
+	// `h:m:4` reads as two variants and `h:4` loses its height.
+	const { variants, base: rest } = splitVariants(className);
 
 	let baseUtility = rest;
 
@@ -130,7 +116,7 @@ export function parseUtility(className: string): {
 
 	// Negative values are written `m--4`, but the utility map is keyed `m-4` -
 	// the same normalisation the generator applies when it strips the sign.
-	baseUtility = baseUtility.replace(/^([a-z]+)--/, "$1-");
+	baseUtility = baseUtility.replace(/^([a-z-]+):-/, "$1:");
 
 	return { variants, baseUtility };
 }

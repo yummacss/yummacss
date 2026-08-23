@@ -37,7 +37,7 @@ describe("Opacity suffix", () => {
 	// The reason this change exists: hex alpha could never have been appended
 	// to a functional color value.
 	it("applies to light-dark() colors, which hex alpha could not", () => {
-		const css = generator(new Set(["bg-surface/50"]), {
+		const css = generator(new Set(["bg:surface/50"]), {
 			buildOptions: { reset: false },
 			theme: { colors: { surface: { light: "#ffffff", dark: "#111214" } } },
 		} as never);

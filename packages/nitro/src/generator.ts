@@ -4,6 +4,7 @@ import {
 	createColors,
 	defaultMediaQueries,
 	isColorPair,
+	splitVariants,
 	type Utilities,
 	type Utility,
 } from "@yummacss/core";
@@ -252,10 +253,14 @@ export function suggestClasses(
 		let variantPrefix = "";
 		let opacitySuffix = "";
 
-		const lastColon = className.lastIndexOf(":");
-		if (lastColon !== -1) {
-			variantPrefix = className.slice(0, lastColon + 1);
-			className = className.slice(lastColon + 1);
+		// Not the last colon: 4.0 puts one inside the utility too, so
+		// `h:g:4` would leave `4` as the class to match.
+		const split = splitVariants(className);
+		if (split.variants.length > 0) {
+			variantPrefix = split.variants
+				.map((v) => (v.endsWith("::") ? v : `${v}:`))
+				.join("");
+			className = split.base;
 		}
 
 		const opacityMatch = className.match(/\/\d+$/);
@@ -284,11 +289,23 @@ export function suggestClasses(
 		// Short classes only tolerate one edit - two edits away from
 		// "cp" is a different class, not a typo.
 		const maxDistance = className.length <= 4 ? 1 : 2;
+
+		// A v3-shaped typo is one edit further from its 4.0 answer than it was
+		// from its 3.x one, because the separator changed too: `gap-4` to `g-4`
+		// was two edits, `gap-4` to `g:4` is three. Distance is measured with
+		// both separators folded together so the people mid-migration, who are
+		// the ones typing `gap-4`, still get told what to write.
+		const fold = (s: string) => s.replace(/:/g, "-");
+		const folded = fold(className);
 		let best: string | undefined;
 		let bestScore = [maxDistance + 1, 1, 1, 0];
 
 		for (const candidate of candidates) {
-			const distance = levenshtein(className, candidate, maxDistance);
+			// Folded on both sides throughout: the tie-break asks whether one
+			// string sits inside the other, and `g:4` is not inside `gap-4`
+			// while `g-4` is.
+			const foldedCandidate = fold(candidate);
+			const distance = levenshtein(folded, foldedCandidate, maxDistance);
 			if (distance === 0 || distance > maxDistance) continue;
 
 			// Ties are broken by preferring candidates that share every
@@ -299,12 +316,12 @@ export function suggestClasses(
 			// alphabetically.
 			const score = [
 				distance,
-				isSubsequence(candidate, className) ||
-				isSubsequence(className, candidate)
+				isSubsequence(foldedCandidate, folded) ||
+				isSubsequence(folded, foldedCandidate)
 					? 0
 					: 1,
-				candidate[0] === className[0] ? 0 : 1,
-				-commonPrefixLength(candidate, className),
+				foldedCandidate[0] === folded[0] ? 0 : 1,
+				-commonPrefixLength(foldedCandidate, folded),
 			];
 
 			const comparison = compareScores(score, bestScore);

@@ -48,7 +48,7 @@ describe("Paired theme colors", () => {
 	});
 
 	it("generates usable CSS through the generator", () => {
-		const css = generator(new Set(["bg-surface", "c-surface-3"]), {
+		const css = generator(new Set(["bg:surface", "c:surface-3"]), {
 			buildOptions: { reset: false },
 			theme: { colors: { surface: pair } },
 		} as never);
@@ -59,7 +59,7 @@ describe("Paired theme colors", () => {
 
 describe("color-scheme emission", () => {
 	it("declares color-scheme when the theme contains a pair", () => {
-		const css = generator(new Set(["bg-surface"]), {
+		const css = generator(new Set(["bg:surface"]), {
 			normalize: false,
 			theme: { colors: { surface: pair } },
 		} as never);
@@ -67,7 +67,7 @@ describe("color-scheme emission", () => {
 	});
 
 	it("stays out of the output when no color is paired", () => {
-		const css = generator(new Set(["bg-brand"]), {
+		const css = generator(new Set(["bg:brand"]), {
 			normalize: false,
 			theme: { colors: { brand: "#bec6f2" } },
 		} as never);
@@ -80,7 +80,7 @@ describe("color-scheme emission", () => {
 	});
 
 	it("is not confused by the percentage config key", () => {
-		const css = generator(new Set(["bg-brand"]), {
+		const css = generator(new Set(["bg:brand"]), {
 			normalize: false,
 			theme: {
 				colors: { brand: "#bec6f2", percentage: { light: 10, dark: 10 } },

@@ -26,16 +26,16 @@ describe("validateClasses (nitro)", () => {
 	});
 
 	it("should treat safelist entries as valid", () => {
-		const { valid, invalid } = validateClasses(["bg-page/90"], {
-			safelist: ["bg-page/90"],
+		const { valid, invalid } = validateClasses(["bg:page/90"], {
+			safelist: ["bg:page/90"],
 		});
 
-		expect(valid).toEqual(["bg-page/90"]);
+		expect(valid).toEqual(["bg:page/90"]);
 		expect(invalid).toEqual([]);
 	});
 
 	it("should accept custom theme colors", () => {
-		const { invalid } = validateClasses(["bg-brand-5", "c-brand"], {
+		const { invalid } = validateClasses(["bg:brand-5", "c:brand"], {
 			theme: { colors: { brand: "#9333ea" } },
 		});
 
