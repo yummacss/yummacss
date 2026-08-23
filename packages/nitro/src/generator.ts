@@ -240,7 +240,7 @@ export function suggestClasses(
 	const candidates: string[] = [];
 	for (const util of Object.values(utils)) {
 		for (const key of Object.keys(util.values)) {
-			candidates.push(key === "base" ? util.prefix : `${util.prefix}-${key}`);
+			candidates.push(key === "base" ? util.prefix : `${util.prefix}:${key}`);
 		}
 	}
 	const candidateSet = new Set(candidates);
@@ -391,121 +391,131 @@ function generateUtil(usedClasses: Set<string>, config: Config): string {
 	return cssRules.join("\n\n");
 }
 
-function tryGenerateRule(
+interface Peeled {
+	mediaQuery?: string;
+	pseudoClasses: string;
+	pseudoElements: string;
+}
+
+/**
+ * Removes one leading variant, or returns null when none is there.
+ */
+function peelVariant(
 	className: string,
-	util: Utility,
-	originalClassName: string,
-): { rule: string; mediaQuery?: string } | null {
-	const { properties, variants, prefix, values } = util;
-	let currentClassName = className;
-	let mediaQuery: string | undefined;
-	let pseudoClasses = "";
-	let pseudoElements = "";
-	let opacityValue = "";
-
-	// 1. Extract variants (prefixes)
-	let foundPrefix = true;
-	while (foundPrefix) {
-		foundPrefix = false;
-
-		// Handle media queries - require @ prefix (e.g. @sm:d-f)
-		if (variants?.mediaQueries) {
-			for (const mq of variants.mediaQueries) {
-				if (currentClassName.startsWith(`@${mq.prefix}:`)) {
-					mediaQuery = mq.value;
-					currentClassName = currentClassName.slice(mq.prefix.length + 2);
-					foundPrefix = true;
-					break;
-				}
-			}
-		}
-
-		if (foundPrefix) continue;
-
-		// Handle pseudo elements (uses :: separator) - Check this BEFORE pseudo classes
-		if (variants?.pseudoElements) {
-			for (const pe of variants.pseudoElements) {
-				if (currentClassName.startsWith(`${pe.prefix}::`)) {
-					pseudoElements += pe.value;
-					currentClassName = currentClassName.slice(pe.prefix.length + 2);
-					foundPrefix = true;
-					break;
-				}
-			}
-		}
-
-		if (foundPrefix) continue;
-
-		// Handle pseudo classes (uses : separator) - Ensure it doesn't match ::
-		if (variants?.pseudoClasses) {
-			for (const pc of variants.pseudoClasses) {
-				if (
-					currentClassName.startsWith(`${pc.prefix}:`) &&
-					!currentClassName.startsWith(`${pc.prefix}::`)
-				) {
-					pseudoClasses += pc.value;
-					currentClassName = currentClassName.slice(pc.prefix.length + 1);
-					foundPrefix = true;
-					break;
-				}
+	variants: Utility["variants"],
+	acc: Peeled,
+): string | null {
+	if (variants?.mediaQueries) {
+		for (const mq of variants.mediaQueries) {
+			if (className.startsWith(`@${mq.prefix}:`)) {
+				acc.mediaQuery = mq.value;
+				return className.slice(mq.prefix.length + 2);
 			}
 		}
 	}
 
-	// 2. Handle opacity (suffix)
+	// Pseudo elements first: `b::` must not be read as the pseudo class `b:`.
+	if (variants?.pseudoElements) {
+		for (const pe of variants.pseudoElements) {
+			if (className.startsWith(`${pe.prefix}::`)) {
+				acc.pseudoElements += pe.value;
+				return className.slice(pe.prefix.length + 2);
+			}
+		}
+	}
+
+	if (variants?.pseudoClasses) {
+		for (const pc of variants.pseudoClasses) {
+			if (
+				className.startsWith(`${pc.prefix}:`) &&
+				!className.startsWith(`${pc.prefix}::`)
+			) {
+				acc.pseudoClasses += pc.value;
+				return className.slice(pc.prefix.length + 1);
+			}
+		}
+	}
+
+	return null;
+}
+
+/** The declaration value for `<prefix>:<value>`, or null if it is not one. */
+function matchValue(
+	className: string,
+	util: Utility,
+): { value: string; opacity: string } | null {
+	const { prefix, values, variants } = util;
+
+	let body = className;
+	let opacity = "";
 	if (variants?.opacity) {
 		for (const op of variants.opacity) {
-			if (currentClassName.endsWith(`/${op.prefix}`)) {
-				opacityValue = op.value;
-				currentClassName = currentClassName.slice(0, -(op.prefix.length + 1));
+			if (body.endsWith(`/${op.prefix}`)) {
+				opacity = op.value;
+				body = body.slice(0, -(op.prefix.length + 1));
 				break;
 			}
 		}
 	}
 
-	// 3. Match base utility
-	if (
-		!currentClassName.startsWith(`${prefix}-`) &&
-		currentClassName !== prefix
-	) {
-		return null;
-	}
+	if (!body.startsWith(`${prefix}:`) && body !== prefix) return null;
 
-	const valuePart =
-		currentClassName === prefix
-			? ""
-			: currentClassName.slice(prefix.length + 1);
-
-	// 4. Handle negative values (e.g., m--1 -> margin: -0.25rem)
-	let isNegative = false;
-	let cleanValuePart = valuePart;
-	if (valuePart.startsWith("-")) {
-		isNegative = true;
-		cleanValuePart = valuePart.slice(1); // Remove leading -
-	}
+	// `m:-4` leaves `-4` here exactly as `m--4` did, so the negative value
+	// stops being a special case in 4.0 without any code moving.
+	const valuePart = body === prefix ? "" : body.slice(prefix.length + 1);
+	const isNegative = valuePart.startsWith("-");
+	const lookup = isNegative ? valuePart.slice(1) : valuePart;
 
 	const propertyValue =
-		values[cleanValuePart === "" ? "base" : cleanValuePart] ||
-		values[cleanValuePart];
-
+		values[lookup === "" ? "base" : lookup] || values[lookup];
 	if (!propertyValue) return null;
 
-	// Apply negative sign if needed (only to numeric values)
-	const finalValue = isNegative ? negateValue(propertyValue) : propertyValue;
-
-	// 5. Apply opacity
-	const finalPropertyValue = opacityValue
-		? applyOpacity(finalValue, opacityValue)
-		: finalValue;
-
-	const declarations = properties
-		.map((prop) => `${prop}: ${finalPropertyValue};`)
-		.join("\n  ");
-
 	return {
-		rule: `.${escapeCn(originalClassName)}${pseudoClasses}${pseudoElements} {\n  ${declarations}\n}`,
-		mediaQuery,
+		value: isNegative ? negateValue(propertyValue) : propertyValue,
+		opacity,
 	};
+}
+
+/**
+ * Reads one class against one utility.
+ *
+ * 4.0 gives variants & utilities the same separator, so ten pseudo-class
+ * prefixes now collide with a utility prefix: `h:` is both `:hover` and
+ * `height`. The parser therefore cannot commit to reading a leading `h:` as a
+ * variant until it knows the remainder does not resolve on its own. It tries
+ * the class as written, peels one variant, tries again, and so on, which
+ * reads `h:4` as a height & `h:h:4` as a height under `:hover`.
+ */
+function tryGenerateRule(
+	className: string,
+	util: Utility,
+	originalClassName: string,
+): { rule: string; mediaQuery?: string } | null {
+	const { properties, variants } = util;
+	const acc: Peeled = { pseudoClasses: "", pseudoElements: "" };
+
+	let current = className;
+	while (true) {
+		const matched = matchValue(current, util);
+		if (matched) {
+			const finalValue = matched.opacity
+				? applyOpacity(matched.value, matched.opacity)
+				: matched.value;
+
+			const declarations = properties
+				.map((prop) => `${prop}: ${finalValue};`)
+				.join("\n  ");
+
+			return {
+				rule: `.${escapeCn(originalClassName)}${acc.pseudoClasses}${acc.pseudoElements} {\n  ${declarations}\n}`,
+				mediaQuery: acc.mediaQuery,
+			};
+		}
+
+		const rest = peelVariant(current, variants, acc);
+		if (rest === null) return null;
+		current = rest;
+	}
 }
 
 // Values the opacity suffix (e.g. `bg-blue/50`) can be applied to. Anything
