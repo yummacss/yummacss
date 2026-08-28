@@ -106,3 +106,20 @@ describe("validate (canon)", () => {
 		expect(invalidNames).toEqual(["gap-4", "items-center"]);
 	});
 });
+
+describe("extractClasses", () => {
+	it("reads an object value whose tokens all look like classes", () => {
+		const found = extractClasses('const S = { rounded: "br-lg bw-1" };');
+		expect([...found]).toEqual(["br-lg", "bw-1"]);
+	});
+
+	it("leaves a sentence that happens to start with a class", () => {
+		const found = extractClasses('const label = "m-4 is not a class here";');
+		expect([...found]).toEqual([]);
+	});
+
+	it("leaves an object key alone", () => {
+		const found = extractClasses('const props = { "aria-hidden": true };');
+		expect([...found]).toEqual([]);
+	});
+});

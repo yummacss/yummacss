@@ -2,6 +2,7 @@ import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import {
 	type Config,
+	extractClassStrings,
 	loadConfig,
 	suggestClasses,
 	validateClasses,
@@ -63,34 +64,42 @@ export interface ValidateResult {
 	invalid: InvalidClass[];
 }
 
-// Only class attribute contexts are scanned - not every string in the
-// file - so arbitrary hyphenated strings are not reported as classes.
-const classRegexes = [
-	/class(?:Name)?\s*=\s*["']([^"']+)["']/g,
-	/class(?:Name)?=\{["']([^"']+)["']\}/g,
-	/class(?:Name)?=\{`([^`]+)`\}/g,
-	/\b(?:cn|clsx|classnames|cva)\s*\(\s*["'`]([^"'`]+)["'`]/g,
-];
-
 // Tokens that cannot be class names (code fragments, placeholders like
 // "w-(value)", ellipses) are skipped rather than reported.
 const classNamePattern = /^@?[a-z][a-zA-Z0-9@:/.%-]*$/;
 
+/**
+ * Class attributes and `cn`/`clsx`/`cva` arguments are class lists by
+ * construction. An object value is read too, but only when every token in it
+ * looks like a class - that is what reaches
+ * `const SHAPES = { rounded: "br-lg" }`, where a prop-driven component keeps
+ * most of its classes, without reporting every hyphenated string in the file.
+ * A bare literal is left alone: it is prose as often as it is markup.
+ */
 export function extractClasses(content: string): Set<string> {
 	const classes = new Set<string>();
 
-	for (const regex of classRegexes) {
-		regex.lastIndex = 0;
-		let match = regex.exec(content);
-		while (match !== null) {
-			// Template literal expressions cannot be validated statically.
-			const value = (match[1] ?? "").replace(/\$\{[^}]*\}/g, " ");
-			for (const className of value.split(/\s+/)) {
-				if (className && classNamePattern.test(className)) {
-					classes.add(className);
-				}
-			}
-			match = regex.exec(content);
+	for (const literal of extractClassStrings(content)) {
+		if (literal.context === "bare") continue;
+
+		const tokens = literal.value.split(/\s+/).filter(Boolean);
+		if (tokens.length === 0) continue;
+
+		const declared =
+			literal.context === "attribute" || literal.context === "call";
+		if (
+			!declared &&
+			!tokens.every(
+				(token) =>
+					classNamePattern.test(token) &&
+					(token.includes("-") || token.includes(":")),
+			)
+		) {
+			continue;
+		}
+
+		for (const className of tokens) {
+			if (classNamePattern.test(className)) classes.add(className);
 		}
 	}
 
