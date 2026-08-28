@@ -38,7 +38,7 @@ export async function scan(
 	for (const file of files) {
 		try {
 			const content = readFileSync(file, "utf-8");
-			const tokens = tokenizer(content);
+			const tokens = tokenizer(content, file);
 			tokens.forEach((token) => {
 				classes.add(token);
 			});
