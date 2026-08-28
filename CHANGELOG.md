@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- **[cli]** `yummacss migrate` rewrites class names into the v4 colon syntax, with `--dry-run`. **Held back from 3.30.0 deliberately:** this release cannot compile what it writes, so running it against a v3 project silently stops every rewritten class from generating. It ships with v4.
+- **[cli]** `yummacss migrate` rewrites class names into the v4 colon syntax, with `--dry-run`. Written and tested, and **not reachable from the CLI**: the command is not wired into `cli.ts` and does not appear in `--help`, because v3 cannot compile what it writes (`d-f` generates, `d:f` does not), so running it would silently unstyle a whole project. Wire it up when v4 lands.
 
 ## [3.30.0] - 2026-08-28
 
