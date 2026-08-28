@@ -1,4 +1,5 @@
 import {
+	acceptsNegative,
 	type ColorValue,
 	coreUtils,
 	createColors,
@@ -490,8 +491,19 @@ function tryGenerateRule(
 
 	if (!propertyValue) return null;
 
-	// Apply negative sign if needed (only to numeric values)
-	const finalValue = isNegative ? negateValue(propertyValue) : propertyValue;
+	// A leading `-` is only meaningful where the property accepts a negative
+	// *and* the value is a number to negate. Anything else is not a class:
+	// returning null here rather than a rule is the point, because the two
+	// alternatives are both silent. `w--1` used to emit `width: -.25rem`,
+	// which a parser discards, and `bg--red-1` used to emit the same
+	// declaration as `bg-red-1`, quietly aliasing it.
+	let finalValue = propertyValue;
+	if (isNegative) {
+		if (!acceptsNegative(properties)) return null;
+		const negated = negateValue(propertyValue);
+		if (negated === null) return null;
+		finalValue = negated;
+	}
 
 	// 5. Apply opacity
 	const finalPropertyValue = opacityValue
@@ -532,9 +544,14 @@ function applyOpacity(value: string, percentage: string): string {
 // Flip the sign of a CSS value's leading number, e.g. "0.25rem" ->
 // "-0.25rem", or of the first number inside a function call, e.g.
 // "skewY(6deg)" -> "skewY(-6deg)" (negating the whole string would
-// produce invalid CSS like "-skewY(6deg)"). Values with no leading or
-// wrapped number (colors, keywords) are returned unchanged.
-function negateValue(value: string): string {
+// produce invalid CSS like "-skewY(6deg)").
+//
+// Returns null for a value with no leading or wrapped number - a color, or a
+// keyword like `auto`. There is nothing to negate there, so the class the
+// caller was resolving does not exist. This used to return the value
+// unchanged, which is how `m--auto` became a silent second spelling of
+// `m-auto`.
+function negateValue(value: string): string | null {
 	if (/^-?[\d.]/.test(value)) {
 		return value.startsWith("-") ? value.slice(1) : `-${value}`;
 	}
@@ -552,7 +569,7 @@ function negateValue(value: string): string {
 		return `${prefix}${negatedNumber}${suffix}`;
 	}
 
-	return value;
+	return null;
 }
 
 // escape colons, slashes, @ symbols and percentage
