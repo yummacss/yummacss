@@ -491,12 +491,9 @@ function tryGenerateRule(
 
 	if (!propertyValue) return null;
 
-	// A leading `-` is only meaningful where the property accepts a negative
-	// *and* the value is a number to negate. Anything else is not a class:
-	// returning null here rather than a rule is the point, because the two
-	// alternatives are both silent. `w--1` used to emit `width: -.25rem`,
-	// which a parser discards, and `bg--red-1` used to emit the same
-	// declaration as `bg-red-1`, quietly aliasing it.
+	// Only meaningful where the property accepts a negative and the value is a
+	// number. Anything else is not a class: `w--1` emitted `width: -.25rem`,
+	// which a parser discards, and `bg--red-1` aliased `bg-red-1`.
 	let finalValue = propertyValue;
 	if (isNegative) {
 		if (!acceptsNegative(properties)) return null;
@@ -541,16 +538,10 @@ function applyOpacity(value: string, percentage: string): string {
 	return `color-mix(in srgb, ${value} ${percentage}, transparent)`;
 }
 
-// Flip the sign of a CSS value's leading number, e.g. "0.25rem" ->
-// "-0.25rem", or of the first number inside a function call, e.g.
-// "skewY(6deg)" -> "skewY(-6deg)" (negating the whole string would
-// produce invalid CSS like "-skewY(6deg)").
-//
-// Returns null for a value with no leading or wrapped number - a color, or a
-// keyword like `auto`. There is nothing to negate there, so the class the
-// caller was resolving does not exist. This used to return the value
-// unchanged, which is how `m--auto` became a silent second spelling of
-// `m-auto`.
+// Flip the sign of a value's leading number, or of the number inside a
+// function call ("skewY(6deg)" -> "skewY(-6deg)"; negating the whole string
+// would give "-skewY(6deg)"). Null when there is no number to negate - a
+// color or a keyword - because then the class does not exist.
 function negateValue(value: string): string | null {
 	if (/^-?[\d.]/.test(value)) {
 		return value.startsWith("-") ? value.slice(1) : `-${value}`;

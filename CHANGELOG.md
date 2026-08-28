@@ -9,25 +9,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- **[cli]** `yummacss migrate` rewrites class names into the v4 colon syntax, with `--dry-run`. Written and tested, and **not reachable from the CLI**: the command is not wired into `cli.ts` and does not appear in `--help`, because v3 cannot compile what it writes (`d-f` generates, `d:f` does not), so running it would silently unstyle a whole project. Wire it up when v4 lands.
+- **[cli]** `yummacss migrate` rewrites class names into the v4 colon syntax. Not wired into the CLI until v4 ships, because v3 cannot compile what it writes.
 
 ## [3.30.0] - 2026-08-28
 
 ### Fixed
 
-- **[nitro]** The class scanner silently dropped classes. It matched bare string literals with `/"([^"]+)"/g`, and `[^"]+` is one-or-more, so an empty literal `""` could not match: the regex backtracked, began its next match on the *second* quote of that pair, and from there captured the code *between* strings rather than the strings. Every later class in the file was lost until another `""` re-synced the pairing - which is why two classes written in the same literal could disagree about whether they generated, and why a file could sit in `source` and contribute nothing (a regex literal such as `/"([^"]+)"/g` holds three quotes and blinds everything below it). Quote pairing cannot be made correct without knowing what a string is, so the tokenizer now lexes: JavaScript-family files get a scanner that tracks comments, escapes, template literals and regex literals, and everything else - `.mdx` above all, where a lone apostrophe in prose is normal - gets a line-scoped pass so a stray quote costs its own line and nothing after it. Measured against a 331-file site: 1579 tokens before, 1262 after, with 75 real classes recovered.
-- **[nitro]** A leading `-` was applied to any utility whose value started with a digit, with no notion of whether the property would accept the result. **72 utilities emitted CSS the parser discards** - `w--1` was `width: -.25rem`, `p--1` was `padding: -.25rem`, `br--9999` was `border-radius: -9999px`, and `lh--1`, `fw--100`, `tdu--50`, `fg--1`, `g--1`, `ow--1` and `sp--1` were the same shape - so the declaration vanished and the class silently did nothing. Separately, a leading `-` on a value with no number to negate was *ignored*, which made `m--auto` a second spelling of `m-auto` and `bg--red-1` a second spelling of `bg-red-1`. A leading `-` is now meaningful only where the property accepts a negative and the value is a number, and anything else resolves to no class at all - which `canon` reports as unknown, since it shares the same resolver. The 40 utilities where negatives are legal are unchanged: margins, insets, `z-index`, `order`, `letter-spacing`, `text-indent`, `translate`/`rotate`/`scale`, `scroll-margin`, `outline-offset`, `text-underline-offset`, `transition-delay` and `flex-basis`. Negative grid line numbers (`gcs--1`) stay legal, because they count back from the end of the explicit grid.
+- **[nitro]** The class scanner dropped classes after an empty string literal. It paired quotes with a regex, which desynced on `""`; it now lexes.
+- **[nitro]** A leading `-` was applied without checking whether the property accepts one, so 72 utilities emitted CSS the parser discards (`w--1` was `width: -.25rem`). It was also ignored on non-numeric values, making `m--auto` a silent alias of `m-auto`.
 
 ### Changed
 
-- **[core]** New `acceptsNegative(properties)` export, naming the CSS properties that admit a negative value. Keyed on the property rather than the utility, so a new utility mapping onto `margin-inline` inherits the right answer.
-- **[nitro]** Class names that appear **only inside a comment** no longer generate CSS. This follows from the fix above and is intended: a sentence explaining that `m-23` is a valid class was emitting a real `margin` rule. If a class exists nowhere but a comment, add it to `safelist`.
-- **[nitro]** `tokenizer(content, filename?)` takes an optional second argument, used only to choose a strategy. Omitting it keeps the conservative line-scoped pass, which is correct for any input, so existing callers are unaffected. `scan` passes it automatically.
-
+- **[core]** New `acceptsNegative(properties)` export, naming the CSS properties that admit a negative value.
+- **[nitro]** Class names that appear only inside a comment no longer generate CSS. Safelist them if you need one.
+- **[nitro]** `tokenizer(content, filename?)` takes an optional second argument. Existing callers are unaffected.
 
 ### Removed
 
-- **[intellisense]** The editor half is gone: `packages/language-server` is deleted along with the VS Code and Zed extensions, which are unpublished and retired. The language service - completions, hover, sorting, validation - is untouched. No published package changes its API.
+- **[intellisense]** The editor half, `packages/language-server`, is deleted with the retired VS Code and Zed extensions. The language service is untouched.
 
 ## [3.29.2] - 2026-07-29
 

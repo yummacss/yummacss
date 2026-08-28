@@ -19,11 +19,9 @@ describe("Negative values", () => {
 	const numericKey = (values: Record<string, string>) =>
 		Object.keys(values).find((k) => /^\d+$/.test(k) && k !== "0");
 
-	// Asserted as "exists and differs from the positive form" rather than
-	// "contains a leading minus". Two families make the naive version wrong:
-	// `letter-spacing`'s scale is already negative, so negating `ls-1`
-	// (`-.05em`) yields `.05em`, and a transform puts its sign inside the
-	// parens - `transform: skew(-1deg)`.
+	// "Differs from the positive form", not "contains a minus":
+	// `letter-spacing`'s scale is already negative, and transforms put the
+	// sign inside the parens.
 	it("generates a distinct rule for every property that accepts a negative", () => {
 		const broken: string[] = [];
 		for (const [, u] of Object.entries(utils)) {
@@ -93,8 +91,7 @@ describe("Negative values", () => {
 		expect(css("s--10")).toContain("scale: -.1");
 	});
 
-	// A leading `-` on something with no number to negate is not a class. It
-	// used to be a silent second spelling of the positive one.
+	// No number to negate means no class. These used to alias the positive form.
 	it.each([
 		"m--auto",
 		"w--auto",
@@ -110,9 +107,8 @@ describe("Negative values", () => {
 		expect(css("bg-red-1")).toContain("background-color:");
 	});
 
-	// `validateClasses` resolves through the same `generateCSSRule`, so canon
-	// reports these without a second list to keep in step. Asserted rather
-	// than assumed, because that shared path is the only thing holding it.
+	// Canon gets this free from the shared `generateCSSRule`. Asserted because
+	// that shared path is the only thing holding it.
 	it("reports illegal negatives as unknown to canon", () => {
 		const { valid, invalid } = validateClasses(
 			["w--1", "p--1", "br--9999", "m--1", "t--1", "zi--10", "bg--red-1"],
