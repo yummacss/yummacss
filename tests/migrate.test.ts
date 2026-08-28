@@ -149,4 +149,45 @@ describe("rewriteSource", () => {
 		const source = "export const x = 1;\n";
 		expect(rewriteSource(source).content).toBe(source);
 	});
+
+	it("rewrites a class map, which is where half the classes live", () => {
+		const source = [
+			"const SHAPES = {",
+			'\trounded: { item: "br-lg", trigger: "br-sm" },',
+			'\tsquare: { item: "", trigger: "br-0" },',
+			"};",
+		].join("\n");
+
+		const { content } = rewriteSource(source);
+
+		expect(content).toContain('rounded: { item: "br:lg", trigger: "br:sm" }');
+		expect(content).toContain('square: { item: "", trigger: "br:0" }');
+	});
+
+	it("leaves a map value alone when one of its classes is not real", () => {
+		// `br-none` does not exist; rewriting the rest would hide that.
+		const source = 'const s = { square: "br-none bw-1" };';
+		expect(rewriteSource(source).content).toBe(source);
+	});
+
+	it("leaves an object value that is not entirely classes", () => {
+		const source = 'const meta = { title: "d-f is the display utility" };';
+		expect(rewriteSource(source).content).toBe(source);
+	});
+
+	it("keeps reading a file after an empty literal", () => {
+		// The old tokenizer lost everything after `""`; the codemod's own
+		// patterns never reached either line.
+		const source = [
+			'const empty = "";',
+			'const classes = { root: "d-f ai-c" };',
+		].join("\n");
+
+		expect(rewriteSource(source).content).toContain('root: "d:f ai:c"');
+	});
+
+	it("does not rewrite a class named in a comment", () => {
+		const source = "// d-f is the display utility\nconst x = 1;";
+		expect(rewriteSource(source).content).toBe(source);
+	});
 });

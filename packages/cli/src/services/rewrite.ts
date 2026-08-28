@@ -1,28 +1,5 @@
+import { extractClassStrings } from "@yummacss/nitro";
 import { migrateClass } from "./migrate.js";
-
-/**
- * Only class attribute contexts are rewritten.
- *
- * The generator's tokenizer also matches every bare string literal in a file,
- * which is safe when it is collecting class names & destructive here: this
- * writes the file back, so a match on an unrelated string would corrupt it.
- * These are canon's narrower patterns.
- */
-const CLASS_CONTEXTS = [
-	/class(?:Name)?\s*=\s*["']([^"']+)["']/g,
-	/class(?:Name)?=\{["']([^"']+)["']\}/g,
-	/class(?:Name)?=\{`([^`]+)`\}/g,
-	/\b(?:cn|clsx|classnames|cva)\s*\(\s*["'`]([^"'`]+)["'`]/g,
-];
-
-/**
- * Quotes & braces that wrap a class inside a bigger expression.
- *
- * `className={`p-4 ${open ? "ro-45" : "ro-0"}`}` splits on whitespace into
- * tokens like `"ro-45` and `"ro-0"}`. Those are real classes wearing
- * punctuation, and leaving them alone would quietly strand them on v3.
- */
-const WRAPPERS = /^([`"'{([]*)(.*?)([`"'})\],;]*)$/;
 
 export interface RewriteResult {
 	content: string;
@@ -38,70 +15,63 @@ interface Edit {
 	text: string;
 }
 
+const INTERPOLATION = /\$\{[^}]*\}/g;
+
+/**
+ * Rewrites v3 class names in place.
+ *
+ * A class attribute or a `cn`/`clsx`/`cva` argument is a class list by
+ * construction, so every token in it is migrated and anything unknown is
+ * reported. Everywhere else - an object value, a bare literal - the file is
+ * only written back when *every* token is a known utility, because this
+ * writes over someone's source and `"m-4 is not a class here"` is a sentence.
+ */
 export function rewriteSource(content: string): RewriteResult {
 	const edits: Edit[] = [];
 	const skipped = new Map<string, string>();
 	let migrated = 0;
 
-	for (const regex of CLASS_CONTEXTS) {
-		regex.lastIndex = 0;
+	for (const literal of extractClassStrings(content)) {
+		const declared =
+			literal.context === "attribute" || literal.context === "call";
+		const tokens = [...literal.value.matchAll(/\S+/g)];
+		if (tokens.length === 0) continue;
 
-		for (const match of content.matchAll(regex)) {
-			const value = match[1];
-			if (value === undefined || match.index === undefined) continue;
+		const results = tokens.map((token) => ({
+			token: token[0],
+			start: literal.start + (token.index ?? 0),
+			result: migrateClass(token[0]),
+		}));
 
-			const offset = match[0].indexOf(value);
-			if (offset < 0) continue;
+		if (!declared && results.some(({ result }) => !result.ok)) continue;
 
-			const rewritten = value
-				.split(/(\s+)/)
-				.map((token) => {
-					if (!token.trim()) return token;
-
-					// A class assembled at runtime cannot be read statically, so it
-					// is left exactly as written & reported instead.
-					if (token.includes("${")) {
-						skipped.set(token, "built at runtime");
-						return token;
-					}
-
-					const [, open = "", core = "", close = ""] =
-						WRAPPERS.exec(token) ?? [];
-					if (!core) return token;
-
-					const result = migrateClass(core);
-					if (!result.ok) {
-						skipped.set(token, result.reason);
-						return token;
-					}
-
-					if (result.changed) migrated++;
-					return `${open}${result.className}${close}`;
-				})
-				.join("");
-
-			if (rewritten !== value) {
-				edits.push({
-					start: match.index + offset,
-					end: match.index + offset + value.length,
-					text: rewritten,
-				});
+		if (declared) {
+			// `${}` is blanked out of `value`, so the raw span is where a runtime
+			// expression can still be seen and reported.
+			for (const [expression] of content
+				.slice(literal.start, literal.end)
+				.matchAll(INTERPOLATION)) {
+				skipped.set(expression, "built at runtime");
 			}
+		}
+
+		for (const { token, start, result } of results) {
+			if (!result.ok) {
+				skipped.set(token, result.reason);
+				continue;
+			}
+			if (!result.changed) continue;
+			migrated++;
+			edits.push({ start, end: start + token.length, text: result.className });
 		}
 	}
 
-	// Last edit first, so earlier offsets stay valid. Overlaps are dropped
-	// rather than applied twice, which happens when two patterns match the
-	// same attribute.
+	// Last edit first, so earlier offsets stay valid.
 	edits.sort((a, b) => b.start - a.start);
 
 	let output = content;
-	let previousStart = Number.POSITIVE_INFINITY;
-
 	for (const edit of edits) {
-		if (edit.end > previousStart) continue;
 		output = output.slice(0, edit.start) + edit.text + output.slice(edit.end);
-		previousStart = edit.start;
 	}
 
 	return { content: output, migrated, skipped };
