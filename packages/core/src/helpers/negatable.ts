@@ -1,20 +1,11 @@
 /**
- * Which CSS properties accept a negative value.
+ * CSS properties that accept a negative value.
  *
- * A leading `-` used to be applied to any utility whose value started with a
- * digit, with no notion of whether the property would accept the result. That
- * produced `width: -.25rem`, `padding: -.25rem`, `border-radius: -9999px`,
- * `line-height: -1` and 67 others, all of which a parser discards - so the
- * declaration vanished and the class silently did nothing.
- *
- * The list is keyed on the property rather than on the utility on purpose.
- * Legality is a fact about CSS, so a new utility mapping onto `margin-inline`
- * inherits the right answer instead of needing someone to remember a flag.
- *
- * Two entries look wrong and are not. Negative integers are legal grid line
- * numbers - they count back from the end of the explicit grid - and negative
- * `scale` mirrors rather than failing.
+ * Keyed on the property, not the utility: legality is a fact about CSS, so a
+ * new utility mapping onto `margin-inline` inherits the right answer. Grid
+ * line numbers and `scale` are legal despite looking wrong.
  */
+
 const NEGATABLE = new Set<string>([
 	// Box model
 	"margin",
