@@ -7,6 +7,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- **[cli]** `yummacss migrate` rewrites class names into the v4 colon syntax, with `--dry-run`. **Held back from 3.30.0 deliberately:** this release cannot compile what it writes, so running it against a v3 project silently stops every rewritten class from generating. It ships with v4.
+
+## [3.30.0] - 2026-08-28
+
+### Fixed
+
+- **[nitro]** The class scanner silently dropped classes. It matched bare string literals with `/"([^"]+)"/g`, and `[^"]+` is one-or-more, so an empty literal `""` could not match: the regex backtracked, began its next match on the *second* quote of that pair, and from there captured the code *between* strings rather than the strings. Every later class in the file was lost until another `""` re-synced the pairing - which is why two classes written in the same literal could disagree about whether they generated, and why a file could sit in `source` and contribute nothing (a regex literal such as `/"([^"]+)"/g` holds three quotes and blinds everything below it). Quote pairing cannot be made correct without knowing what a string is, so the tokenizer now lexes: JavaScript-family files get a scanner that tracks comments, escapes, template literals and regex literals, and everything else - `.mdx` above all, where a lone apostrophe in prose is normal - gets a line-scoped pass so a stray quote costs its own line and nothing after it. Measured against a 331-file site: 1579 tokens before, 1262 after, with 75 real classes recovered.
+
+### Changed
+
+- **[nitro]** Class names that appear **only inside a comment** no longer generate CSS. This follows from the fix above and is intended: a sentence explaining that `m-23` is a valid class was emitting a real `margin` rule. If a class exists nowhere but a comment, add it to `safelist`.
+- **[nitro]** `tokenizer(content, filename?)` takes an optional second argument, used only to choose a strategy. Omitting it keeps the conservative line-scoped pass, which is correct for any input, so existing callers are unaffected. `scan` passes it automatically.
+
+### Removed
+
+- **[intellisense]** The editor half is gone: `packages/language-server` is deleted along with the VS Code and Zed extensions, which are unpublished and retired. The language service - completions, hover, sorting, validation - is untouched. No published package changes its API.
+
 ## [3.29.2] - 2026-07-29
 
 ### Fixed
@@ -1194,7 +1213,8 @@ No notable changes.
 
 - Initial release.
 
-[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.29.2...HEAD
+[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.30.0...HEAD
+[3.30.0]: https://github.com/yummacss/yummacss/compare/v3.29.2...v3.30.0
 [3.29.2]: https://github.com/yummacss/yummacss/compare/v3.29.1...v3.29.2
 [3.29.1]: https://github.com/yummacss/yummacss/compare/v3.29.0...v3.29.1
 [3.29.0]: https://github.com/yummacss/yummacss/compare/v3.28.3...v3.29.0
