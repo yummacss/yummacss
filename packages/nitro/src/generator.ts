@@ -1,4 +1,5 @@
 import {
+	acceptsNegative,
 	type ColorValue,
 	coreUtils,
 	createColors,
@@ -490,8 +491,16 @@ function tryGenerateRule(
 
 	if (!propertyValue) return null;
 
-	// Apply negative sign if needed (only to numeric values)
-	const finalValue = isNegative ? negateValue(propertyValue) : propertyValue;
+	// Only meaningful where the property accepts a negative and the value is a
+	// number. Anything else is not a class: `w--1` emitted `width: -.25rem`,
+	// which a parser discards, and `bg--red-1` aliased `bg-red-1`.
+	let finalValue = propertyValue;
+	if (isNegative) {
+		if (!acceptsNegative(properties)) return null;
+		const negated = negateValue(propertyValue);
+		if (negated === null) return null;
+		finalValue = negated;
+	}
 
 	// 5. Apply opacity
 	const finalPropertyValue = opacityValue
@@ -529,12 +538,11 @@ function applyOpacity(value: string, percentage: string): string {
 	return `color-mix(in srgb, ${value} ${percentage}, transparent)`;
 }
 
-// Flip the sign of a CSS value's leading number, e.g. "0.25rem" ->
-// "-0.25rem", or of the first number inside a function call, e.g.
-// "skewY(6deg)" -> "skewY(-6deg)" (negating the whole string would
-// produce invalid CSS like "-skewY(6deg)"). Values with no leading or
-// wrapped number (colors, keywords) are returned unchanged.
-function negateValue(value: string): string {
+// Flip the sign of a value's leading number, or of the number inside a
+// function call ("skewY(6deg)" -> "skewY(-6deg)"; negating the whole string
+// would give "-skewY(6deg)"). Null when there is no number to negate - a
+// color or a keyword - because then the class does not exist.
+function negateValue(value: string): string | null {
 	if (/^-?[\d.]/.test(value)) {
 		return value.startsWith("-") ? value.slice(1) : `-${value}`;
 	}
@@ -552,7 +560,7 @@ function negateValue(value: string): string {
 		return `${prefix}${negatedNumber}${suffix}`;
 	}
 
-	return value;
+	return null;
 }
 
 // escape colons, slashes, @ symbols and percentage

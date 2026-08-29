@@ -7,6 +7,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- **[cli]** `yummacss migrate` rewrites class names into the v4 colon syntax. Not wired into the CLI until v4 ships, because v3 cannot compile what it writes.
+
+## [3.30.0] - 2026-08-29
+
+### Fixed
+
+- **[nitro]** The class scanner dropped classes after an empty string literal. It paired quotes with a regex, which desynced on `""`; it now lexes.
+- **[nitro]** A leading `-` was applied without checking whether the property accepts one, so 72 utilities emitted CSS the parser discards (`w--1` was `width: -.25rem`). It was also ignored on non-numeric values, making `m--auto` a silent alias of `m-auto`.
+
+### Changed
+
+- **[core]** New `acceptsNegative(properties)` export, naming the CSS properties that admit a negative value.
+- **[nitro]** Class names that appear only inside a comment no longer generate CSS. Safelist them if you need one.
+- **[nitro]** `tokenizer(content, filename?)` takes an optional second argument. Existing callers are unaffected.
+
+### Removed
+
+- **[intellisense]** The editor half, `packages/language-server`, is deleted with the retired VS Code and Zed extensions. The language service is untouched.
+
 ## [3.29.2] - 2026-07-29
 
 ### Fixed
@@ -1194,7 +1215,8 @@ No notable changes.
 
 - Initial release.
 
-[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.29.2...HEAD
+[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.30.0...HEAD
+[3.30.0]: https://github.com/yummacss/yummacss/compare/v3.29.2...v3.30.0
 [3.29.2]: https://github.com/yummacss/yummacss/compare/v3.29.1...v3.29.2
 [3.29.1]: https://github.com/yummacss/yummacss/compare/v3.29.0...v3.29.1
 [3.29.0]: https://github.com/yummacss/yummacss/compare/v3.28.3...v3.29.0
