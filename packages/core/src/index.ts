@@ -38,7 +38,6 @@ export const transitionUtils = (): Utilities => transition;
 export { colorTheme } from "./defaults/theme";
 // variants
 export { mediaQueries as defaultMediaQueries } from "./defaults/variants/media-queries";
-// helpers
 export {
 	type ColorPair,
 	type ColorValue,
@@ -47,6 +46,8 @@ export {
 	generateShades,
 	isColorPair,
 } from "./helpers/create-colors";
+// helpers
+export { acceptsNegative } from "./helpers/negatable";
 // types
 export type * from "./interfaces";
 export * from "./variants";

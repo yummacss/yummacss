@@ -1,12 +1,17 @@
 import { version } from "../package.json";
 import { build } from "./commands/build.js";
 import { init } from "./commands/init.js";
-import { migrate } from "./commands/migrate.js";
 import { watch } from "./commands/watch.js";
 import { logger } from "./utils/logger.js";
 
 const args = process.argv.slice(2);
 const command = args[0];
+
+// `migrate` (packages/cli/src/commands/migrate.ts) is written, tested and
+// deliberately not wired up here. It rewrites classes into the v4 colon
+// syntax, which this release cannot compile - `d-f` generates, `d:f` does
+// not - so shipping it would let someone silently unstyle their whole
+// project. Re-add the import, the case and the help line when v4 lands.
 
 switch (command) {
 	case "init":
@@ -17,12 +22,6 @@ switch (command) {
 	case "b":
 		logger.header(version);
 		build().catch(() => process.exit(1));
-		break;
-	case "migrate":
-		logger.header(version);
-		migrate({ dryRun: args.includes("--dry-run") }).catch(() =>
-			process.exit(1),
-		);
 		break;
 	case "watch":
 	case "w":
@@ -35,10 +34,6 @@ switch (command) {
   init, i    Initialize the configuration.
   build, b   Build the styles once.
   watch, w   Watch for file changes continuously.
-  migrate    Rewrite class names into the v4 colon syntax.
-
-Options:
-  --dry-run  Report what migrate would change without writing.
 `);
 		break;
 }

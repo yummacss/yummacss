@@ -1,22 +1,10 @@
 /**
  * Class extraction.
  *
- * This used to be a list of regexes, one of which matched every bare string
- * literal as `/"([^"]+)"/g`. `[^"]+` is one-or-more, so an empty literal `""`
- * could not match: the regex backtracked and began its next match on the
- * *second* quote of that pair, and from there it captured the code between
- * strings rather than the strings. Every later class in the file was lost
- * until another `""` re-synced the pairing, which is why classes from the same
- * string literal disagreed with each other and why "position in the file"
- * looked like it mattered. A regex literal or a quote inside a comment did the
- * same thing.
- *
- * Pairing quotes without knowing what a string is cannot be made correct, so
- * this lexes instead. JavaScript-family files get a real scanner that knows
- * about comments, escapes, template literals and regex literals. Everything
- * else - `.mdx` above all, which is not JavaScript and where a lone apostrophe
- * in prose is normal - gets a line-scoped pass, so a stray quote can only cost
- * the rest of its own line instead of the rest of the file.
+ * Pairing quotes with a regex desynced on an empty literal `""` and lost every
+ * class after it, so this lexes instead. JS files get a scanner that knows
+ * comments, escapes, template literals and regex literals; everything else,
+ * `.mdx` chiefly, gets a line-scoped pass so a stray quote costs one line.
  */
 
 const JS_EXTENSIONS = /\.(?:[cm]?[jt]sx?)$/;
