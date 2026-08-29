@@ -21,7 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - **[core]** New `acceptsNegative(properties)` export, naming the CSS properties that admit a negative value.
-- **[nitro]** Class names that appear only inside a comment no longer generate CSS. Safelist them if you need one.
+- **[nitro]** Class names that appear only inside a comment no longer generate CSS. **Safelist them if you need one.**
 - **[nitro]** `tokenizer(content, filename?)` takes an optional second argument. Existing callers are unaffected.
 
 ### Removed
