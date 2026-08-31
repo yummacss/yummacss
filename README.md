@@ -8,7 +8,7 @@
 
 ```bash
 pnpm add yummacss -D
-pnpx yummacss init
+pnpm dlx yummacss init
 ```
 
 ## Documentation
