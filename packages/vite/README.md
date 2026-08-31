@@ -5,7 +5,7 @@ Vite plugin for [Yumma CSS](https://yummacss.com).
 ## Installation
 
 ```bash
-npm install -D @yummacss/vite
+pnpm add -D @yummacss/vite
 ```
 
 ## Usage
