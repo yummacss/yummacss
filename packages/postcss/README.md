@@ -5,7 +5,7 @@ PostCSS plugin for [Yumma CSS](https://yummacss.com).
 ## Installation
 
 ```bash
-npm install -D @yummacss/postcss
+pnpm add -D @yummacss/postcss
 ```
 
 ## Usage
