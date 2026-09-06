@@ -19,6 +19,10 @@
 	"exports": {
 		".": {
 			"default": "./dist/index.mjs"
+		},
+		"./merge": {
+			"types": "./dist/merge.d.mts",
+			"default": "./dist/merge.mjs"
 		}
 	},
 	"module": "./dist/index.mjs",
@@ -29,7 +33,7 @@
 		"dist"
 	],
 	"scripts": {
-		"build": "tsdown",
+		"build": "node scripts/generate-merge-map.mjs && tsdown",
 		"dev": "tsdown --watch",
 		"lint": "biome check --write",
 		"prepublishOnly": "pnpm build"
