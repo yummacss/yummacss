@@ -11,6 +11,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - **[cli]** `yummacss migrate` rewrites class names into the v4 colon syntax. Not wired into the CLI until v4 ships, because v3 cannot compile what it writes.
 
+## [3.31.0] - 2026-09-06
+
+### Added
+
+- **[cli]** `yummacss/merge` merges class strings so the last one wins. Yumma utilities are single-class selectors, so stylesheet order beat `className`: `c-white c-accent` rendered white. 2.6 kB.
+- **[cli]** The package ships type declarations.
+
 ## [3.30.0] - 2026-08-29
 
 ### Fixed
@@ -1215,7 +1222,8 @@ No notable changes.
 
 - Initial release.
 
-[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.30.0...HEAD
+[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.31.0...HEAD
+[3.31.0]: https://github.com/yummacss/yummacss/compare/v3.30.0...v3.31.0
 [3.30.0]: https://github.com/yummacss/yummacss/compare/v3.29.2...v3.30.0
 [3.29.2]: https://github.com/yummacss/yummacss/compare/v3.29.1...v3.29.2
 [3.29.1]: https://github.com/yummacss/yummacss/compare/v3.29.0...v3.29.1
