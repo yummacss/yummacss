@@ -1,6 +1,6 @@
 {
 	"name": "@yummacss/postcss",
-	"version": "3.31.0",
+	"version": "3.31.1",
 	"description": "PostCSS plugin for Yumma CSS",
 	"keywords": [
 		"css-framework",

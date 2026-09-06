@@ -18,8 +18,9 @@ import { BY_VALUE, PREFIXES } from "./merge-map";
  * classes and any utility newer than this build are always kept.
  */
 
-// Longest first, so `px` is matched before `p`.
-const SORTED = Object.keys(PREFIXES).sort((a, b) => b.length - a.length);
+// The longest prefix is 6 characters, and 15 of them contain a dash
+// (`max-w`, `gc-s`), so a candidate is the base cut at each dash.
+const LONGEST = 6;
 
 // Core declares logical shorthands, which do not name what they cover. The
 // only part of the table written by hand.
@@ -57,15 +58,31 @@ interface Resolved {
 	properties: Set<string>;
 }
 
+// Class strings repeat on every render, so resolving one is done once.
+const CACHE = new Map<string, Resolved | null>();
+
+function prefixOf(base: string): string | null {
+	for (let end = Math.min(base.length, LONGEST); end > 0; end--) {
+		if (end !== base.length && base[end] !== "-") continue;
+		const candidate = base.slice(0, end);
+		if (PREFIXES[candidate]) return candidate;
+	}
+	return null;
+}
+
 function resolve(className: string): Resolved | null {
+	const cached = CACHE.get(className);
+	if (cached !== undefined) return cached;
+
 	const colon = className.lastIndexOf(":");
 	const variant = colon === -1 ? "" : className.slice(0, colon);
 	const base = className.slice(colon + 1).split("/")[0];
 
-	const prefix = SORTED.find(
-		(candidate) => base === candidate || base.startsWith(`${candidate}-`),
-	);
-	if (!prefix) return null;
+	const prefix = prefixOf(base);
+	if (!prefix) {
+		CACHE.set(className, null);
+		return null;
+	}
 
 	const value = base.slice(prefix.length + 1);
 	const properties = BY_VALUE[prefix]?.[value] ?? PREFIXES[prefix];
@@ -73,7 +90,9 @@ function resolve(className: string): Resolved | null {
 	const expanded = new Set<string>();
 	for (const property of properties) expand(property, expanded);
 
-	return { variant, properties: expanded };
+	const resolved = { variant, properties: expanded };
+	CACHE.set(className, resolved);
+	return resolved;
 }
 
 export type ClassValue = string | false | null | undefined;
