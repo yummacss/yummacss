@@ -15,8 +15,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- **[cli]** `yummacss/merge` merges class strings so the last one wins. Every Yumma utility is a single-class selector, so equal specificity leaves stylesheet order to decide and `className` could not reliably override: `c-white c-accent` rendered white. 2.6 kB, and the conflict map is generated from `@yummacss/core` rather than hand-written.
-- **[cli]** The package ships type declarations.
+- **[cli]** `yummacss/merge` merges class strings so the last one wins.
+- **[cli]** The package now ships type declarations.
 
 ## [3.30.0] - 2026-08-29
 
