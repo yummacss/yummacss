@@ -224,7 +224,7 @@ No notable changes.
 
 ## Changed
 
-- **[cli]**  Improve logger output formatting for build and header messages.
+- **[cli]** Improve logger output formatting for build and header messages.
 
 ## [3.24.6] - 2026-05-01
 
@@ -569,7 +569,7 @@ No notable changes.
 ### Added
 
 - **[core]** Extend `translateX` and `translateY` utilities to 0-100 scale.
-  
+
 ### Changed
 
 - **[core]** Rename `tde-*` (`transition-delay`) utilities prefix to `td-*`.
