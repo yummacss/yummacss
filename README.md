@@ -1,6 +1,6 @@
 # Yumma CSS
 
-**Fixed scales for spacing, colors, type and radius. No arbitrary values to drift.**
+**An atomic CSS framework.**
 
 `d-f` is `display: flex`, `jc-sb` is `justify-content: space-between`: initials of the property, initials of the value. If you know CSS, you already know Yumma CSS.
 
