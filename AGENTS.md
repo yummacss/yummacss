@@ -3,7 +3,7 @@
 - **PR bodies**: one short block per topic under a bold heading, then the
   checks line. Say **what changed**, and nothing else. No cause, no history,
   no justification: a reader outside the project does not care why a thing was
-  renamed from A to B. Keep the why in this file, or in the commit body.
+  renamed from A to B. The why goes in NOTES.md.
 - **Commit messages**: a subject and a couple of lines. No essays.
 - **Code comments**: one or two lines. A comment earns its length only where
   the code is genuinely surprising, and never by repeating the same paragraph
