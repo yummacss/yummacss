@@ -26,7 +26,7 @@ export const transition: Utilities = {
 		values: {
 			a: "all",
 			bs: "box-shadow",
-			c: "color, background-color, border-color, text-decoration-color, fill, stroke",
+			c: "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke",
 			d: "height, width",
 			h: "height",
 			none: "none",
