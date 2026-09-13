@@ -13,6 +13,18 @@
 - No em dashes.
 - Never name another framework to explain a Yumma decision.
 
+# Copy
+
+- The prose rules live in `tests/copywriting.test.ts` and run over the strings
+  the packages print: CLI output and the text intellisense shows in an editor.
+  US spelling, no contractions, no em dashes, `cannot` as one word, never
+  Tailwind, and focus draws an outline rather than a ring.
+- The docs site also spells an ellipsis as one character. That rule stops at
+  the browser: `...` is the conventional spelling in terminal output, and a
+  lone `…` can render as a box on a legacy Windows code page.
+- Each repo owns its copy of the rules rather than importing them. This repo
+  has no icons, so it has no icons module either.
+
 # Working
 
 - PRs, never direct commits to `main`.
