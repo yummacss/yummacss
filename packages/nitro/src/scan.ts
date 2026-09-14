@@ -5,25 +5,13 @@ import { tokenizer } from "./tokenizer";
 
 export interface ScanResult {
 	classes: Set<string>;
-	/**
-	 * Absolute paths of the scanned files.
-	 */
 	files: string[];
 }
 
 export interface ScanOptions {
-	/**
-	 * Directory to resolve glob patterns from.
-	 *
-	 * @default process.cwd()
-	 */
 	cwd?: string;
 }
 
-/**
- * Like `extractor`, but also returns the resolved file list so callers
- * (bundler plugins) can register file watchers or dependencies.
- */
 export async function scan(
 	patterns: string[],
 	options: ScanOptions = {},

@@ -10,11 +10,6 @@ export const color: Colors = {
 		values: colorValues,
 		variants: all,
 	},
-	/**
-	 * Shares the `cs` prefix with `corner-shape`, the way `c` is already shared
-	 * by `color` and `cursor` - the value sets are disjoint, so a class resolves
-	 * to exactly one of them.
-	 */
 	"color-scheme": {
 		prefix: "cs",
 		properties: ["color-scheme"],

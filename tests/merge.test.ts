@@ -9,24 +9,18 @@ import {
 } from "../packages/cli/scripts/generate-merge-map.mjs";
 
 describe("merge", () => {
-	// The three conflicts measured in the built CSS, where the later class in
-	// the attribute loses to whichever sits later in the stylesheet.
 	it("lets the last class win", () => {
 		expect(merge("c-white c-accent")).toBe("c-accent");
 		expect(merge("bg-indigo bg-red-5")).toBe("bg-red-5");
 		expect(merge("px-8 p-4")).toBe("p-4");
 	});
 
-	// The case an overlap test gets wrong: px says nothing about the block axis.
 	it("keeps a class the later one does not fully cover", () => {
 		expect(merge("p-4 px-8")).toBe("p-4 px-8");
 		expect(merge("m-2 mx-4")).toBe("m-2 mx-4");
-		// mx and my together cover every side, so m-2 really is redundant.
 		expect(merge("m-2 mx-4 my-6")).toBe("mx-4 my-6");
 	});
 
-	// `c` is color and cursor, `p` padding and position. A prefix-only map eats
-	// the colour on any element that sets both.
 	it("tells apart utilities that share a prefix", () => {
 		expect(merge("c-slate-10 c-p")).toBe("c-slate-10 c-p");
 		expect(merge("p-4 p-a")).toBe("p-4 p-a");

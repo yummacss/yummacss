@@ -1,15 +1,5 @@
-/**
- * Class extraction.
- *
- * Pairing quotes with a regex desynced on an empty literal `""` and lost every
- * class after it, so this lexes instead. JS files get a scanner that knows
- * comments, escapes, template literals and regex literals; everything else,
- * `.mdx` chiefly, gets a line-scoped pass so a stray quote costs one line.
- */
-
 const JS_EXTENSIONS = /\.(?:[cm]?[jt]sx?)$/;
 
-/** A `/` here opens a regex literal rather than dividing. */
 const REGEX_ALLOWED_BEFORE = new Set([
 	"=",
 	"(",
@@ -34,7 +24,6 @@ const REGEX_ALLOWED_BEFORE = new Set([
 	"^",
 ]);
 
-/** Punctuation that no class name contains, so a token carrying it is debris. */
 const NOT_IN_A_CLASS = /[<>"'`=(){};,\\]/;
 
 function addClasses(source: string, into: Set<string>): void {
@@ -45,16 +34,8 @@ function addClasses(source: string, into: Set<string>): void {
 	}
 }
 
-/**
- * Lexes JavaScript, TypeScript and JSX, emitting the contents of every string
- * literal and every static chunk of every template literal. Comments and regex
- * literals are skipped rather than read, which is the whole point: most of the
- * class-shaped debris the old regexes collected (`biome-ignore`, `hand-written`,
- * and prose like `m-23` out of a sentence about the scale) lived in comments.
- */
 function lexJs(content: string, into: Set<string>): void {
 	const n = content.length;
-	// Depth of `${}` interpolations, so a `}` knows whether it closes one.
 	const templateStack: number[] = [];
 	let i = 0;
 	let lastSignificant = "\n";
@@ -62,7 +43,6 @@ function lexJs(content: string, into: Set<string>): void {
 	while (i < n) {
 		const c = content[i];
 
-		// Comments.
 		if (c === "/" && content[i + 1] === "/") {
 			while (i < n && content[i] !== "\n") i++;
 			continue;
@@ -74,8 +54,6 @@ function lexJs(content: string, into: Set<string>): void {
 			continue;
 		}
 
-		// Regex literal. Only where a value cannot already have ended, otherwise
-		// this is division and skipping to the next `/` would swallow real code.
 		if (c === "/" && REGEX_ALLOWED_BEFORE.has(lastSignificant)) {
 			i++;
 			let inClass = false;
@@ -97,7 +75,6 @@ function lexJs(content: string, into: Set<string>): void {
 			continue;
 		}
 
-		// Quoted strings.
 		if (c === '"' || c === "'") {
 			const quote = c;
 			let value = "";
@@ -122,8 +99,6 @@ function lexJs(content: string, into: Set<string>): void {
 			continue;
 		}
 
-		// Template literals. Static chunks are classes; `${}` returns to code,
-		// so strings nested inside an interpolation are found by this same loop.
 		if (c === "`") {
 			let value = "";
 			i++;
@@ -157,7 +132,6 @@ function lexJs(content: string, into: Set<string>): void {
 			if (c === "{") templateStack[templateStack.length - 1]++;
 			else if (c === "}") {
 				if (templateStack[templateStack.length - 1] === 0) {
-					// Closes the interpolation; resume the template literal.
 					templateStack.pop();
 					let value = "";
 					i++;
@@ -200,11 +174,6 @@ const CLASS_ATTR =
 	/class(?:Name)?\s*=\s*(?:"([^"]*)"|'([^']*)'|\{?`([^`]*)`\}?)/g;
 const QUOTED = /"([^"]*)"|'([^']*)'|`([^`]*)`/g;
 
-/**
- * Everything that is not JavaScript, `.mdx` chiefly. Each line is scanned on
- * its own so an unbalanced quote - an apostrophe in a sentence, a lone backtick
- * opening a fence - costs that line and nothing after it.
- */
 function lexGeneric(content: string, into: Set<string>): void {
 	for (const line of content.split("\n")) {
 		for (const m of line.matchAll(CLASS_ATTR)) {
@@ -216,10 +185,6 @@ function lexGeneric(content: string, into: Set<string>): void {
 	}
 }
 
-/**
- * @param filename Used only to choose a strategy. Omitted means the
- * conservative line-scoped pass, which is correct for any input.
- */
 export function tokenizer(content: string, filename?: string): string[] {
 	const tokens = new Set<string>();
 	if (filename && JS_EXTENSIONS.test(filename)) lexJs(content, tokens);

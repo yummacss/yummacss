@@ -3,10 +3,6 @@ import { readdirSync, readFileSync, unlinkSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
-// Drafts the GitHub Release that `publish.yml` fires on. Everything after
-// pressing Publish is automated, so this only has to get the tag and the notes
-// right - and refuse when something upstream is wrong.
-
 const rootDir = path.resolve(fileURLToPath(import.meta.url), "../..");
 const REPO = "yummacss/yummacss";
 
@@ -25,7 +21,6 @@ if (!/^\d+\.\d+\.\d+(-[\w.]+)?$/.test(version)) {
 }
 const tag = `v${version}`;
 
-// Every package.json has to carry the version, or `pnpm bump` was missed.
 const manifests = [
 	"package.json",
 	...readdirSync(path.join(rootDir, "packages"), { withFileTypes: true })
@@ -37,8 +32,6 @@ if (stale.length > 0) {
 	fail(`Not at ${version}: ${stale.join(", ")}. Run \`pnpm bump ${version}\`.`);
 }
 
-// The tag will point at whatever main is, so main is what must be checked out,
-// clean, and pushed.
 const branch = git(["rev-parse", "--abbrev-ref", "HEAD"]);
 if (branch !== "main") fail(`On ${branch}. Releases are cut from main.`);
 if (git(["status", "--porcelain"])) fail("Working tree is dirty.");
@@ -49,12 +42,9 @@ if (git(["rev-parse", "HEAD"]) !== git(["rev-parse", "origin/main"])) {
 }
 if (git(["tag", "--list", tag])) fail(`${tag} already exists.`);
 
-// The notes are the changelog section, verbatim, minus its own heading.
 const changelog = read("CHANGELOG.md");
 const start = changelog.indexOf(`\n## [${version}]`);
 if (start === -1) fail(`CHANGELOG.md has no section for ${version}.`);
-// Ends at the next version heading, or at the link definitions for the last
-// section in the file.
 const after = changelog.indexOf("\n", start + 1);
 const ends = [
 	changelog.indexOf("\n## ", after),

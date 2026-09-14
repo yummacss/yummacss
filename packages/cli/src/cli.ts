@@ -7,12 +7,6 @@ import { logger } from "./utils/logger.js";
 const args = process.argv.slice(2);
 const command = args[0];
 
-// `migrate` (packages/cli/src/commands/migrate.ts) is written, tested and
-// deliberately not wired up here. It rewrites classes into the v4 colon
-// syntax, which this release cannot compile - `d-f` generates, `d:f` does
-// not - so shipping it would let someone silently unstyle their whole
-// project. Re-add the import, the case and the help line when v4 lands.
-
 switch (command) {
 	case "init":
 	case "i":
