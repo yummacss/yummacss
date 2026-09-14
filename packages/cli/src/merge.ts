@@ -1,29 +1,7 @@
 import { BY_VALUE, PREFIXES } from "./merge-map";
 
-/**
- * Merges Yumma class strings so the **last** one wins.
- *
- * Every Yumma utility is a single-class selector, so they all have equal
- * specificity and the browser picks whichever sits later in the generated
- * stylesheet - not the order you wrote them. `c-white c-accent` renders white.
- * `merge` drops the class that loses instead, so the later one takes effect.
- *
- * @example
- * merge("c-white", "c-accent")   // "c-accent"
- * merge("px-8 p-4")              // "p-4"
- * merge("p-4 px-8")              // "p-4 px-8" - px says nothing about y
- * merge("d-f ai-c", isOpen && "c-accent")
- *
- * A class it does not recognise is passed through untouched, so your own
- * classes and any utility newer than this build are always kept.
- */
-
-// The longest prefix is 6 characters, and 15 of them contain a dash
-// (`max-w`, `gc-s`), so a candidate is the base cut at each dash.
 const LONGEST = 6;
 
-// Core declares logical shorthands, which do not name what they cover. The
-// only part of the table written by hand.
 const SHORTHANDS: Record<string, string[]> = {
 	padding: ["padding-inline", "padding-block"],
 	"padding-inline": ["padding-inline-start", "padding-inline-end"],
@@ -58,7 +36,6 @@ interface Resolved {
 	properties: Set<string>;
 }
 
-// Class strings repeat on every render, so resolving one is done once.
 const CACHE = new Map<string, Resolved | null>();
 
 function prefixOf(base: string): string | null {
@@ -100,9 +77,6 @@ export type ClassValue = string | false | null | undefined;
 export function merge(...input: ClassValue[]): string {
 	const classes = input.filter(Boolean).join(" ").split(/\s+/).filter(Boolean);
 
-	// Later wins, so walk backwards and drop a class only once everything it
-	// sets is already covered. `px-8 p-4` loses `px-8`; `p-4 px-8` keeps both,
-	// because `px-8` says nothing about the block axis.
 	const kept: string[] = [];
 	const covered = new Map<string, Set<string>>();
 
