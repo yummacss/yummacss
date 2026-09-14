@@ -17,13 +17,20 @@ That block can now be `@rm:tp-none`.
 **Two things still stop those blocks becoming utilities**, and neither is what
 the docs' TODO said it was:
 
-1. **Selecting an attribute needs no parser work.** A variant's `value` is
-   concatenated onto the escaped class name, so an entry holding
-   `"[data-open]"` emits `.x\:o-0[data-open]` today. What is missing is only a
-   decision about how to spell one. Naming Base UI's `data-starting-style`
-   directly would put another library's vocabulary in this table, so the shape
-   worth having is the general one: an attribute selector, written as CSS
-   already writes it.
+1. **A named prefix can already carry an attribute selector.** A variant's
+   `value` is concatenated onto the escaped class name, so an entry
+   `{ prefix: "xo", value: "[data-open]" }` makes `xo:o-0` canon and emits
+   `.xo\:o-0[data-open] { opacity: 0 }`. Measured: valid through
+   `validateClasses`, generated, no parser change.
+
+   **The bracket form does not work and must not be built.** `[data-open]:o-0`
+   fails validation, and it should: brackets in a class name are the arbitrary
+   value shape this framework does not have. Any attribute variant is a named
+   prefix in the table like every other one.
+
+   What is left is only which attributes earn a prefix. Naming Base UI's
+   `data-starting-style` would put another library's vocabulary in this table,
+   so the names have to come from the attributes themselves.
 2. **`translate` has no per-axis utility.** `tr-*` sets both axes to the same
    value and `tty-*` writes `transform: translateY(...)`, which is a different
    property and will not transition alongside `translate`. The popup CSS wants

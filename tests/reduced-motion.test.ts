@@ -1,5 +1,5 @@
 import { coreUtils } from "@yummacss/core";
-import { generator } from "@yummacss/nitro";
+import { generator, validateClasses } from "@yummacss/nitro";
 import { describe, expect, it } from "vitest";
 
 /**
@@ -37,5 +37,24 @@ describe("prefers-reduced-motion", () => {
 
 		expect(prefixes).toContain("rm");
 		expect(prefixes).toContain("pc");
+	});
+});
+
+/**
+ * The prefix is canon because canon is built from the same table. This is the
+ * guard against the thing that would make it a custom class instead.
+ */
+describe("canon", () => {
+	it("accepts the prefix and still refuses an unknown one", () => {
+		expect(validateClasses(["@rm:tp-none"], {} as never).invalid).toEqual([]);
+		expect(validateClasses(["@zz:tp-none"], {} as never).invalid).toEqual([
+			"@zz:tp-none",
+		]);
+	});
+
+	it("refuses a bracket in a class name", () => {
+		expect(validateClasses(["[data-open]:o-0"], {} as never).invalid).toEqual([
+			"[data-open]:o-0",
+		]);
 	});
 });
