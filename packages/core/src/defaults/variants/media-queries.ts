@@ -1,5 +1,6 @@
 export const mediaQueries = [
 	{ prefix: "pc", value: "@media (pointer: coarse)" },
+	{ prefix: "rm", value: "@media (prefers-reduced-motion: reduce)" },
 	{ prefix: "sm", value: "@media (min-width: 40rem)" },
 	{ prefix: "md", value: "@media (min-width: 48rem)" },
 	{ prefix: "lg", value: "@media (min-width: 64rem)" },
