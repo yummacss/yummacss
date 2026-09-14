@@ -9,62 +9,29 @@ import {
 import { glob } from "tinyglobby";
 
 export interface ValidateOptions {
-	/**
-	 * Directory to resolve the config file and source globs from.
-	 *
-	 * @default process.cwd()
-	 */
 	cwd?: string;
 
-	/**
-	 * Path to the config file, absolute or relative to `cwd`.
-	 *
-	 * @default "yumma.config.mjs"
-	 */
 	configPath?: string;
 
-	/**
-	 * Inline configuration. When provided, no config file is read.
-	 */
 	config?: Config;
 
-	/**
-	 * Class names to skip, e.g. custom classes defined in your own CSS.
-	 */
 	allowlist?: string[];
 }
 
 export interface InvalidClass {
 	className: string;
-	/**
-	 * Absolute paths of the files the class appears in.
-	 */
 	files: string[];
-	/**
-	 * The closest valid class, when one exists (e.g. "g-4" for "gap-4").
-	 */
 	suggestion?: string;
 }
 
 export interface ValidateResult {
-	/**
-	 * Number of source files scanned.
-	 */
 	files: number;
 
-	/**
-	 * Number of unique class names found.
-	 */
 	classes: number;
 
-	/**
-	 * Classes Yumma CSS does not recognize, sorted alphabetically.
-	 */
 	invalid: InvalidClass[];
 }
 
-// Only class attribute contexts are scanned - not every string in the
-// file - so arbitrary hyphenated strings are not reported as classes.
 const classRegexes = [
 	/class(?:Name)?\s*=\s*["']([^"']+)["']/g,
 	/class(?:Name)?=\{["']([^"']+)["']\}/g,
@@ -72,8 +39,6 @@ const classRegexes = [
 	/\b(?:cn|clsx|classnames|cva)\s*\(\s*["'`]([^"'`]+)["'`]/g,
 ];
 
-// Tokens that cannot be class names (code fragments, placeholders like
-// "w-(value)", ellipses) are skipped rather than reported.
 const classNamePattern = /^@?[a-z][a-zA-Z0-9@:/.%-]*$/;
 
 export function extractClasses(content: string): Set<string> {
@@ -83,7 +48,6 @@ export function extractClasses(content: string): Set<string> {
 		regex.lastIndex = 0;
 		let match = regex.exec(content);
 		while (match !== null) {
-			// Template literal expressions cannot be validated statically.
 			const value = (match[1] ?? "").replace(/\$\{[^}]*\}/g, " ");
 			for (const className of value.split(/\s+/)) {
 				if (className && classNamePattern.test(className)) {

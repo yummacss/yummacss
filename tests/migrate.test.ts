@@ -22,15 +22,11 @@ describe("migrateClass", () => {
 	});
 
 	it("splits on the prefix rather than the first dash", () => {
-		// `max-h` is a prefix containing a dash; splitting on the first one
-		// would produce `max:h-52`.
 		expect(migrated("max-h-52")).toBe("max-h:52");
 		expect(migrated("min-w-12")).toBe("min-w:12");
 	});
 
 	it("prefers the longer prefix only when its value matches", () => {
-		// `bs` is four utilities & `bs-o` is a fifth, so the split is decided
-		// by which reading has a real value behind it.
 		expect(migrated("bs-o-sm")).toBe("bs-o:sm");
 		expect(migrated("bs-i-sm")).toBe("bs-i:sm");
 		expect(migrated("bs-1")).toBe("bs:1");
@@ -55,7 +51,6 @@ describe("migrateClass", () => {
 
 	it("renames the disabled variant, which display now needs", () => {
 		expect(migrated("d:m-4")).toBe("di:m:4");
-		// Still the display utility, not the variant.
 		expect(migrated("d-f")).toBe("d:f");
 	});
 
@@ -138,8 +133,6 @@ describe("rewriteSource", () => {
 		const source = '<div className={`p-4 ${open ? "ro-45 c-white" : "ro-0"}`}>';
 		const { content } = rewriteSource(source);
 
-		// The ternary branches are real classes wearing punctuation. Leaving
-		// them would strand them on v3 without saying so.
 		expect(content).toBe(
 			'<div className={`p:4 ${open ? "ro:45 c:white" : "ro:0"}`}>',
 		);

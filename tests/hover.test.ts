@@ -14,8 +14,6 @@ describe("parseUtility", () => {
 	});
 
 	it("keeps `::` on pseudo elements so they stay distinguishable", () => {
-		// `a` is `:active` as a pseudo class and `:after` as a pseudo element -
-		// dropping the separator would make them indistinguishable.
 		expect(parseUtility("s::bg-red")).toEqual({
 			variants: ["s::"],
 			baseUtility: "bg-red",
@@ -34,7 +32,6 @@ describe("parseUtility", () => {
 	it("normalises negative values to their map key", () => {
 		expect(parseUtility("m--4").baseUtility).toBe("m-4");
 		expect(parseUtility("mx--4").baseUtility).toBe("mx-4");
-		// A single dash is an ordinary value and must be left alone.
 		expect(parseUtility("m-4").baseUtility).toBe("m-4");
 	});
 
