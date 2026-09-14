@@ -35,3 +35,36 @@ the docs' TODO said it was:
    value and `tty-*` writes `transform: translateY(...)`, which is a different
    property and will not transition alongside `translate`. The popup CSS wants
    `translate: 0 4px`, which nothing emits.
+
+## Trusted Publishing: pnpm cannot, npm can
+
+The v4 note asked whether `pnpm -r publish` supports OIDC. **It does not.**
+pnpm 10.30.3 has six references to `trustedPublish` and every one is
+install-side, reading whether a package on the registry was published by a
+trusted publisher. Searched its bundle for the publish-side markers a runner
+needs, `ACTIONS_ID_TOKEN_REQUEST_URL`, `ACTIONS_ID_TOKEN_REQUEST_TOKEN`,
+`oidc`, `id-token`: **zero hits for all four**.
+
+npm has it. npm 12.0.2 carries `lib/utils/oidc.js`, and `libnpmpublish` reads
+`ACTIONS_ID_TOKEN_REQUEST_URL`. Node 22 ships npm 10.9.7, which is too old, so
+the workflow installs a current npm first.
+
+**`npm publish` cannot be pointed at a workspace directly**: seven of the eight
+manifests carry `workspace:*` dependencies, and npm would publish that string
+verbatim. `pnpm pack` rewrites it: packing `@yummacss/nitro` produced
+`"@yummacss/core": "3.31.1"` in the tarball. So the shape is **pack with pnpm,
+publish the tarball with npm**, which keeps workspace resolution and gains
+OIDC.
+
+`scripts/publish-packages.mjs` does that for the eight publishable packages.
+Each packs into its own directory, because a shared one made tarball selection
+positional and `yummacss` would have published the `@yummacss/vite` tarball.
+Dry-run against a stubbed `npm`: eight packages, eight matching tarballs.
+
+**`NODE_AUTH_TOKEN` stays in the workflow on purpose.** npm uses OIDC where a
+trusted publisher is configured and falls back to the token everywhere else, so
+this can land before the npmjs side is done and there is no flag day. Drop the
+secret once a release proves OIDC ran.
+
+**Two things this cannot verify from here.** It is never exercised until a real
+release, and the npmjs side is a web form **per package, so eight times**.
