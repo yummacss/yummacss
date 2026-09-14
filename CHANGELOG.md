@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- **[core]** Shades are mixed in OKLab rather than sRGB, and `tinycolor2` is dropped. Core now has no dependencies and its bundle falls 25%. Every generated colour except the 19 bases moves slightly.
+
 ### Added
 
 - **[core]** `@rm:` applies a utility under `@media (prefers-reduced-motion: reduce)`, so an animation can be switched off in a class rather than in a stylesheet beside it.
