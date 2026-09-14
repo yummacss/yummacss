@@ -4,7 +4,6 @@ import { describe, expect, it } from "vitest";
 
 const config = { buildOptions: { reset: false } };
 
-/** The reset preamble is always emitted, so length alone proves nothing. */
 const baseline = generator(new Set<string>(), config as never).length;
 
 function css(className: string): string | null {
@@ -15,13 +14,9 @@ function css(className: string): string | null {
 describe("Negative values", () => {
 	const utils = coreUtils();
 
-	/** A numeric step the utility's own scale actually has. */
 	const numericKey = (values: Record<string, string>) =>
 		Object.keys(values).find((k) => /^\d+$/.test(k) && k !== "0");
 
-	// "Differs from the positive form", not "contains a minus":
-	// `letter-spacing`'s scale is already negative, and transforms put the
-	// sign inside the parens.
 	it("generates a distinct rule for every property that accepts a negative", () => {
 		const broken: string[] = [];
 		for (const [, u] of Object.entries(utils)) {
@@ -50,7 +45,6 @@ describe("Negative values", () => {
 		expect(leaked).toEqual([]);
 	});
 
-	// The cases that motivated the fix, named so a regression says what broke.
 	it.each([
 		["w--1", "width"],
 		["h--1", "height"],
@@ -81,7 +75,6 @@ describe("Negative values", () => {
 		expect(css(className)).toContain(declaration);
 	});
 
-	// Legal and easy to "fix" by mistake.
 	it("keeps negative grid line numbers, which count back from the end", () => {
 		expect(css("gcs--1")).toContain("grid-column-start: -1");
 		expect(css("gre--1")).toContain("grid-row-end: -1");
@@ -91,7 +84,6 @@ describe("Negative values", () => {
 		expect(css("s--10")).toContain("scale: -.1");
 	});
 
-	// No number to negate means no class. These used to alias the positive form.
 	it.each([
 		"m--auto",
 		"w--auto",
@@ -107,8 +99,6 @@ describe("Negative values", () => {
 		expect(css("bg-red-1")).toContain("background-color:");
 	});
 
-	// Canon gets this free from the shared `generateCSSRule`. Asserted because
-	// that shared path is the only thing holding it.
 	it("reports illegal negatives as unknown to canon", () => {
 		const { valid, invalid } = validateClasses(
 			["w--1", "p--1", "br--9999", "m--1", "t--1", "zi--10", "bg--red-1"],

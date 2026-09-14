@@ -23,8 +23,6 @@ for (const filePath of packageJsonPaths) {
 	const previous = pkg.version;
 	pkg.version = version;
 
-	// Preserve tab indentation and trailing newline to match the
-	// existing file style instead of npm's default 2-space output.
 	writeFileSync(filePath, `${JSON.stringify(pkg, null, "\t")}\n`);
 
 	console.log(`${pkg.name}: ${previous} -> ${version}`);

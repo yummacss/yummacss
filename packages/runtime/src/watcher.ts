@@ -6,7 +6,6 @@ export function watcher(
 		let shouldUpdate = false;
 
 		for (const mutation of mutations) {
-			// check if class attribute changed
 			if (
 				mutation.type === "attributes" &&
 				mutation.attributeName === "class"
@@ -15,7 +14,6 @@ export function watcher(
 				break;
 			}
 
-			// check if nodes were added
 			if (mutation.type === "childList" && mutation.addedNodes.length > 0) {
 				shouldUpdate = true;
 				break;

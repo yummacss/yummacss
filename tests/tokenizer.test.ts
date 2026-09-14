@@ -6,10 +6,6 @@ const classes = (source: string, filename = "file.tsx") =>
 
 describe("Tokenizer", () => {
 	describe("quote pairing", () => {
-		// The bug this file exists for. `[^"]+` could not match `""`, so the old
-		// regex began its next match on the second quote of the pair and captured
-		// the code between strings from there on. Everything after an odd number
-		// of empty literals was silently lost.
 		it("does not lose classes after an empty string literal", () => {
 			const found = classes(
 				`const a = ["p-4", flag ? "g-2" : "", "m-8"].filter(Boolean);`,
@@ -42,9 +38,6 @@ describe("Tokenizer", () => {
 			}
 		});
 
-		// A regex literal holds an odd number of quotes, which desynced every
-		// pairing below it. `code-decorate.mjs` contained this exact line and
-		// nothing under it was scanned.
 		it("is not blinded by a regex literal containing quotes", () => {
 			const found = classes(`
 				const meta = /"([^"]+)"/g;
@@ -83,8 +76,6 @@ describe("Tokenizer", () => {
 			expect(found).toContain("g-3");
 		});
 
-		// Prose that talks about classes is not markup that uses them. The old
-		// tokenizer generated real CSS for `m-23` because a comment mentioned it.
 		it("does not collect class names out of comments", () => {
 			const found = classes(`
 				// a header reading \`m-4 m-8 m-12\` suggests m-23 is not a class
@@ -163,8 +154,6 @@ describe("Tokenizer", () => {
 	});
 
 	describe("non-JavaScript input", () => {
-		// `.mdx` is prose. A lone apostrophe is normal there, and must not cost
-		// anything past its own line.
 		it("bounds an unbalanced quote to its own line", () => {
 			const found = classes(
 				`Here's a paragraph about it.\n\n<div className="d-g gtc-12" />\n`,

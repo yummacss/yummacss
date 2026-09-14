@@ -11,16 +11,8 @@ import picomatch from "picomatch";
 import type { Plugin, ViteDevServer } from "vite";
 
 export interface Options {
-	/**
-	 * Inline configuration. When provided, no config file is read.
-	 */
 	config?: Config;
 
-	/**
-	 * Path to the config file, absolute or relative to the Vite root.
-	 *
-	 * @default "yumma.config.mjs"
-	 */
 	configPath?: string;
 }
 
@@ -32,8 +24,6 @@ export default function yummacss(options: Options = {}): Plugin {
 	let server: ViteDevServer | undefined;
 	let cache: { key: string; css: string } | null = null;
 
-	// CSS module ids that contain the @yummacss; marker, so source file
-	// changes can trigger their re-transform.
 	const markerModules = new Set<string>();
 
 	async function reloadConfig() {
@@ -54,8 +44,6 @@ export default function yummacss(options: Options = {}): Plugin {
 
 	return {
 		name: "@yummacss/vite",
-		// Run before vite:css so the generated CSS flows through the
-		// normal CSS pipeline.
 		enforce: "pre",
 
 		async configResolved(viteConfig) {
@@ -80,8 +68,6 @@ export default function yummacss(options: Options = {}): Plugin {
 
 				for (const id of markerModules) {
 					const mod = devServer.moduleGraph.getModuleById(id);
-					// reloadModule re-runs transform and emits a css-update,
-					// swapping styles without a full page reload.
 					if (mod) devServer.reloadModule(mod);
 				}
 			});
@@ -96,8 +82,6 @@ export default function yummacss(options: Options = {}): Plugin {
 				cwd: root,
 			});
 
-			// Covers `vite build --watch`; the dev server watcher already
-			// tracks the project root.
 			if (this.meta.watchMode && !server) {
 				for (const f of files) {
 					this.addWatchFile(f);
@@ -112,8 +96,6 @@ export default function yummacss(options: Options = {}): Plugin {
 				cache = { key, css: generator(classes, config) };
 			}
 
-			// Only the first marker receives the generated CSS; extras are
-			// removed instead of duplicating the output.
 			let replaced = false;
 			const result = code.replace(new RegExp(MARKER, "g"), () => {
 				if (replaced) return "";

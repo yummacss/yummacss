@@ -1,6 +1,3 @@
-// The browser entry, not the root one: this module is reachable from the
-// Monaco adapter, and `@yummacss/nitro` pulls in `node:fs` via `loadConfig`
-// & `scan`.
 import {
 	type Config,
 	suggestClasses,
@@ -13,26 +10,13 @@ export interface UnknownClass {
 	line: number;
 	startIndex: number;
 	endIndex: number;
-	/**
-	 * The closest valid class, when one exists (e.g. "g-4" for "gap-4").
-	 */
 	suggestion?: string;
 }
 
-// Tokens that cannot be class names (code fragments, leftovers from
-// stripped template expressions) are skipped instead of flagged.
 const CLASS_NAME_PATTERN = /^@?[a-z][a-zA-Z0-9@:/.%-]*$/;
 
-// Mid-typing fragments like "bg-" or "h:" should not be flagged while
-// the user is still writing the class.
 const PARTIAL_PATTERN = /[-:/@]$/;
 
-/**
- * Find classes in class attributes that are not part of the Yumma CSS
- * canon. Validity comes from the generator's own matching rules via
- * `validateClasses`, so prefix, safelist, and theme options in the
- * provided config are all understood.
- */
 export function findUnknownClasses(
 	text: string,
 	config: Config = {},
@@ -72,8 +56,6 @@ export function findUnknownClasses(
 
 	if (candidates.length === 0) return [];
 
-	// Validate each unique class once per pass - validateClasses builds
-	// the utility map, which is the expensive part.
 	const unique = Array.from(new Set(candidates.map((c) => c.className)));
 	const { invalid } = validateClasses(unique, config);
 	const invalidSet = new Set(invalid);
