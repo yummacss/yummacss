@@ -21,7 +21,6 @@ describe("Paired theme colors", () => {
 		const light = generateShades(pair.light);
 		const dark = generateShades(pair.dark);
 
-		// shades[0] is the lightest step, which maps to the `-1` suffix.
 		expect(colors["surface-1"]).toBe(`light-dark(${light[0]}, ${dark[0]})`);
 		expect(colors["surface-12"]).toBe(`light-dark(${light[12]}, ${dark[12]})`);
 	});
@@ -41,7 +40,6 @@ describe("Paired theme colors", () => {
 		const colors = createColors({ brand: "#bec6f2" });
 		expect(colors.brand).toBe("#bec6f2");
 		expect(colors["brand-1"]).toMatch(/^#[0-9a-f]{6}$/i);
-		// Default palette is untouched by the presence of a pair elsewhere.
 		const withPair = createColors({ brand: "#bec6f2", surface: pair });
 		expect(withPair.brand).toBe(colors.brand);
 		expect(withPair["blue-4"]).toBe(colors["blue-4"]);

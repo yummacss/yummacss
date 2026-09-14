@@ -16,7 +16,6 @@ import { text } from "./utilities/text";
 import { transform } from "./utilities/transform";
 import { transition } from "./utilities/transition";
 
-// functions
 export const coreUtils = (): Utilities => core;
 export const backgroundUtils = (): Utilities => background;
 export const borderUtils = (): Utilities => border;
@@ -34,9 +33,7 @@ export const textUtils = (): Utilities => text;
 export const transformUtils = (): Utilities => transform;
 export const transitionUtils = (): Utilities => transition;
 
-// theme
 export { colorTheme } from "./defaults/theme";
-// variants
 export { mediaQueries as defaultMediaQueries } from "./defaults/variants/media-queries";
 export {
 	type ColorPair,
@@ -46,8 +43,6 @@ export {
 	generateShades,
 	isColorPair,
 } from "./helpers/create-colors";
-// helpers
 export { acceptsNegative } from "./helpers/negatable";
-// types
 export type * from "./interfaces";
 export * from "./variants";

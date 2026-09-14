@@ -3,16 +3,6 @@ import { dirname, join, relative } from "node:path";
 import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
 
-/**
- * The same prose rules the docs site holds, over the only copy this repo has:
- * the strings the CLI prints and the intellisense packages show in an editor.
- * Written out here rather than imported, because each repo owns its own copy.
- *
- * The docs site also spells an ellipsis as one character. That rule is not
- * here: `...` is the conventional spelling in terminal output, and a lone `…`
- * can render as a box on a legacy Windows code page.
- */
-
 const rootDir = join(dirname(fileURLToPath(import.meta.url)), "..");
 
 function sources(dir: string): string[] {
@@ -29,7 +19,6 @@ function sources(dir: string): string[] {
 	return out;
 }
 
-/** Quoted strings that read as prose: a space, lowercase letters, no code. */
 function copy(): { file: string; text: string }[] {
 	const out: { file: string; text: string }[] = [];
 	const packages = join(rootDir, "packages");
@@ -96,8 +85,6 @@ describe("package copy", () => {
 		expect(offenders(/\btailwind\b/i)).toEqual([]);
 	});
 
-	// A ring is a box-shadow standing in for an outline. Yumma has `os-`, `ow-`,
-	// `oo-` and `oc-`, so the word for what focus draws is outline.
 	it("calls the focus indicator an outline", () => {
 		expect(offenders(/\brings?\b/i)).toEqual([]);
 	});
