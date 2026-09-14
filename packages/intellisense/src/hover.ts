@@ -102,9 +102,6 @@ export function parseUtility(className: string): {
 	const variants: string[] = [];
 	let rest = className;
 
-	// Pseudo-element variants keep their `::` so they stay distinguishable
-	// from pseudo classes - `a` means `:active` as a pseudo class and
-	// `:after` as a pseudo element, so the bare prefix is ambiguous.
 	while (true) {
 		const colon = rest.indexOf(":");
 		if (colon === -1) break;
@@ -120,26 +117,17 @@ export function parseUtility(className: string): {
 
 	let baseUtility = rest;
 
-	// Opacity is a `/50` suffix on the utility rather than a colon-separated
-	// variant, so it has to be split off before the utility map lookup.
 	const opacitySuffix = baseUtility.match(/\/(\d+)$/);
 	if (opacitySuffix?.[1]) {
 		baseUtility = baseUtility.slice(0, -opacitySuffix[0].length);
 		variants.push(opacitySuffix[1]);
 	}
 
-	// Negative values are written `m--4`, but the utility map is keyed `m-4` -
-	// the same normalisation the generator applies when it strips the sign.
 	baseUtility = baseUtility.replace(/^([a-z]+)--/, "$1-");
 
 	return { variants, baseUtility };
 }
 
-/**
- * Resolves one variant token to its CSS meaning. Pseudo elements are matched
- * only in their `::` form, so an ambiguous prefix cannot silently resolve to
- * the pseudo class of the same name.
- */
 function resolveVariant(
 	variant: string,
 	mediaVariants: Record<string, string>,
@@ -175,7 +163,6 @@ export function getHoverMarkdown(
 	const descriptions: string[] = [];
 	for (const v of variants) {
 		const resolved = resolveVariant(v, mediaVariants);
-		// Unknown variant, e.g. @foobar:d-f where foobar is not a known screen.
 		if (!resolved) return null;
 		descriptions.push(`**${resolved.label}:** \`${resolved.value}\``);
 	}

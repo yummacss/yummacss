@@ -8,18 +8,15 @@ describe("Check for class name collisions", () => {
 		const classMap = new Map<string, string[]>();
 		const collisions: Array<{ class: string; utilities: string[] }> = [];
 
-		// build a map of all possible class names (prefix-value combinations)
 		for (const [utilityName, utility] of Object.entries(utils)) {
 			const { prefix, values } = utility as Utility;
 
 			for (const [valueSuffix, _cssValue] of Object.entries(values)) {
-				// generate the actual class name
 				const className =
 					valueSuffix === "base" || valueSuffix === ""
 						? prefix
 						: `${prefix}-${valueSuffix}`;
 
-				// track which utilities generate this class name
 				if (!classMap.has(className)) {
 					classMap.set(className, []);
 				}
@@ -30,14 +27,12 @@ describe("Check for class name collisions", () => {
 			}
 		}
 
-		// find collisions (where multiple utilities generate the same class)
 		for (const [className, utilities] of classMap.entries()) {
 			if (utilities.length > 1) {
 				collisions.push({ class: className, utilities });
 			}
 		}
 
-		// report collisions if found
 		if (collisions.length > 0) {
 			const report = collisions
 				.map(
@@ -51,7 +46,6 @@ describe("Check for class name collisions", () => {
 			);
 		}
 
-		// if no collisions, test passes
 		expect(collisions).toHaveLength(0);
 	});
 });

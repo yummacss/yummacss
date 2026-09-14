@@ -41,16 +41,6 @@ export function generator(usedClasses: Set<string>, config: Config): string {
 	return cssBlocks.join("\n\n");
 }
 
-/**
- * `light-dark()` resolves against the used value of `color-scheme`. If nothing
- * declares it, every paired color silently resolves to its light side and dark
- * mode never happens - so the declaration is emitted automatically as soon as
- * the theme contains at least one pair, and not at all otherwise.
- *
- * `light dark` follows the OS preference. `color-scheme` is an ordinary
- * inherited property, so setting it on any subtree flips every paired color
- * beneath it - that is what a manual theme toggle hooks into.
- */
 function buildColorScheme(config: Config): string | null {
 	const colors = config.theme?.colors;
 	if (!colors) return null;
@@ -127,11 +117,6 @@ export interface ValidationResult {
 	invalid: string[];
 }
 
-/**
- * Check class names against the same matching rules the generator uses,
- * so a class is valid exactly when it produces CSS. Safelist entries
- * always count as valid.
- */
 export function validateClasses(
 	classNames: Iterable<string>,
 	config: Config,
@@ -226,13 +211,6 @@ function compareScores(a: number[], b: number[]): number {
 	return 0;
 }
 
-/**
- * Suggest the closest valid class for each unknown class name, e.g.
- * "gap-4" suggests "g-4". Variant prefixes (`@sm:`, `h:`), opacity
- * suffixes (`/50`), and the configured prefix are preserved around the
- * suggested base class. Classes with no close match are omitted from
- * the result.
- */
 export function suggestClasses(
 	classNames: Iterable<string>,
 	config: Config = {},
@@ -271,7 +249,6 @@ export function suggestClasses(
 			if (className.startsWith(prefix)) {
 				className = className.slice(prefix.length);
 			} else if (candidateSet.has(className)) {
-				// The class is only missing the configured prefix.
 				tentative.set(originalClassName, [
 					variantPrefix + prefix + className + opacitySuffix,
 					variantPrefix + prefix + className,
@@ -282,8 +259,6 @@ export function suggestClasses(
 
 		if (!className) continue;
 
-		// Short classes only tolerate one edit - two edits away from
-		// "cp" is a different class, not a typo.
 		const maxDistance = className.length <= 4 ? 1 : 2;
 		let best: string | undefined;
 		let bestScore = [maxDistance + 1, 1, 1, 0];
@@ -292,12 +267,6 @@ export function suggestClasses(
 			const distance = levenshtein(className, candidate, maxDistance);
 			if (distance === 0 || distance > maxDistance) continue;
 
-			// Ties are broken by preferring candidates that share every
-			// character with the typo in either direction ("g-4" inside
-			// "gap-4", "cp" inside "c-p"), then by matching first char
-			// (utilities abbreviate from the property name's first
-			// letters), then by the longest shared prefix, then
-			// alphabetically.
 			const score = [
 				distance,
 				isSubsequence(candidate, className) ||
@@ -319,8 +288,6 @@ export function suggestClasses(
 		}
 
 		if (best !== undefined) {
-			// The opacity suffix is only valid on some utilities - fall
-			// back to the bare suggestion when it does not apply.
 			tentative.set(originalClassName, [
 				variantPrefix + prefix + best + opacitySuffix,
 				variantPrefix + prefix + best,
@@ -328,9 +295,6 @@ export function suggestClasses(
 		}
 	}
 
-	// Reassembled suggestions can still be invalid (e.g. an unknown
-	// variant chain) - validate them in one pass and keep the first
-	// valid option per class.
 	const options = Array.from(tentative.values()).flat();
 	const { valid } = validateClasses(options, config);
 	const validSet = new Set(valid);
@@ -353,7 +317,6 @@ function generateUtil(usedClasses: Set<string>, config: Config): string {
 	const mediaQueryRules: Map<string, string[]> = new Map();
 	const processedClasses = new Set<string>();
 
-	// to avoid CSS output being generated randomly when using build or watch tasks
 	const sortedClasses = Array.from(usedClasses).sort();
 
 	for (const originalClassName of sortedClasses) {
@@ -379,7 +342,6 @@ function generateUtil(usedClasses: Set<string>, config: Config): string {
 		}
 	}
 
-	// sort media queries alphabetically
 	const sortedMediaQueries = Array.from(mediaQueryRules.entries()).sort(
 		([a], [b]) => a.localeCompare(b),
 	);
@@ -404,12 +366,10 @@ function tryGenerateRule(
 	let pseudoElements = "";
 	let opacityValue = "";
 
-	// 1. Extract variants (prefixes)
 	let foundPrefix = true;
 	while (foundPrefix) {
 		foundPrefix = false;
 
-		// Handle media queries - require @ prefix (e.g. @sm:d-f)
 		if (variants?.mediaQueries) {
 			for (const mq of variants.mediaQueries) {
 				if (currentClassName.startsWith(`@${mq.prefix}:`)) {
@@ -423,7 +383,6 @@ function tryGenerateRule(
 
 		if (foundPrefix) continue;
 
-		// Handle pseudo elements (uses :: separator) - Check this BEFORE pseudo classes
 		if (variants?.pseudoElements) {
 			for (const pe of variants.pseudoElements) {
 				if (currentClassName.startsWith(`${pe.prefix}::`)) {
@@ -437,7 +396,6 @@ function tryGenerateRule(
 
 		if (foundPrefix) continue;
 
-		// Handle pseudo classes (uses : separator) - Ensure it doesn't match ::
 		if (variants?.pseudoClasses) {
 			for (const pc of variants.pseudoClasses) {
 				if (
@@ -453,7 +411,6 @@ function tryGenerateRule(
 		}
 	}
 
-	// 2. Handle opacity (suffix)
 	if (variants?.opacity) {
 		for (const op of variants.opacity) {
 			if (currentClassName.endsWith(`/${op.prefix}`)) {
@@ -464,7 +421,6 @@ function tryGenerateRule(
 		}
 	}
 
-	// 3. Match base utility
 	if (
 		!currentClassName.startsWith(`${prefix}-`) &&
 		currentClassName !== prefix
@@ -477,12 +433,11 @@ function tryGenerateRule(
 			? ""
 			: currentClassName.slice(prefix.length + 1);
 
-	// 4. Handle negative values (e.g., m--1 -> margin: -0.25rem)
 	let isNegative = false;
 	let cleanValuePart = valuePart;
 	if (valuePart.startsWith("-")) {
 		isNegative = true;
-		cleanValuePart = valuePart.slice(1); // Remove leading -
+		cleanValuePart = valuePart.slice(1);
 	}
 
 	const propertyValue =
@@ -491,9 +446,6 @@ function tryGenerateRule(
 
 	if (!propertyValue) return null;
 
-	// Only meaningful where the property accepts a negative and the value is a
-	// number. Anything else is not a class: `w--1` emitted `width: -.25rem`,
-	// which a parser discards, and `bg--red-1` aliased `bg-red-1`.
 	let finalValue = propertyValue;
 	if (isNegative) {
 		if (!acceptsNegative(properties)) return null;
@@ -502,7 +454,6 @@ function tryGenerateRule(
 		finalValue = negated;
 	}
 
-	// 5. Apply opacity
 	const finalPropertyValue = opacityValue
 		? applyOpacity(finalValue, opacityValue)
 		: finalValue;
@@ -517,31 +468,15 @@ function tryGenerateRule(
 	};
 }
 
-// Values the opacity suffix (e.g. `bg-blue/50`) can be applied to. Anything
-// else - lengths, keywords, `transparent`, `currentColor` - is left untouched,
-// so a suffix on a non-color utility stays a no-op instead of producing
-// invalid CSS. `light-dark()` is included so paired theme colors accept
-// opacity; it is inert until those ship.
 function isColorValue(value: string): boolean {
 	return /^#[0-9a-f]{6}$/i.test(value) || value.startsWith("light-dark(");
 }
 
-// `color-mix()` accepts any <color>, which hex-alpha concatenation did not:
-// appending "80" to `light-dark(#fff, #000)` produces garbage. Mixing against
-// `transparent` in sRGB yields the color at the requested alpha.
-//
-// Note this is a small precision change - the old "1a" suffix was 26/255, or
-// 10.196%, where `10%` is now exact. Visually identical, but computed values
-// differ.
 function applyOpacity(value: string, percentage: string): string {
 	if (!isColorValue(value)) return value;
 	return `color-mix(in srgb, ${value} ${percentage}, transparent)`;
 }
 
-// Flip the sign of a value's leading number, or of the number inside a
-// function call ("skewY(6deg)" -> "skewY(-6deg)"; negating the whole string
-// would give "-skewY(6deg)"). Null when there is no number to negate - a
-// color or a keyword - because then the class does not exist.
 function negateValue(value: string): string | null {
 	if (/^-?[\d.]/.test(value)) {
 		return value.startsWith("-") ? value.slice(1) : `-${value}`;
@@ -549,10 +484,6 @@ function negateValue(value: string): string | null {
 
 	const functionMatch = value.match(/^([a-zA-Z]+\()(-?[\d.]+)(.*)$/);
 	if (functionMatch) {
-		// Defaults, not assertions: none of the three groups is optional, so a
-		// successful match always fills them. `noUncheckedIndexedAccess` still
-		// types them as possibly undefined, and this satisfies it without
-		// claiming anything the regex does not already guarantee.
 		const [, prefix = "", number = "", suffix = ""] = functionMatch;
 		const negatedNumber = number.startsWith("-")
 			? number.slice(1)
@@ -563,7 +494,6 @@ function negateValue(value: string): string | null {
 	return null;
 }
 
-// escape colons, slashes, @ symbols and percentage
 function escapeCn(className: string): string {
 	return className
 		.replace(/:/g, "\\:")
