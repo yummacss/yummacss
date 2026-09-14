@@ -23,9 +23,7 @@ export type IntellisenseConfig = Pick<Config, "theme">;
  * `{ light, dark }` values, and the `percentage` tuning key alongside them.
  * Helpers take this rather than restating `Record<string, string>`.
  */
-export type ThemeColors = NonNullable<
-	NonNullable<Config["theme"]>["colors"]
->;
+export type ThemeColors = NonNullable<NonNullable<Config["theme"]>["colors"]>;
 
 export interface UtilityInfo {
 	cssValue: string;
