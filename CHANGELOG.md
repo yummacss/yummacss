@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- **[core]** `@rm:` applies a utility under `@media (prefers-reduced-motion: reduce)`, so an animation can be switched off in a class rather than in a stylesheet beside it.
+- **[core]** `@prm:` applies a utility under `@media (prefers-reduced-motion: reduce)`, so an animation can be switched off in a class rather than in a stylesheet beside it.
 - **[cli]** `yummacss migrate` rewrites class names into the v4 colon syntax. Not wired into the CLI until v4 ships, because v3 cannot compile what it writes.
 
 ## [3.31.1] - 2026-09-06
