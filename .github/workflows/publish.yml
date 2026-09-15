@@ -35,8 +35,11 @@ jobs:
       - name: Run tests
         run: pnpm test
 
+      - name: Update npm
+        run: npm install -g npm@latest
+
       - name: Publish to npm
-        run: pnpm -r publish --no-git-checks
+        run: node scripts/publish-packages.mjs
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
