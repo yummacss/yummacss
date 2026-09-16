@@ -41,7 +41,7 @@ function lexJs(content: string, into: Set<string>): void {
 	let lastSignificant = "\n";
 
 	while (i < n) {
-		const c = content[i];
+		const c = content[i] ?? "";
 
 		if (c === "/" && content[i + 1] === "/") {
 			while (i < n && content[i] !== "\n") i++;
@@ -129,9 +129,10 @@ function lexJs(content: string, into: Set<string>): void {
 		}
 
 		if (templateStack.length > 0) {
-			if (c === "{") templateStack[templateStack.length - 1]++;
+			const top = templateStack.length - 1;
+			if (c === "{") templateStack[top] = (templateStack[top] ?? 0) + 1;
 			else if (c === "}") {
-				if (templateStack[templateStack.length - 1] === 0) {
+				if (templateStack[top] === 0) {
 					templateStack.pop();
 					let value = "";
 					i++;
@@ -160,7 +161,7 @@ function lexJs(content: string, into: Set<string>): void {
 					lastSignificant = "`";
 					continue;
 				}
-				templateStack[templateStack.length - 1]--;
+				templateStack[top] = (templateStack[top] ?? 0) - 1;
 			}
 		}
 
