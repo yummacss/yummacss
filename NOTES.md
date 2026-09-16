@@ -68,3 +68,14 @@ secret once a release proves OIDC ran.
 
 **Two things this cannot verify from here.** It is never exercised until a real
 release, and the npmjs side is a web form **per package, so eight times**.
+
+## `@xs:` at 32rem
+
+Renildo's call, 2026-09-16. `xs` was the only t-shirt width alias with no query
+behind it: `sm` 40rem, `md` 48rem, `lg` 64rem, `xl` 80rem and `xxl` 96rem are
+all exactly their breakpoints, and `max-w-xs` meant 32rem and nothing else.
+Adding the breakpoint makes the alias honest rather than dropping it, and gives
+the set a narrow-screen query it did not have.
+
+Queries emit ascending, so 32rem lands before 40rem and the cascade still
+resolves widest-last. `tests/breakpoints.test.ts` pins both.
