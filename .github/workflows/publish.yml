@@ -39,7 +39,9 @@ jobs:
         run: npm install -g npm@latest
 
       - name: Publish to npm
-        run: node scripts/publish-packages.mjs
+        run: |
+          pnpm -r exec pnpm pack --pack-destination "$RUNNER_TEMP/tarballs"
+          for tarball in "$RUNNER_TEMP"/tarballs/*.tgz; do npm publish "$tarball"; done
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
