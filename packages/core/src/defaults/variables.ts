@@ -1,4 +1,3 @@
-// borders
 export const borderWidth = 1;
 export const borderRadiusXs = 0.125;
 export const borderRadiusSm = 0.25;
@@ -9,11 +8,9 @@ export const borderRadiusXxl = 1;
 export const borderRadius3xl = 1.5;
 export const borderSpacing = 0.25;
 
-// outlines
 export const outlineOffset = 1;
 export const outlineWidth = 1;
 
-// colors
 export const red = "#e63946";
 export const orange = "#ff6b35";
 export const yellow = "#ffb81c";
@@ -38,22 +35,18 @@ export const white = "#ffffff";
 export const transparent = "transparent";
 export const current = "currentColor";
 
-// box model
 export const height = 0.25;
 export const width = 0.25;
 export const padding = 0.25;
 export const margin = 0.25;
 export const spacing = 0.25;
 
-// flexbox
 export const flexBasis = 0.25;
 
-// grid
 export const gap = 0.25;
 export const columnGap = 0.25;
 export const rowGap = 0.25;
 
-// effect
 export const blur = 4;
 
 export const boxShadowOutsetXs = "0 1px 2px #0000000d";
@@ -79,10 +72,8 @@ export const grayscale = 10;
 
 export const opacity = 0.1;
 
-// positioning
 export const topRightBottomLeft = 0.25;
 
-// font
 export const fontDefault =
 	"system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji";
 export const fontMono =
@@ -106,5 +97,4 @@ export const fontSize9xl = 8;
 
 export const fontWeight = 500;
 
-// text
 export const decorationThickness = 1;

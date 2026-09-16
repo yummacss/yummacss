@@ -45,7 +45,7 @@ describe("validateClasses (nitro)", () => {
 	it("should enforce prefixes", () => {
 		const config = { prefix: "ui-" };
 
-		expect(validateClasses(["ui-d-f"], config).valid).toEqual(["ui-d-f"]);
+		expect(validateClasses(["ui-d:f"], config).valid).toEqual(["ui-d:f"]);
 		expect(validateClasses(["d:f"], config).invalid).toEqual(["d:f"]);
 	});
 });
@@ -53,7 +53,7 @@ describe("validateClasses (nitro)", () => {
 describe("extractClasses (canon)", () => {
 	it("should only extract from class attribute contexts", () => {
 		const classes = extractClasses(
-			'const s = "not-a-class"; <div className="d-f p-4">, cn("m-2 c-white")',
+			'const s = "not-a-class"; <div className="d:f p:4">, cn("m:2 c:white")',
 		);
 
 		expect(classes.has("d:f")).toBe(true);
@@ -65,7 +65,7 @@ describe("extractClasses (canon)", () => {
 
 	it("should skip template literal expressions", () => {
 		const classes = extractClasses(
-			`<div className={\`d-f \${isActive ? 'bg-red-5' : ''} p-4\`}>`,
+			`<div className={\`d:f \${isActive ? 'bg:red-5' : ''} p:4\`}>`,
 		);
 
 		expect(classes.has("d:f")).toBe(true);

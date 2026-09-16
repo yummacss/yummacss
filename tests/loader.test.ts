@@ -71,7 +71,6 @@ describe("loadConfig", () => {
 		expect(first.config.prefix).toBe("a-");
 
 		writeFileSync(configPath, "export default { prefix: 'b-' };");
-		// Force a different mtime in case both writes land in the same tick.
 		const later = new Date(Date.now() + 1000);
 		utimesSync(configPath, later, later);
 

@@ -27,11 +27,6 @@ describe("config reload", () => {
 	});
 
 	it("survives two edits that share an mtime", async () => {
-		// Regression: the cache key used to be the file's mtime, so two edits
-		// inside one filesystem clock tick served the stale module. That is
-		// timing-dependent - it passed on NTFS and failed on ext4 in CI - so
-		// the mtime is pinned here to reproduce the collision deterministically
-		// on any platform.
 		const pinned = new Date("2020-01-01T00:00:00Z");
 
 		write({ brand: "#333333" });

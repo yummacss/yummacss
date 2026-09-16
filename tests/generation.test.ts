@@ -8,10 +8,6 @@ describe("Utility Generation", () => {
 		buildOptions: { reset: false },
 	};
 
-	// Explicit timeout: this walks every utility, every value & every variant,
-	// which lands around 4.8s against vitest's 5000ms default - so it passed or
-	// failed on machine speed. `pnpm test` gates the publish workflow, and a
-	// coin-flip failure there blocks a release for no reason.
 	it(
 		"should generate all core utilities and their variants",
 		{ timeout: 30000 },
@@ -19,7 +15,6 @@ describe("Utility Generation", () => {
 			for (const [utilityName, utility] of Object.entries(utils)) {
 				const { prefix, values, variants } = utility;
 
-				// 1. Test base values
 				for (const [valueSuffix, _cssValue] of Object.entries(values)) {
 					const className =
 						valueSuffix === "base" || valueSuffix === ""
@@ -37,7 +32,6 @@ describe("Utility Generation", () => {
 					);
 				}
 
-				// 2. Test variants (pick one of each type if they exist)
 				if (variants) {
 					const sampleValueSuffix = Object.keys(values)[0];
 					const baseClass =
@@ -45,7 +39,6 @@ describe("Utility Generation", () => {
 							? prefix
 							: `${prefix}:${sampleValueSuffix}`;
 
-					// Media Queries
 					if (variants.mediaQueries && variants.mediaQueries.length > 0) {
 						const mq = variants.mediaQueries[0];
 						if (mq) {
@@ -62,7 +55,6 @@ describe("Utility Generation", () => {
 						}
 					}
 
-					// Pseudo Classes
 					if (variants.pseudoClasses && variants.pseudoClasses.length > 0) {
 						const pc = variants.pseudoClasses[0];
 						if (pc) {
@@ -79,7 +71,6 @@ describe("Utility Generation", () => {
 						}
 					}
 
-					// Pseudo Elements
 					if (variants.pseudoElements && variants.pseudoElements.length > 0) {
 						const pe = variants.pseudoElements[0];
 						if (pe) {
@@ -96,7 +87,6 @@ describe("Utility Generation", () => {
 						}
 					}
 
-					// Opacity
 					if (variants.opacity && variants.opacity.length > 0) {
 						const op = variants.opacity[0];
 						if (op) {
@@ -138,7 +128,6 @@ describe("Negative value handling", () => {
 
 	it("should leave non-numeric values unchanged", () => {
 		const css = generator(new Set(["d:-f"]), config as any);
-		// "d:f" has no negatable form - "d:-f" should not match any rule
 		expect(css).not.toContain("display: -flex");
 	});
 });

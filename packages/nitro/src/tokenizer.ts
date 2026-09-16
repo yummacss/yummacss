@@ -1,63 +1,193 @@
-export function tokenizer(content: string): string[] {
-	const tokens = new Set<string>();
+const JS_EXTENSIONS = /\.(?:[cm]?[jt]sx?)$/;
 
-	// generic class attributes
-	const classRegexes = [
-		/class(?:Name)?=["']([^"']+)["']/g,
-		/class(?:Name)?=\{["']([^"']+)["']\}/g,
-		/class(?:Name)?=\{`([^`]+)`\}/g,
-	];
+const REGEX_ALLOWED_BEFORE = new Set([
+	"=",
+	"(",
+	",",
+	":",
+	"[",
+	"!",
+	"&",
+	"|",
+	"?",
+	"{",
+	"}",
+	";",
+	"\n",
+	"+",
+	"-",
+	"*",
+	"%",
+	"<",
+	">",
+	"~",
+	"^",
+]);
 
-	// template literals
-	const templateRegexes = [/`([^`]+)`/g, /"([^"]+)"/g, /'([^']+)'/g];
+const NOT_IN_A_CLASS = /[<>"'`=(){};,\\]/;
 
-	// cva (class variance authority)
-	const cvaRegexes = [
-		/cva\s*\(\s*["'`]([^"'`]+)["'`]/g,
-		/:\s*["'`]([^"'`]+)["'`]/g,
-	];
+function addClasses(source: string, into: Set<string>): void {
+	for (const raw of source.split(/\s+/)) {
+		if (!raw || NOT_IN_A_CLASS.test(raw)) continue;
+		const clean = raw.replace(/^@+/, "");
+		if (clean && /^[a-z]/.test(clean) && clean.includes(":")) into.add(raw);
+	}
+}
 
-	// cn utility
-	const cnRegexes = [
-		/\bcn\s*\(\s*["'`]([^"'`]+)["'`]/g,
-		/\bcn\s*\(\s*\{\s*["'`]([^"'`]+)["'`]\s*:/g,
-	];
+function lexJs(content: string, into: Set<string>): void {
+	const n = content.length;
+	const templateStack: number[] = [];
+	let i = 0;
+	let lastSignificant = "\n";
 
-	// clsx and classnames
-	const clsxRegexes = [
-		/clsx\s*\(\s*["'`]([^"'`]+)["'`]/g,
-		/classnames\s*\(\s*["'`]([^"'`]+)["'`]/g,
-		/clsx\s*\(\s*\{\s*["'`]([^"'`]+)["'`]\s*:/g,
-		/classnames\s*\(\s*\{\s*["'`]([^"'`]+)["'`]\s*:/g,
-	];
+	while (i < n) {
+		const c = content[i];
 
-	const allRegexes = [
-		...classRegexes,
-		...templateRegexes,
-		...cvaRegexes,
-		...cnRegexes,
-		...clsxRegexes,
-	];
+		if (c === "/" && content[i + 1] === "/") {
+			while (i < n && content[i] !== "\n") i++;
+			continue;
+		}
+		if (c === "/" && content[i + 1] === "*") {
+			i += 2;
+			while (i < n && !(content[i] === "*" && content[i + 1] === "/")) i++;
+			i += 2;
+			continue;
+		}
 
-	for (const regex of allRegexes) {
-		let match: RegExpExecArray | null;
-		match = regex.exec(content);
-		while (match !== null) {
-			const classString = match[1];
-			if (classString) {
-				const individualClasses = classString.split(/\s+/).filter((cls) => {
-					const clean = cls.replace(/^@+/, "");
-					// A 4.0 class carries a colon, not a dash: `d:f` has no hyphen at all.
-					return clean && /^[a-z]/.test(clean) && clean.includes(":");
-				});
-
-				individualClasses.forEach((cls) => {
-					tokens.add(cls);
-				});
+		if (c === "/" && REGEX_ALLOWED_BEFORE.has(lastSignificant)) {
+			i++;
+			let inClass = false;
+			while (i < n) {
+				const r = content[i];
+				if (r === "\\") {
+					i += 2;
+					continue;
+				}
+				if (r === "[") inClass = true;
+				else if (r === "]") inClass = false;
+				else if (r === "/" && !inClass) {
+					i++;
+					break;
+				} else if (r === "\n") break;
+				i++;
 			}
-			match = regex.exec(content);
+			lastSignificant = "/";
+			continue;
+		}
+
+		if (c === '"' || c === "'") {
+			const quote = c;
+			let value = "";
+			i++;
+			while (i < n) {
+				const s = content[i];
+				if (s === "\\") {
+					value += content[i + 1] ?? "";
+					i += 2;
+					continue;
+				}
+				if (s === quote) {
+					i++;
+					break;
+				}
+				if (s === "\n") break;
+				value += s;
+				i++;
+			}
+			addClasses(value, into);
+			lastSignificant = quote;
+			continue;
+		}
+
+		if (c === "`") {
+			let value = "";
+			i++;
+			while (i < n) {
+				const t = content[i];
+				if (t === "\\") {
+					value += content[i + 1] ?? "";
+					i += 2;
+					continue;
+				}
+				if (t === "`") {
+					i++;
+					break;
+				}
+				if (t === "$" && content[i + 1] === "{") {
+					addClasses(value, into);
+					value = "";
+					templateStack.push(0);
+					i += 2;
+					break;
+				}
+				value += t;
+				i++;
+			}
+			addClasses(value, into);
+			lastSignificant = "`";
+			continue;
+		}
+
+		if (templateStack.length > 0) {
+			if (c === "{") templateStack[templateStack.length - 1]++;
+			else if (c === "}") {
+				if (templateStack[templateStack.length - 1] === 0) {
+					templateStack.pop();
+					let value = "";
+					i++;
+					while (i < n) {
+						const t = content[i];
+						if (t === "\\") {
+							value += content[i + 1] ?? "";
+							i += 2;
+							continue;
+						}
+						if (t === "`") {
+							i++;
+							break;
+						}
+						if (t === "$" && content[i + 1] === "{") {
+							addClasses(value, into);
+							value = "";
+							templateStack.push(0);
+							i += 2;
+							break;
+						}
+						value += t;
+						i++;
+					}
+					addClasses(value, into);
+					lastSignificant = "`";
+					continue;
+				}
+				templateStack[templateStack.length - 1]--;
+			}
+		}
+
+		if (!/\s/.test(c)) lastSignificant = c;
+		else if (c === "\n") lastSignificant = "\n";
+		i++;
+	}
+}
+
+const CLASS_ATTR =
+	/class(?:Name)?\s*=\s*(?:"([^"]*)"|'([^']*)'|\{?`([^`]*)`\}?)/g;
+const QUOTED = /"([^"]*)"|'([^']*)'|`([^`]*)`/g;
+
+function lexGeneric(content: string, into: Set<string>): void {
+	for (const line of content.split("\n")) {
+		for (const m of line.matchAll(CLASS_ATTR)) {
+			addClasses(m[1] ?? m[2] ?? m[3] ?? "", into);
+		}
+		for (const m of line.matchAll(QUOTED)) {
+			addClasses(m[1] ?? m[2] ?? m[3] ?? "", into);
 		}
 	}
+}
 
+export function tokenizer(content: string, filename?: string): string[] {
+	const tokens = new Set<string>();
+	if (filename && JS_EXTENSIONS.test(filename)) lexJs(content, tokens);
+	else lexGeneric(content, tokens);
 	return Array.from(tokens);
 }

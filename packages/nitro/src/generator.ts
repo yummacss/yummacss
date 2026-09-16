@@ -1,4 +1,5 @@
 import {
+	acceptsNegative,
 	type ColorValue,
 	coreUtils,
 	createColors,
@@ -41,16 +42,6 @@ export function generator(usedClasses: Set<string>, config: Config): string {
 	return cssBlocks.join("\n\n");
 }
 
-/**
- * `light-dark()` resolves against the used value of `color-scheme`. If nothing
- * declares it, every paired color silently resolves to its light side and dark
- * mode never happens - so the declaration is emitted automatically as soon as
- * the theme contains at least one pair, and not at all otherwise.
- *
- * `light dark` follows the OS preference. `color-scheme` is an ordinary
- * inherited property, so setting it on any subtree flips every paired color
- * beneath it - that is what a manual theme toggle hooks into.
- */
 function buildColorScheme(config: Config): string | null {
 	const colors = config.theme?.colors;
 	if (!colors) return null;
@@ -127,11 +118,6 @@ export interface ValidationResult {
 	invalid: string[];
 }
 
-/**
- * Check class names against the same matching rules the generator uses,
- * so a class is valid exactly when it produces CSS. Safelist entries
- * always count as valid.
- */
 export function validateClasses(
 	classNames: Iterable<string>,
 	config: Config,
@@ -226,13 +212,6 @@ function compareScores(a: number[], b: number[]): number {
 	return 0;
 }
 
-/**
- * Suggest the closest valid class for each unknown class name, e.g.
- * "gap-4" suggests "g-4". Variant prefixes (`@sm:`, `h:`), opacity
- * suffixes (`/50`), and the configured prefix are preserved around the
- * suggested base class. Classes with no close match are omitted from
- * the result.
- */
 export function suggestClasses(
 	classNames: Iterable<string>,
 	config: Config = {},
@@ -253,8 +232,6 @@ export function suggestClasses(
 		let variantPrefix = "";
 		let opacitySuffix = "";
 
-		// Not the last colon: 4.0 puts one inside the utility too, so
-		// `h:g:4` would leave `4` as the class to match.
 		const split = splitVariants(className);
 		if (split.variants.length > 0) {
 			variantPrefix = split.variants
@@ -275,7 +252,6 @@ export function suggestClasses(
 			if (className.startsWith(prefix)) {
 				className = className.slice(prefix.length);
 			} else if (candidateSet.has(className)) {
-				// The class is only missing the configured prefix.
 				tentative.set(originalClassName, [
 					variantPrefix + prefix + className + opacitySuffix,
 					variantPrefix + prefix + className,
@@ -286,34 +262,18 @@ export function suggestClasses(
 
 		if (!className) continue;
 
-		// Short classes only tolerate one edit - two edits away from
-		// "cp" is a different class, not a typo.
 		const maxDistance = className.length <= 4 ? 1 : 2;
 
-		// A v3-shaped typo is one edit further from its 4.0 answer than it was
-		// from its 3.x one, because the separator changed too: `gap-4` to `g-4`
-		// was two edits, `gap-4` to `g:4` is three. Distance is measured with
-		// both separators folded together so the people mid-migration, who are
-		// the ones typing `gap-4`, still get told what to write.
 		const fold = (s: string) => s.replace(/:/g, "-");
 		const folded = fold(className);
 		let best: string | undefined;
 		let bestScore = [maxDistance + 1, 1, 1, 0];
 
 		for (const candidate of candidates) {
-			// Folded on both sides throughout: the tie-break asks whether one
-			// string sits inside the other, and `g:4` is not inside `gap-4`
-			// while `g-4` is.
 			const foldedCandidate = fold(candidate);
 			const distance = levenshtein(folded, foldedCandidate, maxDistance);
 			if (distance === 0 || distance > maxDistance) continue;
 
-			// Ties are broken by preferring candidates that share every
-			// character with the typo in either direction ("g-4" inside
-			// "gap-4", "cp" inside "c-p"), then by matching first char
-			// (utilities abbreviate from the property name's first
-			// letters), then by the longest shared prefix, then
-			// alphabetically.
 			const score = [
 				distance,
 				isSubsequence(foldedCandidate, folded) ||
@@ -335,8 +295,6 @@ export function suggestClasses(
 		}
 
 		if (best !== undefined) {
-			// The opacity suffix is only valid on some utilities - fall
-			// back to the bare suggestion when it does not apply.
 			tentative.set(originalClassName, [
 				variantPrefix + prefix + best + opacitySuffix,
 				variantPrefix + prefix + best,
@@ -344,9 +302,6 @@ export function suggestClasses(
 		}
 	}
 
-	// Reassembled suggestions can still be invalid (e.g. an unknown
-	// variant chain) - validate them in one pass and keep the first
-	// valid option per class.
 	const options = Array.from(tentative.values()).flat();
 	const { valid } = validateClasses(options, config);
 	const validSet = new Set(valid);
@@ -369,7 +324,6 @@ function generateUtil(usedClasses: Set<string>, config: Config): string {
 	const mediaQueryRules: Map<string, string[]> = new Map();
 	const processedClasses = new Set<string>();
 
-	// to avoid CSS output being generated randomly when using build or watch tasks
 	const sortedClasses = Array.from(usedClasses).sort();
 
 	for (const originalClassName of sortedClasses) {
@@ -395,7 +349,6 @@ function generateUtil(usedClasses: Set<string>, config: Config): string {
 		}
 	}
 
-	// sort media queries alphabetically
 	const sortedMediaQueries = Array.from(mediaQueryRules.entries()).sort(
 		([a], [b]) => a.localeCompare(b),
 	);
@@ -414,9 +367,6 @@ interface Peeled {
 	pseudoElements: string;
 }
 
-/**
- * Removes one leading variant, or returns null when none is there.
- */
 function peelVariant(
 	className: string,
 	variants: Utility["variants"],
@@ -431,7 +381,6 @@ function peelVariant(
 		}
 	}
 
-	// Pseudo elements first: `b::` must not be read as the pseudo class `b:`.
 	if (variants?.pseudoElements) {
 		for (const pe of variants.pseudoElements) {
 			if (className.startsWith(`${pe.prefix}::`)) {
@@ -456,7 +405,6 @@ function peelVariant(
 	return null;
 }
 
-/** The declaration value for `<prefix>:<value>`, or null if it is not one. */
 function matchValue(
 	className: string,
 	util: Utility,
@@ -477,8 +425,6 @@ function matchValue(
 
 	if (!body.startsWith(`${prefix}:`) && body !== prefix) return null;
 
-	// `m:-4` leaves `-4` here exactly as `m--4` did, so the negative value
-	// stops being a special case in 4.0 without any code moving.
 	const valuePart = body === prefix ? "" : body.slice(prefix.length + 1);
 	const isNegative = valuePart.startsWith("-");
 	const lookup = isNegative ? valuePart.slice(1) : valuePart;
@@ -487,22 +433,15 @@ function matchValue(
 		values[lookup === "" ? "base" : lookup] || values[lookup];
 	if (!propertyValue) return null;
 
-	return {
-		value: isNegative ? negateValue(propertyValue) : propertyValue,
-		opacity,
-	};
+	if (!isNegative) return { value: propertyValue, opacity };
+
+	if (!acceptsNegative(util.properties)) return null;
+	const negated = negateValue(propertyValue);
+	if (negated === null) return null;
+
+	return { value: negated, opacity };
 }
 
-/**
- * Reads one class against one utility.
- *
- * 4.0 gives variants & utilities the same separator, so ten pseudo-class
- * prefixes now collide with a utility prefix: `h:` is both `:hover` and
- * `height`. The parser therefore cannot commit to reading a leading `h:` as a
- * variant until it knows the remainder does not resolve on its own. It tries
- * the class as written, peels one variant, tries again, and so on, which
- * reads `h:4` as a height & `h:h:4` as a height under `:hover`.
- */
 function tryGenerateRule(
 	className: string,
 	util: Utility,
@@ -535,43 +474,22 @@ function tryGenerateRule(
 	}
 }
 
-// Values the opacity suffix (e.g. `bg-blue/50`) can be applied to. Anything
-// else - lengths, keywords, `transparent`, `currentColor` - is left untouched,
-// so a suffix on a non-color utility stays a no-op instead of producing
-// invalid CSS. `light-dark()` is included so paired theme colors accept
-// opacity; it is inert until those ship.
 function isColorValue(value: string): boolean {
 	return /^#[0-9a-f]{6}$/i.test(value) || value.startsWith("light-dark(");
 }
 
-// `color-mix()` accepts any <color>, which hex-alpha concatenation did not:
-// appending "80" to `light-dark(#fff, #000)` produces garbage. Mixing against
-// `transparent` in sRGB yields the color at the requested alpha.
-//
-// Note this is a small precision change - the old "1a" suffix was 26/255, or
-// 10.196%, where `10%` is now exact. Visually identical, but computed values
-// differ.
 function applyOpacity(value: string, percentage: string): string {
 	if (!isColorValue(value)) return value;
 	return `color-mix(in srgb, ${value} ${percentage}, transparent)`;
 }
 
-// Flip the sign of a CSS value's leading number, e.g. "0.25rem" ->
-// "-0.25rem", or of the first number inside a function call, e.g.
-// "skewY(6deg)" -> "skewY(-6deg)" (negating the whole string would
-// produce invalid CSS like "-skewY(6deg)"). Values with no leading or
-// wrapped number (colors, keywords) are returned unchanged.
-function negateValue(value: string): string {
+function negateValue(value: string): string | null {
 	if (/^-?[\d.]/.test(value)) {
 		return value.startsWith("-") ? value.slice(1) : `-${value}`;
 	}
 
 	const functionMatch = value.match(/^([a-zA-Z]+\()(-?[\d.]+)(.*)$/);
 	if (functionMatch) {
-		// Defaults, not assertions: none of the three groups is optional, so a
-		// successful match always fills them. `noUncheckedIndexedAccess` still
-		// types them as possibly undefined, and this satisfies it without
-		// claiming anything the regex does not already guarantee.
 		const [, prefix = "", number = "", suffix = ""] = functionMatch;
 		const negatedNumber = number.startsWith("-")
 			? number.slice(1)
@@ -579,10 +497,9 @@ function negateValue(value: string): string {
 		return `${prefix}${negatedNumber}${suffix}`;
 	}
 
-	return value;
+	return null;
 }
 
-// escape colons, slashes, @ symbols and percentage
 function escapeCn(className: string): string {
 	return className
 		.replace(/:/g, "\\:")

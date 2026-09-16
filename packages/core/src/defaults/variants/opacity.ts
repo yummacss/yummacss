@@ -1,7 +1,3 @@
-// Values are percentages fed to `color-mix()` by the generator, not hex alpha
-// pairs. The previous representation ("1a", "80", ...) could only be appended
-// to a 6-digit hex color, which ruled out every functional color value -
-// `light-dark()` in particular.
 export const opacity = [
 	{ prefix: "0", value: "0%" },
 	{ prefix: "5", value: "5%" },

@@ -1,6 +1,6 @@
 {
 	"name": "yummacss",
-	"version": "3.29.2",
+	"version": "3.31.1",
 	"private": true,
 	"description": "An atomic CSS framework.",
 	"keywords": [
@@ -24,6 +24,7 @@
 		"lint": "pnpm -r lint",
 		"pnpm:update": "pnpm self-update",
 		"publish-packages": "pnpm -r publish",
+		"release": "node scripts/release.mjs",
 		"sort": "sort-package-json \"package.json\" \"packages/**/package.json\"",
 		"test": "vitest run",
 		"test:watch": "vitest"
@@ -35,7 +36,7 @@
 		"sort-package-json": "^3.6.1",
 		"tsdown": "^0.18.4",
 		"typescript": "^5.9.3",
-		"vitest": "^4.1.0"
+		"vitest": "^4.1.11"
 	},
 	"packageManager": "pnpm@10.30.3"
 }
