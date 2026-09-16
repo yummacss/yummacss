@@ -49,9 +49,10 @@ describe("migrateClass", () => {
 		expect(migrated("s::bg-blue-2")).toBe("s::bg:blue-2");
 	});
 
-	it("renames the disabled variant, which display now needs", () => {
-		expect(migrated("d:m-4")).toBe("di:m:4");
+	it("leaves the disabled variant alone, which the parser peels", () => {
+		expect(migrated("d:m-4")).toBe("d:m:4");
 		expect(migrated("d-f")).toBe("d:f");
+		expect(migrated("d:bg-red-5")).toBe("d:bg:red-5");
 	});
 
 	it("carries the opacity suffix through untouched", () => {
@@ -113,6 +114,14 @@ describe("rewriteSource", () => {
 
 		expect(content).toBe("<div className={`p:4 ${size}`}>");
 		expect(skipped.get("${size}")).toBe("built at runtime");
+	});
+
+	it("does not report the operators inside a template expression", () => {
+		const source = '<div className={`tp-a ${busy ? "o-50" : "o-100"}`}>';
+		const { content, skipped } = rewriteSource(source);
+
+		expect(content).toBe('<div className={`tp:a ${busy ? "o:50" : "o:100"}`}>');
+		expect([...skipped.keys()]).toEqual([]);
 	});
 
 	it("reports an unknown class without changing it", () => {

@@ -43,8 +43,6 @@ const MEDIA = new Set<string>(mediaQueries.map((v) => v.prefix));
 const CLASSES = new Set<string>(pseudoClasses.map((v) => v.prefix));
 const ELEMENTS = new Set<string>(pseudoElements.map((v) => v.prefix));
 
-const VARIANT_RENAMES: Record<string, string> = { d: "di" };
-
 const VALUE_RENAMES: Record<string, Record<string, string>> = {
 	tt: { n: "none" },
 	tl: { a: "auto" },
@@ -74,8 +72,7 @@ function splitVariants(className: string): { variants: string; base: string } {
 					: CLASSES.has(name);
 		if (!known) break;
 
-		const renamed = media ? rawName : (VARIANT_RENAMES[name] ?? name);
-		variants += `${renamed}${separator}`;
+		variants += `${rawName}${separator}`;
 		rest = rest.slice(full.length);
 	}
 
