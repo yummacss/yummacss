@@ -41,7 +41,7 @@ function splitVariants(className: string): { variant: string; base: string } {
 	let rest = className;
 
 	while (rest.includes(":")) {
-		const match = /^(@?[a-z]+)(::|:)/.exec(rest);
+		const match = /^(@?[a-z0-9]+)(::|:)/.exec(rest);
 		if (!match) break;
 
 		const [full, name = "", separator] = match;

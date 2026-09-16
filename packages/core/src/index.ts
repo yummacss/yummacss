@@ -92,7 +92,7 @@ export function splitVariants(className: string): {
 	let rest = className;
 
 	while (!isUtility(rest)) {
-		const match = /^(@?[a-z]+)(::|:)/.exec(rest);
+		const match = /^(@?[a-z0-9]+)(::|:)/.exec(rest);
 		if (!match) break;
 
 		const [full, raw = "", separator] = match;

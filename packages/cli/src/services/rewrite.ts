@@ -9,7 +9,7 @@ const CLASS_CONTEXTS = [
 
 const WRAPPERS = /^([`"'{([]*)(.*?)([`"'})\],;]*)$/;
 
-const CLASS_SHAPED = /^@?[a-z][a-z0-9:@/%._-]*$/;
+const CLASS_SHAPED = /^@?[a-z0-9][a-z0-9:@/%._-]*$/;
 
 export interface RewriteResult {
 	content: string;
@@ -56,7 +56,9 @@ export function rewriteSource(content: string): RewriteResult {
 
 					const result = migrateClass(core);
 					if (!result.ok) {
-						if (CLASS_SHAPED.test(core)) skipped.set(token, result.reason);
+						if (CLASS_SHAPED.test(core) && /[a-z]/.test(core)) {
+							skipped.set(token, result.reason);
+						}
 						return token;
 					}
 
