@@ -1,6 +1,9 @@
 import { coreUtils } from "@yummacss/core";
 import { describe, expect, it } from "vitest";
-import { migrateClass } from "../packages/cli/src/services/migrate";
+import {
+	migrateClass,
+	useThemeScreens,
+} from "../packages/cli/src/services/migrate";
 import { rewriteSource } from "../packages/cli/src/services/rewrite";
 
 function migrated(className: string): string {
@@ -42,6 +45,17 @@ describe("migrateClass", () => {
 		expect(migrated("h:bg-red-1")).toBe("h:bg:red-1");
 		expect(migrated("@sm:m-4")).toBe("@sm:m:4");
 		expect(migrated("@sm:h:m-4")).toBe("@sm:h:m:4");
+	});
+
+	it("migrates a breakpoint the project configured, not just core's", () => {
+		expect(migrateClass("@3xl:d-b")).toEqual({
+			ok: false,
+			reason: "not a known utility",
+		});
+
+		useThemeScreens({ "3xl": "104rem" });
+		expect(migrated("@3xl:d-b")).toBe("@3xl:d:b");
+		useThemeScreens(undefined);
 	});
 
 	it("keeps the pseudo element separator", () => {

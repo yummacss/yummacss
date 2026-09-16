@@ -1,7 +1,7 @@
 import { readFileSync, writeFileSync } from "node:fs";
 import { glob } from "tinyglobby";
 import { loadConfig } from "@/services/loader";
-import { useThemeColors } from "@/services/migrate";
+import { useThemeColors, useThemeScreens } from "@/services/migrate";
 import { rewriteSource } from "@/services/rewrite";
 import { logger } from "@/utils/logger";
 
@@ -14,6 +14,7 @@ export async function migrate(options: MigrateOptions = {}) {
 		const config = await loadConfig();
 
 		useThemeColors(config.theme?.colors);
+		useThemeScreens(config.theme?.screens);
 
 		const files = await glob(config.source ?? []);
 

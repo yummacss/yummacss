@@ -39,7 +39,12 @@ export function useThemeColors(colors: Record<string, ColorValue> | undefined) {
 	customColors = new Set(Object.keys(createColors(colors ?? {})));
 }
 
-const MEDIA = new Set<string>(mediaQueries.map((v) => v.prefix));
+const DEFAULT_MEDIA = mediaQueries.map((v) => v.prefix);
+let MEDIA = new Set<string>(DEFAULT_MEDIA);
+
+export function useThemeScreens(screens: Record<string, string> | undefined) {
+	MEDIA = new Set([...DEFAULT_MEDIA, ...Object.keys(screens ?? {})]);
+}
 const CLASSES = new Set<string>(pseudoClasses.map((v) => v.prefix));
 const ELEMENTS = new Set<string>(pseudoElements.map((v) => v.prefix));
 
@@ -57,7 +62,7 @@ function splitVariants(className: string): { variants: string; base: string } {
 	let variants = "";
 
 	while (true) {
-		const match = /^(@?[a-z]+)(::|:)/.exec(rest);
+		const match = /^(@?[a-z0-9]+)(::|:)/.exec(rest);
 		if (!match) break;
 
 		const [full, rawName = "", separator] = match;
