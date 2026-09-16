@@ -45,6 +45,12 @@ let MEDIA = new Set<string>(DEFAULT_MEDIA);
 export function useThemeScreens(screens: Record<string, string> | undefined) {
 	MEDIA = new Set([...DEFAULT_MEDIA, ...Object.keys(screens ?? {})]);
 }
+
+let userPrefix = "";
+
+export function useConfigPrefix(prefix: string | undefined) {
+	userPrefix = prefix ?? "";
+}
 const CLASSES = new Set<string>(pseudoClasses.map((v) => v.prefix));
 const ELEMENTS = new Set<string>(pseudoElements.map((v) => v.prefix));
 
@@ -128,6 +134,20 @@ function attempt(
 }
 
 export function migrateClass(name: string): MigrationResult {
+	if (userPrefix) {
+		if (!name.startsWith(userPrefix)) {
+			return { ok: false, reason: "missing the configured prefix" };
+		}
+		const inner = migrateUnprefixed(name.slice(userPrefix.length));
+		if (!inner.ok) return inner;
+		const className = `${userPrefix}${inner.className}`;
+		return { ok: true, className, changed: className !== name };
+	}
+
+	return migrateUnprefixed(name);
+}
+
+function migrateUnprefixed(name: string): MigrationResult {
 	const whole = attempt(name, name, "");
 	if (whole) return whole;
 
