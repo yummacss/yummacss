@@ -54,7 +54,6 @@ export function registerHoverProvider(
 	return monaco.languages.registerHoverProvider("html", {
 		provideHover: (model: any, position: any) => {
 			const line = model.getLineContent(position.lineNumber);
-			// Monaco columns are 1-indexed
 			const target = findHoverTarget(line, position.column - 1, config);
 			if (!target) return null;
 

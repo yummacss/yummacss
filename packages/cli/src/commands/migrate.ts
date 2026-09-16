@@ -6,7 +6,6 @@ import { rewriteSource } from "@/services/rewrite";
 import { logger } from "@/utils/logger";
 
 export interface MigrateOptions {
-	/** Report what would change without touching any file. */
 	dryRun?: boolean;
 }
 
@@ -14,8 +13,6 @@ export async function migrate(options: MigrateOptions = {}) {
 	try {
 		const config = await loadConfig();
 
-		// Without this every class built on a project's own palette reads as
-		// unrecognized & is skipped.
 		useThemeColors(config.theme?.colors);
 
 		const files = await glob(config.source ?? []);

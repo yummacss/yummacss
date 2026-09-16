@@ -1,13 +1,5 @@
 import { migrateClass } from "./migrate.js";
 
-/**
- * Only class attribute contexts are rewritten.
- *
- * The generator's tokenizer also matches every bare string literal in a file,
- * which is safe when it is collecting class names & destructive here: this
- * writes the file back, so a match on an unrelated string would corrupt it.
- * These are canon's narrower patterns.
- */
 const CLASS_CONTEXTS = [
 	/class(?:Name)?\s*=\s*["']([^"']+)["']/g,
 	/class(?:Name)?=\{["']([^"']+)["']\}/g,
@@ -15,20 +7,11 @@ const CLASS_CONTEXTS = [
 	/\b(?:cn|clsx|classnames|cva)\s*\(\s*["'`]([^"'`]+)["'`]/g,
 ];
 
-/**
- * Quotes & braces that wrap a class inside a bigger expression.
- *
- * `className={`p-4 ${open ? "ro-45" : "ro-0"}`}` splits on whitespace into
- * tokens like `"ro-45` and `"ro-0"}`. Those are real classes wearing
- * punctuation, and leaving them alone would quietly strand them on v3.
- */
 const WRAPPERS = /^([`"'{([]*)(.*?)([`"'})\],;]*)$/;
 
 export interface RewriteResult {
 	content: string;
-	/** Class names actually changed. */
 	migrated: number;
-	/** Tokens left alone, mapped to why. */
 	skipped: Map<string, string>;
 }
 
@@ -58,8 +41,6 @@ export function rewriteSource(content: string): RewriteResult {
 				.map((token) => {
 					if (!token.trim()) return token;
 
-					// A class assembled at runtime cannot be read statically, so it
-					// is left exactly as written & reported instead.
 					if (token.includes("${")) {
 						skipped.set(token, "built at runtime");
 						return token;
@@ -90,9 +71,6 @@ export function rewriteSource(content: string): RewriteResult {
 		}
 	}
 
-	// Last edit first, so earlier offsets stay valid. Overlaps are dropped
-	// rather than applied twice, which happens when two patterns match the
-	// same attribute.
 	edits.sort((a, b) => b.start - a.start);
 
 	let output = content;

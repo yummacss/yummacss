@@ -11,8 +11,8 @@ CSS.
 ## Installation
 
 ```bash
-npm install yummacss -D
-npx yummacss init
+pnpm add yummacss -D
+pnpm dlx yummacss init
 ```
 
 ## Commands

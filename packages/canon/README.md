@@ -5,13 +5,13 @@ Class validator for [Yumma CSS](https://yummacss.com). Reports every class that 
 ## Installation
 
 ```bash
-npm install -D @yummacss/canon
+pnpm add -D @yummacss/canon
 ```
 
 ## Usage
 
 ```bash
-npx @yummacss/canon
+pnpm dlx @yummacss/canon
 ```
 
 Validates against the Yumma CSS generator itself. Variants, opacity, negative values, custom theme colors, prefixes, and safelist entries are all understood.
@@ -19,7 +19,7 @@ Validates against the Yumma CSS generator itself. Variants, opacity, negative va
 Skip custom classes with `--allow`:
 
 ```bash
-npx @yummacss/canon --allow "docs-container,brand-logo"
+pnpm dlx @yummacss/canon --allow "docs-container,brand-logo"
 ```
 
 ## API

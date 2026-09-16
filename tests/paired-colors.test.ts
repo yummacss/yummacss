@@ -21,7 +21,6 @@ describe("Paired theme colors", () => {
 		const light = generateShades(pair.light);
 		const dark = generateShades(pair.dark);
 
-		// shades[0] is the lightest step, which maps to the `-1` suffix.
 		expect(colors["surface-1"]).toBe(`light-dark(${light[0]}, ${dark[0]})`);
 		expect(colors["surface-12"]).toBe(`light-dark(${light[12]}, ${dark[12]})`);
 	});
@@ -41,7 +40,6 @@ describe("Paired theme colors", () => {
 		const colors = createColors({ brand: "#bec6f2" });
 		expect(colors.brand).toBe("#bec6f2");
 		expect(colors["brand-1"]).toMatch(/^#[0-9a-f]{6}$/i);
-		// Default palette is untouched by the presence of a pair elsewhere.
 		const withPair = createColors({ brand: "#bec6f2", surface: pair });
 		expect(withPair.brand).toBe(colors.brand);
 		expect(withPair["blue-4"]).toBe(colors["blue-4"]);
@@ -95,15 +93,15 @@ describe("color-scheme utility", () => {
 
 	it("generates each value", () => {
 		const css = generator(new Set(["cs:l", "cs:d", "cs:ld"]), config);
-		expect(css).toMatch(/\.cs-l\s*\{\s*color-scheme:\s*light;/);
-		expect(css).toMatch(/\.cs-d\s*\{\s*color-scheme:\s*dark;/);
-		expect(css).toMatch(/\.cs-ld\s*\{\s*color-scheme:\s*light dark;/);
+		expect(css).toMatch(/\.cs\\:l\s*\{\s*color-scheme:\s*light;/);
+		expect(css).toMatch(/\.cs\\:d\s*\{\s*color-scheme:\s*dark;/);
+		expect(css).toMatch(/\.cs\\:ld\s*\{\s*color-scheme:\s*light dark;/);
 	});
 
 	it("still resolves corner-shape on the shared cs prefix", () => {
 		const css = generator(new Set(["cs:s", "cs:r", "cs:b", "cs:n"]), config);
-		expect(css).toMatch(/\.cs-s\s*\{\s*corner-shape:\s*squircle;/);
-		expect(css).toMatch(/\.cs-n\s*\{\s*corner-shape:\s*notch;/);
+		expect(css).toMatch(/\.cs\\:s\s*\{\s*corner-shape:\s*squircle;/);
+		expect(css).toMatch(/\.cs\\:n\s*\{\s*corner-shape:\s*notch;/);
 		expect(css).not.toContain("color-scheme");
 	});
 });

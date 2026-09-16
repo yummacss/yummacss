@@ -21,7 +21,6 @@ import {
 	pseudoElements as peList,
 } from "./variants";
 
-// functions
 export const coreUtils = (): Utilities => core;
 export const backgroundUtils = (): Utilities => background;
 export const borderUtils = (): Utilities => border;
@@ -39,11 +38,8 @@ export const textUtils = (): Utilities => text;
 export const transformUtils = (): Utilities => transform;
 export const transitionUtils = (): Utilities => transition;
 
-// theme
 export { colorTheme } from "./defaults/theme";
-// variants
 export { mediaQueries as defaultMediaQueries } from "./defaults/variants/media-queries";
-// helpers
 export {
 	type ColorPair,
 	type ColorValue,
@@ -52,7 +48,7 @@ export {
 	generateShades,
 	isColorPair,
 } from "./helpers/create-colors";
-// types
+export { acceptsNegative } from "./helpers/negatable";
 export type * from "./interfaces";
 export * from "./variants";
 

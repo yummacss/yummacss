@@ -7,6 +7,42 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- **[core]** `@xs:` is a breakpoint at 32rem, so every t-shirt width alias now names a query that exists.
+- **[core]** `@prm:` applies a utility under `@media (prefers-reduced-motion: reduce)`, so an animation can be switched off in a class rather than in a stylesheet beside it.
+- **[cli]** `yummacss migrate` rewrites class names into the v4 colon syntax. Not wired into the CLI until v4 ships, because v3 cannot compile what it writes.
+
+## [3.31.1] - 2026-09-06
+
+### Fixed
+
+- **[cli]** `merge` scanned all 217 prefixes per class. It now looks the prefix up directly and caches it: 79us per call to 5.7us.
+
+## [3.31.0] - 2026-09-06
+
+### Added
+
+- **[cli]** `yummacss/merge` merges class strings so the last one wins.
+- **[cli]** The package now ships type declarations.
+
+## [3.30.0] - 2026-08-29
+
+### Fixed
+
+- **[nitro]** The class scanner dropped classes after an empty string literal. It paired quotes with a regex, which desynced on `""`; it now lexes.
+- **[nitro]** A leading `-` was applied without checking whether the property accepts one, so 72 utilities emitted CSS the parser discards (`w--1` was `width: -.25rem`). It was also ignored on non-numeric values, making `m--auto` a silent alias of `m-auto`.
+
+### Changed
+
+- **[core]** New `acceptsNegative(properties)` export, naming the CSS properties that admit a negative value.
+- **[nitro]** Class names that appear only inside a comment no longer generate CSS. **Safelist them if you need one.**
+- **[nitro]** `tokenizer(content, filename?)` takes an optional second argument. Existing callers are unaffected.
+
+### Removed
+
+- **[intellisense]** The editor half, `packages/language-server`, is deleted with the retired VS Code and Zed extensions. The language service is untouched.
+
 ## [3.29.2] - 2026-07-29
 
 ### Fixed
@@ -196,7 +232,7 @@ No notable changes.
 
 ## Changed
 
-- **[cli]**  Improve logger output formatting for build and header messages.
+- **[cli]** Improve logger output formatting for build and header messages.
 
 ## [3.24.6] - 2026-05-01
 
@@ -541,7 +577,7 @@ No notable changes.
 ### Added
 
 - **[core]** Extend `translateX` and `translateY` utilities to 0-100 scale.
-  
+
 ### Changed
 
 - **[core]** Rename `tde-*` (`transition-delay`) utilities prefix to `td-*`.
@@ -1194,7 +1230,10 @@ No notable changes.
 
 - Initial release.
 
-[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.29.2...HEAD
+[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.31.1...HEAD
+[3.31.1]: https://github.com/yummacss/yummacss/compare/v3.31.0...v3.31.1
+[3.31.0]: https://github.com/yummacss/yummacss/compare/v3.30.0...v3.31.0
+[3.30.0]: https://github.com/yummacss/yummacss/compare/v3.29.2...v3.30.0
 [3.29.2]: https://github.com/yummacss/yummacss/compare/v3.29.1...v3.29.2
 [3.29.1]: https://github.com/yummacss/yummacss/compare/v3.29.0...v3.29.1
 [3.29.0]: https://github.com/yummacss/yummacss/compare/v3.28.3...v3.29.0

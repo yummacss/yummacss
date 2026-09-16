@@ -1,7 +1,6 @@
 import { version } from "../package.json";
 import { build } from "./commands/build.js";
 import { init } from "./commands/init.js";
-import { migrate } from "./commands/migrate.js";
 import { watch } from "./commands/watch.js";
 import { logger } from "./utils/logger.js";
 
@@ -18,12 +17,6 @@ switch (command) {
 		logger.header(version);
 		build().catch(() => process.exit(1));
 		break;
-	case "migrate":
-		logger.header(version);
-		migrate({ dryRun: args.includes("--dry-run") }).catch(() =>
-			process.exit(1),
-		);
-		break;
 	case "watch":
 	case "w":
 		logger.header(version);
@@ -35,10 +28,6 @@ switch (command) {
   init, i    Initialize the configuration.
   build, b   Build the styles once.
   watch, w   Watch for file changes continuously.
-  migrate    Rewrite class names into the v4 colon syntax.
-
-Options:
-  --dry-run  Report what migrate would change without writing.
 `);
 		break;
 }

@@ -75,7 +75,6 @@ export function findConflicts(
 		const contentStart = match.index + match[0].indexOf(classContent);
 		const utilities = classContent.split(/\s+/).filter((u) => u.trim() !== "");
 
-		// group by property@variant key to respect variant scoping
 		const propertyToUtilities = new Map<string, string[]>();
 
 		for (const utility of utilities) {

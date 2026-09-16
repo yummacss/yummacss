@@ -21,7 +21,6 @@ describe("@yummacss/postcss", () => {
 		expect(result.css).toContain(".bg\\:red-5");
 		expect(result.css).toContain(".p\\:4");
 		expect(result.css).toContain(".m\\:2");
-		// safelist entry from the fixture config
 		expect(result.css).toContain(".c\\:white");
 	});
 
@@ -74,7 +73,6 @@ describe("@yummacss/postcss", () => {
 
 		expect(result.css).toContain(".c\\:black");
 		expect(result.css).toContain(".d\\:f");
-		// no config file dependency for inline configs
 		const files = result.messages
 			.filter((message) => message.type === "dependency")
 			.map((message) => message.file as string);
