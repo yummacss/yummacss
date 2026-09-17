@@ -56,10 +56,11 @@ verbatim. `pnpm pack` rewrites it: packing `@yummacss/nitro` produced
 publish the tarball with npm**, which keeps workspace resolution and gains
 OIDC.
 
-`scripts/publish-packages.mjs` does that for the eight publishable packages.
-Each packs into its own directory, because a shared one made tarball selection
-positional and `yummacss` would have published the `@yummacss/vite` tarball.
-Dry-run against a stubbed `npm`: eight packages, eight matching tarballs.
+Two lines in the workflow do it. `pnpm -r exec pnpm pack` writes all eight
+tarballs into one directory, then a loop publishes each. Publishing every
+tarball in the directory means nothing has to match a tarball to a package
+name: npm reads the name out of the file. Dry-run against a stubbed `npm`:
+eight packed, eight published, `workspace:*` rewritten in each.
 
 **`NODE_AUTH_TOKEN` stays in the workflow on purpose.** npm uses OIDC where a
 trusted publisher is configured and falls back to the token everywhere else, so
