@@ -52,21 +52,6 @@ export { acceptsNegative } from "./helpers/negatable";
 export type * from "./interfaces";
 export * from "./variants";
 
-/**
- * Splits a class into its variants and the utility they wrap.
- *
- * 4.0 gives variants and utilities the same separator, so ten pseudo-class
- * prefixes now collide with a utility prefix: `h:` is both `:hover` and
- * `height`. Splitting on every colon reads `h:m:4` as two variants, and
- * splitting on the last one reads it as the variant `h:m:`. Neither is right.
- *
- * A variant is only peeled when what remains is not already a utility, which
- * makes `h:4` a height, `h:m:4` a margin under `:hover`, and `h:h:4` a height
- * under `:hover`.
- *
- * Pseudo elements keep their `::`, since `a` is `:active` as a pseudo class
- * and `::after` as a pseudo element.
- */
 export function splitVariants(className: string): {
 	variants: string[];
 	base: string;
