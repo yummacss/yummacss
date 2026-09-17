@@ -1,11 +1,11 @@
 {
-	"name": "@yummacss/canon",
+	"name": "@yummacss/lint",
 	"version": "3.31.1",
 	"description": "Class validator for Yumma CSS",
 	"keywords": [
 		"ai",
-		"canon",
 		"css-framework",
+		"lint",
 		"linter",
 		"typescript",
 		"validator",
@@ -15,7 +15,7 @@
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/yummacss/yummacss.git",
-		"directory": "packages/canon"
+		"directory": "packages/lint"
 	},
 	"license": "MIT",
 	"author": "Renildo Pereira",
@@ -29,7 +29,7 @@
 	"module": "dist/index.mjs",
 	"types": "dist/index.d.mts",
 	"bin": {
-		"yummacss-canon": "./dist/cli.mjs"
+		"yummacss-lint": "./dist/cli.mjs"
 	},
 	"files": [
 		"dist"
