@@ -1,6 +1,6 @@
 {
 	"name": "@yummacss/lint",
-	"version": "3.31.1",
+	"version": "4.0.0",
 	"description": "Class validator for Yumma CSS",
 	"keywords": [
 		"ai",
