@@ -11,7 +11,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - **[core]** `@xs:` is a breakpoint at 32rem, so every t-shirt width alias now names a query that exists.
 - **[core]** `@prm:` applies a utility under `@media (prefers-reduced-motion: reduce)`, so an animation can be switched off in a class rather than in a stylesheet beside it.
-- **[cli]** `yummacss migrate` rewrites class names into the v4 colon syntax. Not wired into the CLI until v4 ships, because v3 cannot compile what it writes.
+- **[cli]** `yummacss migrate` rewrites class names into the v4 colon syntax, reads the project's own `theme.screens` and `prefix`, and is wired into the CLI with `--dry-run`.
+
+### Changed
+
+- **[canon]** `@yummacss/canon` is now `@yummacss/lint`, and its binary is `yummacss-lint`. The API is unchanged.
 
 ## [3.31.1] - 2026-09-06
 

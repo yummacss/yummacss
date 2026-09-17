@@ -1,9 +1,9 @@
 import { join } from "node:path";
-import { extractClasses, validate } from "@yummacss/canon";
+import { extractClasses, validate } from "@yummacss/lint";
 import { validateClasses } from "@yummacss/nitro";
 import { describe, expect, it } from "vitest";
 
-const fixtureDir = join(__dirname, "fixtures", "canon-app");
+const fixtureDir = join(__dirname, "fixtures", "lint-app");
 
 describe("validateClasses (nitro)", () => {
 	it("should accept classes the generator understands", () => {
@@ -50,7 +50,7 @@ describe("validateClasses (nitro)", () => {
 	});
 });
 
-describe("extractClasses (canon)", () => {
+describe("extractClasses (lint)", () => {
 	it("should only extract from class attribute contexts", () => {
 		const classes = extractClasses(
 			'const s = "not-a-class"; <div className="d:f p:4">, cn("m:2 c:white")',
@@ -73,7 +73,7 @@ describe("extractClasses (canon)", () => {
 	});
 });
 
-describe("validate (canon)", () => {
+describe("validate (lint)", () => {
 	it("should report unknown classes with their files", async () => {
 		const result = await validate({ cwd: fixtureDir });
 
