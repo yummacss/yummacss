@@ -170,7 +170,7 @@ export const text: Utilities = {
 		values: {
 			c: "capitalize",
 			l: "lowercase",
-			n: "none",
+			none: "none",
 			u: "uppercase",
 		},
 		variants: base,
