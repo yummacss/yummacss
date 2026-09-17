@@ -7,15 +7,32 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Added
+## [4.0.0] - 2026-09-17
 
-- **[core]** `@xs:` is a breakpoint at 32rem, so every t-shirt width alias now names a query that exists.
-- **[core]** `@prm:` applies a utility under `@media (prefers-reduced-motion: reduce)`, so an animation can be switched off in a class rather than in a stylesheet beside it.
-- **[cli]** `yummacss migrate` rewrites class names into the v4 colon syntax, reads the project's own `theme.screens` and `prefix`, and is wired into the CLI with `--dry-run`.
+Every class name changes. Run `yummacss migrate` before upgrading; there is no compatibility mode.
 
 ### Changed
 
-- **[canon]** `@yummacss/canon` is now `@yummacss/lint`, and its binary is `yummacss-lint`. The API is unchanged.
+- **[core]** A utility separates its prefix from its value with a colon - `bg-red-5` is now `bg:red-5`, `d-f` is `d:f`, `p-4` is `p:4`. Variants already used a colon, so a class is one grammar throughout: `@sm:h:bg:red-5`. Scale steps keep the dash, since a shade is one value with a step.
+- **[core]** A negative value is written `m:-4` instead of `m--4`.
+- **[core]** Ten variant prefixes now collide with a utility prefix, `h:` being both `:hover` and `height`. A variant is peeled only when what remains is not itself a utility, so `h:4` is a height, `h:m:4` is a margin under `:hover`, and `h:h:4` is a height under `:hover`.
+- **[core]** `tt:none` and `tl:auto` spell their value out, replacing `tt-n` and `tl-a`. Other values on both utilities are unchanged.
+- **[lint]** `@yummacss/canon` is now `@yummacss/lint`, and its binary is `yummacss-lint`. The exports are unchanged.
+- **[cli]** `merge` split the variant at the last colon and cut the prefix at a dash, which made it a no-op on every 4.0 class. It peels variants off the front and takes the prefix up to the first colon.
+- **[nitro]** A "did you mean" suggestion folds both separators before measuring distance, so a class typed the 3.x way still gets its 4.0 answer - `gap-4` suggests `g:4`.
+
+### Added
+
+- **[cli]** `yummacss migrate` rewrites a project into the 4.0 syntax. `--dry-run` previews without writing. It reads the project's own `theme.colors`, `theme.screens` and `prefix`, and reports every class it left alone with the reason.
+- **[core]** `@xs:` is a breakpoint at 32rem, so every t-shirt width alias names a query that exists.
+- **[core]** `@prm:` applies a utility under `@media (prefers-reduced-motion: reduce)`.
+- **[core]** `tp:c` transitions `outline-color` along with the other colors.
+- **[core]** Export `splitVariants`, the one splitter every package reads a class name with.
+
+### Fixed
+
+- **[nitro]** A negative is refused where the property cannot take one - `m:-4` is a margin, `w:-1` is not a class.
+- **[nitro]** The tokenizer typechecks under `noUncheckedIndexedAccess`.
 
 ## [3.31.1] - 2026-09-06
 

@@ -22,7 +22,7 @@ export const layout: Utilities = {
 		properties: ["table-layout"],
 		slug: "table-layout",
 		values: {
-			a: "auto",
+			auto: "auto",
 			f: "fixed",
 		},
 		variants: base,
