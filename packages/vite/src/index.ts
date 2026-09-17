@@ -10,14 +10,24 @@ import {
 import picomatch from "picomatch";
 import type { Plugin, ViteDevServer } from "vite";
 
+/** Options for the Vite plugin. */
 export interface Options {
+	/** A config to use directly, instead of reading one from disk. */
 	config?: Config;
 
+	/** Path to a config file, when it is not `yumma.config.mjs` beside the root. */
 	configPath?: string;
 }
 
 const MARKER = /@yummacss\s*;/;
 
+/**
+ * Generates your CSS at build time and replaces the `@yummacss;` marker in a
+ * stylesheet with it. Rebuilds on a source or config change in dev.
+ *
+ * @example
+ * export default defineConfig({ plugins: [yummacss()] });
+ */
 export default function yummacss(options: Options = {}): Plugin {
 	let config: Config;
 	let root: string;

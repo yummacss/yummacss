@@ -435,6 +435,9 @@ function matchValue(
 
 	if (!isNegative) return { value: propertyValue, opacity };
 
+	// a keyword has no sign to flip, so negateValue returns null and the class
+	// is refused rather than silently emitting the positive value
+
 	if (!acceptsNegative(util.properties)) return null;
 	const negated = negateValue(propertyValue);
 	if (negated === null) return null;
