@@ -48,6 +48,8 @@ function splitVariants(className: string): { variant: string; base: string } {
 		const token = `${name}${separator}`;
 		if (!VARIANTS.has(token)) break;
 
+		// a leading token is a variant only if what follows still holds a colon,
+		// so `h:4` is a height and `h:h:4` is a height under hover
 		const remainder = rest.slice(full.length);
 		if (!remainder.includes(":")) break;
 
