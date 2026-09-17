@@ -60,6 +60,10 @@ const NEGATABLE = new Set<string>([
 	"grid-row-start",
 ]);
 
+/**
+ * Whether every one of these properties takes a negative value, which is what
+ * makes `m:-4` a margin and `w:-1` not a class at all.
+ */
 export function acceptsNegative(properties: readonly string[]): boolean {
 	return properties.length > 0 && properties.every((p) => NEGATABLE.has(p));
 }

@@ -54,6 +54,7 @@ function lexJs(content: string, into: Set<string>): void {
 			continue;
 		}
 
+		// a regex literal can hold quotes, so skipping it keeps the scanner in sync
 		if (c === "/" && REGEX_ALLOWED_BEFORE.has(lastSignificant)) {
 			i++;
 			let inClass = false;

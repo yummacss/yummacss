@@ -5,9 +5,16 @@
   no justification: a reader outside the project does not care why a thing was
   renamed from A to B. The why goes in NOTES.md.
 - **Commit messages**: a subject and a couple of lines. No essays.
-- **Code comments**: one or two lines. A comment earns its length only where
-  the code is genuinely surprising, and never by repeating the same paragraph
-  in a dozen files.
+- **Code comments**: one line, starting lower case. A comment earns its place
+  only where the code is genuinely surprising, never for logic that reads
+  plainly, and never by repeating the same paragraph in a dozen files.
+- **Doc comments are not code comments.** A `/** */` on an exported type is
+  copied into the emitted `.d.ts` and shipped, so it is the published API, and
+  it is what an editor shows on hover. Every export a user reaches for gets
+  one. Say what the thing is for, not how it works. `@example` and `@default`
+  belong on config fields, where a reader is deciding what to type.
+- Neither kind is a place to write an essay. If the reasoning needs more than a
+  line, it belongs in NOTES.md and the comment points at it.
 - **No attribution footers** in commits or PRs. `.claude/settings.json` clears
   them; do not add them by hand either.
 - No em dashes.

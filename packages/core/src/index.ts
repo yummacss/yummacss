@@ -21,6 +21,7 @@ import {
 	pseudoElements as peList,
 } from "./variants";
 
+/** Every utility Yumma CSS defines, keyed by CSS property name. */
 export const coreUtils = (): Utilities => core;
 export const backgroundUtils = (): Utilities => background;
 export const borderUtils = (): Utilities => border;
@@ -52,6 +53,13 @@ export { acceptsNegative } from "./helpers/negatable";
 export type * from "./interfaces";
 export * from "./variants";
 
+/**
+ * Splits a class into its variants and the utility they wrap.
+ *
+ * A variant is peeled only when what remains is not itself a utility, so
+ * `h:4` is a height, `h:m:4` is a margin under `:hover`, and `h:h:4` is a
+ * height under `:hover`.
+ */
 export function splitVariants(className: string): {
 	variants: string[];
 	base: string;
