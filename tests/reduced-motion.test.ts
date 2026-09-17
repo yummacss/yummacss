@@ -6,22 +6,22 @@ describe("prefers-reduced-motion", () => {
 	const config = { buildOptions: { reset: false } } as never;
 
 	it("wraps the rule in the reduce query", () => {
-		const css = generator(new Set(["@prm:tp-none"]), config);
+		const css = generator(new Set(["@prm:tp:none"]), config);
 
 		expect(css).toContain("@media (prefers-reduced-motion: reduce)");
-		expect(css).toContain(".\\@prm\\:tp-none");
+		expect(css).toContain(".\\@prm\\:tp\\:none");
 		expect(css).toContain("transition-property: none");
 	});
 
 	it("stacks with a pseudo class, the way the width queries do", () => {
-		const css = generator(new Set(["@prm:h:o-0"]), config);
+		const css = generator(new Set(["@prm:h:o:0"]), config);
 
 		expect(css).toContain("@media (prefers-reduced-motion: reduce)");
 		expect(css).toContain(":hover");
 	});
 
 	it("leaves an unprefixed class alone", () => {
-		const css = generator(new Set(["tp-none"]), config);
+		const css = generator(new Set(["tp:none"]), config);
 
 		expect(css).not.toContain("prefers-reduced-motion");
 	});
@@ -37,9 +37,9 @@ describe("prefers-reduced-motion", () => {
 
 describe("canon", () => {
 	it("accepts the prefix and still refuses an unknown one", () => {
-		expect(validateClasses(["@prm:tp-none"], {} as never).invalid).toEqual([]);
-		expect(validateClasses(["@zz:tp-none"], {} as never).invalid).toEqual([
-			"@zz:tp-none",
+		expect(validateClasses(["@prm:tp:none"], {} as never).invalid).toEqual([]);
+		expect(validateClasses(["@zz:tp:none"], {} as never).invalid).toEqual([
+			"@zz:tp:none",
 		]);
 	});
 

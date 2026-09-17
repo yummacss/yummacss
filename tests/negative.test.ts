@@ -23,10 +23,10 @@ describe("Negative values", () => {
 			if (!acceptsNegative(u.properties)) continue;
 			const key = numericKey(u.values as Record<string, string>);
 			if (!key) continue;
-			const negative = css(`${u.prefix}--${key}`);
-			const positive = css(`${u.prefix}-${key}`);
+			const negative = css(`${u.prefix}:-${key}`);
+			const positive = css(`${u.prefix}:${key}`);
 			if (!negative || negative === positive) {
-				broken.push(`${u.prefix}--${key}`);
+				broken.push(`${u.prefix}:-${key}`);
 			}
 		}
 		expect(broken).toEqual([]);
@@ -38,7 +38,7 @@ describe("Negative values", () => {
 			if (acceptsNegative(u.properties)) continue;
 			const key = numericKey(u.values as Record<string, string>);
 			if (!key) continue;
-			const className = `${u.prefix}--${key}`;
+			const className = `${u.prefix}:-${key}`;
 			const rule = css(className);
 			if (rule) leaked.push(`${className} -> ${rule.replace(/\s+/g, " ")}`);
 		}
@@ -46,65 +46,65 @@ describe("Negative values", () => {
 	});
 
 	it.each([
-		["w--1", "width"],
-		["h--1", "height"],
-		["p--1", "padding"],
-		["br--9999", "border-radius"],
-		["bw--1", "border-width"],
-		["lh--1", "line-height"],
-		["fw--100", "font-weight"],
-		["tdu--50", "transition-duration"],
-		["fg--1", "flex-grow"],
-		["g--1", "gap"],
-		["ow--1", "outline-width"],
-		["sp--1", "scroll-padding"],
+		["w:-1", "width"],
+		["h:-1", "height"],
+		["p:-1", "padding"],
+		["br:-9999", "border-radius"],
+		["bw:-1", "border-width"],
+		["lh:-1", "line-height"],
+		["fw:-100", "font-weight"],
+		["tdu:-50", "transition-duration"],
+		["fg:-1", "flex-grow"],
+		["g:-1", "gap"],
+		["ow:-1", "outline-width"],
+		["sp:-1", "scroll-padding"],
 	])("%s is not a class (%s rejects negatives)", (className) => {
 		expect(css(className)).toBeNull();
 	});
 
 	it.each([
-		["m--1", "margin: -.25rem"],
-		["mt--1", "margin-top: -.25rem"],
-		["t--1", "top: -.25rem"],
-		["zi--10", "z-index: -10"],
-		["or--1", "order: -1"],
-		["sm--1", "scroll-margin: -.25rem"],
-		["oo--1", "outline-offset: -1px"],
-		["ti--1", "text-indent: -1px"],
+		["m:-1", "margin: -.25rem"],
+		["mt:-1", "margin-top: -.25rem"],
+		["t:-1", "top: -.25rem"],
+		["zi:-10", "z-index: -10"],
+		["or:-1", "order: -1"],
+		["sm:-1", "scroll-margin: -.25rem"],
+		["oo:-1", "outline-offset: -1px"],
+		["ti:-1", "text-indent: -1px"],
 	])("%s still generates %s", (className, declaration) => {
 		expect(css(className)).toContain(declaration);
 	});
 
 	it("keeps negative grid line numbers, which count back from the end", () => {
-		expect(css("gcs--1")).toContain("grid-column-start: -1");
-		expect(css("gre--1")).toContain("grid-row-end: -1");
+		expect(css("gcs:-1")).toContain("grid-column-start: -1");
+		expect(css("gre:-1")).toContain("grid-row-end: -1");
 	});
 
 	it("keeps negative scale, which mirrors", () => {
-		expect(css("s--10")).toContain("scale: -.1");
+		expect(css("s:-10")).toContain("scale: -.1");
 	});
 
 	it.each([
-		"m--auto",
-		"w--auto",
-		"bg--red-1",
-		"h--dvh",
-		"m--100%",
+		"m:-auto",
+		"w:-auto",
+		"bg:-red-1",
+		"h:-dvh",
+		"m:-100%",
 	])("%s is not a silent alias of its positive form", (className) => {
 		expect(css(className)).toBeNull();
 	});
 
 	it("leaves the positive forms of those alone", () => {
-		expect(css("m-auto")).toContain("margin: auto");
-		expect(css("bg-red-1")).toContain("background-color:");
+		expect(css("m:auto")).toContain("margin: auto");
+		expect(css("bg:red-1")).toContain("background-color:");
 	});
 
 	it("reports illegal negatives as unknown to canon", () => {
 		const { valid, invalid } = validateClasses(
-			["w--1", "p--1", "br--9999", "m--1", "t--1", "zi--10", "bg--red-1"],
+			["w:-1", "p:-1", "br:-9999", "m:-1", "t:-1", "zi:-10", "bg:-red-1"],
 			{} as never,
 		);
-		expect(invalid.sort()).toEqual(["bg--red-1", "br--9999", "p--1", "w--1"]);
-		expect(valid.sort()).toEqual(["m--1", "t--1", "zi--10"]);
+		expect(invalid.sort()).toEqual(["bg:-red-1", "br:-9999", "p:-1", "w:-1"]);
+		expect(valid.sort()).toEqual(["m:-1", "t:-1", "zi:-10"]);
 	});
 });

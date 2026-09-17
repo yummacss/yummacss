@@ -9,6 +9,8 @@ const CLASS_CONTEXTS = [
 
 const WRAPPERS = /^([`"'{([]*)(.*?)([`"'})\],;]*)$/;
 
+const CLASS_SHAPED = /^@?[a-z0-9][a-z0-9:@/%._-]*$/;
+
 export interface RewriteResult {
 	content: string;
 	migrated: number;
@@ -42,7 +44,9 @@ export function rewriteSource(content: string): RewriteResult {
 					if (!token.trim()) return token;
 
 					if (token.includes("${")) {
-						skipped.set(token, "built at runtime");
+						const opens = token.split("{").length;
+						const closes = token.split("}").length;
+						if (opens === closes) skipped.set(token, "built at runtime");
 						return token;
 					}
 
@@ -52,7 +56,9 @@ export function rewriteSource(content: string): RewriteResult {
 
 					const result = migrateClass(core);
 					if (!result.ok) {
-						skipped.set(token, result.reason);
+						if (CLASS_SHAPED.test(core) && /[a-z]/.test(core)) {
+							skipped.set(token, result.reason);
+						}
 						return token;
 					}
 

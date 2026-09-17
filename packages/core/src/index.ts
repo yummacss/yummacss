@@ -15,6 +15,11 @@ import { positioning } from "./utilities/positioning";
 import { text } from "./utilities/text";
 import { transform } from "./utilities/transform";
 import { transition } from "./utilities/transition";
+import {
+	mediaQueries as mqList,
+	pseudoClasses as pcList,
+	pseudoElements as peList,
+} from "./variants";
 
 export const coreUtils = (): Utilities => core;
 export const backgroundUtils = (): Utilities => background;
@@ -46,3 +51,50 @@ export {
 export { acceptsNegative } from "./helpers/negatable";
 export type * from "./interfaces";
 export * from "./variants";
+
+export function splitVariants(className: string): {
+	variants: string[];
+	base: string;
+} {
+	const utils = Object.values(coreUtils()) as {
+		prefix: string;
+		values: Record<string, string>;
+	}[];
+
+	const isUtility = (name: string) =>
+		utils.some((u) => {
+			if (!name.startsWith(`${u.prefix}:`)) return false;
+			const value = name.slice(u.prefix.length + 1);
+			const lookup = value.startsWith("-") ? value.slice(1) : value;
+			return lookup in u.values;
+		});
+
+	const media = new Set<string>(mqList.map((v) => v.prefix));
+	const classes = new Set<string>(pcList.map((v) => v.prefix));
+	const elements = new Set<string>(peList.map((v) => v.prefix));
+
+	const variants: string[] = [];
+	let rest = className;
+
+	while (!isUtility(rest)) {
+		const match = /^(@?[a-z0-9]+)(::|:)/.exec(rest);
+		if (!match) break;
+
+		const [full, raw = "", separator] = match;
+		const isMedia = raw.startsWith("@");
+		const name = isMedia ? raw.slice(1) : raw;
+
+		const known =
+			separator === "::"
+				? elements.has(name)
+				: isMedia
+					? media.has(name)
+					: classes.has(name);
+		if (!known) break;
+
+		variants.push(separator === "::" ? `${raw}::` : raw);
+		rest = rest.slice(full.length);
+	}
+
+	return { variants, base: rest };
+}

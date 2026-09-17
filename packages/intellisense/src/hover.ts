@@ -8,6 +8,7 @@ import {
 	outlineUtils,
 	pseudoClasses,
 	pseudoElements,
+	splitVariants,
 } from "@yummacss/core";
 import { CLASS_ATTR_REGEX, extractClassContent } from "./constants";
 import type { IntellisenseConfig } from "./core";
@@ -78,7 +79,7 @@ function buildColorMap(config?: IntellisenseConfig): Map<string, string> {
 			Object.entries(util.values as Record<string, string>).forEach(
 				([suffix, cssValue]) => {
 					const fullClass =
-						suffix === "" ? util.prefix : `${util.prefix}-${suffix}`;
+						suffix === "" ? util.prefix : `${util.prefix}:${suffix}`;
 					map.set(fullClass, cssValue);
 				},
 			);
@@ -99,21 +100,7 @@ export function parseUtility(className: string): {
 	variants: string[];
 	baseUtility: string;
 } {
-	const variants: string[] = [];
-	let rest = className;
-
-	while (true) {
-		const colon = rest.indexOf(":");
-		if (colon === -1) break;
-
-		if (rest.startsWith("::", colon)) {
-			variants.push(`${rest.slice(0, colon)}::`);
-			rest = rest.slice(colon + 2);
-		} else {
-			variants.push(rest.slice(0, colon));
-			rest = rest.slice(colon + 1);
-		}
-	}
+	const { variants, base: rest } = splitVariants(className);
 
 	let baseUtility = rest;
 
@@ -123,7 +110,7 @@ export function parseUtility(className: string): {
 		variants.push(opacitySuffix[1]);
 	}
 
-	baseUtility = baseUtility.replace(/^([a-z]+)--/, "$1-");
+	baseUtility = baseUtility.replace(/^([a-z-]+):-/, "$1:");
 
 	return { variants, baseUtility };
 }

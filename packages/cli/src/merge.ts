@@ -1,6 +1,4 @@
-import { BY_VALUE, PREFIXES } from "./merge-map";
-
-const LONGEST = 6;
+import { BY_VALUE, PREFIXES, VARIANTS } from "./merge-map";
 
 const SHORTHANDS: Record<string, string[]> = {
 	padding: ["padding-inline", "padding-block"],
@@ -38,30 +36,43 @@ interface Resolved {
 
 const CACHE = new Map<string, Resolved | null>();
 
-function prefixOf(base: string): string | null {
-	for (let end = Math.min(base.length, LONGEST); end > 0; end--) {
-		if (end !== base.length && base[end] !== "-") continue;
-		const candidate = base.slice(0, end);
-		if (PREFIXES[candidate]) return candidate;
+function splitVariants(className: string): { variant: string; base: string } {
+	let variant = "";
+	let rest = className;
+
+	while (rest.includes(":")) {
+		const match = /^(@?[a-z0-9]+)(::|:)/.exec(rest);
+		if (!match) break;
+
+		const [full, name = "", separator] = match;
+		const token = `${name}${separator}`;
+		if (!VARIANTS.has(token)) break;
+
+		const remainder = rest.slice(full.length);
+		if (!remainder.includes(":")) break;
+
+		variant += token;
+		rest = remainder;
 	}
-	return null;
+
+	return { variant, base: rest };
 }
 
 function resolve(className: string): Resolved | null {
 	const cached = CACHE.get(className);
 	if (cached !== undefined) return cached;
 
-	const colon = className.lastIndexOf(":");
-	const variant = colon === -1 ? "" : className.slice(0, colon);
-	const base = className.slice(colon + 1).split("/")[0];
+	const { variant, base: withOpacity } = splitVariants(className);
+	const base = withOpacity.split("/")[0] ?? "";
 
-	const prefix = prefixOf(base);
-	if (!prefix) {
+	const colon = base.indexOf(":");
+	const prefix = colon === -1 ? base : base.slice(0, colon);
+	if (!PREFIXES[prefix]) {
 		CACHE.set(className, null);
 		return null;
 	}
 
-	const value = base.slice(prefix.length + 1);
+	const value = colon === -1 ? "" : base.slice(colon + 1);
 	const properties = BY_VALUE[prefix]?.[value] ?? PREFIXES[prefix];
 
 	const expanded = new Set<string>();

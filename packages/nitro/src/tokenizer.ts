@@ -30,7 +30,7 @@ function addClasses(source: string, into: Set<string>): void {
 	for (const raw of source.split(/\s+/)) {
 		if (!raw || NOT_IN_A_CLASS.test(raw)) continue;
 		const clean = raw.replace(/^@+/, "");
-		if (clean && /^[a-z]/.test(clean) && clean.includes("-")) into.add(raw);
+		if (clean && /^[a-z]/.test(clean) && clean.includes(":")) into.add(raw);
 	}
 }
 

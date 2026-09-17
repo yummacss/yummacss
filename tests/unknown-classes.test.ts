@@ -4,7 +4,7 @@ import { describe, expect, it } from "vitest";
 describe("findUnknownClasses", () => {
 	it("should flag classes that are not part of the canon", () => {
 		const unknown = findUnknownClasses(
-			'<div className="d-f gap-4 items-center p-4">',
+			'<div className="d:f gap-4 items-center p:4">',
 		);
 
 		expect(unknown.map((u) => u.className)).toEqual(["gap-4", "items-center"]);
@@ -14,9 +14,9 @@ describe("findUnknownClasses", () => {
 		const unknown = findUnknownClasses('<div className="gap-4 cp z-10">');
 
 		const byName = new Map(unknown.map((u) => [u.className, u.suggestion]));
-		expect(byName.get("gap-4")).toBe("g-4");
-		expect(byName.get("cp")).toBe("c-p");
-		expect(byName.get("z-10")).toBe("zi-10");
+		expect(byName.get("gap-4")).toBe("g:4");
+		expect(byName.get("cp")).toBe("c:p");
+		expect(byName.get("z-10")).toBe("zi:10");
 	});
 
 	it("should preserve variants and opacity in suggestions", () => {
@@ -25,14 +25,14 @@ describe("findUnknownClasses", () => {
 		);
 
 		const byName = new Map(unknown.map((u) => [u.className, u.suggestion]));
-		expect(byName.get("@sm:gap-4")).toBe("@sm:g-4");
-		expect(byName.get("h:gap-4")).toBe("h:g-4");
-		expect(byName.get("c-whte/50")).toBe("c-white/50");
-		expect(byName.get("gap-4/50")).toBe("g-4");
+		expect(byName.get("@sm:gap-4")).toBe("@sm:g:4");
+		expect(byName.get("h:gap-4")).toBe("h:g:4");
+		expect(byName.get("c-whte/50")).toBe("c:white/50");
+		expect(byName.get("gap-4/50")).toBe("g:4");
 	});
 
 	it("should report accurate positions", () => {
-		const text = 'const a = 1;\n<div className="d-f gap-4">';
+		const text = 'const a = 1;\n<div className="d:f gap-4">';
 		const [unknown] = findUnknownClasses(text);
 
 		expect(unknown?.line).toBe(1);
@@ -42,7 +42,7 @@ describe("findUnknownClasses", () => {
 
 	it("should understand variants, opacity, and negative values", () => {
 		const unknown = findUnknownClasses(
-			'<div className="@sm:d-b h:bg-red-5 m--4 bg-blue-5/50">',
+			'<div className="@sm:d:b h:bg:red-5 m:-4 bg:blue-5/50">',
 		);
 
 		expect(unknown).toEqual([]);
@@ -56,22 +56,22 @@ describe("findUnknownClasses", () => {
 		};
 
 		const unknown = findUnknownClasses(
-			'<div className="ui-d-f ui-bg-brand-5 docs-container d-f">',
+			'<div className="ui-d:f ui-bg:brand-5 docs-container d:f">',
 			config,
 		);
 
-		expect(unknown.map((u) => u.className)).toEqual(["d-f"]);
+		expect(unknown.map((u) => u.className)).toEqual(["d:f"]);
 	});
 
 	it("should not flag mid-typing fragments", () => {
-		const unknown = findUnknownClasses('<div className="d-f bg- h: m--">');
+		const unknown = findUnknownClasses('<div className="d:f bg: h: m:-">');
 
 		expect(unknown).toEqual([]);
 	});
 
 	it("should skip template literal expressions", () => {
 		const unknown = findUnknownClasses(
-			"<div className={`d-f ${isOpen ? 'gap-4' : ''} p-4`}>",
+			"<div className={`d:f ${isOpen ? 'gap-4' : ''} p:4`}>",
 		);
 
 		expect(unknown).toEqual([]);

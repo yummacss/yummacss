@@ -39,11 +39,20 @@ export function useThemeColors(colors: Record<string, ColorValue> | undefined) {
 	customColors = new Set(Object.keys(createColors(colors ?? {})));
 }
 
-const MEDIA = new Set<string>(mediaQueries.map((v) => v.prefix));
+const DEFAULT_MEDIA = mediaQueries.map((v) => v.prefix);
+let MEDIA = new Set<string>(DEFAULT_MEDIA);
+
+export function useThemeScreens(screens: Record<string, string> | undefined) {
+	MEDIA = new Set([...DEFAULT_MEDIA, ...Object.keys(screens ?? {})]);
+}
+
+let userPrefix = "";
+
+export function useConfigPrefix(prefix: string | undefined) {
+	userPrefix = prefix ?? "";
+}
 const CLASSES = new Set<string>(pseudoClasses.map((v) => v.prefix));
 const ELEMENTS = new Set<string>(pseudoElements.map((v) => v.prefix));
-
-const VARIANT_RENAMES: Record<string, string> = { d: "di" };
 
 const VALUE_RENAMES: Record<string, Record<string, string>> = {
 	tt: { n: "none" },
@@ -59,7 +68,7 @@ function splitVariants(className: string): { variants: string; base: string } {
 	let variants = "";
 
 	while (true) {
-		const match = /^(@?[a-z]+)(::|:)/.exec(rest);
+		const match = /^(@?[a-z0-9]+)(::|:)/.exec(rest);
 		if (!match) break;
 
 		const [full, rawName = "", separator] = match;
@@ -74,8 +83,7 @@ function splitVariants(className: string): { variants: string; base: string } {
 					: CLASSES.has(name);
 		if (!known) break;
 
-		const renamed = media ? rawName : (VARIANT_RENAMES[name] ?? name);
-		variants += `${renamed}${separator}`;
+		variants += `${rawName}${separator}`;
 		rest = rest.slice(full.length);
 	}
 
@@ -126,6 +134,20 @@ function attempt(
 }
 
 export function migrateClass(name: string): MigrationResult {
+	if (userPrefix) {
+		if (!name.startsWith(userPrefix)) {
+			return { ok: false, reason: "missing the configured prefix" };
+		}
+		const inner = migrateUnprefixed(name.slice(userPrefix.length));
+		if (!inner.ok) return inner;
+		const className = `${userPrefix}${inner.className}`;
+		return { ok: true, className, changed: className !== name };
+	}
+
+	return migrateUnprefixed(name);
+}
+
+function migrateUnprefixed(name: string): MigrationResult {
 	const whole = attempt(name, name, "");
 	if (whole) return whole;
 
