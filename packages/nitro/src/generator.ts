@@ -5,6 +5,7 @@ import {
 	createColors,
 	defaultMediaQueries,
 	isColorPair,
+	splitVariants,
 	type Utilities,
 	type Utility,
 } from "@yummacss/core";
@@ -219,7 +220,7 @@ export function suggestClasses(
 	const candidates: string[] = [];
 	for (const util of Object.values(utils)) {
 		for (const key of Object.keys(util.values)) {
-			candidates.push(key === "base" ? util.prefix : `${util.prefix}-${key}`);
+			candidates.push(key === "base" ? util.prefix : `${util.prefix}:${key}`);
 		}
 	}
 	const candidateSet = new Set(candidates);
@@ -231,10 +232,12 @@ export function suggestClasses(
 		let variantPrefix = "";
 		let opacitySuffix = "";
 
-		const lastColon = className.lastIndexOf(":");
-		if (lastColon !== -1) {
-			variantPrefix = className.slice(0, lastColon + 1);
-			className = className.slice(lastColon + 1);
+		const split = splitVariants(className);
+		if (split.variants.length > 0) {
+			variantPrefix = split.variants
+				.map((v) => (v.endsWith("::") ? v : `${v}:`))
+				.join("");
+			className = split.base;
 		}
 
 		const opacityMatch = className.match(/\/\d+$/);
@@ -260,21 +263,25 @@ export function suggestClasses(
 		if (!className) continue;
 
 		const maxDistance = className.length <= 4 ? 1 : 2;
+
+		const fold = (s: string) => s.replace(/:/g, "-");
+		const folded = fold(className);
 		let best: string | undefined;
 		let bestScore = [maxDistance + 1, 1, 1, 0];
 
 		for (const candidate of candidates) {
-			const distance = levenshtein(className, candidate, maxDistance);
+			const foldedCandidate = fold(candidate);
+			const distance = levenshtein(folded, foldedCandidate, maxDistance);
 			if (distance === 0 || distance > maxDistance) continue;
 
 			const score = [
 				distance,
-				isSubsequence(candidate, className) ||
-				isSubsequence(className, candidate)
+				isSubsequence(foldedCandidate, folded) ||
+				isSubsequence(folded, foldedCandidate)
 					? 0
 					: 1,
-				candidate[0] === className[0] ? 0 : 1,
-				-commonPrefixLength(candidate, className),
+				foldedCandidate[0] === folded[0] ? 0 : 1,
+				-commonPrefixLength(foldedCandidate, folded),
 			];
 
 			const comparison = compareScores(score, bestScore);
@@ -354,118 +361,117 @@ function generateUtil(usedClasses: Set<string>, config: Config): string {
 	return cssRules.join("\n\n");
 }
 
-function tryGenerateRule(
+interface Peeled {
+	mediaQuery?: string;
+	pseudoClasses: string;
+	pseudoElements: string;
+}
+
+function peelVariant(
 	className: string,
-	util: Utility,
-	originalClassName: string,
-): { rule: string; mediaQuery?: string } | null {
-	const { properties, variants, prefix, values } = util;
-	let currentClassName = className;
-	let mediaQuery: string | undefined;
-	let pseudoClasses = "";
-	let pseudoElements = "";
-	let opacityValue = "";
-
-	let foundPrefix = true;
-	while (foundPrefix) {
-		foundPrefix = false;
-
-		if (variants?.mediaQueries) {
-			for (const mq of variants.mediaQueries) {
-				if (currentClassName.startsWith(`@${mq.prefix}:`)) {
-					mediaQuery = mq.value;
-					currentClassName = currentClassName.slice(mq.prefix.length + 2);
-					foundPrefix = true;
-					break;
-				}
-			}
-		}
-
-		if (foundPrefix) continue;
-
-		if (variants?.pseudoElements) {
-			for (const pe of variants.pseudoElements) {
-				if (currentClassName.startsWith(`${pe.prefix}::`)) {
-					pseudoElements += pe.value;
-					currentClassName = currentClassName.slice(pe.prefix.length + 2);
-					foundPrefix = true;
-					break;
-				}
-			}
-		}
-
-		if (foundPrefix) continue;
-
-		if (variants?.pseudoClasses) {
-			for (const pc of variants.pseudoClasses) {
-				if (
-					currentClassName.startsWith(`${pc.prefix}:`) &&
-					!currentClassName.startsWith(`${pc.prefix}::`)
-				) {
-					pseudoClasses += pc.value;
-					currentClassName = currentClassName.slice(pc.prefix.length + 1);
-					foundPrefix = true;
-					break;
-				}
+	variants: Utility["variants"],
+	acc: Peeled,
+): string | null {
+	if (variants?.mediaQueries) {
+		for (const mq of variants.mediaQueries) {
+			if (className.startsWith(`@${mq.prefix}:`)) {
+				acc.mediaQuery = mq.value;
+				return className.slice(mq.prefix.length + 2);
 			}
 		}
 	}
 
+	if (variants?.pseudoElements) {
+		for (const pe of variants.pseudoElements) {
+			if (className.startsWith(`${pe.prefix}::`)) {
+				acc.pseudoElements += pe.value;
+				return className.slice(pe.prefix.length + 2);
+			}
+		}
+	}
+
+	if (variants?.pseudoClasses) {
+		for (const pc of variants.pseudoClasses) {
+			if (
+				className.startsWith(`${pc.prefix}:`) &&
+				!className.startsWith(`${pc.prefix}::`)
+			) {
+				acc.pseudoClasses += pc.value;
+				return className.slice(pc.prefix.length + 1);
+			}
+		}
+	}
+
+	return null;
+}
+
+function matchValue(
+	className: string,
+	util: Utility,
+): { value: string; opacity: string } | null {
+	const { prefix, values, variants } = util;
+
+	let body = className;
+	let opacity = "";
 	if (variants?.opacity) {
 		for (const op of variants.opacity) {
-			if (currentClassName.endsWith(`/${op.prefix}`)) {
-				opacityValue = op.value;
-				currentClassName = currentClassName.slice(0, -(op.prefix.length + 1));
+			if (body.endsWith(`/${op.prefix}`)) {
+				opacity = op.value;
+				body = body.slice(0, -(op.prefix.length + 1));
 				break;
 			}
 		}
 	}
 
-	if (
-		!currentClassName.startsWith(`${prefix}-`) &&
-		currentClassName !== prefix
-	) {
-		return null;
-	}
+	if (!body.startsWith(`${prefix}:`) && body !== prefix) return null;
 
-	const valuePart =
-		currentClassName === prefix
-			? ""
-			: currentClassName.slice(prefix.length + 1);
-
-	let isNegative = false;
-	let cleanValuePart = valuePart;
-	if (valuePart.startsWith("-")) {
-		isNegative = true;
-		cleanValuePart = valuePart.slice(1);
-	}
+	const valuePart = body === prefix ? "" : body.slice(prefix.length + 1);
+	const isNegative = valuePart.startsWith("-");
+	const lookup = isNegative ? valuePart.slice(1) : valuePart;
 
 	const propertyValue =
-		values[cleanValuePart === "" ? "base" : cleanValuePart] ||
-		values[cleanValuePart];
-
+		values[lookup === "" ? "base" : lookup] || values[lookup];
 	if (!propertyValue) return null;
 
-	let finalValue = propertyValue;
-	if (isNegative) {
-		if (!acceptsNegative(properties)) return null;
-		const negated = negateValue(propertyValue);
-		if (negated === null) return null;
-		finalValue = negated;
+	if (!isNegative) return { value: propertyValue, opacity };
+
+	if (!acceptsNegative(util.properties)) return null;
+	const negated = negateValue(propertyValue);
+	if (negated === null) return null;
+
+	return { value: negated, opacity };
+}
+
+function tryGenerateRule(
+	className: string,
+	util: Utility,
+	originalClassName: string,
+): { rule: string; mediaQuery?: string } | null {
+	const { properties, variants } = util;
+	const acc: Peeled = { pseudoClasses: "", pseudoElements: "" };
+
+	let current = className;
+	while (true) {
+		const matched = matchValue(current, util);
+		if (matched) {
+			const finalValue = matched.opacity
+				? applyOpacity(matched.value, matched.opacity)
+				: matched.value;
+
+			const declarations = properties
+				.map((prop) => `${prop}: ${finalValue};`)
+				.join("\n  ");
+
+			return {
+				rule: `.${escapeCn(originalClassName)}${acc.pseudoClasses}${acc.pseudoElements} {\n  ${declarations}\n}`,
+				mediaQuery: acc.mediaQuery,
+			};
+		}
+
+		const rest = peelVariant(current, variants, acc);
+		if (rest === null) return null;
+		current = rest;
 	}
-
-	const finalPropertyValue = opacityValue
-		? applyOpacity(finalValue, opacityValue)
-		: finalValue;
-
-	const declarations = properties
-		.map((prop) => `${prop}: ${finalPropertyValue};`)
-		.join("\n  ");
-
-	return {
-		rule: `.${escapeCn(originalClassName)}${pseudoClasses}${pseudoElements} {\n  ${declarations}\n}`,
-		mediaQuery,
-	};
 }
 
 function isColorValue(value: string): boolean {

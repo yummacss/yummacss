@@ -113,7 +113,7 @@ function buildMaps(config?: IntellisenseConfig): {
 		Object.values(utils).forEach((util: any) => {
 			for (const suffix of Object.keys(util.values)) {
 				const fullClass =
-					suffix === "" ? util.prefix : `${util.prefix}-${suffix}`;
+					suffix === "" ? util.prefix : `${util.prefix}:${suffix}`;
 				if (!prefixCategoryMap.has(fullClass)) {
 					prefixCategoryMap.set(fullClass, category);
 				}

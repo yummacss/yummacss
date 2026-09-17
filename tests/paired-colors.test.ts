@@ -46,7 +46,7 @@ describe("Paired theme colors", () => {
 	});
 
 	it("generates usable CSS through the generator", () => {
-		const css = generator(new Set(["bg-surface", "c-surface-3"]), {
+		const css = generator(new Set(["bg:surface", "c:surface-3"]), {
 			buildOptions: { reset: false },
 			theme: { colors: { surface: pair } },
 		} as never);
@@ -57,7 +57,7 @@ describe("Paired theme colors", () => {
 
 describe("color-scheme emission", () => {
 	it("declares color-scheme when the theme contains a pair", () => {
-		const css = generator(new Set(["bg-surface"]), {
+		const css = generator(new Set(["bg:surface"]), {
 			normalize: false,
 			theme: { colors: { surface: pair } },
 		} as never);
@@ -65,7 +65,7 @@ describe("color-scheme emission", () => {
 	});
 
 	it("stays out of the output when no color is paired", () => {
-		const css = generator(new Set(["bg-brand"]), {
+		const css = generator(new Set(["bg:brand"]), {
 			normalize: false,
 			theme: { colors: { brand: "#bec6f2" } },
 		} as never);
@@ -73,12 +73,12 @@ describe("color-scheme emission", () => {
 	});
 
 	it("stays out of the output when there is no theme at all", () => {
-		const css = generator(new Set(["bg-blue"]), { normalize: false } as never);
+		const css = generator(new Set(["bg:blue"]), { normalize: false } as never);
 		expect(css).not.toContain("color-scheme");
 	});
 
 	it("is not confused by the percentage config key", () => {
-		const css = generator(new Set(["bg-brand"]), {
+		const css = generator(new Set(["bg:brand"]), {
 			normalize: false,
 			theme: {
 				colors: { brand: "#bec6f2", percentage: { light: 10, dark: 10 } },
@@ -92,16 +92,16 @@ describe("color-scheme utility", () => {
 	const config = { normalize: false } as never;
 
 	it("generates each value", () => {
-		const css = generator(new Set(["cs-l", "cs-d", "cs-ld"]), config);
-		expect(css).toMatch(/\.cs-l\s*\{\s*color-scheme:\s*light;/);
-		expect(css).toMatch(/\.cs-d\s*\{\s*color-scheme:\s*dark;/);
-		expect(css).toMatch(/\.cs-ld\s*\{\s*color-scheme:\s*light dark;/);
+		const css = generator(new Set(["cs:l", "cs:d", "cs:ld"]), config);
+		expect(css).toMatch(/\.cs\\:l\s*\{\s*color-scheme:\s*light;/);
+		expect(css).toMatch(/\.cs\\:d\s*\{\s*color-scheme:\s*dark;/);
+		expect(css).toMatch(/\.cs\\:ld\s*\{\s*color-scheme:\s*light dark;/);
 	});
 
 	it("still resolves corner-shape on the shared cs prefix", () => {
-		const css = generator(new Set(["cs-s", "cs-r", "cs-b", "cs-n"]), config);
-		expect(css).toMatch(/\.cs-s\s*\{\s*corner-shape:\s*squircle;/);
-		expect(css).toMatch(/\.cs-n\s*\{\s*corner-shape:\s*notch;/);
+		const css = generator(new Set(["cs:s", "cs:r", "cs:b", "cs:n"]), config);
+		expect(css).toMatch(/\.cs\\:s\s*\{\s*corner-shape:\s*squircle;/);
+		expect(css).toMatch(/\.cs\\:n\s*\{\s*corner-shape:\s*notch;/);
 		expect(css).not.toContain("color-scheme");
 	});
 });

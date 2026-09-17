@@ -15,7 +15,7 @@ describe("Check for class name collisions", () => {
 				const className =
 					valueSuffix === "base" || valueSuffix === ""
 						? prefix
-						: `${prefix}-${valueSuffix}`;
+						: `${prefix}:${valueSuffix}`;
 
 				if (!classMap.has(className)) {
 					classMap.set(className, []);

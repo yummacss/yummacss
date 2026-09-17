@@ -7,7 +7,7 @@ export function extractor(root: HTMLElement = document.body): Set<string> {
 		if (!classList) continue;
 
 		const classes = classList.split(/\s+/).filter((cls) => {
-			return cls && /^[a-z@]/.test(cls) && cls.includes("-");
+			return cls && /^[a-z@]/.test(cls) && cls.includes(":");
 		});
 
 		for (const cls of classes) {

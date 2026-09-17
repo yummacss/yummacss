@@ -59,10 +59,16 @@ export function buildMap() {
 		}
 	}
 
-	return { prefixes, byValue };
+	const variants = [
+		...core.pseudoClasses.map((v) => `${v.prefix}:`),
+		...core.pseudoElements.map((v) => `${v.prefix}::`),
+		...core.mediaQueries.map((v) => `@${v.prefix}:`),
+	].sort();
+
+	return { prefixes, byValue, variants };
 }
 
-export function render({ prefixes, byValue }) {
+export function render({ prefixes, byValue, variants }) {
 	const table = (map) =>
 		[...map]
 			.map(
@@ -89,6 +95,10 @@ ${table(prefixes)}
 export const BY_VALUE: Record<string, Record<string, string[]>> = {
 ${nested}
 };
+
+export const VARIANTS: ReadonlySet<string> = new Set([
+${variants.map((v) => `\t${JSON.stringify(v)},`).join("\n")}
+]);
 `;
 }
 
@@ -111,6 +121,6 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
 	writeFileSync(out, format(render(map)));
 	const values = [...map.byValue.values()].reduce((n, t) => n + t.size, 0);
 	console.log(
-		`merge-map.ts: ${map.prefixes.size} prefixes, ${values} disambiguating values`,
+		`merge-map.ts: ${map.prefixes.size} prefixes, ${values} disambiguating values, ${map.variants.length} variants`,
 	);
 }

@@ -12,7 +12,7 @@ export default defineConfig({
 			"@yummacss/core": path.resolve(__dirname, "./packages/core/src"),
 			yummacss: path.resolve(__dirname, "./packages/cli/src"),
 			"@yummacss/nitro": path.resolve(__dirname, "./packages/nitro/src"),
-			"@yummacss/canon": path.resolve(__dirname, "./packages/canon/src"),
+			"@yummacss/lint": path.resolve(__dirname, "./packages/lint/src"),
 			"@yummacss/intellisense": path.resolve(
 				__dirname,
 				"./packages/intellisense/src",

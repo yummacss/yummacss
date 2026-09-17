@@ -66,7 +66,7 @@ export function buildUtilityMap(
 
 		Object.entries(util.values).forEach(([suffix, cssValue]) => {
 			const fullClass =
-				suffix === "" ? util.prefix : `${util.prefix}-${suffix}`;
+				suffix === "" ? util.prefix : `${util.prefix}:${suffix}`;
 			map.set(fullClass, {
 				cssValue: String(cssValue),
 				slug,
@@ -105,7 +105,7 @@ export function getSuggestions(config?: IntellisenseConfig): Suggestion[] {
 		Object.entries(util.values as Record<string, string>).forEach(
 			([suffix, cssValue]) => {
 				const fullClass =
-					suffix === "" ? util.prefix : `${util.prefix}-${suffix}`;
+					suffix === "" ? util.prefix : `${util.prefix}:${suffix}`;
 				const cssProperty: string = util.properties[0];
 
 				suggestions.push({

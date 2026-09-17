@@ -15,14 +15,14 @@ describe("breakpoints", () => {
 	});
 
 	it("emits xs at 32rem", () => {
-		const css = generator(new Set(["@xs:d-f"]), config);
+		const css = generator(new Set(["@xs:d:f"]), config);
 
 		expect(css).toContain("@media (min-width: 32rem)");
-		expect(css).toContain(".\\@xs\\:d-f");
+		expect(css).toContain(".\\@xs\\:d\\:f");
 	});
 
 	it("emits the queries widest last", () => {
-		const css = generator(new Set(["@xxl:d-g", "@xs:d-f", "@sm:d-b"]), config);
+		const css = generator(new Set(["@xxl:d:g", "@xs:d:f", "@sm:d:b"]), config);
 		const order = [...css.matchAll(/min-width: (\d+)rem/g)].map((m) =>
 			Number(m[1]),
 		);
