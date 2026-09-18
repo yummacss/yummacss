@@ -150,6 +150,40 @@ describe("rewriteSource", () => {
 		expect([...skipped.keys()]).toEqual([]);
 	});
 
+	it("reaches a styling constant, which the scanner reads too", () => {
+		const source = 'const ghost = "bg-transparent c-slate-10 h:bg-silver-1";';
+		const { content } = rewriteSource(source);
+
+		expect(content).toBe(
+			'const ghost = "bg:transparent c:slate-10 h:bg:silver-1";',
+		);
+	});
+
+	it("reaches a merge argument", () => {
+		const source = 'merge(outline, "d-f p-a ai-c", SHAPES[shape])';
+		const { content } = rewriteSource(source);
+
+		expect(content).toBe('merge(outline, "d:f p:a ai:c", SHAPES[shape])');
+	});
+
+	it("leaves prose alone even when one word looks like a class", () => {
+		const source = 'const label = "m-4 is not a class here";';
+
+		expect(rewriteSource(source).content).toBe(source);
+	});
+
+	it("leaves an import path alone", () => {
+		const source = 'import { x } from "react-icons/si";\nconst a = "lz-string";';
+
+		expect(rewriteSource(source).content).toBe(source);
+	});
+
+	it("counts a class once when both passes can see it", () => {
+		const { migrated } = rewriteSource('<div className="d-f m-4">');
+
+		expect(migrated).toBe(2);
+	});
+
 	it("reports an unknown class without changing it", () => {
 		const { content, skipped } = rewriteSource(
 			'<div className="d-f brand-logo">',
