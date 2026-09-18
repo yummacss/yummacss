@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Deprecated
+
+- **[runtime]** `@yummacss/runtime` becomes `@yummacss/cdn` in 4.1, which is what the package is: a script tag served from a CDN. The old name will keep publishing and carry a deprecation notice rather than being removed.
+
+## [4.0.2] - 2026-09-18
+
+### Fixed
+
+- **[cli]** `yummacss migrate` rewrote four shapes of class attribute, but the scanner reads every string, so a class in a styling constant, a shape map or a `merge()` argument stayed in 3.x and the command still reported success. It now rewrites any string that reads as a class list, and only where every token carries a separator, so prose and import paths are left alone.
+
 ## [4.0.1] - 2026-09-18
 
 ### Fixed
