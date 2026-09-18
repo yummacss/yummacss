@@ -4,7 +4,7 @@
 		{ "path": "./packages/core" },
 		{ "path": "./packages/cli" },
 		{ "path": "./packages/nitro" },
-		{ "path": "./packages/runtime" },
+		{ "path": "./packages/cdn" },
 		{ "path": "./tests" }
 	]
 }
