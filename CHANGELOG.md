@@ -15,9 +15,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - **[cdn]** `exports` and `module` named a `./dist/index.js` the build never wrote, so importing the package failed. Both are gone; `unpkg` and `jsdelivr` are what a script tag reads.
 
-### Deprecated
+### Removed
 
-- **[runtime]** `@yummacss/runtime` is now `@yummacss/cdn`. The old name keeps publishing the same script, built from the same source, so a page already pointing at it carries on working.
+- **[runtime]** `@yummacss/runtime` is gone from npm and its package is deleted. Point a script tag at `@yummacss/cdn` instead; there is no redirect and the old URL 404s.
 
 ## [4.0.2] - 2026-09-18
 
