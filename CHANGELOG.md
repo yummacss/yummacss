@@ -7,9 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- **[cdn]** `@yummacss/cdn` is the script tag package, which is what it is: `<script src="https://unpkg.com/@yummacss/cdn">`.
+
+### Changed
+
+- **[cdn]** `exports` and `module` named a `./dist/index.js` the build never wrote, so importing the package failed. Both are gone; `unpkg` and `jsdelivr` are what a script tag reads.
+
 ### Deprecated
 
-- **[runtime]** `@yummacss/runtime` becomes `@yummacss/cdn` in 4.1, which is what the package is: a script tag served from a CDN. The old name will keep publishing and carry a deprecation notice rather than being removed.
+- **[runtime]** `@yummacss/runtime` is now `@yummacss/cdn`. The old name keeps publishing the same script, built from the same source, so a page already pointing at it carries on working.
 
 ## [4.0.2] - 2026-09-18
 

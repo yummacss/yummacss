@@ -1,7 +1,7 @@
 {
-	"name": "@yummacss/runtime",
+	"name": "@yummacss/cdn",
 	"version": "4.0.2",
-	"description": "Deprecated, renamed to @yummacss/cdn",
+	"description": "Yumma CSS from a script tag",
 	"keywords": [
 		"css-framework",
 		"typescript",
@@ -11,7 +11,7 @@
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/yummacss/yummacss.git",
-		"directory": "packages/runtime"
+		"directory": "packages/cdn"
 	},
 	"license": "MIT",
 	"author": "Renildo Pereira",
@@ -23,6 +23,8 @@
 	],
 	"scripts": {
 		"build": "tsdown",
+		"check": "tsc --noEmit",
+		"dev": "tsdown --watch",
 		"lint": "biome check --write",
 		"prepublishOnly": "pnpm build"
 	},
