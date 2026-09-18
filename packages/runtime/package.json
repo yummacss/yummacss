@@ -1,7 +1,7 @@
 {
 	"name": "@yummacss/runtime",
 	"version": "4.0.2",
-	"description": "Run Yumma CSS without Node.js",
+	"description": "Deprecated, renamed to @yummacss/cdn",
 	"keywords": [
 		"css-framework",
 		"typescript",
@@ -16,21 +16,13 @@
 	"license": "MIT",
 	"author": "Renildo Pereira",
 	"type": "module",
-	"exports": {
-		".": {
-			"default": "./dist/index.js"
-		}
-	},
 	"jsdelivr": "./dist/index.iife.js",
 	"unpkg": "./dist/index.iife.js",
-	"module": "./dist/index.js",
 	"files": [
 		"dist"
 	],
 	"scripts": {
 		"build": "tsdown",
-		"check": "tsc --noEmit",
-		"dev": "tsdown --watch",
 		"lint": "biome check --write",
 		"prepublishOnly": "pnpm build"
 	},

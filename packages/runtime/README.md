@@ -1,15 +1,12 @@
 # @yummacss/runtime
 
-Zero-config browser runtime for Yumma CSS.
+Renamed to [`@yummacss/cdn`](../cdn), which is what the package is: a script tag served from a CDN.
 
-## Usage
+This name keeps publishing the same script, so existing pages carry on working. New ones should point at the new name.
 
 ```html
-<script src="https://unpkg.com/@yummacss/runtime"></script>
-<div class="c:indigo fw:500">Hello World</div>
+<script src="https://unpkg.com/@yummacss/cdn"></script>
 ```
-
-For build-time optimization, use the [CLI package](../cli) instead.
 
 ## Documentation
 
