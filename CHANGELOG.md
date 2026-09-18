@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [4.0.1] - 2026-09-18
+
+### Fixed
+
+- **[runtime]** The README used 3.x class names in its example, which is what npm renders on the package page.
+
 ## [4.0.0] - 2026-09-18
 
 Every class name changes. Run `yummacss migrate` before upgrading; there is no compatibility mode.
