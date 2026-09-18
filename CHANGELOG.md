@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Deprecated
+
+- **[runtime]** `@yummacss/runtime` becomes `@yummacss/cdn` in 4.1, which is what the package is: a script tag served from a CDN. The old name will keep publishing and carry a deprecation notice rather than being removed.
+
 ## [4.0.1] - 2026-09-18
 
 ### Fixed
