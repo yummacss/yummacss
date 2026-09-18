@@ -105,12 +105,6 @@ importers:
         specifier: ^8.5.18
         version: 8.5.23
 
-  packages/runtime:
-    dependencies:
-      '@yummacss/nitro':
-        specifier: workspace:*
-        version: link:../nitro
-
   packages/vite:
     dependencies:
       '@yummacss/nitro':
