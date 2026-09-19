@@ -5,6 +5,7 @@ import {
 	mediaQueries,
 	pseudoClasses,
 	pseudoElements,
+	valueRenames,
 } from "@yummacss/core";
 
 interface Utility {
@@ -54,10 +55,7 @@ export function useConfigPrefix(prefix: string | undefined) {
 const CLASSES = new Set<string>(pseudoClasses.map((v) => v.prefix));
 const ELEMENTS = new Set<string>(pseudoElements.map((v) => v.prefix));
 
-const VALUE_RENAMES: Record<string, Record<string, string>> = {
-	tt: { n: "none" },
-	tl: { a: "auto" },
-};
+const VALUE_RENAMES = valueRenames;
 
 export type MigrationResult =
 	| { ok: true; className: string; changed: boolean }

@@ -106,3 +106,12 @@ export function splitVariants(className: string): {
 
 	return { variants, base: rest };
 }
+
+/**
+ * Values 4.0 spelled out, keyed by the prefix that carries them. The codemod
+ * rewrites them and the suggester answers with them, so they live here once.
+ */
+export const valueRenames: Record<string, Record<string, string>> = {
+	tt: { n: "none" },
+	tl: { a: "auto" },
+};

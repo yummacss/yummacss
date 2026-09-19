@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [4.1.2] - 2026-09-19
+
+### Fixed
+
+- **[nitro]** A "did you mean" suggestion discarded the exact match. Folding leaves a 3.x class at distance zero from its 4.0 spelling, and zero was treated as "nothing to suggest", so `p-4` answered `p:40` and `d-f` answered `d:fr`. Eleven of twelve common classes were wrong; only `gap-4` was right, which is the one the tests covered.
+- **[nitro]** `tt-n` and `tl-a` answer `tt:none` and `tl:auto`. A renamed value sits outside any sane edit distance, so the suggester now reads the same rename table the codemod does.
+
+### Changed
+
+- **[core]** `valueRenames` is exported, so the codemod and the suggester share one table rather than keeping a copy each.
+
 ## [4.1.1] - 2026-09-19
 
 ### Fixed
