@@ -272,6 +272,20 @@ export function suggestClasses(
 
 		if (!className) continue;
 
+		// m--4 is the 3.x negative. folding hides the second dash, so the minus
+		// has to be carried across by hand or the answer comes back positive
+		const negative = className.match(/^([a-z]+)--(.+)$/);
+		if (negative?.[1] && negative[2]) {
+			const candidate = `${negative[1]}:-${negative[2]}`;
+			if (candidateSet.has(`${negative[1]}:${negative[2]}`)) {
+				tentative.set(originalClassName, [
+					variantPrefix + prefix + candidate + opacitySuffix,
+					variantPrefix + prefix + candidate,
+				]);
+				continue;
+			}
+		}
+
 		// tt-n to tt:none is a rename, not a typo, so distance never reaches it
 		const renamed = renameFor(className);
 		if (renamed) {
