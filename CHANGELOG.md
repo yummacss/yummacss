@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [4.1.1] - 2026-09-19
+
+### Fixed
+
+- **[cli]** The README used 3.x class names in its opening line, which is what npm renders on the package page.
+
 ## [4.1.0] - 2026-09-19
 
 ### Added
