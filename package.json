@@ -2,7 +2,7 @@
 	"name": "yummacss",
 	"version": "4.1.1",
 	"private": true,
-	"description": "An atomic CSS framework.",
+	"description": "An atomic CSS framework",
 	"keywords": [
 		"css-framework",
 		"typescript",
