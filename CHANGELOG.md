@@ -13,6 +13,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - **[cli]** The README used 3.x class names in its opening line, which is what npm renders on the package page.
 
+### Changed
+
+- **[cli]** The package description drops its full stop, which none of the other seven carry.
+
 ## [4.1.0] - 2026-09-19
 
 ### Added
