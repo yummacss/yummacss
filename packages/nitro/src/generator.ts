@@ -8,6 +8,7 @@ import {
 	splitVariants,
 	type Utilities,
 	type Utility,
+	valueRenames,
 } from "@yummacss/core";
 import type { Config } from "./config/schema";
 import { normalizeCSS } from "./normalize";
@@ -212,6 +213,15 @@ function compareScores(a: number[], b: number[]): number {
 	return 0;
 }
 
+function renameFor(className: string): string | undefined {
+	const match = className.match(/^([a-z]+)[-:](.+)$/);
+	const prefix = match?.[1];
+	const old = match?.[2];
+	if (!prefix || !old) return undefined;
+	const value = valueRenames[prefix]?.[old];
+	return value ? `${prefix}:${value}` : undefined;
+}
+
 export function suggestClasses(
 	classNames: Iterable<string>,
 	config: Config = {},
@@ -262,6 +272,16 @@ export function suggestClasses(
 
 		if (!className) continue;
 
+		// tt-n to tt:none is a rename, not a typo, so distance never reaches it
+		const renamed = renameFor(className);
+		if (renamed) {
+			tentative.set(originalClassName, [
+				variantPrefix + prefix + renamed + opacitySuffix,
+				variantPrefix + prefix + renamed,
+			]);
+			continue;
+		}
+
 		const maxDistance = className.length <= 4 ? 1 : 2;
 
 		const fold = (s: string) => s.replace(/:/g, "-");
@@ -272,7 +292,10 @@ export function suggestClasses(
 		for (const candidate of candidates) {
 			const foldedCandidate = fold(candidate);
 			const distance = levenshtein(folded, foldedCandidate, maxDistance);
-			if (distance === 0 || distance > maxDistance) continue;
+			if (distance > maxDistance) continue;
+			// folding leaves a 3.x class at distance zero from its 4.0 spelling,
+			// which is the best suggestion there is, not the absence of one
+			if (distance === 0 && candidate === className) continue;
 
 			const score = [
 				distance,
