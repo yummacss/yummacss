@@ -1,4 +1,4 @@
-export const normalizeCSS = `*, :before, :after {
+const reset = `*, :before, :after {
   box-sizing: border-box;
   border: 0 solid;
 }
@@ -107,3 +107,9 @@ summary {
   display: list-item;
 }
 `;
+
+// the reset wins on specificity, so it has to lose on origin: its focus rule is
+// (0,1,1) against a utility's (0,1,0)
+export const normalizeCSS = `@layer yumma.reset {\n${reset
+	.trimEnd()
+	.replace(/^(?=.)/gm, "  ")}\n}\n`;

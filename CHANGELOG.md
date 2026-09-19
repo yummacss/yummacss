@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- **[nitro]** The reset sits in a `yumma.reset` cascade layer. Its focus rule is `:is(a, button, input, select, summary, textarea):focus`, which is a higher specificity than a plain utility, so `oc:*`, `ow:*` and `os:*` did nothing on a focused `a`, `button`, `input`, `select`, `summary` or `textarea`. The utilities stay unlayered, so nothing changes against CSS you write yourself.
+
 ## [4.1.1] - 2026-09-19
 
 ### Fixed
