@@ -35,6 +35,14 @@ describe("Suggestions", () => {
 		expect(suggest(from)).toBe(to);
 	});
 
+	it.each([
+		["m--4", "m:-4"],
+		["mt--8", "mt:-8"],
+		["t--2", "t:-2"],
+	])("answers %s with %s, keeping the minus", (from, to) => {
+		expect(suggest(from)).toBe(to);
+	});
+
 	it("stays quiet for a class nothing is close to", () => {
 		expect(suggest("zzz:9")).toBeUndefined();
 		expect(suggest("qqqq-1")).toBeUndefined();
