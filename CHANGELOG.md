@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [4.1.2] - 2026-09-21
+
+### Fixed
+
+- **[core]** `tp:c` no longer transitions `outline-color`. A focus outline's width and style are not transitioned, so the ring appeared at full width in `currentColor` and faded to its real colour over the transition's duration. Measured in Chromium on a `c:white` button: the ring painted `rgb(255,255,255)` at frame zero and reached `silver-3` 150ms later. It paints its own colour immediately now.
+
 ## [4.1.1] - 2026-09-21
 
 ### Fixed
