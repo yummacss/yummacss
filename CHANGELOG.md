@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- **[core]** `tp:t` transitions `translate`, `scale` and `rotate` as well as `transform`, so `s:`, `ro:` and the translate utilities animate under it.
+
 ## [4.1.2] - 2026-09-21
 
 ### Fixed
