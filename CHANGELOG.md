@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- **[nitro]** `theme.states`, variants you name yourself. `{ closing: "[data-ending-style]" }` makes `closing:o:0` apply under that selector, and a state stacks with pseudo classes and at-rules like any variant. Nothing is built in; a name that reuses a built-in variant, or a selector that does not start with `[` or `:`, is refused when the config loads.
+
 ## [4.1.2] - 2026-09-21
 
 ### Fixed
