@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- **[nitro]** CSS function values. A utility takes `calc()`, `clamp()`, `min()`, `max()` or `var()` written as CSS: `max-h:calc(100dvh-5rem)`, `max-w:clamp(40rem,80vw,96rem)`, `h:var(--panel-height)`. Spaces go in around `+` and `-` when the CSS is written. The math functions are accepted only on utilities that take a length, `var()` on any, and a plain value off the scale such as `w:37px` is still refused.
+
 ## [4.1.2] - 2026-09-21
 
 ### Fixed
