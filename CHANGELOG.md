@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- **[core]** Container queries. `@c:sm:` applies at the `sm` width of the nearest container, for every breakpoint and every configured screen, and `ct:is`, `ct:s` and `ct:n` set `container-type`.
+
 ## [4.1.2] - 2026-09-21
 
 ### Fixed
