@@ -1,5 +1,6 @@
 import type { Utilities } from "@/interfaces";
 
+import { animation } from "./animation";
 import { background } from "./background";
 import { border } from "./border";
 import { boxModel } from "./box-model";
@@ -17,6 +18,7 @@ import { transform } from "./transform";
 import { transition } from "./transition";
 
 export const core: Utilities = {
+	...animation,
 	...background,
 	...border,
 	...boxModel,

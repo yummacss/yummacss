@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- **[core]** Animation utilities: `an:` (name), `adu:` (duration), `ad:` (delay), `atf:` (timing function) and `aic:` (iteration count). Duration and delay share the transition scale; `an:none` is the only built-in name.
+- **[nitro]** `theme.keyframes`. Each entry is the body of a `@keyframes` rule and generates an `an:` utility; only the keyframes a class uses are emitted, once. Nothing is built in.
+
 ## [4.1.2] - 2026-09-21
 
 ### Fixed
