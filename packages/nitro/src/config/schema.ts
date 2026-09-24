@@ -65,6 +65,14 @@ export interface Config {
 		 * @example { "3xl": "112rem" }
 		 */
 		screens?: Record<string, string>;
+
+		/**
+		 * Font stacks to generate `ff:` utilities for, keyed by name. A key that
+		 * collides replaces the default.
+		 *
+		 * @example { display: '"Esteban", serif', mono: 'ui-monospace, monospace' }
+		 */
+		fonts?: Record<string, string>;
 	};
 }
 
@@ -78,6 +86,17 @@ export const ConfigSchema = z.object({
 		.object({
 			colors: z.record(z.string(), z.any()).optional(),
 			screens: z.record(z.string(), z.string()).optional(),
+			fonts: z
+				.record(
+					z
+						.string()
+						.regex(
+							/^[a-z][a-z0-9-]*$/,
+							"a font name is lower case letters, digits and dashes",
+						),
+					z.string().min(1),
+				)
+				.optional(),
 		})
 		.optional(),
 });
