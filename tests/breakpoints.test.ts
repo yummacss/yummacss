@@ -30,3 +30,31 @@ describe("breakpoints", () => {
 		expect(order).toEqual([...order].sort((a, b) => a - b));
 	});
 });
+
+describe("stacked at-rules", () => {
+	const config = { buildOptions: { reset: false } } as never;
+
+	it("keeps both queries rather than dropping one", () => {
+		const css = generator(new Set(["@sm:@lg:bg:red"]), config);
+
+		expect(css).toContain("@media (min-width: 40rem)");
+		expect(css).toContain("@media (min-width: 64rem)");
+		expect(css).toMatch(
+			/@media \(min-width: 40rem\) \{\n {2}@media \(min-width: 64rem\) \{\n {4}\.\\@sm\\:\\@lg\\:bg\\:red/,
+		);
+	});
+
+	it("groups a stack the same whichever order it is written in", () => {
+		const css = generator(new Set(["@sm:@lg:d:f", "@lg:@sm:d:b"]), config);
+
+		expect(css.match(/@media \(min-width: 40rem\) \{/g)).toHaveLength(1);
+	});
+
+	it("still emits a single query flat", () => {
+		const css = generator(new Set(["@md:d:f"]), config);
+
+		expect(css).toMatch(
+			/^@media \(min-width: 48rem\) \{\n {2}\.\\@md\\:d\\:f/m,
+		);
+	});
+});

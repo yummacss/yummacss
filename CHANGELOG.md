@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- **[nitro]** A class with two at-rule variants keeps both. `@sm:@lg:bg:red` used to emit only the `64rem` query and drop `@sm` without a warning; it now nests one inside the other, and `@lg:@sm:` shares the same block.
+
 ## [4.1.2] - 2026-09-21
 
 ### Fixed
