@@ -7,4 +7,10 @@ export const mediaQueries = [
 	{ prefix: "lg", value: "@media (min-width: 64rem)" },
 	{ prefix: "xl", value: "@media (min-width: 80rem)" },
 	{ prefix: "xxl", value: "@media (min-width: 96rem)" },
+	{ prefix: "c:xs", value: "@container (min-width: 32rem)" },
+	{ prefix: "c:sm", value: "@container (min-width: 40rem)" },
+	{ prefix: "c:md", value: "@container (min-width: 48rem)" },
+	{ prefix: "c:lg", value: "@container (min-width: 64rem)" },
+	{ prefix: "c:xl", value: "@container (min-width: 80rem)" },
+	{ prefix: "c:xxl", value: "@container (min-width: 96rem)" },
 ] as const;
