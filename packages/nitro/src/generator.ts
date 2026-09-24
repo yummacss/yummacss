@@ -98,6 +98,11 @@ function buildUtils(config: Config): Record<string, Utility> {
 			modified = true;
 		}
 
+		if (config.theme?.fonts && key === "font-family") {
+			newUtil.values = { ...newUtil.values, ...config.theme.fonts };
+			modified = true;
+		}
+
 		if (config.theme?.screens && newUtil.variants) {
 			newUtil.variants = {
 				...newUtil.variants,

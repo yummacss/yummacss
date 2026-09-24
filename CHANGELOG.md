@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- **[nitro]** `theme.fonts`. Each entry generates an `ff:` utility, so `{ display: '"Esteban", serif' }` gives `ff:display`. A name that collides with a default replaces it.
+
 ## [4.1.2] - 2026-09-21
 
 ### Fixed
