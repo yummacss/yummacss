@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- **[core]** `tp:t` transitions `translate`, `scale` and `rotate` as well as `transform`, so `s:`, `ro:` and the translate utilities animate under it.
+
 ### Fixed
 
 - **[nitro]** A class with two at-rule variants keeps both. `@sm:@lg:bg:red` used to emit only the `64rem` query and drop `@sm` without a warning; it now nests one inside the other, and `@lg:@sm:` shares the same block.

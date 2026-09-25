@@ -31,7 +31,7 @@ export const transition: Utilities = {
 			h: "height",
 			none: "none",
 			o: "opacity",
-			t: "transform",
+			t: "transform, translate, scale, rotate",
 			w: "width",
 		},
 		variants: base,
