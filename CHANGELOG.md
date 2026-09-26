@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - **[core]** `@st:`, a variant for `@starting-style`. `@st:o:0` sets where a transition starts when an element first renders or leaves `display: none`, so an enter animation is a class: `tp:o tdu:150 @st:o:0`.
-- **[nitro]** `theme.states`, variants you name yourself. `{ closing: "[data-ending-style]" }` makes `closing:o:0` apply under that selector, and a state stacks with pseudo classes and at-rules like any variant. Nothing is built in; a name that reuses a built-in variant, or a selector that does not start with `[` or `:`, is refused when the config loads.
+- **[nitro]** `theme.states`, variants you name yourself. `{ closing: "[data-ending-style]" }` makes `closing:o:0` apply under that selector, and a state stacks with pseudo classes and at-rules like any variant. Nothing is built in; a name that reuses a built-in variant or a utility prefix, or a selector that does not start with `[` or `:`, is refused when the config loads.
 - **[nitro]** CSS function values. A utility takes `calc()`, `clamp()`, `min()`, `max()` or `var()` written as CSS: `max-h:calc(100dvh-5rem)`, `max-w:clamp(40rem,80vw,96rem)`, `h:var(--panel-height)`. Spaces go in around `+` and `-` when the CSS is written. The math functions are accepted only on utilities that take a length, `var()` on any, and a plain value off the scale such as `w:37px` is still refused.
 
 ### Changed
