@@ -72,11 +72,11 @@ function buildUtils(config: Config): Record<string, Utility> {
 		...defaultMediaQueries,
 	];
 	if (config.theme?.screens) {
-		const userScreens = Object.entries(config.theme.screens).map(
-			([prefix, width]) => ({
-				prefix,
-				value: `@media (min-width: ${width})`,
-			}),
+		const userScreens = Object.entries(config.theme.screens).flatMap(
+			([prefix, width]) => [
+				{ prefix, value: `@media (min-width: ${width})` },
+				{ prefix: `c:${prefix}`, value: `@container (min-width: ${width})` },
+			],
 		);
 		for (const qs of userScreens) {
 			const idx = mergedMediaQueries.findIndex((q) => q.prefix === qs.prefix);

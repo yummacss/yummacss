@@ -65,6 +65,7 @@ export const PREFIXES: Record<string, string[]> = {
 	cs: ["corner-shape"],
 	cses: ["corner-start-end-shape"],
 	csss: ["corner-start-start-shape"],
+	ct: ["container-type"],
 	ctls: ["corner-top-left-shape"],
 	ctrs: ["corner-top-right-shape"],
 	cts: ["corner-top-shape"],
@@ -385,6 +386,12 @@ export const BY_VALUE: Record<string, Record<string, string[]>> = {
 };
 
 export const VARIANTS: ReadonlySet<string> = new Set([
+	"@c:lg:",
+	"@c:md:",
+	"@c:sm:",
+	"@c:xl:",
+	"@c:xs:",
+	"@c:xxl:",
 	"@lg:",
 	"@md:",
 	"@pc:",
