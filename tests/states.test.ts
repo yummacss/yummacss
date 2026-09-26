@@ -58,6 +58,11 @@ describe("theme.states in the schema", () => {
 		expect(parse({ h: "[data-hovering]" })).toBe(false);
 	});
 
+	it("refuses a name a utility already has", () => {
+		expect(parse({ o: "[data-open]" })).toBe(false);
+		expect(parse({ bg: "[data-open]" })).toBe(false);
+	});
+
 	it("refuses a selector that would not append", () => {
 		expect(parse({ closing: "data-ending-style" })).toBe(false);
 		expect(parse({ Closing: "[data-ending-style]" })).toBe(false);
