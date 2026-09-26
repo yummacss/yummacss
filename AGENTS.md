@@ -37,3 +37,6 @@
 - PRs, never direct commits to `main`.
 - Verify an issue or a note against the code before acting on it. Most are
   right about the symptom and wrong about the cause.
+- A generated file opens with a comment naming the script that writes it.
+  The script writes that comment, so it survives a regeneration; never edit
+  the file or strip the comment by hand.
