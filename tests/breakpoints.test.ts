@@ -8,7 +8,7 @@ describe("breakpoints", () => {
 	it("has a query for every t-shirt width alias", () => {
 		const { mediaQueries } = coreUtils().display.variants ?? {};
 		const widths = (mediaQueries ?? [])
-			.filter((query) => query.value.includes("min-width"))
+			.filter((query) => query.value.startsWith("@media (min-width"))
 			.map((query) => query.prefix);
 
 		expect(widths).toEqual(["xs", "sm", "md", "lg", "xl", "xxl"]);

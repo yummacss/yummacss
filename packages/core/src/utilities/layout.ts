@@ -2,6 +2,18 @@ import { base } from "@/defaults/variants/stacks";
 import type { Utilities } from "@/interfaces";
 
 export const layout: Utilities = {
+	"container-type": {
+		prefix: "ct",
+		properties: ["container-type"],
+		slug: "container-type",
+		values: {
+			is: "inline-size",
+			n: "normal",
+			s: "size",
+		},
+		variants: base,
+	},
+
 	clear: {
 		prefix: "cl",
 		properties: ["clear"],
