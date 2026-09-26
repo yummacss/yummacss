@@ -85,6 +85,10 @@ function buildUtils(config: Config): Record<string, Utility> {
 		}
 	}
 
+	const userStates = Object.entries(config.theme?.states ?? {}).map(
+		([prefix, value]) => ({ prefix, value }),
+	);
+
 	for (const [key, util] of Object.entries(utils)) {
 		let modified = false;
 		const newUtil = { ...util };
@@ -95,6 +99,11 @@ function buildUtils(config: Config): Record<string, Utility> {
 			"white" in newUtil.values
 		) {
 			newUtil.values = { ...newUtil.values, ...customColors };
+			modified = true;
+		}
+
+		if (config.theme?.fonts && key === "font-family") {
+			newUtil.values = { ...newUtil.values, ...config.theme.fonts };
 			modified = true;
 		}
 
@@ -110,6 +119,17 @@ function buildUtils(config: Config): Record<string, Utility> {
 			newUtil.variants = {
 				...newUtil.variants,
 				mediaQueries: mergedMediaQueries,
+			};
+			modified = true;
+		}
+
+		if (userStates.length > 0 && newUtil.variants) {
+			newUtil.variants = {
+				...newUtil.variants,
+				pseudoClasses: [
+					...(newUtil.variants.pseudoClasses ?? []),
+					...userStates,
+				],
 			};
 			modified = true;
 		}
@@ -366,6 +386,7 @@ function generateUtil(usedClasses: Set<string>, config: Config): string {
 	const utils = buildUtils(config);
 
 	const cssRules: string[] = [];
+	// keyed by the at-rule chain, joined, outermost first
 	const mediaQueryRules: Map<string, string[]> = new Map();
 	const processedClasses = new Set<string>();
 
@@ -383,10 +404,11 @@ function generateUtil(usedClasses: Set<string>, config: Config): string {
 
 		const res = generateCSSRule(classNameToProcess, utils, originalClassName);
 		if (res) {
-			if (res.mediaQuery) {
-				const existing = mediaQueryRules.get(res.mediaQuery) || [];
+			if (res.mediaQueries.length > 0) {
+				const key = res.mediaQueries.join("\n");
+				const existing = mediaQueryRules.get(key) || [];
 				existing.push(res.rule);
-				mediaQueryRules.set(res.mediaQuery, existing);
+				mediaQueryRules.set(key, existing);
 			} else {
 				cssRules.push(res.rule);
 			}
@@ -409,16 +431,19 @@ function generateUtil(usedClasses: Set<string>, config: Config): string {
 		cssRules.push(`@keyframes ${name} {\n${body}\n}`);
 	}
 
-	for (const [mediaQuery, rules] of sortedMediaQueries) {
-		const indented = rules.map((r) => r.replace(/^/gm, "  ")).join("\n\n");
-		cssRules.push(`${mediaQuery} {\n${indented}\n}`);
+	for (const [key, rules] of sortedMediaQueries) {
+		let block = rules.join("\n\n");
+		for (const query of key.split("\n").reverse()) {
+			block = `${query} {\n${block.replace(/^/gm, "  ")}\n}`;
+		}
+		cssRules.push(block);
 	}
 
 	return cssRules.join("\n\n");
 }
 
 interface Peeled {
-	mediaQuery?: string;
+	mediaQueries: string[];
 	pseudoClasses: string;
 	pseudoElements: string;
 }
@@ -431,7 +456,8 @@ function peelVariant(
 	if (variants?.mediaQueries) {
 		for (const mq of variants.mediaQueries) {
 			if (className.startsWith(`@${mq.prefix}:`)) {
-				acc.mediaQuery = mq.value;
+				if (!acc.mediaQueries.includes(mq.value))
+					acc.mediaQueries.push(mq.value);
 				return className.slice(mq.prefix.length + 2);
 			}
 		}
@@ -482,6 +508,10 @@ function matchValue(
 	if (!body.startsWith(`${prefix}:`) && body !== prefix) return null;
 
 	const valuePart = body === prefix ? "" : body.slice(prefix.length + 1);
+
+	const fn = functionValue(valuePart, util);
+	if (fn) return { value: fn, opacity };
+
 	const isNegative = valuePart.startsWith("-");
 	const lookup = isNegative ? valuePart.slice(1) : valuePart;
 
@@ -501,13 +531,86 @@ function matchValue(
 	return { value: negated, opacity };
 }
 
+const FUNCTION = /^(calc|clamp|min|max|var)\((.*)\)$/;
+const LENGTH = /\d(?:rem|px|em|%|vw|vh|dvh|svh|lvh|ch)$/;
+const takesLength = new WeakMap<Utility, boolean>();
+
+/** A `calc()`, `clamp()`, `min()`, `max()` or `var()` value, as CSS writes it. */
+function functionValue(value: string, util: Utility): string | null {
+	const match = FUNCTION.exec(value);
+	if (!match || !balanced(value)) return null;
+
+	// var() is any value; the math functions only make sense where a length does
+	if (match[1] !== "var") {
+		let lengths = takesLength.get(util);
+		if (lengths === undefined) {
+			lengths = Object.values(util.values).some((v) => LENGTH.test(v));
+			takesLength.set(util, lengths);
+		}
+		if (!lengths) return null;
+	}
+
+	return spaceOperators(value);
+}
+
+function balanced(value: string): boolean {
+	let depth = 0;
+	for (const c of value) {
+		if (c === "(") depth++;
+		else if (c === ")" && --depth < 0) return false;
+	}
+	return depth === 0;
+}
+
+// a class cannot hold spaces, and calc() needs them around + and -
+function spaceOperators(value: string): string {
+	let out = "";
+	let i = 0;
+	while (i < value.length) {
+		if (value.startsWith("var(", i)) {
+			const end = closingParen(value, i + 3);
+			out += value.slice(i, end + 1);
+			i = end + 1;
+			continue;
+		}
+		const c = value[i] ?? "";
+		if ((c === "+" || c === "-") && isBinary(out)) {
+			out += ` ${c} `;
+		} else {
+			out += c;
+		}
+		i++;
+	}
+	return out;
+}
+
+function closingParen(value: string, open: number): number {
+	let depth = 0;
+	for (let i = open; i < value.length; i++) {
+		if (value[i] === "(") depth++;
+		else if (value[i] === ")" && --depth === 0) return i;
+	}
+	return value.length - 1;
+}
+
+// binary after a closing paren or a number, never inside a word like min-content
+function isBinary(before: string): boolean {
+	if (before.endsWith(")")) return true;
+	const word = /[a-z0-9.%]*$/i.exec(before)?.[0] ?? "";
+	return /^[\d.]/.test(word);
+}
+
 function tryGenerateRule(
 	className: string,
 	util: Utility,
 	originalClassName: string,
-): { rule: string; mediaQuery?: string } | null {
+): { rule: string; mediaQueries: string[] } | null {
 	const { properties, variants } = util;
-	const acc: Peeled = { pseudoClasses: "", pseudoElements: "" };
+	const acc: Peeled = {
+		mediaQueries: [],
+		pseudoClasses: "",
+		pseudoElements: "",
+	};
 
 	let current = className;
 	while (true) {
@@ -523,7 +626,8 @@ function tryGenerateRule(
 
 			return {
 				rule: `.${escapeCn(originalClassName)}${acc.pseudoClasses}${acc.pseudoElements} {\n  ${declarations}\n}`,
-				mediaQuery: acc.mediaQuery,
+				// sorted, so @sm:@lg: and @lg:@sm: share one block
+				mediaQueries: [...acc.mediaQueries].sort((a, b) => a.localeCompare(b)),
 			};
 		}
 
@@ -560,18 +664,14 @@ function negateValue(value: string): string | null {
 }
 
 function escapeCn(className: string): string {
-	return className
-		.replace(/:/g, "\\:")
-		.replace(/\//g, "\\/")
-		.replace(/@/g, "\\@")
-		.replace(/%/g, "\\%");
+	return className.replace(/[:/@%().,+*]/g, "\\$&");
 }
 
 function generateCSSRule(
 	className: string,
 	utils: Utilities,
 	originalClassName: string,
-): { rule: string; mediaQuery?: string } | null {
+): { rule: string; mediaQueries: string[] } | null {
 	for (const [_, util] of Object.entries(utils)) {
 		const result = tryGenerateRule(className, util, originalClassName);
 		if (result) return result;
