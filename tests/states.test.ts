@@ -21,6 +21,14 @@ describe("theme.states", () => {
 		expect(css).toContain(":hover[open]");
 	});
 
+	it("sits under stacked at-rules", () => {
+		const css = generator(new Set(["@md:@prm:closing:o:0"]), config);
+
+		expect(css).toMatch(
+			/@media \(min-width: 48rem\) \{\n {2}@media \(prefers-reduced-motion: reduce\) \{\n {4}\.[^{]*\[data-ending-style\] \{/,
+		);
+	});
+
 	it("is canon only when configured", () => {
 		expect(validateClasses(["closing:o:0"], config).invalid).toEqual([]);
 		expect(validateClasses(["closing:o:0"], {} as never).invalid).toEqual([
