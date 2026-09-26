@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [4.2.0] - 2026-09-26
+
 ### Added
 
 - **[core]** `@st:`, a variant for `@starting-style`. `@st:o:0` sets where a transition starts when an element first renders or leaves `display: none`, so an enter animation is a class: `tp:o tdu:150 @st:o:0`.
