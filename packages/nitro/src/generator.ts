@@ -484,6 +484,10 @@ function matchValue(
 	if (!body.startsWith(`${prefix}:`) && body !== prefix) return null;
 
 	const valuePart = body === prefix ? "" : body.slice(prefix.length + 1);
+
+	const fn = functionValue(valuePart, util);
+	if (fn) return { value: fn, opacity };
+
 	const isNegative = valuePart.startsWith("-");
 	const lookup = isNegative ? valuePart.slice(1) : valuePart;
 
@@ -501,6 +505,75 @@ function matchValue(
 	if (negated === null) return null;
 
 	return { value: negated, opacity };
+}
+
+const FUNCTION = /^(calc|clamp|min|max|var)\((.*)\)$/;
+const LENGTH = /\d(?:rem|px|em|%|vw|vh|dvh|svh|lvh|ch)$/;
+const takesLength = new WeakMap<Utility, boolean>();
+
+/** A `calc()`, `clamp()`, `min()`, `max()` or `var()` value, as CSS writes it. */
+function functionValue(value: string, util: Utility): string | null {
+	const match = FUNCTION.exec(value);
+	if (!match || !balanced(value)) return null;
+
+	// var() is any value; the math functions only make sense where a length does
+	if (match[1] !== "var") {
+		let lengths = takesLength.get(util);
+		if (lengths === undefined) {
+			lengths = Object.values(util.values).some((v) => LENGTH.test(v));
+			takesLength.set(util, lengths);
+		}
+		if (!lengths) return null;
+	}
+
+	return spaceOperators(value);
+}
+
+function balanced(value: string): boolean {
+	let depth = 0;
+	for (const c of value) {
+		if (c === "(") depth++;
+		else if (c === ")" && --depth < 0) return false;
+	}
+	return depth === 0;
+}
+
+// a class cannot hold spaces, and calc() needs them around + and -
+function spaceOperators(value: string): string {
+	let out = "";
+	let i = 0;
+	while (i < value.length) {
+		if (value.startsWith("var(", i)) {
+			const end = closingParen(value, i + 3);
+			out += value.slice(i, end + 1);
+			i = end + 1;
+			continue;
+		}
+		const c = value[i] ?? "";
+		if ((c === "+" || c === "-") && isBinary(out)) {
+			out += ` ${c} `;
+		} else {
+			out += c;
+		}
+		i++;
+	}
+	return out;
+}
+
+function closingParen(value: string, open: number): number {
+	let depth = 0;
+	for (let i = open; i < value.length; i++) {
+		if (value[i] === "(") depth++;
+		else if (value[i] === ")" && --depth === 0) return i;
+	}
+	return value.length - 1;
+}
+
+// binary after a closing paren or a number, never inside a word like min-content
+function isBinary(before: string): boolean {
+	if (before.endsWith(")")) return true;
+	const word = /[a-z0-9.%]*$/i.exec(before)?.[0] ?? "";
+	return /^[\d.]/.test(word);
 }
 
 function tryGenerateRule(
@@ -567,11 +640,7 @@ function negateValue(value: string): string | null {
 }
 
 function escapeCn(className: string): string {
-	return className
-		.replace(/:/g, "\\:")
-		.replace(/\//g, "\\/")
-		.replace(/@/g, "\\@")
-		.replace(/%/g, "\\%");
+	return className.replace(/[:/@%().,+*]/g, "\\$&");
 }
 
 function generateCSSRule(
