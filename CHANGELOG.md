@@ -11,6 +11,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - **[core]** `@st:`, a variant for `@starting-style`. `@st:o:0` sets where a transition starts when an element first renders or leaves `display: none`, so an enter animation is a class: `tp:o tdu:150 @st:o:0`.
 
+### Changed
+
+- **[core]** `tp:t` transitions `translate`, `scale` and `rotate` as well as `transform`, so `s:`, `ro:` and the translate utilities animate under it.
+
+### Fixed
+
+- **[nitro]** A class with two at-rule variants keeps both. `@sm:@lg:bg:red` used to emit only the `64rem` query and drop `@sm` without a warning; it now nests one inside the other, and `@lg:@sm:` shares the same block.
+
 ## [4.1.2] - 2026-09-21
 
 ### Fixed

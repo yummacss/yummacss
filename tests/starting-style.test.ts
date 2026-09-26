@@ -19,6 +19,14 @@ describe("@starting-style", () => {
 		expect(css).toContain(":hover");
 	});
 
+	it("nests inside a breakpoint", () => {
+		const css = generator(new Set(["@md:@st:o:0"]), config);
+
+		expect(css).toMatch(
+			/@media \(min-width: 48rem\) \{\n {2}@starting-style \{\n {4}\.\\@md\\:\\@st\\:o\\:0/,
+		);
+	});
+
 	it("is canon", () => {
 		expect(validateClasses(["@st:o:0"], {} as never).invalid).toEqual([]);
 	});
