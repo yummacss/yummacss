@@ -1,4 +1,4 @@
-import { pseudoClasses, pseudoElements } from "@yummacss/core";
+import { coreUtils, pseudoClasses, pseudoElements } from "@yummacss/core";
 import { z } from "zod";
 
 export const configName = "yumma.config.mjs";
@@ -82,6 +82,10 @@ const BUILT_IN_VARIANTS = new Set<string>(
 	[...pseudoClasses, ...pseudoElements].map(({ prefix }) => prefix),
 );
 
+const UTILITY_PREFIXES = new Set<string>(
+	Object.values(coreUtils()).map(({ prefix }) => prefix),
+);
+
 export const ConfigSchema = z.object({
 	source: z.array(z.string()).default([""]),
 	output: z.string().default(""),
@@ -102,6 +106,9 @@ export const ConfigSchema = z.object({
 						)
 						.refine((name) => !BUILT_IN_VARIANTS.has(name), {
 							message: "a state name cannot reuse a built-in variant prefix",
+						})
+						.refine((name) => !UTILITY_PREFIXES.has(name), {
+							message: "a state name cannot reuse a utility prefix",
 						}),
 					z.string().regex(/^[[:]/, "a state selector starts with [ or :"),
 				)
