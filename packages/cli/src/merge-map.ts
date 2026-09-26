@@ -390,6 +390,7 @@ export const VARIANTS: ReadonlySet<string> = new Set([
 	"@pc:",
 	"@prm:",
 	"@sm:",
+	"@st:",
 	"@xl:",
 	"@xs:",
 	"@xxl:",
