@@ -7,10 +7,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Fixed
-
-- **[nitro]** Buttons, inputs, selects and textareas inherit the whole font, not only the family. A `<button>` without a font-size class rendered at the browser's `13.33px` instead of the text around it.
-
 ## [4.2.0] - 2026-09-26
 
 ### Added
@@ -30,6 +26,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - **[nitro]** A class with two at-rule variants keeps both. `@sm:@lg:bg:red` used to emit only the `64rem` query and drop `@sm` without a warning; it now nests one inside the other, and `@lg:@sm:` shares the same block.
+- **[nitro]** Buttons, inputs, selects and textareas inherit the whole font, not only the family. A `<button>` without a font-size class rendered at the browser's `13.33px` instead of the text around it.
 
 ## [4.1.2] - 2026-09-21
 
