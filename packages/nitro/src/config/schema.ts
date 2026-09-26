@@ -83,6 +83,15 @@ export interface Config {
 		 * @example { display: '"Esteban", serif', mono: 'ui-monospace, monospace' }
 		 */
 		fonts?: Record<string, string>;
+
+		/**
+		 * Keyframes to generate `an:` utilities for, keyed by name, each written
+		 * as the body of a CSS `@keyframes` rule. Only the ones a class uses are
+		 * emitted. Nothing is built in.
+		 *
+		 * @example { spin: "to { rotate: 360deg; }", "fade-in": "from { opacity: 0; }" }
+		 */
+		keyframes?: Record<string, string>;
 	};
 }
 
@@ -129,6 +138,20 @@ export const ConfigSchema = z.object({
 							/^[a-z][a-z0-9-]*$/,
 							"a font name is lower case letters, digits and dashes",
 						),
+					z.string().min(1),
+				)
+				.optional(),
+			keyframes: z
+				.record(
+					z
+						.string()
+						.regex(
+							/^[a-z][a-z0-9-]*$/,
+							"a keyframes name is lower case letters, digits and dashes",
+						)
+						.refine((name) => name !== "none", {
+							message: "none is the built-in animation-name",
+						}),
 					z.string().min(1),
 				)
 				.optional(),

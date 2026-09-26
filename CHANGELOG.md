@@ -14,6 +14,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **[nitro]** CSS function values. A utility takes `calc()`, `clamp()`, `min()`, `max()` or `var()` written as CSS: `max-h:calc(100dvh-5rem)`, `max-w:clamp(40rem,80vw,96rem)`, `h:var(--panel-height)`. Spaces go in around `+` and `-` when the CSS is written. The math functions are accepted only on utilities that take a length, `var()` on any, and a plain value off the scale such as `w:37px` is still refused.
 - **[nitro]** `theme.fonts`. Each entry generates an `ff:` utility, so `{ display: '"Esteban", serif' }` gives `ff:display`. A name that collides with a default replaces it.
 - **[core]** Container queries. `@c:sm:` applies at the `sm` width of the nearest container, for every breakpoint and every configured screen, and `ct:is`, `ct:s` and `ct:n` set `container-type`.
+- **[core]** Animation utilities: `an:` (name), `adu:` (duration), `ad:` (delay), `atf:` (timing function) and `aic:` (iteration count). Duration and delay share the transition scale; `an:none` is the only built-in name.
+- **[nitro]** `theme.keyframes`. Each entry is the body of a `@keyframes` rule and generates an `an:` utility; only the keyframes a class uses are emitted, once. Nothing is built in.
 
 ### Changed
 

@@ -1,4 +1,5 @@
 import {
+	animationUtils,
 	backgroundUtils,
 	borderUtils,
 	boxModelUtils,
@@ -102,6 +103,7 @@ function buildMaps(config?: IntellisenseConfig): {
 		[transformUtils(), Category.Typography],
 		[effectUtils(), Category.Effects],
 		[transitionUtils(), Category.Transition],
+		[animationUtils(), Category.Transition],
 		[interactivityUtils(), Category.Interactivity],
 	];
 

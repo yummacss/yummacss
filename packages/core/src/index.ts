@@ -1,5 +1,6 @@
 import type { Utilities } from "./interfaces";
 import { core } from "./utilities";
+import { animation } from "./utilities/animation";
 import { background } from "./utilities/background";
 import { border } from "./utilities/border";
 import { boxModel } from "./utilities/box-model";
@@ -23,6 +24,7 @@ import {
 
 /** Every utility Yumma CSS defines, keyed by CSS property name. */
 export const coreUtils = (): Utilities => core;
+export const animationUtils = (): Utilities => animation;
 export const backgroundUtils = (): Utilities => background;
 export const borderUtils = (): Utilities => border;
 export const boxModelUtils = (): Utilities => boxModel;

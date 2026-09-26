@@ -5,6 +5,7 @@ import { fileURLToPath } from "node:url";
 import * as core from "@yummacss/core";
 
 const GROUPS = [
+	"animation",
 	"background",
 	"border",
 	"boxModel",
