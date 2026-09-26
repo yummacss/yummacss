@@ -26,7 +26,7 @@ canvas, img, picture, svg, video {
 button, input, optgroup, select, textarea {
   background-color: transparent;
   padding: .5rem;
-  font-family: inherit;
+  font: inherit;
 }
 
 button:not([class]), input:not([class]), optgroup:not([class]), select:not([class]), textarea:not([class]) {
