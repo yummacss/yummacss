@@ -85,6 +85,10 @@ function buildUtils(config: Config): Record<string, Utility> {
 		}
 	}
 
+	const userStates = Object.entries(config.theme?.states ?? {}).map(
+		([prefix, value]) => ({ prefix, value }),
+	);
+
 	for (const [key, util] of Object.entries(utils)) {
 		let modified = false;
 		const newUtil = { ...util };
@@ -102,6 +106,17 @@ function buildUtils(config: Config): Record<string, Utility> {
 			newUtil.variants = {
 				...newUtil.variants,
 				mediaQueries: mergedMediaQueries,
+			};
+			modified = true;
+		}
+
+		if (userStates.length > 0 && newUtil.variants) {
+			newUtil.variants = {
+				...newUtil.variants,
+				pseudoClasses: [
+					...(newUtil.variants.pseudoClasses ?? []),
+					...userStates,
+				],
 			};
 			modified = true;
 		}
@@ -358,6 +373,7 @@ function generateUtil(usedClasses: Set<string>, config: Config): string {
 	const utils = buildUtils(config);
 
 	const cssRules: string[] = [];
+	// keyed by the at-rule chain, joined, outermost first
 	const mediaQueryRules: Map<string, string[]> = new Map();
 	const processedClasses = new Set<string>();
 
@@ -375,10 +391,11 @@ function generateUtil(usedClasses: Set<string>, config: Config): string {
 
 		const res = generateCSSRule(classNameToProcess, utils, originalClassName);
 		if (res) {
-			if (res.mediaQuery) {
-				const existing = mediaQueryRules.get(res.mediaQuery) || [];
+			if (res.mediaQueries.length > 0) {
+				const key = res.mediaQueries.join("\n");
+				const existing = mediaQueryRules.get(key) || [];
 				existing.push(res.rule);
-				mediaQueryRules.set(res.mediaQuery, existing);
+				mediaQueryRules.set(key, existing);
 			} else {
 				cssRules.push(res.rule);
 			}
@@ -390,16 +407,19 @@ function generateUtil(usedClasses: Set<string>, config: Config): string {
 		([a], [b]) => a.localeCompare(b),
 	);
 
-	for (const [mediaQuery, rules] of sortedMediaQueries) {
-		const indented = rules.map((r) => r.replace(/^/gm, "  ")).join("\n\n");
-		cssRules.push(`${mediaQuery} {\n${indented}\n}`);
+	for (const [key, rules] of sortedMediaQueries) {
+		let block = rules.join("\n\n");
+		for (const query of key.split("\n").reverse()) {
+			block = `${query} {\n${block.replace(/^/gm, "  ")}\n}`;
+		}
+		cssRules.push(block);
 	}
 
 	return cssRules.join("\n\n");
 }
 
 interface Peeled {
-	mediaQuery?: string;
+	mediaQueries: string[];
 	pseudoClasses: string;
 	pseudoElements: string;
 }
@@ -412,7 +432,8 @@ function peelVariant(
 	if (variants?.mediaQueries) {
 		for (const mq of variants.mediaQueries) {
 			if (className.startsWith(`@${mq.prefix}:`)) {
-				acc.mediaQuery = mq.value;
+				if (!acc.mediaQueries.includes(mq.value))
+					acc.mediaQueries.push(mq.value);
 				return className.slice(mq.prefix.length + 2);
 			}
 		}
@@ -559,9 +580,13 @@ function tryGenerateRule(
 	className: string,
 	util: Utility,
 	originalClassName: string,
-): { rule: string; mediaQuery?: string } | null {
+): { rule: string; mediaQueries: string[] } | null {
 	const { properties, variants } = util;
-	const acc: Peeled = { pseudoClasses: "", pseudoElements: "" };
+	const acc: Peeled = {
+		mediaQueries: [],
+		pseudoClasses: "",
+		pseudoElements: "",
+	};
 
 	let current = className;
 	while (true) {
@@ -577,7 +602,8 @@ function tryGenerateRule(
 
 			return {
 				rule: `.${escapeCn(originalClassName)}${acc.pseudoClasses}${acc.pseudoElements} {\n  ${declarations}\n}`,
-				mediaQuery: acc.mediaQuery,
+				// sorted, so @sm:@lg: and @lg:@sm: share one block
+				mediaQueries: [...acc.mediaQueries].sort((a, b) => a.localeCompare(b)),
 			};
 		}
 
@@ -621,7 +647,7 @@ function generateCSSRule(
 	className: string,
 	utils: Utilities,
 	originalClassName: string,
-): { rule: string; mediaQuery?: string } | null {
+): { rule: string; mediaQueries: string[] } | null {
 	for (const [_, util] of Object.entries(utils)) {
 		const result = tryGenerateRule(className, util, originalClassName);
 		if (result) return result;
