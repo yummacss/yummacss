@@ -5,6 +5,8 @@
   no justification: a reader outside the project does not care why a thing was
   renamed from A to B. The why goes in NOTES.md.
 - **Commit messages**: a subject and a couple of lines. No essays.
+- **CHANGELOG entries**: one line each, saying what was added, changed or
+  fixed. No examples, no reasons, no behaviour details: the docs explain.
 - **Code comments**: one line, starting lower case. A comment earns its place
   only where the code is genuinely surprising, never for logic that reads
   plainly, and never by repeating the same paragraph in a dozen files.
