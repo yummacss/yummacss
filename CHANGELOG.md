@@ -32,80 +32,80 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- **[core]** `tp:c` no longer transitions `outline-color`. A focus outline's width and style are not transitioned, so the ring appeared at full width in `currentColor` and faded to its real colour over the transition's duration. Measured in Chromium on a `c:white` button: the ring painted `rgb(255,255,255)` at frame zero and reached `silver-3` 150ms later. It paints its own colour immediately now.
+- **[core]** `tp:c` no longer transitions `outline-color`.
 
 ## [4.1.1] - 2026-09-21
 
 ### Fixed
 
-- **[cli]** The README used 3.x class names in its opening line, which is what npm renders on the package page.
-- **[nitro]** A "did you mean" suggestion discarded the exact match. Folding leaves a 3.x class at distance zero from its 4.0 spelling, and zero was treated as "nothing to suggest", so `p-4` answered `p:40` and `d-f` answered `d:fr`. Eleven of twelve common classes were wrong; only `gap-4` was right, which is the one the tests covered.
-- **[nitro]** `m--4` answers `m:-4`. Folding hid the second dash, so the 3.x negative came back positive.
-- **[nitro]** `tt-n` and `tl-a` answer `tt:none` and `tl:auto`. A renamed value sits outside any sane edit distance, so the suggester now reads the same rename table the codemod does.
+- **[cli]** The README uses 4.x class names.
+- **[nitro]** "Did you mean" suggests `p:4` for `p-4`, not `p:40`.
+- **[nitro]** `m--4` suggests `m:-4`.
+- **[nitro]** `tt-n` and `tl-a` suggest `tt:none` and `tl:auto`.
 
 ### Changed
 
-- **[cli]** The package description drops its full stop, which none of the other seven carry.
-- **[core]** `valueRenames` is exported, so the codemod and the suggester share one table rather than keeping a copy each.
+- **[cli]** The package description drops its full stop.
+- **[core]** Export `valueRenames`.
 
 ## [4.1.0] - 2026-09-19
 
 ### Added
 
-- **[cdn]** `@yummacss/cdn` is the script tag package, which is what it is: `<script src="https://unpkg.com/@yummacss/cdn">`.
+- **[cdn]** `@yummacss/cdn`, the script tag package.
 
 ### Changed
 
-- **[cdn]** `exports` and `module` named a `./dist/index.js` the build never wrote, so importing the package failed. Both are gone; `unpkg` and `jsdelivr` are what a script tag reads.
+- **[cdn]** `exports` and `module` are removed.
 
 ### Removed
 
-- **[runtime]** `@yummacss/runtime` is gone from npm and its package is deleted. Point a script tag at `@yummacss/cdn` instead; there is no redirect and the old URL 404s.
+- **[runtime]** `@yummacss/runtime` is removed. Use `@yummacss/cdn`.
 
 ## [4.0.2] - 2026-09-18
 
 ### Fixed
 
-- **[cli]** `yummacss migrate` rewrote four shapes of class attribute, but the scanner reads every string, so a class in a styling constant, a shape map or a `merge()` argument stayed in 3.x and the command still reported success. It now rewrites any string that reads as a class list, and only where every token carries a separator, so prose and import paths are left alone.
+- **[cli]** `yummacss migrate` rewrites classes in any string that reads as a class list.
 
 ## [4.0.1] - 2026-09-18
 
 ### Fixed
 
-- **[runtime]** The README used 3.x class names in its example, which is what npm renders on the package page.
+- **[runtime]** The README uses 4.x class names.
 
 ## [4.0.0] - 2026-09-18
 
-Every class name changes. Run `yummacss migrate` before upgrading; there is no compatibility mode.
+Every class name changes. Run `yummacss migrate` before upgrading.
 
 ### Changed
 
-- **[core]** A utility separates its prefix from its value with a colon - `bg-red-5` is now `bg:red-5`, `d-f` is `d:f`, `p-4` is `p:4`. Variants already used a colon, so a class is one grammar throughout: `@sm:h:bg:red-5`. Scale steps keep the dash, since a shade is one value with a step.
+- **[core]** A utility separates its prefix from its value with a colon: `bg-red-5` is `bg:red-5`.
 - **[core]** A negative value is written `m:-4` instead of `m--4`.
-- **[core]** Ten variant prefixes now collide with a utility prefix, `h:` being both `:hover` and `height`. A variant is peeled only when what remains is not itself a utility, so `h:4` is a height, `h:m:4` is a margin under `:hover`, and `h:h:4` is a height under `:hover`.
-- **[core]** `tt:none` and `tl:auto` spell their value out, replacing `tt-n` and `tl-a`. Other values on both utilities are unchanged.
-- **[lint]** `@yummacss/canon` is now `@yummacss/lint`, and its binary is `yummacss-lint`. The exports are unchanged.
-- **[cli]** `merge` split the variant at the last colon and cut the prefix at a dash, which made it a no-op on every 4.0 class. It peels variants off the front and takes the prefix up to the first colon.
-- **[nitro]** A "did you mean" suggestion folds both separators before measuring distance, so a class typed the 3.x way still gets its 4.0 answer - `gap-4` suggests `g:4`.
+- **[core]** `h:4` is a height and `h:h:4` a height on hover: a prefix shared by a variant and a utility reads as the utility.
+- **[core]** `tt-n` and `tl-a` are `tt:none` and `tl:auto`.
+- **[lint]** `@yummacss/canon` is now `@yummacss/lint`, and its binary is `yummacss-lint`.
+- **[cli]** `merge` reads 4.0 classes.
+- **[nitro]** "Did you mean" answers a 3.x spelling with its 4.0 class.
 
 ### Added
 
-- **[cli]** `yummacss migrate` rewrites a project into the 4.0 syntax. `--dry-run` previews without writing. It reads the project's own `theme.colors`, `theme.screens` and `prefix`, and reports every class it left alone with the reason.
-- **[core]** `@xs:` is a breakpoint at 32rem, so every t-shirt width alias names a query that exists.
+- **[cli]** `yummacss migrate` rewrites a project into the 4.0 syntax, with `--dry-run`.
+- **[core]** `@xs:`, a breakpoint at 32rem.
 - **[core]** `@prm:` applies a utility under `@media (prefers-reduced-motion: reduce)`.
 - **[core]** `tp:c` transitions `outline-color` along with the other colors.
-- **[core]** Export `splitVariants`, the one splitter every package reads a class name with.
+- **[core]** Export `splitVariants`.
 
 ### Fixed
 
-- **[nitro]** A negative is refused where the property cannot take one - `m:-4` is a margin, `w:-1` is not a class.
+- **[nitro]** A negative value is refused where the property cannot take one.
 - **[nitro]** The tokenizer typechecks under `noUncheckedIndexedAccess`.
 
 ## [3.31.1] - 2026-09-06
 
 ### Fixed
 
-- **[cli]** `merge` scanned all 217 prefixes per class. It now looks the prefix up directly and caches it: 79us per call to 5.7us.
+- **[cli]** `merge` is about 14 times faster.
 
 ## [3.31.0] - 2026-09-06
 
@@ -118,8 +118,8 @@ Every class name changes. Run `yummacss migrate` before upgrading; there is no c
 
 ### Fixed
 
-- **[nitro]** The class scanner dropped classes after an empty string literal. It paired quotes with a regex, which desynced on `""`; it now lexes.
-- **[nitro]** A leading `-` was applied without checking whether the property accepts one, so 72 utilities emitted CSS the parser discards (`w--1` was `width: -.25rem`). It was also ignored on non-numeric values, making `m--auto` a silent alias of `m-auto`.
+- **[nitro]** The class scanner no longer drops classes after an empty string literal.
+- **[nitro]** A negative value is refused where the property cannot take one.
 
 ### Changed
 
@@ -129,43 +129,43 @@ Every class name changes. Run `yummacss migrate` before upgrading; there is no c
 
 ### Removed
 
-- **[intellisense]** The editor half, `packages/language-server`, is deleted with the retired VS Code and Zed extensions. The language service is untouched.
+- **[intellisense]** `packages/language-server` is removed, with the VS Code and Zed extensions.
 
 ## [3.29.2] - 2026-07-29
 
 ### Fixed
 
-- **[runtime]** Responsive utilities were dropped before reaching the generator. The extractor filtered class names with `/^[a-z]/`, so every media query variant (`@sm:d-f`, `@md:bg-red-1`) was discarded because it starts with `@`. Only `@`-prefixed variants were affected, which is why pseudo class variants like `h:bg-white` kept working. This is why the playground's Generated CSS panel never showed responsive rules.
+- **[runtime]** Media query variants such as `@sm:` generate CSS.
 
 ## [3.29.1] - 2026-07-29
 
 ### Fixed
 
-- **[intellisense]** `node:fs` was pulled into browser bundles. `validate.ts` imported `suggestClasses` / `validateClasses` from `@yummacss/nitro` instead of `@yummacss/nitro/browser`, and the root entry re-exports `loadConfig` & `scan` - which reach `node:fs`, `node:crypto` and `tinyglobby`. Since the Monaco adapter reaches `validate.ts`, any bundler following it failed with `the chunking context does not support external modules (request: node:fs)`. This broke every playground deploy from 3.26.0 onward.
+- **[intellisense]** The browser build no longer pulls in `node:fs`.
 
 ### Changed
 
-- **[nitro]** The `./browser` entry now also exports `suggestClasses`, `validateClasses`, and the `Config` / `ValidationResult` types, so consumers needing only validation never have to reach for the Node-only root entry.
+- **[nitro]** The `./browser` entry exports `suggestClasses`, `validateClasses`, `Config` and `ValidationResult`.
 
 ## [3.29.0] - 2026-07-27
 
 ### Added
 
-- **[core]** Theme colors can be a light/dark pair - `{ surface: { light: "#ffffff", dark: "#111214" } }` - compiling to `light-dark()`. Both sides are scaled, so every shade is a pair too.
+- **[core]** A theme color can be a `{ light, dark }` pair, compiled to `light-dark()`.
 - **[core]** Export `isColorPair`, `generatePairedShades`, and the `ColorPair` / `ColorValue` types.
-- **[nitro]** Emit `:root { color-scheme: light dark; }` when the theme contains a paired color, so `light-dark()` resolves.
-- **[core]** `color-scheme` utility - `cs-l`, `cs-d`, `cs-ld`. Shares the `cs` prefix with `corner-shape`; the value sets are disjoint.
+- **[nitro]** `:root { color-scheme: light dark; }` when the theme has a paired color.
+- **[core]** `color-scheme` utilities: `cs-l`, `cs-d` and `cs-ld`.
 
 ### Changed
 
-- **[nitro]** The opacity suffix now generates `color-mix()` instead of appending hex alpha, so it works on any color value - `light-dark()` included. `/10` is now exactly 10% rather than `1a` (10.196%).
-- **[core]** The `opacity` variant table holds percentages (`"50%"`) instead of hex alpha pairs (`"80"`). Prefixes are unchanged.
+- **[nitro]** The opacity suffix generates `color-mix()`.
+- **[core]** The `opacity` variant table holds percentages.
 
 ### Fixed
 
-- **[intellisense]** Hover returned nothing for negative values (`m--4`), pseudo elements (`s::bg-red`), and opacity suffixes (`bg-blue/50`), or any class combining them.
-- **[intellisense]** A pseudo element is no longer described as the pseudo class of the same name - `a::` is `:after`, `a:` is `:active`.
-- **[nitro]** `loadConfig` busted the ESM import cache using the config file's mtime, so two edits inside one filesystem clock tick reused the stale module. It now keys on a hash of the file contents.
+- **[intellisense]** Hover works on negative values, pseudo elements and opacity suffixes.
+- **[intellisense]** Hover tells a pseudo element from the pseudo class of the same name.
+- **[nitro]** `loadConfig` reloads a config edited twice within one clock tick.
 
 ## [3.28.3] - 2026-07-21
 
@@ -177,39 +177,39 @@ Every class name changes. Run `yummacss migrate` before upgrading; there is no c
 
 ### Fixed
 
-- **[nitro]** Negative-value syntax (e.g. `tsy--6`) silently produced the wrong sign for function-wrapped transform values like `skewY(6deg)`/`skewX(3deg)` - the check only recognized values whose entire string started with a number, so `tsy--6` generated `skewY(6deg)` instead of `skewY(-6deg)`. Fixed generally: the negation logic now also matches `function(number...)` values and negates the number inside the parens, not the whole string.
+- **[nitro]** Negative transform values such as `tsy--6` get the right sign.
 
 ## [3.28.1] - 2026-07-05
 
 ### Fixed
 
-- Corrected a version mismatch from the 3.28.0 release: `@yummacss/language-server` was published depending on an outdated `@yummacss/intellisense` that did not yet include the `./lsp` export, crashing on startup. All packages are now republished in sync at 3.28.1.
+- All packages are republished in sync; `@yummacss/language-server` 3.28.0 crashed on startup.
 
 ## [3.28.0]
 
 ### Added
 
-- `@yummacss/language-server` - New language server exposing Yumma CSS completion, hover, diagnostics, color decorators, and class sorting over the Language Server Protocol, for any LSP-compatible editor (Zed, Neovim, Helix, Sublime Text). Reuses `@yummacss/intellisense` so features never drift between editors.
-- **[intellisense]** New `./lsp` adapter export - editor-agnostic LSP-shaped completion, hover, diagnostics, code actions, color, and formatting functions, consumed by `@yummacss/language-server`.
-- **[intellisense]** Export `SUPPORTED_LANGUAGES` - the shared list of language IDs Yumma CSS features apply to, now used by both the VS Code extension and the language server instead of being duplicated.
-- **[nitro]** Export `suggestClasses` - suggests the closest valid class for unknown class names (e.g. `g-4` for `gap-4`), preserving variant prefixes, opacity suffixes, and the configured prefix. Suggestions are verified against the generator, so an invalid reassembly (like opacity on a non-color utility) falls back or is omitted.
-- **[intellisense]** Unknown-class diagnostics - classes that are not part of the Yumma CSS canon are underlined as warnings in the editor, powered by the same `validateClasses` matching rules the generator and `@yummacss/canon` use. Diagnostics include a "Did you mean" suggestion with a one-click quick fix.
-- **[intellisense]** Export `findUnknownClasses` - scans class attributes in a document and returns unknown classes with their positions and suggestions.
-- **[intellisense]** `updateIntellisenseConfig` now also accepts a full Yumma CSS `Config` so validation understands `prefix`, `safelist`, and `theme`; completion, hover, and color features fall back to the shared config when providers are constructed without one.
-- **[intellisense]** Monaco adapter parity - `registerConflictMarkers` now also emits unknown-class markers (with suggestions), and the Monaco code actions provider offers the same "Replace with" quick fix.
+- `@yummacss/language-server`, a Language Server Protocol server for any LSP editor.
+- **[intellisense]** `./lsp` adapter export.
+- **[intellisense]** Export `SUPPORTED_LANGUAGES`.
+- **[nitro]** Export `suggestClasses`.
+- **[intellisense]** Unknown classes are underlined, with a "did you mean" quick fix.
+- **[intellisense]** Export `findUnknownClasses`.
+- **[intellisense]** `updateIntellisenseConfig` accepts a full Yumma CSS `Config`.
+- **[intellisense]** The Monaco adapter marks unknown classes and offers the quick fix.
 - **[intellisense]** Diagnostics now only run on supported languages instead of every open document.
-- **[canon]** Unknown classes now include a `suggestion` in the `validate()` result, and the CLI prints "did you mean" hints - AI agents can self-correct in one pass.
+- **[canon]** `validate()` and the CLI suggest a class for each unknown one.
 
 ### Fixed
 
-- **[intellisense]** Move `tinycolor2` from `devDependencies` to `dependencies` - it is a runtime import, so standalone installs previously relied on hoisting.
+- **[intellisense]** `tinycolor2` is a dependency, not a dev dependency.
 
 ## [3.27.0] - 2026-07-03
 
 ### Added
 
-- `@yummacss/canon` - New class validator for Yumma CSS. Reports classes that are not part of the Yumma CSS canon (habits from other frameworks, typos, AI hallucinations); `npx @yummacss/canon` exits with code 1 on unknown classes. Supports `--allow` for custom classes.
-- **[nitro]** Export `validateClasses` - checks class names against the same matching rules the generator uses, so a class is valid exactly when it produces CSS.
+- `@yummacss/canon`, a class validator: `npx @yummacss/canon`.
+- **[nitro]** Export `validateClasses`.
 
 ## [3.26.0] - 2026-07-02
 
@@ -217,8 +217,8 @@ Every class name changes. Run `yummacss migrate` before upgrading; there is no c
 
 - `@yummacss/postcss` - New PostCSS plugin for Yumma CSS.
 - `@yummacss/vite` - New Vite plugin for Yumma CSS.
-- **[nitro]** Export `loadConfig` - reusable config loader with `cwd`, `path`, and inline `config` options. Busts the ESM import cache on config file changes so long-running dev servers pick up edits.
-- **[nitro]** Export `scan` - like `extractor`, but also returns the resolved file list so bundler plugins can register watchers and dependencies.
+- **[nitro]** Export `loadConfig`.
+- **[nitro]** Export `scan`.
 
 ### Changed
 
@@ -226,13 +226,13 @@ Every class name changes. Run `yummacss migrate` before upgrading; there is no c
 
 ### Fixed
 
-- **[nitro]** Move `tinyglobby` and `zod` from `devDependencies` to `dependencies` - standalone installs of `@yummacss/nitro` previously failed at runtime (masked by workspace hoisting in the monorepo).
+- **[nitro]** `tinyglobby` and `zod` are dependencies, not dev dependencies.
 
 ## [3.25.0] - 2026-06-27
 
 ### Changed
 
-- **[core]** Extend the spacing and sizing scale from `0-100` to `0-384` (up to `96rem`). This covers width and height (including `min-*`/`max-*`, `block-size`, `inline-size`), `margin`, `padding`, insets (`top`/`right`/`bottom`/`left`), `gap` (including `column-gap`/`row-gap`), `flex-basis`, and `scroll-margin`/`scroll-padding`.
+- **[core]** The spacing and sizing scale runs from `0` to `384` (`96rem`).
 
 ## [3.24.17] - 2026-06-30
 
@@ -254,21 +254,21 @@ Every class name changes. Run `yummacss migrate` before upgrading; there is no c
 
 ### Changed
 
-- **[nitro]** The `@` symbol is now **mandatory** for media query variants (e.g. `@sm:d-f`). The bare prefix syntax (`sm:d-f`) no longer generates CSS.
+- **[nitro]** Media query variants require `@`: `@sm:d-f`.
 - **[intellisense]** Hover and target-finding now reject unknown variants
 
 ## [3.24.14] - 2026-05-29
 
 ### Added
 
-- **[intellisense]** Added support for custom values through `IntellisenseConfig` - all features (completion, hover, sorting, conflict detection, color decorators) now accept custom colors (`theme.colors`) and custom screens (`theme.screens`).
-- **[intellisense]** Completion, hover, sorting, and conflict features now work with `className={`...`}` template literals containing `${}` expressions (static class names only).
+- **[intellisense]** Every feature reads custom `theme.colors` and `theme.screens`.
+- **[intellisense]** Features work in template literals with `${}` expressions.
 
 ### Fixed
 
-- **[intellisense]** Hover provider now correctly recognizes `@sm`, `@md`, etc. media query variant prefixes in the new `@` syntax.
-- **[intellisense]** Hover target finder now matches classes in all `className` syntax forms (`"..."`, `'...'`, `{'...'}`, `{"..."}`, ``{`...`}``) instead of only straight quotes.
-- **[nitro]** CSS class selectors with `@` prefix (e.g. `@sm:p-4`) are now properly escaped as `.\@sm\:p-4` in the generated output.
+- **[intellisense]** Hover recognizes the `@sm`, `@md` and other media query variants.
+- **[intellisense]** Hover finds classes in every `className` form.
+- **[nitro]** `@` in a class selector is escaped: `.\@sm\:p-4`.
 - **[nitro]** Tokenizer now correctly extracts classes with `@` prefix from template literals and JSX expressions.
 
 ## [3.24.13] - 2026-05-29
@@ -305,7 +305,7 @@ No notable changes.
 
 ### Changed
 
-- **[core]** Update utility suffixes for better consistency:
+- **[core]** Update utility suffixes:
   - `*-full` -> `*-100%`
   - `*-half` -> `*-50%`
   - `*-pill` -> `*-9999`
@@ -342,7 +342,7 @@ No notable changes.
 
 ### Added
 
-- **[core]** Implement `s` (`subgrid`) property value for **Grid Template Columns** and **Grid Template Rows** utilities.
+- **[core]** `s` (`subgrid`) value for grid template columns and rows.
 
 ## [3.24.3] - 2026-04-19
 
@@ -368,7 +368,7 @@ No notable changes.
 
 ### Changed
 
-- **[core]** Update utility prefixes for better consistency:
+- **[core]** Update utility prefixes:
   - `t-ty` -> `tty` (Translate Y)
   - `t-tx` -> `ttx` (Translate X)
   - `t-t` -> `tr` (Translate)
@@ -408,15 +408,15 @@ No notable changes.
 
 ### Fixed
 
-- **[cli]** Fix `services/loader` still importing from the removed `utils/status` and `utils/feedback` modules, causing a runtime `ERR_MODULE_NOT_FOUND` crash.
+- **[cli]** The loader crashed with `ERR_MODULE_NOT_FOUND`.
 
 ## [3.22.2] - 2026-03-25
 
 ### Changed
 
-- **[cli]** Rewrite CLI output to use 2-space-indented lines with symbolic prefixes (`◪`, `✓`, `✕`, `-`) instead of the `[Yumma CSS]` bracket prefix.
+- **[cli]** New output format with `◪`, `✓`, `✕` and `-` prefixes.
 - **[cli]** Print branded header (`◪ Yumma CSS {version}`) before `build` and `watch` commands.
-- **[cli]** Show watch-specific success message (`Watching for changes. ({output})`) on startup, distinct from the rebuild `Done in {time} ms.` message.
+- **[cli]** Watch mode has its own startup message.
 
 ## [3.22.1] - 2026-03-22
 
@@ -428,13 +428,13 @@ No notable changes.
 
 ### Changed
 
-- **[core]** Update `border-radius` utilities to use t-shirt sizes (`xs`, `sm`, `md`, `lg`, `xl`, `xxl`, `3xl`) instead of numeric values.
+- **[core]** `border-radius` utilities use t-shirt sizes, `xs` to `3xl`.
 
 ## [3.21.2] - 2026-03-19
 
 ### Fixed
 
-- **[core]** Rename `none` property value in `container-type` utilities from `ct-n` to `ct-none` to follow the convention where `auto` and `none` are not abbreviated.
+- **[core]** `ct-n` is `ct-none`.
 
 ## [3.21.1] - 2026-03-19
 
@@ -449,12 +449,12 @@ No notable changes.
 - **[nitro]** Implement `prefix` configuration option to namespace generated classes.
 - **[nitro]** Implement `safelist` configuration option to always generate specific classes.
 - **[nitro]** Implement `normalize` configuration option, replacing `buildOptions.reset`.
-- **[nitro]** Implement `theme.colors` configuration option with configurable shade percentages to extend and override the color palette.
+- **[nitro]** `theme.colors`, to extend and override the palette.
 - **[nitro]** Implement `theme.screens` configuration option to extend and override default media query breakpoints.
 
 ### Changed
 
-- **[nitro]** Improve the configuration file schema with comprehensive JSDoc comments, providing inline documentation and Intellisense for all options.
+- **[nitro]** The config schema documents every option.
 - **[cli]** Update `init` command to generate a minimal configuration file containing only `source` and `output`.
 - **[cli]** Export `Config` type alongside `defineConfig` for more reliable Intellisense type definitions.
 
@@ -492,8 +492,8 @@ No notable changes.
 
 - **[core]** Normalize `blur(0)` values to `blur()`.
 - **[core]** Reorder font family variables (`fontDefault`, `fontMono`, `fontSerif`).
-- **[core]** Update media query syntax to use `min-width` instead of standard comparison operators for broader browser compatibility.
-- **[core]** Reorder property definitions for `border-bottom-radius`, `border-left-radius`, `border-right-radius`, and `border-block-end-radius` for consistency.
+- **[core]** Media queries use `min-width`.
+- **[core]** Reorder the `border-*-radius` property definitions.
 - **[nitro]** Optimize `base-styles` CSS.
 
 ## [3.20.3] - 2026-03-11
@@ -522,7 +522,7 @@ No notable changes.
 
 ### Changed
 
-- **[cli]** Update CLI status logs to use semantic logging (`console.info`, `console.warn`, `console.error`) and replace unicode/ANSI-based output with a plain text `[Yumma CSS]` prefix (e.g. `[Yumma CSS] Info: ...`, `[Yumma CSS] Error: ...`).
+- **[cli]** Status logs use `console.info`, `console.warn` and `console.error` with a `[Yumma CSS]` prefix.
 
 ## [3.20.0] - 2026-03-09
 
@@ -552,9 +552,7 @@ No notable changes.
 
 ### Added
 
-- `@yummacss/intellisense` - shared editor intellisense package for Yumma CSS.
-  Provides hover, completions, conflict detection, color decorations, and class
-  sorting via framework-agnostic core with adapters for Monaco and VS Code.
+- `@yummacss/intellisense`, shared editor support: hover, completions, conflict detection, color decorations and class sorting.
 
 ## [3.17.0] - 2026-02-26
 
@@ -598,17 +596,17 @@ No notable changes.
 - **[core]** Implement `9999` `z-index` utility value.
 - **[core]** Add `mix-blend-mode` utility (`mbm-`).
 - **[core]** Add `backdrop-grayscale` utility (`bf-g-`).
-- **[core]**, **[cli]**, **[nitro]**, **[runtime]** Implement CommonJS (CJS) support using the `default` field in `package.json`.
-- **[core]** Expand viewport unit support: Add `vi`, `vb`, `svh`, `svw`, `lvh`, `lvw`, `vmin`, and `vmax` to Box Model utilities.
+- **[core]**, **[cli]**, **[nitro]**, **[runtime]** CommonJS support.
+- **[core]** Viewport units `vi`, `vb`, `svh`, `svw`, `lvh`, `lvw`, `vmin` and `vmax`.
 - **[core]**, **[nitro]** Implement Container Query variants (e.g., `@sm:w-full`) for container-based responsive design.
 
 ### Changed
 
 - **[core]** Rename `box-shadow` prefix from `bsh-` to `bs-o-` (outset) and `bs-i-` (inset).
-- **[core]** Rename border-color sub-utility prefixes for consistency (`bc-t` -> `btc`, `bc-b` -> `bbc`, `bc-l` -> `blc`, `bc-r` -> `brc`).
-- **[core]** Rename border-radius sub-utility prefixes for consistency (`br-t` -> `btr`, `br-b` -> `bbr`, `br-l` -> `blr`, `br-r` -> `brr`, etc.).
+- **[core]** Rename border-color sub-utility prefixes (`bc-t` -> `btc`, `bc-b` -> `bbc`, `bc-l` -> `blc`, `bc-r` -> `brc`).
+- **[core]** Rename border-radius sub-utility prefixes (`br-t` -> `btr`, `br-b` -> `bbr`, `br-l` -> `blr`, `br-r` -> `brr`, etc.).
 - **[runtime]** Rename browser `globalName` from `YummaCSS` to `yummacss`.
-- **[core]** Refactor scale utilities: move from `transform: scale()` to standalone `scale` property. New prefixes: `s-`, `sx-`, `sy-`, and `sz-`.
+- **[core]** Scale utilities use the `scale` property: `s-`, `sx-`, `sy-` and `sz-`.
 
 ### Fixed
 
@@ -630,9 +628,7 @@ No notable changes.
 
 ### Added
 
-- **[core]** Expose `mediaQueries`, `opacity`, `pseudoClasses`, and `pseudoElements` variants with improved type safety.
-  - **Variant Literal Types:** We now export literal types for every variant prefix (e.g., `MediaQueryPrefix`, `VariantPrefix`).
-  - **Readonly Interfaces:** Integrated `readonly` properties into core interfaces (`Utility`, `Utilities`, `Variants`) to support immutable variant definitions and ensure strict type compatibility with literal constants.
+- **[core]** Export the `mediaQueries`, `opacity`, `pseudoClasses` and `pseudoElements` variants, with a literal type for every prefix.
 
 ## [3.12.0] - 2026-02-07
 
@@ -691,7 +687,7 @@ No notable changes.
 - **[core]** Implement 11 new pseudo-class variants: `c:` (checked), `d:` (disabled), `e:` (empty), `fc:` (first-child), `i:` (invalid), `in:` (indeterminate), `lc:` (last-child), `nc:` (nth-child), `r:` (required), `ro:` (read-only), and `v:` (valid).
 - **[core]** Implement `ro-*` (rotate) utilities as a shorthand for `t-r-*`.
 - **[core]** Expand `ar-*` utilities (`aspect-ratio`).
-- **[core]** Update font family variables (`fontDefault`, `fontMono`, `fontSerif`) with more modern and comprehensive stacks.
+- **[core]** New `fontDefault`, `fontMono` and `fontSerif` stacks.
 - **[core]** Implement **Transitions** category
 - **[core]** Implement `tp-*` utilities (`transition-property`)
 - **[core]** Implement `td-*` utilities (`transition-duration`) (steps of 50).
@@ -754,7 +750,7 @@ No notable changes.
 
 ### Changed
 
-- All packages now share version `3.8.0` for consistency.
+- All packages now share version `3.8.0`.
 - Package repository URLs now point to the monorepo with a `directory` field.
 
 ## [3.7.2] - 2026-01-09
