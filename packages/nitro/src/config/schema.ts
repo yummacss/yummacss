@@ -75,6 +75,14 @@ export interface Config {
 		 * @example { closing: "[data-ending-style]", open: "[open]" }
 		 */
 		states?: Record<string, string>;
+
+		/**
+		 * Font stacks to generate `ff:` utilities for, keyed by name. A key that
+		 * collides replaces the default.
+		 *
+		 * @example { display: '"Esteban", serif', mono: 'ui-monospace, monospace' }
+		 */
+		fonts?: Record<string, string>;
 	};
 }
 
@@ -111,6 +119,17 @@ export const ConfigSchema = z.object({
 							message: "a state name cannot reuse a utility prefix",
 						}),
 					z.string().regex(/^[[:]/, "a state selector starts with [ or :"),
+				)
+				.optional(),
+			fonts: z
+				.record(
+					z
+						.string()
+						.regex(
+							/^[a-z][a-z0-9-]*$/,
+							"a font name is lower case letters, digits and dashes",
+						),
+					z.string().min(1),
 				)
 				.optional(),
 		})
