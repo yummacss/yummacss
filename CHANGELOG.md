@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- **[nitro]** Buttons, inputs, selects and textareas inherit the whole font, not only the family. A `<button>` without a font-size class rendered at the browser's `13.33px` instead of the text around it.
+
 ## [4.2.0] - 2026-09-26
 
 ### Added
