@@ -1317,17 +1317,13 @@ No notable changes.
 
 - Initial release.
 
-[Unreleased]: https://github.com/yummacss/yummacss/compare/v3.31.1...HEAD
-[3.31.1]: https://github.com/yummacss/yummacss/compare/v3.31.0...v3.31.1
-[3.31.0]: https://github.com/yummacss/yummacss/compare/v3.30.0...v3.31.0
-[3.30.0]: https://github.com/yummacss/yummacss/compare/v3.29.2...v3.30.0
-[3.29.2]: https://github.com/yummacss/yummacss/compare/v3.29.1...v3.29.2
-[3.29.1]: https://github.com/yummacss/yummacss/compare/v3.29.0...v3.29.1
-[3.29.0]: https://github.com/yummacss/yummacss/compare/v3.28.3...v3.29.0
-[3.28.3]: https://github.com/yummacss/yummacss/compare/v3.28.2...v3.28.3
-[3.28.2]: https://github.com/yummacss/yummacss/compare/v3.28.1...v3.28.2
-[3.28.1]: https://github.com/yummacss/yummacss/compare/v3.28.0...v3.28.1
-[3.28.0]: https://github.com/yummacss/yummacss/compare/v3.27.0...v3.28.0
+[Unreleased]: https://github.com/yummacss/yummacss/compare/v4.2.0...HEAD
+
+[4.2.0]: https://github.com/yummacss/yummacss/compare/v4.1.2...v4.2.0
+[4.1.2]: https://github.com/yummacss/yummacss/compare/v4.1.1...v4.1.2
+[4.1.1]: https://github.com/yummacss/yummacss/compare/v4.1.0...v4.1.1
+[4.1.0]: https://github.com/yummacss/yummacss/compare/v4.0.0...v4.1.0
+[4.0.0]: https://github.com/yummacss/yummacss/compare/v3.31.1...v4.0.0
 [3.27.0]: https://github.com/yummacss/yummacss/compare/v3.26.0...v3.27.0
 [3.26.0]: https://github.com/yummacss/yummacss/compare/v3.25.0...v3.26.0
 [3.25.0]: https://github.com/yummacss/yummacss/compare/v3.24.17...v3.25.0
