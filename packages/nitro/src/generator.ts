@@ -107,6 +107,14 @@ function buildUtils(config: Config): Record<string, Utility> {
 			modified = true;
 		}
 
+		if (config.theme?.keyframes && key === "animation-name") {
+			const names = Object.fromEntries(
+				Object.keys(config.theme.keyframes).map((name) => [name, name]),
+			);
+			newUtil.values = { ...newUtil.values, ...names };
+			modified = true;
+		}
+
 		if (config.theme?.screens && newUtil.variants) {
 			newUtil.variants = {
 				...newUtil.variants,
@@ -411,6 +419,17 @@ function generateUtil(usedClasses: Set<string>, config: Config): string {
 	const sortedMediaQueries = Array.from(mediaQueryRules.entries()).sort(
 		([a], [b]) => a.localeCompare(b),
 	);
+
+	const keyframes = config.theme?.keyframes ?? {};
+	const usedKeyframes = new Set<string>();
+	for (const className of processedClasses) {
+		const name = /(?:^|:)an:([a-z][a-z0-9-]*)$/.exec(className)?.[1];
+		if (name && name in keyframes) usedKeyframes.add(name);
+	}
+	for (const name of [...usedKeyframes].sort()) {
+		const body = (keyframes[name] ?? "").trim().replace(/^/gm, "  ");
+		cssRules.push(`@keyframes ${name} {\n${body}\n}`);
+	}
 
 	for (const [key, rules] of sortedMediaQueries) {
 		let block = rules.join("\n\n");
