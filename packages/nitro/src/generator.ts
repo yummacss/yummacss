@@ -85,6 +85,10 @@ function buildUtils(config: Config): Record<string, Utility> {
 		}
 	}
 
+	const userStates = Object.entries(config.theme?.states ?? {}).map(
+		([prefix, value]) => ({ prefix, value }),
+	);
+
 	for (const [key, util] of Object.entries(utils)) {
 		let modified = false;
 		const newUtil = { ...util };
@@ -102,6 +106,17 @@ function buildUtils(config: Config): Record<string, Utility> {
 			newUtil.variants = {
 				...newUtil.variants,
 				mediaQueries: mergedMediaQueries,
+			};
+			modified = true;
+		}
+
+		if (userStates.length > 0 && newUtil.variants) {
+			newUtil.variants = {
+				...newUtil.variants,
+				pseudoClasses: [
+					...(newUtil.variants.pseudoClasses ?? []),
+					...userStates,
+				],
 			};
 			modified = true;
 		}

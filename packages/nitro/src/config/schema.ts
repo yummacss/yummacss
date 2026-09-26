@@ -1,3 +1,4 @@
+import { pseudoClasses, pseudoElements } from "@yummacss/core";
 import { z } from "zod";
 
 export const configName = "yumma.config.mjs";
@@ -65,8 +66,21 @@ export interface Config {
 		 * @example { "3xl": "112rem" }
 		 */
 		screens?: Record<string, string>;
+
+		/**
+		 * Variants of your own, each a name and the selector it appends. The name
+		 * is the prefix, so `closing:o:0` applies under the selector you give
+		 * `closing`. Nothing is built in.
+		 *
+		 * @example { closing: "[data-ending-style]", open: "[open]" }
+		 */
+		states?: Record<string, string>;
 	};
 }
+
+const BUILT_IN_VARIANTS = new Set<string>(
+	[...pseudoClasses, ...pseudoElements].map(({ prefix }) => prefix),
+);
 
 export const ConfigSchema = z.object({
 	source: z.array(z.string()).default([""]),
@@ -78,6 +92,20 @@ export const ConfigSchema = z.object({
 		.object({
 			colors: z.record(z.string(), z.any()).optional(),
 			screens: z.record(z.string(), z.string()).optional(),
+			states: z
+				.record(
+					z
+						.string()
+						.regex(
+							/^[a-z][a-z0-9-]*$/,
+							"a state name is lower case letters, digits and dashes",
+						)
+						.refine((name) => !BUILT_IN_VARIANTS.has(name), {
+							message: "a state name cannot reuse a built-in variant prefix",
+						}),
+					z.string().regex(/^[[:]/, "a state selector starts with [ or :"),
+				)
+				.optional(),
 		})
 		.optional(),
 });
