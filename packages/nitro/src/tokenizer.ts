@@ -25,10 +25,14 @@ const REGEX_ALLOWED_BEFORE = new Set([
 ]);
 
 const NOT_IN_A_CLASS = /[<>"'`=(){};,\\]/;
+// a css function value is the one place a class may hold ( ) and ,
+const FUNCTION_VALUE =
+	/:(?:calc|clamp|min|max|var)\([^\s<>"'`={};\\]*\)(?:\/\d+)?$/;
 
 function addClasses(source: string, into: Set<string>): void {
 	for (const raw of source.split(/\s+/)) {
-		if (!raw || NOT_IN_A_CLASS.test(raw)) continue;
+		if (!raw) continue;
+		if (NOT_IN_A_CLASS.test(raw) && !FUNCTION_VALUE.test(raw)) continue;
 		const clean = raw.replace(/^@+/, "");
 		if (clean && /^[a-z]/.test(clean) && clean.includes(":")) into.add(raw);
 	}
