@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- **[nitro]** Classes in markup inside JavaScript strings and template literals are all found.
+
 ## [4.2.0] - 2026-09-26
 
 ### Added
