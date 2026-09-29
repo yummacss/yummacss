@@ -38,6 +38,11 @@ function addClasses(source: string, into: Set<string>): void {
 	}
 }
 
+// a string can hold markup, where a class touches the quote of its attribute
+function addString(value: string, into: Set<string>): void {
+	for (const part of value.split(/["']/)) addClasses(part, into);
+}
+
 function lexJs(content: string, into: Set<string>): void {
 	const n = content.length;
 	const templateStack: number[] = [];
@@ -99,7 +104,7 @@ function lexJs(content: string, into: Set<string>): void {
 				value += s;
 				i++;
 			}
-			addClasses(value, into);
+			addString(value, into);
 			lastSignificant = quote;
 			continue;
 		}
@@ -119,7 +124,7 @@ function lexJs(content: string, into: Set<string>): void {
 					break;
 				}
 				if (t === "$" && content[i + 1] === "{") {
-					addClasses(value, into);
+					addString(value, into);
 					value = "";
 					templateStack.push(0);
 					i += 2;
@@ -128,7 +133,7 @@ function lexJs(content: string, into: Set<string>): void {
 				value += t;
 				i++;
 			}
-			addClasses(value, into);
+			addString(value, into);
 			lastSignificant = "`";
 			continue;
 		}
@@ -153,7 +158,7 @@ function lexJs(content: string, into: Set<string>): void {
 							break;
 						}
 						if (t === "$" && content[i + 1] === "{") {
-							addClasses(value, into);
+							addString(value, into);
 							value = "";
 							templateStack.push(0);
 							i += 2;
@@ -162,7 +167,7 @@ function lexJs(content: string, into: Set<string>): void {
 						value += t;
 						i++;
 					}
-					addClasses(value, into);
+					addString(value, into);
 					lastSignificant = "`";
 					continue;
 				}

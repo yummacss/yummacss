@@ -117,6 +117,32 @@ describe("Tokenizer", () => {
 			}
 		});
 
+		it("reads every class of markup in a template literal", () => {
+			const found = classes(
+				'el.innerHTML = `<div class="d:f p:4">${name}<span class="c:gray-12 fs:sm">x</span></div>`;',
+				"components.js",
+			);
+			for (const c of ["d:f", "p:4", "c:gray-12", "fs:sm"]) {
+				expect(found).toContain(c);
+			}
+			for (const token of found) {
+				expect(token).not.toMatch(/[<>"'`={}();,]/);
+			}
+		});
+
+		it("reads a class attribute split by an interpolation", () => {
+			const found = classes(
+				'const html = `<p class="p:4 ${done ? "o:50" : ""} m:2">`;',
+				"a.js",
+			);
+			expect(found).toEqual(expect.arrayContaining(["p:4", "o:50", "m:2"]));
+		});
+
+		it("reads markup in a plain string too", () => {
+			const found = classes(`const card = '<p class="m:2 ta:c">';`, "a.js");
+			expect(found).toEqual(expect.arrayContaining(["m:2", "ta:c"]));
+		});
+
 		it("handles a nested object inside an interpolation", () => {
 			const found = classes(
 				'const c = `p:4 ${map[{ a: 1 }.a] ? "bg:red" : "bg:blue"} m:2`;',
