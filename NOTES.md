@@ -91,3 +91,13 @@ puts a quote against the first and last class of every attribute:
 splits the text on quotes first, which also covers an attribute that an
 interpolation cuts in two.
 
+## Two packages retired, 2026-09-30
+
+`@yummacss/cdn` and `@yummacss/intellisense` left the monorepo with the
+playground at play.yummacss.com. Nothing inside it depended on either: the
+playground was the last user of the editor smarts, and it had already moved
+to `validateClasses` and `suggestClasses` in `@yummacss/nitro/browser`. The
+script tag build generated CSS at runtime in the browser, which the CLI,
+PostCSS and Vite already cover for any real project. Fewer packages to build,
+test, bump and publish. The published versions stay on npm, deprecated.
+
