@@ -44,6 +44,3 @@ jobs:
           for tarball in "$RUNNER_TEMP"/tarballs/*.tgz; do npm publish "$tarball"; done
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      - name: Wait for npm propagation
-        run: sleep 30
