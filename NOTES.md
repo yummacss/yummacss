@@ -99,5 +99,6 @@ playground was the last user of the editor smarts, and it had already moved
 to `validateClasses` and `suggestClasses` in `@yummacss/nitro/browser`. The
 script tag build generated CSS at runtime in the browser, which the CLI,
 PostCSS and Vite already cover for any real project. Fewer packages to build,
-test, bump and publish. The published versions stay on npm, deprecated.
+test, bump and publish. `@yummacss/intellisense` stays on npm, deprecated;
+`@yummacss/cdn` was unpublished.
 
