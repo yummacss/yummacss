@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Removed
+
+- **[cdn]** `@yummacss/cdn`, the script tag build.
+- **[intellisense]** `@yummacss/intellisense`, the shared editor completions and hovers.
+
 ## [4.2.1] - 2026-09-30
 
 ### Fixed
