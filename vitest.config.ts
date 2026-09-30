@@ -13,10 +13,6 @@ export default defineConfig({
 			yummacss: path.resolve(__dirname, "./packages/cli/src"),
 			"@yummacss/nitro": path.resolve(__dirname, "./packages/nitro/src"),
 			"@yummacss/lint": path.resolve(__dirname, "./packages/lint/src"),
-			"@yummacss/intellisense": path.resolve(
-				__dirname,
-				"./packages/intellisense/src",
-			),
 			"@yummacss/postcss": path.resolve(__dirname, "./packages/postcss/src"),
 			"@yummacss/vite": path.resolve(__dirname, "./packages/vite/src"),
 		},
