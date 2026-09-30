@@ -80,3 +80,14 @@ the set a narrow-screen query it did not have.
 
 Queries emit ascending, so 32rem lands before 40rem and the cascade still
 resolves widest-last. `tests/breakpoints.test.ts` pins both.
+
+## Markup inside a JavaScript string
+
+The JavaScript lexer hands each string and each static chunk of a template
+literal to `addClasses`, which splits on whitespace and drops any word holding
+a quote or `=`. Markup in a string, such as a custom element's `innerHTML`,
+puts a quote against the first and last class of every attribute:
+`class="d:f p:4"` gave `class="d:f` and `p:4"`, both dropped. `addString`
+splits the text on quotes first, which also covers an attribute that an
+interpolation cuts in two.
+
