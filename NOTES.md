@@ -102,3 +102,37 @@ PostCSS and Vite already cover for any real project. Fewer packages to build,
 test, bump and publish. `@yummacss/intellisense` stays on npm, deprecated;
 `@yummacss/cdn` was unpublished.
 
+
+## Lint rules for Oxlint and ESLint, 2026-10-01
+
+`@yummacss/lint/plugin` is one file in the ESLint v9 plugin shape. Measured
+with Oxlint 1.86.0 and ESLint 10.11.0: both load it and report the same
+findings on the same file. Oxlint's JS plugins are alpha and outside semver,
+so a minor Oxlint can break the plugin; the ESLint shape is the stable side.
+`// eslint-disable-next-line` works in both; `oxlint-disable` only in Oxlint.
+
+**Biome cannot run `canon`.** Biome 2.5.15 plugins are GritQL only, with no
+way to call JavaScript, so nothing can ask nitro whether a class parses. A
+GritQL rule can regex over class strings, so the only route is generating the
+project's whole class set into a pattern from its config, with no "did you
+mean". `prefer-class` does work as GritQL (tried on `display: "flex"`).
+Biome lists JavaScript plugins on its roadmap; wait for them rather than
+generating patterns.
+
+**`validateClasses` rebuilds nitro's tables on every call**, about 5ms. One
+call per `className` took 5s over the docs site's 117 files and 1,112
+attributes, against 0.2s for Oxlint alone. The plugin collects a file's
+classes and checks them once on `Program:exit`, caching each verdict across
+files: 1.4s. Caching the tables per config inside nitro would cut the rest
+and speed up the CLI too.
+
+`prefer-class` reads core's own tables: every single-property utility maps
+its exact `property: value` to a class, the shortest one winning. A number in
+a `style` object is skipped, since React adds `px` and the scale is in `rem`.
+
+The config is loaded once, from where the linter runs. A project with no
+`yumma.config.mjs` gets the defaults rather than an error.
+
+Left for later: the rule that `p:8` on a `Button` should be its `size` prop
+needs Yumma UI's schemas, so it belongs with `yummaui`. The CLI stays until
+the plugin has been used for real. The docs page follows the release.
