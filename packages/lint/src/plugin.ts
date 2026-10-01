@@ -34,14 +34,58 @@ interface Rule {
 	create(context: Context): Record<string, (node: Node) => void>;
 }
 
-/** Options for the `canon` rule. */
-export interface CanonOptions {
+/** Options every Yumma CSS rule accepts. */
+export interface RuleOptions {
 	/**
-	 * Class names to accept even though Yumma CSS does not generate them.
+	 * Exceptions to the rule. Class names for `no-unknown-classes`, CSS
+	 * property names for `no-inline-styles`. A trailing `*` matches a prefix.
 	 *
-	 * @example ["footer-version"]
+	 * @example ["footer-version", "editor-*"]
 	 */
 	allow?: string[];
+
+	/**
+	 * Replaces the rule's message. `{{className}}`, `{{property}}` and
+	 * `{{suggestions}}` are filled in, and left empty where they do not apply.
+	 *
+	 * @example "Use a class from the scale for {{property}}. See yumma.config.mjs."
+	 */
+	message?: string;
+}
+
+const optionsSchema = [
+	{
+		type: "object",
+		properties: {
+			allow: { type: "array", items: { type: "string" } },
+			message: { type: "string" },
+		},
+		additionalProperties: false,
+	},
+];
+
+function policy(context: Context) {
+	const options = (context.options[0] ?? {}) as RuleOptions;
+	const exact = new Set<string>();
+	const prefixes: string[] = [];
+	for (const entry of options.allow ?? []) {
+		if (entry.endsWith("*")) prefixes.push(entry.slice(0, -1));
+		else exact.add(entry);
+	}
+
+	return {
+		allows: (name: string) =>
+			exact.has(name) || prefixes.some((prefix) => name.startsWith(prefix)),
+		report(node: Node, messageId: string, data: Record<string, string>) {
+			if (!options.message) return context.report({ node, messageId, data });
+			const filled = { className: "", property: "", suggestions: "", ...data };
+			const text = options.message.replace(
+				/\{\{(\w+)\}\}/g,
+				(_, key: string) => filled[key as keyof typeof filled] ?? "",
+			);
+			context.report({ node, messageId: "custom", data: { text } });
+		},
+	};
 }
 
 // a project without a config file gets the defaults
@@ -70,11 +114,10 @@ function check(classNames: string[]): void {
 	}
 }
 
-const isClassAttribute = (node: Node): boolean => {
-	const name = (node.name as Node | undefined)?.name;
-	return name === "className" || name === "class";
-};
+const CLASS_ATTRIBUTES = new Set(["className", "class"]);
+const CLASS_FUNCTIONS = new Set(["cn", "cx", "clsx", "classNames"]);
 
+// the string pieces of a class value, through ternaries, `&&`, arrays and object keys
 function stringsIn(node: Node | null | undefined): Node[] {
 	if (!node) return [];
 	switch (node.type) {
@@ -91,6 +134,14 @@ function stringsIn(node: Node | null | undefined): Node[] {
 			];
 		case "LogicalExpression":
 			return stringsIn(node.right as Node);
+		case "ArrayExpression":
+			return (node.elements as Node[]).flatMap(stringsIn);
+		case "ObjectExpression":
+			return (node.properties as Node[]).flatMap((property) =>
+				property.type === "Property" && !property.computed
+					? stringsIn(property.key as Node)
+					: [],
+			);
 		default:
 			return [];
 	}
@@ -101,50 +152,61 @@ const textOf = (node: Node): string =>
 		? ((node.value as { cooked?: string }).cooked ?? "")
 		: (node.value as string);
 
-const canon: Rule = {
+const calleeName = (node: Node): string | undefined =>
+	(node.callee as Node | undefined)?.name as string | undefined;
+
+const noUnknownClasses: Rule = {
 	meta: {
 		type: "problem",
 		docs: { description: "Report class names Yumma CSS does not generate." },
 		messages: {
-			notCanon: "`{{name}}` is not a Yumma CSS class.",
+			unknown:
+				"`{{className}}` is not a Yumma CSS class, so it generates no CSS. Check the prefix and the value against yummacss.com/docs, or add it to `allow` if your own stylesheet defines it.",
 			didYouMean:
-				"`{{name}}` is not a Yumma CSS class. Did you mean `{{suggestion}}`?",
+				"`{{className}}` is not a Yumma CSS class, so it generates no CSS. Did you mean `{{suggestions}}`?",
+			custom: "{{text}}",
 		},
-		schema: [
-			{
-				type: "object",
-				properties: { allow: { type: "array", items: { type: "string" } } },
-				additionalProperties: false,
-			},
-		],
+		schema: optionsSchema,
 	},
 	create(context) {
-		const allow = new Set((context.options[0] as CanonOptions)?.allow ?? []);
+		const rule = policy(context);
 		const found: { name: string; node: Node }[] = [];
+		// `merge` is a common name, so it counts only when imported from yummacss/merge
+		const merges = new Set<string>();
+		const collect = (value: Node | undefined) => {
+			for (const part of stringsIn(value)) {
+				for (const name of textOf(part).split(/\s+/)) {
+					if (name && !rule.allows(name)) found.push({ name, node: part });
+				}
+			}
+		};
 
 		return {
 			JSXAttribute(node) {
-				if (!isClassAttribute(node)) return;
-				for (const part of stringsIn(node.value as Node)) {
-					for (const name of textOf(part).split(/\s+/)) {
-						if (name && !allow.has(name)) found.push({ name, node: part });
-					}
+				const name = (node.name as Node | undefined)?.name as string;
+				if (CLASS_ATTRIBUTES.has(name)) collect(node.value as Node);
+			},
+			ImportDeclaration(node) {
+				if ((node.source as Node).value !== "yummacss/merge") return;
+				for (const specifier of node.specifiers as Node[]) {
+					merges.add((specifier.local as Node).name as string);
 				}
+			},
+			CallExpression(node) {
+				const name = calleeName(node);
+				if (!name || !(CLASS_FUNCTIONS.has(name) || merges.has(name))) return;
+				for (const argument of node.arguments as Node[]) collect(argument);
 			},
 			"Program:exit"() {
 				check(found.map((entry) => entry.name));
 				for (const { name, node } of found) {
 					const verdict = verdicts.get(name);
 					if (!verdict) continue;
-					context.report(
-						verdict.suggestion
-							? {
-									node,
-									messageId: "didYouMean",
-									data: { name, suggestion: verdict.suggestion },
-								}
-							: { node, messageId: "notCanon", data: { name } },
-					);
+					const suggestion = verdict.suggestion ?? "";
+					rule.report(node, suggestion ? "didYouMean" : "unknown", {
+						className: name,
+						suggestions: suggestion,
+					});
 				}
 			},
 		};
@@ -169,16 +231,23 @@ for (const utility of Object.values(coreUtils())) {
 const kebab = (name: string): string =>
 	name.replace(/[A-Z]/g, (letter) => `-${letter.toLowerCase()}`);
 
-const preferClass: Rule = {
+const noInlineStyles: Rule = {
 	meta: {
 		type: "suggestion",
 		docs: {
-			description: "Report inline styles a Yumma CSS class already writes.",
+			description:
+				"Report inline styles, naming the Yumma CSS class that writes the same declaration.",
 		},
-		messages: { useClass: "`{{declaration}}` is `{{className}}`." },
-		schema: [],
+		messages: {
+			useClass: "`{{property}}` is set inline. Use `{{suggestions}}` instead.",
+			inline:
+				"`{{property}}` is set inline. Use a class from the scale, or pass a value that changes at runtime through a custom property.",
+			custom: "{{text}}",
+		},
+		schema: optionsSchema,
 	},
 	create(context) {
+		const rule = policy(context);
 		return {
 			JSXAttribute(node) {
 				if ((node.name as Node | undefined)?.name !== "style") return;
@@ -188,40 +257,43 @@ const preferClass: Rule = {
 				if (object?.type !== "ObjectExpression") return;
 
 				for (const property of object.properties as Node[]) {
-					const key = property.key as Node | undefined;
-					const value = property.value as Node | undefined;
-					const name = key?.name ?? key?.value;
-					if (typeof name !== "string" || typeof value?.value !== "string") {
-						continue;
-					}
+					if (property.type !== "Property") continue;
+					const key = property.key as Node;
+					const raw = (key.name ?? key.value) as string | undefined;
+					if (typeof raw !== "string" || raw.startsWith("--")) continue;
 
-					const declaration = `${kebab(name)}: ${value.value}`;
-					const className = byDeclaration.get(declaration);
-					if (className) {
-						context.report({
-							node: property,
-							messageId: "useClass",
-							data: { declaration, className },
-						});
-					}
+					const name = kebab(raw);
+					if (rule.allows(name) || rule.allows(raw)) continue;
+
+					const value = (property.value as Node).value;
+					const className =
+						typeof value === "string"
+							? byDeclaration.get(`${name}: ${value}`)
+							: undefined;
+					rule.report(property, className ? "useClass" : "inline", {
+						property: typeof value === "string" ? `${name}: ${value}` : name,
+						suggestions: className ?? "",
+					});
 				}
 			},
 		};
 	},
 };
 
+/** Every rule, by name. */
+export const rules = {
+	"no-unknown-classes": noUnknownClasses,
+	"no-inline-styles": noInlineStyles,
+};
+
 /**
- * Lint rules for Yumma CSS, in the ESLint plugin shape Oxlint also loads.
- * `canon` reports classes Yumma CSS does not generate, and `prefer-class`
- * reports inline styles a class already writes.
+ * Lint rules for Yumma CSS. One plugin for ESLint and Oxlint; `meta.name`
+ * is the namespace, so a rule reads `yummacss/no-unknown-classes` in both.
  *
  * @example
  * // .oxlintrc.json
- * { "jsPlugins": ["@yummacss/lint/plugin"], "rules": { "yummacss/canon": "error" } }
+ * { "jsPlugins": ["@yummacss/lint/plugin"], "rules": { "yummacss/no-unknown-classes": "error" } }
  */
-const plugin = {
-	meta: { name: "yummacss" },
-	rules: { canon, "prefer-class": preferClass },
-};
+export const plugin = { meta: { name: "yummacss" }, rules };
 
 export default plugin;

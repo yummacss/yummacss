@@ -47,7 +47,7 @@ export interface ValidateResult {
 	/** How many unique classes were found across them. */
 	classes: number;
 
-	/** Every class that is not canon, each with the files it appears in. */
+	/** Every class Yumma CSS does not generate, each with the files it appears in. */
 	invalid: InvalidClass[];
 }
 
