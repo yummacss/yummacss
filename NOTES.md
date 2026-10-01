@@ -31,7 +31,11 @@ the docs' TODO said it was:
    What is left is only which attributes earn a prefix. Naming Base UI's
    `data-starting-style` would put another library's vocabulary in this table,
    so the names have to come from the attributes themselves.
-2. **`translate` has no per-axis utility.** `tr-*` sets both axes to the same
+
+   **Answered in 4.2.0 by `theme.states`**: a project names its own attribute
+   variants in its config, so the table stays free of any library's names.
+   Yumma UI's registry defines `opening:` and `closing:` that way.
+2. **`translate` has no per-axis utility.** Still true in 4.2.2. `tr-*` sets both axes to the same
    value and `tty-*` writes `transform: translateY(...)`, which is a different
    property and will not transition alongside `translate`. The popup CSS wants
    `translate: 0 4px`, which nothing emits.
@@ -56,8 +60,8 @@ verbatim. `pnpm pack` rewrites it: packing `@yummacss/nitro` produced
 publish the tarball with npm**, which keeps workspace resolution and gains
 OIDC.
 
-Two lines in the workflow do it. `pnpm -r exec pnpm pack` writes all eight
-tarballs into one directory, then a loop publishes each. Publishing every
+Two lines in the workflow do it. `pnpm -r exec pnpm pack` writes every
+tarball, six since 4.2.2, into one directory, then a loop publishes each. Publishing every
 tarball in the directory means nothing has to match a tarball to a package
 name: npm reads the name out of the file. Dry-run against a stubbed `npm`:
 eight packed, eight published, `workspace:*` rewritten in each.
@@ -68,7 +72,14 @@ this can land before the npmjs side is done and there is no flag day. Drop the
 secret once a release proves OIDC ran.
 
 **Two things this cannot verify from here.** It is never exercised until a real
-release, and the npmjs side is a web form **per package, so eight times**.
+release, and the npmjs side is a web form **per package**, six of them now.
+
+**4.2.2 did not prove it, 2026-10-01.** Run `36775926217` printed "npm tokens
+that bypass 2FA are being restricted" for every package, which npm says only
+when it authenticates with the token. So the token is still doing the work,
+and it dies 2026-11-27. Check each package's trusted publisher entry on
+npmjs before the next release; the secret stays until a release publishes
+without that notice.
 
 ## `@xs:` at 32rem
 
