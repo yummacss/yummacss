@@ -34,7 +34,7 @@ the docs' TODO said it was:
 
    **Answered in 4.2.0 by `theme.states`**: a project names its own attribute
    variants in its config, so the table stays free of any library's names.
-   Yumma UI's registry defines `opening:` and `closing:` that way.
+   Yumma UI's components use `opening:` and `closing:`, declared that way.
 2. **`translate` has no per-axis utility.** Still true in 4.2.2. `tr-*` sets both axes to the same
    value and `tty-*` writes `transform: translateY(...)`, which is a different
    property and will not transition alongside `translate`. The popup CSS wants
