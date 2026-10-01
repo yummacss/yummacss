@@ -19,7 +19,7 @@ the docs' TODO said it was:
 
 1. **A named prefix can already carry an attribute selector.** A variant's
    `value` is concatenated onto the escaped class name, so an entry
-   `{ prefix: "xo", value: "[data-open]" }` makes `xo:o-0` canon and emits
+   `{ prefix: "xo", value: "[data-open]" }` makes `xo:o-0` valid and emits
    `.xo\:o-0[data-open] { opacity: 0 }`. Measured: valid through
    `validateClasses`, generated, no parser change.
 
@@ -111,28 +111,68 @@ findings on the same file. Oxlint's JS plugins are alpha and outside semver,
 so a minor Oxlint can break the plugin; the ESLint shape is the stable side.
 `// eslint-disable-next-line` works in both; `oxlint-disable` only in Oxlint.
 
-**Biome cannot run `canon`.** Biome 2.5.15 plugins are GritQL only, with no
-way to call JavaScript, so nothing can ask nitro whether a class parses. A
-GritQL rule can regex over class strings, so the only route is generating the
-project's whole class set into a pattern from its config, with no "did you
-mean". `prefer-class` does work as GritQL (tried on `display: "flex"`).
-Biome lists JavaScript plugins on its roadmap; wait for them rather than
-generating patterns.
+**The shape follows shadcn/lint**, Renildo's pointer, read at `a89d047`
+(2026-09-22). What carried over, in our own code:
+
+- **Rules are named for what they forbid**: `no-unknown-classes`,
+  `no-inline-styles`. The word `canon` is retired with the package rename.
+- **A message is written for whoever fixes it, agent or person**: what is
+  wrong, then what to use instead, then where to look. Their published evals
+  are the reason: almost every agent task reached zero violations in one
+  correction round when the error named the replacement.
+- **Every rule takes the same options**, `allow` (exact names, a trailing `*`
+  for a prefix) and `message` with `{{className}}`, `{{property}}` and
+  `{{suggestions}}`.
+- **The oracle is the real generator.** They ask the installed framework in a
+  worker because its loader is async. nitro's `validateClasses` is sync, so
+  the plugin only has to load the config, once, with top-level await.
+- **Classes are read from class functions as well as attributes**: `cn`,
+  `cx`, `clsx`, `classNames`, and `merge` only when imported from
+  `yummacss/merge`, since `merge` is a common name.
+- `plugin` and `rules` are named exports, and `meta.name` is the namespace in
+  both linters.
+
+**What is next, in their order of value:**
+
+1. `no-restyle`: a class on a Yumma UI component that a prop already owns,
+   such as `p:8` on a `Button` when it takes `size`. Needs Yumma UI's
+   schemas, so it lives with `yummaui`, with per-component contracts
+   (`pattern`, `allow`, `deny`) and the category groups below.
+2. Categories: color, typography, spacing, shape, effects, motion, layout.
+   Core's utility files already split this way (`color`, `font`,
+   `box-model`, `border`, `effect`, `transition`), so the map comes from core.
+3. `no-raw-colors`: a palette color such as `bg:indigo-5` where the project
+   declares theme colors.
+4. `require-static-classes`: a class built from a value the linter cannot
+   read, such as `` `bg:${tone}` ``.
+5. Variables one hop deep, and spreads.
+
+`no-arbitrary-values` has no Yumma counterpart: the framework has no
+arbitrary values. Whether 4.2's `calc()` and `clamp()` values deserve a rule
+is a question for Renildo.
+
+**Biome cannot run `no-unknown-classes`.** Biome 2.5.15 plugins are GritQL
+only, with no way to call JavaScript, so nothing can ask nitro whether a
+class is valid. A GritQL rule can regex over class strings, so the only route
+is generating the project's whole class set into a pattern, with no
+suggestions. `no-inline-styles` does work as GritQL (tried on
+`display: "flex"`). Biome lists JavaScript plugins on its roadmap; wait for
+them rather than generating patterns.
 
 **`validateClasses` rebuilds nitro's tables on every call**, about 5ms. One
 call per `className` took 5s over the docs site's 117 files and 1,112
 attributes, against 0.2s for Oxlint alone. The plugin collects a file's
 classes and checks them once on `Program:exit`, caching each verdict across
-files: 1.4s. Caching the tables per config inside nitro would cut the rest
-and speed up the CLI too.
+files: 1.4s warm. Caching the tables per config inside nitro would cut the
+rest and speed up the CLI too.
 
-`prefer-class` reads core's own tables: every single-property utility maps
-its exact `property: value` to a class, the shortest one winning. A number in
-a `style` object is skipped, since React adds `px` and the scale is in `rem`.
+`no-inline-styles` reports every ordinary property and names a class when
+one writes the exact `property: value`, read from core's single-property
+utilities, the shortest winning. Custom properties pass, since they are how
+a runtime value reaches a class. On the docs site it reports 41, most of
+them runtime widths, and all of `blog-cover.tsx`, whose image renderer
+takes only inline styles; that file wants an override.
 
 The config is loaded once, from where the linter runs. A project with no
-`yumma.config.mjs` gets the defaults rather than an error.
-
-Left for later: the rule that `p:8` on a `Button` should be its `size` prop
-needs Yumma UI's schemas, so it belongs with `yummaui`. The CLI stays until
-the plugin has been used for real. The docs page follows the release.
+`yumma.config.mjs` gets the defaults rather than an error. The CLI stays
+until the plugin has been used for real. The docs page follows the release.
