@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- **[lint]** `@yummacss/lint/plugin`, lint rules for Oxlint and ESLint: `canon` and `prefer-class`.
+
 ## [4.2.2] - 2026-09-30
 
 ### Removed
