@@ -1,14 +1,15 @@
 {
 	"name": "@yummacss/lint",
 	"version": "4.2.2",
-	"description": "Class validator for Yumma CSS",
+	"description": "Lint rules for Yumma CSS, for Oxlint and ESLint",
 	"keywords": [
 		"ai",
 		"css-framework",
+		"eslint-plugin",
 		"lint",
 		"linter",
+		"oxlint",
 		"typescript",
-		"validator",
 		"yummacss"
 	],
 	"homepage": "https://yummacss.com",
@@ -28,9 +29,6 @@
 	},
 	"module": "dist/index.mjs",
 	"types": "dist/index.d.mts",
-	"bin": {
-		"yummacss-lint": "./dist/cli.mjs"
-	},
 	"files": [
 		"dist"
 	],
@@ -42,8 +40,8 @@
 		"prepublishOnly": "pnpm build"
 	},
 	"dependencies": {
-		"@yummacss/nitro": "workspace:*",
-		"tinyglobby": "^0.2.15"
+		"@yummacss/core": "workspace:*",
+		"@yummacss/nitro": "workspace:*"
 	},
 	"publishConfig": {
 		"access": "public",
