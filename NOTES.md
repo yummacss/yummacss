@@ -105,7 +105,7 @@ test, bump and publish. `@yummacss/intellisense` stays on npm, deprecated;
 
 ## Lint rules for Oxlint and ESLint, 2026-10-01
 
-`@yummacss/lint/plugin` is one file in the ESLint v9 plugin shape. Measured
+`@yummacss/lint` is one file in the ESLint v9 plugin shape. Measured
 with Oxlint 1.86.0 and ESLint 10.11.0: both load it and report the same
 findings on the same file. Oxlint's JS plugins are alpha and outside semver,
 so a minor Oxlint can break the plugin; the ESLint shape is the stable side.
@@ -174,5 +174,12 @@ them runtime widths, and all of `blog-cover.tsx`, whose image renderer
 takes only inline styles; that file wants an override.
 
 The config is loaded once, from where the linter runs. A project with no
-`yumma.config.mjs` gets the defaults rather than an error. The CLI stays
-until the plugin has been used for real. The docs page follows the release.
+`yumma.config.mjs` gets the defaults rather than an error.
+
+**One name per job, Renildo's call, 2026-10-02, for 4.3.** `@yummacss/lint`
+is the plugin and nothing else, at its root, because a package and a
+`/plugin` path both called lint read as two things. The one-off scan moved
+into the CLI as `yummacss lint`, unchanged: the same class-attribute regexes,
+`--allow` and `--config`, exit 1 on a finding. `yummacss-lint` and
+`validate()` were deleted, not deprecated: one release to manage instead of
+two. The docs page follows the release.

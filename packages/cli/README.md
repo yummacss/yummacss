@@ -20,6 +20,8 @@ pnpm dlx yummacss init
 - `init`: Initialize configuration file.
 - `build`: Build styles once.
 - `watch`: Build styles continuously.
+- `lint`: Report classes Yumma CSS does not generate. `--allow "a,b"` skips your own classes.
+- `migrate`: Rewrite 3.x classes into the 4.0 syntax.
 
 ## Documentation
 

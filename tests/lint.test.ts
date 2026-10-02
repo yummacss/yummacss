@@ -1,7 +1,7 @@
 import { join } from "node:path";
-import { extractClasses, validate } from "@yummacss/lint";
 import { validateClasses } from "@yummacss/nitro";
 import { describe, expect, it } from "vitest";
+import { extractClasses, lintProject } from "yummacss/services/lint";
 
 const fixtureDir = join(__dirname, "fixtures", "lint-app");
 
@@ -50,7 +50,7 @@ describe("validateClasses (nitro)", () => {
 	});
 });
 
-describe("extractClasses (lint)", () => {
+describe("extractClasses (yummacss lint)", () => {
 	it("should only extract from class attribute contexts", () => {
 		const classes = extractClasses(
 			'const s = "not-a-class"; <div className="d:f p:4">, cn("m:2 c:white")',
@@ -73,9 +73,9 @@ describe("extractClasses (lint)", () => {
 	});
 });
 
-describe("validate (lint)", () => {
+describe("lintProject (yummacss lint)", () => {
 	it("should report unknown classes with their files", async () => {
-		const result = await validate({ cwd: fixtureDir });
+		const result = await lintProject({ cwd: fixtureDir });
 
 		expect(result.files).toBe(2);
 		const invalidNames = result.invalid.map((entry) => entry.className);
@@ -88,7 +88,7 @@ describe("validate (lint)", () => {
 	});
 
 	it("should not report valid classes, variants, or safelist entries", async () => {
-		const result = await validate({ cwd: fixtureDir });
+		const result = await lintProject({ cwd: fixtureDir });
 		const invalidNames = result.invalid.map((entry) => entry.className);
 
 		for (const cls of ["d:f", "@sm:d:b", "h:bg:red-5", "m:-4", "c:white"]) {
@@ -97,7 +97,7 @@ describe("validate (lint)", () => {
 	});
 
 	it("should skip allowlisted classes", async () => {
-		const result = await validate({
+		const result = await lintProject({
 			cwd: fixtureDir,
 			allowlist: ["docs-card"],
 		});
