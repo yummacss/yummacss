@@ -1,6 +1,6 @@
 # @yummacss/lint
 
-Class validator and lint rules for [Yumma CSS](https://yummacss.com). Reports every class Yumma CSS does not generate.
+Lint rules for [Yumma CSS](https://yummacss.com), for Oxlint and ESLint.
 
 ## Installation
 
@@ -10,26 +10,12 @@ pnpm add -D @yummacss/lint
 
 ## Usage
 
-```bash
-pnpm dlx @yummacss/lint
-```
-
-Validates against the Yumma CSS generator itself. Variants, opacity, negative values, custom theme colors, prefixes, and safelist entries are all understood.
-
-Skip custom classes with `--allow`:
-
-```bash
-pnpm dlx @yummacss/lint --allow "docs-container,brand-logo"
-```
-
-## Lint rules
-
-`@yummacss/lint/plugin` is one plugin for Oxlint and ESLint. It reads `yumma.config.mjs` from where the linter runs, so your own colors and states pass.
+One plugin for Oxlint and ESLint. It reads `yumma.config.mjs` from where the linter runs, so your own colors and states pass.
 
 ```json
 // .oxlintrc.json
 {
-  "jsPlugins": ["@yummacss/lint/plugin"],
+  "jsPlugins": ["@yummacss/lint"],
   "rules": {
     "yummacss/no-unknown-classes": "error",
     "yummacss/no-inline-styles": "warn"
@@ -39,7 +25,7 @@ pnpm dlx @yummacss/lint --allow "docs-container,brand-logo"
 
 ```js
 // eslint.config.js
-import { plugin as yummacss } from "@yummacss/lint/plugin";
+import { plugin as yummacss } from "@yummacss/lint";
 
 export default [{ plugins: { yummacss }, rules: { "yummacss/no-unknown-classes": "error" } }];
 ```
@@ -67,13 +53,7 @@ Every rule takes `allow` and `message`.
 
 Skip one line with `// eslint-disable-next-line yummacss/no-unknown-classes`, which both linters read.
 
-## API
-
-```js
-import { validate } from "@yummacss/lint";
-
-const result = await validate({ allowlist: ["docs-container"] });
-```
+For a one-off check without a linter, run `yummacss lint` from the `yummacss` package.
 
 ## Documentation
 

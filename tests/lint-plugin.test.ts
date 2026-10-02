@@ -1,4 +1,4 @@
-import { plugin } from "@yummacss/lint/plugin";
+import { plugin } from "@yummacss/lint";
 import { Linter } from "eslint";
 import { describe, expect, it } from "vitest";
 

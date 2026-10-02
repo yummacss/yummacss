@@ -63,9 +63,6 @@ importers:
       '@yummacss/nitro':
         specifier: workspace:*
         version: link:../nitro
-      tinyglobby:
-        specifier: ^0.2.15
-        version: 0.2.17
 
   packages/nitro:
     dependencies:
