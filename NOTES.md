@@ -193,4 +193,10 @@ is the plugin and nothing else, at its root, because a package and a
 into the CLI as `yummacss lint`, unchanged: the same class-attribute regexes,
 `--allow` and `--config`, exit 1 on a finding. `yummacss-lint` and
 `validate()` were deleted, not deprecated: one release to manage instead of
-two. The docs page follows the release.
+two. **Oxlint first, 2026-10-02.** The plugin is in the ESLint plugin shape only
+because that is the API Oxlint's JS plugins implement; ESLint running it too
+is a side effect, mentioned once in the README. The tests run the rules
+through Oxlint itself, loading `packages/lint/src/index.ts` as a JS plugin
+from a temporary project, so the repo has no `eslint` dependency. That needs
+the workspace built first, as `publish.yml` already does. The docs page
+follows the release.
