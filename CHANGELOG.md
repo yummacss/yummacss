@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- **[lint]** Lint rules for Oxlint and ESLint: `no-unknown-classes` and `no-inline-styles`.
+- **[lint]** Lint rules for Oxlint: `no-unknown-classes` and `no-inline-styles`.
 - **[cli]** `yummacss lint` reports classes Yumma CSS does not generate.
 
 ### Removed
