@@ -1,16 +1,16 @@
 # @yummacss/lint
 
-Lint rules for [Yumma CSS](https://yummacss.com), for Oxlint and ESLint.
+Lint rules for [Yumma CSS](https://yummacss.com), for Oxlint.
 
 ## Installation
 
 ```bash
-pnpm add -D @yummacss/lint
+pnpm add -D oxlint @yummacss/lint
 ```
 
 ## Usage
 
-One plugin for Oxlint and ESLint. It reads `yumma.config.mjs` from where the linter runs, so your own colors and states pass.
+A JS plugin for Oxlint. It reads `yumma.config.mjs` from where the linter runs, so your own colors and states pass.
 
 ```json
 // .oxlintrc.json
@@ -23,12 +23,7 @@ One plugin for Oxlint and ESLint. It reads `yumma.config.mjs` from where the lin
 }
 ```
 
-```js
-// eslint.config.js
-import { plugin as yummacss } from "@yummacss/lint";
-
-export default [{ plugins: { yummacss }, rules: { "yummacss/no-unknown-classes": "error" } }];
-```
+The plugin uses the ESLint plugin format, which is what Oxlint loads, so ESLint can run it too.
 
 | Rule | What it reports |
 | --- | --- |
@@ -51,7 +46,7 @@ Every rule takes `allow` and `message`.
 - `allow` lists class names, or CSS property names for `no-inline-styles`. A trailing `*` matches a prefix.
 - `message` replaces the rule's text. `{{className}}`, `{{property}}` and `{{suggestions}}` are filled in.
 
-Skip one line with `// eslint-disable-next-line yummacss/no-unknown-classes`, which both linters read.
+Skip one line with `// oxlint-disable-next-line yummacss/no-unknown-classes`.
 
 For a one-off check without a linter, run `yummacss lint` from the `yummacss` package.
 
