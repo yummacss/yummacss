@@ -74,17 +74,19 @@ secret once a release proves OIDC ran.
 **Two things this cannot verify from here.** It is never exercised until a real
 release, and the npmjs side is a web form **per package**, six of them now.
 
-**4.2.2 did not prove it, 2026-10-01.** Run `36775926217` printed "npm tokens
-that bypass 2FA are being restricted" for every package, which npm says only
-when it authenticates with the token. So the token is still doing the work,
-and it dies 2026-11-27. Check each package's trusted publisher entry on
-npmjs before the next release; the secret stays until a release publishes
-without that notice.
+**OIDC has published since 4.2.0, checked 2026-10-03.** `npm view
+yummacss@4.2.2 _npmUser` names `GitHubActions` with a `trustedPublisher`
+entry, and so does every package at 4.2.2, each with SLSA provenance; 4.2.0
+too. The "npm tokens that bypass 2FA are being restricted" notice in run
+`36775926217` is printed because the token is configured, not because npm
+used it. An earlier reading of that notice said the opposite and was wrong.
+So `NODE_AUTH_TOKEN` can leave the workflow and the secret can be deleted;
+the 2026-11-27 expiry no longer matters. `yummaui` is the exception: 0.4.0
+was published as `rrenildopereiraa`.
 
 **4.3.0 prepared, 2026-10-03**, from `chore/release-4.3`. It also carries
 `48582e6` (the Oxlint tests and the eslint removal), which was pushed to
-`feat/lint-plugin` after #64 merged. Whether 4.3.0 authenticates with OIDC
-is the same check: look for that notice in the publish run.
+`feat/lint-plugin` after #64 merged.
 
 `pnpm release` and `pnpm bump` read only the `packages/*` folders that hold a
 `package.json`. A folder left by a removed package (`packages/canon`, its
