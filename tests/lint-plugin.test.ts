@@ -1,27 +1,55 @@
-import { plugin } from "@yummacss/lint";
-import { Linter } from "eslint";
+import { execFileSync } from "node:child_process";
+import { mkdtempSync, rmSync, writeFileSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { join, resolve } from "node:path";
 import { describe, expect, it } from "vitest";
 
-function lint(code: string, rules: Linter.RulesRecord) {
-	const linter = new Linter({ configType: "flat" });
-	return linter.verify(
-		code,
-		[
-			{
-				files: ["**/*.jsx"],
-				languageOptions: {
-					sourceType: "module",
-					parserOptions: { ecmaFeatures: { jsx: true } },
-				},
-				plugins: { yummacss: plugin as never },
-				rules,
-			},
-		],
-		"row.jsx",
-	);
+const oxlint = resolve(__dirname, "../node_modules/.bin/oxlint");
+const plugin = resolve(__dirname, "../packages/lint/src/index.ts");
+
+interface Message {
+	message: string;
+	line: number;
+	column: number;
 }
 
-const named = (messages: Linter.LintMessage[]) =>
+// runs the plugin the way a project does: Oxlint loading it as a JS plugin
+function lint(code: string, rules: Record<string, unknown>): Message[] {
+	const dir = mkdtempSync(join(tmpdir(), "yummacss-lint-"));
+	try {
+		writeFileSync(join(dir, "row.jsx"), code);
+		writeFileSync(
+			join(dir, ".oxlintrc.json"),
+			JSON.stringify({ plugins: [], jsPlugins: [plugin], rules }),
+		);
+		let output: string;
+		try {
+			output = execFileSync(
+				oxlint,
+				["-c", ".oxlintrc.json", "--format", "json", "row.jsx"],
+				{ cwd: dir, encoding: "utf8" },
+			);
+		} catch (error) {
+			output = (error as { stdout: string }).stdout;
+		}
+		const { diagnostics } = JSON.parse(output) as {
+			diagnostics: {
+				message: string;
+				code: string;
+				labels: { span: { line: number; column: number } }[];
+			}[];
+		};
+		return diagnostics
+			.filter((d) => d.code.startsWith("yummacss("))
+			.map((d) => ({ message: d.message, ...d.labels[0].span }))
+			.sort((a, b) => a.line - b.line || a.column - b.column)
+			.map(({ message, line, column }) => ({ message, line, column }));
+	} finally {
+		rmSync(dir, { recursive: true, force: true });
+	}
+}
+
+const named = (messages: Message[]) =>
 	messages.map((m) => m.message.split("`")[1]);
 
 describe("yummacss/no-unknown-classes", () => {
