@@ -86,6 +86,11 @@ without that notice.
 `feat/lint-plugin` after #64 merged. Whether 4.3.0 authenticates with OIDC
 is the same check: look for that notice in the publish run.
 
+`pnpm release` and `pnpm bump` read only the `packages/*` folders that hold a
+`package.json`. A folder left by a removed package (`packages/canon`, its
+`node_modules` still there) stopped `pnpm release` on Renildo's machine,
+2026-10-03.
+
 ## `@xs:` at 32rem
 
 Renildo's call, 2026-09-16. `xs` was the only t-shirt width alias with no query
