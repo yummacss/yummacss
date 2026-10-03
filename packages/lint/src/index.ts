@@ -9,7 +9,7 @@ import {
 	validateClasses,
 } from "@yummacss/nitro";
 
-// the subset of the ESLint v9 rule API both ESLint and Oxlint call
+// the subset of the ESLint v9 rule API that Oxlint's JS plugins implement
 interface Node {
 	type: string;
 	[key: string]: unknown;
@@ -287,8 +287,8 @@ export const rules = {
 };
 
 /**
- * Lint rules for Yumma CSS. One plugin for ESLint and Oxlint; `meta.name`
- * is the namespace, so a rule reads `yummacss/no-unknown-classes` in both.
+ * Lint rules for Yumma CSS, loaded by Oxlint as a JS plugin. `meta.name` is
+ * the namespace, so a rule reads `yummacss/no-unknown-classes`.
  *
  * @example
  * // .oxlintrc.json

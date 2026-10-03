@@ -81,6 +81,11 @@ and it dies 2026-11-27. Check each package's trusted publisher entry on
 npmjs before the next release; the secret stays until a release publishes
 without that notice.
 
+**4.3.0 prepared, 2026-10-03**, from `chore/release-4.3`. It also carries
+`48582e6` (the Oxlint tests and the eslint removal), which was pushed to
+`feat/lint-plugin` after #64 merged. Whether 4.3.0 authenticates with OIDC
+is the same check: look for that notice in the publish run.
+
 ## `@xs:` at 32rem
 
 Renildo's call, 2026-09-16. `xs` was the only t-shirt width alias with no query
@@ -193,4 +198,10 @@ is the plugin and nothing else, at its root, because a package and a
 into the CLI as `yummacss lint`, unchanged: the same class-attribute regexes,
 `--allow` and `--config`, exit 1 on a finding. `yummacss-lint` and
 `validate()` were deleted, not deprecated: one release to manage instead of
-two. The docs page follows the release.
+two. **Oxlint first, 2026-10-02.** The plugin is in the ESLint plugin shape only
+because that is the API Oxlint's JS plugins implement; ESLint running it too
+is a side effect, mentioned once in the README. The tests run the rules
+through Oxlint itself, loading `packages/lint/src/index.ts` as a JS plugin
+from a temporary project, so the repo has no `eslint` dependency. That needs
+the workspace built first, as `publish.yml` already does. The docs page
+follows the release.
