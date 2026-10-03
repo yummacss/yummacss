@@ -81,6 +81,11 @@ and it dies 2026-11-27. Check each package's trusted publisher entry on
 npmjs before the next release; the secret stays until a release publishes
 without that notice.
 
+**4.3.0 prepared, 2026-10-03**, from `chore/release-4.3`. It also carries
+`48582e6` (the Oxlint tests and the eslint removal), which was pushed to
+`feat/lint-plugin` after #64 merged. Whether 4.3.0 authenticates with OIDC
+is the same check: look for that notice in the publish run.
+
 ## `@xs:` at 32rem
 
 Renildo's call, 2026-09-16. `xs` was the only t-shirt width alias with no query
