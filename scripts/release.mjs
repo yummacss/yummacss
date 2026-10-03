@@ -1,5 +1,11 @@
 import { execFileSync, execSync } from "node:child_process";
-import { readdirSync, readFileSync, unlinkSync, writeFileSync } from "node:fs";
+import {
+	existsSync,
+	readdirSync,
+	readFileSync,
+	unlinkSync,
+	writeFileSync,
+} from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -25,7 +31,9 @@ const manifests = [
 	"package.json",
 	...readdirSync(path.join(rootDir, "packages"), { withFileTypes: true })
 		.filter((e) => e.isDirectory())
-		.map((e) => `packages/${e.name}/package.json`),
+		.map((e) => `packages/${e.name}/package.json`)
+		// a folder left behind by a removed package has no manifest
+		.filter((f) => existsSync(path.join(rootDir, f))),
 ];
 const stale = manifests.filter((f) => JSON.parse(read(f)).version !== version);
 if (stale.length > 0) {
