@@ -2,6 +2,7 @@ import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import {
 	type Config,
+	isLegacyClass,
 	loadConfig,
 	suggestClasses,
 	validateClasses,
@@ -37,6 +38,8 @@ export interface InvalidClass {
 	files: string[];
 	/** The closest class that does exist, when one is close enough. */
 	suggestion?: string;
+	/** Whether it is the 3.x spelling of {@link suggestion}, which `yummacss migrate` rewrites. */
+	legacy: boolean;
 }
 
 /** What {@link lintProject} found. */
@@ -135,6 +138,7 @@ export async function lintProject(
 			className,
 			files: Array.from(classFiles.get(className) ?? []).sort(),
 			suggestion: suggestions.get(className),
+			legacy: isLegacyClass(className, suggestions.get(className)),
 		})),
 	};
 }

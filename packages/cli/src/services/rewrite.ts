@@ -142,3 +142,56 @@ export function rewriteSource(content: string): RewriteResult {
 
 	return { content: output, migrated, skipped };
 }
+
+/**
+ * Rewrites the 3.x classes in a config's `safelist` array, and only there, so
+ * a color name or a glob elsewhere in the config is never touched.
+ */
+export function rewriteSafelist(content: string): RewriteResult {
+	const skipped = new Map<string, string>();
+	const start = content.search(/\bsafelist\s*:\s*\[/);
+	if (start < 0) return { content, migrated: 0, skipped };
+
+	const open = content.indexOf("[", start);
+	const close = content.indexOf("]", open);
+	if (close < 0) return { content, migrated: 0, skipped };
+
+	let migrated = 0;
+	const list = content
+		.slice(open, close)
+		.replace(STRING_LITERAL, (literal, double, single, backtick) => {
+			const value = double ?? single ?? backtick ?? "";
+			if (!value) return literal;
+			const pass = migrateTokens(value, (token, reason) =>
+				skipped.set(token, reason),
+			);
+			migrated += pass.migrated;
+			return literal.replace(value, pass.text);
+		});
+
+	return {
+		content: content.slice(0, open) + list + content.slice(close),
+		migrated,
+		skipped,
+	};
+}
+
+// a class selector, with any escaped characters (`.cs\:d`) kept in it
+const CLASS_SELECTOR = /\.((?:[a-z@]|\\.)(?:[\w@%-]|\\.)*)/gi;
+
+const escapeSelector = (name: string) => name.replace(/[:/@.%]/g, "\\$&");
+
+/**
+ * Finds 3.x class names used as selectors in a stylesheet, each with the 4.x
+ * selector to write instead. Stylesheets are reported, not rewritten.
+ */
+export function findLegacySelectors(css: string): Map<string, string> {
+	const found = new Map<string, string>();
+	for (const [selector, raw = ""] of css.matchAll(CLASS_SELECTOR)) {
+		const result = migrateClass(raw.replace(/\\(.)/g, "$1"));
+		if (result.ok && result.changed) {
+			found.set(selector, `.${escapeSelector(result.className)}`);
+		}
+	}
+	return found;
+}
