@@ -4,6 +4,7 @@ import { coreUtils } from "@yummacss/core";
 import {
 	type Config,
 	configName,
+	isLegacyClass,
 	loadConfig,
 	suggestClasses,
 	validateClasses,
@@ -164,6 +165,8 @@ const noUnknownClasses: Rule = {
 				"`{{className}}` is not a Yumma CSS class, so it generates no CSS. Check the prefix and the value against yummacss.com/docs, or add it to `allow` if your own stylesheet defines it.",
 			didYouMean:
 				"`{{className}}` is not a Yumma CSS class, so it generates no CSS. Did you mean `{{suggestions}}`?",
+			legacy:
+				"`{{className}}` is Yumma CSS 3.x syntax for `{{suggestions}}`. Run `pnpm dlx yummacss migrate` to rewrite every class in the project, rather than one at a time.",
 			custom: "{{text}}",
 		},
 		schema: optionsSchema,
@@ -203,7 +206,12 @@ const noUnknownClasses: Rule = {
 					const verdict = verdicts.get(name);
 					if (!verdict) continue;
 					const suggestion = verdict.suggestion ?? "";
-					rule.report(node, suggestion ? "didYouMean" : "unknown", {
+					const messageId = isLegacyClass(name, suggestion)
+						? "legacy"
+						: suggestion
+							? "didYouMean"
+							: "unknown";
+					rule.report(node, messageId, {
 						className: name,
 						suggestions: suggestion,
 					});

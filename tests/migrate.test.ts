@@ -5,7 +5,11 @@ import {
 	useConfigPrefix,
 	useThemeScreens,
 } from "../packages/cli/src/services/migrate";
-import { rewriteSource } from "../packages/cli/src/services/rewrite";
+import {
+	findLegacySelectors,
+	rewriteSafelist,
+	rewriteSource,
+} from "../packages/cli/src/services/rewrite";
 
 function migrated(className: string): string {
 	const result = migrateClass(className);
@@ -210,5 +214,38 @@ describe("rewriteSource", () => {
 	it("is a no-op on a file with no classes", () => {
 		const source = "export const x = 1;\n";
 		expect(rewriteSource(source).content).toBe(source);
+	});
+});
+
+describe("rewriteSafelist", () => {
+	it("rewrites the safelist and nothing else in the config", () => {
+		const config = `export default defineConfig({
+	source: ["./app/**/*.{ts,tsx}"],
+	safelist: ["cs-l", 'cs-d', "c-white"],
+	theme: { colors: { "text-dim": "#6b7192" } },
+});`;
+		const result = rewriteSafelist(config);
+
+		expect(result.migrated).toBe(3);
+		expect(result.content).toContain(`safelist: ["cs:l", 'cs:d', "c:white"]`);
+		expect(result.content).toContain(`"text-dim": "#6b7192"`);
+		expect(result.content).toContain(`"./app/**/*.{ts,tsx}"`);
+	});
+
+	it("leaves a config without a safelist alone", () => {
+		const config = `export default { source: ["src/**/*.tsx"] };`;
+		expect(rewriteSafelist(config).content).toBe(config);
+	});
+});
+
+describe("findLegacySelectors", () => {
+	it("names the 4.x selector for a 3.x class in a stylesheet", () => {
+		const css = `:global(.cs-d) .arrow::before { border-color: #232741; }
+.card-title { margin: 0.5rem; background: url(image.png); }
+.cs\\:l .arrow { color: red; }`;
+
+		expect(Object.fromEntries(findLegacySelectors(css))).toEqual({
+			".cs-d": ".cs\\:d",
+		});
 	});
 });
