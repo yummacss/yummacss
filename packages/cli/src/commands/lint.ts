@@ -35,7 +35,21 @@ export async function lint(argv: string[]) {
 	console.error(
 		`Found ${result.invalid.length} classes Yumma CSS does not recognize:`,
 	);
-	for (const { className, files, suggestion } of result.invalid) {
+
+	// 3.x classes are rewritten by the codemod, not fixed one at a time
+	const legacy = result.invalid.filter((entry) => entry.legacy);
+	if (legacy.length > 0) {
+		const examples = legacy
+			.slice(0, 3)
+			.map(({ className, suggestion }) => `"${className}" is "${suggestion}"`)
+			.join(", ");
+		console.error(
+			` ${legacy.length} are Yumma CSS 3.x classes (${examples}). Run "pnpm dlx yummacss migrate" to rewrite them all.`,
+		);
+	}
+
+	const rest = result.invalid.filter((entry) => !entry.legacy);
+	for (const { className, files, suggestion } of rest) {
 		console.error(
 			suggestion
 				? ` "${className}" - did you mean "${suggestion}"?`
@@ -45,8 +59,10 @@ export async function lint(argv: string[]) {
 			console.error(`  - ${relative(process.cwd(), file)}`);
 		}
 	}
-	console.error(
-		'Fix the classes above, or pass --allow "class-a,class-b" for custom classes.',
-	);
+	if (rest.length > 0) {
+		console.error(
+			'Fix the classes above, or pass --allow "class-a,class-b" for custom classes.',
+		);
+	}
 	process.exitCode = 1;
 }
