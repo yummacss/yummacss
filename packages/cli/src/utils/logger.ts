@@ -148,8 +148,5 @@ export const logger = {
 		invalid() {
 			return "Invalid config. Check the syntax & try again.";
 		},
-		notInstalled(name: string) {
-			return `The config imports "${name}", which is not installed. Install the project's dependencies & try again.`;
-		},
 	},
 };
