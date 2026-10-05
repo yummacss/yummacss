@@ -7,6 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- **[nitro]** Export `isLegacyClass`.
+- **[cli]** `yummacss migrate` lists 3.x class names used as selectors in stylesheets.
+
+### Changed
+
+- **[cli]** `yummacss lint` reports 3.x classes together, with the command that rewrites them.
+- **[lint]** `no-unknown-classes` points a 3.x class at `yummacss migrate`.
+
+### Fixed
+
+- **[cli]** `yummacss migrate` rewrites the classes in the config's `safelist`.
+- **[cli]** A config that imports a package that is not installed names the package.
+
 ## [4.3.0] - 2026-10-03
 
 ### Added

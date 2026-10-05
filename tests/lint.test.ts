@@ -1,5 +1,5 @@
 import { join } from "node:path";
-import { validateClasses } from "@yummacss/nitro";
+import { isLegacyClass, validateClasses } from "@yummacss/nitro";
 import { describe, expect, it } from "vitest";
 import { extractClasses, lintProject } from "yummacss/services/lint";
 
@@ -50,6 +50,21 @@ describe("validateClasses (nitro)", () => {
 	});
 });
 
+describe("isLegacyClass (nitro)", () => {
+	it("should recognize a 3.x class by its 4.x suggestion", () => {
+		expect(isLegacyClass("p-4", "p:4")).toBe(true);
+		expect(isLegacyClass("m--4", "m:-4")).toBe(true);
+		expect(isLegacyClass("h:bg-red-5", "h:bg:red-5")).toBe(true);
+		expect(isLegacyClass("tt-n", "tt:none")).toBe(true);
+	});
+
+	it("should leave a typo and a class with no suggestion alone", () => {
+		expect(isLegacyClass("bg:redd-5", "bg:red-5")).toBe(false);
+		expect(isLegacyClass("gap-4", "g:4")).toBe(false);
+		expect(isLegacyClass("w:37px", undefined)).toBe(false);
+	});
+});
+
 describe("extractClasses (yummacss lint)", () => {
 	it("should only extract from class attribute contexts", () => {
 		const classes = extractClasses(
@@ -85,6 +100,7 @@ describe("lintProject (yummacss lint)", () => {
 		expect(gap?.files).toHaveLength(1);
 		expect(gap?.files[0]?.endsWith("Bad.tsx")).toBe(true);
 		expect(gap?.suggestion).toBe("g:4");
+		expect(gap?.legacy).toBe(false);
 	});
 
 	it("should not report valid classes, variants, or safelist entries", async () => {
