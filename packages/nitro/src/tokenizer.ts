@@ -1,3 +1,13 @@
+/** The helpers whose string arguments are read as class names: `cn("d:f p:4")`. */
+export const CLASS_FUNCTIONS = [
+	"cn",
+	"cx",
+	"clsx",
+	"classnames",
+	"classNames",
+	"cva",
+];
+
 const JS_EXTENSIONS = /\.(?:[cm]?[jt]sx?)$/;
 
 const REGEX_ALLOWED_BEFORE = new Set([

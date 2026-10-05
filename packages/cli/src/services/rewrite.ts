@@ -1,11 +1,5 @@
+import { CLASS_CONTEXTS } from "./lint.js";
 import { migrateClass } from "./migrate.js";
-
-const CLASS_CONTEXTS = [
-	/class(?:Name)?\s*=\s*["']([^"']+)["']/g,
-	/class(?:Name)?=\{["']([^"']+)["']\}/g,
-	/class(?:Name)?=\{`([^`]+)`\}/g,
-	/\b(?:cn|clsx|classnames|cva)\s*\(\s*["'`]([^"'`]+)["'`]/g,
-];
 
 const WRAPPERS = /^([`"'{([]*)(.*?)([`"'})\],;]*)$/;
 
