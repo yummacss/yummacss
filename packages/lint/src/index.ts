@@ -2,6 +2,7 @@ import { existsSync } from "node:fs";
 import { join } from "node:path";
 import { coreUtils } from "@yummacss/core";
 import {
+	CLASS_FUNCTIONS,
 	type Config,
 	configName,
 	loadConfig,
@@ -115,7 +116,7 @@ function check(classNames: string[]): void {
 }
 
 const CLASS_ATTRIBUTES = new Set(["className", "class"]);
-const CLASS_FUNCTIONS = new Set(["cn", "cx", "clsx", "classNames"]);
+const CLASS_HELPERS = new Set(CLASS_FUNCTIONS);
 
 // the string pieces of a class value, through ternaries, `&&`, arrays and object keys
 function stringsIn(node: Node | null | undefined): Node[] {
@@ -194,7 +195,7 @@ const noUnknownClasses: Rule = {
 			},
 			CallExpression(node) {
 				const name = calleeName(node);
-				if (!name || !(CLASS_FUNCTIONS.has(name) || merges.has(name))) return;
+				if (!name || !(CLASS_HELPERS.has(name) || merges.has(name))) return;
 				for (const argument of node.arguments as Node[]) collect(argument);
 			},
 			"Program:exit"() {

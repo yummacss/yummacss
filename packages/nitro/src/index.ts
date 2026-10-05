@@ -8,3 +8,4 @@ export { generator, suggestClasses, validateClasses } from "./generator";
 export { normalizeCSS } from "./normalize";
 export type { ScanOptions, ScanResult } from "./scan";
 export { scan } from "./scan";
+export { CLASS_FUNCTIONS } from "./tokenizer";

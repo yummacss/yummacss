@@ -53,13 +53,14 @@ describe("validateClasses (nitro)", () => {
 describe("extractClasses (yummacss lint)", () => {
 	it("should only extract from class attribute contexts", () => {
 		const classes = extractClasses(
-			'const s = "not-a-class"; <div className="d:f p:4">, cn("m:2 c:white")',
+			'const s = "not-a-class"; <div className="d:f p:4">, cn("m:2 c:white"), cx("g:4")',
 		);
 
 		expect(classes.has("d:f")).toBe(true);
 		expect(classes.has("p:4")).toBe(true);
 		expect(classes.has("m:2")).toBe(true);
 		expect(classes.has("c:white")).toBe(true);
+		expect(classes.has("g:4")).toBe(true);
 		expect(classes.has("not-a-class")).toBe(false);
 	});
 

@@ -1,6 +1,7 @@
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import {
+	CLASS_FUNCTIONS,
 	type Config,
 	loadConfig,
 	suggestClasses,
@@ -51,11 +52,15 @@ export interface LintResult {
 	invalid: InvalidClass[];
 }
 
-const classRegexes = [
+/** Where a class list can appear in source: class attributes and the class helpers. */
+export const CLASS_CONTEXTS = [
 	/class(?:Name)?\s*=\s*["']([^"']+)["']/g,
 	/class(?:Name)?=\{["']([^"']+)["']\}/g,
 	/class(?:Name)?=\{`([^`]+)`\}/g,
-	/\b(?:cn|clsx|classnames|cva)\s*\(\s*["'`]([^"'`]+)["'`]/g,
+	new RegExp(
+		`\\b(?:${CLASS_FUNCTIONS.join("|")})\\s*\\(\\s*["'\`]([^"'\`]+)["'\`]`,
+		"g",
+	),
 ];
 
 const classNamePattern = /^@?[a-z][a-zA-Z0-9@:/.%-]*$/;
@@ -67,7 +72,7 @@ const classNamePattern = /^@?[a-z][a-zA-Z0-9@:/.%-]*$/;
 export function extractClasses(content: string): Set<string> {
 	const classes = new Set<string>();
 
-	for (const regex of classRegexes) {
+	for (const regex of CLASS_CONTEXTS) {
 		regex.lastIndex = 0;
 		let match = regex.exec(content);
 		while (match !== null) {
