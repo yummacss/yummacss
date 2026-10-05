@@ -250,21 +250,6 @@ function renameFor(className: string): string | undefined {
 	return value ? `${prefix}:${value}` : undefined;
 }
 
-/**
- * Whether `suggestion` is `className` written in the 3.x syntax: a dash where
- * 4.x has a colon (`p-4` for `p:4`), or a value 4.x spells out (`tt-n`).
- */
-export function isLegacyClass(
-	className: string,
-	suggestion: string | undefined,
-): boolean {
-	if (!suggestion || suggestion === className) return false;
-	const fold = (name: string) => name.replace(/:/g, "-");
-	return (
-		fold(className) === fold(suggestion) || renameFor(className) === suggestion
-	);
-}
-
 export function suggestClasses(
 	classNames: Iterable<string>,
 	config: Config = {},
