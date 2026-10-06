@@ -10,6 +10,7 @@ import {
 	type Utility,
 	valueRenames,
 } from "@yummacss/core";
+import { distance as levenshtein } from "fastest-levenshtein";
 import type { Config } from "./config/schema";
 import { normalizeCSS } from "./normalize";
 
@@ -174,34 +175,6 @@ export function validateClasses(
 	return { valid, invalid };
 }
 
-function levenshtein(a: string, b: string, max: number): number {
-	if (Math.abs(a.length - b.length) > max) return max + 1;
-
-	const row: number[] = Array.from({ length: b.length + 1 }, (_, j) => j);
-
-	for (let i = 1; i <= a.length; i++) {
-		let diagonal = row[0] ?? 0;
-		let best = i;
-		row[0] = i;
-
-		for (let j = 1; j <= b.length; j++) {
-			const previous = row[j] ?? 0;
-			const value = Math.min(
-				previous + 1,
-				(row[j - 1] ?? 0) + 1,
-				diagonal + (a[i - 1] === b[j - 1] ? 0 : 1),
-			);
-			row[j] = value;
-			diagonal = previous;
-			if (value < best) best = value;
-		}
-
-		if (best > max) return max + 1;
-	}
-
-	return row[b.length] ?? 0;
-}
-
 function isSubsequence(needle: string, haystack: string): boolean {
 	let i = 0;
 	for (const char of haystack) {
@@ -305,7 +278,10 @@ export function suggestClasses(
 
 		for (const candidate of candidates) {
 			const foldedCandidate = fold(candidate);
-			const distance = levenshtein(folded, foldedCandidate, maxDistance);
+			if (Math.abs(folded.length - foldedCandidate.length) > maxDistance) {
+				continue;
+			}
+			const distance = levenshtein(folded, foldedCandidate);
 			if (distance > maxDistance) continue;
 			// folding leaves a 3.x class at distance zero from its 4.0 spelling,
 			// which is the best suggestion there is, not the absence of one
