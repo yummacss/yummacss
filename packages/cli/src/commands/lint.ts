@@ -1,27 +1,8 @@
 import { relative } from "node:path";
 import { type LintOptions, lintProject } from "@/services/lint";
 
-function parseArgs(argv: string[]): LintOptions {
-	const allowlist: string[] = [];
-	let configPath: string | undefined;
-
-	for (let i = 0; i < argv.length; i++) {
-		const arg = argv[i];
-		if (arg === "--allow" || arg === "-a") {
-			const value = argv[++i];
-			if (value) {
-				allowlist.push(...value.split(",").map((entry) => entry.trim()));
-			}
-		} else if (arg === "--config" || arg === "-c") {
-			configPath = argv[++i];
-		}
-	}
-
-	return { allowlist, configPath };
-}
-
-export async function lint(argv: string[]) {
-	const result = await lintProject(parseArgs(argv));
+export async function lint(options: LintOptions) {
+	const result = await lintProject(options);
 
 	console.info(
 		`Scanned ${result.files} files and found ${result.classes} unique classes.`,
