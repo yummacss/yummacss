@@ -1,3 +1,4 @@
+import { parseArgs } from "node:util";
 import { version } from "../package.json";
 import { build } from "./commands/build.js";
 import { init } from "./commands/init.js";
@@ -6,8 +7,16 @@ import { migrate } from "./commands/migrate.js";
 import { watch } from "./commands/watch.js";
 import { logger } from "./utils/logger.js";
 
-const args = process.argv.slice(2);
-const command = args[0];
+const { positionals, values } = parseArgs({
+	allowPositionals: true,
+	strict: false,
+	options: {
+		allow: { type: "string", short: "a", multiple: true },
+		config: { type: "string", short: "c" },
+		"dry-run": { type: "boolean" },
+	},
+});
+const command = positionals[0];
 
 switch (command) {
 	case "init":
@@ -27,7 +36,12 @@ switch (command) {
 	case "lint":
 	case "l":
 		logger.header(version);
-		lint(args.slice(1)).catch((error) => {
+		lint({
+			allowlist: (values.allow as string[] | undefined)
+				?.flatMap((value) => value.split(","))
+				.map((entry) => entry.trim()),
+			configPath: values.config as string | undefined,
+		}).catch((error) => {
 			console.error(error instanceof Error ? error.message : String(error));
 			process.exit(1);
 		});
@@ -35,7 +49,7 @@ switch (command) {
 	case "migrate":
 	case "m":
 		logger.header(version);
-		migrate({ dryRun: args.includes("--dry-run") }).catch(() =>
+		migrate({ dryRun: values["dry-run"] === true }).catch(() =>
 			process.exit(1),
 		);
 		break;
