@@ -1,5 +1,5 @@
 import { outlineOffset, outlineWidth } from "@/defaults/variables";
-import { base } from "@/defaults/variants/stacks";
+import { variants } from "@/defaults/variants/stacks";
 import { createValues } from "@/helpers/create-values";
 import type { Utilities } from "@/interfaces";
 
@@ -14,7 +14,7 @@ export const outline: Utilities = {
 			min: 0,
 			max: 4,
 		}),
-		variants: base,
+		variants,
 	},
 
 	"outline-style": {
@@ -26,7 +26,7 @@ export const outline: Utilities = {
 			d: "dashed",
 			s: "solid",
 		},
-		variants: base,
+		variants,
 	},
 
 	"outline-width": {
@@ -39,6 +39,6 @@ export const outline: Utilities = {
 			min: 0,
 			max: 4,
 		}),
-		variants: base,
+		variants,
 	},
 };

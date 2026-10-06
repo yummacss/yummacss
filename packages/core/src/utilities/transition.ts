@@ -1,5 +1,5 @@
 import { transitionValues } from "@/defaults/values";
-import { base } from "@/defaults/variants/stacks";
+import { variants } from "@/defaults/variants/stacks";
 import type { Utilities } from "@/interfaces";
 
 export const transition: Utilities = {
@@ -8,7 +8,7 @@ export const transition: Utilities = {
 		properties: ["transition-delay"],
 		slug: "transition-delay",
 		values: transitionValues,
-		variants: base,
+		variants,
 	},
 
 	"transition-duration": {
@@ -16,7 +16,7 @@ export const transition: Utilities = {
 		properties: ["transition-duration"],
 		slug: "transition-duration",
 		values: transitionValues,
-		variants: base,
+		variants,
 	},
 
 	"transition-property": {
@@ -34,7 +34,7 @@ export const transition: Utilities = {
 			t: "transform, translate, scale, rotate",
 			w: "width",
 		},
-		variants: base,
+		variants,
 	},
 
 	"transition-timing-function": {
@@ -47,6 +47,6 @@ export const transition: Utilities = {
 			eo: "ease-out",
 			io: "ease-in-out",
 		},
-		variants: base,
+		variants,
 	},
 };

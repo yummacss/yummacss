@@ -1,5 +1,5 @@
 import { decorationThickness } from "@/defaults/variables";
-import { base } from "@/defaults/variants/stacks";
+import { variants } from "@/defaults/variants/stacks";
 import { createValues } from "@/helpers/create-values";
 import type { Utilities } from "@/interfaces";
 
@@ -16,7 +16,7 @@ export const text: Utilities = {
 			"4": ".05em",
 			"5": ".1em",
 		},
-		variants: base,
+		variants,
 	},
 
 	"line-height": {
@@ -31,7 +31,7 @@ export const text: Utilities = {
 			"5": "1.625",
 			"6": "2",
 		},
-		variants: base,
+		variants,
 	},
 
 	"list-style-position": {
@@ -42,7 +42,7 @@ export const text: Utilities = {
 			i: "inside",
 			o: "outside",
 		},
-		variants: base,
+		variants,
 	},
 
 	"list-style-type": {
@@ -54,7 +54,7 @@ export const text: Utilities = {
 			d: "disc",
 			s: "square",
 		},
-		variants: base,
+		variants,
 	},
 
 	"overflow-wrap": {
@@ -65,7 +65,7 @@ export const text: Utilities = {
 			bw: "break-word",
 			n: "normal",
 		},
-		variants: base,
+		variants,
 	},
 
 	"text-align": {
@@ -82,7 +82,7 @@ export const text: Utilities = {
 			r: "right",
 			s: "start",
 		},
-		variants: base,
+		variants,
 	},
 
 	"text-decoration-line": {
@@ -95,7 +95,7 @@ export const text: Utilities = {
 			o: "overline",
 			u: "underline",
 		},
-		variants: base,
+		variants,
 	},
 
 	"text-decoration-style": {
@@ -107,7 +107,7 @@ export const text: Utilities = {
 			s: "solid",
 			w: "wavy",
 		},
-		variants: base,
+		variants,
 	},
 
 	"text-decoration-thickness": {
@@ -124,7 +124,7 @@ export const text: Utilities = {
 			auto: "auto",
 			ff: "from-font",
 		},
-		variants: base,
+		variants,
 	},
 
 	"text-decoration": {
@@ -135,7 +135,7 @@ export const text: Utilities = {
 			none: "none",
 			u: "underline",
 		},
-		variants: base,
+		variants,
 	},
 
 	"text-indent": {
@@ -149,7 +149,7 @@ export const text: Utilities = {
 			"3": ".5rem",
 			"4": ".75rem",
 		},
-		variants: base,
+		variants,
 	},
 
 	"text-overflow": {
@@ -160,7 +160,7 @@ export const text: Utilities = {
 			c: "clip",
 			e: "ellipsis",
 		},
-		variants: base,
+		variants,
 	},
 
 	"text-transform": {
@@ -173,7 +173,7 @@ export const text: Utilities = {
 			none: "none",
 			u: "uppercase",
 		},
-		variants: base,
+		variants,
 	},
 
 	"text-underline-offset": {
@@ -188,7 +188,7 @@ export const text: Utilities = {
 			"8": "8px",
 			auto: "auto",
 		},
-		variants: base,
+		variants,
 	},
 
 	"text-wrap": {
@@ -201,7 +201,7 @@ export const text: Utilities = {
 			p: "pretty",
 			w: "wrap",
 		},
-		variants: base,
+		variants,
 	},
 
 	"text-orientation": {
@@ -214,7 +214,7 @@ export const text: Utilities = {
 			sr: "sideways-right",
 			v: "sideways",
 		},
-		variants: base,
+		variants,
 	},
 
 	"white-space": {
@@ -229,7 +229,7 @@ export const text: Utilities = {
 			pl: "pre-line",
 			pw: "pre-wrap",
 		},
-		variants: base,
+		variants,
 	},
 
 	"vertical-align": {
@@ -246,7 +246,7 @@ export const text: Utilities = {
 			tb: "text-bottom",
 			tt: "text-top",
 		},
-		variants: base,
+		variants,
 	},
 
 	"writing-mode": {
@@ -260,7 +260,7 @@ export const text: Utilities = {
 			vlr: "vertical-lr",
 			vrl: "vertical-rl",
 		},
-		variants: base,
+		variants,
 	},
 
 	"word-break": {
@@ -273,6 +273,6 @@ export const text: Utilities = {
 			ka: "keep-all",
 			n: "normal",
 		},
-		variants: base,
+		variants,
 	},
 };

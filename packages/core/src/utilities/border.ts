@@ -4,7 +4,7 @@ import {
 	borderWidthValues,
 	cornerShapeValues,
 } from "@/defaults/values";
-import { base } from "@/defaults/variants/stacks";
+import { variants } from "@/defaults/variants/stacks";
 import type { Utilities } from "@/interfaces";
 
 export const border: Utilities = {
@@ -16,7 +16,7 @@ export const border: Utilities = {
 			c: "collapse",
 			s: "separate",
 		},
-		variants: base,
+		variants,
 	},
 
 	"border-radius": {
@@ -24,7 +24,7 @@ export const border: Utilities = {
 		properties: ["border-radius"],
 		slug: "border-radius",
 		values: borderRadiusValues,
-		variants: base,
+		variants,
 	},
 
 	"border-bottom-radius": {
@@ -32,7 +32,7 @@ export const border: Utilities = {
 		properties: ["border-bottom-right-radius", "border-bottom-left-radius"],
 		slug: "border-radius#bottom-radius",
 		values: borderRadiusValues,
-		variants: base,
+		variants,
 	},
 
 	"border-left-radius": {
@@ -40,7 +40,7 @@ export const border: Utilities = {
 		properties: ["border-top-left-radius", "border-bottom-left-radius"],
 		slug: "border-radius#left-radius",
 		values: borderRadiusValues,
-		variants: base,
+		variants,
 	},
 
 	"border-right-radius": {
@@ -48,7 +48,7 @@ export const border: Utilities = {
 		properties: ["border-top-right-radius", "border-bottom-right-radius"],
 		slug: "border-radius#right-radius",
 		values: borderRadiusValues,
-		variants: base,
+		variants,
 	},
 
 	"border-bottom-left-radius": {
@@ -56,7 +56,7 @@ export const border: Utilities = {
 		properties: ["border-bottom-left-radius"],
 		slug: "border-radius#bottom-left-radius",
 		values: borderRadiusValues,
-		variants: base,
+		variants,
 	},
 
 	"border-bottom-right-radius": {
@@ -64,7 +64,7 @@ export const border: Utilities = {
 		properties: ["border-bottom-right-radius"],
 		slug: "border-radius#bottom-right-radius",
 		values: borderRadiusValues,
-		variants: base,
+		variants,
 	},
 
 	"border-top-radius": {
@@ -72,7 +72,7 @@ export const border: Utilities = {
 		properties: ["border-top-left-radius", "border-top-right-radius"],
 		slug: "border-radius#top-radius",
 		values: borderRadiusValues,
-		variants: base,
+		variants,
 	},
 
 	"border-top-left-radius": {
@@ -80,7 +80,7 @@ export const border: Utilities = {
 		properties: ["border-top-left-radius"],
 		slug: "border-radius#top-left-radius",
 		values: borderRadiusValues,
-		variants: base,
+		variants,
 	},
 
 	"border-top-right-radius": {
@@ -88,7 +88,7 @@ export const border: Utilities = {
 		properties: ["border-top-right-radius"],
 		slug: "border-radius#top-right-radius",
 		values: borderRadiusValues,
-		variants: base,
+		variants,
 	},
 
 	"border-block-end-radius": {
@@ -96,7 +96,7 @@ export const border: Utilities = {
 		properties: ["border-end-end-radius", "border-end-start-radius"],
 		slug: "border-radius#block-end-radius",
 		values: borderRadiusValues,
-		variants: base,
+		variants,
 	},
 
 	"border-inline-start-radius": {
@@ -104,7 +104,7 @@ export const border: Utilities = {
 		properties: ["border-start-start-radius", "border-end-start-radius"],
 		slug: "border-radius#inline-start-radius",
 		values: borderRadiusValues,
-		variants: base,
+		variants,
 	},
 
 	"border-inline-end-radius": {
@@ -112,7 +112,7 @@ export const border: Utilities = {
 		properties: ["border-start-end-radius", "border-end-end-radius"],
 		slug: "border-radius#inline-end-radius",
 		values: borderRadiusValues,
-		variants: base,
+		variants,
 	},
 
 	"border-end-start-radius": {
@@ -120,7 +120,7 @@ export const border: Utilities = {
 		properties: ["border-end-start-radius"],
 		slug: "border-radius#end-start-radius",
 		values: borderRadiusValues,
-		variants: base,
+		variants,
 	},
 
 	"border-end-end-radius": {
@@ -128,7 +128,7 @@ export const border: Utilities = {
 		properties: ["border-end-end-radius"],
 		slug: "border-radius#end-end-radius",
 		values: borderRadiusValues,
-		variants: base,
+		variants,
 	},
 
 	"border-block-start-radius": {
@@ -136,7 +136,7 @@ export const border: Utilities = {
 		properties: ["border-start-start-radius", "border-start-end-radius"],
 		slug: "border-radius#block-start-radius",
 		values: borderRadiusValues,
-		variants: base,
+		variants,
 	},
 
 	"border-start-start-radius": {
@@ -144,7 +144,7 @@ export const border: Utilities = {
 		properties: ["border-start-start-radius"],
 		slug: "border-radius#start-start-radius",
 		values: borderRadiusValues,
-		variants: base,
+		variants,
 	},
 
 	"border-start-end-radius": {
@@ -152,7 +152,7 @@ export const border: Utilities = {
 		properties: ["border-start-end-radius"],
 		slug: "border-radius#start-end-radius",
 		values: borderRadiusValues,
-		variants: base,
+		variants,
 	},
 
 	"border-spacing": {
@@ -160,7 +160,7 @@ export const border: Utilities = {
 		properties: ["border-spacing"],
 		slug: "border-spacing",
 		values: borderSpacingValues,
-		variants: base,
+		variants,
 	},
 
 	"border-style": {
@@ -172,7 +172,7 @@ export const border: Utilities = {
 			d: "dashed",
 			s: "solid",
 		},
-		variants: base,
+		variants,
 	},
 
 	"border-width": {
@@ -180,7 +180,7 @@ export const border: Utilities = {
 		properties: ["border-width"],
 		slug: "border-width",
 		values: borderWidthValues,
-		variants: base,
+		variants,
 	},
 
 	"border-bottom-width": {
@@ -188,7 +188,7 @@ export const border: Utilities = {
 		properties: ["border-bottom-width"],
 		slug: "border-width#bottom-width",
 		values: borderWidthValues,
-		variants: base,
+		variants,
 	},
 
 	"border-left-width": {
@@ -196,7 +196,7 @@ export const border: Utilities = {
 		properties: ["border-left-width"],
 		slug: "border-width#left-width",
 		values: borderWidthValues,
-		variants: base,
+		variants,
 	},
 
 	"border-right-width": {
@@ -204,7 +204,7 @@ export const border: Utilities = {
 		properties: ["border-right-width"],
 		slug: "border-width#right-width",
 		values: borderWidthValues,
-		variants: base,
+		variants,
 	},
 
 	"border-top-width": {
@@ -212,7 +212,7 @@ export const border: Utilities = {
 		properties: ["border-top-width"],
 		slug: "border-width#top-width",
 		values: borderWidthValues,
-		variants: base,
+		variants,
 	},
 
 	"border-block-end-width": {
@@ -220,7 +220,7 @@ export const border: Utilities = {
 		properties: ["border-block-end-width"],
 		slug: "border-width#block-end-width",
 		values: borderWidthValues,
-		variants: base,
+		variants,
 	},
 
 	"border-block-start-width": {
@@ -228,7 +228,7 @@ export const border: Utilities = {
 		properties: ["border-block-start-width"],
 		slug: "border-width#block-start-width",
 		values: borderWidthValues,
-		variants: base,
+		variants,
 	},
 
 	"border-inline-end-width": {
@@ -236,7 +236,7 @@ export const border: Utilities = {
 		properties: ["border-inline-end-width"],
 		slug: "border-width#inline-end-width",
 		values: borderWidthValues,
-		variants: base,
+		variants,
 	},
 
 	"border-inline-start-width": {
@@ -244,7 +244,7 @@ export const border: Utilities = {
 		properties: ["border-inline-start-width"],
 		slug: "border-width#inline-start-width",
 		values: borderWidthValues,
-		variants: base,
+		variants,
 	},
 
 	"border-block-width": {
@@ -252,7 +252,7 @@ export const border: Utilities = {
 		properties: ["border-block-width"],
 		slug: "border-width#block-width",
 		values: borderWidthValues,
-		variants: base,
+		variants,
 	},
 
 	"border-inline-width": {
@@ -260,7 +260,7 @@ export const border: Utilities = {
 		properties: ["border-inline-width"],
 		slug: "border-width#inline-width",
 		values: borderWidthValues,
-		variants: base,
+		variants,
 	},
 
 	"corner-shape": {
@@ -268,7 +268,7 @@ export const border: Utilities = {
 		properties: ["corner-shape"],
 		slug: "corner-shape",
 		values: cornerShapeValues,
-		variants: base,
+		variants,
 	},
 
 	"corner-block-end-shape": {
@@ -276,7 +276,7 @@ export const border: Utilities = {
 		properties: ["corner-block-end-shape"],
 		slug: "corner-shape#block-end",
 		values: cornerShapeValues,
-		variants: base,
+		variants,
 	},
 
 	"corner-block-start-shape": {
@@ -284,7 +284,7 @@ export const border: Utilities = {
 		properties: ["corner-block-start-shape"],
 		slug: "corner-shape#block-start",
 		values: cornerShapeValues,
-		variants: base,
+		variants,
 	},
 
 	"corner-bottom-left-shape": {
@@ -292,7 +292,7 @@ export const border: Utilities = {
 		properties: ["corner-bottom-left-shape"],
 		slug: "corner-shape#bottom-left",
 		values: cornerShapeValues,
-		variants: base,
+		variants,
 	},
 
 	"corner-bottom-right-shape": {
@@ -300,7 +300,7 @@ export const border: Utilities = {
 		properties: ["corner-bottom-right-shape"],
 		slug: "corner-shape#bottom-right",
 		values: cornerShapeValues,
-		variants: base,
+		variants,
 	},
 
 	"corner-bottom-shape": {
@@ -308,7 +308,7 @@ export const border: Utilities = {
 		properties: ["corner-bottom-shape"],
 		slug: "corner-shape#bottom",
 		values: cornerShapeValues,
-		variants: base,
+		variants,
 	},
 
 	"corner-end-end-shape": {
@@ -316,7 +316,7 @@ export const border: Utilities = {
 		properties: ["corner-end-end-shape"],
 		slug: "corner-shape#end-end",
 		values: cornerShapeValues,
-		variants: base,
+		variants,
 	},
 
 	"corner-end-start-shape": {
@@ -324,7 +324,7 @@ export const border: Utilities = {
 		properties: ["corner-end-start-shape"],
 		slug: "corner-shape#end-start",
 		values: cornerShapeValues,
-		variants: base,
+		variants,
 	},
 
 	"corner-inline-end-shape": {
@@ -332,7 +332,7 @@ export const border: Utilities = {
 		properties: ["corner-inline-end-shape"],
 		slug: "corner-shape#inline-end",
 		values: cornerShapeValues,
-		variants: base,
+		variants,
 	},
 
 	"corner-inline-start-shape": {
@@ -340,7 +340,7 @@ export const border: Utilities = {
 		properties: ["corner-inline-start-shape"],
 		slug: "corner-shape#inline-start",
 		values: cornerShapeValues,
-		variants: base,
+		variants,
 	},
 
 	"corner-left-shape": {
@@ -348,7 +348,7 @@ export const border: Utilities = {
 		properties: ["corner-left-shape"],
 		slug: "corner-shape#left",
 		values: cornerShapeValues,
-		variants: base,
+		variants,
 	},
 
 	"corner-right-shape": {
@@ -356,7 +356,7 @@ export const border: Utilities = {
 		properties: ["corner-right-shape"],
 		slug: "corner-shape#right",
 		values: cornerShapeValues,
-		variants: base,
+		variants,
 	},
 
 	"corner-start-end-shape": {
@@ -364,7 +364,7 @@ export const border: Utilities = {
 		properties: ["corner-start-end-shape"],
 		slug: "corner-shape#start-end",
 		values: cornerShapeValues,
-		variants: base,
+		variants,
 	},
 
 	"corner-start-start-shape": {
@@ -372,7 +372,7 @@ export const border: Utilities = {
 		properties: ["corner-start-start-shape"],
 		slug: "corner-shape#start-start",
 		values: cornerShapeValues,
-		variants: base,
+		variants,
 	},
 
 	"corner-top-left-shape": {
@@ -380,7 +380,7 @@ export const border: Utilities = {
 		properties: ["corner-top-left-shape"],
 		slug: "corner-shape#top-left",
 		values: cornerShapeValues,
-		variants: base,
+		variants,
 	},
 
 	"corner-top-right-shape": {
@@ -388,7 +388,7 @@ export const border: Utilities = {
 		properties: ["corner-top-right-shape"],
 		slug: "corner-shape#top-right",
 		values: cornerShapeValues,
-		variants: base,
+		variants,
 	},
 
 	"corner-top-shape": {
@@ -396,6 +396,6 @@ export const border: Utilities = {
 		properties: ["corner-top-shape"],
 		slug: "corner-shape#top",
 		values: cornerShapeValues,
-		variants: base,
+		variants,
 	},
 };
