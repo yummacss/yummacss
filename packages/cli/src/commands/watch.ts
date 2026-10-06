@@ -40,13 +40,8 @@ export async function watch() {
 
 			let css: string;
 			if (hasConfigChanged || !cache.css) {
-				const res = await compiler(currentConfig);
-				css = res.css;
-				setCache({
-					configHash: JSON.stringify(currentConfig),
-					css: res.css,
-					dependencies: res.dependencies,
-				});
+				css = await compiler(currentConfig);
+				setCache({ configHash: JSON.stringify(currentConfig), css });
 			} else {
 				css = cache.css ?? "";
 			}
