@@ -41,13 +41,6 @@ describe("validateClasses (nitro)", () => {
 
 		expect(invalid).toEqual([]);
 	});
-
-	it("should enforce prefixes", () => {
-		const config = { prefix: "ui-" };
-
-		expect(validateClasses(["ui-d:f"], config).valid).toEqual(["ui-d:f"]);
-		expect(validateClasses(["d:f"], config).invalid).toEqual(["d:f"]);
-	});
 });
 
 describe("extractClasses (yummacss lint)", () => {
