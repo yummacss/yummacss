@@ -48,7 +48,13 @@ function buildColorScheme(config: Config): string | null {
 	return hasPair ? ":root {\n  color-scheme: light dark;\n}" : null;
 }
 
+// the theme merged into core's utilities, once per config object
+const built = new WeakMap<Config, Record<string, Utility>>();
+
 function buildUtils(config: Config): Record<string, Utility> {
+	const cached = built.get(config);
+	if (cached) return cached;
+
 	const baseUtils = coreUtils();
 	const utils: Record<string, Utility> = { ...baseUtils };
 
@@ -133,6 +139,7 @@ function buildUtils(config: Config): Record<string, Utility> {
 		}
 	}
 
+	built.set(config, utils);
 	return utils;
 }
 
