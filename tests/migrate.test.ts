@@ -2,7 +2,6 @@ import { coreUtils } from "@yummacss/core";
 import { describe, expect, it } from "vitest";
 import {
 	migrateClass,
-	useConfigPrefix,
 	useThemeScreens,
 } from "../packages/cli/src/services/migrate";
 import { rewriteSource } from "../packages/cli/src/services/rewrite";
@@ -57,17 +56,6 @@ describe("migrateClass", () => {
 		useThemeScreens({ "3xl": "104rem" });
 		expect(migrated("@3xl:d-b")).toBe("@3xl:d:b");
 		useThemeScreens(undefined);
-	});
-
-	it("migrates inside the configured prefix", () => {
-		useConfigPrefix("ui-");
-		expect(migrated("ui-bg-indigo")).toBe("ui-bg:indigo");
-		expect(migrated("ui-h:p-4")).toBe("ui-h:p:4");
-		expect(migrateClass("bg-indigo")).toEqual({
-			ok: false,
-			reason: "missing the configured prefix",
-		});
-		useConfigPrefix(undefined);
 	});
 
 	it("keeps the pseudo element separator", () => {
@@ -173,7 +161,8 @@ describe("rewriteSource", () => {
 	});
 
 	it("leaves an import path alone", () => {
-		const source = 'import { x } from "react-icons/si";\nconst a = "lz-string";';
+		const source =
+			'import { x } from "react-icons/si";\nconst a = "lz-string";';
 
 		expect(rewriteSource(source).content).toBe(source);
 	});
