@@ -4,7 +4,7 @@ import {
 	boxShadowOutsetValues,
 	grayscaleValues,
 } from "@/defaults/values";
-import { base } from "@/defaults/variants/stacks";
+import { variants } from "@/defaults/variants/stacks";
 import type { Utilities } from "@/interfaces";
 
 export const effect: Utilities = {
@@ -13,7 +13,7 @@ export const effect: Utilities = {
 		properties: ["backdrop-filter"],
 		slug: "backdrop-blur",
 		values: blurValues,
-		variants: base,
+		variants,
 	},
 
 	"backdrop-grayscale": {
@@ -21,7 +21,7 @@ export const effect: Utilities = {
 		properties: ["backdrop-filter"],
 		slug: "backdrop-grayscale",
 		values: grayscaleValues,
-		variants: base,
+		variants,
 	},
 
 	blur: {
@@ -29,7 +29,7 @@ export const effect: Utilities = {
 		properties: ["filter"],
 		slug: "blur",
 		values: blurValues,
-		variants: base,
+		variants,
 	},
 
 	"box-shadow-outset": {
@@ -37,7 +37,7 @@ export const effect: Utilities = {
 		properties: ["box-shadow"],
 		slug: "box-shadow#outset",
 		values: boxShadowOutsetValues,
-		variants: base,
+		variants,
 	},
 
 	"box-shadow-inset": {
@@ -45,7 +45,7 @@ export const effect: Utilities = {
 		properties: ["box-shadow"],
 		slug: "box-shadow#inset",
 		values: boxShadowInsetValues,
-		variants: base,
+		variants,
 	},
 
 	grayscale: {
@@ -53,7 +53,7 @@ export const effect: Utilities = {
 		properties: ["filter"],
 		slug: "grayscale",
 		values: grayscaleValues,
-		variants: base,
+		variants,
 	},
 
 	"mix-blend-mode": {
@@ -80,7 +80,7 @@ export const effect: Utilities = {
 			pd: "plus-darker",
 			pl: "plus-lighter",
 		},
-		variants: base,
+		variants,
 	},
 
 	opacity: {
@@ -100,6 +100,6 @@ export const effect: Utilities = {
 			90: ".9",
 			100: "1",
 		},
-		variants: base,
+		variants,
 	},
 };
