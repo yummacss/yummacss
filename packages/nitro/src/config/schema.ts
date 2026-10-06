@@ -20,13 +20,6 @@ export interface Config {
 	output?: string;
 
 	/**
-	 * Namespaces every class, so `bg:red-5` is written `ui-bg:red-5`.
-	 *
-	 * @example "ui-"
-	 */
-	prefix?: string;
-
-	/**
 	 * Emits the base reset above your utilities.
 	 *
 	 * @default true
@@ -106,7 +99,6 @@ const UTILITY_PREFIXES = new Set<string>(
 export const ConfigSchema = z.object({
 	source: z.array(z.string()).default([""]),
 	output: z.string().default(""),
-	prefix: z.string().optional(),
 	normalize: z.boolean().default(true),
 	safelist: z.array(z.string()).optional(),
 	theme: z

@@ -17,13 +17,7 @@ export function generator(usedClasses: Set<string>, config: Config): string {
 	const cssBlocks: string[] = [];
 
 	if (config.safelist) {
-		for (const className of config.safelist) {
-			const finalClass =
-				config.prefix && !className.startsWith(config.prefix)
-					? config.prefix + className
-					: className;
-			usedClasses.add(finalClass);
-		}
+		for (const className of config.safelist) usedClasses.add(className);
 	}
 
 	if (config.normalize ?? true) {
@@ -152,13 +146,7 @@ export function validateClasses(
 	config: Config,
 ): ValidationResult {
 	const utils = buildUtils(config);
-	const safelist = new Set<string>();
-	for (const entry of config.safelist ?? []) {
-		safelist.add(entry);
-		if (config.prefix && !entry.startsWith(config.prefix)) {
-			safelist.add(config.prefix + entry);
-		}
-	}
+	const safelist = new Set(config.safelist);
 
 	const valid: string[] = [];
 	const invalid: string[] = [];
@@ -169,16 +157,7 @@ export function validateClasses(
 			continue;
 		}
 
-		let className = originalClassName;
-		if (config.prefix) {
-			if (!className.startsWith(config.prefix)) {
-				invalid.push(originalClassName);
-				continue;
-			}
-			className = className.slice(config.prefix.length);
-		}
-
-		if (generateCSSRule(className, utils, originalClassName)) {
+		if (generateCSSRule(originalClassName, utils, originalClassName)) {
 			valid.push(originalClassName);
 		} else {
 			invalid.push(originalClassName);
@@ -284,20 +263,6 @@ export function suggestClasses(
 			className = className.slice(0, -opacitySuffix.length);
 		}
 
-		let prefix = "";
-		if (config.prefix) {
-			prefix = config.prefix;
-			if (className.startsWith(prefix)) {
-				className = className.slice(prefix.length);
-			} else if (candidateSet.has(className)) {
-				tentative.set(originalClassName, [
-					variantPrefix + prefix + className + opacitySuffix,
-					variantPrefix + prefix + className,
-				]);
-				continue;
-			}
-		}
-
 		if (!className) continue;
 
 		// m--4 is the 3.x negative. folding hides the second dash, so the minus
@@ -307,8 +272,8 @@ export function suggestClasses(
 			const candidate = `${negative[1]}:-${negative[2]}`;
 			if (candidateSet.has(`${negative[1]}:${negative[2]}`)) {
 				tentative.set(originalClassName, [
-					variantPrefix + prefix + candidate + opacitySuffix,
-					variantPrefix + prefix + candidate,
+					variantPrefix + candidate + opacitySuffix,
+					variantPrefix + candidate,
 				]);
 				continue;
 			}
@@ -318,8 +283,8 @@ export function suggestClasses(
 		const renamed = renameFor(className);
 		if (renamed) {
 			tentative.set(originalClassName, [
-				variantPrefix + prefix + renamed + opacitySuffix,
-				variantPrefix + prefix + renamed,
+				variantPrefix + renamed + opacitySuffix,
+				variantPrefix + renamed,
 			]);
 			continue;
 		}
@@ -361,8 +326,8 @@ export function suggestClasses(
 
 		if (best !== undefined) {
 			tentative.set(originalClassName, [
-				variantPrefix + prefix + best + opacitySuffix,
-				variantPrefix + prefix + best,
+				variantPrefix + best + opacitySuffix,
+				variantPrefix + best,
 			]);
 		}
 	}
@@ -393,16 +358,9 @@ function generateUtil(usedClasses: Set<string>, config: Config): string {
 	const sortedClasses = Array.from(usedClasses).sort();
 
 	for (const originalClassName of sortedClasses) {
-		let classNameToProcess = originalClassName;
-		if (config.prefix && classNameToProcess.startsWith(config.prefix)) {
-			classNameToProcess = classNameToProcess.slice(config.prefix.length);
-		} else if (config.prefix) {
-			continue;
-		}
-
 		if (processedClasses.has(originalClassName)) continue;
 
-		const res = generateCSSRule(classNameToProcess, utils, originalClassName);
+		const res = generateCSSRule(originalClassName, utils, originalClassName);
 		if (res) {
 			if (res.mediaQueries.length > 0) {
 				const key = res.mediaQueries.join("\n");
