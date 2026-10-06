@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - **[nitro]** Generating, validating and suggesting classes is faster.
 
+### Removed
+
+- **[nitro]** `extractor`. Use `scan`.
+
 ## [4.4.0] - 2026-10-06
 
 ### Removed
