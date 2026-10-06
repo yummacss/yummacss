@@ -625,12 +625,44 @@ function escapeCn(className: string): string {
 	return className.replace(/[:/@%().,+*]/g, "\\$&");
 }
 
+// each prefix's utilities, in declaration order, built once per utilities object
+const indexes = new WeakMap<Utilities, Map<string, [number, Utility][]>>();
+
+function prefixIndex(utils: Utilities): Map<string, [number, Utility][]> {
+	let index = indexes.get(utils);
+	if (index) return index;
+	index = new Map();
+	for (const [i, util] of Object.values(utils).entries()) {
+		const entries = index.get(util.prefix) ?? [];
+		entries.push([i, util]);
+		index.set(util.prefix, entries);
+	}
+	indexes.set(utils, index);
+	return index;
+}
+
+// peeling only removes variants from the front, so a class can match only a
+// utility whose prefix starts it or follows one of its colons
+function candidates(className: string, utils: Utilities): Utility[] {
+	const index = prefixIndex(utils);
+	const found = new Map<number, Utility>();
+	let start = 0;
+	while (true) {
+		const prefix = /^[^:/]*/.exec(className.slice(start))?.[0] ?? "";
+		for (const [i, util] of index.get(prefix) ?? []) found.set(i, util);
+		const colon = className.indexOf(":", start);
+		if (colon === -1) break;
+		start = colon + 1;
+	}
+	return [...found].sort(([a], [b]) => a - b).map(([, util]) => util);
+}
+
 function generateCSSRule(
 	className: string,
 	utils: Utilities,
 	originalClassName: string,
 ): { rule: string; mediaQueries: string[] } | null {
-	for (const [_, util] of Object.entries(utils)) {
+	for (const util of candidates(className, utils)) {
 		const result = tryGenerateRule(className, util, originalClassName);
 		if (result) return result;
 	}
