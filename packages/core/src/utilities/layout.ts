@@ -1,4 +1,4 @@
-import { base } from "@/defaults/variants/stacks";
+import { variants } from "@/defaults/variants/stacks";
 import type { Utilities } from "@/interfaces";
 
 export const layout: Utilities = {
@@ -11,7 +11,7 @@ export const layout: Utilities = {
 			n: "normal",
 			s: "size",
 		},
-		variants: base,
+		variants,
 	},
 
 	clear: {
@@ -26,7 +26,7 @@ export const layout: Utilities = {
 			none: "none",
 			r: "right",
 		},
-		variants: base,
+		variants,
 	},
 
 	"table-layout": {
@@ -37,7 +37,7 @@ export const layout: Utilities = {
 			auto: "auto",
 			f: "fixed",
 		},
-		variants: base,
+		variants,
 	},
 
 	display: {
@@ -60,7 +60,7 @@ export const layout: Utilities = {
 			tco: "table-column",
 			tr: "table-row",
 		},
-		variants: base,
+		variants,
 	},
 
 	float: {
@@ -74,7 +74,7 @@ export const layout: Utilities = {
 			none: "none",
 			r: "right",
 		},
-		variants: base,
+		variants,
 	},
 
 	isolation: {
@@ -85,6 +85,6 @@ export const layout: Utilities = {
 			auto: "auto",
 			i: "isolate",
 		},
-		variants: base,
+		variants,
 	},
 };

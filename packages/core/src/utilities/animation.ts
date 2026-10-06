@@ -1,5 +1,5 @@
 import { transitionValues } from "@/defaults/values";
-import { base } from "@/defaults/variants/stacks";
+import { variants } from "@/defaults/variants/stacks";
 import type { Utilities } from "@/interfaces";
 
 export const animation: Utilities = {
@@ -8,7 +8,7 @@ export const animation: Utilities = {
 		properties: ["animation-delay"],
 		slug: "animation-delay",
 		values: transitionValues,
-		variants: base,
+		variants,
 	},
 
 	"animation-duration": {
@@ -16,7 +16,7 @@ export const animation: Utilities = {
 		properties: ["animation-duration"],
 		slug: "animation-duration",
 		values: transitionValues,
-		variants: base,
+		variants,
 	},
 
 	"animation-iteration-count": {
@@ -29,7 +29,7 @@ export const animation: Utilities = {
 			3: "3",
 			inf: "infinite",
 		},
-		variants: base,
+		variants,
 	},
 
 	// names come from theme.keyframes; none is the only one built in
@@ -40,7 +40,7 @@ export const animation: Utilities = {
 		values: {
 			none: "none",
 		},
-		variants: base,
+		variants,
 	},
 
 	"animation-timing-function": {
@@ -53,6 +53,6 @@ export const animation: Utilities = {
 			eo: "ease-out",
 			io: "ease-in-out",
 		},
-		variants: base,
+		variants,
 	},
 };

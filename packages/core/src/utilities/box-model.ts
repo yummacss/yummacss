@@ -4,7 +4,7 @@ import {
 	paddingValues,
 	widthValues,
 } from "@/defaults/values";
-import { base } from "@/defaults/variants/stacks";
+import { variants } from "@/defaults/variants/stacks";
 import type { Utilities } from "@/interfaces";
 
 export const boxModel: Utilities = {
@@ -30,7 +30,7 @@ export const boxModel: Utilities = {
 			"21/9": "21 / 9",
 			"9/21": "9 / 21",
 		},
-		variants: base,
+		variants,
 	},
 
 	"box-sizing": {
@@ -41,7 +41,7 @@ export const boxModel: Utilities = {
 			bb: "border-box",
 			cb: "content-box",
 		},
-		variants: base,
+		variants,
 	},
 
 	"block-size": {
@@ -49,7 +49,7 @@ export const boxModel: Utilities = {
 		properties: ["block-size"],
 		slug: "block-size",
 		values: heightValues,
-		variants: base,
+		variants,
 	},
 
 	height: {
@@ -57,7 +57,7 @@ export const boxModel: Utilities = {
 		properties: ["height"],
 		slug: "height",
 		values: heightValues,
-		variants: base,
+		variants,
 	},
 
 	"inline-size": {
@@ -65,7 +65,7 @@ export const boxModel: Utilities = {
 		properties: ["inline-size"],
 		slug: "inline-size",
 		values: widthValues,
-		variants: base,
+		variants,
 	},
 
 	"max-block-size": {
@@ -73,7 +73,7 @@ export const boxModel: Utilities = {
 		properties: ["max-block-size"],
 		slug: "block-size#max-block-size",
 		values: heightValues,
-		variants: base,
+		variants,
 	},
 
 	"max-height": {
@@ -81,7 +81,7 @@ export const boxModel: Utilities = {
 		properties: ["max-height"],
 		slug: "height#max-height",
 		values: heightValues,
-		variants: base,
+		variants,
 	},
 
 	"max-inline-size": {
@@ -89,7 +89,7 @@ export const boxModel: Utilities = {
 		properties: ["max-inline-size"],
 		slug: "inline-size#max-inline-size",
 		values: widthValues,
-		variants: base,
+		variants,
 	},
 
 	"min-block-size": {
@@ -97,7 +97,7 @@ export const boxModel: Utilities = {
 		properties: ["min-block-size"],
 		slug: "block-size#min-block-size",
 		values: heightValues,
-		variants: base,
+		variants,
 	},
 
 	"min-height": {
@@ -105,7 +105,7 @@ export const boxModel: Utilities = {
 		properties: ["min-height"],
 		slug: "height#min-height",
 		values: heightValues,
-		variants: base,
+		variants,
 	},
 
 	"min-inline-size": {
@@ -113,7 +113,7 @@ export const boxModel: Utilities = {
 		properties: ["min-inline-size"],
 		slug: "inline-size#min-inline-size",
 		values: widthValues,
-		variants: base,
+		variants,
 	},
 
 	margin: {
@@ -121,7 +121,7 @@ export const boxModel: Utilities = {
 		properties: ["margin"],
 		slug: "margin",
 		values: marginValues,
-		variants: base,
+		variants,
 	},
 
 	"margin-block-end": {
@@ -129,7 +129,7 @@ export const boxModel: Utilities = {
 		properties: ["margin-block-end"],
 		slug: "margin#block-end",
 		values: marginValues,
-		variants: base,
+		variants,
 	},
 
 	"margin-block-start": {
@@ -137,7 +137,7 @@ export const boxModel: Utilities = {
 		properties: ["margin-block-start"],
 		slug: "margin#block-start",
 		values: marginValues,
-		variants: base,
+		variants,
 	},
 
 	"margin-bottom": {
@@ -145,7 +145,7 @@ export const boxModel: Utilities = {
 		properties: ["margin-bottom"],
 		slug: "margin#bottom",
 		values: marginValues,
-		variants: base,
+		variants,
 	},
 
 	"margin-inline-end": {
@@ -153,7 +153,7 @@ export const boxModel: Utilities = {
 		properties: ["margin-inline-end"],
 		slug: "margin#inline-end",
 		values: marginValues,
-		variants: base,
+		variants,
 	},
 
 	"margin-inline-start": {
@@ -161,7 +161,7 @@ export const boxModel: Utilities = {
 		properties: ["margin-inline-start"],
 		slug: "margin#inline-start",
 		values: marginValues,
-		variants: base,
+		variants,
 	},
 
 	"margin-left": {
@@ -169,7 +169,7 @@ export const boxModel: Utilities = {
 		properties: ["margin-left"],
 		slug: "margin#left",
 		values: marginValues,
-		variants: base,
+		variants,
 	},
 
 	"margin-right": {
@@ -177,7 +177,7 @@ export const boxModel: Utilities = {
 		properties: ["margin-right"],
 		slug: "margin#right",
 		values: marginValues,
-		variants: base,
+		variants,
 	},
 
 	"margin-top": {
@@ -185,7 +185,7 @@ export const boxModel: Utilities = {
 		properties: ["margin-top"],
 		slug: "margin#top",
 		values: marginValues,
-		variants: base,
+		variants,
 	},
 
 	"margin-inline": {
@@ -193,7 +193,7 @@ export const boxModel: Utilities = {
 		properties: ["margin-inline"],
 		slug: "margin#margin-inline",
 		values: marginValues,
-		variants: base,
+		variants,
 	},
 
 	"margin-block": {
@@ -201,7 +201,7 @@ export const boxModel: Utilities = {
 		properties: ["margin-block"],
 		slug: "margin#margin-block",
 		values: marginValues,
-		variants: base,
+		variants,
 	},
 
 	padding: {
@@ -209,7 +209,7 @@ export const boxModel: Utilities = {
 		properties: ["padding"],
 		slug: "padding",
 		values: paddingValues,
-		variants: base,
+		variants,
 	},
 
 	"padding-block-end": {
@@ -217,7 +217,7 @@ export const boxModel: Utilities = {
 		properties: ["padding-block-end"],
 		slug: "padding#block-end",
 		values: paddingValues,
-		variants: base,
+		variants,
 	},
 
 	"padding-block-start": {
@@ -225,7 +225,7 @@ export const boxModel: Utilities = {
 		properties: ["padding-block-start"],
 		slug: "padding#block-start",
 		values: paddingValues,
-		variants: base,
+		variants,
 	},
 
 	"padding-bottom": {
@@ -233,7 +233,7 @@ export const boxModel: Utilities = {
 		properties: ["padding-bottom"],
 		slug: "padding#bottom",
 		values: paddingValues,
-		variants: base,
+		variants,
 	},
 
 	"padding-inline-end": {
@@ -241,7 +241,7 @@ export const boxModel: Utilities = {
 		properties: ["padding-inline-end"],
 		slug: "padding#inline-end",
 		values: paddingValues,
-		variants: base,
+		variants,
 	},
 
 	"padding-inline-start": {
@@ -249,7 +249,7 @@ export const boxModel: Utilities = {
 		properties: ["padding-inline-start"],
 		slug: "padding#inline-start",
 		values: paddingValues,
-		variants: base,
+		variants,
 	},
 
 	"padding-left": {
@@ -257,7 +257,7 @@ export const boxModel: Utilities = {
 		properties: ["padding-left"],
 		slug: "padding#left",
 		values: paddingValues,
-		variants: base,
+		variants,
 	},
 
 	"padding-right": {
@@ -265,7 +265,7 @@ export const boxModel: Utilities = {
 		properties: ["padding-right"],
 		slug: "padding#right",
 		values: paddingValues,
-		variants: base,
+		variants,
 	},
 
 	"padding-top": {
@@ -273,7 +273,7 @@ export const boxModel: Utilities = {
 		properties: ["padding-top"],
 		slug: "padding#top",
 		values: paddingValues,
-		variants: base,
+		variants,
 	},
 
 	"padding-inline": {
@@ -281,7 +281,7 @@ export const boxModel: Utilities = {
 		properties: ["padding-inline"],
 		slug: "padding#padding-inline",
 		values: paddingValues,
-		variants: base,
+		variants,
 	},
 
 	"padding-block": {
@@ -289,7 +289,7 @@ export const boxModel: Utilities = {
 		properties: ["padding-block"],
 		slug: "padding#padding-block",
 		values: paddingValues,
-		variants: base,
+		variants,
 	},
 
 	width: {
@@ -297,7 +297,7 @@ export const boxModel: Utilities = {
 		properties: ["width"],
 		slug: "width",
 		values: widthValues,
-		variants: base,
+		variants,
 	},
 
 	"max-width": {
@@ -305,7 +305,7 @@ export const boxModel: Utilities = {
 		properties: ["max-width"],
 		slug: "width#max-width",
 		values: widthValues,
-		variants: base,
+		variants,
 	},
 
 	"min-width": {
@@ -313,6 +313,6 @@ export const boxModel: Utilities = {
 		properties: ["min-width"],
 		slug: "width#min-width",
 		values: widthValues,
-		variants: base,
+		variants,
 	},
 };

@@ -1,5 +1,5 @@
 import { topRightBottomLeftValues } from "@/defaults/values";
-import { base } from "@/defaults/variants/stacks";
+import { variants } from "@/defaults/variants/stacks";
 import type { Utilities } from "@/interfaces";
 
 export const positioning: Utilities = {
@@ -8,7 +8,7 @@ export const positioning: Utilities = {
 		properties: ["bottom"],
 		slug: "bottom",
 		values: topRightBottomLeftValues,
-		variants: base,
+		variants,
 	},
 
 	inset: {
@@ -16,7 +16,7 @@ export const positioning: Utilities = {
 		properties: ["inset"],
 		slug: "inset",
 		values: topRightBottomLeftValues,
-		variants: base,
+		variants,
 	},
 
 	"inset-x": {
@@ -24,7 +24,7 @@ export const positioning: Utilities = {
 		properties: ["left", "right"],
 		slug: "inset-x",
 		values: topRightBottomLeftValues,
-		variants: base,
+		variants,
 	},
 
 	"inset-y": {
@@ -32,7 +32,7 @@ export const positioning: Utilities = {
 		properties: ["top", "bottom"],
 		slug: "inset-y",
 		values: topRightBottomLeftValues,
-		variants: base,
+		variants,
 	},
 
 	left: {
@@ -40,7 +40,7 @@ export const positioning: Utilities = {
 		properties: ["left"],
 		slug: "left",
 		values: topRightBottomLeftValues,
-		variants: base,
+		variants,
 	},
 
 	right: {
@@ -48,7 +48,7 @@ export const positioning: Utilities = {
 		properties: ["right"],
 		slug: "right",
 		values: topRightBottomLeftValues,
-		variants: base,
+		variants,
 	},
 
 	top: {
@@ -56,7 +56,7 @@ export const positioning: Utilities = {
 		properties: ["top"],
 		slug: "top",
 		values: topRightBottomLeftValues,
-		variants: base,
+		variants,
 	},
 
 	"object-fit": {
@@ -69,7 +69,7 @@ export const positioning: Utilities = {
 			none: "none",
 			sd: "scale-down",
 		},
-		variants: base,
+		variants,
 	},
 
 	"object-position": {
@@ -87,7 +87,7 @@ export const positioning: Utilities = {
 			rt: "right top",
 			t: "top",
 		},
-		variants: base,
+		variants,
 	},
 
 	overflow: {
@@ -101,7 +101,7 @@ export const positioning: Utilities = {
 			s: "scroll",
 			v: "visible",
 		},
-		variants: base,
+		variants,
 	},
 
 	"overflow-x": {
@@ -115,7 +115,7 @@ export const positioning: Utilities = {
 			s: "scroll",
 			v: "visible",
 		},
-		variants: base,
+		variants,
 	},
 
 	"overflow-y": {
@@ -129,7 +129,7 @@ export const positioning: Utilities = {
 			s: "scroll",
 			v: "visible",
 		},
-		variants: base,
+		variants,
 	},
 
 	position: {
@@ -143,7 +143,7 @@ export const positioning: Utilities = {
 			s: "static",
 			st: "sticky",
 		},
-		variants: base,
+		variants,
 	},
 
 	visibility: {
@@ -155,7 +155,7 @@ export const positioning: Utilities = {
 			h: "hidden",
 			v: "visible",
 		},
-		variants: base,
+		variants,
 	},
 
 	"z-index": {
@@ -176,6 +176,6 @@ export const positioning: Utilities = {
 			"9999": "9999",
 			auto: "auto",
 		},
-		variants: base,
+		variants,
 	},
 };
