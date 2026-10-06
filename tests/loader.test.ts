@@ -22,12 +22,12 @@ afterAll(() => {
 describe("loadConfig", () => {
 	it("should parse an inline config without touching the filesystem", async () => {
 		const { config, path } = await loadConfig({
-			config: { source: ["src/**/*.tsx"], prefix: "ui-" },
+			config: { source: ["src/**/*.tsx"], output: "out.css" },
 		});
 
 		expect(path).toBeNull();
 		expect(config.source).toEqual(["src/**/*.tsx"]);
-		expect(config.prefix).toBe("ui-");
+		expect(config.output).toBe("out.css");
 		expect(config.normalize).toBe(true);
 	});
 
@@ -66,16 +66,16 @@ describe("loadConfig", () => {
 		const dir = makeTempDir();
 		const configPath = join(dir, "yumma.config.mjs");
 
-		writeFileSync(configPath, "export default { prefix: 'a-' };");
+		writeFileSync(configPath, "export default { output: 'a.css' };");
 		const first = await loadConfig({ cwd: dir });
-		expect(first.config.prefix).toBe("a-");
+		expect(first.config.output).toBe("a.css");
 
-		writeFileSync(configPath, "export default { prefix: 'b-' };");
+		writeFileSync(configPath, "export default { output: 'b.css' };");
 		const later = new Date(Date.now() + 1000);
 		utimesSync(configPath, later, later);
 
 		const second = await loadConfig({ cwd: dir });
-		expect(second.config.prefix).toBe("b-");
+		expect(second.config.output).toBe("b.css");
 	});
 });
 
