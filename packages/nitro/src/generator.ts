@@ -61,7 +61,7 @@ function buildUtils(config: Config): Record<string, Utility> {
 
 	let customColors: Record<string, string> | null = null;
 	if (config.theme?.colors) {
-		const { percentage, ...userColors } = config.theme.colors as any;
+		const { percentage, ...userColors } = config.theme.colors;
 		customColors = createColors(
 			userColors,
 			percentage?.light,

@@ -2,7 +2,6 @@ import type { Config } from "@yummacss/nitro";
 
 export type BuildCache = {
 	css?: string;
-	dependencies?: string[];
 	configHash?: string;
 };
 
