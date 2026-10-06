@@ -5,13 +5,14 @@ import {
 	pseudoElements,
 } from "@/defaults/variants";
 
-export const base = {
+export const variants = {
 	pseudoClasses,
 	pseudoElements,
 	mediaQueries,
 };
 
-export const all = {
+// opacity (bg:red-5/50) only makes sense on a color
+export const colorVariants = {
 	mediaQueries,
 	opacity,
 	pseudoClasses,

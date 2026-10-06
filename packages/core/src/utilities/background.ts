@@ -1,4 +1,4 @@
-import { base } from "@/defaults/variants/stacks";
+import { variants } from "@/defaults/variants/stacks";
 import type { Utilities } from "@/interfaces";
 
 export const background: Utilities = {
@@ -11,7 +11,7 @@ export const background: Utilities = {
 			l: "local",
 			s: "scroll",
 		},
-		variants: base,
+		variants,
 	},
 
 	"background-clip": {
@@ -24,7 +24,7 @@ export const background: Utilities = {
 			pb: "padding-box",
 			t: "text",
 		},
-		variants: base,
+		variants,
 	},
 
 	"background-origin": {
@@ -36,7 +36,7 @@ export const background: Utilities = {
 			cb: "content-box",
 			pb: "padding-box",
 		},
-		variants: base,
+		variants,
 	},
 
 	"background-position": {
@@ -54,7 +54,7 @@ export const background: Utilities = {
 			rt: "100% 0",
 			t: "top",
 		},
-		variants: base,
+		variants,
 	},
 
 	"background-repeat": {
@@ -69,7 +69,7 @@ export const background: Utilities = {
 			ry: "repeat-y",
 			s: "space",
 		},
-		variants: base,
+		variants,
 	},
 
 	"background-size": {
@@ -81,6 +81,6 @@ export const background: Utilities = {
 			c: "cover",
 			co: "contain",
 		},
-		variants: base,
+		variants,
 	},
 };

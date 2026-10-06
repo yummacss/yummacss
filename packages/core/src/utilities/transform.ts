@@ -1,4 +1,4 @@
-import { base } from "@/defaults/variants/stacks";
+import { variants } from "@/defaults/variants/stacks";
 import { createValues } from "@/helpers/create-values";
 import type { Utilities } from "@/interfaces";
 
@@ -13,7 +13,7 @@ export const transform: Utilities = {
 			min: 0,
 			max: 360,
 		}),
-		variants: base,
+		variants,
 	},
 
 	scale: {
@@ -33,7 +33,7 @@ export const transform: Utilities = {
 			"90": ".9",
 			"100": "1",
 		},
-		variants: base,
+		variants,
 	},
 
 	"scale-x": {
@@ -53,7 +53,7 @@ export const transform: Utilities = {
 			"90": ".9",
 			"100": "1",
 		},
-		variants: base,
+		variants,
 	},
 
 	"scale-y": {
@@ -73,7 +73,7 @@ export const transform: Utilities = {
 			"90": ".9",
 			"100": "1",
 		},
-		variants: base,
+		variants,
 	},
 
 	"scale-z": {
@@ -93,7 +93,7 @@ export const transform: Utilities = {
 			"90": ".9",
 			"100": "1",
 		},
-		variants: base,
+		variants,
 	},
 
 	skew: {
@@ -107,7 +107,7 @@ export const transform: Utilities = {
 			"6": "skew(6deg)",
 			"12": "skew(12deg)",
 		},
-		variants: base,
+		variants,
 	},
 
 	"skew-x": {
@@ -121,7 +121,7 @@ export const transform: Utilities = {
 			"6": "skewX(6deg)",
 			"12": "skewX(12deg)",
 		},
-		variants: base,
+		variants,
 	},
 
 	"skew-y": {
@@ -135,7 +135,7 @@ export const transform: Utilities = {
 			"6": "skewY(6deg)",
 			"12": "skewY(12deg)",
 		},
-		variants: base,
+		variants,
 	},
 
 	"transform-origin": {
@@ -153,7 +153,7 @@ export const transform: Utilities = {
 			tl: "0 0",
 			tr: "100% 0",
 		},
-		variants: base,
+		variants,
 	},
 
 	translate: {
@@ -168,7 +168,7 @@ export const transform: Utilities = {
 			wrapper: (v) => `${v} ${v}`,
 			extras: { full: "100% 100%", half: "50% 50%" },
 		}),
-		variants: base,
+		variants,
 	},
 
 	"translate-x": {
@@ -183,7 +183,7 @@ export const transform: Utilities = {
 			wrapper: (v) => `translateX(${v})`,
 			extras: { full: "translateX(100%)", half: "translateX(50%)" },
 		}),
-		variants: base,
+		variants,
 	},
 
 	"translate-y": {
@@ -198,6 +198,6 @@ export const transform: Utilities = {
 			wrapper: (v) => `translateY(${v})`,
 			extras: { full: "translateY(100%)", half: "translateY(50%)" },
 		}),
-		variants: base,
+		variants,
 	},
 };
