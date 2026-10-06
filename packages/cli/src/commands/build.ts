@@ -17,19 +17,11 @@ export async function build(existingConfig?: Config, forceRebuild = false) {
 		const hasConfigChanged = configChanged(config);
 
 		let css: string;
-		let dependencies: string[];
 		if (forceRebuild || hasConfigChanged || !cache.css) {
-			const res = await compiler(config);
-			css = res.css;
-			dependencies = res.dependencies;
-			setCache({
-				configHash: JSON.stringify(config),
-				css: res.css,
-				dependencies: res.dependencies,
-			});
+			css = await compiler(config);
+			setCache({ configHash: JSON.stringify(config), css });
 		} else {
 			css = cache.css ?? "";
-			dependencies = cache.dependencies ?? [];
 		}
 
 		const sourceFiles = await glob(config.source ?? []);
