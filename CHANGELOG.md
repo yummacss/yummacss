@@ -23,6 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **[cli]** `migrate` leaves classes already in the 4.x syntax out of its
   report.
 - **[cli]** An unknown option is an error rather than being ignored.
+- **[vite]** Accepts Vite 8.
 
 ### Removed
 
