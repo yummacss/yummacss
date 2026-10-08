@@ -1,86 +1,73 @@
-import { watch as fsWatch, mkdirSync, writeFileSync } from "node:fs";
-import { dirname } from "node:path";
-import type { Config } from "@yummacss/nitro";
-import { glob } from "tinyglobby";
-import { configChanged, getCache, setCache } from "@/services/cache";
-import { compiler } from "@/services/compiler";
-import { loadConfig } from "@/services/loader";
-import { logger } from "@/utils/logger";
-import { build } from "./build.js";
+import { watch as watchFiles } from "node:fs";
+import { join, relative, resolve } from "node:path";
+import { configName } from "@yummacss/nitro";
+import picomatch from "picomatch";
+import { m } from "../messages";
+import { build, readConfig } from "../services/build";
+import { fail, intro, say } from "../ui";
 
-let currentConfig: Config;
-let buildTimeout: NodeJS.Timeout | null = null;
-const changedFiles = new Set<string>();
-
-function handleChange(path: string, _event: string) {
-	changedFiles.add(path);
-
-	if (buildTimeout) {
-		clearTimeout(buildTimeout);
-	}
-
-	buildTimeout = setTimeout(async () => {
-		if (changedFiles.size > 0) {
-			await build(currentConfig, true);
-			changedFiles.clear();
-		}
-		buildTimeout = null;
-	}, 500);
+// the folder a glob starts in: "./src/**/*.tsx" watches "src"
+export function base(pattern: string): string {
+	const parts = pattern.replace(/^\.\//, "").split("/");
+	const fixed = parts.slice(
+		0,
+		parts.findIndex((part) => /[*?{[]/.test(part)),
+	);
+	return fixed.join("/") || ".";
 }
 
-export async function watch() {
+export async function watch(configPath?: string): Promise<number> {
+	intro();
+
+	let config: Awaited<ReturnType<typeof readConfig>>;
 	try {
-		currentConfig = await loadConfig();
-
-		const status = logger.watch.start();
-
-		try {
-			const cache = getCache();
-			const hasConfigChanged = configChanged(currentConfig);
-
-			let css: string;
-			if (hasConfigChanged || !cache.css) {
-				css = await compiler(currentConfig);
-				setCache({ configHash: JSON.stringify(currentConfig), css });
-			} else {
-				css = cache.css ?? "";
-			}
-
-			const collected = Array.from(
-				await glob(currentConfig.source ?? []),
-			).length;
-
-			status.succeed(logger.watch.success(collected));
-
-			if (!currentConfig.output)
-				throw new Error("No output path specified in config.");
-
-			const sourceFiles = await glob(currentConfig.source ?? []);
-			const compileResult = logger.watch.compiling(sourceFiles);
-
-			mkdirSync(dirname(currentConfig.output), { recursive: true });
-			writeFileSync(currentConfig.output, css);
-
-			compileResult.success(
-				currentConfig.output,
-				Buffer.byteLength(css, "utf-8"),
-			);
-		} catch (_err) {
-			status.fail(logger.watch.fail());
-			process.exit(1);
-		}
-
-		if (!currentConfig.source)
-			throw new Error("No source patterns specified in config.");
-
-		const files = await glob(currentConfig.source);
-		for (const file of files) {
-			fsWatch(file, (event) => {
-				handleChange(file, event);
-			});
-		}
-	} catch (_error) {
-		logger.fail(logger.watch.fail());
-		process.exit(1);
+		config = await readConfig(configPath);
+		const built = await build(config, configPath);
+		say.done("scan", m.build.scanned(built.files, built.classes));
+		say.done("write", m.build.written(built.output, built.bytes));
+	} catch (error) {
+		return fail(error);
 	}
+
+	const configFile = resolve(configPath ?? configName);
+	let timer: NodeJS.Timeout | undefined;
+	let changed = "";
+
+	const rebuild = (file: string) => {
+		changed = relative(process.cwd(), file).replace(/\\/g, "/");
+		clearTimeout(timer);
+		timer = setTimeout(async () => {
+			try {
+				if (resolve(file) === configFile) config = await readConfig(configPath);
+				const built = await build(config, configPath);
+				say.done(
+					"rebuild",
+					m.watch.rebuilt(changed, built.output, built.bytes, built.ms),
+				);
+			} catch (error) {
+				say.error(
+					"rebuild",
+					m.watch.failed(
+						error instanceof Error ? error.message : String(error),
+					),
+				);
+			}
+		}, 50);
+	};
+
+	const sources = (config.source ?? []).map((glob) =>
+		glob.replace(/^\.\//, ""),
+	);
+	const isSource = picomatch(sources, { dot: true });
+	for (const dir of new Set(sources.map(base))) {
+		watchFiles(dir, { recursive: true }, (_event, name) => {
+			if (!name) return;
+			const file = join(dir, name);
+			if (isSource(file.replace(/\\/g, "/"))) rebuild(file);
+		});
+	}
+	watchFiles(configFile, () => rebuild(configFile));
+
+	say.info("watch", m.watch.waiting);
+	return new Promise(() => {});
 }

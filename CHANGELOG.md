@@ -7,9 +7,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- **[cli]** `init` points `source` at the project's own folders and sets an
+  `output` beside them.
+- **[cli]** `watch` sees files created after it starts, and reloads the config
+  when it changes.
+
 ### Changed
 
 - **[nitro]** Generating, validating and suggesting classes is faster.
+- **[cli]** Every command prints in the same frame as `yummaui`: a badge,
+  one line per stage, and the docs site's colours.
+- **[cli]** `build` counts the classes it generated, not the files it read.
+- **[cli]** `migrate` leaves classes already in the 4.x syntax out of its
+  report.
+- **[cli]** An unknown option is an error rather than being ignored.
 
 ### Removed
 
