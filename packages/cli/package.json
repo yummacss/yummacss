@@ -43,6 +43,9 @@
 		"@yummacss/nitro": "workspace:*"
 	},
 	"devDependencies": {
+		"@clack/prompts": "^1.8.1",
+		"@types/picomatch": "^4.0.3",
+		"picomatch": "^4.0.7",
 		"tinyglobby": "^0.2.15"
 	},
 	"packageManager": "pnpm@10.27.0",

@@ -1,33 +1,31 @@
 import { relative } from "node:path";
-import { type LintOptions, lintProject } from "@/services/lint";
+import * as p from "@clack/prompts";
+import { m } from "../messages";
+import { type LintOptions, lintProject } from "../services/lint";
+import { c, fail, intro, outro, say, tag } from "../ui";
 
-export async function lint(options: LintOptions) {
-	const result = await lintProject(options);
+export async function lint(options: LintOptions): Promise<number> {
+	intro();
+	try {
+		const result = await lintProject(options);
+		say.done("scan", m.build.scanned(result.files, result.classes));
 
-	console.info(
-		`Scanned ${result.files} files and found ${result.classes} unique classes.`,
-	);
-
-	if (result.invalid.length === 0) {
-		console.info("All classes are valid.");
-		return;
-	}
-
-	console.error(
-		`Found ${result.invalid.length} classes Yumma CSS does not recognize:`,
-	);
-	for (const { className, files, suggestion } of result.invalid) {
-		console.error(
-			suggestion
-				? ` "${className}" - did you mean "${suggestion}"?`
-				: ` "${className}"`,
-		);
-		for (const file of files) {
-			console.error(`  - ${relative(process.cwd(), file)}`);
+		if (result.invalid.length === 0) {
+			outro("done", m.lint.clean);
+			return 0;
 		}
+
+		const lines = result.invalid.flatMap(({ className, files, suggestion }) => [
+			m.lint.suggestion(className, suggestion),
+			...files.map((file) => `  ${c.dim(relative(process.cwd(), file))}`),
+		]);
+		say.error(
+			"invalid",
+			`${m.lint.invalid(result.invalid.length)}\n${lines.join("\n")}`,
+		);
+		p.cancel(tag("next", m.lint.allow()));
+		return 1;
+	} catch (error) {
+		return fail(error);
 	}
-	console.error(
-		'Fix the classes above, or pass --allow "class-a,class-b" for custom classes.',
-	);
-	process.exitCode = 1;
 }

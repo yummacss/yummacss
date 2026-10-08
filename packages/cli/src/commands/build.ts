@@ -1,51 +1,16 @@
-import { mkdirSync, writeFileSync } from "node:fs";
-import { dirname } from "node:path";
-import type { Config } from "@yummacss/nitro";
-import { glob } from "tinyglobby";
-import { configChanged, getCache, setCache } from "@/services/cache";
-import { compiler } from "@/services/compiler";
-import { loadConfig } from "@/services/loader";
-import { logger } from "@/utils/logger";
+import { m } from "../messages";
+import { readConfig, build as run } from "../services/build";
+import { fail, intro, outro, say } from "../ui";
 
-export async function build(existingConfig?: Config, forceRebuild = false) {
-	const collectStatus = logger.build.start();
-	const startTime = Date.now();
-
+export async function build(configPath?: string): Promise<number> {
+	intro();
 	try {
-		const config = existingConfig || (await loadConfig());
-		const cache = getCache();
-		const hasConfigChanged = configChanged(config);
-
-		let css: string;
-		if (forceRebuild || hasConfigChanged || !cache.css) {
-			css = await compiler(config);
-			setCache({ configHash: JSON.stringify(config), css });
-		} else {
-			css = cache.css ?? "";
-		}
-
-		const sourceFiles = await glob(config.source ?? []);
-		const collected = Array.from(sourceFiles).length;
-
-		collectStatus.succeed(
-			logger.build.success(Date.now() - startTime, collected),
-		);
-
-		if (!config.output) throw new Error("No output path specified in config.");
-
-		const compileResult = logger.build.compiling(sourceFiles);
-		const compileStart = Date.now();
-
-		mkdirSync(dirname(config.output), { recursive: true });
-		writeFileSync(config.output, css);
-
-		compileResult.success(config.output, Buffer.byteLength(css, "utf-8"));
-
-		process.stdout.write(
-			`${logger.build.written(Date.now() - compileStart)}\n`,
-		);
+		const built = await run(await readConfig(configPath), configPath);
+		say.done("scan", m.build.scanned(built.files, built.classes));
+		say.done("write", m.build.written(built.output, built.bytes));
+		outro("done", m.build.done(built.ms));
+		return 0;
 	} catch (error) {
-		collectStatus.fail(logger.build.fail(error));
-		process.exit(1);
+		return fail(error);
 	}
 }
