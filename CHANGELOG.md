@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - **[nitro]** Generating, validating and suggesting classes is faster.
+- **[vite]** Accepts Vite 8.
 
 ### Removed
 
