@@ -1368,7 +1368,8 @@ No notable changes.
 
 - Initial release.
 
-[Unreleased]: https://github.com/yummacss/yummacss/compare/v4.4.0...HEAD
+[Unreleased]: https://github.com/yummacss/yummacss/compare/v4.5.0...HEAD
+[4.5.0]: https://github.com/yummacss/yummacss/compare/v4.4.0...v4.5.0
 
 [4.4.0]: https://github.com/yummacss/yummacss/compare/v4.3.0...v4.4.0
 [4.3.0]: https://github.com/yummacss/yummacss/compare/v4.2.2...v4.3.0
