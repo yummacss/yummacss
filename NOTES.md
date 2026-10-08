@@ -212,3 +212,16 @@ through Oxlint itself, loading `packages/lint/src/index.ts` as a JS plugin
 from a temporary project, so the repo has no `eslint` dependency. That needs
 the workspace built first, as `publish.yml` already does. The docs page
 follows the release.
+
+## CLI output
+
+`packages/cli/src/ui.ts` is the same file as yummaui's `src/ui.ts`, badge
+aside: the stage column, the docs colours and the repaint of the prompt
+library's colours. Keep the two alike. Every sentence the CLI prints is in
+`messages.ts`. `@clack/prompts` and `picomatch` are dev dependencies, so the
+build bundles them into `cli.mjs` and a project installing `yummacss` gets no
+extra packages, the same way `tinyglobby` already was.
+
+`watch` watches the folder each `source` glob starts in, recursively, and
+filters events through the globs, so a file created after it starts is
+picked up. It reloads the config when the config changes.

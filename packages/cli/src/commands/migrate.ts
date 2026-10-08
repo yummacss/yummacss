@@ -1,23 +1,25 @@
 import { readFileSync, writeFileSync } from "node:fs";
+import { validateClasses } from "@yummacss/nitro";
 import { glob } from "tinyglobby";
-import { loadConfig } from "@/services/loader";
-import { useThemeColors, useThemeScreens } from "@/services/migrate";
-import { rewriteSource } from "@/services/rewrite";
-import { logger } from "@/utils/logger";
+import { m } from "../messages";
+import { readConfig } from "../services/build";
+import { useThemeColors, useThemeScreens } from "../services/migrate";
+import { rewriteSource } from "../services/rewrite";
+import { fail, intro, outro, say } from "../ui";
 
 export interface MigrateOptions {
 	dryRun?: boolean;
+	configPath?: string;
 }
 
-export async function migrate(options: MigrateOptions = {}) {
+export async function migrate(options: MigrateOptions = {}): Promise<number> {
+	intro();
 	try {
-		const config = await loadConfig();
-
+		const config = await readConfig(options.configPath);
 		useThemeColors(config.theme?.colors);
 		useThemeScreens(config.theme?.screens);
 
 		const files = await glob(config.source ?? []);
-
 		let changedFiles = 0;
 		let migrated = 0;
 		const skipped = new Map<string, string>();
@@ -25,7 +27,6 @@ export async function migrate(options: MigrateOptions = {}) {
 		for (const file of files) {
 			const original = readFileSync(file, "utf-8");
 			const result = rewriteSource(original);
-
 			for (const [token, reason] of result.skipped) skipped.set(token, reason);
 			migrated += result.migrated;
 
@@ -34,26 +35,26 @@ export async function migrate(options: MigrateOptions = {}) {
 			if (!options.dryRun) writeFileSync(file, result.content);
 		}
 
-		const verb = options.dryRun ? "would rewrite" : "rewrote";
-		console.log(
-			`Scanned ${files.length} files and ${verb} ${migrated} classes in ${changedFiles} files.`,
+		const dry = options.dryRun === true;
+		(dry ? say.info : say.done)(
+			"rewrite",
+			m.migrate.rewrote(migrated, changedFiles, dry),
 		);
 
+		// a class already in the 4.x syntax is not left behind, it is done
+		const { valid } = validateClasses(skipped.keys(), config);
+		for (const token of valid) skipped.delete(token);
+
 		if (skipped.size > 0) {
-			console.log(`\nLeft alone (${skipped.size}):`);
-			for (const [token, reason] of [...skipped].sort()) {
-				console.log(` "${token}" - ${reason}`);
-			}
-			console.log(
-				"\nThese are unchanged & need a look. A class built at runtime has to be rewritten by hand.",
-			);
+			const lines = [...skipped]
+				.sort()
+				.map(([token, reason]) => m.migrate.skipped(token, reason));
+			say.warn("skipped", `${m.migrate.skippedNote}\n${lines.join("\n")}`);
 		}
 
-		if (options.dryRun) {
-			console.log("\nNothing was written. Re-run without --dry-run to apply.");
-		}
+		outro("next", dry ? m.migrate.dryRun() : m.migrate.done);
+		return 0;
 	} catch (error) {
-		logger.fail(error instanceof Error ? error.message : String(error));
-		process.exit(1);
+		return fail(error);
 	}
 }

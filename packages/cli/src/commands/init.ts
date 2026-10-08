@@ -1,27 +1,41 @@
-import { writeFileSync } from "node:fs";
+import { existsSync, writeFileSync } from "node:fs";
 import { configName } from "@yummacss/nitro";
-import { logger } from "@/utils/logger";
+import { m } from "../messages";
+import { fail, intro, outro, say } from "../ui";
 
-function generateConfig(): { filename: string; content: string } {
-	return {
-		filename: configName,
-		content: `export default {
-  source: [""],
-  output: "",
-};
-`,
-	};
+// the folders the classes live in, and a stylesheet next to them
+export function configSource(cwd = process.cwd()): string {
+	const dirs = existsSync(`${cwd}/src`)
+		? ["src"]
+		: ["app", "pages", "components"].filter((dir) =>
+				existsSync(`${cwd}/${dir}`),
+			);
+	const globs = (dirs.length ? dirs : ["src"]).map(
+		(dir) => `"./${dir}/**/*.{js,jsx,ts,tsx,mdx,html}"`,
+	);
+	const output = `./${dirs[0] ?? "src"}/styles.css`;
+
+	return `import { defineConfig } from "yummacss";
+
+export default defineConfig({
+  source: [${globs.join(", ")}],
+  output: "${output}",
+});
+`;
 }
 
-export function init() {
-	const status = logger.init.start();
-
+export function init(force = false): number {
+	intro();
+	if (existsSync(configName) && !force) {
+		outro("next", m.init.exists(configName));
+		return 0;
+	}
 	try {
-		const { filename, content } = generateConfig();
-		writeFileSync(filename, content);
-		status.succeed(logger.init.success(filename));
-	} catch (_error) {
-		status.fail(logger.init.fail());
-		process.exit(1);
+		writeFileSync(configName, configSource());
+		say.done("write", configName);
+		outro("next", m.init.next());
+		return 0;
+	} catch (error) {
+		return fail(error);
 	}
 }
