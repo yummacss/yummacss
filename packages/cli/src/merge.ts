@@ -93,8 +93,7 @@ export function merge(...input: ClassValue[]): string {
 	const kept: string[] = [];
 	const covered = new Map<string, Set<string>>();
 
-	for (let i = classes.length - 1; i >= 0; i--) {
-		const className = classes[i];
+	for (const className of classes.reverse()) {
 		const resolved = resolve(className);
 
 		if (!resolved) {
