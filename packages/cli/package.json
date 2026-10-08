@@ -34,6 +34,7 @@
 	],
 	"scripts": {
 		"build": "node scripts/generate-merge-map.mjs && tsdown",
+		"check": "tsc --noEmit",
 		"dev": "tsdown --watch",
 		"lint": "biome check --write",
 		"prepublishOnly": "pnpm build"
