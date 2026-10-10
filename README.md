@@ -1,3 +1,8 @@
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset=".github/brand/yummacss-mark-dark.svg">
+  <img src=".github/brand/yummacss-mark.svg" alt="Yumma CSS" width="64" height="72">
+</picture>
+
 # Yumma CSS
 
 **An atomic CSS framework.**
