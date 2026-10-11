@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- **[nitro]** Utilities win over the reset on focused and disabled controls and
+  on textareas.
+
 ## [4.5.0] - 2026-10-08
 
 ### Added

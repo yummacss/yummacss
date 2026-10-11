@@ -225,3 +225,13 @@ extra packages, the same way `tinyglobby` already was.
 `watch` watches the folder each `source` glob starts in, recursively, and
 filters events through the globs, so a file created after it starts is
 picked up. It reloads the config when the config changes.
+
+## The reset never outranks a utility
+
+Every reset rule is at most one class's weight, and the reset is written
+before the utilities, so a utility wins on order. A rule that needs a pseudo
+class keeps it outside `:where()`: `:where(button, input, select,
+textarea):disabled` is (0,1,0), which still beats `button { cursor: pointer }`,
+where wrapping the whole selector would drop it to (0,0,0) and lose to it.
+`:not([class])` rules are exempt, because a classless element never meets a
+utility. `tests/normalize.test.ts` holds the rule.
