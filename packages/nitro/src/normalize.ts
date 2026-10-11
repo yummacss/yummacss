@@ -25,20 +25,7 @@ canvas, img, picture, svg, video {
 
 button, input, optgroup, select, textarea {
   background-color: transparent;
-  padding: .5rem;
   font: inherit;
-}
-
-button:not([class]), input:not([class]), optgroup:not([class]), select:not([class]), textarea:not([class]) {
-  border: 1px solid #bfc2c7;
-}
-
-:where(a, button, input, select, summary, textarea):focus {
-  outline: 2px solid transparent;
-}
-
-textarea:where(:not([rows])) {
-  min-height: 10em;
 }
 
 button {
@@ -56,8 +43,8 @@ h1, h2, h3, h4, h5, h6, p {
 
 h1, h2, h3, h4, h5, h6 {
   text-wrap: balance;
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: inherit;
+  font-weight: inherit;
 }
 
 p {
@@ -66,11 +53,6 @@ p {
 
 b, strong {
   font-weight: 700;
-}
-
-small {
-  font-size: 80%;
-  line-height: 1.4;
 }
 
 pre, code, kbd, samp {
@@ -88,22 +70,8 @@ ol, ul {
   list-style: none;
 }
 
-th {
-  font-size: 1rem;
-  font-weight: 600;
-}
-
 hr {
-  border-top: 1px solid #bfc2c7;
+  border-top-width: 1px;
   height: 0;
-  margin: 1em 0;
-}
-
-details {
-  display: block;
-}
-
-summary {
-  display: list-item;
 }
 `;
