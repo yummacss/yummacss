@@ -22,13 +22,10 @@ const selectors = [...normalizeCSS.matchAll(/([^{}]+)\{/g)].flatMap(
 
 describe("Normalize", () => {
 	it("never outranks a single utility class", () => {
-		const above = selectors
-			// a classless element never meets a utility
-			.filter((s) => !s.includes(":not([class])"))
-			.filter((s) => {
-				const [ids, classes, elements] = specificity(s);
-				return ids > 0 || classes > 1 || (classes === 1 && elements > 0);
-			});
+		const above = selectors.filter((s) => {
+			const [ids, classes, elements] = specificity(s);
+			return ids > 0 || classes > 1 || (classes === 1 && elements > 0);
+		});
 		expect(above).toEqual([]);
 	});
 });

@@ -7,10 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- **[nitro]** The reset no longer styles controls without a class, `hr`, `th`,
+  `small` or textarea height, and headings inherit their size and weight.
+
+### Removed
+
+- **[nitro]** The reset's focus rule.
+
 ### Fixed
 
-- **[nitro]** Utilities win over the reset on focused and disabled controls and
-  on textareas.
+- **[nitro]** Utilities win over the reset on disabled controls.
 
 ## [4.5.0] - 2026-10-08
 

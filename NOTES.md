@@ -228,10 +228,16 @@ picked up. It reloads the config when the config changes.
 
 ## The reset never outranks a utility
 
-Every reset rule is at most one class's weight, and the reset is written
-before the utilities, so a utility wins on order. A rule that needs a pseudo
-class keeps it outside `:where()`: `:where(button, input, select,
-textarea):disabled` is (0,1,0), which still beats `button { cursor: pointer }`,
-where wrapping the whole selector would drop it to (0,0,0) and lose to it.
-`:not([class])` rules are exempt, because a classless element never meets a
-utility. `tests/normalize.test.ts` holds the rule.
+The reset is for pages built with utilities, not for classless pages: it
+clears what the browser adds and sets nothing a utility would then have to
+undo. No borders, padding or sizes on controls, no heading sizes, and no focus
+rule, so keyboard focus keeps the browser's outline until `fv:` replaces it.
+The one visual opinion left is the disabled rule, which Yumma UI's Button
+relies on for its dimmed state.
+
+Every rule is at most one class's weight, and the reset is written before the
+utilities, so a utility wins on order. A rule that needs a pseudo class keeps
+it outside `:where()`: `:where(button, input, select, textarea):disabled` is
+(0,1,0), which still beats `button { cursor: pointer }`, where wrapping the
+whole selector would drop it to (0,0,0) and lose to it.
+`tests/normalize.test.ts` holds the rule.
