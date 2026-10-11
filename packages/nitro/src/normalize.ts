@@ -33,11 +33,11 @@ button:not([class]), input:not([class]), optgroup:not([class]), select:not([clas
   border: 1px solid #bfc2c7;
 }
 
-:is(a, button, input, select, summary, textarea):focus {
+:where(a, button, input, select, summary, textarea):focus {
   outline: 2px solid transparent;
 }
 
-textarea:not([rows]) {
+textarea:where(:not([rows])) {
   min-height: 10em;
 }
 
@@ -45,7 +45,7 @@ button {
   cursor: pointer;
 }
 
-button:disabled, input:disabled, select:disabled, textarea:disabled {
+:where(button, input, select, textarea):disabled {
   cursor: not-allowed;
   opacity: .5;
 }
