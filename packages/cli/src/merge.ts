@@ -85,10 +85,16 @@ function resolve(className: string): Resolved | null {
 	return resolved;
 }
 
-export type ClassValue = string | false | null | undefined;
+/** What `merge` accepts: class strings, and the falsy values a condition such as `count && "ml:6"` leaves behind. */
+export type ClassValue = string | number | boolean | null | undefined;
 
 export function merge(...input: ClassValue[]): string {
-	const classes = input.filter(Boolean).join(" ").split(/\s+/).filter(Boolean);
+	// only strings are classes; 0, false and the rest drop out
+	const classes = input
+		.filter((value): value is string => typeof value === "string")
+		.join(" ")
+		.split(/\s+/)
+		.filter(Boolean);
 
 	const kept: string[] = [];
 	const covered = new Map<string, Set<string>>();
