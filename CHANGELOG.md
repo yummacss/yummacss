@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [4.6.0] - 2026-10-12
+
 ### Changed
 
 - **[nitro]** The reset no longer styles controls without a class, `hr`, `th`,
@@ -1381,7 +1383,8 @@ No notable changes.
 
 - Initial release.
 
-[Unreleased]: https://github.com/yummacss/yummacss/compare/v4.5.0...HEAD
+[Unreleased]: https://github.com/yummacss/yummacss/compare/v4.6.0...HEAD
+[4.6.0]: https://github.com/yummacss/yummacss/compare/v4.5.0...v4.6.0
 
 [4.5.0]: https://github.com/yummacss/yummacss/compare/v4.4.0...v4.5.0
 [4.4.0]: https://github.com/yummacss/yummacss/compare/v4.3.0...v4.4.0
