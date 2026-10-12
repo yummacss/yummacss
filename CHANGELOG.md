@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- **[cli]** `merge` accepts the `0` that `count && "ml:6"` leaves behind.
+
 ## [4.6.0] - 2026-10-12
 
 ### Changed

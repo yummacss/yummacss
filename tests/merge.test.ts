@@ -27,6 +27,12 @@ describe("merge", () => {
 		expect(merge("c:white c:p c:accent")).toBe("c:p c:accent");
 	});
 
+	it("drops the falsy values a condition leaves behind", () => {
+		const count = 0;
+		expect(merge("p:4", count && "ml:6", false, null, undefined)).toBe("p:4");
+		expect(merge("p:4", 3 > 1 && "ml:6")).toBe("p:4 ml:6");
+	});
+
 	it("keeps variants apart", () => {
 		expect(merge("h:c:white c:accent")).toBe("h:c:white c:accent");
 		expect(merge("h:c:white h:c:accent")).toBe("h:c:accent");
