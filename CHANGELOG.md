@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [4.6.1] - 2026-10-13
+
 ### Fixed
 
 - **[cli]** `merge` accepts the `0` that `count && "ml:6"` leaves behind.
@@ -1387,7 +1389,8 @@ No notable changes.
 
 - Initial release.
 
-[Unreleased]: https://github.com/yummacss/yummacss/compare/v4.6.0...HEAD
+[Unreleased]: https://github.com/yummacss/yummacss/compare/v4.6.1...HEAD
+[4.6.1]: https://github.com/yummacss/yummacss/compare/v4.6.0...v4.6.1
 [4.6.0]: https://github.com/yummacss/yummacss/compare/v4.5.0...v4.6.0
 
 [4.5.0]: https://github.com/yummacss/yummacss/compare/v4.4.0...v4.5.0
