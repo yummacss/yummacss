@@ -345,6 +345,41 @@ describe("theme.keyframes", () => {
 	});
 });
 
+describe("theme.easings", () => {
+	const easings = { smooth: "cubic-bezier(0.25, 1, 0.5, 1)" };
+
+	it("generates ttf:<name> and atf:<name>", () => {
+		expect(css("ttf:smooth", { easings })).toContain(
+			"transition-timing-function: cubic-bezier(0.25, 1, 0.5, 1);",
+		);
+		expect(css("atf:smooth", { easings })).toContain(
+			"animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);",
+		);
+	});
+
+	it("is valid only when configured", () => {
+		expect(invalid(["ttf:smooth", "atf:smooth"], { easings })).toEqual([]);
+		expect(invalid(["ttf:smooth"])).toEqual(["ttf:smooth"]);
+	});
+
+	it("keeps the CSS keywords, and refuses their names", () => {
+		expect(css("ttf:eo", { easings })).toContain(
+			"transition-timing-function: ease-out;",
+		);
+		expect(parses({ easings: { eo: "linear" } })).toBe(false);
+		expect(parses({ easings: { Smooth: "linear" } })).toBe(false);
+	});
+});
+
+describe("scale", () => {
+	it.each([
+		["s:95", "scale: .95;"],
+		["s:5", "scale: .05;"],
+	])("%s writes %s", (className, expected) => {
+		expect(css(className)).toContain(expected);
+	});
+});
+
 describe("theme.states", () => {
 	const states = { closing: "[data-ending-style]", open: "[open]" };
 

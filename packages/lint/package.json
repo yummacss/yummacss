@@ -1,6 +1,6 @@
 {
 	"name": "@yummacss/lint",
-	"version": "4.6.1",
+	"version": "4.7.0",
 	"description": "Lint rules for Yumma CSS, for Oxlint",
 	"keywords": [
 		"ai",
