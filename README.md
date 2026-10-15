@@ -14,6 +14,14 @@ pnpm add yummacss -D
 pnpm dlx yummacss init
 ```
 
+## Agent Skill
+
+Teach your coding agent Yumma CSS and Yumma UI:
+
+```bash
+npx skills add yummacss/yummacss
+```
+
 ## Documentation
 
 Learn more at [yummacss.com](https://yummacss.com)
