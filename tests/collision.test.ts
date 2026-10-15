@@ -70,6 +70,14 @@ describe("Check function values on shared prefixes", () => {
 			);
 			const named = Object.keys(owner?.values ?? {})[0];
 
+			// var() goes to the utility with the most values, and s:var() is a scale
+			const most = utils
+				.filter((u) => u.prefix === prefix)
+				.sort(
+					(a, b) => Object.keys(b.values).length - Object.keys(a.values).length,
+				)[0];
+			expect(owner?.slug, prefix).toBe(prefix === "s" ? "scale" : most?.slug);
+
 			// a later named class of the same utility covers the var() class
 			expect(merge(`${prefix}:var(--x) ${prefix}:${named}`), prefix).toBe(
 				`${prefix}:${named}`,

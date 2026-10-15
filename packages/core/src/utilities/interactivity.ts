@@ -127,6 +127,7 @@ export const interactivity: Utilities = {
 		prefix: "r",
 		properties: ["resize"],
 		slug: "resize",
+		functions: false,
 		values: {
 			b: "both",
 			h: "horizontal",

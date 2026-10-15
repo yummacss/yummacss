@@ -95,6 +95,7 @@ export const flexbox: Utilities = {
 		prefix: "fs",
 		properties: ["flex-shrink"],
 		slug: "flex-shrink",
+		functions: false,
 		values: flexGrowShrinkValues,
 		variants,
 	},
@@ -103,6 +104,7 @@ export const flexbox: Utilities = {
 		prefix: "fw",
 		properties: ["flex-wrap"],
 		slug: "flex-wrap",
+		functions: false,
 		values: {
 			nw: "nowrap",
 			w: "wrap",
