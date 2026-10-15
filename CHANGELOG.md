@@ -12,6 +12,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **[core]** `sx:`, `sy:` and `sz:` scale one axis, and `var()` keeps the axis on scale, skew and translate utilities.
 - **[core]** `s:var()` compiles to `scale` rather than `stroke`, and `merge` reads it the same way.
 
+## [4.7.0] - 2026-10-15
+
+### Added
+
+- **[nitro]** `theme.easings` names timing functions for `ttf:` and `atf:`.
+- **[core]** `s:`, `sx:`, `sy:` and `sz:` take every step of 5.
+
 ## [4.6.1] - 2026-10-13
 
 ### Fixed
@@ -1394,7 +1401,8 @@ No notable changes.
 
 - Initial release.
 
-[Unreleased]: https://github.com/yummacss/yummacss/compare/v4.6.1...HEAD
+[Unreleased]: https://github.com/yummacss/yummacss/compare/v4.7.0...HEAD
+[4.7.0]: https://github.com/yummacss/yummacss/compare/v4.6.1...v4.7.0
 [4.6.1]: https://github.com/yummacss/yummacss/compare/v4.6.0...v4.6.1
 [4.6.0]: https://github.com/yummacss/yummacss/compare/v4.5.0...v4.6.0
 

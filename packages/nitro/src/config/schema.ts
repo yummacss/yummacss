@@ -85,11 +85,23 @@ export interface Config {
 		 * @example { spin: "to { rotate: 360deg; }", "fade-in": "from { opacity: 0; }" }
 		 */
 		keyframes?: Record<string, string>;
+
+		/**
+		 * Easing curves to generate `ttf:` and `atf:` utilities for, keyed by
+		 * name, each a CSS timing function. The four CSS keywords are built in.
+		 *
+		 * @example { smooth: "cubic-bezier(0.25, 1, 0.5, 1)" }
+		 */
+		easings?: Record<string, string>;
 	};
 }
 
 const BUILT_IN_VARIANTS = new Set<string>(
 	[...pseudoClasses, ...pseudoElements].map(({ prefix }) => prefix),
+);
+
+const BUILT_IN_EASINGS = new Set<string>(
+	Object.keys(coreUtils()["transition-timing-function"]?.values ?? {}),
 );
 
 const UTILITY_PREFIXES = new Set<string>(
@@ -143,6 +155,20 @@ export const ConfigSchema = z.object({
 						)
 						.refine((name) => name !== "none", {
 							message: "none is the built-in animation-name",
+						}),
+					z.string().min(1),
+				)
+				.optional(),
+			easings: z
+				.record(
+					z
+						.string()
+						.regex(
+							/^[a-z][a-z0-9-]*$/,
+							"an easing name is lower case letters, digits and dashes",
+						)
+						.refine((name) => !BUILT_IN_EASINGS.has(name), {
+							message: "an easing name cannot reuse a built-in timing function",
 						}),
 					z.string().min(1),
 				)
