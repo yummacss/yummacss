@@ -40,6 +40,15 @@ the docs' TODO said it was:
    property and will not transition alongside `translate`. The popup CSS wants
    `translate: 0 4px`, which nothing emits.
 
+## Easings come from the config
+
+`ttf:` and `atf:` built-ins are the four CSS keywords, each a short form of a
+name CSS already has. A curve such as `cubic-bezier(0.25, 1, 0.5, 1)` has no
+CSS name, so any name the framework gave it would be an opinion. `theme.easings`
+lets a project name its own, as `theme.keyframes` does for `an:`, and refuses
+the keyword names so `ttf:eo` always means `ease-out`. Yumma UI's curves are
+declared there, next to its states and keyframes.
+
 ## Trusted Publishing: pnpm cannot, npm can
 
 The v4 note asked whether `pnpm -r publish` supports OIDC. **It does not.**
