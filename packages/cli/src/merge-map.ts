@@ -394,6 +394,18 @@ export const BY_VALUE: Record<string, Record<string, string[]>> = {
 	},
 };
 
+export const BY_VAR: Record<string, string[]> = {
+	bc: ["background-clip"],
+	br: ["background-repeat"],
+	bs: ["background-size"],
+	fs: ["flex-shrink"],
+	fw: ["flex-wrap"],
+	r: ["resize"],
+	s: ["scale"],
+	td: ["text-decoration"],
+	to: ["text-overflow"],
+};
+
 export const VARIANTS: ReadonlySet<string> = new Set([
 	"@c:lg:",
 	"@c:md:",

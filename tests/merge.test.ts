@@ -27,6 +27,12 @@ describe("merge", () => {
 		expect(merge("c:white c:p c:accent")).toBe("c:p c:accent");
 	});
 
+	it("reads var() as the utility the generator gives it", () => {
+		expect(merge("s:var(--s) s:red")).toBe("s:var(--s) s:red");
+		expect(merge("s:80 s:var(--s)")).toBe("s:var(--s)");
+		expect(merge("c:red c:var(--c)")).toBe("c:var(--c)");
+	});
+
 	it("drops the falsy values a condition leaves behind", () => {
 		const count = 0;
 		expect(merge("p:4", count && "ml:6", false, null, undefined)).toBe("p:4");

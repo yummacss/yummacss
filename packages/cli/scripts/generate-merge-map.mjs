@@ -40,6 +40,7 @@ export function buildMap() {
 
 	const prefixes = new Map();
 	const byValue = new Map();
+	const byVar = new Map();
 
 	for (const [prefix, candidates] of [...byPrefix].sort(([a], [b]) =>
 		a.localeCompare(b),
@@ -58,6 +59,12 @@ export function buildMap() {
 				byValue.set(prefix, table);
 			}
 		}
+
+		// var() goes to the first utility, in declaration order, that takes it
+		const owner = candidates.find((util) => util.functions !== false);
+		if (owner && owner !== fallback) {
+			byVar.set(prefix, [...owner.properties].sort());
+		}
 	}
 
 	const variants = [
@@ -66,10 +73,10 @@ export function buildMap() {
 		...core.mediaQueries.map((v) => `@${v.prefix}:`),
 	].sort();
 
-	return { prefixes, byValue, variants };
+	return { prefixes, byValue, byVar, variants };
 }
 
-export function render({ prefixes, byValue, variants }) {
+export function render({ prefixes, byValue, byVar, variants }) {
 	const table = (map) =>
 		[...map]
 			.map(
@@ -99,6 +106,10 @@ ${table(prefixes)}
 
 export const BY_VALUE: Record<string, Record<string, string[]>> = {
 ${nested}
+};
+
+export const BY_VAR: Record<string, string[]> = {
+${table(byVar)}
 };
 
 export const VARIANTS: ReadonlySet<string> = new Set([
