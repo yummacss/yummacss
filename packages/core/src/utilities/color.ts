@@ -91,6 +91,8 @@ export const color: Colors = {
 		prefix: "s",
 		properties: ["stroke"],
 		slug: "stroke",
+		// s:var() is a scale
+		functions: false,
 		values: colorValues,
 		variants: colorVariants,
 	},

@@ -1,4 +1,4 @@
-import { BY_VALUE, PREFIXES, VARIANTS } from "./merge-map";
+import { BY_VALUE, BY_VAR, PREFIXES, VARIANTS } from "./merge-map";
 
 const SHORTHANDS: Record<string, string[]> = {
 	padding: ["padding-inline", "padding-block"],
@@ -75,7 +75,9 @@ function resolve(className: string): Resolved | null {
 	}
 
 	const value = colon === -1 ? "" : base.slice(colon + 1);
-	const properties = BY_VALUE[prefix]?.[value] ?? PREFIXES[prefix];
+	const properties =
+		(value.startsWith("var(") ? BY_VAR[prefix] : BY_VALUE[prefix]?.[value]) ??
+		PREFIXES[prefix];
 
 	const expanded = new Set<string>();
 	for (const property of properties) expand(property, expanded);

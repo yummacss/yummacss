@@ -1,6 +1,8 @@
 import type { Utility } from "@yummacss/core";
 import { coreUtils } from "@yummacss/core";
+import { generator } from "@yummacss/nitro";
 import { describe, expect, it } from "vitest";
+import { merge } from "yummacss/merge";
 
 describe("Check for class name collisions", () => {
 	it("should not have any class name collisions", () => {
@@ -47,5 +49,31 @@ describe("Check for class name collisions", () => {
 		}
 
 		expect(collisions).toHaveLength(0);
+	});
+});
+
+describe("Check function values on shared prefixes", () => {
+	it("gives var() to one utility, and merge agrees", () => {
+		const utils = Object.values(coreUtils()) as Utility[];
+		const shared = [...new Set(utils.map((u) => u.prefix))].filter(
+			(prefix) => utils.filter((u) => u.prefix === prefix).length > 1,
+		);
+		expect(shared).toContain("s");
+
+		for (const prefix of shared) {
+			const rule = generator(new Set([`${prefix}:var(--x)`]), {
+				buildOptions: { reset: false },
+			} as never);
+			const property = /([a-z-]+): var\(--x\)/.exec(rule)?.[1];
+			const owner = utils.find(
+				(u) => u.prefix === prefix && u.properties[0] === property,
+			);
+			const named = Object.keys(owner?.values ?? {})[0];
+
+			// a later named class of the same utility covers the var() class
+			expect(merge(`${prefix}:var(--x) ${prefix}:${named}`), prefix).toBe(
+				`${prefix}:${named}`,
+			);
+		}
 	});
 });

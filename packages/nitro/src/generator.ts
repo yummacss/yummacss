@@ -460,7 +460,7 @@ function matchValue(
 	const valuePart = body === prefix ? "" : body.slice(prefix.length + 1);
 
 	const fn = functionValue(valuePart, util);
-	if (fn) return { value: fn, opacity };
+	if (fn) return { value: util.wrap ? util.wrap(fn) : fn, opacity };
 
 	const isNegative = valuePart.startsWith("-");
 	const lookup = isNegative ? valuePart.slice(1) : valuePart;
@@ -487,6 +487,7 @@ const takesLength = new WeakMap<Utility, boolean>();
 
 /** A `calc()`, `clamp()`, `min()`, `max()` or `var()` value, as CSS writes it. */
 function functionValue(value: string, util: Utility): string | null {
+	if (util.functions === false) return null;
 	const match = FUNCTION.exec(value);
 	if (!match || !balanced(value)) return null;
 
