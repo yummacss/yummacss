@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- **[nitro]** `theme.easings` names timing functions for `ttf:` and `atf:`.
+- **[core]** `s:`, `sx:`, `sy:` and `sz:` take every step of 5.
+
 ## [4.6.1] - 2026-10-13
 
 ### Fixed

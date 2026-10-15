@@ -108,6 +108,15 @@ function buildUtils(config: Config): Record<string, Utility> {
 			modified = true;
 		}
 
+		if (
+			config.theme?.easings &&
+			(key === "transition-timing-function" ||
+				key === "animation-timing-function")
+		) {
+			newUtil.values = { ...newUtil.values, ...config.theme.easings };
+			modified = true;
+		}
+
 		if (config.theme?.keyframes && key === "animation-name") {
 			const names = Object.fromEntries(
 				Object.keys(config.theme.keyframes).map((name) => [name, name]),
