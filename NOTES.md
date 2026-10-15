@@ -49,6 +49,13 @@ lets a project name its own, as `theme.keyframes` does for `an:`, and refuses
 the keyword names so `ttf:eo` always means `ease-out`. Yumma UI's curves are
 declared there, next to its states and keyframes.
 
+## Unminified packages
+
+The packages ship as tsdown writes them, one statement per line. An app's
+bundler minifies its dependencies anyway and the CLI runs in Node, so
+minifying here saved nothing anyone downloads to a browser. It only hid the
+code from whoever audits it, Socket's scores included, and from stack traces.
+
 ## Trusted Publishing: pnpm cannot, npm can
 
 The v4 note asked whether `pnpm -r publish` supports OIDC. **It does not.**
