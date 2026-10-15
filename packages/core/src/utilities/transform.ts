@@ -2,7 +2,7 @@ import { variants } from "@/defaults/variants/stacks";
 import { createValues } from "@/helpers/create-values";
 import type { Utilities } from "@/interfaces";
 
-const scaleValues = {
+const ratios: Record<string, string> = {
 	"0": "0",
 	"5": ".05",
 	"10": ".1",
@@ -26,6 +26,20 @@ const scaleValues = {
 	"100": "1",
 };
 
+const scaleX = (v: string) => `${v} 1`;
+const scaleY = (v: string) => `1 ${v}`;
+const scaleZ = (v: string) => `1 1 ${v}`;
+
+const wrapRatios = (wrap: (v: string) => string) =>
+	Object.fromEntries(Object.entries(ratios).map(([k, v]) => [k, wrap(v)]));
+
+const skew = (v: string) => `skew(${v})`;
+const skewX = (v: string) => `skewX(${v})`;
+const skewY = (v: string) => `skewY(${v})`;
+const translateXY = (v: string) => `${v} ${v}`;
+const translateX = (v: string) => `translateX(${v})`;
+const translateY = (v: string) => `translateY(${v})`;
+
 export const transform: Utilities = {
 	rotate: {
 		prefix: "ro",
@@ -44,7 +58,7 @@ export const transform: Utilities = {
 		prefix: "s",
 		properties: ["scale"],
 		slug: "scale",
-		values: scaleValues,
+		values: ratios,
 		variants,
 	},
 
@@ -52,7 +66,8 @@ export const transform: Utilities = {
 		prefix: "sx",
 		properties: ["scale"],
 		slug: "scale-x",
-		values: scaleValues,
+		values: wrapRatios(scaleX),
+		wrap: scaleX,
 		variants,
 	},
 
@@ -60,7 +75,8 @@ export const transform: Utilities = {
 		prefix: "sy",
 		properties: ["scale"],
 		slug: "scale-y",
-		values: scaleValues,
+		values: wrapRatios(scaleY),
+		wrap: scaleY,
 		variants,
 	},
 
@@ -68,7 +84,8 @@ export const transform: Utilities = {
 		prefix: "sz",
 		properties: ["scale"],
 		slug: "scale-z",
-		values: scaleValues,
+		values: wrapRatios(scaleZ),
+		wrap: scaleZ,
 		variants,
 	},
 
@@ -76,6 +93,7 @@ export const transform: Utilities = {
 		prefix: "ts",
 		properties: ["transform"],
 		slug: "skew",
+		wrap: skew,
 		values: {
 			"1": "skew(1deg)",
 			"2": "skew(2deg)",
@@ -90,6 +108,7 @@ export const transform: Utilities = {
 		prefix: "tsx",
 		properties: ["transform"],
 		slug: "skew-x",
+		wrap: skewX,
 		values: {
 			"1": "skewX(1deg)",
 			"2": "skewX(2deg)",
@@ -104,6 +123,7 @@ export const transform: Utilities = {
 		prefix: "tsy",
 		properties: ["transform"],
 		slug: "skew-y",
+		wrap: skewY,
 		values: {
 			"1": "skewY(1deg)",
 			"2": "skewY(2deg)",
@@ -136,12 +156,13 @@ export const transform: Utilities = {
 		prefix: "tr",
 		properties: ["translate"],
 		slug: "translate",
+		wrap: translateXY,
 		values: createValues({
 			base: 0.25,
 			unit: "rem",
 			min: 0,
 			max: 100,
-			wrapper: (v) => `${v} ${v}`,
+			wrapper: translateXY,
 			extras: { full: "100% 100%", half: "50% 50%" },
 		}),
 		variants,
@@ -151,13 +172,14 @@ export const transform: Utilities = {
 		prefix: "ttx",
 		properties: ["transform"],
 		slug: "translate-x",
+		wrap: translateX,
 		values: createValues({
 			base: 0.25,
 			unit: "rem",
 			min: 0,
 			max: 100,
-			wrapper: (v) => `translateX(${v})`,
-			extras: { full: "translateX(100%)", half: "translateX(50%)" },
+			wrapper: translateX,
+			extras: { full: translateX("100%"), half: translateX("50%") },
 		}),
 		variants,
 	},
@@ -166,13 +188,14 @@ export const transform: Utilities = {
 		prefix: "tty",
 		properties: ["transform"],
 		slug: "translate-y",
+		wrap: translateY,
 		values: createValues({
 			base: 0.25,
 			unit: "rem",
 			min: 0,
 			max: 100,
-			wrapper: (v) => `translateY(${v})`,
-			extras: { full: "translateY(100%)", half: "translateY(50%)" },
+			wrapper: translateY,
+			extras: { full: translateY("100%"), half: translateY("50%") },
 		}),
 		variants,
 	},

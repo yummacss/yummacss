@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- **[core]** `sx:`, `sy:` and `sz:` scale one axis, and `var()` keeps the axis on scale, skew and translate utilities.
+- **[core]** `s:var()` compiles to `scale` rather than `stroke`, and `merge` reads it the same way.
+
 ## [4.7.0] - 2026-10-15
 
 ### Added

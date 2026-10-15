@@ -184,6 +184,37 @@ describe("CSS functions", () => {
 	});
 });
 
+describe("per-axis values", () => {
+	it.each([
+		["sx:80", "scale: .8 1;"],
+		["sy:80", "scale: 1 .8;"],
+		["sz:80", "scale: 1 1 .8;"],
+		["sx:var(--s)", "scale: var(--s) 1;"],
+		["sy:var(--s)", "scale: 1 var(--s);"],
+		["sz:var(--s)", "scale: 1 1 var(--s);"],
+		["tr:var(--t)", "translate: var(--t) var(--t);"],
+		["ttx:var(--t)", "transform: translateX(var(--t));"],
+		["tty:var(--t)", "transform: translateY(var(--t));"],
+		["ts:var(--a)", "transform: skew(var(--a));"],
+		["tsx:var(--a)", "transform: skewX(var(--a));"],
+		["tsy:var(--a)", "transform: skewY(var(--a));"],
+	])("%s writes %s", (className, expected) => {
+		expect(css(className)).toContain(expected);
+	});
+
+	it("leaves s: on both axes", () => {
+		expect(css("s:80")).toContain("scale: .8;");
+	});
+});
+
+describe("shared prefixes", () => {
+	it("gives s:var() to scale and named colors to stroke", () => {
+		expect(css("s:var(--s)")).toContain("scale: var(--s);");
+		expect(css("s:var(--s)")).not.toContain("stroke");
+		expect(css("s:red")).toContain("stroke: #");
+	});
+});
+
 describe("opacity suffix", () => {
 	const mix = (percent: number) =>
 		new RegExp(
