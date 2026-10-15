@@ -49,6 +49,15 @@ lets a project name its own, as `theme.keyframes` does for `an:`, and refuses
 the keyword names so `ttf:eo` always means `ease-out`. Yumma UI's curves are
 declared there, next to its states and keyframes.
 
+## The agent skill
+
+`skills/yummacss/SKILL.md` is what `npx skills add yummacss/yummacss` installs:
+the `skills` CLI reads any `skills/<name>/SKILL.md` in a repo. It lives here
+for the install command's name, and stays short because it sends the agent to
+the live `/agents.md` and `.md` pages, which the docs generate from the code.
+What it says itself is only the syntax that holds for every 4.x release, and
+`tests/skill.test.ts` compiles every class it shows.
+
 ## Unminified packages
 
 The packages ship as tsdown writes them, one statement per line. An app's
