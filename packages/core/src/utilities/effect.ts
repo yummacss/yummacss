@@ -7,11 +7,15 @@ import {
 import { variants } from "@/defaults/variants/stacks";
 import type { Utilities } from "@/interfaces";
 
+const blur = (v: string) => `blur(${v})`;
+const grayscale = (v: string) => `grayscale(${v})`;
+
 export const effect: Utilities = {
 	"backdrop-blur": {
 		prefix: "bf-b",
 		properties: ["backdrop-filter"],
 		slug: "backdrop-blur",
+		wrap: blur,
 		values: blurValues,
 		variants,
 	},
@@ -20,6 +24,7 @@ export const effect: Utilities = {
 		prefix: "bf-g",
 		properties: ["backdrop-filter"],
 		slug: "backdrop-grayscale",
+		wrap: grayscale,
 		values: grayscaleValues,
 		variants,
 	},
@@ -28,6 +33,7 @@ export const effect: Utilities = {
 		prefix: "f-b",
 		properties: ["filter"],
 		slug: "blur",
+		wrap: blur,
 		values: blurValues,
 		variants,
 	},
@@ -52,6 +58,7 @@ export const effect: Utilities = {
 		prefix: "fgr",
 		properties: ["filter"],
 		slug: "grayscale",
+		wrap: grayscale,
 		values: grayscaleValues,
 		variants,
 	},

@@ -198,8 +198,26 @@ describe("per-axis values", () => {
 		["ts:var(--a)", "transform: skew(var(--a));"],
 		["tsx:var(--a)", "transform: skewX(var(--a));"],
 		["tsy:var(--a)", "transform: skewY(var(--a));"],
+		["f-b:var(--b)", "filter: blur(var(--b));"],
+		["fgr:var(--g)", "filter: grayscale(var(--g));"],
+		["bf-b:var(--b)", "backdrop-filter: blur(var(--b));"],
+		["bf-g:var(--g)", "backdrop-filter: grayscale(var(--g));"],
 	])("%s writes %s", (className, expected) => {
 		expect(css(className)).toContain(expected);
+	});
+
+	it("wraps var() wherever every value is a function call", () => {
+		for (const util of Object.values(coreUtils())) {
+			const names = Object.values(util.values).map(
+				(v) => /^([a-zA-Z]+)\(.*\)$/.exec(v)?.[1],
+			);
+			const [name] = names;
+			if (!name || names.some((n) => n !== name)) continue;
+
+			expect(css(`${util.prefix}:var(--x)`), util.slug).toContain(
+				`${name}(var(--x))`,
+			);
+		}
 	});
 
 	it("leaves s: on both axes", () => {
