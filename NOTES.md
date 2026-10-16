@@ -261,19 +261,18 @@ whole selector would drop it to (0,0,0) and lose to it.
 ## Function values on a shared prefix
 
 A named value belongs to one utility, which `tests/collision.test.ts` holds.
-A `var()` value fits every utility on its prefix, so the generator gives it to
-the first one in declaration order that does not set `functions: false`.
-`stroke` sets it, so `s:var(--s)` is a scale: `s:` is the scale prefix beside
-`sx:`, `sy:` and `sz:`, and a scale is what that class reads as.
+A `var()` value fits every utility on its prefix, so it goes to the one with
+the most values, which is also the utility `merge` falls back to. The generator
+gives it to the first utility in declaration order that does not set
+`functions: false`, so a keyword utility declared ahead of the owner sets it:
+`background-clip` and `border-collapse` leave `bc:var()` to `border-color`,
+and `resize` leaves `r:var()` to `right`.
 
-`merge` has to agree with the CSS, so the merge map carries `BY_VAR` for each
-prefix whose `var()` owner is not the utility it falls back to. The collision
-test checks every shared prefix both ways.
-
-The same declaration order still gives `bc:var()` to `background-clip`,
-`br:var()` to `background-repeat`, `fs:var()` to `flex-shrink` and `r:var()` to
-`resize`. Those are each a `functions: false` away from the utility a reader
-would expect, and `BY_VAR` shrinks to match when they move.
+The one exception is `s:`. `stroke` has the most values, but it sets
+`functions: false`, so `s:var(--s)` is a scale: `s:` is the scale prefix
+beside `sx:`, `sy:` and `sz:`, and a scale is what that class reads as.
+`BY_VAR` in the merge map carries that exception, and
+`tests/collision.test.ts` holds the rule for every shared prefix.
 
 A utility whose values are wrapped, such as `translateX()` or `.8 1`, sets
 `wrap` to the same function, so a `var()` value is wrapped too.

@@ -12,6 +12,7 @@ export const border: Utilities = {
 		prefix: "bc",
 		properties: ["border-collapse"],
 		slug: "border-collapse",
+		functions: false,
 		values: {
 			c: "collapse",
 			s: "separate",
