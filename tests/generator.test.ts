@@ -213,6 +213,19 @@ describe("shared prefixes", () => {
 		expect(css("s:var(--s)")).not.toContain("stroke");
 		expect(css("s:red")).toContain("stroke: #");
 	});
+
+	it.each([
+		["bc:var(--c)", "border-color: var(--c);"],
+		["br:var(--r)", "border-radius: var(--r);"],
+		["bs:var(--s)", "border-spacing: var(--s);"],
+		["fs:var(--s)", "font-size: var(--s);"],
+		["fw:var(--w)", "font-weight: var(--w);"],
+		["r:var(--r)", "right: var(--r);"],
+		["td:var(--d)", "transition-delay: var(--d);"],
+		["to:var(--o)", "text-orientation: var(--o);"],
+	])("gives %s to %s", (className, expected) => {
+		expect(css(className)).toContain(expected);
+	});
 });
 
 describe("opacity suffix", () => {

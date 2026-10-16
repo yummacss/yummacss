@@ -18,6 +18,7 @@ export const background: Utilities = {
 		prefix: "bc",
 		properties: ["background-clip"],
 		slug: "background-clip",
+		functions: false,
 		values: {
 			bb: "border-box",
 			cb: "content-box",
@@ -61,6 +62,7 @@ export const background: Utilities = {
 		prefix: "br",
 		properties: ["background-repeat"],
 		slug: "background-repeat",
+		functions: false,
 		values: {
 			nr: "no-repeat",
 			r: "repeat",
@@ -76,6 +78,7 @@ export const background: Utilities = {
 		prefix: "bs",
 		properties: ["background-size"],
 		slug: "background-size",
+		functions: false,
 		values: {
 			auto: "auto",
 			c: "cover",
