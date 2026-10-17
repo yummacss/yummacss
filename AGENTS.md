@@ -99,8 +99,8 @@ is written.
   bs-o:sm`, so the bevel works on any accent.
 - Recessed things (inputs, wells) reverse it: `bg:field btc:shadow blc:line
   brc:line bbc:rim`.
-- Popups float on `bg:raised bc:line bs-o:xl`. A highlighted row is filled,
-  `bg:fill c:on-fill btc:white/20`, on a `bw:1 bc:transparent` row.
+- Popups float on `bg:raised bc:line bs-o:xl`. A highlighted row is
+  `check` with its bevel and `c:white`, on a `bw:1 bc:transparent` row.
 - No inset shadow, except a pressed toggle (Toggle, Toolbar). No `shadow` prop.
 - Pressed in is an on/off that stays on by itself (Toggle, Toolbar). Picking
   one of several is a raised chip on a track (Tabs, Toggle Group).

@@ -27,12 +27,12 @@ export interface SelectGroup {
 const FOCUS = "fv:os:s fv:ow:3 fv:oo:0 fv:oc:slate-4/60 fv:bc:slate-6";
 
 const TRIGGER =
-  "d:f ai:c jc:sb bw:1 bg:white btc:slate-2 blc:slate-2 brc:slate-2 bbc:slate-4 bs-o:xs c:slate-10 us:none c:p";
+  "d:f ai:c jc:sb bw:1 bg:raised btc:rim blc:rim brc:rim bbc:shadow bs-o:xs c:label us:none c:p";
 
 const SIZES: Record<Size, string> = {
   sm: "h:8 w:56 px:3 fs:sm",
-  md: "h:10 w:64 px:3 fs:md",
-  lg: "h:12 w:72 px:4 fs:lg",
+  md: "h:9 w:64 px:3 fs:sm",
+  lg: "h:11 w:72 px:3 fs:md",
 };
 
 const ITEM_SHAPES: Record<Shape, string> = {
@@ -71,24 +71,26 @@ function renderOption(option: SelectOption, shape: Shape) {
       key={option.value}
       value={option.value}
       className={(state) =>
-        `d:f ai:c g:3 py:2 px:3 mx:1 bw:1 bc:transparent ${ITEM_SHAPES[shape]} fs:sm fw:500 us:none c:p c:slate-10 ${
+        `d:f ai:c g:3 py:2 px:3 mx:1 bw:1 bc:transparent ${ITEM_SHAPES[shape]} fs:sm fw:500 us:none c:p c:label ${
           state.highlighted
-            ? "bg:slate-12 c:white btc:white/20"
+            ? "bg:check c:white btc:white/25 blc:black/15 brc:black/15 bbc:black/30"
             : "bg:transparent"
         }`
       }
     >
-      <Select.ItemIndicator className="d:f ai:c">
-        <CheckIcon className="w:4 h:4" />
-      </Select.ItemIndicator>
+      <span className="d:f ai:c w:4 h:4 fs:0">
+        <Select.ItemIndicator className="d:f ai:c">
+          <CheckIcon className="w:4 h:4" />
+        </Select.ItemIndicator>
+      </span>
       {option.avatar && (
-        <Avatar.Root className="d:if o:h ai:c jc:c w:6 h:6 bc:white br:9999 bw:1 va:m us:none">
+        <Avatar.Root className="d:if o:h ai:c jc:c w:6 h:6 bc:raised br:9999 bw:1 va:m us:none">
           <Avatar.Image
             src={option.avatar}
             alt=""
             className="of:c w:100% h:100%"
           />
-          <Avatar.Fallback className="d:f ai:c jc:c w:100% h:100% c:slate-8 fs:xs">
+          <Avatar.Fallback className="d:f ai:c jc:c w:100% h:100% c:hint fs:xs">
             {option.label[0]}
           </Avatar.Fallback>
         </Avatar.Root>
@@ -96,7 +98,7 @@ function renderOption(option: SelectOption, shape: Shape) {
       <div className="d:f fd:c">
         <Select.ItemText>{option.label}</Select.ItemText>
         {option.description && (
-          <span className="c:slate-5 fs:xs">{option.description}</span>
+          <span className="fs:xs o:80">{option.description}</span>
         )}
       </div>
     </Select.Item>
@@ -213,12 +215,12 @@ export default function SelectBase({
     TRIGGER,
     SIZES[size],
     SHAPES[shape],
-    open ? "bg:silver-1" : "",
+    open ? "bg:well" : "",
     className,
   );
 
   const iconEl = icon && (
-    <span className="d:f ai:c c:slate-5" aria-hidden>
+    <span className="d:f ai:c c:hint" aria-hidden>
       {icon}
     </span>
   );
@@ -238,20 +240,20 @@ export default function SelectBase({
   );
 
   const arrow = (
-    <Select.Icon className="d:f c:slate-8">
+    <Select.Icon className="d:f c:hint">
       <SortVerticalIcon className="w:4 h:4" />
     </Select.Icon>
   );
 
   const popup = (
     <Select.Popup
-      className={`o:h py:1 bg:white bc:black/10 bs-o:xl bw:1 ${POPUP_SIZES[size]} ${SHAPES[shape]} ${animated ? "tor:var(--transform-origin) tp:a tdu:200 ttf:out-quart opening:o:0 opening:s:95 closing:o:0 closing:s:95 closing:tdu:100 closing:ttf:eo @prm:tp:none" : ""}`}
+      className={`o:h py:1 bg:raised bc:line bs-o:xl bw:1 ${POPUP_SIZES[size]} ${SHAPES[shape]} ${animated ? "tor:var(--transform-origin) tp:a tdu:200 ttf:out-quart opening:o:0 opening:s:95 closing:o:0 closing:s:95 closing:tdu:100 closing:ttf:eo @prm:tp:none" : ""}`}
     >
       <Select.List className="p:r o:auto">
         {options.map((entry) =>
           isGroupEntry(entry) ? (
             <Select.Group key={entry.group}>
-              <Select.GroupLabel className="px:3 pt:2 pb:1 fs:xs fw:500 c:slate-5 us:none">
+              <Select.GroupLabel className="px:3 pt:2 pb:1 fs:xs fw:500 c:hint us:none">
                 {entry.group}
               </Select.GroupLabel>
               {entry.items.map((entry) => renderOption(entry, shape))}
@@ -267,7 +269,7 @@ export default function SelectBase({
   return (
     <Field.Root className={`d:f fd:c g:2 ${disabled ? "o:60 c:na" : ""}`}>
       {label && (
-        <label htmlFor={id} className="c:slate-10 fs:sm fw:500 us:none">
+        <label htmlFor={id} className="c:label fs:sm fw:600 us:none">
           {label}
           {required && <span className="c:red-5"> *</span>}
         </label>
@@ -311,7 +313,7 @@ export default function SelectBase({
         </Select.Portal>
       </Select.Root>
 
-      {description && <p className="m:0 c:slate-6 fs:xs">{description}</p>}
+      {description && <p className="m:0 c:hint fs:xs">{description}</p>}
     </Field.Root>
   );
 }

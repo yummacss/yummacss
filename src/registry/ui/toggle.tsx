@@ -29,18 +29,17 @@ const SIZES: Record<Size, string> = {
   md: "w:12 h:12",
 };
 
-const DISABLED = "bw:1 bc:silver-2 bg:silver-1 c:slate-4";
+const DISABLED = "bw:1 bc:line bg:well c:hint o:60";
 
 // pressed sinks in: the one place an inset shadow belongs
-const PRESSED =
-  "bg:silver-1 bs-i:md btc:slate-4 blc:slate-3 brc:slate-3 bbc:slate-2 c:slate-11";
+const PRESSED = "bg:well bs-i:md btc:shadow blc:line brc:line bbc:rim c:check";
 const UNPRESSED =
-  "bg:white btc:slate-2 blc:slate-2 brc:slate-2 bbc:slate-4 bs-o:xs c:slate-10 h:bg:silver-1";
+  "bg:raised btc:rim blc:rim brc:rim bbc:shadow bs-o:xs c:label h:bg:well";
 
 // in a group, picking one of several: the selected tab's raised chip on the track
 const GROUP_PRESSED =
-  "bg:white btc:silver-2 blc:silver-2 brc:silver-2 bbc:silver-4 bs-o:xs c:slate-10";
-const GROUP_UNPRESSED = "bg:transparent bc:transparent c:slate-8 h:c:slate-10";
+  "bg:raised btc:rim blc:rim brc:rim bbc:shadow bs-o:xs c:label";
+const GROUP_UNPRESSED = "bg:transparent bc:transparent c:hint h:c:label";
 
 export interface ToggleProps
   extends Omit<ComponentProps<"button">, "className" | "value">,

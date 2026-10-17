@@ -14,7 +14,7 @@ const SHAPES: Record<Shape, string> = {
   pill: "br:9999",
 };
 
-const BASE = "p:r d:f g:1 p:1 w:fc bg:silver-1 bc:silver-2 bw:1";
+const BASE = "p:r d:f g:1 p:1 w:fc bg:well";
 
 export interface ToggleGroupProps {
   /** Merged with the group's own classes, so a utility you pass wins. */
