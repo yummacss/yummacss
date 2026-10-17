@@ -317,7 +317,13 @@ export const sidebarConfig = {
     },
     {
       title: "Application UI",
-      items: ["empty-state", "onboarding", "rating", "skeleton"],
+      items: [
+        "empty-state",
+        "onboarding",
+        "rating",
+        "skeleton",
+        "theme-switcher",
+      ],
     },
     {
       title: "Blocks",

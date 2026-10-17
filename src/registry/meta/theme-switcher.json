@@ -1,0 +1,70 @@
+{
+  "summary": "Light, dark & system as one control, with an icon for each, that reports the choice and can remember it.",
+  "props": [
+    {
+      "name": "value",
+      "type": "enum",
+      "description": "The picked theme, controlled. Pair it with `onValueChange`.",
+      "values": ["light", "dark", "system"],
+      "controlled": true,
+      "handler": "onValueChange"
+    },
+    {
+      "name": "defaultValue",
+      "type": "enum",
+      "values": ["light", "dark", "system"],
+      "default": "system",
+      "description": "The theme picked on first render, uncontrolled.",
+      "controlled": true
+    },
+    {
+      "name": "onValueChange",
+      "type": "none",
+      "typeName": "(value: \"light\" | \"dark\" | \"system\") => void",
+      "description": "Called with the theme whenever it changes, and once with a remembered one. Applying it, a class or an attribute on the page, is yours to do."
+    },
+    {
+      "name": "storageKey",
+      "type": "string",
+      "description": "Remembers the choice in `localStorage` under this key and restores it on the next visit. Leave it out and nothing is stored."
+    },
+    {
+      "name": "iconOnly",
+      "type": "boolean",
+      "default": false,
+      "description": "Draws the icons alone, keeping each label as its accessible name."
+    },
+    {
+      "name": "size",
+      "type": "enum",
+      "values": ["sm", "md"],
+      "default": "md",
+      "description": "Height of the track and its options."
+    },
+    {
+      "name": "shape",
+      "type": "enum",
+      "values": ["rounded", "square", "squircle"],
+      "default": "rounded",
+      "description": "Corner radius of the track. The options nest one step inside it. `squircle` uses `corner-shape`, which degrades to a rounded square where that is unsupported."
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "default": false,
+      "description": "Blocks every option and dims the control."
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "description": "Extra classes. `merge` folds them in last, so one here replaces the component's own class for the same utility."
+    },
+    {
+      "name": "focus",
+      "type": "boolean",
+      "typeName": "boolean | string",
+      "default": true,
+      "description": "The focus outline. `true` draws it, `false` removes it, and a string of Yumma CSS utilities restyles it on every focusable part of the component, which is more than `className` reaches. Removing it outright and putting nothing back fails WCAG 2.4.7."
+    }
+  ]
+}

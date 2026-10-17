@@ -39,6 +39,7 @@ import meta_slider from "./meta/slider.json";
 import meta_switch from "./meta/switch.json";
 import meta_tabs from "./meta/tabs.json";
 import meta_textarea from "./meta/textarea.json";
+import meta_theme_switcher from "./meta/theme-switcher.json";
 import meta_toast from "./meta/toast.json";
 import meta_toggle_group from "./meta/toggle-group.json";
 import meta_toggle from "./meta/toggle.json";
@@ -99,6 +100,7 @@ export const registry = {
   "switch": () => import("./ui/switch"),
   "tabs": () => import("./ui/tabs"),
   "textarea": () => import("./ui/textarea"),
+  "theme-switcher": () => import("./ui/theme-switcher"),
   "toast": () => import("./ui/toast"),
   "toggle-group": () => import("./ui/toggle-group"),
   "toggle": () => import("./ui/toggle"),
@@ -196,6 +198,7 @@ export const registryMeta = {
   "switch": meta_switch,
   "tabs": meta_tabs,
   "textarea": meta_textarea,
+  "theme-switcher": meta_theme_switcher,
   "toast": meta_toast,
   "toggle-group": meta_toggle_group,
   "toggle": meta_toggle,
@@ -268,6 +271,7 @@ export const registryTargets: Record<string, RegistryTarget> = {
   "switch": { component: "switch", variant: "base", kind: "component", install: "switch" },
   "tabs": { component: "tabs", variant: "base", kind: "component", install: "tabs" },
   "textarea": { component: "textarea", variant: "base", kind: "component", install: "textarea" },
+  "theme-switcher": { component: "theme-switcher", variant: "base", kind: "component", install: "theme-switcher" },
   "toast": { component: "toast", variant: "base", kind: "component", install: "toast" },
   "toggle-group": { component: "toggle-group", variant: "base", kind: "component", install: "toggle-group" },
   "toggle": { component: "toggle", variant: "base", kind: "component", install: "toggle" },
