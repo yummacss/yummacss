@@ -65,6 +65,24 @@ export const font: Utilities = {
 		variants,
 	},
 
+	"font-variant-numeric": {
+		prefix: "fvn",
+		properties: ["font-variant-numeric"],
+		slug: "font-variant-numeric",
+		values: {
+			n: "normal",
+			o: "ordinal",
+			sz: "slashed-zero",
+			ln: "lining-nums",
+			on: "oldstyle-nums",
+			pn: "proportional-nums",
+			tn: "tabular-nums",
+			df: "diagonal-fractions",
+			sf: "stacked-fractions",
+		},
+		variants,
+	},
+
 	"font-weight": {
 		prefix: "fw",
 		properties: ["font-weight"],

@@ -88,6 +88,7 @@ export const PREFIXES: Record<string, string[]> = {
 	fgr: ["filter"],
 	fl: ["float"],
 	fs: ["font-size"],
+	fvn: ["font-variant-numeric"],
 	fw: ["font-weight"],
 	g: ["gap"],
 	gac: ["grid-auto-columns"],
