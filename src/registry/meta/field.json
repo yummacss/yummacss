@@ -122,5 +122,16 @@
       "default": true,
       "description": "The focus outline. `true` draws it, `false` removes it along with the danger, error and success tints that ride with it, and a string of Yumma CSS utilities restyles it on every focusable part of the component, which is more than `className` reaches. Removing it outright and putting nothing back fails WCAG 2.4.7."
     }
+  ],
+  "scene": [
+    {
+      "component": "Field",
+      "props": {
+        "label": "File name",
+        "defaultValue": "quarterly-report",
+        "suffix": ".pdf",
+        "description": "Letters, numbers and dashes. No spaces."
+      }
+    }
   ]
 }

@@ -18,7 +18,7 @@ const RESET = `
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #fff;
+    background: light-dark(#fff, #1f2023);
     font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica,
       Arial, sans-serif;
   }

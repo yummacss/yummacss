@@ -87,9 +87,12 @@ is written.
 # Tactile
 
 - Colors are roles, not palette shades: `raised`, `well`, `field`, `fill`,
-  `on-fill`, `label`, `hint`, `rim`, `shadow` and `line`, each a light and a
-  Graphite pair in `src/utils/roles.mjs`. A reworked component names roles
-  only, so dark mode follows `color-scheme` with no class of its own.
+  `on-fill`, `label`, `hint`, `rim`, `shadow`, `line`, `check`, `on` and
+  `knob`, each a light and a Graphite pair in `src/utils/roles.mjs`. A
+  reworked component names roles only, so dark mode follows `color-scheme`
+  with no class of its own. Role values are opaque: a pair drops hex alpha.
+- Ticked and picked are `check` with `btc:white/25 blc:black/15 brc:black/15
+  bbc:black/30`. An on switch is `on`, its thumb `knob`.
 - Raised things (buttons, triggers, tiles, bars) are lighter on top and darker
   below: `bg:raised btc:rim blc:rim brc:rim bbc:shadow bs-o:xs`. Filled ones:
   `bg:fill c:on-fill btc:white/20 blc:black/40 brc:black/40 bbc:black/60

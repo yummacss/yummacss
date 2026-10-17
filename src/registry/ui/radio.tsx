@@ -35,7 +35,19 @@ const LABEL_SIZES: Record<Size, string> = {
   lg: "fs:md",
 };
 
+// a box of the label's first line, so the circle sits level with it
+const LINE: Record<Size, string> = {
+  sm: "h:4",
+  md: "h:5",
+  lg: "h:6",
+};
+
 const ROUND = "br:9999";
+
+// a picked circle is raised and bevelled, an empty one sits recessed
+const PICKED =
+  "bw:1 bg:check btc:white/25 blc:black/15 brc:black/15 bbc:black/30";
+const UNPICKED = "bw:1 bg:field btc:shadow blc:line brc:line bbc:rim";
 
 export interface RadioProps {
   /**
@@ -104,13 +116,13 @@ export default function RadioBase({
 
   const dotClasses = (checked: boolean) =>
     checked
-      ? `${DOT_SIZES[size]} ${ROUND} bg:white bs-o:xs ${animated ? "tp:t tdu:250 ttf:out-back @st:s:0 @prm:tp:none" : ""}`
+      ? `${DOT_SIZES[size]} ${ROUND} bg:white bs-o:xs ${animated ? "tp:t tdu:350 ttf:out-back @st:s:0 @prm:tp:none" : ""}`
       : "d:none";
 
   return (
     <div className="d:f fd:c g:2">
       {label && (
-        <div id={labelId} className="c:slate-10 fs:sm fw:500 us:none">
+        <div id={labelId} className="c:label fs:sm fw:600 us:none">
           {label}
         </div>
       )}
@@ -121,7 +133,7 @@ export default function RadioBase({
         value={value}
         onValueChange={onValueChange}
         disabled={disabled}
-        className={merge("d:f fd:c g:3 ai:fs", className)}
+        className={merge("d:f fd:c g:2 ai:fs", className)}
       >
         {options.map((option) => {
           const rootClasses = (checked: boolean) =>
@@ -130,9 +142,7 @@ export default function RadioBase({
               BASE,
               SIZES[size],
               ROUND,
-              checked
-                ? "bw:1 bg:slate-12 btc:white/20 blc:black/40 brc:black/40 bbc:black/60"
-                : "bw:1 bg:white btc:slate-4 blc:slate-3 brc:slate-3 bbc:slate-2",
+              checked ? PICKED : UNPICKED,
             );
 
           const indicator = (
@@ -142,24 +152,26 @@ export default function RadioBase({
           return (
             <label
               key={option.value}
-              className={`d:f fd:c g:1 fw:500 ${LABEL_SIZES[size]} ${
-                disabled ? "o:60 c:na" : "c:slate-10 c:p"
+              className={`d:f ai:fs g:2 us:none ${
+                disabled ? "o:60 c:na" : "c:p"
               }`}
             >
-              <div className="d:f ai:c g:2">
+              <span className={`d:f ai:c fs:0 ${LINE[size]}`}>
                 <Radio.Root
                   value={option.value}
                   className={(state) => rootClasses(state.checked)}
                 >
                   {indicator}
                 </Radio.Root>
-                <span>{option.label}</span>
-              </div>
-              {option.description && (
-                <p className="pl:6 m:0 c:slate-6 fs:xs fw:400">
-                  {option.description}
-                </p>
-              )}
+              </span>
+              <span className="d:f fd:c">
+                <span className={`c:label fw:600 ${LABEL_SIZES[size]}`}>
+                  {option.label}
+                </span>
+                {option.description && (
+                  <span className="c:hint fs:xs">{option.description}</span>
+                )}
+              </span>
             </label>
           );
         })}
