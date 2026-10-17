@@ -86,19 +86,24 @@ is written.
 
 # Tactile
 
+- Colors are roles, not palette shades: `raised`, `well`, `field`, `fill`,
+  `on-fill`, `label`, `hint`, `rim`, `shadow` and `line`, each a light and a
+  Graphite pair in `src/utils/roles.mjs`. A reworked component names roles
+  only, so dark mode follows `color-scheme` with no class of its own.
 - Raised things (buttons, triggers, tiles, bars) are lighter on top and darker
-  below: `bg:white btc:slate-2 blc:slate-2 brc:slate-2 bbc:slate-4 bs-o:xs`.
-  Filled ones: `bg:slate-12 btc:white/20 blc:black/40 brc:black/40
-  bbc:black/60 bs-o:sm`, so the bevel works on any accent.
-- Recessed things (inputs, wells) reverse it: `btc:slate-4 blc:slate-3
-  brc:slate-3 bbc:slate-2`.
-- Popups float on `bc:black/10 bs-o:xl`. A highlighted row is filled,
-  `bg:slate-12 c:white btc:white/20`, on a `bw:1 bc:transparent` row.
+  below: `bg:raised btc:rim blc:rim brc:rim bbc:shadow bs-o:xs`. Filled ones:
+  `bg:fill c:on-fill btc:white/20 blc:black/40 brc:black/40 bbc:black/60
+  bs-o:sm`, so the bevel works on any accent.
+- Recessed things (inputs, wells) reverse it: `bg:field btc:shadow blc:line
+  brc:line bbc:rim`.
+- Popups float on `bg:raised bc:line bs-o:xl`. A highlighted row is filled,
+  `bg:fill c:on-fill btc:white/20`, on a `bw:1 bc:transparent` row.
 - No inset shadow, except a pressed toggle (Toggle, Toolbar). No `shadow` prop.
 - Pressed in is an on/off that stays on by itself (Toggle, Toolbar). Picking
   one of several is a raised chip on a track (Tabs, Toggle Group).
 - A bevel names all four sides and never mixes in `bc:`. Yumma sorts its rules
   by name, so `bc:` would beat `bbc:`.
+- Numbers that change in place (counters, values, sizes) are `fvn:tn`.
 
 # Prop order
 
