@@ -10,6 +10,7 @@ import {
 } from "node:fs";
 import { basename, join } from "node:path";
 import { targetPath } from "../src/utils/install.mjs";
+import { ROLES } from "../src/utils/roles.mjs";
 import { applyStyle, DEFAULT_STYLE, STYLES } from "../src/utils/styles.mjs";
 import config from "../yumma.config.mjs";
 import { componentSlugs, splitId } from "./lib/registry-ids.mjs";
@@ -55,7 +56,7 @@ function registryDepsOf(source, id, allIds) {
   return [...found].sort();
 }
 
-// the states, easings and keyframes the components use, for yummaui to add to a project's config
+// the states, easings, keyframes and colors the components use, for yummaui to add to a project's config
 function themeOf(sources) {
   const { states = {}, easings = {}, keyframes = {} } = config.theme ?? {};
   const used = (pattern) =>
@@ -72,6 +73,10 @@ function themeOf(sources) {
     states: pick(states, used(/(?<![\w:@-])([a-z]+):[a-z@]/g)),
     easings: pick(easings, used(/\b(?:ttf|atf):([a-z][a-z0-9-]*)/g)),
     keyframes: pick(keyframes, used(/\ban:([a-z]+)/g)),
+    colors: pick(
+      ROLES,
+      used(/:([a-z][a-z-]*?)(?:-\d+)?(?:\/\d+)?(?=[\s"'`]|$)/g),
+    ),
   };
 }
 

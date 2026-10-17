@@ -18,6 +18,7 @@ import { getRegistryTarget, type RegistryProp } from "@/registry";
 import { ACCENTS, accentBars } from "@/utils/accent";
 import { type Primitives, primitiveSlug } from "@/utils/primitive";
 import { isControllable, isInert, STYLE_OWNED, typeOf } from "@/utils/props";
+import { SCHEMES, type Scheme } from "@/utils/scheme";
 import { RADIUS, STYLES } from "@/utils/styles.mjs";
 
 export default function PlaygroundRail({
@@ -193,7 +194,7 @@ const SWATCHES = ACCENTS.map((family) => ({
   colors: accentBars(family),
 }));
 
-/** Style, Radius and Accent, as rows like the Component API's. */
+/** Style, Radius, Accent and Scheme, as rows like the Component API's. */
 function Look() {
   const playground = usePlayground();
   if (!playground) return null;
@@ -210,7 +211,7 @@ function Look() {
     <div className="d:f fd:c pb:4 mb:4">
       <h3 className="ff:system mb:1 c:silver-8 fs:xs fw:600 ls:2 tt:u">Look</h3>
       <p className="m:0 mb:1 c:ink/60 fs:xs lh:4">
-        The accent tints the preview only.
+        The accent & scheme tint the preview only.
       </p>
       {line(
         "style",
@@ -239,6 +240,15 @@ function Look() {
           options={SWATCHES}
           value={playground.accent}
           onChange={playground.setAccent}
+        />,
+      )}
+      {line(
+        "scheme",
+        <EnumSelect
+          name="scheme"
+          values={[...SCHEMES]}
+          value={playground.scheme}
+          onChange={(value) => playground.setScheme(value as Scheme)}
         />,
       )}
     </div>

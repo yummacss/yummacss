@@ -74,5 +74,31 @@
       "default": true,
       "description": "The focus outline. `true` draws it, `false` removes it along with the danger, error and success tints that ride with it, and a string of Yumma CSS utilities restyles it on every focusable part of the component, which is more than `className` reaches. Removing it outright and putting nothing back fails WCAG 2.4.7."
     }
+  ],
+  "scene": [
+    {
+      "component": "Radio",
+      "props": {
+        "label": "When a file already exists",
+        "defaultValue": "keep",
+        "options": [
+          {
+            "value": "keep",
+            "label": "Keep both",
+            "description": "Adds a number to the new one"
+          },
+          {
+            "value": "replace",
+            "label": "Replace",
+            "description": "The old file moves to Trash"
+          },
+          {
+            "value": "skip",
+            "label": "Skip",
+            "description": "Leaves the old file as it is"
+          }
+        ]
+      }
+    }
   ]
 }

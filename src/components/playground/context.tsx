@@ -22,6 +22,7 @@ import { type DemoProps, exampleIcon, seedValues } from "@/utils/demo";
 import { applyQuery, keyMapFor, queryFor } from "@/utils/playground-url";
 import { prefetchRegistry } from "@/utils/prefetch-registry";
 import { isInert } from "@/utils/props";
+import { readScheme, type Scheme, writeScheme } from "@/utils/scheme";
 import { getAllUISlugs } from "@/utils/sidebar";
 import { carriedFor, readCarried, writeCarried } from "@/utils/sticky";
 import {
@@ -73,6 +74,8 @@ interface Playground {
   setSceneValue: (key: string, value: unknown, fallback: unknown) => void;
   accent: string;
   setAccent: (family: string) => void;
+  scheme: Scheme;
+  setScheme: (scheme: Scheme) => void;
   style: string;
   radius: string;
   setStyle: (style: string) => void;
@@ -104,6 +107,15 @@ export function PlaygroundProvider({
   const setAccent = useCallback((family: string) => {
     setAccentState(family);
     writeAccent(family);
+  }, []);
+
+  const [scheme, setSchemeState] = useState<Scheme>("light");
+
+  useEffect(() => setSchemeState(readScheme()), []);
+
+  const setScheme = useCallback((next: Scheme) => {
+    setSchemeState(next);
+    writeScheme(next);
   }, []);
 
   const [styleQuery, setStyleQuery] = useQueryStates(STYLE_KEYS, {
@@ -255,6 +267,8 @@ export function PlaygroundProvider({
       setSceneValue,
       accent,
       setAccent,
+      scheme,
+      setScheme,
       style,
       radius,
       setStyle,
@@ -269,6 +283,8 @@ export function PlaygroundProvider({
       setSceneValue,
       accent,
       setAccent,
+      scheme,
+      setScheme,
       style,
       radius,
       setStyle,
@@ -303,6 +319,8 @@ export function StaticPlayground({
       setSceneValue: ignore,
       accent: DEFAULT_ACCENT,
       setAccent: ignore,
+      scheme: "light" as Scheme,
+      setScheme: ignore,
       style: DEFAULT_STYLE,
       radius: SPECS[DEFAULT_STYLE].radius,
       setStyle: ignore,

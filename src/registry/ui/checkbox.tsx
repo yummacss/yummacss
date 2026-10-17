@@ -31,10 +31,11 @@ const LABEL_SIZES: Record<Size, string> = {
   lg: "fs:md",
 };
 
-const DESCRIPTION_INDENT: Record<Size, string> = {
-  sm: "ml:5",
-  md: "ml:6",
-  lg: "ml:7",
+// a box of the label's first line, so the box sits level with it at every size
+const LINE: Record<Size, string> = {
+  sm: "h:4",
+  md: "h:5",
+  lg: "h:6",
 };
 
 const SHAPES: Record<Shape, string> = {
@@ -45,11 +46,8 @@ const SHAPES: Record<Shape, string> = {
 
 // a ticked box is raised and bevelled, an empty one sits recessed
 const CHECKED =
-  "bw:1 bg:slate-12 btc:white/20 blc:black/40 brc:black/40 bbc:black/60";
-const UNCHECKED =
-  "bw:1 bg:white btc:slate-4 blc:slate-3 brc:slate-3 bbc:slate-2";
-
-const DISABLED_BOX = "bw:1 bc:silver-2 bg:silver-1";
+  "bw:1 bg:check btc:white/25 blc:black/15 brc:black/15 bbc:black/30";
+const UNCHECKED = "bw:1 bg:field btc:shadow blc:line brc:line bbc:rim";
 
 export interface CheckboxProps
   extends Omit<ComponentProps<typeof Checkbox.Root>, "className"> {
@@ -128,11 +126,9 @@ export default function CheckboxBase({
   };
   return (
     <label
-      className={`d:f fd:c g:1 us:none ${
-        disabled ? "c:slate-5 c:na" : "c:slate-10 c:p"
-      }`}
+      className={`d:f ai:fs g:2 us:none ${disabled ? "o:60 c:na" : "c:p"}`}
     >
-      <span className={`d:f ai:c g:2 fw:500 ${LABEL_SIZES[size]}`}>
+      <span className={`d:f ai:c fs:0 ${LINE[size]}`}>
         <Checkbox.Root
           disabled={disabled}
           checked={checked}
@@ -143,19 +139,14 @@ export default function CheckboxBase({
               BOX,
               SIZES[size],
               SHAPES[shape],
-
-              disabled
-                ? DISABLED_BOX
-                : state.checked || state.indeterminate
-                  ? CHECKED
-                  : UNCHECKED,
+              state.checked || state.indeterminate ? CHECKED : UNCHECKED,
               className,
             )
           }
           {...props}
         >
           <Checkbox.Indicator
-            className={`d:f ${disabled ? "c:slate-4" : "c:white"} ${animated ? "tp:a tdu:250 ttf:out-back opening:o:0 opening:s:50 closing:o:0 closing:s:80 closing:tdu:100 closing:ttf:eo @prm:tp:none" : ""}`}
+            className={`d:f c:white ${animated ? "tp:a tdu:350 ttf:out-back opening:o:0 opening:s:40 closing:o:0 closing:s:80 closing:tdu:100 closing:ttf:eo @prm:tp:none" : ""}`}
             render={(indicatorProps, state) => (
               <span {...indicatorProps}>
                 {state.indeterminate ? (
@@ -167,14 +158,11 @@ export default function CheckboxBase({
             )}
           />
         </Checkbox.Root>
-        {label}
       </span>
-
-      {description && (
-        <span className={`c:slate-6 fs:xs ${DESCRIPTION_INDENT[size]}`}>
-          {description}
-        </span>
-      )}
+      <span className="d:f fd:c">
+        <span className={`c:label fw:600 ${LABEL_SIZES[size]}`}>{label}</span>
+        {description && <span className="c:hint fs:xs">{description}</span>}
+      </span>
     </label>
   );
 }

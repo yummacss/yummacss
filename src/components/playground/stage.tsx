@@ -25,6 +25,7 @@ import {
   getCachedRegistryComponent,
   loadRegistryComponent,
 } from "@/utils/prefetch-registry";
+import { schemeCss } from "@/utils/scheme";
 import { buildConfig, buildScene, buildUsage } from "@/utils/snippet";
 import {
   DEFAULT_STYLE,
@@ -139,6 +140,7 @@ export default function ComponentPlayground() {
   const Component = ready ?? frame?.Component;
   const style = playground?.style ?? DEFAULT_STYLE;
   const accent = playground?.accent ?? DEFAULT_ACCENT;
+  const scheme = playground?.scheme ?? "light";
   const radius = playground?.radius ?? STYLES[DEFAULT_STYLE].radius;
   const scene = live ? meta.scene : undefined;
   const usage = scene
@@ -172,7 +174,11 @@ export default function ComponentPlayground() {
             className="f:1 min-h:0"
             minHeight={0}
             fill
-            accentCss={[accentCss(accent), radiusCss(style, radius)].join("\n")}
+            accentCss={[
+              accentCss(accent),
+              radiusCss(style, radius),
+              schemeCss(scheme),
+            ].join("\n")}
           >
             {scene ? (
               <Scene scene={scene} style={style} radius={radius} />
