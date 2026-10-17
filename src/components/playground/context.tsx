@@ -1,6 +1,11 @@
 "use client";
 
-import { parseAsStringLiteral, useQueryStates } from "nuqs";
+import {
+  parseAsJson,
+  parseAsStringLiteral,
+  useQueryState,
+  useQueryStates,
+} from "nuqs";
 import {
   createContext,
   type ReactNode,
@@ -47,6 +52,20 @@ function readStyle(): { style?: string; radius?: string } {
 
 export type View = "example" | "playground";
 
+export type SceneValues = Record<string, string | number | boolean>;
+
+const VIEWS = ["example", "playground"] as const;
+const QUERY = { history: "replace", shallow: true } as const;
+
+function sceneValues(value: unknown): SceneValues | null {
+  if (typeof value !== "object" || value === null || Array.isArray(value))
+    return null;
+  const entries = Object.entries(value).filter(([, entry]) =>
+    ["string", "number", "boolean"].includes(typeof entry),
+  );
+  return Object.fromEntries(entries) as SceneValues;
+}
+
 interface Playground {
   id: string;
   meta: RegistryMeta | null;
@@ -55,6 +74,9 @@ interface Playground {
   /** `example` shows the meta's scene; a prop edit on the rail leaves it. */
   view: View;
   setView: (view: View) => void;
+  /** What the scene's components were changed to, by instance and prop. */
+  sceneValues: SceneValues;
+  setSceneValue: (key: string, value: unknown, fallback: unknown) => void;
   accent: string;
   setAccent: (family: string) => void;
   style: string;
@@ -186,15 +208,38 @@ export function PlaygroundProvider({
       ? "playground"
       : "example";
   }, [keyMap]);
-  const [chosen, setChosen] = useState<{ id: string; view: View } | null>(null);
-  const view: View = !seed.meta?.scene
-    ? "playground"
-    : chosen?.id === id
-      ? chosen.view
-      : arrival;
+  // the view and the scene's state live in the address, so a reload keeps them
+  const [viewQuery, setViewQuery] = useQueryState(
+    "view",
+    parseAsStringLiteral(VIEWS).withOptions(QUERY),
+  );
+  const view: View = !seed.meta?.scene ? "playground" : (viewQuery ?? arrival);
   const setView = useCallback(
-    (next: View) => setChosen({ id, view: next }),
-    [id],
+    (next: View) => {
+      setViewQuery(next);
+    },
+    [setViewQuery],
+  );
+
+  const [sceneQuery, setSceneQuery] = useQueryState(
+    "scene",
+    parseAsJson(sceneValues).withOptions(QUERY),
+  );
+  const sceneState = useMemo(() => sceneQuery ?? {}, [sceneQuery]);
+  const setSceneValue = useCallback(
+    (key: string, value: unknown, fallback: unknown) => {
+      setSceneQuery((previous) => {
+        const next = { ...(previous ?? {}) };
+        if (
+          value === fallback ||
+          !["string", "number", "boolean"].includes(typeof value)
+        )
+          delete next[key];
+        else next[key] = value as string | number | boolean;
+        return Object.keys(next).length > 0 ? next : null;
+      });
+    },
+    [setSceneQuery],
   );
 
   const setValue = useCallback(
@@ -235,6 +280,8 @@ export function PlaygroundProvider({
       setValue,
       view,
       setView,
+      sceneValues: sceneState,
+      setSceneValue,
       accent,
       setAccent,
       style,
@@ -249,6 +296,8 @@ export function PlaygroundProvider({
       setValue,
       view,
       setView,
+      sceneState,
+      setSceneValue,
       accent,
       setAccent,
       style,
@@ -283,6 +332,8 @@ export function StaticPlayground({
       setValue: ignore,
       view: (meta?.scene ? "example" : "playground") as View,
       setView: ignore,
+      sceneValues: {},
+      setSceneValue: ignore,
       accent: DEFAULT_ACCENT,
       setAccent: ignore,
       style: DEFAULT_STYLE,

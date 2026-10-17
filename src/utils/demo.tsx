@@ -199,34 +199,69 @@ export function renderScene(
   style: string,
   radius: string,
   container: unknown,
+  state: SceneState,
 ): ReactNode {
-  const styled = (component: string) => {
-    const meta = getRegistryMeta(componentId(component));
-    if (!meta) return {};
-    const portals = meta.props.some((prop) => prop.name === "container");
-    return {
-      ...styleProps(meta.props, style, radius),
-      ...(portals ? { container } : {}),
-    };
+  const context: SceneContext = {
+    components,
+    styled: (component) => {
+      const meta = getRegistryMeta(componentId(component));
+      if (!meta) return {};
+      const portals = meta.props.some((prop) => prop.name === "container");
+      return {
+        ...styleProps(meta.props, style, radius),
+        ...(portals ? { container } : {}),
+      };
+    },
+    // a prop with a handler is controlled from the address, by instance
+    wired: (component, path, props) => {
+      const meta = getRegistryMeta(componentId(component));
+      const out: DemoProps = {};
+      for (const prop of meta?.props ?? []) {
+        if (!prop.handler) continue;
+        const initial = `default${prop.name.charAt(0).toUpperCase()}${prop.name.slice(1)}`;
+        const fallback =
+          props[prop.name] ??
+          props[initial] ??
+          prop.default ??
+          (prop.type === "boolean" ? false : undefined);
+        const key = `${path}.${prop.name}`;
+        out[prop.name] = key in state.values ? state.values[key] : fallback;
+        out[initial] = undefined;
+        out[prop.handler] = (value: unknown) => state.set(key, value, fallback);
+      }
+      return out;
+    },
   };
-  return scene.map((child, index) =>
-    renderChild(child, index, styled, components),
-  );
+  return scene.map((child, index) => renderChild(child, index, context));
 }
 
-// position is the identity of a demo's child, so it is the key
+export interface SceneState {
+  values: Record<string, unknown>;
+  set: (key: string, value: unknown, fallback: unknown) => void;
+}
+
+interface SceneContext {
+  components: Record<string, ComponentType<DemoProps>>;
+  styled: (component: string) => DemoProps;
+  wired: (
+    component: string,
+    path: string,
+    props: Record<string, unknown>,
+  ) => DemoProps;
+}
+
+// position is the identity of a demo's child, so it is the key and the path
 function renderChild(
   child: ChildExample,
   index: number,
-  styled?: (component: string) => DemoProps,
-  components?: Record<string, ComponentType<DemoProps>>,
+  scene?: SceneContext,
+  parent = "",
 ): ReactNode {
+  const path = parent ? `${parent}.${index}` : String(index);
   const inner =
     typeof child.children === "string"
       ? child.children
-      : child.children?.map((node, at) =>
-          renderChild(node, at, styled, components),
-        );
+      : child.children?.map((node, at) => renderChild(node, at, scene, path));
 
   if (child.icon !== undefined) {
     return (
@@ -248,16 +283,17 @@ function renderChild(
       </Tag>
     );
   }
-  const Child = child.component
-    ? (components?.[componentId(child.component)] ??
-      CHILD_COMPONENTS[child.component])
+  const component = child.component;
+  const Child = component
+    ? (scene?.components[componentId(component)] ?? CHILD_COMPONENTS[component])
     : null;
-  if (!Child) return null;
+  if (!Child || !component) return null;
   return (
     <Child
       key={index}
-      {...(styled && child.component ? styled(child.component) : {})}
+      {...(scene ? scene.styled(component) : {})}
       {...(resolveIcons(child.props ?? {}) as DemoProps)}
+      {...(scene ? scene.wired(component, path, child.props ?? {}) : {})}
       {...(child.className ? { className: child.className } : {})}
     >
       {inner}
