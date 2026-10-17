@@ -54,7 +54,7 @@ const SQUIRCLE_RADII: Record<Size, string> = {
 
 const STATUSES: Record<Exclude<Status, "none">, string> = {
   online: "bg:green-6",
-  offline: "bg:slate-4",
+  offline: "bg:hint",
   busy: "bg:red-6",
 };
 
@@ -131,14 +131,14 @@ export default function AvatarBase({
     ROOT,
     SIZES[size],
     shape === "squircle" ? `cs:s ${SQUIRCLE_RADII[size]}` : SHAPES[shape],
-    tint ? `${TINTS[tint].bg} bw:1` : "bg:silver-1 bc:white bw:1",
+    tint ? `${TINTS[tint].bg} bw:1` : "bg:well bc:raised bw:1",
     className,
   );
 
   const fallbackClasses = [
     "d:f ai:c jc:c w:100% h:100% fw:500",
     INITIAL_SIZES[size],
-    tint ? TINTS[tint].fg : "c:slate-9",
+    tint ? TINTS[tint].fg : "c:hint",
   ]
     .filter(Boolean)
     .join(" ");
@@ -163,7 +163,7 @@ export default function AvatarBase({
         <span
           role="img"
           aria-label={status}
-          className={`p:a b:0 r:0 bc:white br:9999 bw:2 ${BADGE_SIZES[size]} ${STATUSES[status]}`}
+          className={`p:a b:0 r:0 bc:raised br:9999 bw:2 ${BADGE_SIZES[size]} ${STATUSES[status]}`}
         />
       )}
 
@@ -171,11 +171,9 @@ export default function AvatarBase({
         <span
           role="img"
           aria-label={badgeLabel}
-          className={`d:f p:a t:0 r:0 ai:c jc:c bg:white bc:white br:9999 bw:1 ${BADGE_SIZES[size]}`}
+          className={`d:f p:a t:0 r:0 ai:c jc:c bg:raised bc:raised br:9999 bw:1 ${BADGE_SIZES[size]}`}
         >
-          {badgeIcon ?? (
-            <VerifiedCheckIcon className="w:100% h:100% c:slate-12" />
-          )}
+          {badgeIcon ?? <VerifiedCheckIcon className="w:100% h:100% c:label" />}
         </span>
       )}
 

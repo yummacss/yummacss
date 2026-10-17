@@ -72,7 +72,7 @@
           "children": [
             {
               "tag": "span",
-              "className": "d:f ai:c g:1 fs:sm c:slate-7",
+              "className": "d:f ai:c g:1 fs:sm c:hint",
               "children": [
                 {
                   "icon": {

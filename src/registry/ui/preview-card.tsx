@@ -90,7 +90,7 @@ export default function PreviewCardBase({
   container,
 }: PreviewCardProps) {
   const popupClasses = [
-    "d:f fd:c g:3 w:64 p:3 bg:white bc:black/10 bw:1 c:slate-10 fs:sm bs-o:xl",
+    "d:f fd:c g:3 w:64 p:3 bg:raised bc:line bw:1 c:label fs:sm bs-o:xl",
     SHAPES[shape],
     arrow ? "p:r" : "",
   ]
@@ -133,7 +133,7 @@ export default function PreviewCardBase({
                   <path
                     d="M0 5 L5 0 L10 5"
                     strokeWidth="1"
-                    className="f:white s:silver-2"
+                    className="f:raised s:line"
                   />
                 </svg>
               </PreviewCard.Arrow>

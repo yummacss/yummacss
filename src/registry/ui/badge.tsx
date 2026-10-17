@@ -36,14 +36,14 @@ interface ColorSet {
 
 const INTENTS = {
   neutral: {
-    subtleBg: "bg:slate-1",
-    subtleText: "c:slate-7",
-    subtleHover: "h:bg:slate-2",
-    solidBg: "bg:slate",
-    solidText: "c:slate",
-    solidHover: "h:bg:slate-8",
-    dotOutline: "bg:slate-5",
-    dotSubtle: "bg:slate-7",
+    subtleBg: "bg:well",
+    subtleText: "c:hint",
+    subtleHover: "h:bg:rim",
+    solidBg: "bg:fill",
+    solidText: "c:fill",
+    solidHover: "h:o:90",
+    dotOutline: "bg:hint",
+    dotSubtle: "bg:hint",
   },
   info: {
     subtleBg: "bg:blue-1",
@@ -88,6 +88,9 @@ const INTENTS = {
 } satisfies Record<string, ColorSet>;
 
 type Intent = keyof typeof INTENTS;
+
+const SOLID_BEVEL =
+  "bw:1 btc:white/25 blc:black/15 brc:black/15 bbc:black/30 bs-o:xs";
 
 export interface BadgeProps {
   /** The badge's label. */
@@ -177,19 +180,23 @@ export default function BadgeBase({
     pad,
     SHAPES[shape],
     tone === "outline"
-      ? "bg:white btc:slate-2 blc:slate-2 brc:slate-2 bbc:slate-4 bs-o:xs bw:1"
+      ? "bg:raised btc:rim blc:rim brc:rim bbc:shadow bs-o:xs bw:1"
       : tone === "subtle"
         ? [INTENTS[intent].subtleBg, "bw:0"].join(" ")
-        : [INTENTS[intent].solidBg, "bw:0"].join(" "),
+        : [INTENTS[intent].solidBg, SOLID_BEVEL].join(" "),
     className,
   );
 
+  // neutral fills with the fill role, which flips in Graphite, so its ink does too
+  const ON_SOLID = intent === "neutral" ? "c:on-fill" : "c:white";
+  const ON_SOLID_BG = intent === "neutral" ? "bg:on-fill" : "bg:white";
+
   const contentColor =
     tone === "outline"
-      ? "c:slate-10"
+      ? "c:label"
       : tone === "subtle"
         ? INTENTS[intent].subtleText
-        : "c:white";
+        : ON_SOLID;
 
   const textClasses = [text, "fw:500 us:none", contentColor]
     .filter(Boolean)
@@ -205,7 +212,7 @@ export default function BadgeBase({
       ? INTENTS[intent].dotOutline
       : tone === "subtle"
         ? INTENTS[intent].dotSubtle
-        : "bg:white",
+        : ON_SOLID_BG,
   ]
     .filter(Boolean)
     .join(" ");
@@ -216,7 +223,7 @@ export default function BadgeBase({
       ? "bg:red c:white"
       : tone === "subtle"
         ? [INTENTS[intent].solidBg, "c:white"].join(" ")
-        : ["bg:white", INTENTS[intent].solidText].join(" "),
+        : [ON_SOLID_BG, INTENTS[intent].solidText].join(" "),
   ]
     .filter(Boolean)
     .join(" ");
@@ -226,7 +233,7 @@ export default function BadgeBase({
     "d:f ai:c jc:c w:4 h:4 p:0 bg:transparent br:9999",
     contentColor,
     tone === "outline"
-      ? "h:bg:silver-2"
+      ? "h:bg:well"
       : tone === "subtle"
         ? INTENTS[intent].subtleHover
         : INTENTS[intent].solidHover,

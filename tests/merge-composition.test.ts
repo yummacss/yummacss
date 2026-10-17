@@ -34,8 +34,7 @@ const EXPECTED_DROPS = [
   "toolbar.tsx: bw:0",
   "toolbar.tsx: c:slate-7",
   "badge.tsx: bg:transparent",
-  "badge.tsx: c:slate-10",
-  "badge.tsx: c:white",
+  "badge.tsx: c:label",
   "rating.tsx: c:na",
 ];
 

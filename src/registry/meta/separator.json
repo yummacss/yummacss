@@ -76,7 +76,7 @@
             },
             {
               "text": "10:42",
-              "className": "ml:auto c:slate-7"
+              "className": "ml:auto c:hint"
             }
           ]
         },
@@ -101,7 +101,7 @@
             },
             {
               "text": "18:05",
-              "className": "ml:auto c:slate-7"
+              "className": "ml:auto c:hint"
             }
           ]
         },
@@ -120,7 +120,7 @@
             },
             {
               "text": "09:30",
-              "className": "ml:auto c:slate-7"
+              "className": "ml:auto c:hint"
             }
           ]
         }

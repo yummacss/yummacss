@@ -86,7 +86,7 @@
             },
             {
               "text": "Signed in on this Mac",
-              "className": "fs:sm c:slate-7"
+              "className": "fs:sm c:hint"
             }
           ]
         }
