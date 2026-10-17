@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- **[core]** `fvn:` for `font-variant-numeric`, including `fvn:tn` for tabular numbers.
+
 ### Fixed
 
 - **[core]** `var()` on a shared prefix compiles to the utility with the most values, such as `bc:var()` to `border-color`.

@@ -358,6 +358,22 @@ describe("theme.keyframes", () => {
 	});
 });
 
+describe("font-variant-numeric", () => {
+	it.each([
+		["fvn:tn", "font-variant-numeric: tabular-nums;"],
+		["fvn:pn", "font-variant-numeric: proportional-nums;"],
+		["fvn:sz", "font-variant-numeric: slashed-zero;"],
+		["fvn:n", "font-variant-numeric: normal;"],
+	])("%s writes %s", (className, expected) => {
+		expect(css(className)).toContain(expected);
+	});
+
+	it("is a utility, not the fv: focus-visible variant", () => {
+		expect(invalid(["fvn:tn", "fv:fvn:tn"])).toEqual([]);
+		expect(css("fv:fvn:tn")).toContain(":focus-visible");
+	});
+});
+
 describe("theme.easings", () => {
 	const easings = { smooth: "cubic-bezier(0.25, 1, 0.5, 1)" };
 
