@@ -8,11 +8,11 @@ const CLASSY = /^[@a-z0-9:%._\-/#]+$/i;
 
 const EXPECTED_DROPS = [
   "context-menu.tsx: bg:white",
-  "file-upload.tsx: bg:white",
   "file-upload.tsx: bc:red-5",
-  "file-upload.tsx: bc:silver-2",
+  "file-upload.tsx: bc:rim",
+  "file-upload.tsx: bg:transparent",
   "popover.tsx: bg:white",
-  "select.tsx: bg:white",
+  "select.tsx: bg:raised",
   "preview-card.tsx: td:none",
   "alert-dialog.tsx: fv:bc:slate-6",
   "alert-dialog.tsx: fv:oc:slate-4/60",

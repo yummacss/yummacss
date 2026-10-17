@@ -15,9 +15,9 @@ const SHAPES: Record<Shape, string> = {
 
 const FOCUS = "os:s ow:3 oo:0 oc:slate-4/60";
 
-const THUMB_BOX = "d:f ai:c jc:c w:6 h:5 p:1";
-const BOX = "1.5rem";
-const HALF_BOX = "0.75rem";
+// the knob, centered on the value and overhanging the bar, as a switch thumb
+const THUMB =
+  "w:5 h:5 bg:knob bw:1 btc:white blc:black/10 brc:black/10 bbc:black/20 bs-o:sm";
 
 function defaultFormat(value: Value): ReactNode {
   return Array.isArray(value) ? `${value[0]} - ${value[1]}` : `${value}%`;
@@ -114,14 +114,7 @@ export default function SliderBase({
   );
 
   const thumbClasses = (index: number) =>
-    merge(
-      "w:4 h:3",
-      disabled
-        ? "bg:silver-5"
-        : "bg:white bw:1 btc:black/5 blc:black/10 brc:black/10 bbc:black/20 bs-o:sm",
-      SHAPES[shape],
-      focused === index ? outline : "",
-    );
+    merge(THUMB, SHAPES[shape], focused === index ? outline : "");
 
   const focusProps = (index: number) => ({
     onFocus: (event: FocusEvent<HTMLInputElement>) => {
@@ -131,15 +124,15 @@ export default function SliderBase({
   });
 
   return (
-    <div className={merge("d:f fd:c g:2 w:64", className)}>
+    <div className={merge("d:f fd:c g:2 w:64", disabled && "o:60", className)}>
       <div className="d:f ai:c jc:sb">
         {label && (
-          <label className="c:slate-10 fs:sm fw:500 us:none">
+          <label className="c:label fs:sm fw:600 us:none">
             {label}
             {required && <span className="c:red-5"> *</span>}
           </label>
         )}
-        <span className="c:slate-8 fs:sm">{formatValue(value)}</span>
+        <span className="c:hint fs:sm">{formatValue(value)}</span>
       </div>
 
       <Slider.Root
@@ -149,53 +142,32 @@ export default function SliderBase({
         max={max}
         step={step}
         disabled={disabled}
-        thumbAlignment="edge"
       >
         <Slider.Control
-          className={`d:f ai:c py:2 us:none ta:none ${disabled ? "c:na" : ""}`}
+          className={`d:f ai:c py:3 us:none ta:none ${disabled ? "c:na" : ""}`}
         >
           <Slider.Track
-            className={merge(
-              "p:r h:5 w:100% bw:1 bg:silver-1 btc:slate-4 blc:slate-3 brc:slate-3 bbc:slate-2",
-              SHAPES[shape],
-            )}
+            className={merge("p:r h:2 w:100% bg:rim", SHAPES[shape])}
           >
-            <Slider.Indicator
-              style={
-                isRange
-                  ? {
-                      insetInlineStart: `calc(var(--start-position) - ${HALF_BOX})`,
-                      width: `calc(var(--relative-size) + ${BOX})`,
-                    }
-                  : { width: `calc(var(--start-position) + ${HALF_BOX})` }
-              }
-              className={merge(
-                disabled ? "bg:silver-2" : "bg:slate-12",
-                SHAPES[shape],
-              )}
-            />
+            <Slider.Indicator className={merge("bg:check", SHAPES[shape])} />
             {isRange ? (
               value.map((_, index) => (
                 <Slider.Thumb
                   // biome-ignore lint/suspicious/noArrayIndexKey: positional by design
                   key={index}
                   index={index}
-                  className={THUMB_BOX}
+                  className={thumbClasses(index)}
                   {...focusProps(index)}
-                >
-                  <span className={thumbClasses(index)} />
-                </Slider.Thumb>
+                />
               ))
             ) : (
-              <Slider.Thumb className={THUMB_BOX} {...focusProps(0)}>
-                <span className={thumbClasses(0)} />
-              </Slider.Thumb>
+              <Slider.Thumb className={thumbClasses(0)} {...focusProps(0)} />
             )}
           </Slider.Track>
         </Slider.Control>
       </Slider.Root>
 
-      {description && <p className="m:0 c:slate-6 fs:xs">{description}</p>}
+      {description && <p className="m:0 c:hint fs:xs">{description}</p>}
     </div>
   );
 }

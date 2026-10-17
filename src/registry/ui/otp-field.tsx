@@ -12,12 +12,14 @@ type ValidationType = "numeric" | "alpha" | "alphanumeric";
 
 const FOCUS = "fv:os:s fv:ow:3 fv:oo:0 fv:oc:slate-4/60 fv:bc:slate-6";
 
-const SLOT = "p:0 bg:white c:slate-10 bw:1 ta:c fw:500 tp:c tdu:150 ttf:io";
+// each slot sits recessed
+const SLOT =
+  "p:0 bw:1 bg:field btc:shadow blc:line brc:line bbc:rim c:label ta:c fw:600 tp:c tdu:150 ttf:io";
 
 const SLOT_SIZES: Record<Size, string> = {
-  sm: "w:8 h:10 fs:md",
-  md: "w:10 h:12 fs:lg",
-  lg: "w:12 h:14 fs:xl",
+  sm: "w:8 h:9 fs:md",
+  md: "w:9 h:11 fs:lg",
+  lg: "w:11 h:13 fs:xl",
 };
 
 const SHAPES: Record<Shape, string> = {
@@ -103,10 +105,10 @@ export default function OTPFieldBase({
   return (
     <Field.Root
       disabled={disabled}
-      className={`d:f fd:c ai:fs g:2 ${disabled ? "o:60 c:na" : ""}`}
+      className={`d:f fd:c ai:c g:2 ${disabled ? "o:60 c:na" : ""}`}
     >
       {label && (
-        <Field.Label className="c:slate-10 fs:sm fw:500">
+        <Field.Label className="c:label fs:sm fw:600">
           {label}
           {required && <span className="c:red-5"> *</span>}
         </Field.Label>
@@ -123,28 +125,23 @@ export default function OTPFieldBase({
         {slots.map((index) => (
           <Fragment key={index}>
             {index > 0 && groupSize > 0 && index % groupSize === 0 && (
-              <OTPField.Separator className="w:3 h:px bg:silver-5" />
+              <OTPField.Separator className="w:2 h:px bg:hint" />
             )}
             <OTPField.Input
-              className={(state) =>
-                merge(
-                  outline,
-                  SLOT,
-                  SLOT_SIZES[size],
-                  SHAPES[shape],
-                  state.filled
-                    ? "btc:slate-5 blc:slate-4 brc:slate-4 bbc:slate-3"
-                    : "btc:slate-4 blc:slate-3 brc:slate-3 bbc:slate-2",
-                  className,
-                )
-              }
+              className={merge(
+                outline,
+                SLOT,
+                SLOT_SIZES[size],
+                SHAPES[shape],
+                className,
+              )}
             />
           </Fragment>
         ))}
       </OTPField.Root>
 
       {description && (
-        <Field.Description className="m:0 c:slate-6 fs:xs">
+        <Field.Description className="m:0 c:hint fs:xs">
           {description}
         </Field.Description>
       )}

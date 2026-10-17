@@ -14,7 +14,7 @@ type Border = "dashed" | "solid" | "none";
 
 const FOCUS = "fv:os:s fv:ow:3 fv:oo:0 fv:oc:slate-4/60 fv:bc:slate-6";
 
-const ZONE = "d:f fd:c ai:c g:3 m:0 p:0 w:100 min-w:0 bg:white";
+const ZONE = "d:f fd:c ai:c g:3 m:0 p:0 w:100 min-w:0 bg:transparent";
 
 const SHAPES: Record<Shape, string> = {
   rounded: "br:xxl",
@@ -201,12 +201,8 @@ export default function FileUploadBase({
     ZONE,
     SHAPES[shape],
     BORDERS[border],
-    error ? "bc:red-5" : "bc:silver-2",
-    disabled
-      ? "bg:silver-1 c:slate-5 c:na"
-      : dragging
-        ? "bc:slate-12 bg:silver-2/50"
-        : "",
+    error ? "bc:red-5" : "bc:rim",
+    disabled ? "bg:well c:hint c:na" : dragging ? "bc:check bg:well" : "",
     className,
   );
 
@@ -237,31 +233,31 @@ export default function FileUploadBase({
             SHAPES[shape],
             error
               ? "bg:red-1/50 bc:red-5"
-              : "bg:white btc:slate-2 blc:slate-2 brc:slate-2 bbc:slate-4 bs-o:xs",
+              : "bg:raised btc:rim blc:rim brc:rim bbc:shadow bs-o:xs",
           )}
         >
           {icon ?? (
             <CloudUploadIcon
-              className={`w:5 h:5 ${error ? "c:red-5" : "c:slate-6"}`}
+              className={`w:5 h:5 ${error ? "c:red-5" : "c:hint"}`}
             />
           )}
         </div>
         <div className="d:f fd:c ai:c g:1">
-          <span className={`fs:sm fw:500 ${error ? "c:red-5" : "c:slate-10"}`}>
+          <span className={`fs:sm fw:500 ${error ? "c:red-5" : "c:label"}`}>
             <Button
               disabled={disabled}
               onClick={() => input.current?.click()}
               className={merge(
                 browseOutline,
                 "p:0 bg:transparent bw:0 fs:sm fw:500 c:p d:c:na",
-                error ? "c:red-5" : "c:slate-12",
+                error ? "c:red-5" : "c:label",
               )}
             >
               {label}
             </Button>{" "}
             or drag and drop
           </span>
-          <span className={`fs:xs fw:400 ${error ? "c:red-5" : "c:slate-6"}`}>
+          <span className={`fs:xs fw:400 ${error ? "c:red-5" : "c:hint"}`}>
             {hint}
           </span>
         </div>
@@ -273,14 +269,12 @@ export default function FileUploadBase({
             <div
               key={identity(file)}
               className={merge(
-                "d:f ai:c jc:sb g:3 px:3 py:2 bg:white btc:slate-2 blc:slate-2 brc:slate-2 bbc:slate-4 bs-o:xs bw:1",
+                "d:f ai:c jc:sb g:3 px:3 py:2 bg:raised btc:rim blc:rim brc:rim bbc:shadow bs-o:xs bw:1",
                 SHAPES[shape],
               )}
             >
-              <span className="o:h fs:xs c:slate-10 to:e ws:nw">
-                {file.name}
-              </span>
-              <span className="d:f ai:c g:2 fs:xs c:slate-6">
+              <span className="o:h fs:xs c:label to:e ws:nw">{file.name}</span>
+              <span className="d:f ai:c g:2 fs:xs c:hint">
                 {formatSize(file.size)}
                 <Button
                   aria-label={`Remove ${file.name}`}
@@ -290,7 +284,7 @@ export default function FileUploadBase({
                   }
                   className={merge(
                     outline,
-                    "d:f ai:c jc:c w:5 h:5 p:0 bg:transparent bw:0 c:slate-6 c:p h:c:slate-10",
+                    "d:f ai:c jc:c w:5 h:5 p:0 bg:transparent bw:0 c:hint c:p h:c:label",
                     SHAPES[shape],
                   )}
                 >
@@ -304,7 +298,7 @@ export default function FileUploadBase({
 
       {message && (
         <p
-          className={`w:100% m:0 pb:6 fs:xs ta:c ${error ? "c:red-5" : "c:slate-6"}`}
+          className={`w:100% m:0 pb:6 fs:xs ta:c ${error ? "c:red-5" : "c:hint"}`}
         >
           {message}
         </p>

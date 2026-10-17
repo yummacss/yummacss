@@ -25,18 +25,18 @@ export interface ComboboxGroup {
 const FOCUS = "fv:os:s fv:ow:3 fv:oo:0 fv:oc:slate-4/60 fv:bc:slate-6";
 
 const INPUT =
-  "pl:4 pr:16 bg:white btc:slate-4 blc:slate-3 brc:slate-3 bbc:slate-2 c:slate-10 bw:1 fs:md";
+  "pl:4 pr:16 bg:field btc:shadow blc:line brc:line bbc:rim c:label bw:1 fs:sm";
 
 const SIZES: Record<Size, string> = {
   sm: "h:8 w:56",
-  md: "h:10 w:64",
-  lg: "h:12 w:72",
+  md: "h:9 w:64",
+  lg: "h:11 w:72",
 };
 
 const CHIPS_SIZES: Record<Size, string> = {
   sm: "min-h:8 w:56 fs:sm",
-  md: "min-h:10 w:64 fs:md",
-  lg: "min-h:12 w:72 fs:lg",
+  md: "min-h:9 w:64 fs:sm",
+  lg: "min-h:11 w:72 fs:md",
 };
 
 const ITEM_SHAPES: Record<Shape, string> = {
@@ -53,8 +53,8 @@ const POPUP_SIZES: Record<Size, string> = {
 
 const ACTION_HEIGHTS: Record<Size, string> = {
   sm: "h:8",
-  md: "h:10",
-  lg: "h:12",
+  md: "h:9",
+  lg: "h:11",
 };
 
 const SHAPES: Record<Shape, string> = {
@@ -64,7 +64,7 @@ const SHAPES: Record<Shape, string> = {
 };
 
 const ACTION =
-  "d:f b:0 ai:c jc:c w:6 h:6 p:0 bg:transparent c:slate-6 c:p h:c:slate-10";
+  "d:f b:0 ai:c jc:c w:6 h:6 p:0 bg:transparent c:hint c:p h:c:label";
 
 export interface ComboboxProps {
   /**
@@ -150,28 +150,28 @@ function renderItem(item: ComboboxItem, shape: Shape) {
       className={(state) =>
         `d:f ai:c g:2 py:2 px:3 mx:1 bw:1 bc:transparent ${ITEM_SHAPES[shape]} fs:sm fw:500 us:none c:p ${
           state.highlighted
-            ? "bg:slate-12 c:white btc:white/20"
+            ? "bg:check c:white btc:white/25 blc:black/15 brc:black/15 bbc:black/30"
             : "bg:transparent"
         }`
       }
     >
       {item.avatar && (
-        <Avatar.Root className="d:if o:h ai:c jc:c w:6 h:6 bc:white br:9999 bw:1 us:none">
+        <Avatar.Root className="d:if o:h ai:c jc:c w:6 h:6 bc:raised br:9999 bw:1 us:none">
           <Avatar.Image
             src={item.avatar}
             alt=""
             className="of:c w:100% h:100%"
           />
-          <Avatar.Fallback className="d:f ai:c jc:c w:100% h:100% c:slate-8 fs:xs">
+          <Avatar.Fallback className="d:f ai:c jc:c w:100% h:100% c:hint fs:xs">
             {item.label[0]}
           </Avatar.Fallback>
         </Avatar.Root>
       )}
       <span className="fg:1 min-w:0 o:h to:e ws:nw">{item.label}</span>
       {item.description && (
-        <span className="fs:0 c:slate-6 fw:400">{item.description}</span>
+        <span className="fs:0 fw:400 o:80">{item.description}</span>
       )}
-      <Combobox.ItemIndicator className="d:f ml:auto c:slate-12">
+      <Combobox.ItemIndicator className="d:f ml:auto">
         <CheckIcon className="w:3 h:3" />
       </Combobox.ItemIndicator>
     </Combobox.Item>
@@ -209,7 +209,7 @@ export default function ComboboxBase({
   const id = useId();
 
   const chipsClasses = merge(
-    "d:f fw:w ai:c g:1 py:1 pl:2 pr:16 bg:white btc:slate-4 blc:slate-3 brc:slate-3 bbc:slate-2 c:slate-10 bw:1",
+    "d:f fw:w ai:c g:1 py:1 pl:2 pr:16 bg:field btc:shadow blc:line brc:line bbc:rim c:label bw:1",
     CHIPS_SIZES[size],
     SHAPES[shape],
     className,
@@ -225,16 +225,16 @@ export default function ComboboxBase({
 
   const popup = (
     <Combobox.Popup
-      className={`o:h bg:white bc:black/10 bs-o:xl c:slate-10 bw:1 ${POPUP_SIZES[size]} ${SHAPES[shape]} ${animated ? "tor:var(--transform-origin) tp:a tdu:200 ttf:out-quart opening:o:0 opening:s:95 closing:o:0 closing:s:95 closing:tdu:100 closing:ttf:eo @prm:tp:none" : ""}`}
+      className={`o:h bg:raised bc:line bs-o:xl c:label bw:1 ${POPUP_SIZES[size]} ${SHAPES[shape]} ${animated ? "tor:var(--transform-origin) tp:a tdu:200 ttf:out-quart opening:o:0 opening:s:95 closing:o:0 closing:s:95 closing:tdu:100 closing:ttf:eo @prm:tp:none" : ""}`}
     >
       {loading ? (
         <div
-          className="d:f py:3 px:4 ai:c g:2 c:slate-6 fs:sm us:none"
+          className="d:f py:3 px:4 ai:c g:2 c:hint fs:sm us:none"
           role="status"
         >
           <span
             aria-hidden
-            className={`d:b w:4 h:4 bc:silver-3 btc:slate-8 bw:2 br:9999 ${
+            className={`d:b w:4 h:4 bc:rim btc:hint bw:2 br:9999 ${
               animated ? "an:spin adu:700 atf:l aic:inf" : ""
             }`}
           />
@@ -246,7 +246,7 @@ export default function ComboboxBase({
             {(entry: ComboboxItem | ComboboxGroup) =>
               isGroupEntry(entry) ? (
                 <Combobox.Group key={entry.group}>
-                  <Combobox.GroupLabel className="px:3 pt:2 pb:1 fs:xs fw:500 c:slate-5 us:none">
+                  <Combobox.GroupLabel className="px:3 pt:2 pb:1 fs:xs fw:500 c:hint us:none">
                     {entry.group}
                   </Combobox.GroupLabel>
                   {entry.items.map((entry) => renderItem(entry, shape))}
@@ -256,7 +256,7 @@ export default function ComboboxBase({
               )
             }
           </Combobox.List>
-          <Combobox.Empty className="c:slate-6 fs:sm">
+          <Combobox.Empty className="c:hint fs:sm">
             <div className="py:4 px:4">{emptyMessage}</div>
           </Combobox.Empty>
         </>
@@ -273,10 +273,10 @@ export default function ComboboxBase({
       disabled={disabled}
     >
       <div
-        className={`d:f p:r fd:c g:2 c:slate-10 fs:sm ${disabled ? "o:60 c:na" : ""}`}
+        className={`d:f p:r fd:c g:2 c:label fs:sm ${disabled ? "o:60 c:na" : ""}`}
       >
         {label && (
-          <label htmlFor={id} className="c:slate-10 fs:sm fw:500 us:none">
+          <label htmlFor={id} className="c:label fs:sm fw:600 us:none">
             {label}
           </label>
         )}
@@ -290,11 +290,11 @@ export default function ComboboxBase({
                     {toChips(selected).map((chip) => (
                       <Combobox.Chip
                         key={chip}
-                        className="d:f ai:c g:1 px:2 py:0 h:6 bg:white btc:slate-2 blc:slate-2 brc:slate-2 bbc:slate-4 bs-o:xs c:slate-10 bw:1 fs:xs fw:500"
+                        className="d:f ai:c g:1 px:2 py:0 h:6 bg:raised btc:rim blc:rim brc:rim bbc:shadow bs-o:xs c:label bw:1 fs:xs fw:500"
                       >
                         {chip}
                         <Combobox.ChipRemove
-                          className="d:f b:0 ai:c jc:c p:0 bg:transparent c:slate-6 c:p h:c:slate-10"
+                          className="d:f b:0 ai:c jc:c p:0 bg:transparent c:hint c:p h:c:label"
                           aria-label={`Remove ${chip}`}
                         >
                           <CloseIcon className="w:3 h:3" />
@@ -309,7 +309,7 @@ export default function ComboboxBase({
                 placeholder={placeholder}
                 className={merge(
                   outline,
-                  "fg:1 w:24 min-w:24 bg:transparent c:slate-10 bw:0",
+                  "fg:1 w:24 min-w:24 bg:transparent c:label bw:0",
                 )}
               />
             </Combobox.Chips>
@@ -321,7 +321,7 @@ export default function ComboboxBase({
             />
           )}
           <div
-            className={`d:f p:a r:2 b:0 ai:c jc:c c:slate-6 ${ACTION_HEIGHTS[size]}`}
+            className={`d:f p:a r:2 b:0 ai:c jc:c c:hint ${ACTION_HEIGHTS[size]}`}
           >
             {clearable && (
               <Combobox.Clear
@@ -340,7 +340,7 @@ export default function ComboboxBase({
           </div>
         </div>
 
-        {description && <p className="m:0 c:slate-6 fs:xs">{description}</p>}
+        {description && <p className="m:0 c:hint fs:xs">{description}</p>}
       </div>
       <Combobox.Portal container={container} keepMounted>
         <Combobox.Positioner className="ow:0" sideOffset={8}>
