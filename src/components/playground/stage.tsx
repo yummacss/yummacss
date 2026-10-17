@@ -1,11 +1,9 @@
 "use client";
 
 import { Tabs as BaseTabs } from "@base-ui/react/tabs";
-import { Toggle } from "@base-ui/react/toggle";
-import { ToggleGroup } from "@base-ui/react/toggle-group";
 import type { ComponentType, ReactNode } from "react";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { usePlayground, type View } from "@/components/playground/context";
+import { usePlayground } from "@/components/playground/context";
 import PreviewFrame, { usePreviewContainer } from "@/components/preview-frame";
 import { Tabs, TabsPanel } from "@/components/tabs";
 import TokenBlock from "@/components/ui/token-block";
@@ -142,7 +140,7 @@ export default function ComponentPlayground() {
   const style = playground?.style ?? DEFAULT_STYLE;
   const accent = playground?.accent ?? DEFAULT_ACCENT;
   const radius = playground?.radius ?? STYLES[DEFAULT_STYLE].radius;
-  const scene = playground?.view === "example" && live ? meta.scene : undefined;
+  const scene = live ? meta.scene : undefined;
   const usage = scene
     ? buildScene(scene)
     : buildUsage(getRegistryTarget(id).component, meta, set);
@@ -166,21 +164,7 @@ export default function ComponentPlayground() {
             <FileTab value="code">page.tsx</FileTab>
             {config && <FileTab value="config">yumma.config.mjs</FileTab>}
           </BaseTabs.List>
-          <div className="d:f ai:c jc:fe f:1 px:2 bbw:1 bc:border">
-            {meta.scene && playground && live && (
-              <ToggleGroup
-                aria-label="View"
-                value={[playground.view]}
-                onValueChange={(next) => {
-                  if (next[0]) playground.setView(next[0] as View);
-                }}
-                className="d:f g:1"
-              >
-                <ViewToggle value="example">Example</ViewToggle>
-                <ViewToggle value="playground">Playground</ViewToggle>
-              </ToggleGroup>
-            )}
-          </div>
+          <div className="f:1 bbw:1 bc:border" />
         </div>
 
         <TabsPanel value="preview" className={FILL}>
@@ -246,20 +230,6 @@ function FileTab({ value, children }: { value: string; children: ReactNode }) {
     >
       {children}
     </BaseTabs.Tab>
-  );
-}
-
-function ViewToggle({ value, children }: { value: View; children: ReactNode }) {
-  return (
-    <Toggle
-      value={value}
-      className={(state) =>
-        `px:2 py:1 bw:0 bg:transparent fs:xs ff:m c:p fv:os:s fv:ow:2 fv:oo:0 fv:oc:accent ${state.pressed ? "c:accent" : "c:accent-dim"}`
-      }
-      style={{ fontFamily: "inherit" }}
-    >
-      {children}
-    </Toggle>
   );
 }
 

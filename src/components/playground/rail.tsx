@@ -40,13 +40,16 @@ export default function PlaygroundRail({
   const toggle = (name: string) =>
     setOpen((current) => (current === name ? null : name));
 
-  const settable = props.filter(isControllable);
-  const inCode = props.filter(
-    (prop) => !isControllable(prop) && !STYLE_OWNED.includes(prop.name),
-  );
+  // an Example shows the props in use, so the rail lists them rather than setting them
+  const example = Boolean(playground?.meta?.scene);
+  const listed = props.filter((prop) => !STYLE_OWNED.includes(prop.name));
+  const settable = example ? [] : props.filter(isControllable);
+  const inCode = example ? [] : listed.filter((prop) => !isControllable(prop));
 
   const row = (prop: RegistryProp) => {
-    const inert = isInert(prop, playground?.values ?? {}, props);
+    const inert = example
+      ? null
+      : isInert(prop, playground?.values ?? {}, props);
     return (
       <Row
         key={prop.name}
@@ -55,7 +58,7 @@ export default function PlaygroundRail({
         open={open === prop.name}
         onToggle={() => toggle(prop.name)}
       >
-        {isControllable(prop) ? (
+        {!example && isControllable(prop) ? (
           <Control
             prop={prop}
             inert={Boolean(inert)}
@@ -96,7 +99,9 @@ export default function PlaygroundRail({
             The file you copy is yours. Change anything in it.
           </p>
 
-          {settable.map((prop) => row(prop))}
+          {example
+            ? listed.map((prop) => row(prop))
+            : settable.map((prop) => row(prop))}
 
           {inCode.length > 0 && (
             <Collapsible.Root open={more} onOpenChange={setMore}>

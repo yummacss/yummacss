@@ -50,11 +50,8 @@ function readStyle(): { style?: string; radius?: string } {
   }
 }
 
-export type View = "example" | "playground";
-
 export type SceneValues = Record<string, string | number | boolean>;
 
-const VIEWS = ["example", "playground"] as const;
 const QUERY = { history: "replace", shallow: true } as const;
 
 function sceneValues(value: unknown): SceneValues | null {
@@ -71,9 +68,6 @@ interface Playground {
   meta: RegistryMeta | null;
   values: DemoProps;
   setValue: (name: string, value: unknown) => void;
-  /** `example` shows the meta's scene; a prop edit on the rail leaves it. */
-  view: View;
-  setView: (view: View) => void;
   /** What the scene's components were changed to, by instance and prop. */
   sceneValues: SceneValues;
   setSceneValue: (key: string, value: unknown, fallback: unknown) => void;
@@ -200,27 +194,7 @@ export function PlaygroundProvider({
     if (Object.keys(pending).length > 0) setQuery(pending);
   }, [seed.meta, setQuery]);
 
-  // an address that names a prop asks for the playground
-  const arrival = useMemo<View>(() => {
-    if (typeof window === "undefined") return "example";
-    const named = new URLSearchParams(window.location.search);
-    return Object.keys(keyMap).some((name) => named.has(name))
-      ? "playground"
-      : "example";
-  }, [keyMap]);
-  // the view and the scene's state live in the address, so a reload keeps them
-  const [viewQuery, setViewQuery] = useQueryState(
-    "view",
-    parseAsStringLiteral(VIEWS).withOptions(QUERY),
-  );
-  const view: View = !seed.meta?.scene ? "playground" : (viewQuery ?? arrival);
-  const setView = useCallback(
-    (next: View) => {
-      setViewQuery(next);
-    },
-    [setViewQuery],
-  );
-
+  // what a visitor changes in the scene lives in the address, so a reload keeps it
   const [sceneQuery, setSceneQuery] = useQueryState(
     "scene",
     parseAsJson(sceneValues).withOptions(QUERY),
@@ -246,7 +220,6 @@ export function PlaygroundProvider({
     (name: string, value: unknown) => {
       const meta = seed.meta;
       if (!meta) return;
-      setView("playground");
 
       const next = { ...values, [name]: value };
 
@@ -269,7 +242,7 @@ export function PlaygroundProvider({
       writeCarried(next);
       setQuery(queryFor(meta, next));
     },
-    [seed.meta, values, setQuery, setView],
+    [seed.meta, values, setQuery],
   );
 
   const playground = useMemo(
@@ -278,8 +251,6 @@ export function PlaygroundProvider({
       meta: seed.meta,
       values,
       setValue,
-      view,
-      setView,
       sceneValues: sceneState,
       setSceneValue,
       accent,
@@ -294,8 +265,6 @@ export function PlaygroundProvider({
       seed.meta,
       values,
       setValue,
-      view,
-      setView,
       sceneState,
       setSceneValue,
       accent,
@@ -330,8 +299,6 @@ export function StaticPlayground({
       meta,
       values: meta ? seedValues(meta) : {},
       setValue: ignore,
-      view: (meta?.scene ? "example" : "playground") as View,
-      setView: ignore,
       sceneValues: {},
       setSceneValue: ignore,
       accent: DEFAULT_ACCENT,
