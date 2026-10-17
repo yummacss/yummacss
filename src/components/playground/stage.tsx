@@ -279,6 +279,7 @@ function Scene({
   radius: string;
 }) {
   const container = usePreviewContainer();
+  const playground = usePlayground();
   const ids = useMemo(() => sceneIds(scene), [scene]);
   const [components, setComponents] = useState(() => loaded(ids));
 
@@ -300,6 +301,10 @@ function Scene({
     style,
     radius,
     container,
+    {
+      values: playground?.sceneValues ?? {},
+      set: playground?.setSceneValue ?? (() => {}),
+    },
   );
 }
 
