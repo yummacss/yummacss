@@ -196,83 +196,86 @@ export default function OnboardingBase({
         className={`p:f i:0 min-h:dvh bg:shadow/30 bf-b:xs ${animated ? "tp:o tdu:250 ttf:out-quart opening:o:0 closing:o:0 closing:tdu:150 closing:ttf:eo @prm:tp:none" : ""}`}
       />
       <AlertDialog.Viewport className="d:f p:f i:0 ai:c jc:c p:4">
+        {/* no display on the popup: a class would beat the `hidden` Base UI sets once it closes */}
         <AlertDialog.Popup
           ref={popupRef}
           initialFocus={(type) => type === "keyboard" || popupRef.current}
           className={merge(
-            "d:f fd:c g:4 o:h w:112 max-w:100% p:5 bg:raised bc:line c:label bw:1 os:none bs-o:xl",
+            "o:h w:112 max-w:100% p:5 bg:raised bc:line c:label bw:1 os:none bs-o:xl",
             POPUP_SHAPES[shape],
             animated &&
               "tp:a tdu:250 ttf:out-quart opening:o:0 opening:s:95 closing:o:0 closing:s:95 closing:tdu:150 closing:ttf:eo @prm:tp:none",
           )}
         >
-          <div className="d:f ai:c jc:sb g:3">
-            <div aria-hidden className="d:f g:2">
-              {steps.map((_, index) => (
-                <span
-                  // biome-ignore lint/suspicious/noArrayIndexKey: steps are positional
-                  key={index}
-                  className={merge(
-                    "w:6 h:1",
-                    STEP_SHAPES[shape],
-                    index <= page ? "bg:check" : "bg:rim",
-                    animated && "tp:c tdu:250 ttf:out-quart @prm:tp:none",
-                  )}
-                />
-              ))}
+          <div className="d:f fd:c g:4">
+            <div className="d:f ai:c jc:sb g:3">
+              <div aria-hidden className="d:f g:2">
+                {steps.map((_, index) => (
+                  <span
+                    // biome-ignore lint/suspicious/noArrayIndexKey: steps are positional
+                    key={index}
+                    className={merge(
+                      "w:6 h:1",
+                      STEP_SHAPES[shape],
+                      index <= page ? "bg:check" : "bg:rim",
+                      animated && "tp:c tdu:250 ttf:out-quart @prm:tp:none",
+                    )}
+                  />
+                ))}
+              </div>
+              <span className="c:hint fs:xs">
+                Step {page + 1} of {steps.length}
+              </span>
             </div>
-            <span className="c:hint fs:xs">
-              Step {page + 1} of {steps.length}
-            </span>
-          </div>
 
-          {animated ? (
-            <div
-              key={page}
-              className={
-                direction > 0
-                  ? "tp:a tdu:250 ttf:out-quart @st:o:0 @st:ttx:10 @prm:tp:none"
-                  : direction < 0
-                    ? "tp:a tdu:250 ttf:out-quart @st:o:0 @st:ttx:-10 @prm:tp:none"
-                    : ""
-              }
-            >
-              {slide}
+            {animated ? (
+              <div
+                key={page}
+                className={
+                  direction > 0
+                    ? "tp:a tdu:250 ttf:out-quart @st:o:0 @st:ttx:10 @prm:tp:none"
+                    : direction < 0
+                      ? "tp:a tdu:250 ttf:out-quart @st:o:0 @st:ttx:-10 @prm:tp:none"
+                      : ""
+                }
+              >
+                {slide}
+              </div>
+            ) : (
+              slide
+            )}
+
+            <div className="d:f ai:c jc:sb g:2 pt:2">
+              {isFirst ? (
+                <AlertDialog.Close
+                  render={<Button className={merge(control, RAISED)} />}
+                >
+                  Skip
+                </AlertDialog.Close>
+              ) : (
+                <Button
+                  onClick={() => go(page - 1)}
+                  className={merge(control, RAISED)}
+                >
+                  Back
+                </Button>
+              )}
+              {isLast ? (
+                <AlertDialog.Close
+                  render={<Button className={merge(control, FILLED)} />}
+                  onClick={() => onFinish?.([...picked])}
+                >
+                  {finishLabel}
+                </AlertDialog.Close>
+              ) : (
+                <Button
+                  onClick={() => go(page + 1)}
+                  className={merge(control, FILLED)}
+                >
+                  Continue
+                </Button>
+              )}
             </div>
-          ) : (
-            slide
-          )}
-
-          <div className="d:f ai:c jc:sb g:2 pt:2">
-            {isFirst ? (
-              <AlertDialog.Close
-                render={<Button className={merge(control, RAISED)} />}
-              >
-                Skip
-              </AlertDialog.Close>
-            ) : (
-              <Button
-                onClick={() => go(page - 1)}
-                className={merge(control, RAISED)}
-              >
-                Back
-              </Button>
-            )}
-            {isLast ? (
-              <AlertDialog.Close
-                render={<Button className={merge(control, FILLED)} />}
-                onClick={() => onFinish?.([...picked])}
-              >
-                {finishLabel}
-              </AlertDialog.Close>
-            ) : (
-              <Button
-                onClick={() => go(page + 1)}
-                className={merge(control, FILLED)}
-              >
-                Continue
-              </Button>
-            )}
           </div>
         </AlertDialog.Popup>
       </AlertDialog.Viewport>
