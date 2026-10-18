@@ -79,5 +79,17 @@
       "default": true,
       "description": "The focus outline on the slot being typed in. `true` draws it, `false` removes it, and a string of Yumma CSS utilities restyles it. Removing it outright and putting nothing back fails WCAG 2.4.7."
     }
+  ],
+  "scene": [
+    {
+      "component": "OtpField",
+      "props": {
+        "label": "Verification code",
+        "description": "Sent to your phone, ending in 42",
+        "length": 6,
+        "groupSize": 3,
+        "defaultValue": "4817"
+      }
+    }
   ]
 }

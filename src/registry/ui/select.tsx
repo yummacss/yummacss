@@ -3,8 +3,7 @@
 import { Avatar } from "@base-ui/react/avatar";
 import { Field } from "@base-ui/react/field";
 import { Select } from "@base-ui/react/select";
-import { SortVerticalIcon } from "@solar-icons/react/bold";
-import { CheckIcon } from "@solar-icons/react/outline";
+import { AltArrowDownIcon, CheckIcon } from "@solar-icons/react/outline";
 import { type ReactNode, useEffect, useId, useState } from "react";
 import { merge } from "yummacss/merge";
 
@@ -241,7 +240,7 @@ export default function SelectBase({
 
   const arrow = (
     <Select.Icon className="d:f c:hint">
-      <SortVerticalIcon className="w:4 h:4" />
+      <AltArrowDownIcon className="w:4 h:4" />
     </Select.Icon>
   );
 

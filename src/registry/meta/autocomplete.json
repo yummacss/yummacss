@@ -8,7 +8,7 @@
       "example": [
         {
           "label": "report-2026.pdf",
-          "description": "Documents / Taxes",
+          "description": "Taxes",
           "icon": {
             "$icon": "DocumentIcon",
             "size": "w:4 h:4"
@@ -16,7 +16,7 @@
         },
         {
           "label": "receipts.pdf",
-          "description": "Documents / Taxes",
+          "description": "Taxes",
           "icon": {
             "$icon": "DocumentIcon",
             "size": "w:4 h:4"
@@ -32,7 +32,7 @@
         },
         {
           "label": "Repairs",
-          "description": "Folder in Home",
+          "description": "Home",
           "icon": {
             "$icon": "FolderIcon",
             "size": "w:4 h:4"
@@ -63,7 +63,6 @@
       "name": "icon",
       "type": "none",
       "typeName": "ReactNode",
-      "example": null,
       "exampleIcon": "MagnifierIcon",
       "description": "Any icon. It is positioned over the input and the text is padded around it, so pass the glyph and nothing else."
     },
@@ -79,7 +78,8 @@
       "name": "autoHighlight",
       "type": "boolean",
       "default": false,
-      "description": "Highlights the first match as you type, so Enter takes it without an arrow key first."
+      "description": "Highlights the first match as you type, so Enter takes it without an arrow key first.",
+      "example": true
     },
     {
       "name": "limit",

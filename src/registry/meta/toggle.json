@@ -16,6 +16,11 @@
       "exampleIcon": "MoonIcon"
     },
     {
+      "name": "label",
+      "type": "string",
+      "description": "Text after the icon. With it the toggle grows to fit its label instead of staying a square, and the label is its accessible name."
+    },
+    {
       "name": "defaultPressed",
       "type": "boolean",
       "default": false,

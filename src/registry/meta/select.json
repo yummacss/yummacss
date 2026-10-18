@@ -11,12 +11,12 @@
           "label": "Name"
         },
         {
-          "value": "size",
-          "label": "Size"
-        },
-        {
           "value": "modified",
           "label": "Date modified"
+        },
+        {
+          "value": "size",
+          "label": "Size"
         },
         {
           "value": "kind",

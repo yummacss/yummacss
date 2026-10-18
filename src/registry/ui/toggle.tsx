@@ -12,7 +12,7 @@ type Size = "sm" | "md";
 const FOCUS = "fv:os:s fv:ow:3 fv:oo:0 fv:oc:slate-4/60 fv:bc:slate-6";
 
 const SHAPES: Record<Shape, string> = {
-  rounded: "br:9999",
+  rounded: "br:lg",
   square: "",
   squircle: "br:xxl cs:s",
 };
@@ -27,6 +27,12 @@ const GROUP_SHAPES: Record<Shape, string> = {
 const SIZES: Record<Size, string> = {
   sm: "w:9 h:9",
   md: "w:12 h:12",
+};
+
+// a labelled toggle fits its text, so only the height is fixed
+const LABELLED: Record<Size, string> = {
+  sm: "h:8 px:2 g:1 fs:xs fw:500",
+  md: "h:9 px:3 g:2 fs:sm fw:500",
 };
 
 const DISABLED = "bw:1 bc:line bg:well c:hint o:60";
@@ -49,6 +55,11 @@ export interface ToggleProps
 
   /** Shown while pressed. */
   pressedIcon?: ReactNode;
+  /**
+   * Text after the icon. With it the toggle grows to fit its label instead of
+   * staying a square, and the label is its accessible name.
+   */
+  label?: string;
   /**
    * Starting state when you are not controlling it. Pair `pressed` with
    * `onPressedChange` instead if you are.
@@ -109,6 +120,7 @@ function Pop({ on, children }: { on: boolean; children: ReactNode }) {
  */
 export default function ToggleBase({
   icon,
+  label,
   pressedIcon,
   defaultPressed,
   pressed: controlledPressed,
@@ -149,7 +161,7 @@ export default function ToggleBase({
           outline,
           "d:f ai:c jc:c us:none",
           disabled ? "c:na" : "c:p",
-          SIZES[size],
+          label ? LABELLED[size] : SIZES[size],
           grouped ? GROUP_SHAPES[shape] : SHAPES[shape],
           disabled
             ? DISABLED
@@ -177,6 +189,7 @@ export default function ToggleBase({
           ) : (
             (state.pressed && pressedIcon) || icon
           )}
+          {label}
         </Button>
       )}
       {...props}

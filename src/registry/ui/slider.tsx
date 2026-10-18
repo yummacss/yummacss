@@ -62,6 +62,15 @@ export interface SliderProps {
    */
   formatValue?: (value: Value) => ReactNode;
   /**
+   * A unit after the value, such as `px`. The number reads bold and the unit
+   * quiet. Ignored when `formatValue` is set.
+   */
+  unit?: string;
+  /**
+   * Labels spread evenly under the track, first at the start, last at the end.
+   */
+  marks?: string[];
+  /**
    * Extra classes. `merge` folds them in last, so one here replaces the
    * component's own class for the same utility.
    */
@@ -92,7 +101,9 @@ export default function SliderBase({
   step = 1,
   shape = "rounded",
   disabled = false,
-  formatValue = defaultFormat,
+  formatValue,
+  unit,
+  marks,
   className,
   focus = true,
 }: SliderProps) {
@@ -132,7 +143,20 @@ export default function SliderBase({
             {required && <span className="c:red-5"> *</span>}
           </label>
         )}
-        <span className="c:hint fs:sm">{formatValue(value)}</span>
+        <span className="c:hint fs:sm">
+          {formatValue ? (
+            formatValue(value)
+          ) : unit ? (
+            <>
+              <span className="c:label fw:600">
+                {Array.isArray(value) ? value.join(" - ") : value}
+              </span>{" "}
+              {unit}
+            </>
+          ) : (
+            defaultFormat(value)
+          )}
+        </span>
       </div>
 
       <Slider.Root
@@ -166,6 +190,14 @@ export default function SliderBase({
           </Slider.Track>
         </Slider.Control>
       </Slider.Root>
+
+      {marks && marks.length > 0 && (
+        <div aria-hidden className="d:f jc:sb c:hint fs:xs">
+          {marks.map((mark) => (
+            <span key={mark}>{mark}</span>
+          ))}
+        </div>
+      )}
 
       {description && <p className="m:0 c:hint fs:xs">{description}</p>}
     </div>
