@@ -36,10 +36,10 @@ const FOCUS = "fv:os:s fv:ow:3 fv:oo:0 fv:oc:slate-4/60 fv:bc:slate-6";
 const BUTTON_BASE = "bw:1 fw:500 tp:c tdu:150 ttf:io us:none";
 
 const NEUTRAL_BUTTON =
-  "bg:white btc:slate-2 blc:slate-2 brc:slate-2 bbc:slate-4 bs-o:xs c:slate-10 h:bg:silver-1";
+  "bg:raised btc:rim blc:rim brc:rim bbc:shadow bs-o:xs c:label h:bg:well";
 
 const PRIMARY_BUTTON =
-  "bg:slate-12 btc:white/20 blc:black/40 brc:black/40 bbc:black/60 bs-o:sm h:bg:slate-11 c:white";
+  "bg:fill btc:white/20 blc:black/40 brc:black/40 bbc:black/60 bs-o:sm h:o:90 c:on-fill";
 
 const DANGER_OUTLINE = "fv:oc:red-2/60 fv:bc:red-3";
 
@@ -186,7 +186,7 @@ export default function DialogBase({
   );
 
   const popupClasses = [
-    "o:h p:r w:96 bg:white bc:black/10 c:slate-10 bw:1 os:none bs-o:xl",
+    "o:h p:r w:96 bg:raised bc:line c:label bw:1 os:none bs-o:xl",
     POPUP_SHAPES[shape],
   ]
     .filter(Boolean)
@@ -211,7 +211,7 @@ export default function DialogBase({
   const popup = (
     <Dialog.Portal container={container} keepMounted>
       <Dialog.Backdrop
-        className={`p:f i:0 min-h:dvh bg:black/5 bf-b:xs ${
+        className={`p:f i:0 min-h:dvh bg:shadow/30 bf-b:xs ${
           animated
             ? "tp:o tdu:250 ttf:out-quart opening:o:0 closing:o:0 closing:tdu:150 closing:ttf:eo @prm:tp:none"
             : ""
@@ -230,7 +230,7 @@ export default function DialogBase({
                 <Button
                   className={merge(
                     outline,
-                    "d:f p:a r:3 t:3 ai:c jc:c w:7 h:7 p:0 c:slate-6 bw:0 h:bg:silver-1/50 h:c:slate-7",
+                    "d:f p:a r:3 t:3 ai:c jc:c w:7 h:7 p:0 c:hint bw:0 h:bg:well h:c:hint",
                     CLOSE_SHAPES[shape],
                   )}
                 />
@@ -248,12 +248,12 @@ export default function DialogBase({
           <div
             className={`d:f fd:c g:3 px:4 pb:6 ${header ? "pt:5" : "pt:10"}`}
           >
-            <Dialog.Title className="c:slate-10 fs:md fw:500 ta:c">
+            <Dialog.Title className="c:label fs:md fw:500 ta:c">
               {title}
             </Dialog.Title>
 
             {description && (
-              <Dialog.Description className="m:0 c:slate-7 fs:sm lh:4 ta:c">
+              <Dialog.Description className="m:0 c:hint fs:sm lh:4 ta:c">
                 {description}
               </Dialog.Description>
             )}

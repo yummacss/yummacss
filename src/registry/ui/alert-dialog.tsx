@@ -50,12 +50,12 @@ const TONE_BUTTON: Record<Tone, string> = {
   danger:
     "bg:red h:bg:red-8 btc:red-5 blc:red-8 brc:red-8 bbc:red-9 c:white bs-o:sm",
   neutral:
-    "bg:white btc:slate-2 blc:slate-2 brc:slate-2 bbc:slate-4 bs-o:xs c:slate-10 h:bg:silver-1",
+    "bg:raised btc:rim blc:rim brc:rim bbc:shadow bs-o:xs c:label h:bg:well",
 };
 
 const TONE_BADGE: Record<Tone, string> = {
   danger: "bg:red-1/50 c:red",
-  neutral: "bg:silver-2 c:slate-7",
+  neutral: "bg:well c:hint",
 };
 
 export interface AlertDialogProps {
@@ -172,7 +172,7 @@ export default function AlertDialogBase({
   );
 
   const popupClasses = [
-    "o:h p:r w:96 bg:white bc:black/10 c:slate-10 bw:1 os:none bs-o:xl",
+    "o:h p:r w:96 bg:raised bc:line c:label bw:1 os:none bs-o:xl",
     POPUP_SHAPES[shape],
   ]
     .filter(Boolean)
@@ -203,7 +203,7 @@ export default function AlertDialogBase({
   const popup = (
     <AlertDialog.Portal container={container} keepMounted>
       <AlertDialog.Backdrop
-        className={`p:f i:0 min-h:dvh bg:black/5 bf-b:xs ${
+        className={`p:f i:0 min-h:dvh bg:shadow/30 bf-b:xs ${
           animated
             ? "tp:o tdu:250 ttf:out-quart opening:o:0 closing:o:0 closing:tdu:150 closing:ttf:eo @prm:tp:none"
             : ""
@@ -222,7 +222,7 @@ export default function AlertDialogBase({
                 <Button
                   className={merge(
                     outline,
-                    "d:f p:a r:3 t:3 ai:c jc:c w:7 h:7 p:0 c:slate-6 bw:0 h:bg:silver-1/50 h:c:slate-7",
+                    "d:f p:a r:3 t:3 ai:c jc:c w:7 h:7 p:0 c:hint bw:0 h:bg:well h:c:hint",
                     CLOSE_SHAPES[shape],
                   )}
                 />
@@ -235,10 +235,10 @@ export default function AlertDialogBase({
 
           <div className="d:f fd:c ai:c g:3 pt:10 pb:6 px:4">
             {icon && <span className={badgeClasses}>{icon}</span>}
-            <AlertDialog.Title className="c:slate-10 fs:md fw:500">
+            <AlertDialog.Title className="c:label fs:md fw:500">
               {title}
             </AlertDialog.Title>
-            <AlertDialog.Description className="m:0 c:slate-6 fs:sm lh:4 ta:c">
+            <AlertDialog.Description className="m:0 c:hint fs:sm lh:4 ta:c">
               {description}
             </AlertDialog.Description>
           </div>
