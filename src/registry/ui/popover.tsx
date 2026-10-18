@@ -14,7 +14,7 @@ type TriggerVariant = "icon" | "label";
 
 const TRIGGER_VARIANTS: Record<TriggerVariant, string> = {
   icon: "w:10 h:10",
-  label: "px:3 py:2 g:2",
+  label: "px:3 py:2 g:2 fs:sm fw:600",
 };
 
 const TRIGGER_SHAPES: Record<Shape, string> = {
@@ -239,11 +239,12 @@ export default function PopoverBase({
     <Popover.Root open={open} onOpenChange={setOpen}>
       <Popover.Trigger
         className={triggerClasses}
-        aria-label={triggerLabel}
+        aria-label={triggerVariant === "icon" ? triggerLabel : undefined}
         openOnHover={openOnHover}
         delay={openOnHover ? delay : undefined}
       >
         {trigger}
+        {triggerVariant === "label" && triggerLabel}
       </Popover.Trigger>
 
       {popup}

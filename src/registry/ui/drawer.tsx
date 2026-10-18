@@ -68,7 +68,7 @@ const BUTTON_SHAPES: Record<Shape, string> = {
 };
 
 const CLOSE_SHAPES: Record<Shape, string> = {
-  rounded: "br:9999",
+  rounded: "br:md",
   square: "",
   squircle: "br:lg cs:s",
 };
@@ -234,14 +234,14 @@ export default function DrawerBase({
                   <Button
                     className={merge(
                       outline,
-                      "d:f p:a r:3 t:3 ai:c jc:c w:7 h:7 p:0 c:hint bw:0 bg:transparent h:bg:well h:c:hint",
+                      "d:f p:a r:4 t:4 ai:c jc:c w:7 h:7 p:0 bw:1 bg:raised btc:rim blc:rim brc:rim bbc:shadow bs-o:xs c:label h:bg:well",
                       CLOSE_SHAPES[shape],
                     )}
                   />
                 }
                 aria-label="Close"
               >
-                <CloseIcon aria-hidden className="w:5 h:5" />
+                <CloseIcon aria-hidden className="w:4 h:4" />
               </Drawer.Close>
             )}
 
