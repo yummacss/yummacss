@@ -1,0 +1,323 @@
+{
+  "summary": "A recessed box that scrolls its content, with a thin scrollbar that shows while you hover or scroll.",
+  "props": [
+    {
+      "name": "children",
+      "type": "none",
+      "typeName": "ReactNode",
+      "description": "What scrolls."
+    },
+    {
+      "name": "shape",
+      "type": "enum",
+      "values": ["rounded", "square", "squircle"],
+      "default": "rounded",
+      "description": "Corner radius on the box. The thumb is always a capsule."
+    },
+    {
+      "name": "animated",
+      "type": "boolean",
+      "default": true,
+      "description": "The scrollbar fading in while you hover or scroll. Turn it off for a scrollbar that is simply there, or when the user has asked for reduced motion."
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "description": "Extra classes on the box. Its height lives here: `merge` folds them in last, so `h:96` replaces the default `h:72`."
+    },
+    {
+      "name": "focus",
+      "type": "boolean",
+      "typeName": "boolean | string",
+      "default": true,
+      "description": "The focus outline. `true` draws it, `false` removes it along with the danger, error and success tints that ride with it, and a string of Yumma CSS utilities restyles it on every focusable part of the component, which is more than `className` reaches. Removing it outright and putting nothing back fails WCAG 2.4.7."
+    }
+  ],
+  "scene": [
+    {
+      "component": "ScrollArea",
+      "children": [
+        {
+          "tag": "div",
+          "className": "d:f ai:c g:3 h:9 px:2 fs:sm",
+          "children": [
+            {
+              "icon": {
+                "$icon": "DocumentIcon",
+                "size": "w:4 h:4 c:blue"
+              }
+            },
+            {
+              "text": "budget.xlsx",
+              "className": "f:1"
+            },
+            {
+              "text": "24 KB",
+              "className": "c:hint fs:xs"
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "className": "d:f ai:c g:3 h:9 px:2 fs:sm",
+          "children": [
+            {
+              "icon": {
+                "$icon": "DocumentIcon",
+                "size": "w:4 h:4 c:blue"
+              }
+            },
+            {
+              "text": "readme.md",
+              "className": "f:1"
+            },
+            {
+              "text": "3 KB",
+              "className": "c:hint fs:xs"
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "className": "d:f ai:c g:3 h:9 px:2 fs:sm",
+          "children": [
+            {
+              "icon": {
+                "$icon": "GalleryIcon",
+                "size": "w:4 h:4 c:mint"
+              }
+            },
+            {
+              "text": "scan-0412.png",
+              "className": "f:1"
+            },
+            {
+              "text": "1.2 MB",
+              "className": "c:hint fs:xs"
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "className": "d:f ai:c g:3 h:9 px:2 fs:sm",
+          "children": [
+            {
+              "icon": {
+                "$icon": "GalleryIcon",
+                "size": "w:4 h:4 c:mint"
+              }
+            },
+            {
+              "text": "beach.jpg",
+              "className": "f:1"
+            },
+            {
+              "text": "3.4 MB",
+              "className": "c:hint fs:xs"
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "className": "d:f ai:c g:3 h:9 px:2 fs:sm",
+          "children": [
+            {
+              "icon": {
+                "$icon": "VideoFrameIcon",
+                "size": "w:4 h:4 c:red"
+              }
+            },
+            {
+              "text": "holiday.mov",
+              "className": "f:1"
+            },
+            {
+              "text": "860 MB",
+              "className": "c:hint fs:xs"
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "className": "d:f ai:c g:3 h:9 px:2 fs:sm",
+          "children": [
+            {
+              "icon": {
+                "$icon": "DocumentIcon",
+                "size": "w:4 h:4 c:blue"
+              }
+            },
+            {
+              "text": "notes.txt",
+              "className": "f:1"
+            },
+            {
+              "text": "1 KB",
+              "className": "c:hint fs:xs"
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "className": "d:f ai:c g:3 h:9 px:2 fs:sm",
+          "children": [
+            {
+              "icon": {
+                "$icon": "ArchiveIcon",
+                "size": "w:4 h:4 c:yellow"
+              }
+            },
+            {
+              "text": "receipts.zip",
+              "className": "f:1"
+            },
+            {
+              "text": "18 MB",
+              "className": "c:hint fs:xs"
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "className": "d:f ai:c g:3 h:9 px:2 fs:sm",
+          "children": [
+            {
+              "icon": {
+                "$icon": "DocumentIcon",
+                "size": "w:4 h:4 c:blue"
+              }
+            },
+            {
+              "text": "tax-return.pdf",
+              "className": "f:1"
+            },
+            {
+              "text": "412 KB",
+              "className": "c:hint fs:xs"
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "className": "d:f ai:c g:3 h:9 px:2 fs:sm",
+          "children": [
+            {
+              "icon": {
+                "$icon": "GalleryIcon",
+                "size": "w:4 h:4 c:mint"
+              }
+            },
+            {
+              "text": "passport.jpg",
+              "className": "f:1"
+            },
+            {
+              "text": "2.1 MB",
+              "className": "c:hint fs:xs"
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "className": "d:f ai:c g:3 h:9 px:2 fs:sm",
+          "children": [
+            {
+              "icon": {
+                "$icon": "DocumentIcon",
+                "size": "w:4 h:4 c:blue"
+              }
+            },
+            {
+              "text": "recipes.md",
+              "className": "f:1"
+            },
+            {
+              "text": "6 KB",
+              "className": "c:hint fs:xs"
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "className": "d:f ai:c g:3 h:9 px:2 fs:sm",
+          "children": [
+            {
+              "icon": {
+                "$icon": "VideoFrameIcon",
+                "size": "w:4 h:4 c:red"
+              }
+            },
+            {
+              "text": "birthday.mov",
+              "className": "f:1"
+            },
+            {
+              "text": "1.2 GB",
+              "className": "c:hint fs:xs"
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "className": "d:f ai:c g:3 h:9 px:2 fs:sm",
+          "children": [
+            {
+              "icon": {
+                "$icon": "ArchiveIcon",
+                "size": "w:4 h:4 c:yellow"
+              }
+            },
+            {
+              "text": "old-photos.zip",
+              "className": "f:1"
+            },
+            {
+              "text": "4.6 GB",
+              "className": "c:hint fs:xs"
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "className": "d:f ai:c g:3 h:9 px:2 fs:sm",
+          "children": [
+            {
+              "icon": {
+                "$icon": "DocumentIcon",
+                "size": "w:4 h:4 c:blue"
+              }
+            },
+            {
+              "text": "packing-list.txt",
+              "className": "f:1"
+            },
+            {
+              "text": "2 KB",
+              "className": "c:hint fs:xs"
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "className": "d:f ai:c g:3 h:9 px:2 fs:sm",
+          "children": [
+            {
+              "icon": {
+                "$icon": "GalleryIcon",
+                "size": "w:4 h:4 c:mint"
+              }
+            },
+            {
+              "text": "wallpaper.png",
+              "className": "f:1"
+            },
+            {
+              "text": "5.8 MB",
+              "className": "c:hint fs:xs"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

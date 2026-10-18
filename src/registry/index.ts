@@ -34,6 +34,7 @@ import meta_preview_card from "./meta/preview-card.json";
 import meta_progress from "./meta/progress.json";
 import meta_radio from "./meta/radio.json";
 import meta_rating from "./meta/rating.json";
+import meta_scroll_area from "./meta/scroll-area.json";
 import meta_select from "./meta/select.json";
 import meta_separator from "./meta/separator.json";
 import meta_skeleton from "./meta/skeleton.json";
@@ -93,6 +94,7 @@ export const registry = {
   "progress": () => import("./ui/progress"),
   "radio": () => import("./ui/radio"),
   "rating": () => import("./ui/rating"),
+  "scroll-area": () => import("./ui/scroll-area"),
   "select-grouped": () => import("./ui/select-grouped"),
   "select": () => import("./ui/select"),
   "separator": () => import("./ui/separator"),
@@ -197,6 +199,7 @@ export const registryMeta = {
   "progress": meta_progress,
   "radio": meta_radio,
   "rating": meta_rating,
+  "scroll-area": meta_scroll_area,
   "select": meta_select,
   "separator": meta_separator,
   "skeleton": meta_skeleton,
@@ -268,6 +271,7 @@ export const registryTargets: Record<string, RegistryTarget> = {
   "progress": { component: "progress", variant: "base", kind: "component", install: "progress" },
   "radio": { component: "radio", variant: "base", kind: "component", install: "radio" },
   "rating": { component: "rating", variant: "base", kind: "component", install: "rating" },
+  "scroll-area": { component: "scroll-area", variant: "base", kind: "component", install: "scroll-area" },
   "select-grouped": { component: "select", variant: "grouped", kind: "example", install: "select" },
   "select": { component: "select", variant: "base", kind: "component", install: "select" },
   "separator": { component: "separator", variant: "base", kind: "component", install: "separator" },
@@ -317,6 +321,7 @@ export const registryConfig: Record<string, RegistryConfig> = {
   "progress": { states: {}, easings: {}, keyframes: { "slide": "from { translate: -100% 0; } to { translate: 100% 0; }" } },
   "radio": { states: {}, easings: { "out-back": "cubic-bezier(0.34, 1.56, 0.64, 1)" }, keyframes: {} },
   "rating": { states: {}, easings: { "out-back": "cubic-bezier(0.34, 1.56, 0.64, 1)" }, keyframes: {} },
+  "scroll-area": { states: { "hovering": "[data-hovering]", "scrolling": "[data-scrolling]" }, easings: {}, keyframes: {} },
   "select": { states: { "opening": "[data-starting-style]", "closing": "[data-ending-style]" }, easings: { "out-quart": "cubic-bezier(0.25, 1, 0.5, 1)" }, keyframes: {} },
   "skeleton": { states: {}, easings: {}, keyframes: { "pulse": "0%, 100% { opacity: .5; } 50% { opacity: 1; }" } },
   "switch": { states: {}, easings: { "out-back": "cubic-bezier(0.34, 1.56, 0.64, 1)", "out-quart": "cubic-bezier(0.25, 1, 0.5, 1)" }, keyframes: {} },

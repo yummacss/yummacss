@@ -296,6 +296,7 @@ export const sidebarConfig = {
         "meter",
         "preview-card",
         "progress",
+        "scroll-area",
         "separator",
       ],
     },
