@@ -16,7 +16,7 @@ type Shape = "rounded" | "square" | "squircle";
 
 const TURN = "tp:t tdu:300 ttf:out-quart @prm:tp:none";
 
-const FOCUS = "fv:os:s fv:ow:3 fv:oo:0 fv:oc:slate-4/60 fv:bc:slate-6";
+const FOCUS = "fv:os:s fv:ow:3 fv:oo:0 fv:oc:focus/40 fv:bc:focus";
 type Indicator = "chevron" | "plus-minus";
 type IndicatorPosition = "leading" | "trailing";
 

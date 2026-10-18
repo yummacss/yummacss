@@ -22,7 +22,7 @@ export interface ComboboxGroup {
   items: ComboboxItem[];
 }
 
-const FOCUS = "fv:os:s fv:ow:3 fv:oo:0 fv:oc:slate-4/60 fv:bc:slate-6";
+const FOCUS = "fv:os:s fv:ow:3 fv:oo:0 fv:oc:focus/40 fv:bc:focus";
 
 const INPUT =
   "pl:4 pr:16 bg:field btc:shadow blc:line brc:line bbc:rim c:label bw:1 fs:sm";

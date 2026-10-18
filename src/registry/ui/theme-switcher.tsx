@@ -20,7 +20,7 @@ const THEMES: {
   { value: "system", label: "System", icon: MonitorIcon },
 ];
 
-const FOCUS = "fv:os:s fv:ow:3 fv:oo:0 fv:oc:slate-4/60 fv:bc:slate-6";
+const FOCUS = "fv:os:s fv:ow:3 fv:oo:0 fv:oc:focus/40 fv:bc:focus";
 
 const TRACK_SHAPES: Record<Shape, string> = {
   rounded: "br:lg",

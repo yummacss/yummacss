@@ -13,7 +13,7 @@ const SHAPES: Record<Shape, string> = {
   squircle: "br:xxl cs:s",
 };
 
-const FOCUS = "os:s ow:3 oo:0 oc:slate-4/60";
+const FOCUS = "os:s ow:3 oo:0 oc:focus/40";
 
 // the knob, centered on the value and overhanging the bar, as a switch thumb
 const THUMB =
