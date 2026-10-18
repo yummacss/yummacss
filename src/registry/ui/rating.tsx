@@ -57,7 +57,7 @@ export interface RatingProps {
   animated?: boolean;
   /**
    * Shown under the stars while nothing is selected. Once a rating is set it
-   * reads `3 / 5`.
+   * reads `3 of 5`.
    */
   emptyHint?: string;
   /**
@@ -66,7 +66,7 @@ export interface RatingProps {
    */
   score?: ReactNode;
   /**
-   * Replaces the `3 / 5` readout under the marks. A read-only average reports
+   * Replaces the `3 of 5` readout under the marks. A read-only average reports
    * what it is an average of, which a count of filled stars cannot say.
    */
   hint?: ReactNode;
@@ -215,7 +215,7 @@ export default function RatingBase({
               ? icons[value].label
               : emptyHint
             : value > 0
-              ? `${value} / ${max}`
+              ? `${value} of ${max}`
               : emptyHint)}
       </span>
 

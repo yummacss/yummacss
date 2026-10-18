@@ -41,6 +41,8 @@ export interface EmptyStateProps {
   onPrimary?: () => void;
   /** The outlined button beside the primary one. */
   secondaryLabel?: string;
+  /** A glyph before the secondary action's label. */
+  secondaryIcon?: ReactNode;
   /** Called when the secondary button is pressed. */
   onSecondary?: () => void;
   /** Corner radius on the badge. */
@@ -71,6 +73,7 @@ export default function EmptyStateBase({
   description,
   primaryLabel,
   primaryIcon,
+  secondaryIcon,
   onPrimary,
   secondaryLabel,
   onSecondary,
@@ -87,7 +90,7 @@ export default function EmptyStateBase({
   const rootClasses = merge("d:f fd:c ai:c jc:c p:8", gap, className);
 
   const badgeClasses = [
-    "d:f ai:c jc:c w:10 h:10 bg:raised btc:rim blc:rim brc:rim bbc:shadow bs-o:xs bw:1",
+    "d:f ai:c jc:c w:12 h:12 bg:well",
     ICON_TONES[iconTone],
     BADGE_SHAPES[iconShape],
   ]
@@ -99,7 +102,7 @@ export default function EmptyStateBase({
       {icon && <div className={badgeClasses}>{icon}</div>}
 
       <div className="d:f fd:c ai:c g:1 ta:c">
-        <span className="c:label fs:md fw:500">{title}</span>
+        <span className="c:label fs:md fw:600">{title}</span>
         {description && <span className="c:hint fs:sm">{description}</span>}
       </div>
 
@@ -111,9 +114,10 @@ export default function EmptyStateBase({
               className={merge(
                 outline,
                 BUTTON_BASE,
-                "bg:raised btc:rim blc:rim brc:rim bbc:shadow bs-o:xs c:label h:bg:well",
+                "g:2 bg:raised btc:rim blc:rim brc:rim bbc:shadow bs-o:xs c:label h:bg:well",
               )}
             >
+              {secondaryIcon}
               {secondaryLabel}
             </Button>
           )}

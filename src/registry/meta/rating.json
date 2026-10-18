@@ -52,7 +52,7 @@
       "name": "emptyHint",
       "type": "string",
       "default": "Click to rate",
-      "description": "Shown under the stars while nothing is selected. Once a rating is set it reads `3 / 5`."
+      "description": "Shown under the stars while nothing is selected. Once a rating is set it reads `3 of 5`."
     },
     {
       "name": "score",
@@ -62,7 +62,7 @@
     {
       "name": "hint",
       "type": "string",
-      "description": "Replaces the `3 / 5` readout under the marks. A read-only average reports what it is an average of, which a count of filled stars cannot say."
+      "description": "Replaces the `3 of 5` readout under the marks. A read-only average reports what it is an average of, which a count of filled stars cannot say."
     },
     {
       "name": "children",
