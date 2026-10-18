@@ -101,6 +101,8 @@ is written.
   brc:line bbc:rim`.
 - Popups float on `bg:raised bc:line bs-o:xl`. A highlighted row is
   `check` with its bevel and `c:white`, on a `bw:1 bc:transparent` row.
+  Icons and shortcuts in a row are `o:70` of its color, so they turn white
+  with it. A separator inside a popup is `rim`: `line` vanishes on `raised`.
 - No inset shadow, except a pressed toggle (Toggle, Toolbar). No `shadow` prop.
 - Pressed in is an on/off that stays on by itself (Toggle, Toolbar). Picking
   one of several is a raised chip on a track (Tabs, Toggle Group).
@@ -162,6 +164,8 @@ is written.
   grows to its content and never scrolls.
 - The scrollbar is 12px and square, sits above sticky headers (`zi:20`), and
   fades with `hovering:` and `scrolling:`, two states in `yumma.config.mjs`.
+- Registry icons are Solar: Bold for objects, Outline for marks, arrows and
+  operators. Never Duotone.
 - Site icons come from `src/icons.tsx`, Phosphor regular. Duotone blurs at
   16px; the notes, "Icons at 16px", have the measurements.
 

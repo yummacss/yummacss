@@ -5,7 +5,7 @@ import {
   QuestionCircleIcon,
   SettingsIcon,
   UserCrossIcon,
-} from "@solar-icons/react/bold-duotone";
+} from "@solar-icons/react/bold";
 import { MagnifierIcon } from "@solar-icons/react/outline";
 import Autocomplete, { type AutocompleteItem } from "./autocomplete";
 

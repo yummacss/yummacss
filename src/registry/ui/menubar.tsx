@@ -146,13 +146,13 @@ export default function MenubarBase({
   container,
 }: MenubarProps) {
   const barClasses = merge(
-    "d:f g:1 p:1 bg:white btc:slate-2 blc:slate-2 brc:slate-2 bbc:slate-4 bs-o:xs bw:1",
+    "d:f g:1 p:1 bg:raised btc:rim blc:rim brc:rim bbc:shadow bs-o:xs bw:1",
     BAR_SHAPES[shape],
     className,
   );
 
   const popupClasses = [
-    "py:1 w:52 bg:white bc:black/10 c:slate-10 bw:1 os:none bs-o:xl",
+    "py:1 min-w:52 bg:raised bc:line c:label bw:1 os:none bs-o:xl",
     POPUP_SHAPES[shape],
   ]
     .filter(Boolean)
@@ -162,8 +162,8 @@ export default function MenubarBase({
     [
       "d:if ai:c h:8 px:3 py:0 fs:sm fw:500 us:none bw:0 bg:transparent",
       TRIGGER_SHAPES[shape],
-      disabled ? "c:slate-4 o:60 c:na" : "c:slate-10 c:p h:bg:silver-1/50",
-      !disabled && state.open ? "bg:silver-1" : "",
+      disabled ? "c:hint o:60 c:na" : "c:label c:p h:bg:well",
+      !disabled && state.open ? "bg:well" : "",
     ]
       .filter(Boolean)
       .join(" ");
@@ -178,8 +178,8 @@ export default function MenubarBase({
         destructive ? "c:red" : "",
         state.highlighted
           ? destructive
-            ? "bg:red c:white btc:red-5"
-            : "bg:slate-12 c:white btc:white/20"
+            ? "bg:red c:white btc:red-5 blc:red-8 brc:red-8 bbc:red-9"
+            : "bg:check c:white btc:white/25 blc:black/15 brc:black/15 bbc:black/30"
           : "bg:transparent",
       ]
         .filter(Boolean)
@@ -190,16 +190,14 @@ export default function MenubarBase({
       const key = `${keyPrefix}-${index}`;
 
       if ("type" in item && item.type === "separator") {
-        return (
-          <Menu.Separator key={key} className="my:1 w:100% h:px bg:silver-2" />
-        );
+        return <Menu.Separator key={key} className="my:1 w:100% h:px bg:rim" />;
       }
 
       if ("type" in item && item.type === "group") {
         return (
           <Menu.Group key={key}>
             {item.label && (
-              <div className="px:3 py:1 fs:xs fw:600 c:slate-5 us:none">
+              <div className="px:3 py:1 fs:xs fw:600 c:hint us:none">
                 {item.label}
               </div>
             )}
@@ -217,7 +215,7 @@ export default function MenubarBase({
             disabled={item.disabled}
             className={itemClasses(false, false)}
           >
-            <span className="d:f ai:c jc:c fs:0 w:4 h:4 bc:silver-3 br:sm bw:1">
+            <span className="d:f ai:c jc:c fs:0 w:4 h:4 bc:rim br:sm bw:1">
               <Menu.CheckboxItemIndicator>
                 <CheckIcon className="w:3 h:3" />
               </Menu.CheckboxItemIndicator>
@@ -240,7 +238,7 @@ export default function MenubarBase({
                 value={option.value}
                 className={itemClasses(false, false)}
               >
-                <span className="d:f ai:c jc:c fs:0 w:4 h:4 bc:silver-3 br:9999 bw:1">
+                <span className="d:f ai:c jc:c fs:0 w:4 h:4 bc:rim br:9999 bw:1">
                   <Menu.RadioItemIndicator>
                     <span className="d:b w:2 h:2 br:9999 bg:current" />
                   </Menu.RadioItemIndicator>
@@ -257,10 +255,10 @@ export default function MenubarBase({
           <Menu.SubmenuRoot key={key}>
             <Menu.SubmenuTrigger className={itemClasses(false, true)}>
               {icon && item.icon && (
-                <span className="d:f fs:0 c:slate-5">{item.icon}</span>
+                <span className="d:f fs:0 o:70">{item.icon}</span>
               )}
               <span className="fg:1">{item.label}</span>
-              <AltArrowRightIcon className="fs:0 w:4 h:4 c:slate-4" />
+              <AltArrowRightIcon className="fs:0 w:4 h:4 o:70" />
             </Menu.SubmenuTrigger>
 
             <Menu.Portal container={container}>
@@ -292,7 +290,7 @@ export default function MenubarBase({
           className={itemClasses(destructive, trailing)}
         >
           {icon && action.icon && iconPosition === "leading" && (
-            <span className={`d:f fs:0 ${destructive ? "" : "c:slate-5"}`}>
+            <span className={`d:f fs:0 ${destructive ? "" : "o:70"}`}>
               {action.icon}
             </span>
           )}
@@ -302,7 +300,7 @@ export default function MenubarBase({
             action.label
           )}
           {icon && action.icon && iconPosition === "trailing" && (
-            <span className={`d:f fs:0 ${destructive ? "" : "c:slate-5"}`}>
+            <span className={`d:f fs:0 ${destructive ? "" : "o:70"}`}>
               {action.icon}
             </span>
           )}
@@ -310,7 +308,7 @@ export default function MenubarBase({
             <span
               className={[
                 "d:f ai:c g:1 ml:4 fw:400 fs:xs",
-                destructive ? "" : "c:slate-6",
+                destructive ? "" : "o:70",
               ]
                 .filter(Boolean)
                 .join(" ")}

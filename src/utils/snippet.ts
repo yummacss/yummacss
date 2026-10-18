@@ -77,7 +77,7 @@ export function iconMarker(
   return {
     name,
     size: typeof size === "string" ? size : undefined,
-    style: style === "outline" || style === "bold-duotone" ? style : undefined,
+    style: style === "outline" || style === "bold" ? style : undefined,
   };
 }
 
@@ -248,7 +248,7 @@ export function buildUsage(
     ]),
   ].sort();
 
-  for (const style of ["bold-duotone", "outline"] as const) {
+  for (const style of ["bold", "outline"] as const) {
     const named = icons
       .filter((icon) => icon.startsWith(`${style}:`))
       .map((icon) => icon.slice(style.length + 1));
@@ -470,7 +470,7 @@ export function buildScene(scene: ChildExample[]): Token[] {
       ]),
     ),
   ].sort();
-  for (const style of ["bold-duotone", "outline"] as const) {
+  for (const style of ["bold", "outline"] as const) {
     const named = icons
       .filter((icon) => icon.startsWith(`${style}:`))
       .map((icon) => icon.slice(style.length + 1));

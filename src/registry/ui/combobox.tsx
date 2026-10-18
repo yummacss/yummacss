@@ -2,7 +2,7 @@
 
 import { Avatar } from "@base-ui/react/avatar";
 import { Combobox } from "@base-ui/react/combobox";
-import { SortVerticalIcon } from "@solar-icons/react/bold-duotone";
+import { SortVerticalIcon } from "@solar-icons/react/bold";
 import { CheckIcon, CloseIcon } from "@solar-icons/react/outline";
 import type { ReactNode } from "react";
 import { useEffect, useId, useState } from "react";

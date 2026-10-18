@@ -1,7 +1,7 @@
 "use client";
 
 import { Accordion } from "@base-ui/react/accordion";
-import { LockIcon } from "@solar-icons/react/bold-duotone";
+import { LockIcon } from "@solar-icons/react/bold";
 import {
   AddIcon,
   AltArrowDownIcon,
