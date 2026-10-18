@@ -17,22 +17,22 @@ const SHAPES: Record<Shape, string> = {
 };
 
 const TONES: Record<Tone, string> = {
-  light: "bg:white bc:black/10 c:slate-10 bw:1",
-  dark: "bg:slate-12 c:white",
+  light: "bg:raised bc:line c:label bw:1",
+  dark: "bg:fill c:on-fill",
   danger: "bg:red-7 c:white",
 };
 
 const DANGER_OUTLINE = "fv:oc:red-2/60 fv:bc:red-3";
 
 const TRIGGER_TONES: Record<Tone, string> = {
-  light: "c:slate-8 h:c:slate-10",
-  dark: "c:slate-8 h:c:slate-10",
+  light: "c:hint h:c:label",
+  dark: "c:hint h:c:label",
   danger: "c:red-7 h:c:red-8",
 };
 
 const ARROW_TONES: Record<Tone, string> = {
-  light: "f:white s:silver-2",
-  dark: "f:slate-12 s:slate-12",
+  light: "f:raised s:line",
+  dark: "f:fill s:fill",
   danger: "f:red-7 s:red-7",
 };
 

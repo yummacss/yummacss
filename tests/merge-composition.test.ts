@@ -11,7 +11,7 @@ const EXPECTED_DROPS = [
   "file-upload.tsx: bc:red-5",
   "file-upload.tsx: bc:rim",
   "file-upload.tsx: bg:transparent",
-  "popover.tsx: bg:white",
+  "popover.tsx: bg:raised",
   "select.tsx: bg:raised",
   "preview-card.tsx: td:none",
   "alert-dialog.tsx: fv:bc:slate-6",
