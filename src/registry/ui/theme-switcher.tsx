@@ -46,9 +46,8 @@ const ICON_ONLY: Record<Size, string> = {
 };
 
 // picking one of several: the selected tab's raised chip on the track
-const PICKED =
-  "bg:white btc:silver-2 blc:silver-2 brc:silver-2 bbc:silver-4 bs-o:xs c:slate-10";
-const UNPICKED = "bg:transparent bc:transparent c:slate-8 h:c:slate-10";
+const PICKED = "bg:raised btc:rim blc:rim brc:rim bbc:shadow bs-o:xs c:label";
+const UNPICKED = "bg:transparent bc:transparent c:hint h:c:label";
 
 function isTheme(value: unknown): value is Theme {
   return value === "light" || value === "dark" || value === "system";
@@ -149,7 +148,7 @@ export default function ThemeSwitcher({
       onValueChange={pick}
       disabled={disabled}
       className={merge(
-        "d:f g:1 p:1 w:fc bg:silver-1 bc:silver-2 bw:1",
+        "d:f g:1 p:1 w:fc bg:well",
         TRACK_SHAPES[shape],
         disabled ? "o:60" : "",
         className,

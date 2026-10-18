@@ -12,8 +12,8 @@ const BADGE_SHAPES: Record<Shape, string> = {
 };
 
 const ICON_TONES: Record<IconTone, string> = {
-  accent: "c:slate-12",
-  neutral: "c:slate-5",
+  accent: "c:label",
+  neutral: "c:hint",
 };
 
 const FOCUS = "fv:os:s fv:ow:3 fv:oo:0 fv:oc:slate-4/60 fv:bc:slate-6";
@@ -87,7 +87,7 @@ export default function EmptyStateBase({
   const rootClasses = merge("d:f fd:c ai:c jc:c p:8", gap, className);
 
   const badgeClasses = [
-    "d:f ai:c jc:c w:10 h:10 bg:white btc:slate-2 blc:slate-2 brc:slate-2 bbc:slate-4 bs-o:xs bw:1",
+    "d:f ai:c jc:c w:10 h:10 bg:raised btc:rim blc:rim brc:rim bbc:shadow bs-o:xs bw:1",
     ICON_TONES[iconTone],
     BADGE_SHAPES[iconShape],
   ]
@@ -99,8 +99,8 @@ export default function EmptyStateBase({
       {icon && <div className={badgeClasses}>{icon}</div>}
 
       <div className="d:f fd:c ai:c g:1 ta:c">
-        <span className="c:slate-10 fs:md fw:500">{title}</span>
-        {description && <span className="c:slate-6 fs:sm">{description}</span>}
+        <span className="c:label fs:md fw:500">{title}</span>
+        {description && <span className="c:hint fs:sm">{description}</span>}
       </div>
 
       {hasActions && (
@@ -111,7 +111,7 @@ export default function EmptyStateBase({
               className={merge(
                 outline,
                 BUTTON_BASE,
-                "bg:white btc:slate-2 blc:slate-2 brc:slate-2 bbc:slate-4 bs-o:xs c:slate-10 h:bg:silver-1",
+                "bg:raised btc:rim blc:rim brc:rim bbc:shadow bs-o:xs c:label h:bg:well",
               )}
             >
               {secondaryLabel}
@@ -123,7 +123,7 @@ export default function EmptyStateBase({
               className={merge(
                 outline,
                 BUTTON_BASE,
-                "g:2 bg:slate-12 btc:white/20 blc:black/40 brc:black/40 bbc:black/60 bs-o:sm h:bg:slate-11 c:white",
+                "g:2 bg:fill btc:white/20 blc:black/40 brc:black/40 bbc:black/60 bs-o:sm h:o:90 c:on-fill",
               )}
             >
               {primaryIcon}
