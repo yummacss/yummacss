@@ -138,14 +138,14 @@ export default function TabsBase({
   const listShape = isVertical && shape === "pill" ? "rounded" : shape;
 
   const listClasses = merge(
-    "d:f p:r g:1 p:1 w:fc bg:silver-1 bw:1 bc:silver-2",
+    "d:f p:r g:1 p:1 w:fc bg:well",
     LIST_SHAPES[listShape],
     isVertical && "fd:c",
     hasPanels && !isVertical && "mb:6",
   );
 
   const indicatorClasses = merge(
-    "p:a l:0 t:0 zi:0 bg:white bw:1 btc:silver-2 blc:silver-2 brc:silver-2 bbc:silver-4 bs-o:xs",
+    "p:a l:0 t:0 zi:0 bg:raised bw:1 btc:rim blc:rim brc:rim bbc:shadow bs-o:xs",
     TAB_SHAPES[shape],
     animated && "tp:a tdu:300 ttf:out-quart @prm:tp:none",
   );
@@ -171,10 +171,10 @@ export default function TabsBase({
             spec.tab,
             TAB_SHAPES[shape],
             item.disabled
-              ? "c:slate-5 o:60 c:na"
+              ? "c:hint o:60 c:na"
               : isSelected
-                ? "c:slate-10"
-                : "c:slate-8 h:c:slate-10",
+                ? "c:label"
+                : "c:hint h:c:label",
           );
 
           const labelClasses = ["p:r zi:10 fw:500", spec.text]
@@ -197,7 +197,7 @@ export default function TabsBase({
                 <span className="d:f p:r zi:10">{glyph}</span>
               )}
               {item.count !== undefined && (
-                <span className="d:f p:r zi:10 ai:c jc:c h:5 px:2 br:9999 fs:xs fw:500 bg:silver-8 c:white">
+                <span className="d:f p:r zi:10 ai:c jc:c h:5 px:2 br:9999 fs:xs fw:500 bg:fill c:on-fill">
                   {item.count}
                 </span>
               )}

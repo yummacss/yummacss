@@ -14,4 +14,6 @@ export const ROLES = {
   check: { light: "#2563eb", dark: "#2563eb" },
   on: { light: "#10b981", dark: "#10b981" },
   knob: { light: "#ffffff", dark: "#e6e9ec" },
+  groove: { light: "#d9dce1", dark: "#161719" },
+  glint: { light: "#ffffff", dark: "#3b3d42" },
 };

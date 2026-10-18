@@ -102,7 +102,10 @@ is written.
 - Popups float on `bg:raised bc:line bs-o:xl`. A highlighted row is
   `check` with its bevel and `c:white`, on a `bw:1 bc:transparent` row.
   Icons and shortcuts in a row are `o:70` of its color, so they turn white
-  with it. A separator inside a popup is `rim`: `line` vanishes on `raised`.
+  with it.
+- A divider is a groove, a dark line over a lit one: the two borders of an
+  element with no height, `h:0 btw:1 bbw:1 btc:groove bbc:glint`, or
+  `w:0 blw:1 brw:1 blc:groove brc:glint` standing up.
 - No inset shadow, except a pressed toggle (Toggle, Toolbar). No `shadow` prop.
 - Pressed in is an on/off that stays on by itself (Toggle, Toolbar). Picking
   one of several is a raised chip on a track (Tabs, Toggle Group).

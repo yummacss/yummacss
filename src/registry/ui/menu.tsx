@@ -259,7 +259,12 @@ export default function MenuBase({
       const key = `${keyPrefix}-${index}`;
 
       if ("type" in item && item.type === "separator") {
-        return <Menu.Separator key={key} className="my:1 w:100% h:px bg:rim" />;
+        return (
+          <Menu.Separator
+            key={key}
+            className="my:1 w:100% h:0 btw:1 bbw:1 btc:groove bbc:glint"
+          />
+        );
       }
 
       if ("type" in item && item.type === "group") {

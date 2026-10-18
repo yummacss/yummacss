@@ -32,7 +32,6 @@ const EXPECTED_DROPS = [
   "file-upload.tsx: fv:oo:0",
   "toolbar.tsx: bg:transparent",
   "toolbar.tsx: bw:0",
-  "toolbar.tsx: c:slate-7",
   "badge.tsx: bg:transparent",
   "badge.tsx: c:label",
   "rating.tsx: c:na",
