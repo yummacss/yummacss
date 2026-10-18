@@ -29,11 +29,11 @@ const SURFACE: {
   { name: "f:slate-12", property: "fill" },
   { name: "c:slate-11", property: "color" },
   // `shade` indexes generateShades(), where Yumma's `slate-4` is [3].
-  { name: "oc:slate-4/60", property: "outline-color", shade: 3, alpha: 0.6 },
-  { name: "fv:oc:slate-4/60", property: "outline-color", shade: 3, alpha: 0.6 },
-  { name: "fw:oc:slate-4/60", property: "outline-color", shade: 3, alpha: 0.6 },
-  { name: "fv:bc:slate-6", property: "border-color" },
-  { name: "fw:bc:slate-6", property: "border-color" },
+  { name: "oc:focus/40", property: "outline-color", shade: 3, alpha: 0.6 },
+  { name: "fv:oc:focus/40", property: "outline-color", shade: 3, alpha: 0.6 },
+  { name: "fw:oc:focus/40", property: "outline-color", shade: 3, alpha: 0.6 },
+  { name: "fv:bc:focus", property: "border-color" },
+  { name: "fw:bc:focus", property: "border-color" },
   {
     name: "s:slate-12",
     property: "stroke",

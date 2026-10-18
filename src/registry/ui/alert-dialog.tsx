@@ -42,7 +42,7 @@ const CLOSE_SHAPES: Record<Shape, string> = {
   squircle: "br:lg cs:s",
 };
 
-const FOCUS = "fv:os:s fv:ow:3 fv:oo:0 fv:oc:slate-4/60 fv:bc:slate-6";
+const FOCUS = "fv:os:s fv:ow:3 fv:oo:0 fv:oc:focus/40 fv:bc:focus";
 
 const DANGER_OUTLINE = "fv:oc:red-2/60 fv:bc:red-3";
 

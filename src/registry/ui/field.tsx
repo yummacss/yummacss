@@ -33,8 +33,8 @@ const ICON_PADDING: Record<IconSide, string> = {
   trailing: "pl:3 pr:9",
 };
 
-const FOCUS = "fv:os:s fv:ow:3 fv:oo:0 fv:oc:slate-4/60 fv:bc:slate-6";
-const FOCUS_WITHIN = "fw:os:s fw:ow:3 fw:oo:0 fw:oc:slate-4/60 fw:bc:slate-6";
+const FOCUS = "fv:os:s fv:ow:3 fv:oo:0 fv:oc:focus/40 fv:bc:focus";
+const FOCUS_WITHIN = "fw:os:s fw:ow:3 fw:oo:0 fw:oc:focus/40 fw:bc:focus";
 
 const STATUS_BORDER: Record<Status, string> = {
   // recessed: the top edge darker than the bottom

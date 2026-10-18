@@ -88,7 +88,7 @@ is written.
 
 - Colors are roles, not palette shades: `raised`, `well`, `field`, `fill`,
   `on-fill`, `label`, `hint`, `rim`, `shadow`, `line`, `check`, `on`,
-  `knob`, `groove` and `glint`, each a light and a Graphite pair in `src/utils/roles.mjs`. A
+  `knob`, `groove`, `glint` and `focus`, each a light and a Graphite pair in `src/utils/roles.mjs`. A
   reworked component names roles only, so dark mode follows `color-scheme`
   with no class of its own. Role values are opaque: a pair drops hex alpha.
 - Ticked and picked are `check` with `btc:white/25 blc:black/15 brc:black/15
@@ -103,6 +103,8 @@ is written.
   `check` with its bevel and `c:white`, on a `bw:1 bc:transparent` row.
   Icons and shortcuts in a row are `o:70` of its color, so they turn white
   with it.
+- Focus is `fv:os:s fv:ow:3 fv:oo:0 fv:oc:focus/40 fv:bc:focus`: a soft
+  outline and a darker border, both from the one role.
 - A divider is a groove, a dark line over a lit one: the two borders of an
   element with no height, `h:0 btw:1 bbw:1 btc:groove bbc:glint`, or
   `w:0 blw:1 brw:1 blc:groove brc:glint` standing up.

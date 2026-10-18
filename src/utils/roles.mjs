@@ -16,4 +16,5 @@ export const ROLES = {
   knob: { light: "#ffffff", dark: "#e6e9ec" },
   groove: { light: "#c4c9d1", dark: "#08090a" },
   glint: { light: "#ffffff", dark: "#4f5258" },
+  focus: { light: "#7a879b", dark: "#8f9bab" },
 };
