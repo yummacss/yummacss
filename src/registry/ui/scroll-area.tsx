@@ -17,7 +17,7 @@ const SHAPES: Record<Shape, string> = {
 export interface ScrollAreaProps {
   /** What scrolls. */
   children?: ReactNode;
-  /** Corner radius on the box. The thumb is always a capsule. */
+  /** Corner radius on the focus outline. The thumb is always a capsule. */
   shape?: Shape;
   /**
    * The scrollbar fading in while you hover or scroll. Turn it off for a
@@ -26,7 +26,7 @@ export interface ScrollAreaProps {
    */
   animated?: boolean;
   /**
-   * Extra classes on the box. Its height lives here: `merge` folds them in
+   * Extra classes on the area. Its height lives here: `merge` folds them in
    * last, so `h:96` replaces the default `h:72`.
    */
   className?: string;
@@ -41,8 +41,8 @@ export interface ScrollAreaProps {
 }
 
 /**
- * A recessed box that scrolls its content, with a thin scrollbar that shows
- * while you hover or scroll, built on Base UI.
+ * Content that scrolls inside whatever holds it, with a thin scrollbar that
+ * shows while you hover or scroll.
  */
 export default function ScrollAreaBase({
   children,
@@ -54,28 +54,22 @@ export default function ScrollAreaBase({
   const outline = focus ? merge(FOCUS, focus === true ? "" : focus) : "";
 
   return (
-    <ScrollArea.Root
-      className={merge(
-        "w:72 max-w:100% h:72 bg:well c:label bw:1 btc:shadow blc:line brc:line bbc:rim",
-        SHAPES[shape],
-        className,
-      )}
-    >
+    <ScrollArea.Root className={merge("w:100% h:72 c:label", className)}>
       <ScrollArea.Viewport
         className={merge(outline, "h:100% bw:1 bc:transparent", SHAPES[shape])}
       >
-        <ScrollArea.Content className="p:1 pr:4">{children}</ScrollArea.Content>
+        <ScrollArea.Content>{children}</ScrollArea.Content>
       </ScrollArea.Viewport>
       <ScrollArea.Scrollbar
         orientation="vertical"
         className={merge(
-          "d:f jc:c w:2 my:2 mr:1",
+          "d:f jc:c w:2 py:1",
           animated
             ? "o:0 tp:o tdu:200 ttf:io hovering:o:100 scrolling:o:100 scrolling:tdu:0 @prm:tp:none"
             : "o:100",
         )}
       >
-        <ScrollArea.Thumb className="w:100% br:9999 bg:hint/50" />
+        <ScrollArea.Thumb className="w:1 br:9999 bg:hint/50" />
       </ScrollArea.Scrollbar>
     </ScrollArea.Root>
   );

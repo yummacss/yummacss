@@ -1,5 +1,5 @@
 {
-  "summary": "A recessed box that scrolls its content, with a thin scrollbar that shows while you hover or scroll.",
+  "summary": "Content that scrolls inside whatever holds it, with a thin scrollbar that shows while you hover or scroll.",
   "props": [
     {
       "name": "children",
@@ -12,7 +12,7 @@
       "type": "enum",
       "values": ["rounded", "square", "squircle"],
       "default": "rounded",
-      "description": "Corner radius on the box. The thumb is always a capsule."
+      "description": "Corner radius on the focus outline. The thumb is always a capsule."
     },
     {
       "name": "animated",
@@ -23,7 +23,7 @@
     {
       "name": "className",
       "type": "string",
-      "description": "Extra classes on the box. Its height lives here: `merge` folds them in last, so `h:96` replaces the default `h:72`."
+      "description": "Extra classes on the area. Its height lives here: `merge` folds them in last, so `h:96` replaces the default `h:72`."
     },
     {
       "name": "focus",
@@ -35,285 +35,317 @@
   ],
   "scene": [
     {
-      "component": "ScrollArea",
+      "tag": "div",
+      "className": "d:f fd:c w:80 max-w:100% br:xl bg:raised bw:1 btc:rim blc:rim brc:rim bbc:shadow bs-o:xs c:label o:h",
       "children": [
         {
           "tag": "div",
-          "className": "d:f ai:c g:3 h:9 px:2 fs:sm",
+          "className": "d:f ai:b jc:sb px:4 pt:3 pb:2",
           "children": [
             {
-              "icon": {
-                "$icon": "DocumentIcon",
-                "size": "w:4 h:4 c:blue"
-              }
+              "text": "Downloads",
+              "className": "fs:sm fw:600"
             },
             {
-              "text": "budget.xlsx",
-              "className": "f:1"
-            },
-            {
-              "text": "24 KB",
+              "text": "14 files",
               "className": "c:hint fs:xs"
             }
           ]
         },
         {
           "tag": "div",
-          "className": "d:f ai:c g:3 h:9 px:2 fs:sm",
-          "children": [
-            {
-              "icon": {
-                "$icon": "DocumentIcon",
-                "size": "w:4 h:4 c:blue"
-              }
-            },
-            {
-              "text": "readme.md",
-              "className": "f:1"
-            },
-            {
-              "text": "3 KB",
-              "className": "c:hint fs:xs"
-            }
-          ]
+          "className": "h:0 btw:1 bbw:1 btc:groove bbc:glint"
         },
         {
-          "tag": "div",
-          "className": "d:f ai:c g:3 h:9 px:2 fs:sm",
+          "component": "ScrollArea",
+          "props": {},
+          "className": "h:64",
           "children": [
             {
-              "icon": {
-                "$icon": "GalleryIcon",
-                "size": "w:4 h:4 c:mint"
-              }
-            },
-            {
-              "text": "scan-0412.png",
-              "className": "f:1"
-            },
-            {
-              "text": "1.2 MB",
-              "className": "c:hint fs:xs"
-            }
-          ]
-        },
-        {
-          "tag": "div",
-          "className": "d:f ai:c g:3 h:9 px:2 fs:sm",
-          "children": [
-            {
-              "icon": {
-                "$icon": "GalleryIcon",
-                "size": "w:4 h:4 c:mint"
-              }
-            },
-            {
-              "text": "beach.jpg",
-              "className": "f:1"
-            },
-            {
-              "text": "3.4 MB",
-              "className": "c:hint fs:xs"
-            }
-          ]
-        },
-        {
-          "tag": "div",
-          "className": "d:f ai:c g:3 h:9 px:2 fs:sm",
-          "children": [
-            {
-              "icon": {
-                "$icon": "VideoFrameIcon",
-                "size": "w:4 h:4 c:red"
-              }
-            },
-            {
-              "text": "holiday.mov",
-              "className": "f:1"
-            },
-            {
-              "text": "860 MB",
-              "className": "c:hint fs:xs"
-            }
-          ]
-        },
-        {
-          "tag": "div",
-          "className": "d:f ai:c g:3 h:9 px:2 fs:sm",
-          "children": [
-            {
-              "icon": {
-                "$icon": "DocumentIcon",
-                "size": "w:4 h:4 c:blue"
-              }
-            },
-            {
-              "text": "notes.txt",
-              "className": "f:1"
-            },
-            {
-              "text": "1 KB",
-              "className": "c:hint fs:xs"
-            }
-          ]
-        },
-        {
-          "tag": "div",
-          "className": "d:f ai:c g:3 h:9 px:2 fs:sm",
-          "children": [
-            {
-              "icon": {
-                "$icon": "ArchiveIcon",
-                "size": "w:4 h:4 c:yellow"
-              }
-            },
-            {
-              "text": "receipts.zip",
-              "className": "f:1"
-            },
-            {
-              "text": "18 MB",
-              "className": "c:hint fs:xs"
-            }
-          ]
-        },
-        {
-          "tag": "div",
-          "className": "d:f ai:c g:3 h:9 px:2 fs:sm",
-          "children": [
-            {
-              "icon": {
-                "$icon": "DocumentIcon",
-                "size": "w:4 h:4 c:blue"
-              }
-            },
-            {
-              "text": "tax-return.pdf",
-              "className": "f:1"
-            },
-            {
-              "text": "412 KB",
-              "className": "c:hint fs:xs"
-            }
-          ]
-        },
-        {
-          "tag": "div",
-          "className": "d:f ai:c g:3 h:9 px:2 fs:sm",
-          "children": [
-            {
-              "icon": {
-                "$icon": "GalleryIcon",
-                "size": "w:4 h:4 c:mint"
-              }
-            },
-            {
-              "text": "passport.jpg",
-              "className": "f:1"
-            },
-            {
-              "text": "2.1 MB",
-              "className": "c:hint fs:xs"
-            }
-          ]
-        },
-        {
-          "tag": "div",
-          "className": "d:f ai:c g:3 h:9 px:2 fs:sm",
-          "children": [
-            {
-              "icon": {
-                "$icon": "DocumentIcon",
-                "size": "w:4 h:4 c:blue"
-              }
-            },
-            {
-              "text": "recipes.md",
-              "className": "f:1"
-            },
-            {
-              "text": "6 KB",
-              "className": "c:hint fs:xs"
-            }
-          ]
-        },
-        {
-          "tag": "div",
-          "className": "d:f ai:c g:3 h:9 px:2 fs:sm",
-          "children": [
-            {
-              "icon": {
-                "$icon": "VideoFrameIcon",
-                "size": "w:4 h:4 c:red"
-              }
-            },
-            {
-              "text": "birthday.mov",
-              "className": "f:1"
-            },
-            {
-              "text": "1.2 GB",
-              "className": "c:hint fs:xs"
-            }
-          ]
-        },
-        {
-          "tag": "div",
-          "className": "d:f ai:c g:3 h:9 px:2 fs:sm",
-          "children": [
-            {
-              "icon": {
-                "$icon": "ArchiveIcon",
-                "size": "w:4 h:4 c:yellow"
-              }
-            },
-            {
-              "text": "old-photos.zip",
-              "className": "f:1"
-            },
-            {
-              "text": "4.6 GB",
-              "className": "c:hint fs:xs"
-            }
-          ]
-        },
-        {
-          "tag": "div",
-          "className": "d:f ai:c g:3 h:9 px:2 fs:sm",
-          "children": [
-            {
-              "icon": {
-                "$icon": "DocumentIcon",
-                "size": "w:4 h:4 c:blue"
-              }
-            },
-            {
-              "text": "packing-list.txt",
-              "className": "f:1"
-            },
-            {
-              "text": "2 KB",
-              "className": "c:hint fs:xs"
-            }
-          ]
-        },
-        {
-          "tag": "div",
-          "className": "d:f ai:c g:3 h:9 px:2 fs:sm",
-          "children": [
-            {
-              "icon": {
-                "$icon": "GalleryIcon",
-                "size": "w:4 h:4 c:mint"
-              }
-            },
-            {
-              "text": "wallpaper.png",
-              "className": "f:1"
-            },
-            {
-              "text": "5.8 MB",
-              "className": "c:hint fs:xs"
+              "tag": "div",
+              "className": "d:f fd:c p:1 pr:3",
+              "children": [
+                {
+                  "tag": "div",
+                  "className": "d:f ai:c g:3 h:9 px:3 br:md fs:sm h:bg:well",
+                  "children": [
+                    {
+                      "icon": {
+                        "$icon": "DocumentIcon",
+                        "size": "w:4 h:4 c:blue"
+                      }
+                    },
+                    {
+                      "text": "budget.xlsx",
+                      "className": "f:1"
+                    },
+                    {
+                      "text": "24 KB",
+                      "className": "c:hint fs:xs"
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "className": "d:f ai:c g:3 h:9 px:3 br:md fs:sm h:bg:well",
+                  "children": [
+                    {
+                      "icon": {
+                        "$icon": "DocumentIcon",
+                        "size": "w:4 h:4 c:blue"
+                      }
+                    },
+                    {
+                      "text": "readme.md",
+                      "className": "f:1"
+                    },
+                    {
+                      "text": "3 KB",
+                      "className": "c:hint fs:xs"
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "className": "d:f ai:c g:3 h:9 px:3 br:md fs:sm h:bg:well",
+                  "children": [
+                    {
+                      "icon": {
+                        "$icon": "GalleryIcon",
+                        "size": "w:4 h:4 c:mint"
+                      }
+                    },
+                    {
+                      "text": "scan-0412.png",
+                      "className": "f:1"
+                    },
+                    {
+                      "text": "1.2 MB",
+                      "className": "c:hint fs:xs"
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "className": "d:f ai:c g:3 h:9 px:3 br:md fs:sm h:bg:well",
+                  "children": [
+                    {
+                      "icon": {
+                        "$icon": "GalleryIcon",
+                        "size": "w:4 h:4 c:mint"
+                      }
+                    },
+                    {
+                      "text": "beach.jpg",
+                      "className": "f:1"
+                    },
+                    {
+                      "text": "3.4 MB",
+                      "className": "c:hint fs:xs"
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "className": "d:f ai:c g:3 h:9 px:3 br:md fs:sm h:bg:well",
+                  "children": [
+                    {
+                      "icon": {
+                        "$icon": "VideoFrameIcon",
+                        "size": "w:4 h:4 c:red"
+                      }
+                    },
+                    {
+                      "text": "holiday.mov",
+                      "className": "f:1"
+                    },
+                    {
+                      "text": "860 MB",
+                      "className": "c:hint fs:xs"
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "className": "d:f ai:c g:3 h:9 px:3 br:md fs:sm h:bg:well",
+                  "children": [
+                    {
+                      "icon": {
+                        "$icon": "DocumentIcon",
+                        "size": "w:4 h:4 c:blue"
+                      }
+                    },
+                    {
+                      "text": "notes.txt",
+                      "className": "f:1"
+                    },
+                    {
+                      "text": "1 KB",
+                      "className": "c:hint fs:xs"
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "className": "d:f ai:c g:3 h:9 px:3 br:md fs:sm h:bg:well",
+                  "children": [
+                    {
+                      "icon": {
+                        "$icon": "ArchiveIcon",
+                        "size": "w:4 h:4 c:yellow"
+                      }
+                    },
+                    {
+                      "text": "receipts.zip",
+                      "className": "f:1"
+                    },
+                    {
+                      "text": "18 MB",
+                      "className": "c:hint fs:xs"
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "className": "d:f ai:c g:3 h:9 px:3 br:md fs:sm h:bg:well",
+                  "children": [
+                    {
+                      "icon": {
+                        "$icon": "DocumentIcon",
+                        "size": "w:4 h:4 c:blue"
+                      }
+                    },
+                    {
+                      "text": "tax-return.pdf",
+                      "className": "f:1"
+                    },
+                    {
+                      "text": "412 KB",
+                      "className": "c:hint fs:xs"
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "className": "d:f ai:c g:3 h:9 px:3 br:md fs:sm h:bg:well",
+                  "children": [
+                    {
+                      "icon": {
+                        "$icon": "GalleryIcon",
+                        "size": "w:4 h:4 c:mint"
+                      }
+                    },
+                    {
+                      "text": "passport.jpg",
+                      "className": "f:1"
+                    },
+                    {
+                      "text": "2.1 MB",
+                      "className": "c:hint fs:xs"
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "className": "d:f ai:c g:3 h:9 px:3 br:md fs:sm h:bg:well",
+                  "children": [
+                    {
+                      "icon": {
+                        "$icon": "DocumentIcon",
+                        "size": "w:4 h:4 c:blue"
+                      }
+                    },
+                    {
+                      "text": "recipes.md",
+                      "className": "f:1"
+                    },
+                    {
+                      "text": "6 KB",
+                      "className": "c:hint fs:xs"
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "className": "d:f ai:c g:3 h:9 px:3 br:md fs:sm h:bg:well",
+                  "children": [
+                    {
+                      "icon": {
+                        "$icon": "VideoFrameIcon",
+                        "size": "w:4 h:4 c:red"
+                      }
+                    },
+                    {
+                      "text": "birthday.mov",
+                      "className": "f:1"
+                    },
+                    {
+                      "text": "1.2 GB",
+                      "className": "c:hint fs:xs"
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "className": "d:f ai:c g:3 h:9 px:3 br:md fs:sm h:bg:well",
+                  "children": [
+                    {
+                      "icon": {
+                        "$icon": "ArchiveIcon",
+                        "size": "w:4 h:4 c:yellow"
+                      }
+                    },
+                    {
+                      "text": "old-photos.zip",
+                      "className": "f:1"
+                    },
+                    {
+                      "text": "4.6 GB",
+                      "className": "c:hint fs:xs"
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "className": "d:f ai:c g:3 h:9 px:3 br:md fs:sm h:bg:well",
+                  "children": [
+                    {
+                      "icon": {
+                        "$icon": "DocumentIcon",
+                        "size": "w:4 h:4 c:blue"
+                      }
+                    },
+                    {
+                      "text": "packing-list.txt",
+                      "className": "f:1"
+                    },
+                    {
+                      "text": "2 KB",
+                      "className": "c:hint fs:xs"
+                    }
+                  ]
+                },
+                {
+                  "tag": "div",
+                  "className": "d:f ai:c g:3 h:9 px:3 br:md fs:sm h:bg:well",
+                  "children": [
+                    {
+                      "icon": {
+                        "$icon": "GalleryIcon",
+                        "size": "w:4 h:4 c:mint"
+                      }
+                    },
+                    {
+                      "text": "wallpaper.png",
+                      "className": "f:1"
+                    },
+                    {
+                      "text": "5.8 MB",
+                      "className": "c:hint fs:xs"
+                    }
+                  ]
+                }
+              ]
             }
           ]
         }
