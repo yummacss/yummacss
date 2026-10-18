@@ -179,11 +179,20 @@ export function buildScene(scene: ChildExample[]): Token[] {
       { kind: "keyword", text: "import" },
       { kind: "text", text: " " },
     );
+    // a long list of names takes a line each
+    const wrap = braces && names.join(", ").length + from.length > 60;
     if (braces)
-      tokens.push({ kind: "brace", text: "{" }, { kind: "text", text: " " });
-    tokens.push({ kind: "tag", text: names.join(", ") });
+      tokens.push(
+        { kind: "brace", text: "{" },
+        { kind: "text", text: wrap ? "\n  " : " " },
+      );
+    tokens.push({ kind: "tag", text: names.join(wrap ? ",\n  " : ", ") });
+    if (wrap) tokens.push({ kind: "punctuation", text: "," });
     if (braces)
-      tokens.push({ kind: "text", text: " " }, { kind: "brace", text: "}" });
+      tokens.push(
+        { kind: "text", text: wrap ? "\n" : " " },
+        { kind: "brace", text: "}" },
+      );
     tokens.push(
       { kind: "text", text: " " },
       { kind: "keyword", text: "from" },
@@ -257,62 +266,42 @@ function childTokens(child: ChildExample, depth: number): Draft[] {
     { kind: "tag", text: tag },
   ];
 
-  if (child.className) {
-    out.push(
-      { kind: "text", text: " " },
-      { kind: "attribute", text: "className" },
-      { kind: "punctuation", text: "=" },
-      { kind: "string", text: JSON.stringify(child.className) },
-    );
-  }
-  for (const [key, value] of Object.entries(child.props ?? {})) {
-    out.push({ kind: "text", text: " " }, { kind: "attribute", text: key });
-    if (value === true) continue;
-    out.push({ kind: "punctuation", text: "=" });
-    const marker = iconMarker(value);
-    if (marker) {
-      out.push(
-        { kind: "brace", text: "{" },
-        { kind: "punctuation", text: "<" },
-        { kind: "tag", text: marker.name },
-      );
-      if (marker.size)
-        out.push(
-          { kind: "text", text: " " },
-          { kind: "attribute", text: "className" },
-          { kind: "punctuation", text: "=" },
-          { kind: "string", text: JSON.stringify(marker.size) },
-        );
-      out.push(
-        { kind: "punctuation", text: " />" },
-        { kind: "brace", text: "}" },
-      );
-      continue;
-    }
-    if (typeof value === "string") {
-      out.push({ kind: "string", text: JSON.stringify(value) });
-      continue;
-    }
-    out.push(
-      { kind: "brace", text: "{" },
-      { kind: "value", text: JSON.stringify(value) },
-      { kind: "brace", text: "}" },
-    );
-  }
+  const attributes: Draft[][] = [];
+  if (child.className)
+    attributes.push(attributeTokens("className", child.className, pad));
+  for (const [key, value] of Object.entries(child.props ?? {}))
+    attributes.push(attributeTokens(key, value, `${pad}  `));
 
+  // a tag that runs long, or holds data over several lines, gets a prop a line
   const text =
     child.text ??
     (typeof child.children === "string" ? child.children : undefined);
+  const opening =
+    width(out) +
+    attributes.reduce((sum, a) => sum + 1 + width(a), 0) +
+    (text?.length ?? 0);
+  const stacked =
+    opening > 80 ||
+    attributes.some((a) => a.some((t) => t.text.includes("\n")));
+  for (const attribute of attributes)
+    out.push(
+      { kind: "text", text: stacked ? `\n${pad}  ` : " " },
+      ...attribute,
+    );
+  if (stacked) out.push({ kind: "text", text: `\n${pad}` });
+
   const nested = Array.isArray(child.children) ? child.children : undefined;
 
   if (text === undefined && !nested) {
-    out.push({ kind: "punctuation", text: " />" });
+    out.push({ kind: "punctuation", text: stacked ? "/>" : " />" });
     return out;
   }
   out.push({ kind: "punctuation", text: ">" });
   if (nested) {
     for (const node of nested) out.push(...childTokens(node, depth + 1));
     out.push({ kind: "text", text: `\n${pad}` });
+  } else if (stacked) {
+    out.push({ kind: "text", text: `\n${pad}  ${text ?? ""}\n${pad}` });
   } else {
     out.push({ kind: "text", text: text ?? "" });
   }
@@ -320,6 +309,95 @@ function childTokens(child: ChildExample, depth: number): Draft[] {
     { kind: "punctuation", text: "</" },
     { kind: "tag", text: tag },
     { kind: "punctuation", text: ">" },
+  );
+  return out;
+}
+
+function width(tokens: Draft[]): number {
+  return tokens.reduce((sum, token) => sum + token.text.length, 0);
+}
+
+function iconTokens(marker: { name: string; size?: string }): Draft[] {
+  const out: Draft[] = [
+    { kind: "punctuation", text: "<" },
+    { kind: "tag", text: marker.name },
+  ];
+  if (marker.size)
+    out.push(
+      { kind: "text", text: " " },
+      { kind: "attribute", text: "className" },
+      { kind: "punctuation", text: "=" },
+      { kind: "string", text: JSON.stringify(marker.size) },
+    );
+  out.push({ kind: "punctuation", text: " />" });
+  return out;
+}
+
+function attributeTokens(key: string, value: unknown, indent: string): Draft[] {
+  const name: Draft = { kind: "attribute", text: key };
+  if (value === true) return [name];
+  const equals: Draft = { kind: "punctuation", text: "=" };
+  if (typeof value === "string")
+    return [name, equals, { kind: "string", text: JSON.stringify(value) }];
+  return [
+    name,
+    equals,
+    { kind: "brace", text: "{" },
+    ...valueTokens(value, indent),
+    { kind: "brace", text: "}" },
+  ];
+}
+
+const IDENTIFIER = /^[A-Za-z_$][A-Za-z0-9_$]*$/;
+
+// data the way a person writes it: short lists inline, longer ones a line each
+function valueTokens(value: unknown, indent: string): Draft[] {
+  const marker = iconMarker(value);
+  if (marker) return iconTokens(marker);
+  if (typeof value === "string")
+    return [{ kind: "string", text: JSON.stringify(value) }];
+  if (typeof value !== "object" || value === null)
+    return [{ kind: "value", text: String(value) }];
+
+  const inner = `${indent}  `;
+  const isList = Array.isArray(value);
+  const entries: Draft[][] = isList
+    ? value.map((item) => valueTokens(item, inner))
+    : Object.entries(value).map(([key, item]) => [
+        IDENTIFIER.test(key)
+          ? { kind: "attribute", text: key }
+          : { kind: "string", text: JSON.stringify(key) },
+        { kind: "punctuation", text: ": " },
+        ...valueTokens(item, inner),
+      ]);
+  const [open, close] = isList ? ["[", "]"] : ["{", "}"];
+  if (entries.length === 0)
+    return [{ kind: "punctuation", text: open + close }];
+
+  const flat = entries.every((entry) =>
+    entry.every((t) => !t.text.includes("\n")),
+  );
+  const inline = entries.reduce((sum, entry) => sum + width(entry) + 2, 0);
+  if (flat && inline <= 60) {
+    const pad = isList ? "" : " ";
+    const out: Draft[] = [{ kind: "punctuation", text: open + pad }];
+    entries.forEach((entry, index) => {
+      if (index) out.push({ kind: "punctuation", text: ", " });
+      out.push(...entry);
+    });
+    out.push({ kind: "punctuation", text: pad + close });
+    return out;
+  }
+
+  const out: Draft[] = [{ kind: "punctuation", text: open }];
+  for (const entry of entries)
+    out.push({ kind: "text", text: `\n${inner}` }, ...entry, {
+      kind: "punctuation",
+      text: ",",
+    });
+  out.push(
+    { kind: "text", text: `\n${indent}` },
+    { kind: "punctuation", text: close },
   );
   return out;
 }
