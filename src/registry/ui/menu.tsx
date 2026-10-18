@@ -228,7 +228,7 @@ export default function MenuBase({
   );
 
   const popupClasses = [
-    "py:1 bg:raised bc:line c:label bw:1 os:none bs-o:xl",
+    "py:1 max-h:var(--available-height) oy:auto bg:raised bc:line c:label bw:1 os:none bs-o:xl",
     spec.popup,
     POPUP_SHAPES[shape],
   ]

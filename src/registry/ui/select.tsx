@@ -247,9 +247,9 @@ export default function SelectBase({
 
   const popup = (
     <Select.Popup
-      className={`o:h py:1 bg:raised bc:line bs-o:xl bw:1 ${POPUP_SIZES[size]} ${SHAPES[shape]} ${animated ? "tor:var(--transform-origin) tp:a tdu:200 ttf:out-quart opening:o:0 opening:s:95 closing:o:0 closing:s:95 closing:tdu:100 closing:ttf:eo @prm:tp:none" : ""}`}
+      className={`d:f fd:c o:h max-h:var(--available-height) py:1 bg:raised bc:line bs-o:xl bw:1 ${POPUP_SIZES[size]} ${SHAPES[shape]} ${animated ? "tor:var(--transform-origin) tp:a tdu:200 ttf:out-quart opening:o:0 opening:s:95 closing:o:0 closing:s:95 closing:tdu:100 closing:ttf:eo @prm:tp:none" : ""}`}
     >
-      <Select.List className="p:r o:auto">
+      <Select.List className="p:r min-h:0 o:auto">
         {options.map((entry) =>
           isGroupEntry(entry) ? (
             <Select.Group key={entry.group}>
