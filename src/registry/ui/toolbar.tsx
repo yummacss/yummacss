@@ -132,7 +132,7 @@ export default function ToolbarBase({
   const outline = focus ? merge(FOCUS, focus === true ? "" : focus) : "";
 
   const rootClasses = merge(
-    "d:f ai:c g:1 p:2 bg:raised btc:rim blc:rim brc:rim bbc:shadow bs-o:xs bw:1",
+    "d:f fw:w ai:c g:1 p:2 bg:raised btc:rim blc:rim brc:rim bbc:shadow bs-o:xs bw:1",
     ROOT_SHAPES[shape],
     className,
   );
