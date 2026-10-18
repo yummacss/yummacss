@@ -1,11 +1,7 @@
 "use client";
 
 import { ContextMenu } from "@base-ui/react/context-menu";
-import {
-  AltArrowRightIcon,
-  CheckIcon,
-  CommandIcon,
-} from "@solar-icons/react/outline";
+import { AltArrowRightIcon, CheckIcon } from "@solar-icons/react/outline";
 import type { ReactNode } from "react";
 import { useEffect, useState } from "react";
 import { merge } from "yummacss/merge";
@@ -87,8 +83,10 @@ export interface ContextMenuProps {
    * frame or a container that owns its own stacking context.
    */
   container?: HTMLElement | null;
-  /** The right-clickable area's label. */
+  /** The right-clickable tile's label, such as a file name. */
   trigger: ReactNode;
+  /** A glyph in a well above the label, such as the file's type. */
+  triggerIcon?: ReactNode;
   /**
    * A discriminated union. `{ label }` is a plain action (plus optional `icon`,
    * `shortcut`, `destructive`, `disabled`, `onClick`). `{ type: "separator" }`
@@ -140,6 +138,7 @@ export interface ContextMenuProps {
  */
 export default function ContextMenuBase({
   trigger,
+  triggerIcon,
   items,
   shape = "rounded",
   icon = true,
@@ -165,12 +164,18 @@ export default function ContextMenuBase({
     onOpenChange?.(false);
   }, [disabled, open, onOpenChange]);
 
-  const triggerClasses = merge(
-    "d:f ai:c jc:c h:48 w:60 bg:field bs:d bw:1 fs:sm fw:500 us:none",
-    TRIGGER_SHAPES[shape],
-    disabled ? "bg:well bc:line c:hint c:na" : "bc:rim c:label",
-    className,
-  );
+  // a file tile, outlined while its menu is open
+  const triggerClasses = (state: { open: boolean }) =>
+    merge(
+      "d:if fd:c ai:c jc:c g:2 p:3 min-w:24 bg:raised bw:2 fs:sm fw:500 c:label us:none",
+      TRIGGER_SHAPES[shape],
+      disabled
+        ? "o:60 c:na bc:transparent"
+        : state.open
+          ? "bc:check/40"
+          : "bc:transparent",
+      className,
+    );
 
   const popupClasses = [
     "py:1 min-w:52 max-h:var(--available-height) oy:auto bg:raised bc:line c:label bw:1 os:none bs-o:xl",
@@ -319,17 +324,11 @@ export default function ContextMenuBase({
             </span>
           )}
           {action.shortcut && (
-            <span
-              className={[
-                "d:f ai:c g:1 ml:4 fw:400 fs:xs",
-                destructive ? "" : "o:70",
-              ]
-                .filter(Boolean)
-                .join(" ")}
+            <kbd
+              className={`ml:4 px:1 br:sm bw:1 bc:current fs:xs fw:400 lh:4 ff:s ${destructive ? "" : "o:70"}`}
             >
-              <CommandIcon className="w:3 h:3" />
-              <span>{action.shortcut}</span>
-            </span>
+              {action.shortcut}
+            </kbd>
           )}
         </ContextMenu.Item>
       );
@@ -354,6 +353,11 @@ export default function ContextMenuBase({
       disabled={disabled}
     >
       <ContextMenu.Trigger className={triggerClasses}>
+        {triggerIcon && (
+          <span className="d:f ai:c jc:c w:12 h:12 br:lg bg:well">
+            {triggerIcon}
+          </span>
+        )}
         {trigger}
       </ContextMenu.Trigger>
 

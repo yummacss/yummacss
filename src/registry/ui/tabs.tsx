@@ -133,7 +133,10 @@ export default function TabsBase({
   const isVertical = orientation === "vertical";
   const hasPanels = items.some((item) => item.panel !== undefined);
 
-  const rootClasses = merge(isVertical ? "d:f ai:s g:4" : "w:fc", className);
+  const rootClasses = merge(
+    isVertical ? "d:f ai:s g:4" : hasPanels ? "w:112 max-w:100%" : "w:fc",
+    className,
+  );
 
   const listShape = isVertical && shape === "pill" ? "rounded" : shape;
 
@@ -141,7 +144,7 @@ export default function TabsBase({
     "d:f p:r g:1 p:1 w:fc bg:well",
     LIST_SHAPES[listShape],
     isVertical && "fd:c",
-    hasPanels && !isVertical && "mb:6",
+    hasPanels && !isVertical && "mb:3",
   );
 
   const indicatorClasses = merge(
@@ -218,7 +221,11 @@ export default function TabsBase({
 
       {hasPanels &&
         items.map((item) => (
-          <Tabs.Panel key={item.value} value={item.value}>
+          <Tabs.Panel
+            key={item.value}
+            value={item.value}
+            className="f:1 p:4 br:xl bw:1 bg:raised btc:rim blc:rim brc:rim bbc:shadow bs-o:xs c:hint fs:sm os:none"
+          >
             {item.panel}
           </Tabs.Panel>
         ))}

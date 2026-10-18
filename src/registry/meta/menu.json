@@ -37,6 +37,13 @@
           }
         },
         {
+          "label": "Lock",
+          "icon": {
+            "$icon": "LockIcon",
+            "size": "w:4 h:4"
+          }
+        },
+        {
           "type": "separator"
         },
         {

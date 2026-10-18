@@ -2,11 +2,7 @@
 
 import { Menu } from "@base-ui/react/menu";
 import { Menubar } from "@base-ui/react/menubar";
-import {
-  AltArrowRightIcon,
-  CheckIcon,
-  CommandIcon,
-} from "@solar-icons/react/outline";
+import { AltArrowRightIcon, CheckIcon } from "@solar-icons/react/outline";
 import type { ReactNode } from "react";
 import { useState } from "react";
 import { merge } from "yummacss/merge";
@@ -310,17 +306,11 @@ export default function MenubarBase({
             </span>
           )}
           {action.shortcut && (
-            <span
-              className={[
-                "d:f ai:c g:1 ml:4 fw:400 fs:xs",
-                destructive ? "" : "o:70",
-              ]
-                .filter(Boolean)
-                .join(" ")}
+            <kbd
+              className={`ml:4 px:1 br:sm bw:1 bc:current fs:xs fw:400 lh:4 ff:s ${destructive ? "" : "o:70"}`}
             >
-              <CommandIcon className="w:3 h:3" />
-              <span>{action.shortcut}</span>
-            </span>
+              {action.shortcut}
+            </kbd>
           )}
         </Menu.Item>
       );

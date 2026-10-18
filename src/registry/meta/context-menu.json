@@ -5,8 +5,18 @@
       "name": "trigger",
       "type": "none",
       "typeName": "ReactNode",
-      "example": "Right-click scan.png",
-      "description": "The right-clickable area's label."
+      "example": "scan.png",
+      "description": "The right-clickable tile's label, such as a file name."
+    },
+    {
+      "name": "triggerIcon",
+      "type": "none",
+      "typeName": "ReactNode",
+      "description": "A glyph in a well above the label, such as the file's type.",
+      "example": {
+        "$icon": "GalleryIcon",
+        "size": "w:5 h:5 c:mint"
+      }
     },
     {
       "name": "items",
@@ -14,18 +24,22 @@
       "typeName": "ContextMenuItem[]",
       "example": [
         {
-          "label": "Open",
-          "icon": {
-            "$icon": "GalleryIcon",
-            "size": "w:4 h:4"
-          }
+          "label": "Open"
+        },
+        {
+          "type": "submenu",
+          "label": "Open with",
+          "items": [
+            {
+              "label": "Preview"
+            },
+            {
+              "label": "Photos"
+            }
+          ]
         },
         {
           "label": "Get info",
-          "icon": {
-            "$icon": "DocumentIcon",
-            "size": "w:4 h:4"
-          },
           "shortcut": "Ctrl I"
         },
         {
@@ -33,10 +47,6 @@
         },
         {
           "label": "Move to Trash",
-          "icon": {
-            "$icon": "TrashBinTrashIcon",
-            "size": "w:4 h:4"
-          },
           "shortcut": "Del",
           "destructive": true
         }
@@ -47,7 +57,8 @@
       "name": "icon",
       "type": "boolean",
       "default": true,
-      "description": "Draws each action's icon. `false` drops them, so every row shows its label alone."
+      "description": "Draws each action's icon. `false` drops them, so every row shows its label alone.",
+      "example": false
     },
     {
       "name": "iconPosition",

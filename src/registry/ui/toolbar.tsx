@@ -52,6 +52,8 @@ export interface ToolbarTogglesItem {
   defaultValue?: string[];
   onValueChange?: (value: string[]) => void;
   label?: string;
+  /** Lets more than one be pressed, as Bold and Italic can be together. */
+  multiple?: boolean;
 }
 
 export interface ToolbarInputItem {
@@ -328,6 +330,7 @@ function ToolbarToggles({
       className="d:f g:1"
       value={value}
       onValueChange={handleChange}
+      multiple={item.multiple}
       aria-label={item.label}
     >
       {item.options.map((option) => (
