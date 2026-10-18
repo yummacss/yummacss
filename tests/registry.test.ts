@@ -270,6 +270,22 @@ describe("Yumma UI registry", () => {
     expect(missing).toEqual([]);
   });
 
+  it("leaves a kept-mounted popup's display to Base UI's hidden", () => {
+    // a display class beats `hidden`, so a closed popup would stay on screen, inert
+    const wrong: string[] = [];
+    for (const file of readdirSync(registryDir)) {
+      const source = readFileSync(join(registryDir, file), "utf8");
+      if (!source.includes("keepMounted")) continue;
+      // up to the line that closes the opening tag, past any `=>` inside it
+      for (const tag of source.matchAll(
+        /<\w+\.Popup\b(?:[^\n]*>$|[\s\S]*?\n\s*>$)/gm,
+      )) {
+        if (/(^|[\s"`])d:(f|g|b|if|ib|ig)\b/.test(tag[0])) wrong.push(file);
+      }
+    }
+    expect(wrong).toEqual([]);
+  });
+
   it("keeps one meaning per shape name", () => {
     const wrong: string[] = [];
     const uiDir = join(rootDir, "src/registry/ui");
