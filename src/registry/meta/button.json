@@ -1,5 +1,5 @@
 {
-  "summary": "A primary action, in six variants, three sizes and four shapes, with loading and icon-only states.",
+  "summary": "A primary action, in six variants, three sizes and four shapes, with loading, icon-only and hold-to-confirm states.",
   "props": [
     {
       "name": "icon",
@@ -28,6 +28,24 @@
           "set": false
         }
       ]
+    },
+    {
+      "name": "hold",
+      "type": "boolean",
+      "typeName": "boolean | number",
+      "default": false,
+      "description": "Acts only once the button has been held down, for `true` 1.5 seconds or for this many milliseconds. A stronger color sweeps across while it is held and drains back if it is let go early. Space and Enter hold too."
+    },
+    {
+      "name": "holdLabel",
+      "type": "string",
+      "description": "What the button says for a moment once a hold completes."
+    },
+    {
+      "name": "onHold",
+      "type": "none",
+      "typeName": "() => void",
+      "description": "Called once a hold completes. A held button never calls `onClick`."
     },
     {
       "name": "variant",
@@ -137,6 +155,25 @@
                 "loading": true
               },
               "children": "Saving"
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "className": "d:f fw:w jc:c g:2",
+          "children": [
+            {
+              "component": "Button",
+              "props": {
+                "variant": "danger",
+                "hold": true,
+                "holdLabel": "12 files deleted",
+                "icon": {
+                  "$icon": "TrashBinTrashIcon",
+                  "size": "w:5 h:5"
+                }
+              },
+              "children": "Hold to delete 12 files"
             }
           ]
         }
