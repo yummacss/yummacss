@@ -1,7 +1,7 @@
 "use client";
 
 import { Field } from "@base-ui/react/field";
-import { DangerTriangleIcon } from "@solar-icons/react/bold-duotone";
+import { DangerTriangleIcon } from "@solar-icons/react/bold";
 import { CheckIcon } from "@solar-icons/react/outline";
 import type { ChangeEvent, ComponentProps } from "react";
 import { useState } from "react";

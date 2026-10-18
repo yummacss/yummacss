@@ -2,7 +2,7 @@ import {
   MicrophoneIcon,
   PenIcon,
   VideocameraIcon,
-} from "@solar-icons/react/bold-duotone";
+} from "@solar-icons/react/bold";
 import type { ReactNode } from "react";
 import { merge } from "yummacss/merge";
 

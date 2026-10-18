@@ -6,7 +6,7 @@ import {
   DangerTriangleIcon,
   EyeClosedIcon,
   EyeIcon,
-} from "@solar-icons/react/bold-duotone";
+} from "@solar-icons/react/bold";
 import { CheckIcon } from "@solar-icons/react/outline";
 import { type ComponentProps, type ReactNode, useState } from "react";
 import { merge } from "yummacss/merge";

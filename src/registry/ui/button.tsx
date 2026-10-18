@@ -16,15 +16,14 @@ const MOTION = "tp:a tdu:150 ttf:io a:s:95";
 // a bevel names all four sides: Yumma sorts rules by name, so bc: would beat bbc:
 const VARIANTS: Record<Variant, string> = {
   primary:
-    "bg:slate-12 h:bg:slate-11 btc:white/20 blc:black/40 brc:black/40 bbc:black/60 c:white bs-o:sm",
+    "bg:fill h:o:90 btc:white/20 blc:black/40 brc:black/40 bbc:black/60 c:on-fill bs-o:sm",
   secondary:
-    "bg:white btc:slate-2 blc:slate-2 brc:slate-2 bbc:slate-4 c:slate-10 h:bg:silver-1 bs-o:xs",
-  subtle: "bg:silver-1 bc:transparent c:slate-7 h:bg:silver-2",
-  ghost:
-    "bg:transparent bc:transparent c:slate-10 h:bg:silver-1/50 h:c:slate-7",
+    "bg:raised btc:rim blc:rim brc:rim bbc:shadow c:label h:bg:well bs-o:xs",
+  subtle: "bg:well bc:transparent c:hint h:bg:rim",
+  ghost: "bg:transparent bc:transparent c:label h:bg:well",
   danger:
     "bg:red h:bg:red-8 btc:red-5 blc:red-8 brc:red-8 bbc:red-9 c:white bs-o:sm",
-  link: "bg:transparent bc:transparent c:slate-10 tuo:2 h:td:u",
+  link: "bg:transparent bc:transparent c:label tuo:2 h:td:u",
 };
 
 const VARIANT_OUTLINE: Partial<Record<Variant, string>> = {

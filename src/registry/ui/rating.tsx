@@ -1,7 +1,7 @@
 "use client";
 
 import { Toggle } from "@base-ui/react/toggle";
-import { StarIcon } from "@solar-icons/react/bold-duotone";
+import { StarIcon } from "@solar-icons/react/bold";
 import type { ReactNode } from "react";
 import { useState } from "react";
 import { merge } from "yummacss/merge";

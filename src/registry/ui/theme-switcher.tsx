@@ -2,11 +2,7 @@
 
 import { Toggle } from "@base-ui/react/toggle";
 import { ToggleGroup } from "@base-ui/react/toggle-group";
-import {
-  MonitorIcon,
-  MoonIcon,
-  SunIcon,
-} from "@solar-icons/react/bold-duotone";
+import { MonitorIcon, MoonIcon, SunIcon } from "@solar-icons/react/bold";
 import { type ComponentType, useEffect, useRef, useState } from "react";
 import { merge } from "yummacss/merge";
 

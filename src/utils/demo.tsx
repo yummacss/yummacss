@@ -30,7 +30,7 @@ import {
   TabletIcon,
   TrashBinTrashIcon,
   VideoFrameIcon,
-} from "@solar-icons/react/bold-duotone";
+} from "@solar-icons/react/bold";
 import {
   AddIcon,
   AltArrowDownIcon,
@@ -67,7 +67,7 @@ export type DemoProps = Record<string, unknown>;
 type IconComponent = ComponentType<{ className?: string }>;
 
 export const EXAMPLE_ICONS: Record<IconStyle, Record<string, IconComponent>> = {
-  "bold-duotone": {
+  bold: {
     CloudIcon,
     ClockCircleIcon,
     GalleryIcon,

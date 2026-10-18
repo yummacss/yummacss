@@ -2,7 +2,7 @@ import {
   LaptopIcon,
   SmartphoneIcon,
   TabletIcon,
-} from "@solar-icons/react/bold-duotone";
+} from "@solar-icons/react/bold";
 import Avatar from "./avatar";
 
 export default function AvatarStackCompact() {

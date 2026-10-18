@@ -3,7 +3,7 @@
 import { Avatar } from "@base-ui/react/avatar";
 import { Field } from "@base-ui/react/field";
 import { Select } from "@base-ui/react/select";
-import { SortVerticalIcon } from "@solar-icons/react/bold-duotone";
+import { SortVerticalIcon } from "@solar-icons/react/bold";
 import { CheckIcon } from "@solar-icons/react/outline";
 import { type ReactNode, useEffect, useId, useState } from "react";
 import { merge } from "yummacss/merge";

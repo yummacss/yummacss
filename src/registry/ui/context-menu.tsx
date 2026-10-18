@@ -166,16 +166,14 @@ export default function ContextMenuBase({
   }, [disabled, open, onOpenChange]);
 
   const triggerClasses = merge(
-    "d:f ai:c jc:c h:48 w:60 bg:white bs:d bw:1 fs:sm fw:500 us:none",
+    "d:f ai:c jc:c h:48 w:60 bg:field bs:d bw:1 fs:sm fw:500 us:none",
     TRIGGER_SHAPES[shape],
-    disabled
-      ? "bg:silver-1 bc:silver-2 c:slate-4 c:na"
-      : "bc:slate-3 c:slate-10",
+    disabled ? "bg:well bc:line c:hint c:na" : "bc:rim c:label",
     className,
   );
 
   const popupClasses = [
-    "py:1 w:52 bg:white bc:black/10 c:slate-10 bw:1 os:none bs-o:xl",
+    "py:1 min-w:52 bg:raised bc:line c:label bw:1 os:none bs-o:xl",
     POPUP_SHAPES[shape],
   ]
     .filter(Boolean)
@@ -191,8 +189,8 @@ export default function ContextMenuBase({
         destructive ? "c:red" : "",
         state.highlighted
           ? destructive
-            ? "bg:red c:white btc:red-5"
-            : "bg:slate-12 c:white btc:white/20"
+            ? "bg:red c:white btc:red-5 blc:red-8 brc:red-8 bbc:red-9"
+            : "bg:check c:white btc:white/25 blc:black/15 brc:black/15 bbc:black/30"
           : "bg:transparent",
       ]
         .filter(Boolean)
@@ -206,7 +204,7 @@ export default function ContextMenuBase({
         return (
           <ContextMenu.Separator
             key={key}
-            className="my:1 w:100% h:px bg:silver-2"
+            className="my:1 w:100% h:px bg:rim"
           />
         );
       }
@@ -215,7 +213,7 @@ export default function ContextMenuBase({
         return (
           <ContextMenu.Group key={key}>
             {item.label && (
-              <div className="px:3 py:1 fs:xs fw:600 c:slate-5 us:none">
+              <div className="px:3 py:1 fs:xs fw:600 c:hint us:none">
                 {item.label}
               </div>
             )}
@@ -233,7 +231,7 @@ export default function ContextMenuBase({
             disabled={item.disabled}
             className={itemClasses(false, false)}
           >
-            <span className="d:f ai:c jc:c fs:0 w:4 h:4 bc:silver-3 br:sm bw:1">
+            <span className="d:f ai:c jc:c fs:0 w:4 h:4 bc:rim br:sm bw:1">
               <ContextMenu.CheckboxItemIndicator>
                 <CheckIcon className="w:3 h:3" />
               </ContextMenu.CheckboxItemIndicator>
@@ -256,7 +254,7 @@ export default function ContextMenuBase({
                 value={option.value}
                 className={itemClasses(false, false)}
               >
-                <span className="d:f ai:c jc:c fs:0 w:4 h:4 bc:silver-3 br:9999 bw:1">
+                <span className="d:f ai:c jc:c fs:0 w:4 h:4 bc:rim br:9999 bw:1">
                   <ContextMenu.RadioItemIndicator>
                     <span className="d:b w:2 h:2 br:9999 bg:current" />
                   </ContextMenu.RadioItemIndicator>
@@ -273,7 +271,7 @@ export default function ContextMenuBase({
           <ContextMenu.SubmenuRoot key={key}>
             <ContextMenu.SubmenuTrigger className={itemClasses(false, true)}>
               <span className="fg:1">{item.label}</span>
-              <AltArrowRightIcon className="fs:0 w:4 h:4 c:slate-4" />
+              <AltArrowRightIcon className="fs:0 w:4 h:4 o:70" />
             </ContextMenu.SubmenuTrigger>
 
             <ContextMenu.Portal container={container}>
@@ -306,7 +304,7 @@ export default function ContextMenuBase({
           className={itemClasses(destructive, trailing)}
         >
           {icon && action.icon && iconPosition === "leading" && (
-            <span className={`d:f fs:0 ${destructive ? "" : "c:slate-5"}`}>
+            <span className={`d:f fs:0 ${destructive ? "" : "o:70"}`}>
               {action.icon}
             </span>
           )}
@@ -316,7 +314,7 @@ export default function ContextMenuBase({
             action.label
           )}
           {icon && action.icon && iconPosition === "trailing" && (
-            <span className={`d:f fs:0 ${destructive ? "" : "c:slate-5"}`}>
+            <span className={`d:f fs:0 ${destructive ? "" : "o:70"}`}>
               {action.icon}
             </span>
           )}
@@ -324,7 +322,7 @@ export default function ContextMenuBase({
             <span
               className={[
                 "d:f ai:c g:1 ml:4 fw:400 fs:xs",
-                destructive ? "" : "c:slate-6",
+                destructive ? "" : "o:70",
               ]
                 .filter(Boolean)
                 .join(" ")}
