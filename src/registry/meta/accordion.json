@@ -119,5 +119,30 @@
       "default": true,
       "description": "The focus outline. `true` draws it, `false` removes it along with the danger, error and success tints that ride with it, and a string of Yumma CSS utilities restyles it on every focusable part of the component, which is more than `className` reaches. Removing it outright and putting nothing back fails WCAG 2.4.7."
     }
+  ],
+  "scene": [
+    {
+      "component": "Accordion",
+      "props": {
+        "items": [
+          {
+            "value": "storage",
+            "title": "Where are my files kept?",
+            "content": "On this computer, with a copy in the cloud for every folder you sync."
+          },
+          {
+            "value": "trash",
+            "title": "How long does Trash keep things?",
+            "content": "30 days, then the files are deleted for good. Change it in Storage."
+          },
+          {
+            "value": "offline",
+            "title": "Can I use it offline?",
+            "content": "Yes. Files you keep offline open without a connection and sync when you are back."
+          }
+        ],
+        "defaultValue": ["trash"]
+      }
+    }
   ]
 }

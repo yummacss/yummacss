@@ -141,5 +141,52 @@
       "typeName": "HTMLElement | null",
       "description": "Where the popup is rendered. Defaults to `document.body`, which is right almost always; pass an element to portal somewhere else, such as inside a frame or a container that owns its own stacking context."
     }
+  ],
+  "scene": [
+    {
+      "component": "Autocomplete",
+      "props": {
+        "items": [
+          {
+            "label": "report-2026.pdf",
+            "description": "Taxes",
+            "icon": {
+              "$icon": "DocumentIcon",
+              "size": "w:4 h:4"
+            }
+          },
+          {
+            "label": "receipts.pdf",
+            "description": "Taxes",
+            "icon": {
+              "$icon": "DocumentIcon",
+              "size": "w:4 h:4"
+            }
+          },
+          {
+            "label": "repo-notes.md",
+            "description": "Notes",
+            "icon": {
+              "$icon": "DocumentIcon",
+              "size": "w:4 h:4"
+            }
+          },
+          {
+            "label": "Repairs",
+            "description": "Home",
+            "icon": {
+              "$icon": "FolderIcon",
+              "size": "w:4 h:4"
+            }
+          }
+        ],
+        "label": "Find a file",
+        "icon": {
+          "$icon": "MagnifierIcon",
+          "size": "w:5 h:5"
+        },
+        "autoHighlight": true
+      }
+    }
   ]
 }

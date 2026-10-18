@@ -21,5 +21,11 @@
       "default": true,
       "description": "The icons pop in one after another as the heading first renders. Turn it off for a heading that is simply there, or when the user has asked for reduced motion."
     }
+  ],
+  "scene": [
+    {
+      "component": "InlineIconHeading",
+      "props": {}
+    }
   ]
 }

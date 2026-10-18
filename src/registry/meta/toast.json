@@ -89,5 +89,17 @@
       "typeName": "HTMLElement | null",
       "description": "Where the toasts are portalled. Leave it empty for the document body; set it inside a frame or a container that owns its own stacking context."
     }
+  ],
+  "scene": [
+    {
+      "component": "Toast",
+      "props": {
+        "trigger": "Move to Trash",
+        "title": "Moved 3 files to Trash",
+        "description": "They stay there for 30 days.",
+        "actionLabel": "Undo",
+        "triggerTone": "danger"
+      }
+    }
   ]
 }

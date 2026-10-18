@@ -111,5 +111,47 @@
       "typeName": "HTMLElement | null",
       "description": "Where the popup is rendered. Defaults to `document.body`, which is right almost always; pass an element to portal somewhere else, such as inside a frame or a container that owns its own stacking context."
     }
+  ],
+  "scene": [
+    {
+      "component": "ContextMenu",
+      "props": {
+        "trigger": "scan.png",
+        "triggerIcon": {
+          "$icon": "GalleryIcon",
+          "size": "w:5 h:5 c:mint"
+        },
+        "items": [
+          {
+            "label": "Open"
+          },
+          {
+            "type": "submenu",
+            "label": "Open with",
+            "items": [
+              {
+                "label": "Preview"
+              },
+              {
+                "label": "Photos"
+              }
+            ]
+          },
+          {
+            "label": "Get info",
+            "shortcut": "Ctrl I"
+          },
+          {
+            "type": "separator"
+          },
+          {
+            "label": "Move to Trash",
+            "shortcut": "Del",
+            "destructive": true
+          }
+        ],
+        "icon": false
+      }
+    }
   ]
 }

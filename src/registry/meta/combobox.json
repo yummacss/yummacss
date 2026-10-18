@@ -118,5 +118,37 @@
       "typeName": "HTMLElement | null",
       "description": "Where the popup is rendered. Defaults to `document.body`, which is right almost always; pass an element to portal somewhere else, such as inside a frame or a container that owns its own stacking context."
     }
+  ],
+  "scene": [
+    {
+      "component": "Combobox",
+      "props": {
+        "items": [
+          {
+            "label": "taxes",
+            "description": "9 files"
+          },
+          {
+            "label": "2026",
+            "description": "41 files"
+          },
+          {
+            "label": "receipts",
+            "description": "14 files"
+          },
+          {
+            "label": "recipes",
+            "description": "6 files"
+          },
+          {
+            "label": "holiday",
+            "description": "118 files"
+          }
+        ],
+        "label": "Tags",
+        "multiple": true,
+        "defaultValue": ["taxes", "2026"]
+      }
+    }
   ]
 }

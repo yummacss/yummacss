@@ -218,33 +218,13 @@ describe("Yumma UI registry", () => {
     expect(missing).toEqual([]);
   });
 
-  it("renders every child the snippet prints", () => {
-    const known = new Set(
-      (
-        readFileSync(join(rootDir, "src/utils/demo.tsx"), "utf-8").match(
-          /const CHILD_COMPONENTS[^{]*\{([^}]*)\}/,
-        )?.[1] ?? ""
-      )
-        .split(",")
-        .map((entry) => entry.trim())
-        .filter(Boolean),
+  it("gives every component an Example", () => {
+    const missing = readdirSync(join(rootDir, "src/registry/meta")).filter(
+      (file) =>
+        !JSON.parse(
+          readFileSync(join(rootDir, "src/registry/meta", file), "utf-8"),
+        ).scene?.length,
     );
-
-    const missing: string[] = [];
-    for (const file of readdirSync(join(rootDir, "src/registry/meta"))) {
-      const meta = JSON.parse(
-        readFileSync(join(rootDir, "src/registry/meta", file), "utf-8"),
-      );
-      const walk = (nodes: { component?: string; children?: unknown }[]) => {
-        for (const child of nodes) {
-          if (child.component && !known.has(child.component))
-            missing.push(`${file}: ${child.component}`);
-          if (Array.isArray(child.children)) walk(child.children);
-        }
-      };
-      walk(meta.childrenExample ?? []);
-    }
-
     expect(missing).toEqual([]);
   });
 

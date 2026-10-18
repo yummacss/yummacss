@@ -9,37 +9,6 @@ export function typeOf(prop: RegistryProp): string {
 // the style writes these defaults, so the rail lists them and never sets them
 export const STYLE_OWNED = ["shape", "iconShape", "size"];
 
-export function isControllable(prop: RegistryProp): boolean {
-  if (STYLE_OWNED.includes(prop.name)) return false;
-  if (prop.controlled && !prop.handler) return false;
-  if (prop.exampleIcon || prop.optional) return true;
-  return (
-    prop.type === "enum" || prop.type === "boolean" || prop.type === "number"
-  );
-}
-
-export function isInert(
-  prop: RegistryProp,
-  values: Record<string, unknown>,
-  props: RegistryProp[],
-): string | null {
-  for (const rule of prop.conflictsWith ?? []) {
-    const other = props.find((entry) => entry.name === rule.prop);
-    const actual = values[rule.prop] ?? other?.default;
-
-    if ("set" in rule && Boolean(actual) === rule.set) {
-      return `${rule.prop} is ${rule.set ? "set" : "not set"}`;
-    }
-    if ("is" in rule && actual === rule.is) {
-      return `${rule.prop} is ${String(rule.is)}`;
-    }
-    if ("not" in rule && actual !== rule.not) {
-      return `${rule.prop} is not ${String(rule.not)}`;
-    }
-  }
-  return null;
-}
-
 export const SHARED_PROP_ORDER = [
   "variant",
   "triggerVariant",

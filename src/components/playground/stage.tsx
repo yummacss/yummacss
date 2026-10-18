@@ -2,7 +2,7 @@
 
 import { Tabs as BaseTabs } from "@base-ui/react/tabs";
 import type { ComponentType, ReactNode } from "react";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { usePlayground } from "@/components/playground/context";
 import PreviewFrame, { usePreviewContainer } from "@/components/preview-frame";
 import { Tabs, TabsPanel } from "@/components/tabs";
@@ -13,26 +13,14 @@ import {
   registryConfig,
 } from "@/registry";
 import { accentCss, DEFAULT_ACCENT } from "@/utils/accent";
-import {
-  type DemoProps,
-  exampleChildren,
-  renderScene,
-  resolveIcons,
-  sceneIds,
-  seedValues,
-} from "@/utils/demo";
+import { type DemoProps, renderScene, sceneIds } from "@/utils/demo";
 import {
   getCachedRegistryComponent,
   loadRegistryComponent,
 } from "@/utils/prefetch-registry";
 import { schemeCss } from "@/utils/scheme";
-import { buildConfig, buildScene, buildUsage } from "@/utils/snippet";
-import {
-  DEFAULT_STYLE,
-  radiusCss,
-  STYLES,
-  styleProps,
-} from "@/utils/styles.mjs";
+import { buildConfig, buildScene } from "@/utils/snippet";
+import { DEFAULT_STYLE, radiusCss, STYLES } from "@/utils/styles.mjs";
 
 const FILL = "d:f fd:c f:1 min-h:0";
 
@@ -46,111 +34,18 @@ const LANGUAGE: Record<string, string> = {
   config: "JavaScript",
 };
 
-interface Frame {
-  id: string;
-  meta: RegistryMeta;
-  values: DemoProps;
-  Component: ComponentType<DemoProps>;
-}
-
 export default function ComponentPlayground() {
   const playground = usePlayground();
-  const playgroundRef = useRef(playground);
-  playgroundRef.current = playground;
   const [tab, setTab] = useState("preview");
-  const [frame, setFrame] = useState<Frame | null>(() => {
-    const cached =
-      playground?.meta && getCachedRegistryComponent(playground.id);
-    return cached && playground?.meta
-      ? {
-          id: playground.id,
-          meta: playground.meta,
-          values: playground.values,
-          Component: cached as ComponentType<DemoProps>,
-        }
-      : null;
-  });
 
-  useEffect(() => {
-    const id = playground?.id;
-    const meta = playground?.meta;
-    if (!id || !meta) return;
-
-    let live = true;
-
-    const commit = (Component: ComponentType<DemoProps>) => {
-      if (!live) return;
-      const current = playgroundRef.current;
-
-      const values =
-        current?.id === id && current.meta ? current.values : seedValues(meta);
-      setFrame({ id, meta, values, Component });
-    };
-
-    const cached = getCachedRegistryComponent(id);
-    if (cached) {
-      commit(cached as ComponentType<DemoProps>);
-      return () => {
-        live = false;
-      };
-    }
-
-    loadRegistryComponent(id).then((Component) => {
-      if (Component) commit(Component as ComponentType<DemoProps>);
-    });
-
-    return () => {
-      live = false;
-    };
-  }, [playground?.id, playground?.meta]);
-
-  const handlerProps = playground?.meta?.props;
-  const handlers = useMemo(
-    () =>
-      Object.fromEntries(
-        (handlerProps ?? [])
-          .filter((prop) => prop.handler)
-          .map((prop) => [
-            prop.handler as string,
-            (value: unknown) =>
-              playgroundRef.current?.setValue(prop.name, value),
-          ]),
-      ),
-    [handlerProps],
-  );
-
-  // a component already loaded swaps in this render; until the first arrives the frame stays empty
-  const ready =
-    playground && frame?.id !== playground.id
-      ? (getCachedRegistryComponent(playground.id) as
-          | ComponentType<DemoProps>
-          | undefined)
-      : undefined;
-  const live =
-    !frame ||
-    Boolean(ready) ||
-    (frame.id === playground?.id && Boolean(playground?.meta));
-  const id = live ? (playground?.id ?? "") : (frame?.id ?? "");
-  const values = live ? (playground?.values ?? {}) : (frame?.values ?? {});
-  const meta = live ? playground?.meta : frame?.meta;
-  if (!id || !meta) return null;
-  const set = Object.fromEntries(
-    Object.entries(values).filter(([, value]) => value !== ""),
-  );
-  const Component = ready ?? frame?.Component;
+  const id = playground?.id ?? "";
+  const scene = playground?.meta?.scene;
+  if (!id || !scene) return null;
   const style = playground?.style ?? DEFAULT_STYLE;
   const accent = playground?.accent ?? DEFAULT_ACCENT;
   const scheme = playground?.scheme ?? "light";
   const radius = playground?.radius ?? STYLES[DEFAULT_STYLE].radius;
-  const scene = live ? meta.scene : undefined;
-  const usage = scene
-    ? buildScene(scene)
-    : buildUsage(getRegistryTarget(id).component, meta, set);
-
-  const uncontrolled = Object.entries(set)
-    .filter(([name]) => name.startsWith("default"))
-    .map(([name, value]) => `${name}:${JSON.stringify(value)}`)
-    .join("|");
+  const usage = buildScene(scene);
 
   const config = registryConfig[getRegistryTarget(id).install];
   // a page without a config tab falls back to the code it does have
@@ -180,24 +75,7 @@ export default function ComponentPlayground() {
               schemeCss(scheme),
             ].join("\n")}
           >
-            {scene ? (
-              <Scene scene={scene} style={style} radius={radius} />
-            ) : (
-              Component && (
-                <Mounted
-                  key={`${id}:${uncontrolled}`}
-                  Component={Component}
-                  props={{
-                    ...(resolveIcons(set) as DemoProps),
-                    ...styleProps(meta.props, style, radius),
-                    ...handlers,
-                  }}
-                  portals={meta.props.some((prop) => prop.name === "container")}
-                >
-                  {exampleChildren(meta)}
-                </Mounted>
-              )
-            )}
+            <Scene scene={scene} style={style} radius={radius} />
           </PreviewFrame>
         </TabsPanel>
 
@@ -281,25 +159,5 @@ function Scene({
       values: playground?.sceneValues ?? {},
       set: playground?.setSceneValue ?? (() => {}),
     },
-  );
-}
-
-function Mounted({
-  Component,
-  props,
-  portals,
-  children,
-}: {
-  Component: ComponentType<DemoProps>;
-  props: DemoProps;
-  portals: boolean;
-  children?: ReactNode;
-}) {
-  const container = usePreviewContainer();
-
-  return (
-    <Component {...props} {...(portals ? { container } : {})}>
-      {children}
-    </Component>
   );
 }

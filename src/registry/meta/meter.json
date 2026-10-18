@@ -95,5 +95,28 @@
       "default": true,
       "description": "The indicator's width transition as `value` changes."
     }
+  ],
+  "scene": [
+    {
+      "component": "Meter",
+      "props": {
+        "value": 12.7,
+        "min": 0,
+        "max": 20,
+        "label": "Storage",
+        "segments": [
+          {
+            "label": "Photos",
+            "value": 8.4
+          },
+          {
+            "label": "Documents",
+            "value": 4.3
+          }
+        ],
+        "unit": "GB",
+        "rest": "Free"
+      }
+    }
   ]
 }
