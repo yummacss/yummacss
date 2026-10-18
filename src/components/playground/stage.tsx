@@ -157,9 +157,8 @@ export default function ComponentPlayground() {
   const active = tab === "config" && !config ? "code" : tab;
 
   return (
-    // below @lg: the stage leads the page and fills the screen under the navbar,
-    // so an open popup never needs a scroll, which would close it
-    <div className="or:l d:f fd:c h:calc(100svh-4rem) mb:6 bg:page @lg:or:0 @lg:f:1 @lg:min-h:0 @lg:h:auto @lg:mb:0">
+    // below @lg: the stage fills the screen under the navbar, so a popup fits it
+    <div className="d:f fd:c h:calc(100svh-5rem) mt:6 bg:page @lg:f:1 @lg:min-h:0 @lg:h:auto @lg:mt:0">
       <Tabs value={active} onValueChange={setTab} className={FILL}>
         <div className="d:f bg:page">
           <BaseTabs.List className="d:f min-w:0 ox:auto">
