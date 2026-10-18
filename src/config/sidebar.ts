@@ -322,6 +322,7 @@ export const sidebarConfig = {
         "onboarding",
         "rating",
         "skeleton",
+        "storage-bar",
         "theme-switcher",
       ],
     },
