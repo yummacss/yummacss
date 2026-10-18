@@ -303,7 +303,7 @@ export const sidebarConfig = {
       title: "Interactive",
       items: ["button", "button-group", "context-menu", "menu", "menubar"],
     },
-    { title: "Navigation", items: ["tabs", "toolbar"] },
+    { title: "Navigation", items: ["navigation-menu", "tabs", "toolbar"] },
     {
       title: "Overlays",
       items: [
