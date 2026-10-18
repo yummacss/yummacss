@@ -30,52 +30,6 @@
       "description": "Merged with the stack's own classes, so a utility you pass wins."
     }
   ],
-  "childrenExample": [
-    {
-      "component": "Avatar",
-      "props": {
-        "size": "sm",
-        "name": "This laptop",
-        "fallback": {
-          "$icon": "LaptopIcon",
-          "size": "w:4 h:4"
-        }
-      }
-    },
-    {
-      "component": "Avatar",
-      "props": {
-        "size": "sm",
-        "name": "Phone",
-        "fallback": {
-          "$icon": "SmartphoneIcon",
-          "size": "w:4 h:4"
-        }
-      }
-    },
-    {
-      "component": "Avatar",
-      "props": {
-        "size": "sm",
-        "name": "Tablet",
-        "fallback": {
-          "$icon": "TabletIcon",
-          "size": "w:4 h:4"
-        }
-      }
-    },
-    {
-      "component": "Avatar",
-      "props": {
-        "size": "sm",
-        "name": "Desktop",
-        "fallback": {
-          "$icon": "MonitorIcon",
-          "size": "w:4 h:4"
-        }
-      }
-    }
-  ],
   "scene": [
     {
       "tag": "div",

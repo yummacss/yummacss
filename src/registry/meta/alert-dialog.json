@@ -115,5 +115,21 @@
       "typeName": "HTMLElement | null",
       "description": "Where the popup is rendered. Defaults to `document.body`, which is right almost always; pass an element to portal somewhere else, such as inside a frame or a container that owns its own stacking context."
     }
+  ],
+  "scene": [
+    {
+      "component": "AlertDialog",
+      "props": {
+        "trigger": "Delete 12 files",
+        "icon": {
+          "$icon": "TrashBinTrashIcon",
+          "size": "w:5 h:5"
+        },
+        "title": "Delete 12 files?",
+        "description": "They move to Trash and are deleted for good after 30 days.",
+        "confirmLabel": "Delete",
+        "showClose": false
+      }
+    }
   ]
 }

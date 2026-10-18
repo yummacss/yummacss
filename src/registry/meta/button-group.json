@@ -57,44 +57,6 @@
       "description": "Merged with the group's own classes, so a utility you pass wins."
     }
   ],
-  "childrenExample": [
-    {
-      "component": "Button",
-      "props": {
-        "variant": "ghost",
-        "shape": "square",
-        "icon": {
-          "$icon": "ListIcon",
-          "size": "w:5 h:5"
-        }
-      },
-      "children": "List"
-    },
-    {
-      "component": "Button",
-      "props": {
-        "variant": "ghost",
-        "shape": "square",
-        "icon": {
-          "$icon": "Grid2x2Icon",
-          "size": "w:5 h:5"
-        }
-      },
-      "children": "Grid"
-    },
-    {
-      "component": "Button",
-      "props": {
-        "variant": "ghost",
-        "shape": "square",
-        "icon": {
-          "$icon": "Columns3Icon",
-          "size": "w:5 h:5"
-        }
-      },
-      "children": "Columns"
-    }
-  ],
   "scene": [
     {
       "tag": "div",

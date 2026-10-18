@@ -122,5 +122,67 @@
       "typeName": "HTMLElement | null",
       "description": "Where the popup is rendered. Defaults to `document.body`, which is right almost always; pass an element to portal somewhere else, such as inside a frame or a container that owns its own stacking context."
     }
+  ],
+  "scene": [
+    {
+      "component": "Onboarding",
+      "props": {
+        "trigger": "Take the tour",
+        "triggerIcon": {
+          "$icon": "StarsIcon",
+          "size": "w:5 h:5"
+        },
+        "steps": [
+          {
+            "title": "Welcome to your files",
+            "description": "Three quick steps to set up where your files live and how they sync."
+          },
+          {
+            "title": "Choose what to keep in sync",
+            "description": "Pick folders now; you can change this any time in Settings.",
+            "choices": [
+              {
+                "id": "documents",
+                "label": "Documents",
+                "icon": {
+                  "$icon": "FolderIcon",
+                  "size": "w:4 h:4"
+                },
+                "picked": true
+              },
+              {
+                "id": "photos",
+                "label": "Photos",
+                "icon": {
+                  "$icon": "FolderIcon",
+                  "size": "w:4 h:4"
+                },
+                "picked": true
+              },
+              {
+                "id": "downloads",
+                "label": "Downloads",
+                "icon": {
+                  "$icon": "FolderIcon",
+                  "size": "w:4 h:4"
+                }
+              },
+              {
+                "id": "desktop",
+                "label": "Desktop",
+                "icon": {
+                  "$icon": "FolderIcon",
+                  "size": "w:4 h:4"
+                }
+              }
+            ]
+          },
+          {
+            "title": "You are all set",
+            "description": "Your folders sync in the background. Change any of this later in Settings."
+          }
+        ]
+      }
+    }
   ]
 }

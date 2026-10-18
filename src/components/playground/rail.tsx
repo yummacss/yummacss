@@ -1,12 +1,11 @@
 "use client";
 
 import { Button } from "@base-ui/react";
-import { Collapsible } from "@base-ui/react/collapsible";
 import Link from "next/link";
 import { useState } from "react";
 import { BaseUI } from "@/components/icons/icons";
 import { usePlayground } from "@/components/playground/context";
-import Control, {
+import {
   EnumSelect,
   StepSelect,
   SwatchSelect,
@@ -17,7 +16,7 @@ import { NavArrowDown } from "@/icons";
 import { getRegistryTarget, type RegistryProp } from "@/registry";
 import { ACCENTS, accentBars } from "@/utils/accent";
 import { type Primitives, primitiveSlug } from "@/utils/primitive";
-import { isControllable, isInert, STYLE_OWNED, typeOf } from "@/utils/props";
+import { STYLE_OWNED, typeOf } from "@/utils/props";
 import { SCHEMES, type Scheme } from "@/utils/scheme";
 import { RADIUS, STYLES } from "@/utils/styles.mjs";
 
@@ -36,42 +35,11 @@ export default function PlaygroundRail({
     ? primitiveSlug(primitives, target.component, target.install)
     : null;
 
-  const [more, setMore] = useState(false);
-
   const toggle = (name: string) =>
     setOpen((current) => (current === name ? null : name));
 
-  // an Example shows the props in use, so the rail lists them rather than setting them
-  const example = Boolean(playground?.meta?.scene);
+  // the Example shows the props in use, so the rail lists them
   const listed = props.filter((prop) => !STYLE_OWNED.includes(prop.name));
-  const settable = example ? [] : props.filter(isControllable);
-  const inCode = example ? [] : listed.filter((prop) => !isControllable(prop));
-
-  const row = (prop: RegistryProp) => {
-    const inert = example
-      ? null
-      : isInert(prop, playground?.values ?? {}, props);
-    return (
-      <Row
-        key={prop.name}
-        prop={prop}
-        inert={inert}
-        open={open === prop.name}
-        onToggle={() => toggle(prop.name)}
-      >
-        {!example && isControllable(prop) ? (
-          <Control
-            prop={prop}
-            inert={Boolean(inert)}
-            value={playground?.values[prop.name]}
-            onChange={(value) => playground?.setValue(prop.name, value)}
-          />
-        ) : (
-          <code className="fs:0 c:ink/70 fs:xs ff:m">{typeOf(prop)}</code>
-        )}
-      </Row>
-    );
-  };
 
   return (
     <aside className="bc:border btw:1 @lg:btw:0 @lg:blw:1 @lg:gc-s:3">
@@ -100,26 +68,16 @@ export default function PlaygroundRail({
             The file you copy is yours. Change anything in it.
           </p>
 
-          {example
-            ? listed.map((prop) => row(prop))
-            : settable.map((prop) => row(prop))}
-
-          {inCode.length > 0 && (
-            <Collapsible.Root open={more} onOpenChange={setMore}>
-              <Collapsible.Trigger className="d:f ai:c jc:sb w:100% px:0 py:3 bg:transparent bw:0 bc:border bbw:1 ta:l c:silver-8 fs:xs c:p h:c:ink fv:oo:-1 fv:oc:accent">
-                {more
-                  ? `Hide the ${inCode.length} set in code`
-                  : `${inCode.length} more, set in code`}
-                <NavArrowDown
-                  aria-hidden
-                  className={`fs:0 w:3 h:3 tp:t tdu:150 ${more ? "ro:36" : ""}`}
-                />
-              </Collapsible.Trigger>
-              <Collapsible.Panel>
-                {inCode.map((prop) => row(prop))}
-              </Collapsible.Panel>
-            </Collapsible.Root>
-          )}
+          {listed.map((prop) => (
+            <Row
+              key={prop.name}
+              prop={prop}
+              open={open === prop.name}
+              onToggle={() => toggle(prop.name)}
+            >
+              <code className="fs:0 c:ink/70 fs:xs ff:m">{typeOf(prop)}</code>
+            </Row>
+          ))}
         </div>
       </Scroller>
     </aside>
@@ -128,13 +86,11 @@ export default function PlaygroundRail({
 
 function Row({
   prop,
-  inert,
   open,
   onToggle,
   children,
 }: {
   prop: RegistryProp;
-  inert?: string | null;
   open: boolean;
   onToggle: () => void;
   children: React.ReactNode;
@@ -171,12 +127,6 @@ function Row({
         )}
         {children}
       </div>
-
-      {inert && (
-        <div className="mt:1 c:ink/50 fs:xs">
-          Does nothing while <code className="ff:m">{inert}</code>.
-        </div>
-      )}
 
       {open && (
         <div className="mt:2 c:ink/60 fs:sm lh:4">

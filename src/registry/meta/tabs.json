@@ -95,5 +95,31 @@
       "default": true,
       "description": "The focus outline. `true` draws it, `false` removes it along with the danger, error and success tints that ride with it, and a string of Yumma CSS utilities restyles it on every focusable part of the component, which is more than `className` reaches. Removing it outright and putting nothing back fails WCAG 2.4.7."
     }
+  ],
+  "scene": [
+    {
+      "component": "Tabs",
+      "props": {
+        "items": [
+          {
+            "value": "general",
+            "label": "General",
+            "panel": "New windows open in Documents, with hidden files shown."
+          },
+          {
+            "value": "storage",
+            "label": "Storage",
+            "panel": "Trash holds 1.8 GB in 214 files and empties itself after 30 days."
+          },
+          {
+            "value": "shortcuts",
+            "label": "Shortcuts",
+            "panel": "Press ? anywhere to see every shortcut."
+          }
+        ],
+        "defaultValue": "storage",
+        "icon": false
+      }
+    }
   ]
 }

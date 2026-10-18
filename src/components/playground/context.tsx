@@ -18,13 +18,9 @@ import {
 } from "react";
 import { getRegistryMeta, type RegistryMeta } from "@/registry";
 import { DEFAULT_ACCENT, readAccent, writeAccent } from "@/utils/accent";
-import { type DemoProps, exampleIcon, seedValues } from "@/utils/demo";
-import { applyQuery, keyMapFor, queryFor } from "@/utils/playground-url";
 import { prefetchRegistry } from "@/utils/prefetch-registry";
-import { isInert } from "@/utils/props";
 import { readScheme, type Scheme, writeScheme } from "@/utils/scheme";
 import { getAllUISlugs } from "@/utils/sidebar";
-import { carriedFor, readCarried, writeCarried } from "@/utils/sticky";
 import {
   DEFAULT_STYLE,
   nearestRadius,
@@ -67,8 +63,6 @@ function sceneValues(value: unknown): SceneValues | null {
 interface Playground {
   id: string;
   meta: RegistryMeta | null;
-  values: DemoProps;
-  setValue: (name: string, value: unknown) => void;
   /** What the scene's components were changed to, by instance and prop. */
   sceneValues: SceneValues;
   setSceneValue: (key: string, value: unknown, fallback: unknown) => void;
@@ -96,10 +90,7 @@ export function PlaygroundProvider({
   children: ReactNode;
 }) {
   // synchronous, so the server renders the Component API and a switch never empties it
-  const seed = useMemo(() => {
-    const meta = getRegistryMeta(id);
-    return { meta, values: meta ? seedValues(meta) : {} };
-  }, [id]);
+  const meta = useMemo(() => getRegistryMeta(id), [id]);
   const [accent, setAccentState] = useState(DEFAULT_ACCENT);
 
   useEffect(() => setAccentState(readAccent()), []);
@@ -178,34 +169,6 @@ export function PlaygroundProvider({
     }
   }, [id]);
 
-  const keyMap = useMemo(
-    () => (seed.meta ? keyMapFor(seed.meta, seed.values) : {}),
-    [seed.meta, seed.values],
-  );
-
-  const [query, setQuery] = useQueryStates(keyMap, {
-    history: "replace",
-    clearOnDefault: true,
-    shallow: true,
-  });
-
-  const values = useMemo(
-    () =>
-      seed.meta
-        ? applyQuery(seed.meta, query, seed.values, exampleIcon)
-        : seed.values,
-    [seed.meta, seed.values, query],
-  );
-
-  useEffect(() => {
-    if (!seed.meta) return;
-    const named = new URLSearchParams(window.location.search);
-    const pending = carriedFor(seed.meta, readCarried(), (name) =>
-      named.has(name),
-    );
-    if (Object.keys(pending).length > 0) setQuery(pending);
-  }, [seed.meta, setQuery]);
-
   // what a visitor changes in the scene lives in the address, so a reload keeps it
   const [sceneQuery, setSceneQuery] = useQueryState(
     "scene",
@@ -228,41 +191,10 @@ export function PlaygroundProvider({
     [setSceneQuery],
   );
 
-  const setValue = useCallback(
-    (name: string, value: unknown) => {
-      const meta = seed.meta;
-      if (!meta) return;
-
-      const next = { ...values, [name]: value };
-
-      const prop = meta.props.find((entry) => entry.name === name);
-      const needs = prop?.dependsOn
-        ? meta.props.find((entry) => entry.name === prop.dependsOn)
-        : undefined;
-
-      if (needs?.exampleIcon && !values[needs.name]) {
-        next[needs.name] = exampleIcon(needs.exampleIcon);
-      }
-
-      for (const entry of meta.props) {
-        if (entry.name === name) continue;
-        if (!isInert(entry, next, meta.props)) continue;
-        if (entry.type === "boolean") next[entry.name] = false;
-        else if (entry.default !== undefined) next[entry.name] = entry.default;
-      }
-
-      writeCarried(next);
-      setQuery(queryFor(meta, next));
-    },
-    [seed.meta, values, setQuery],
-  );
-
   const playground = useMemo(
     () => ({
       id,
-      meta: seed.meta,
-      values,
-      setValue,
+      meta,
       sceneValues: sceneState,
       setSceneValue,
       accent,
@@ -276,9 +208,7 @@ export function PlaygroundProvider({
     }),
     [
       id,
-      seed.meta,
-      values,
-      setValue,
+      meta,
       sceneState,
       setSceneValue,
       accent,
@@ -313,8 +243,6 @@ export function StaticPlayground({
     return {
       id,
       meta,
-      values: meta ? seedValues(meta) : {},
-      setValue: ignore,
       sceneValues: {},
       setSceneValue: ignore,
       accent: DEFAULT_ACCENT,

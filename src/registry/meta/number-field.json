@@ -75,5 +75,15 @@
       "default": true,
       "description": "The focus outline, drawn around the input and both buttons together. `true` draws it, `false` removes it, and a string of Yumma CSS utilities restyles it; write them with `fw:`, since the group draws it while anything inside has focus. Removing it outright and putting nothing back fails WCAG 2.4.7."
     }
+  ],
+  "scene": [
+    {
+      "component": "NumberField",
+      "props": {
+        "label": "Keep deleted files for",
+        "description": "Days, then the files are deleted for good.",
+        "defaultValue": 30
+      }
+    }
   ]
 }

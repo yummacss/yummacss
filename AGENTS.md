@@ -136,14 +136,9 @@ is written.
   pair in an address falls back to the nearest allowed radius.
 - `size`, `shape` and `iconShape` belong to the style: the rail
   never shows or sets them.
-- `animated` and `focus` follow you from one component page to the next.
-  `src/utils/sticky.ts` owns that list.
-- `variant`, `tone` and `intent` are deliberately not carried: they share a
-  name across components and nothing else.
-- A value is carried only if the next component declares that prop.
-- The address wins over what was carried, so a link someone was sent renders
-  what it says. Carrying writes into the URL on arrival rather than changing
-  what a parser defaults to, which would make a clean address lie.
+- Every component page shows its Example, a `scene` in its meta, and the
+  rail lists the props without setting them. `tests/registry.test.ts` fails a
+  meta without one.
 
 # Accent
 

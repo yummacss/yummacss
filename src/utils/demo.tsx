@@ -51,15 +51,7 @@ import {
   UndoRightIcon,
 } from "@solar-icons/react/outline";
 import { type ComponentType, Fragment, type ReactNode } from "react";
-import {
-  type ChildExample,
-  getRegistryMeta,
-  type RegistryMeta,
-} from "@/registry";
-import Avatar from "@/registry/ui/avatar";
-import Button from "@/registry/ui/button";
-import Checkbox from "@/registry/ui/checkbox";
-import Toggle from "@/registry/ui/toggle";
+import { type ChildExample, getRegistryMeta } from "@/registry";
 import { EXAMPLE_ICON_STYLE, type IconStyle } from "@/utils/icon-style";
 import { componentId, iconMarker } from "@/utils/snippet";
 import { styleProps } from "@/utils/styles.mjs";
@@ -133,28 +125,6 @@ export function exampleIcon(name: string) {
   return Icon ? <Icon className="w:5 h:5" /> : undefined;
 }
 
-export function seedValues(meta: RegistryMeta): DemoProps {
-  const values: DemoProps = {};
-
-  for (const prop of meta.props) {
-    if (prop.example === null) continue;
-
-    if (prop.controlled && !prop.handler) continue;
-
-    if (prop.exampleIcon) {
-      const icon = exampleIcon(prop.exampleIcon);
-      if (icon) {
-        values[prop.name] = icon;
-        continue;
-      }
-    }
-    const value = prop.example ?? prop.default;
-    if (value !== undefined) values[prop.name] = value;
-  }
-
-  return values;
-}
-
 export function resolveIcons(value: unknown): unknown {
   const marker = iconMarker(value);
   if (marker) {
@@ -169,18 +139,6 @@ export function resolveIcons(value: unknown): unknown {
     );
   }
   return value;
-}
-
-const CHILD_COMPONENTS: Record<string, ComponentType<DemoProps>> = {
-  Avatar,
-  Button,
-  Checkbox,
-  Toggle,
-};
-
-export function exampleChildren(meta: RegistryMeta): ReactNode {
-  if (!meta.childrenExample) return meta.children;
-  return meta.childrenExample.map((child, index) => renderChild(child, index));
 }
 
 /** The registry ids a scene names, so they can load before it renders. */
@@ -288,9 +246,7 @@ function renderChild(
     );
   }
   const component = child.component;
-  const Child = component
-    ? (scene?.components[componentId(component)] ?? CHILD_COMPONENTS[component])
-    : null;
+  const Child = component ? scene?.components[componentId(component)] : null;
   if (!Child || !component) return null;
   return (
     <Child

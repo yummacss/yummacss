@@ -124,10 +124,8 @@ export interface RegistryProp {
 export interface RegistryMeta {
   summary?: string;
   props: RegistryProp[];
-  children?: string;
-  childrenExample?: ChildExample[];
   /** The Example view: the component in use, often several times over. */
-  scene?: ChildExample[];
+  scene: ChildExample[];
 }
 
 /** One node of a demo's children: a registry component, a plain element, or text. */

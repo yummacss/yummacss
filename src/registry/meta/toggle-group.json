@@ -55,42 +55,51 @@
       "description": "Merged with the group's own classes, so a utility you pass wins."
     }
   ],
-  "childrenExample": [
+  "scene": [
     {
-      "component": "Toggle",
+      "component": "ToggleGroup",
       "props": {
-        "value": "list",
-        "icon": {
-          "$icon": "ListIcon",
-          "size": "w:4 h:4",
-          "style": "outline"
+        "label": "View as",
+        "defaultValue": ["grid"]
+      },
+      "children": [
+        {
+          "component": "Toggle",
+          "props": {
+            "value": "list",
+            "icon": {
+              "$icon": "ListIcon",
+              "size": "w:4 h:4",
+              "style": "outline"
+            },
+            "label": "List"
+          }
         },
-        "label": "List"
-      }
-    },
-    {
-      "component": "Toggle",
-      "props": {
-        "value": "grid",
-        "icon": {
-          "$icon": "Grid2x2Icon",
-          "size": "w:4 h:4",
-          "style": "outline"
+        {
+          "component": "Toggle",
+          "props": {
+            "value": "grid",
+            "icon": {
+              "$icon": "Grid2x2Icon",
+              "size": "w:4 h:4",
+              "style": "outline"
+            },
+            "label": "Grid"
+          }
         },
-        "label": "Grid"
-      }
-    },
-    {
-      "component": "Toggle",
-      "props": {
-        "value": "columns",
-        "icon": {
-          "$icon": "Columns3Icon",
-          "size": "w:4 h:4",
-          "style": "outline"
-        },
-        "label": "Columns"
-      }
+        {
+          "component": "Toggle",
+          "props": {
+            "value": "columns",
+            "icon": {
+              "$icon": "Columns3Icon",
+              "size": "w:4 h:4",
+              "style": "outline"
+            },
+            "label": "Columns"
+          }
+        }
+      ]
     }
   ]
 }

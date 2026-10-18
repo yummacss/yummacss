@@ -158,5 +158,125 @@
       "typeName": "HTMLElement | null",
       "description": "Where the popup is rendered. Defaults to `document.body`, which is right almost always; pass an element to portal somewhere else, such as inside a frame or a container that owns its own stacking context."
     }
+  ],
+  "scene": [
+    {
+      "component": "Menubar",
+      "props": {
+        "menus": [
+          {
+            "label": "File",
+            "items": [
+              {
+                "label": "New file",
+                "icon": {
+                  "$icon": "DocumentAddIcon",
+                  "size": "w:4 h:4"
+                },
+                "shortcut": "Ctrl N"
+              },
+              {
+                "label": "Import",
+                "icon": {
+                  "$icon": "FileLeftIcon",
+                  "size": "w:4 h:4"
+                }
+              },
+              {
+                "label": "Export",
+                "icon": {
+                  "$icon": "FileRightIcon",
+                  "size": "w:4 h:4"
+                }
+              }
+            ]
+          },
+          {
+            "label": "Edit",
+            "items": [
+              {
+                "label": "Undo rename",
+                "icon": {
+                  "$icon": "UndoLeftIcon",
+                  "size": "w:4 h:4"
+                },
+                "shortcut": "Ctrl Z"
+              },
+              {
+                "label": "Copy",
+                "icon": {
+                  "$icon": "CopyIcon",
+                  "size": "w:4 h:4"
+                },
+                "shortcut": "Ctrl C"
+              },
+              {
+                "label": "Paste",
+                "shortcut": "Ctrl V"
+              },
+              {
+                "type": "separator"
+              },
+              {
+                "label": "Select all",
+                "shortcut": "Ctrl A"
+              }
+            ]
+          },
+          {
+            "label": "View",
+            "items": [
+              {
+                "label": "List",
+                "icon": {
+                  "$icon": "ListIcon",
+                  "size": "w:4 h:4"
+                }
+              },
+              {
+                "label": "Grid",
+                "icon": {
+                  "$icon": "Grid2x2Icon",
+                  "size": "w:4 h:4"
+                }
+              },
+              {
+                "label": "Columns",
+                "icon": {
+                  "$icon": "Columns3Icon",
+                  "size": "w:4 h:4"
+                }
+              }
+            ]
+          },
+          {
+            "label": "Go",
+            "items": [
+              {
+                "label": "Documents",
+                "icon": {
+                  "$icon": "FolderIcon",
+                  "size": "w:4 h:4"
+                }
+              },
+              {
+                "label": "Downloads",
+                "icon": {
+                  "$icon": "FolderIcon",
+                  "size": "w:4 h:4"
+                }
+              },
+              {
+                "label": "Trash",
+                "icon": {
+                  "$icon": "TrashBinTrashIcon",
+                  "size": "w:4 h:4"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
   ]
 }
