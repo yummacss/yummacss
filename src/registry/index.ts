@@ -22,6 +22,7 @@ import meta_field from "./meta/field.json";
 import meta_file_tree from "./meta/file-tree.json";
 import meta_file_upload from "./meta/file-upload.json";
 import meta_inline_icon_heading from "./meta/inline-icon-heading.json";
+import meta_kbd from "./meta/kbd.json";
 import meta_menu from "./meta/menu.json";
 import meta_menubar from "./meta/menubar.json";
 import meta_meter from "./meta/meter.json";
@@ -82,6 +83,7 @@ export const registry = {
   "file-tree": () => import("./ui/file-tree"),
   "file-upload": () => import("./ui/file-upload"),
   "inline-icon-heading": () => import("./ui/inline-icon-heading"),
+  "kbd": () => import("./ui/kbd"),
   "menu": () => import("./ui/menu"),
   "menubar": () => import("./ui/menubar"),
   "meter": () => import("./ui/meter"),
@@ -187,6 +189,7 @@ export const registryMeta = {
   "file-tree": meta_file_tree,
   "file-upload": meta_file_upload,
   "inline-icon-heading": meta_inline_icon_heading,
+  "kbd": meta_kbd,
   "menu": meta_menu,
   "menubar": meta_menubar,
   "meter": meta_meter,
@@ -259,6 +262,7 @@ export const registryTargets: Record<string, RegistryTarget> = {
   "file-tree": { component: "file-tree", variant: "base", kind: "component", install: "file-tree" },
   "file-upload": { component: "file-upload", variant: "base", kind: "component", install: "file-upload" },
   "inline-icon-heading": { component: "inline-icon-heading", variant: "base", kind: "component", install: "inline-icon-heading" },
+  "kbd": { component: "kbd", variant: "base", kind: "component", install: "kbd" },
   "menu": { component: "menu", variant: "base", kind: "component", install: "menu" },
   "menubar": { component: "menubar", variant: "base", kind: "component", install: "menubar" },
   "meter": { component: "meter", variant: "base", kind: "component", install: "meter" },
