@@ -8,7 +8,11 @@
       "example": [
         {
           "label": "Documents",
-          "href": "#"
+          "href": "#",
+          "icon": {
+            "$icon": "FolderIcon",
+            "size": "w:4 h:4"
+          }
         },
         {
           "label": "Taxes",
