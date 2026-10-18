@@ -204,7 +204,7 @@ export default function ContextMenuBase({
         return (
           <ContextMenu.Separator
             key={key}
-            className="my:1 w:100% h:px bg:rim"
+            className="my:1 w:100% h:0 btw:1 bbw:1 btc:groove bbc:glint"
           />
         );
       }
