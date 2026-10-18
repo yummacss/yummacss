@@ -11,8 +11,7 @@ export interface KbdProps {
 }
 
 /**
- * A keyboard shortcut as keycaps, the same keycap the menus and tooltips use,
- * for hints in running text.
+ * A keyboard shortcut as raised keycaps, for hints in running text.
  */
 export default function Kbd({ keys, className }: KbdProps) {
   return (
@@ -21,7 +20,7 @@ export default function Kbd({ keys, className }: KbdProps) {
         <kbd
           key={key}
           className={merge(
-            "px:1 br:sm bw:1 bc:current fs:xs fw:400 lh:4 ff:d",
+            "d:if ai:c jc:c min-w:6 h:6 px:1 br:md bg:raised c:label btw:1 blw:1 brw:1 bbw:3 btc:rim blc:rim brc:rim bbc:shadow bs-o:xs fs:xs fw:500 lh:1 ff:d",
             className,
           )}
         >

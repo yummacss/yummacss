@@ -112,12 +112,14 @@ is written.
 - No inset shadow, except a pressed toggle (Toggle, Toolbar). No `shadow` prop.
 - Pressed in is an on/off that stays on by itself (Toggle, Toolbar). Picking
   one of several is a raised chip on a track (Tabs, Toggle Group).
-- A bevel names all four sides and never mixes in `bc:`. Yumma sorts its rules
-  by name, so `bc:` would beat `bbc:`.
+- A bevel names all four sides and never mixes in `bc:` or `bw:`. Yumma sorts
+  its rules by name, so `bc:` would beat `bbc:` and `bw:` would beat `bbw:`.
 - Numbers that change in place (counters, values, sizes) are `fvn:tn`.
-- A shortcut is one keycap everywhere: `px:1 br:sm bw:1 bc:current fs:xs
-  fw:400 lh:4 ff:d`, at `o:70` in a row; Kbd draws it on its own.
-  `tests/registry.test.ts` holds it.
+- A shortcut in a row (menus, tooltips) is an outlined keycap in the row's
+  color, so it turns white with a highlighted row: `px:1 br:sm bw:1
+  bc:current fs:xs fw:400 lh:4 ff:d`, at `o:70`. In running text, Kbd draws
+  a raised key: the raised bevel on `btw:1 blw:1 brw:1 bbw:3`. `tests/registry.test.ts`
+  holds both.
 
 # Prop order
 

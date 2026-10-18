@@ -1,5 +1,5 @@
 {
-  "summary": "A keyboard shortcut as keycaps, the same keycap the menus and tooltips use, for hints in running text.",
+  "summary": "A keyboard shortcut as raised keycaps, for hints in running text.",
   "props": [
     {
       "name": "keys",

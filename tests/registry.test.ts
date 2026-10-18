@@ -405,14 +405,18 @@ describe("Yumma UI registry", () => {
     );
   });
 
-  it("draws every shortcut as the same keycap", () => {
-    const KEYCAP = "px:1 br:sm bw:1 bc:current fs:xs fw:400 lh:4 ff:d";
+  it("draws every shortcut as one of the two keycaps", () => {
+    // a row's keycap takes the row's color; Kbd's stands raised in text
+    const IN_ROW = "px:1 br:sm bw:1 bc:current fs:xs fw:400 lh:4 ff:d";
+    const RAISED =
+      "bg:raised c:label btw:1 blw:1 brw:1 bbw:3 btc:rim blc:rim brc:rim bbc:shadow bs-o:xs";
     const uiDir = join(rootDir, "src/registry/ui");
     const wrong: string[] = [];
     for (const file of readdirSync(uiDir).filter((f) => f.endsWith(".tsx"))) {
       const source = readFileSync(join(uiDir, file), "utf-8");
+      const keycap = file === "kbd.tsx" ? RAISED : IN_ROW;
       for (const tag of source.matchAll(/<kbd\b[\s\S]*?>/g)) {
-        if (!tag[0].includes(KEYCAP)) wrong.push(file);
+        if (!tag[0].includes(keycap)) wrong.push(file);
       }
     }
     expect(wrong).toEqual([]);
