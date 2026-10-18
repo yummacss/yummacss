@@ -19,6 +19,7 @@ import meta_dialog from "./meta/dialog.json";
 import meta_drawer from "./meta/drawer.json";
 import meta_empty_state from "./meta/empty-state.json";
 import meta_field from "./meta/field.json";
+import meta_file_tree from "./meta/file-tree.json";
 import meta_file_upload from "./meta/file-upload.json";
 import meta_inline_icon_heading from "./meta/inline-icon-heading.json";
 import meta_menu from "./meta/menu.json";
@@ -37,6 +38,7 @@ import meta_select from "./meta/select.json";
 import meta_separator from "./meta/separator.json";
 import meta_skeleton from "./meta/skeleton.json";
 import meta_slider from "./meta/slider.json";
+import meta_storage_bar from "./meta/storage-bar.json";
 import meta_switch from "./meta/switch.json";
 import meta_tabs from "./meta/tabs.json";
 import meta_textarea from "./meta/textarea.json";
@@ -76,6 +78,7 @@ export const registry = {
   "field-prefix": () => import("./ui/field-prefix"),
   "field-suffix": () => import("./ui/field-suffix"),
   "field": () => import("./ui/field"),
+  "file-tree": () => import("./ui/file-tree"),
   "file-upload": () => import("./ui/file-upload"),
   "inline-icon-heading": () => import("./ui/inline-icon-heading"),
   "menu": () => import("./ui/menu"),
@@ -99,6 +102,7 @@ export const registry = {
   "skeleton-stats": () => import("./ui/skeleton-stats"),
   "skeleton": () => import("./ui/skeleton"),
   "slider": () => import("./ui/slider"),
+  "storage-bar": () => import("./ui/storage-bar"),
   "switch": () => import("./ui/switch"),
   "tabs": () => import("./ui/tabs"),
   "textarea": () => import("./ui/textarea"),
@@ -178,6 +182,7 @@ export const registryMeta = {
   "drawer": meta_drawer,
   "empty-state": meta_empty_state,
   "field": meta_field,
+  "file-tree": meta_file_tree,
   "file-upload": meta_file_upload,
   "inline-icon-heading": meta_inline_icon_heading,
   "menu": meta_menu,
@@ -196,6 +201,7 @@ export const registryMeta = {
   "separator": meta_separator,
   "skeleton": meta_skeleton,
   "slider": meta_slider,
+  "storage-bar": meta_storage_bar,
   "switch": meta_switch,
   "tabs": meta_tabs,
   "textarea": meta_textarea,
@@ -247,6 +253,7 @@ export const registryTargets: Record<string, RegistryTarget> = {
   "field-prefix": { component: "field", variant: "prefix", kind: "example", install: "field" },
   "field-suffix": { component: "field", variant: "suffix", kind: "example", install: "field" },
   "field": { component: "field", variant: "base", kind: "component", install: "field" },
+  "file-tree": { component: "file-tree", variant: "base", kind: "component", install: "file-tree" },
   "file-upload": { component: "file-upload", variant: "base", kind: "component", install: "file-upload" },
   "inline-icon-heading": { component: "inline-icon-heading", variant: "base", kind: "component", install: "inline-icon-heading" },
   "menu": { component: "menu", variant: "base", kind: "component", install: "menu" },
@@ -270,6 +277,7 @@ export const registryTargets: Record<string, RegistryTarget> = {
   "skeleton-stats": { component: "skeleton", variant: "stats", kind: "example", install: "skeleton" },
   "skeleton": { component: "skeleton", variant: "base", kind: "component", install: "skeleton" },
   "slider": { component: "slider", variant: "base", kind: "component", install: "slider" },
+  "storage-bar": { component: "storage-bar", variant: "base", kind: "component", install: "storage-bar" },
   "switch": { component: "switch", variant: "base", kind: "component", install: "switch" },
   "tabs": { component: "tabs", variant: "base", kind: "component", install: "tabs" },
   "textarea": { component: "textarea", variant: "base", kind: "component", install: "textarea" },
@@ -297,6 +305,7 @@ export const registryConfig: Record<string, RegistryConfig> = {
   "context-menu": { states: { "opening": "[data-starting-style]", "closing": "[data-ending-style]" }, easings: { "out-quart": "cubic-bezier(0.25, 1, 0.5, 1)" }, keyframes: {} },
   "dialog": { states: { "opening": "[data-starting-style]", "closing": "[data-ending-style]" }, easings: { "out-quart": "cubic-bezier(0.25, 1, 0.5, 1)" }, keyframes: {} },
   "drawer": { states: { "opening": "[data-starting-style]", "closing": "[data-ending-style]", "swiping": "[data-swiping]" }, easings: { "out-quart": "cubic-bezier(0.25, 1, 0.5, 1)" }, keyframes: {} },
+  "file-tree": { states: { "opening": "[data-starting-style]", "closing": "[data-ending-style]" }, easings: { "in-out-cubic": "cubic-bezier(0.65, 0, 0.35, 1)", "out-quart": "cubic-bezier(0.25, 1, 0.5, 1)" }, keyframes: {} },
   "file-upload": { states: {}, easings: { "out-quart": "cubic-bezier(0.25, 1, 0.5, 1)" }, keyframes: {} },
   "inline-icon-heading": { states: {}, easings: { "out-back": "cubic-bezier(0.34, 1.56, 0.64, 1)" }, keyframes: {} },
   "menu": { states: { "opening": "[data-starting-style]", "closing": "[data-ending-style]" }, easings: { "out-quart": "cubic-bezier(0.25, 1, 0.5, 1)" }, keyframes: {} },

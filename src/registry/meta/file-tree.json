@@ -1,0 +1,98 @@
+{
+  "summary": "Folders and files from a list of paths, opening folder by folder, with a picked row and the arrow keys.",
+  "props": [
+    {
+      "name": "paths",
+      "type": "none",
+      "typeName": "string[]",
+      "example": [
+        "Documents/Taxes 2026/receipts.zip",
+        "Documents/Taxes 2026/tax-return.pdf",
+        "Documents/budget.xlsx",
+        "Documents/readme.md",
+        "Photos/beach.jpg",
+        "Photos/scan-0412.png",
+        "Videos/holiday.mov",
+        "notes.txt"
+      ],
+      "description": "Every file by its path, `Documents/budget.xlsx`. Folders come from the paths; end one with `/` for an empty folder."
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "default": "Files",
+      "description": "The tree's accessible name."
+    },
+    {
+      "name": "defaultExpanded",
+      "type": "none",
+      "typeName": "string[]",
+      "example": ["Documents"],
+      "description": "The folders open on first render, by path."
+    },
+    {
+      "name": "defaultSelected",
+      "type": "string",
+      "example": "Documents/budget.xlsx",
+      "controlled": true,
+      "description": "The row picked on first render, by path. Pair `selected` with `onSelectedChange` instead if you are controlling it."
+    },
+    {
+      "name": "selected",
+      "type": "string",
+      "controlled": true,
+      "handler": "onSelectedChange",
+      "description": "The controlled picked row, by path."
+    },
+    {
+      "name": "onSelectedChange",
+      "type": "none",
+      "typeName": "(selected: string) => void",
+      "description": "Called with the path of the row just picked."
+    },
+    {
+      "name": "shape",
+      "type": "enum",
+      "values": ["rounded", "square", "squircle"],
+      "default": "rounded",
+      "description": "Corner radius on the tree and on each row."
+    },
+    {
+      "name": "animated",
+      "type": "boolean",
+      "default": true,
+      "description": "The chevron's turn and the folder's open and close. Turn it off for an instant tree, or when the user has asked for reduced motion."
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "description": "Extra classes. `merge` folds them in last, so one here replaces the component's own class for the same utility."
+    },
+    {
+      "name": "focus",
+      "type": "boolean",
+      "typeName": "boolean | string",
+      "default": true,
+      "description": "The focus outline. `true` draws it, `false` removes it along with the danger, error and success tints that ride with it, and a string of Yumma CSS utilities restyles it on every focusable part of the component, which is more than `className` reaches. Removing it outright and putting nothing back fails WCAG 2.4.7."
+    }
+  ],
+  "scene": [
+    {
+      "component": "FileTree",
+      "props": {
+        "paths": [
+          "Documents/Taxes 2026/receipts.zip",
+          "Documents/Taxes 2026/tax-return.pdf",
+          "Documents/budget.xlsx",
+          "Documents/readme.md",
+          "Photos/beach.jpg",
+          "Photos/scan-0412.png",
+          "Videos/holiday.mov",
+          "notes.txt"
+        ],
+        "defaultExpanded": ["Documents"],
+        "defaultSelected": "Documents/budget.xlsx"
+      }
+    }
+  ]
+}

@@ -303,7 +303,10 @@ export const sidebarConfig = {
       title: "Interactive",
       items: ["button", "button-group", "context-menu", "menu", "menubar"],
     },
-    { title: "Navigation", items: ["navigation-menu", "tabs", "toolbar"] },
+    {
+      title: "Navigation",
+      items: ["file-tree", "navigation-menu", "tabs", "toolbar"],
+    },
     {
       title: "Overlays",
       items: [
@@ -322,6 +325,7 @@ export const sidebarConfig = {
         "onboarding",
         "rating",
         "skeleton",
+        "storage-bar",
         "theme-switcher",
       ],
     },
