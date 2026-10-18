@@ -7,16 +7,8 @@
       "typeName": "ToolbarItem[]",
       "example": [
         {
-          "label": "New file"
-        },
-        {
-          "label": "Sort"
-        },
-        {
-          "type": "separator"
-        },
-        {
           "type": "toggles",
+          "multiple": true,
           "defaultValue": ["bold"],
           "options": [
             {
@@ -34,6 +26,14 @@
                 "$icon": "TextItalicIcon",
                 "size": "w:4 h:4"
               }
+            },
+            {
+              "value": "underline",
+              "label": "Underline",
+              "icon": {
+                "$icon": "TextUnderlineIcon",
+                "size": "w:4 h:4"
+              }
             }
           ]
         },
@@ -41,19 +41,44 @@
           "type": "separator"
         },
         {
-          "type": "number",
-          "label": "Zoom",
-          "defaultValue": 100,
-          "min": 50,
-          "max": 200
+          "type": "toggles",
+          "defaultValue": ["bullets"],
+          "options": [
+            {
+              "value": "bullets",
+              "label": "Bulleted list",
+              "icon": {
+                "$icon": "ListIcon",
+                "size": "w:4 h:4",
+                "style": "outline"
+              }
+            },
+            {
+              "value": "numbers",
+              "label": "Numbered list",
+              "icon": {
+                "$icon": "ListOrderedIcon",
+                "size": "w:4 h:4",
+                "style": "outline"
+              }
+            }
+          ]
         },
         {
           "type": "separator"
         },
         {
-          "type": "input",
-          "label": "Search files",
-          "placeholder": "Search files…"
+          "type": "toggles",
+          "options": [
+            {
+              "value": "link",
+              "label": "Link",
+              "icon": {
+                "$icon": "LinkIcon",
+                "size": "w:4 h:4"
+              }
+            }
+          ]
         }
       ],
       "description": "A discriminated union. `{ label }` is a button (plus optional `icon`, `iconOnly`, `disabled`, `onClick`). `{ type: \"separator\" }` divides. `{ type: \"toggles\", options }` is an icon toggle group. `{ type: \"input\", label }` and `{ type: \"link\", label, href }` are the remaining kinds."

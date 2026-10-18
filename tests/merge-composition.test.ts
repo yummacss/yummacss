@@ -7,7 +7,6 @@ import { rootDir } from "./helpers";
 const CLASSY = /^[@a-z0-9:%._\-/#]+$/i;
 
 const EXPECTED_DROPS = [
-  "context-menu.tsx: bg:field",
   "file-upload.tsx: bc:red-5",
   "file-upload.tsx: bc:rim",
   "file-upload.tsx: bg:transparent",

@@ -425,6 +425,19 @@ describe("Yumma UI registry", () => {
     );
   });
 
+  it("draws every shortcut as the same keycap", () => {
+    const KEYCAP = "px:1 br:sm bw:1 bc:current fs:xs fw:400 lh:4 ff:s";
+    const uiDir = join(rootDir, "src/registry/ui");
+    const wrong: string[] = [];
+    for (const file of readdirSync(uiDir).filter((f) => f.endsWith(".tsx"))) {
+      const source = readFileSync(join(uiDir, file), "utf-8");
+      for (const tag of source.matchAll(/<kbd\b[\s\S]*?>/g)) {
+        if (!tag[0].includes(KEYCAP)) wrong.push(file);
+      }
+    }
+    expect(wrong).toEqual([]);
+  });
+
   it("puts every focus outline behind the focus gate", () => {
     const wrong: string[] = [];
 

@@ -14,6 +14,7 @@ import {
   KeyboardIcon,
   LaptopIcon,
   ListIcon,
+  LockIcon,
   MagnifierIcon as MagnifierDuotoneIcon,
   MonitorIcon,
   MoonIcon,
@@ -39,6 +40,7 @@ import {
   DownloadIcon,
   Grid2x2Icon,
   LinkIcon,
+  ListOrderedIcon,
   ListIcon as ListOutlineIcon,
   MagnifierIcon,
   MenuDotsIcon,
@@ -84,6 +86,7 @@ export const EXAMPLE_ICONS: Record<IconStyle, Record<string, IconComponent>> = {
     KeyboardIcon,
     LaptopIcon,
     ListIcon,
+    LockIcon,
     MonitorIcon,
     MoonIcon,
     MoveToFolderIcon,
@@ -116,6 +119,7 @@ export const EXAMPLE_ICONS: Record<IconStyle, Record<string, IconComponent>> = {
     TextItalicIcon,
     TextUnderlineIcon,
     ListIcon: ListOutlineIcon,
+    ListOrderedIcon,
   },
 };
 

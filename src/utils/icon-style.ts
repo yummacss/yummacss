@@ -31,6 +31,8 @@ export const EXAMPLE_ICON_STYLE: Record<string, IconStyle> = {
   Grid2x2Icon: "outline",
   KeyboardIcon: "bold",
   ListIcon: "bold",
+  ListOrderedIcon: "outline",
+  LockIcon: "bold",
   MagnifierIcon: "outline",
   MenuDotsIcon: "outline",
   MoonIcon: "bold",
