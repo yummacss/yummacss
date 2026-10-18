@@ -59,7 +59,7 @@
       "type": "enum",
       "values": ["sm", "md", "lg"],
       "default": "md",
-      "description": "Padding and text size."
+      "description": "Height, padding and text size. Every size is a fixed height, so a row of buttons lines up."
     },
     {
       "name": "shape",
@@ -108,7 +108,7 @@
               "props": {
                 "icon": {
                   "$icon": "MoveToFolderIcon",
-                  "size": "w:5 h:5"
+                  "size": "w:4 h:4"
                 }
               },
               "children": "Move 3 files"
@@ -130,12 +130,14 @@
               "component": "Button",
               "props": {
                 "variant": "danger",
+                "hold": true,
+                "holdLabel": "Deleted",
                 "icon": {
                   "$icon": "TrashBinTrashIcon",
-                  "size": "w:5 h:5"
+                  "size": "w:4 h:4"
                 }
               },
-              "children": "Delete"
+              "children": "Hold to delete"
             },
             {
               "component": "Button",
@@ -143,7 +145,7 @@
                 "variant": "secondary",
                 "icon": {
                   "$icon": "MenuDotsIcon",
-                  "size": "w:5 h:5"
+                  "size": "w:4 h:4"
                 },
                 "iconOnly": true
               },
@@ -155,25 +157,6 @@
                 "loading": true
               },
               "children": "Saving"
-            }
-          ]
-        },
-        {
-          "tag": "div",
-          "className": "d:f fw:w jc:c g:2",
-          "children": [
-            {
-              "component": "Button",
-              "props": {
-                "variant": "danger",
-                "hold": true,
-                "holdLabel": "12 files deleted",
-                "icon": {
-                  "$icon": "TrashBinTrashIcon",
-                  "size": "w:5 h:5"
-                }
-              },
-              "children": "Hold to delete 12 files"
             }
           ]
         }

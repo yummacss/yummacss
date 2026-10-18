@@ -49,16 +49,17 @@ const HOLD_FILL: Record<Variant, string> = {
   link: "bg:fill c:on-fill",
 };
 
+// a fixed height per size, so a row of buttons lines up whatever they hold
 const SIZES: Record<Size, string> = {
-  sm: "px:3 py:1 fs:xs",
-  md: "px:4 py:2 fs:sm",
-  lg: "px:6 py:3 fs:md",
+  sm: "h:8 px:3 fs:xs",
+  md: "h:9 px:4 fs:sm",
+  lg: "h:11 px:5 fs:md",
 };
 
 const ICON_ONLY: Record<Size, string> = {
-  sm: "p:1",
-  md: "p:2",
-  lg: "p:3",
+  sm: "w:8 h:8",
+  md: "w:9 h:9",
+  lg: "w:11 h:11",
 };
 
 const SHAPES: Record<Shape, string> = {
@@ -79,7 +80,10 @@ export interface ButtonProps extends ComponentProps<typeof Button> {
    * destructive ones.
    */
   variant?: Variant;
-  /** Padding and text size. */
+  /**
+   * Height, padding and text size. Every size is a fixed height, so a row of
+   * buttons lines up.
+   */
   size?: Size;
   /**
    * Corner radius. `squircle` uses `corner-shape`, which degrades to a rounded
