@@ -178,7 +178,7 @@ export default function TooltipBase({
       )}
       {content}
       {shortcut && (
-        <kbd className="px:1 br:sm bw:1 bc:current fs:xs fw:400 lh:4 ff:s o:70">
+        <kbd className="px:1 br:sm bw:1 bc:current fs:xs fw:400 lh:4 ff:d o:70">
           {shortcut}
         </kbd>
       )}

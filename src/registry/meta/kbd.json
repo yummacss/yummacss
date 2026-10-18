@@ -1,0 +1,67 @@
+{
+  "summary": "A keyboard shortcut as keycaps, the same keycap the menus and tooltips use, for hints in running text.",
+  "props": [
+    {
+      "name": "keys",
+      "type": "none",
+      "typeName": "string[]",
+      "example": ["Ctrl", "K"],
+      "description": "The keys to press together, each drawn as its own keycap."
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "description": "Extra classes on each keycap. `merge` folds them in last, so one here replaces the component's own class for the same utility."
+    }
+  ],
+  "scene": [
+    {
+      "tag": "div",
+      "className": "d:f fd:c ai:c g:3 c:hint fs:sm",
+      "children": [
+        {
+          "tag": "div",
+          "className": "d:f ai:c g:2",
+          "children": [
+            {
+              "text": "Press"
+            },
+            {
+              "component": "Kbd",
+              "props": {
+                "keys": ["Ctrl", "K"]
+              }
+            },
+            {
+              "text": "to search your files"
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "className": "d:f ai:c g:2",
+          "children": [
+            {
+              "text": "Rename with"
+            },
+            {
+              "component": "Kbd",
+              "props": {
+                "keys": ["F2"]
+              }
+            },
+            {
+              "text": "and undo with"
+            },
+            {
+              "component": "Kbd",
+              "props": {
+                "keys": ["Ctrl", "Z"]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

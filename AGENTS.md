@@ -116,7 +116,8 @@ is written.
   by name, so `bc:` would beat `bbc:`.
 - Numbers that change in place (counters, values, sizes) are `fvn:tn`.
 - A shortcut is one keycap everywhere: `px:1 br:sm bw:1 bc:current fs:xs
-  fw:400 lh:4 ff:s`, at `o:70` in a row. `tests/registry.test.ts` holds it.
+  fw:400 lh:4 ff:d`, at `o:70` in a row; Kbd draws it on its own.
+  `tests/registry.test.ts` holds it.
 
 # Prop order
 

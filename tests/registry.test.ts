@@ -406,7 +406,7 @@ describe("Yumma UI registry", () => {
   });
 
   it("draws every shortcut as the same keycap", () => {
-    const KEYCAP = "px:1 br:sm bw:1 bc:current fs:xs fw:400 lh:4 ff:s";
+    const KEYCAP = "px:1 br:sm bw:1 bc:current fs:xs fw:400 lh:4 ff:d";
     const uiDir = join(rootDir, "src/registry/ui");
     const wrong: string[] = [];
     for (const file of readdirSync(uiDir).filter((f) => f.endsWith(".tsx"))) {
