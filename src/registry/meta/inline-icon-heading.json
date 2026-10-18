@@ -1,5 +1,5 @@
 {
-  "summary": "A centered heading whose key words each sit in an indigo chip with the icon that names them: a pen for written, a camera for filmed, a microphone for recorded.",
+  "summary": "A centered heading whose key words each sit in a raised chip with the icon that names them: a pen for written, a camera for filmed, a microphone for recorded.",
   "props": [
     {
       "name": "size",
