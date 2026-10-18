@@ -21,6 +21,12 @@
       "typeName": "ReactNode"
     },
     {
+      "name": "tint",
+      "type": "enum",
+      "values": ["blue", "mint", "indigo", "slate"],
+      "description": "Fills the fallback with a solid color and white initials or icon. It never reaches an image."
+    },
+    {
       "name": "status",
       "type": "enum",
       "values": ["none", "online", "offline", "busy"],
@@ -73,7 +79,8 @@
           "component": "Avatar",
           "props": {
             "name": "Ada Lovelace",
-            "status": "online"
+            "status": "online",
+            "tint": "blue"
           }
         },
         {

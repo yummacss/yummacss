@@ -67,7 +67,7 @@
       "name": "defaultValue",
       "type": "none",
       "typeName": "string[]",
-      "example": ["notifications"],
+      "example": ["trash"],
       "description": "Which items start open, by `value`. Pair `value` with `onValueChange` instead if you are controlling it."
     },
     {
