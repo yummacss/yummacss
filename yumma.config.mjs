@@ -26,6 +26,8 @@ export default defineConfig({
     },
     states: {
       closing: "[data-ending-style]",
+      "from-left": "[data-activation-direction=left]",
+      "from-right": "[data-activation-direction=right]",
       hovering: "[data-hovering]",
       opening: "[data-starting-style]",
       scrolling: "[data-scrolling]",

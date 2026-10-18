@@ -25,6 +25,7 @@ import meta_inline_icon_heading from "./meta/inline-icon-heading.json";
 import meta_menu from "./meta/menu.json";
 import meta_menubar from "./meta/menubar.json";
 import meta_meter from "./meta/meter.json";
+import meta_navigation_menu from "./meta/navigation-menu.json";
 import meta_number_field from "./meta/number-field.json";
 import meta_onboarding from "./meta/onboarding.json";
 import meta_otp_field from "./meta/otp-field.json";
@@ -83,6 +84,7 @@ export const registry = {
   "menu": () => import("./ui/menu"),
   "menubar": () => import("./ui/menubar"),
   "meter": () => import("./ui/meter"),
+  "navigation-menu": () => import("./ui/navigation-menu"),
   "number-field": () => import("./ui/number-field"),
   "onboarding": () => import("./ui/onboarding"),
   "otp-field": () => import("./ui/otp-field"),
@@ -186,6 +188,7 @@ export const registryMeta = {
   "menu": meta_menu,
   "menubar": meta_menubar,
   "meter": meta_meter,
+  "navigation-menu": meta_navigation_menu,
   "number-field": meta_number_field,
   "onboarding": meta_onboarding,
   "otp-field": meta_otp_field,
@@ -256,6 +259,7 @@ export const registryTargets: Record<string, RegistryTarget> = {
   "menu": { component: "menu", variant: "base", kind: "component", install: "menu" },
   "menubar": { component: "menubar", variant: "base", kind: "component", install: "menubar" },
   "meter": { component: "meter", variant: "base", kind: "component", install: "meter" },
+  "navigation-menu": { component: "navigation-menu", variant: "base", kind: "component", install: "navigation-menu" },
   "number-field": { component: "number-field", variant: "base", kind: "component", install: "number-field" },
   "onboarding": { component: "onboarding", variant: "base", kind: "component", install: "onboarding" },
   "otp-field": { component: "otp-field", variant: "base", kind: "component", install: "otp-field" },
@@ -306,6 +310,7 @@ export const registryConfig: Record<string, RegistryConfig> = {
   "inline-icon-heading": { states: {}, easings: { "out-back": "cubic-bezier(0.34, 1.56, 0.64, 1)" }, keyframes: {} },
   "menu": { states: { "opening": "[data-starting-style]", "closing": "[data-ending-style]" }, easings: { "out-quart": "cubic-bezier(0.25, 1, 0.5, 1)" }, keyframes: {} },
   "menubar": { states: { "opening": "[data-starting-style]", "closing": "[data-ending-style]" }, easings: { "out-quart": "cubic-bezier(0.25, 1, 0.5, 1)" }, keyframes: {} },
+  "navigation-menu": { states: { "opening": "[data-starting-style]", "closing": "[data-ending-style]", "from-left": "[data-activation-direction=left]", "from-right": "[data-activation-direction=right]" }, easings: { "in-out-cubic": "cubic-bezier(0.65, 0, 0.35, 1)", "out-quart": "cubic-bezier(0.25, 1, 0.5, 1)" }, keyframes: {} },
   "onboarding": { states: { "opening": "[data-starting-style]", "closing": "[data-ending-style]" }, easings: { "out-quart": "cubic-bezier(0.25, 1, 0.5, 1)" }, keyframes: {} },
   "popover": { states: { "opening": "[data-starting-style]", "closing": "[data-ending-style]" }, easings: { "out-quart": "cubic-bezier(0.25, 1, 0.5, 1)" }, keyframes: {} },
   "preview-card": { states: { "opening": "[data-starting-style]", "closing": "[data-ending-style]" }, easings: { "out-quart": "cubic-bezier(0.25, 1, 0.5, 1)" }, keyframes: {} },
