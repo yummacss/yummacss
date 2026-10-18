@@ -28,7 +28,8 @@
       "name": "icon",
       "type": "none",
       "typeName": "ReactNode",
-      "description": "The glyph in the badge above the title. No badge renders without one."
+      "description": "The glyph in the badge above the title. No badge renders without one.",
+      "exampleIcon": "TrashBinTrashIcon"
     },
     {
       "name": "title",
@@ -64,7 +65,8 @@
       "name": "showClose",
       "type": "boolean",
       "default": true,
-      "description": "The X in the corner. The Cancel button remains either way, so turning this off never traps anyone."
+      "description": "The X in the corner. The Cancel button remains either way, so turning this off never traps anyone.",
+      "example": false
     },
     {
       "name": "tone",

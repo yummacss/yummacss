@@ -111,5 +111,63 @@
       "typeName": "HTMLElement | null",
       "description": "Where the drawer is rendered. Defaults to `document.body`; pass an element to portal somewhere else, such as inside a frame."
     }
+  ],
+  "scene": [
+    {
+      "component": "Drawer",
+      "props": {
+        "trigger": "File details",
+        "triggerIcon": {
+          "$icon": "DocumentIcon",
+          "size": "w:4 h:4"
+        },
+        "title": "budget.xlsx",
+        "description": "Spreadsheet, kept in Documents / Taxes.",
+        "side": "right",
+        "handle": false,
+        "showClose": true,
+        "closeLabel": "Done"
+      },
+      "children": [
+        {
+          "tag": "div",
+          "className": "d:g gtc:2 g:2 fs:sm",
+          "children": [
+            {
+              "text": "Size",
+              "className": "c:hint"
+            },
+            {
+              "text": "84 KB",
+              "className": "c:label fw:500 ta:r"
+            },
+            {
+              "text": "Modified",
+              "className": "c:hint"
+            },
+            {
+              "text": "Today, 10:42",
+              "className": "c:label fw:500 ta:r"
+            },
+            {
+              "text": "Where",
+              "className": "c:hint"
+            },
+            {
+              "text": "Documents / Taxes",
+              "className": "c:label fw:500 ta:r"
+            },
+            {
+              "text": "Versions",
+              "className": "c:hint"
+            },
+            {
+              "text": "12",
+              "className": "c:label fw:500 ta:r"
+            }
+          ]
+        }
+      ]
+    }
   ]
 }

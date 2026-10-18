@@ -26,7 +26,7 @@ const BUTTON_SHAPES: Record<Shape, string> = {
 };
 
 const CLOSE_SHAPES: Record<Shape, string> = {
-  rounded: "br:9999",
+  rounded: "br:md",
   square: "",
   squircle: "br:lg cs:s",
 };
@@ -230,30 +230,30 @@ export default function DialogBase({
                 <Button
                   className={merge(
                     outline,
-                    "d:f p:a r:3 t:3 ai:c jc:c w:7 h:7 p:0 c:hint bw:0 h:bg:well h:c:hint",
+                    "d:f p:a r:4 t:4 ai:c jc:c w:7 h:7 p:0 bw:1 bg:raised btc:rim blc:rim brc:rim bbc:shadow bs-o:xs c:label h:bg:well",
                     CLOSE_SHAPES[shape],
                   )}
                 />
               }
               aria-label="Close"
             >
-              <CloseIcon aria-hidden className="w:5 h:5" />
+              <CloseIcon aria-hidden className="w:4 h:4" />
             </Dialog.Close>
           )}
 
           {header && (
-            <div className="d:f fd:c ai:c jc:c g:3 px:4 pt:5">{header}</div>
+            <div className="d:f fd:c ai:fs g:3 px:5 pt:5">{header}</div>
           )}
 
-          <div
-            className={`d:f fd:c g:3 px:4 pb:6 ${header ? "pt:5" : "pt:10"}`}
-          >
-            <Dialog.Title className="c:label fs:md fw:500 ta:c">
+          <div className={`d:f fd:c g:3 px:5 pb:4 ${header ? "pt:3" : "pt:5"}`}>
+            <Dialog.Title
+              className={`m:0 c:label fs:md fw:600 ${showClose ? "pr:10" : ""}`}
+            >
               {title}
             </Dialog.Title>
 
             {description && (
-              <Dialog.Description className="m:0 c:hint fs:sm lh:4 ta:c">
+              <Dialog.Description className="m:0 c:hint fs:sm lh:4">
                 {description}
               </Dialog.Description>
             )}
@@ -262,7 +262,7 @@ export default function DialogBase({
           </div>
 
           {confirmLabel && (
-            <div className="d:g gtc:2 g:3 px:4 pb:4">
+            <div className="d:f jc:fe g:2 px:5 pb:5">
               <Dialog.Close render={<Button className={cancelClasses} />}>
                 {cancelLabel}
               </Dialog.Close>

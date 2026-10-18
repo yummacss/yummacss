@@ -46,7 +46,7 @@
       "name": "description",
       "type": "none",
       "typeName": "ReactNode",
-      "example": "Choose a new name for budget-2026.xlsx.",
+      "example": null,
       "description": "The body text, wired up by Base UI's own Dialog.Description."
     },
     {
@@ -125,6 +125,28 @@
       "type": "none",
       "typeName": "HTMLElement | null",
       "description": "Where the popup is rendered. Defaults to `document.body`, which is right almost always; pass an element to portal somewhere else, such as inside a frame or a container that owns its own stacking context."
+    }
+  ],
+  "scene": [
+    {
+      "component": "Dialog",
+      "props": {
+        "trigger": "Rename file",
+        "title": "Rename file",
+        "cancelLabel": "Cancel",
+        "confirmLabel": "Rename"
+      },
+      "children": [
+        {
+          "component": "Field",
+          "props": {
+            "aria-label": "File name",
+            "defaultValue": "budget-2026-final",
+            "suffix": ".xlsx"
+          },
+          "className": "w:100%"
+        }
+      ]
     }
   ]
 }

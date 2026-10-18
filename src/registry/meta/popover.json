@@ -17,14 +17,14 @@
     {
       "name": "title",
       "type": "string",
-      "example": "Folder color",
+      "example": "Taxes",
       "description": "The popup's heading, wired up by Base UI's own Popover.Title."
     },
     {
       "name": "description",
       "type": "none",
       "typeName": "ReactNode",
-      "example": "Taxes shows in this color in the sidebar.",
+      "example": null,
       "description": "The body text, wired up by Base UI's own Popover.Description."
     },
     {
@@ -94,7 +94,8 @@
       "type": "enum",
       "values": ["icon", "label"],
       "default": "icon",
-      "description": "`icon` is a fixed square for a glyph alone; `label` gives the trigger room to pair an icon with text."
+      "description": "`icon` is a fixed square for a glyph alone; `label` gives the trigger room to pair an icon with text.",
+      "example": "label"
     },
     {
       "name": "shape",
@@ -121,6 +122,70 @@
       "type": "none",
       "typeName": "HTMLElement | null",
       "description": "Where the popup is rendered. Defaults to `document.body`, which is right almost always; pass an element to portal somewhere else, such as inside a frame or a container that owns its own stacking context."
+    }
+  ],
+  "scene": [
+    {
+      "component": "Popover",
+      "props": {
+        "trigger": {
+          "$icon": "PaletteIcon",
+          "size": "w:4 h:4 c:yellow"
+        },
+        "triggerLabel": "Folder color",
+        "triggerVariant": "label",
+        "title": "Taxes"
+      },
+      "children": [
+        {
+          "tag": "div",
+          "className": "d:f g:2 pt:1",
+          "children": [
+            {
+              "component": "Button",
+              "props": {
+                "aria-label": "Yellow"
+              },
+              "className": "w:6 h:6 p:0 br:9999 bw:1 bc:black/15 bs-o:none bg:yellow h:bg:yellow os:s ow:2 oo:2 oc:label"
+            },
+            {
+              "component": "Button",
+              "props": {
+                "aria-label": "Pink"
+              },
+              "className": "w:6 h:6 p:0 br:9999 bw:1 bc:black/15 bs-o:none bg:pink h:bg:pink"
+            },
+            {
+              "component": "Button",
+              "props": {
+                "aria-label": "Violet"
+              },
+              "className": "w:6 h:6 p:0 br:9999 bw:1 bc:black/15 bs-o:none bg:violet h:bg:violet"
+            },
+            {
+              "component": "Button",
+              "props": {
+                "aria-label": "Blue"
+              },
+              "className": "w:6 h:6 p:0 br:9999 bw:1 bc:black/15 bs-o:none bg:blue h:bg:blue"
+            },
+            {
+              "component": "Button",
+              "props": {
+                "aria-label": "Mint"
+              },
+              "className": "w:6 h:6 p:0 br:9999 bw:1 bc:black/15 bs-o:none bg:mint h:bg:mint"
+            },
+            {
+              "component": "Button",
+              "props": {
+                "aria-label": "Slate"
+              },
+              "className": "w:6 h:6 p:0 br:9999 bw:1 bc:black/15 bs-o:none bg:slate h:bg:slate"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

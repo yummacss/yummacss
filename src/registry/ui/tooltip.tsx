@@ -67,6 +67,8 @@ export interface TooltipProps {
   triggerLabel?: string;
   /** The tooltip's text. */
   content: ReactNode;
+  /** A key or chord after the text, drawn as a keycap. */
+  shortcut?: string;
   /**
    * Which side of the trigger the tooltip opens on. It flips automatically if
    * there is no room.
@@ -120,6 +122,7 @@ export default function TooltipBase({
   trigger,
   triggerLabel,
   content,
+  shortcut,
   side = "top",
   sideOffset = 8,
   tone = "light",
@@ -141,13 +144,13 @@ export default function TooltipBase({
 
   const triggerClasses = merge(
     outline,
-    "d:f ai:c jc:c bg:transparent bw:0 c:p",
+    "d:f ai:c jc:c w:8 h:8 br:md bg:transparent bw:0 c:p h:bg:well",
     TRIGGER_TONES[tone],
     className,
   );
 
   const popupClasses = [
-    "px:3 py:2 fs:sm us:none",
+    "d:f ai:c g:2 px:3 py:2 fs:sm us:none",
     TONES[tone],
     SHAPES[shape],
     "bs-o:md",
@@ -174,6 +177,11 @@ export default function TooltipBase({
         </Tooltip.Arrow>
       )}
       {content}
+      {shortcut && (
+        <kbd className="px:1 br:sm bw:1 bc:current fs:xs fw:400 lh:4 ff:s o:70">
+          {shortcut}
+        </kbd>
+      )}
     </Tooltip.Popup>
   );
 

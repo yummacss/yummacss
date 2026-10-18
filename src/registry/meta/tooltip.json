@@ -22,6 +22,12 @@
       "description": "The tooltip's text."
     },
     {
+      "name": "shortcut",
+      "type": "string",
+      "example": "Del",
+      "description": "A key or chord after the text, drawn as a keycap."
+    },
+    {
       "name": "side",
       "type": "enum",
       "values": ["top", "right", "bottom", "left"],
@@ -57,7 +63,8 @@
       "type": "enum",
       "values": ["light", "dark", "danger"],
       "default": "light",
-      "description": "The tooltip's surface and its trigger together. `light` and `dark` are the two neutral surfaces; `danger` reads red at both ends, for a destructive action."
+      "description": "The tooltip's surface and its trigger together. `light` and `dark` are the two neutral surfaces; `danger` reads red at both ends, for a destructive action.",
+      "example": "dark"
     },
     {
       "name": "shape",
@@ -84,6 +91,53 @@
       "type": "none",
       "typeName": "HTMLElement | null",
       "description": "Where the popup is rendered. Defaults to `document.body`, which is right almost always; pass an element to portal somewhere else, such as inside a frame or a container that owns its own stacking context."
+    }
+  ],
+  "scene": [
+    {
+      "tag": "div",
+      "className": "d:f g:1 p:1 br:lg bw:1 bg:raised btc:rim blc:rim brc:rim bbc:shadow bs-o:xs",
+      "children": [
+        {
+          "component": "Tooltip",
+          "props": {
+            "trigger": {
+              "$icon": "PenIcon",
+              "size": "w:4 h:4"
+            },
+            "triggerLabel": "Rename",
+            "content": "Rename",
+            "shortcut": "F2",
+            "tone": "dark"
+          }
+        },
+        {
+          "component": "Tooltip",
+          "props": {
+            "trigger": {
+              "$icon": "CopyIcon",
+              "size": "w:4 h:4"
+            },
+            "triggerLabel": "Duplicate",
+            "content": "Duplicate",
+            "shortcut": "Ctrl D",
+            "tone": "dark"
+          }
+        },
+        {
+          "component": "Tooltip",
+          "props": {
+            "trigger": {
+              "$icon": "TrashBinTrashIcon",
+              "size": "w:4 h:4"
+            },
+            "triggerLabel": "Move to Trash",
+            "content": "Move to Trash",
+            "shortcut": "Del",
+            "tone": "dark"
+          }
+        }
+      ]
     }
   ]
 }
