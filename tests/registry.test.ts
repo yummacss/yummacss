@@ -1,6 +1,6 @@
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
-import { validateClasses } from "@yummacss/nitro";
+import { type Config, validateClasses } from "@yummacss/nitro";
 import { describe, expect, it } from "vitest";
 import { EXAMPLE_ICON_STYLE } from "../src/utils/icon-style";
 import { SHARED_PROP_ORDER } from "../src/utils/props";
@@ -615,7 +615,9 @@ describe("Yumma UI registry", () => {
       }
     }
     expect(sizes.size).toBeGreaterThan(0);
-    const { invalid } = await validateClasses([...sizes], {});
+    // the roles come from the config the CLI installs
+    const config = (await import("../yumma.config.mjs")).default as Config;
+    const { invalid } = await validateClasses([...sizes], config);
     expect(invalid).toEqual([]);
   });
 });
