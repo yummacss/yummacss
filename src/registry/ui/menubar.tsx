@@ -307,7 +307,7 @@ export default function MenubarBase({
           )}
           {action.shortcut && (
             <kbd
-              className={`ml:4 px:1 br:sm bw:1 bc:current fs:xs fw:400 lh:4 ff:s ${destructive ? "" : "o:70"}`}
+              className={`ml:4 px:1 br:sm bw:1 bc:current fs:xs fw:400 lh:4 ff:d ${destructive ? "" : "o:70"}`}
             >
               {action.shortcut}
             </kbd>
