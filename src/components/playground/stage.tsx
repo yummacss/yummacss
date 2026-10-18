@@ -157,8 +157,8 @@ export default function ComponentPlayground() {
   const active = tab === "config" && !config ? "code" : tab;
 
   return (
-    // below @lg: the stage is fixed under the navbar, so the controls scroll beneath the preview
-    <div className="p:f t:12 l:0 r:0 zi:10 d:f fd:c h:calc(45dvh) px:4 py:3 bg:page bbw:1 bc:border @lg:p:s @lg:f:1 @lg:min-h:0 @lg:h:auto @lg:px:0 @lg:py:0 @lg:bbw:0">
+    // below @lg: the stage leads the page, tall enough for a popup to open in it
+    <div className="or:l d:f fd:c h:calc(60svh) mb:6 bg:page @lg:or:0 @lg:f:1 @lg:min-h:0 @lg:h:auto @lg:mb:0">
       <Tabs value={active} onValueChange={setTab} className={FILL}>
         <div className="d:f bg:page">
           <BaseTabs.List className="d:f min-w:0 ox:auto">
