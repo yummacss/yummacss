@@ -2,6 +2,12 @@
   "summary": "A set of toggles sharing one container, in four shapes and both orientations, pressing one or several at a time.",
   "props": [
     {
+      "name": "label",
+      "type": "string",
+      "example": "View as",
+      "description": "A caption above the group, wired to it as its accessible name."
+    },
+    {
       "name": "orientation",
       "type": "enum",
       "values": ["horizontal", "vertical"],
@@ -54,36 +60,36 @@
       "component": "Toggle",
       "props": {
         "value": "list",
-        "aria-label": "List",
         "icon": {
           "$icon": "ListIcon",
           "size": "w:4 h:4",
           "style": "outline"
-        }
+        },
+        "label": "List"
       }
     },
     {
       "component": "Toggle",
       "props": {
         "value": "grid",
-        "aria-label": "Grid",
         "icon": {
           "$icon": "Grid2x2Icon",
           "size": "w:4 h:4",
           "style": "outline"
-        }
+        },
+        "label": "Grid"
       }
     },
     {
       "component": "Toggle",
       "props": {
         "value": "columns",
-        "aria-label": "Columns",
         "icon": {
           "$icon": "Columns3Icon",
           "size": "w:4 h:4",
           "style": "outline"
-        }
+        },
+        "label": "Columns"
       }
     }
   ]

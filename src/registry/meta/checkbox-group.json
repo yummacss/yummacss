@@ -41,6 +41,12 @@
       "description": "Form field name for the parent checkbox."
     },
     {
+      "name": "countLabel",
+      "type": "string",
+      "example": "folders",
+      "description": "Names what is counted under the parent, as in \"2 of 3 folders\". Needs `parentLabel` and `allValues`."
+    },
+    {
       "name": "disabled",
       "type": "boolean",
       "default": false,
@@ -58,7 +64,12 @@
       "props": {
         "value": "documents",
         "label": "Documents",
-        "description": "1.2 GB"
+        "row": true,
+        "aside": "1.2 GB",
+        "icon": {
+          "$icon": "FolderIcon",
+          "size": "w:4 h:4 c:blue"
+        }
       }
     },
     {
@@ -66,7 +77,12 @@
       "props": {
         "value": "photos",
         "label": "Photos",
-        "description": "8.4 GB"
+        "row": true,
+        "aside": "8.4 GB",
+        "icon": {
+          "$icon": "FolderIcon",
+          "size": "w:4 h:4 c:mint"
+        }
       }
     },
     {
@@ -74,7 +90,12 @@
       "props": {
         "value": "downloads",
         "label": "Downloads",
-        "description": "3.1 GB"
+        "row": true,
+        "aside": "3.1 GB",
+        "icon": {
+          "$icon": "FolderIcon",
+          "size": "w:4 h:4 c:yellow"
+        }
       }
     }
   ]

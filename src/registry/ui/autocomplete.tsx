@@ -141,7 +141,20 @@ function isGroupEntry(
   return "items" in entry;
 }
 
-function renderItem(item: AutocompleteItem, shape: Shape) {
+// the part of the label the query matched, in bold
+function marked(label: string, query: string): ReactNode {
+  const at = query ? label.toLowerCase().indexOf(query.toLowerCase()) : -1;
+  if (at < 0) return label;
+  return (
+    <>
+      {label.slice(0, at)}
+      <span className="fw:700">{label.slice(at, at + query.length)}</span>
+      {label.slice(at + query.length)}
+    </>
+  );
+}
+
+function renderItem(item: AutocompleteItem, shape: Shape, query: string) {
   return (
     <Autocomplete.Item
       key={item.label}
@@ -175,12 +188,12 @@ function renderItem(item: AutocompleteItem, shape: Shape) {
               </Avatar.Root>
             )
           )}
-          <div className="d:f fd:c min-w:0">
-            <span className="o:h fw:500 to:e ws:nw">{item.label}</span>
-            {item.description && (
-              <span className="fs:xs o:80">{item.description}</span>
-            )}
-          </div>
+          <span className="f:1 min-w:0 o:h to:e ws:nw">
+            {marked(item.label, query)}
+          </span>
+          {item.description && (
+            <span className="fs:xs o:80 ws:nw">{item.description}</span>
+          )}
         </div>
       )}
     />
@@ -214,6 +227,7 @@ export default function AutocompleteBase({
   const outline = focus ? merge(FOCUS, focus === true ? "" : focus) : "";
 
   const [open, setOpen] = useState(false);
+  const [query, setQuery] = useState("");
 
   useEffect(() => {
     if (disabled) setOpen(false);
@@ -255,10 +269,10 @@ export default function AutocompleteBase({
                   <Autocomplete.GroupLabel className="px:3 pt:2 pb:1 fs:xs fw:500 c:hint us:none">
                     {entry.group}
                   </Autocomplete.GroupLabel>
-                  {entry.items.map((entry) => renderItem(entry, shape))}
+                  {entry.items.map((entry) => renderItem(entry, shape, query))}
                 </Autocomplete.Group>
               ) : (
-                renderItem(entry, shape)
+                renderItem(entry, shape, query)
               )
             }
           </Autocomplete.List>
@@ -275,7 +289,10 @@ export default function AutocompleteBase({
       items={items as AutocompleteItem[]}
       open={open}
       onOpenChange={setOpen}
-      onValueChange={onQueryChange}
+      onValueChange={(next: string) => {
+        setQuery(next);
+        onQueryChange?.(next);
+      }}
       disabled={disabled}
       autoHighlight={autoHighlight}
       limit={limit > 0 ? limit : undefined}

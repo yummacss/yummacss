@@ -102,6 +102,11 @@ export interface ComboboxProps {
    */
   multiple?: boolean;
   /**
+   * The selection on first render: one item's label, or an array of labels with
+   * `multiple`.
+   */
+  defaultValue?: string | string[];
+  /**
    * Adds a button that empties the selection. It appears with the first
    * selection rather than with the prop, because an X on an empty field has
    * nothing to do. Works alongside `multiple`, where it clears every chip.
@@ -190,6 +195,7 @@ export default function ComboboxBase({
   size = "md",
   shape = "rounded",
   multiple = false,
+  defaultValue,
   clearable = true,
   disabled = false,
   loading = false,
@@ -270,6 +276,7 @@ export default function ComboboxBase({
       open={open}
       onOpenChange={setOpen}
       multiple={multiple}
+      defaultValue={defaultValue}
       disabled={disabled}
     >
       <div
