@@ -106,6 +106,7 @@ is written.
 - A divider is a groove, a dark line over a lit one: the two borders of an
   element with no height, `h:0 btw:1 bbw:1 btc:groove bbc:glint`, or
   `w:0 blw:1 brw:1 blc:groove brc:glint` standing up.
+  Popups stay white, so in light mode the lit line only shows on a well.
 - No inset shadow, except a pressed toggle (Toggle, Toolbar). No `shadow` prop.
 - Pressed in is an on/off that stays on by itself (Toggle, Toolbar). Picking
   one of several is a raised chip on a track (Tabs, Toggle Group).
