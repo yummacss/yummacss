@@ -1,77 +1,21 @@
 {
-  "summary": "Folders and files in a tree that opens folder by folder, with a picked row and the arrow keys.",
+  "summary": "Folders and files from a list of paths, opening folder by folder, with a picked row and the arrow keys.",
   "props": [
     {
-      "name": "items",
+      "name": "paths",
       "type": "none",
-      "typeName": "FileTreeItem[]",
+      "typeName": "string[]",
       "example": [
-        {
-          "id": "documents",
-          "name": "Documents",
-          "children": [
-            {
-              "id": "taxes",
-              "name": "Taxes 2026",
-              "children": [
-                {
-                  "id": "receipts",
-                  "name": "receipts.zip",
-                  "detail": "18 MB"
-                },
-                {
-                  "id": "return",
-                  "name": "tax-return.pdf",
-                  "detail": "412 KB"
-                }
-              ]
-            },
-            {
-              "id": "budget",
-              "name": "budget.xlsx",
-              "detail": "24 KB"
-            },
-            {
-              "id": "readme",
-              "name": "readme.md",
-              "detail": "3 KB"
-            }
-          ]
-        },
-        {
-          "id": "photos",
-          "name": "Photos",
-          "children": [
-            {
-              "id": "scan",
-              "name": "scan-0412.png",
-              "detail": "1.2 MB"
-            },
-            {
-              "id": "beach",
-              "name": "beach.jpg",
-              "detail": "3.4 MB"
-            }
-          ]
-        },
-        {
-          "id": "videos",
-          "name": "Videos",
-          "children": [
-            {
-              "id": "holiday",
-              "name": "holiday.mov",
-              "detail": "860 MB"
-            }
-          ]
-        },
-        {
-          "id": "notes",
-          "name": "notes.txt",
-          "detail": "1 KB"
-        }
+        "Documents/Taxes 2026/receipts.zip",
+        "Documents/Taxes 2026/tax-return.pdf",
+        "Documents/budget.xlsx",
+        "Documents/readme.md",
+        "Photos/beach.jpg",
+        "Photos/scan-0412.png",
+        "Videos/holiday.mov",
+        "notes.txt"
       ],
-      "description": "The tree, top level first. Each item's `id` and `name`, plus `children` for a folder and an optional `detail` and `icon`."
+      "description": "Every file by its path, `Documents/budget.xlsx`. Folders come from the paths; end one with `/` for an empty folder."
     },
     {
       "name": "label",
@@ -83,41 +27,28 @@
       "name": "defaultExpanded",
       "type": "none",
       "typeName": "string[]",
-      "example": ["documents"],
-      "controlled": true,
-      "description": "The folders open on first render, by `id`. Pair `expanded` with `onExpandedChange` instead if you are controlling it."
-    },
-    {
-      "name": "expanded",
-      "type": "none",
-      "typeName": "string[]",
-      "description": "Controlled open folders, by `id`."
-    },
-    {
-      "name": "onExpandedChange",
-      "type": "none",
-      "typeName": "(expanded: string[]) => void",
-      "description": "Called with every open folder's `id` when one opens or closes."
+      "example": ["Documents"],
+      "description": "The folders open on first render, by path."
     },
     {
       "name": "defaultSelected",
       "type": "string",
-      "example": "budget",
+      "example": "Documents/budget.xlsx",
       "controlled": true,
-      "description": "The row picked on first render, by `id`. Pair `selected` with `onSelectedChange` instead if you are controlling it."
+      "description": "The row picked on first render, by path. Pair `selected` with `onSelectedChange` instead if you are controlling it."
     },
     {
       "name": "selected",
       "type": "string",
       "controlled": true,
       "handler": "onSelectedChange",
-      "description": "The controlled picked row, by `id`."
+      "description": "The controlled picked row, by path."
     },
     {
       "name": "onSelectedChange",
       "type": "none",
       "typeName": "(selected: string) => void",
-      "description": "Called with the `id` of the row just picked."
+      "description": "Called with the path of the row just picked."
     },
     {
       "name": "shape",
@@ -149,74 +80,18 @@
     {
       "component": "FileTree",
       "props": {
-        "items": [
-          {
-            "id": "documents",
-            "name": "Documents",
-            "children": [
-              {
-                "id": "taxes",
-                "name": "Taxes 2026",
-                "children": [
-                  {
-                    "id": "receipts",
-                    "name": "receipts.zip",
-                    "detail": "18 MB"
-                  },
-                  {
-                    "id": "return",
-                    "name": "tax-return.pdf",
-                    "detail": "412 KB"
-                  }
-                ]
-              },
-              {
-                "id": "budget",
-                "name": "budget.xlsx",
-                "detail": "24 KB"
-              },
-              {
-                "id": "readme",
-                "name": "readme.md",
-                "detail": "3 KB"
-              }
-            ]
-          },
-          {
-            "id": "photos",
-            "name": "Photos",
-            "children": [
-              {
-                "id": "scan",
-                "name": "scan-0412.png",
-                "detail": "1.2 MB"
-              },
-              {
-                "id": "beach",
-                "name": "beach.jpg",
-                "detail": "3.4 MB"
-              }
-            ]
-          },
-          {
-            "id": "videos",
-            "name": "Videos",
-            "children": [
-              {
-                "id": "holiday",
-                "name": "holiday.mov",
-                "detail": "860 MB"
-              }
-            ]
-          },
-          {
-            "id": "notes",
-            "name": "notes.txt",
-            "detail": "1 KB"
-          }
+        "paths": [
+          "Documents/Taxes 2026/receipts.zip",
+          "Documents/Taxes 2026/tax-return.pdf",
+          "Documents/budget.xlsx",
+          "Documents/readme.md",
+          "Photos/beach.jpg",
+          "Photos/scan-0412.png",
+          "Videos/holiday.mov",
+          "notes.txt"
         ],
-        "defaultExpanded": ["documents"],
-        "defaultSelected": "budget"
+        "defaultExpanded": ["Documents"],
+        "defaultSelected": "Documents/budget.xlsx"
       }
     }
   ]
