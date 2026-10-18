@@ -20,8 +20,8 @@ const SIZES: Record<Shape, string> = {
 };
 
 const TONES: Record<Tone, string> = {
-  default: "bg:silver-2",
-  subtle: "bg:silver-1",
+  default: "bg:line",
+  subtle: "bg:well",
 };
 
 export interface SkeletonProps {

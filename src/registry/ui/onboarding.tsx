@@ -191,13 +191,13 @@ export default function OnboardingBase({
 
   const triggerClasses = merge(
     outline,
-    "bg:white btc:slate-2 blc:slate-2 brc:slate-2 bbc:slate-4 bs-o:xs d:if ai:c g:2 px:3 py:2 c:slate-10 bw:1 fs:sm fw:500 tp:c tdu:150 ttf:io us:none h:bg:silver-1/50",
+    "bg:raised btc:rim blc:rim brc:rim bbc:shadow bs-o:xs d:if ai:c g:2 px:3 py:2 c:label bw:1 fs:sm fw:500 tp:c tdu:150 ttf:io us:none h:bg:well",
     CONTROL_SHAPES[shape],
     className,
   );
 
   const popupClasses = [
-    "o:h p:r w:96 bg:white bc:black/10 c:slate-10 bw:1 os:none bs-o:xl",
+    "o:h p:r w:96 bg:raised bc:line c:label bw:1 os:none bs-o:xl",
     POPUP_SHAPES[shape],
   ]
     .filter(Boolean)
@@ -207,7 +207,7 @@ export default function OnboardingBase({
     outline,
     CONTROL_BASE,
     CONTROL_SHAPES[shape],
-    "bg:white btc:slate-2 blc:slate-2 brc:slate-2 bbc:slate-4 bs-o:xs c:slate-10 h:bg:silver-1",
+    "bg:raised btc:rim blc:rim brc:rim bbc:shadow bs-o:xs c:label h:bg:well",
   );
 
   const forwardClasses = merge(
@@ -215,27 +215,27 @@ export default function OnboardingBase({
     CONTROL_BASE,
     CONTROL_SHAPES[shape],
     allTasksDone
-      ? "bg:slate-12 btc:white/20 blc:black/40 brc:black/40 bbc:black/60 bs-o:sm h:bg:slate-11 c:white"
-      : "bg:silver-1 bc:silver-2 c:slate-4",
+      ? "bg:fill btc:white/20 blc:black/40 brc:black/40 bbc:black/60 bs-o:sm h:o:90 c:on-fill"
+      : "bg:well bc:line c:hint o:60",
   );
 
   const slide = (
     <div className="d:f fd:c ai:c g:3">
       <div className="d:ib p:r">
         <div
-          className={`p:a l:-3 h:12 w:12 bg:white/70 bc:silver-2 bw:1 ro:-3 tty:1 ${TILE_SHAPES[shape]}`}
+          className={`p:a l:-3 h:12 w:12 bg:raised/70 bc:line bw:1 ro:-3 tty:1 ${TILE_SHAPES[shape]}`}
         />
         <div
-          className={`p:a r:-3 h:12 w:12 bg:white/70 bc:silver-2 bw:1 ro:3 tty:1 ${TILE_SHAPES[shape]}`}
+          className={`p:a r:-3 h:12 w:12 bg:raised/70 bc:line bw:1 ro:3 tty:1 ${TILE_SHAPES[shape]}`}
         />
         <div
-          className={`d:f p:r ai:c jc:c h:14 w:14 bg:white btc:slate-2 blc:slate-2 brc:slate-2 bbc:slate-4 bs-o:xs c:slate-11 bw:1 ${TILE_SHAPES[shape]}`}
+          className={`d:f p:r ai:c jc:c h:14 w:14 bg:raised btc:rim blc:rim brc:rim bbc:shadow bs-o:xs c:label bw:1 ${TILE_SHAPES[shape]}`}
         >
           {step.icon}
         </div>
       </div>
-      <span className="c:slate-10 fs:md fw:500">{step.title}</span>
-      <p className="m:0 c:slate-6 fs:sm lh:4">{step.description}</p>
+      <span className="c:label fs:md fw:500">{step.title}</span>
+      <p className="m:0 c:hint fs:sm lh:4">{step.description}</p>
       {tasks && tasks.length > 0 && (
         <div className="d:f fd:c g:2 w:100% pt:2 ta:l">
           {tasks.map((task) => {
@@ -248,19 +248,17 @@ export default function OnboardingBase({
                   outline,
                   "d:f ai:c g:2 px:3 py:2 w:100% bw:0 fs:sm ta:l us:none c:p",
                   CONTROL_SHAPES[shape],
-                  isChecked ? "bg:green-1/30" : "bg:silver-1/50",
+                  "bg:well",
                 )}
               >
                 <div
                   className={`d:f ai:c jc:c w:4 h:4 bw:1 fs:0 ${CHECK_SHAPES[shape]} ${
-                    isChecked
-                      ? "bg:green bc:green-5 c:white bw:0"
-                      : "bc:silver-3"
+                    isChecked ? "bg:check c:white bw:0" : "bc:rim"
                   }`}
                 >
                   {isChecked && <CheckIcon className="w:3 h:3" />}
                 </div>
-                <span className={isChecked ? "c:green-7" : "c:slate-10"}>
+                <span className={isChecked ? "c:green-7" : "c:label"}>
                   {task.label}
                 </span>
               </Button>
@@ -274,7 +272,7 @@ export default function OnboardingBase({
   const popup = (
     <AlertDialog.Portal container={container} keepMounted>
       <AlertDialog.Backdrop
-        className={`p:f i:0 min-h:dvh bg:black/5 bf-b:xs ${animated ? "tp:o tdu:250 ttf:out-quart opening:o:0 closing:o:0 closing:tdu:150 closing:ttf:eo @prm:tp:none" : ""}`}
+        className={`p:f i:0 min-h:dvh bg:shadow/30 bf-b:xs ${animated ? "tp:o tdu:250 ttf:out-quart opening:o:0 closing:o:0 closing:tdu:150 closing:ttf:eo @prm:tp:none" : ""}`}
       />
       <AlertDialog.Viewport className="d:f p:f i:0 ai:c jc:c">
         <AlertDialog.Popup
@@ -287,12 +285,12 @@ export default function OnboardingBase({
             <div className="d:f ai:c jc:sb px:8 pt:5">
               <div className="d:f ai:c g:2">
                 {indicator === "count" && (
-                  <span className="c:slate-5 fs:xs">
+                  <span className="c:hint fs:xs">
                     {page + 1} / {steps.length}
                   </span>
                 )}
                 {indicator === "checklist" && (
-                  <span className="c:slate-5 fs:xs">
+                  <span className="c:hint fs:xs">
                     {tasks?.length
                       ? `${doneCount} / ${tasks.length} done`
                       : `${page + 1} / ${steps.length}`}
@@ -360,11 +358,9 @@ export default function OnboardingBase({
 
           {indicator === "progress" && (
             <div className="d:f jc:c pb:6">
-              <div
-                className={`p:r o:h w:32 h:1 bg:silver-2 ${TRACK_SHAPES[shape]}`}
-              >
+              <div className={`p:r o:h w:32 h:1 bg:rim ${TRACK_SHAPES[shape]}`}>
                 <div
-                  className={`p:a l:0 t:0 h:100% bg:slate-12 tp:w tdu:250 ttf:out-quart ${TRACK_SHAPES[shape]}`}
+                  className={`p:a l:0 t:0 h:100% bg:fill tp:w tdu:250 ttf:out-quart ${TRACK_SHAPES[shape]}`}
                   style={{ width: `${((page + 1) / steps.length) * 100}%` }}
                 />
               </div>
@@ -380,9 +376,7 @@ export default function OnboardingBase({
                   outline,
                   "d:f ai:c jc:c w:8 h:8 bw:0 us:none",
                   CONTROL_SHAPES[shape],
-                  isFirst
-                    ? "c:slate-3"
-                    : "c:slate-6 h:bg:silver-1 h:c:slate-10 c:p",
+                  isFirst ? "c:hint o:40" : "c:hint h:bg:well h:c:label c:p",
                 )}
                 aria-label="Previous"
               >
@@ -402,7 +396,7 @@ export default function OnboardingBase({
                           outline,
                           "d:f ai:c jc:c w:4 h:4 bw:0 us:none c:p",
                           TRACK_SHAPES[shape],
-                          state.active ? "bg:slate-12" : "bg:silver-2",
+                          state.active ? "bg:fill" : "bg:rim",
                         )
                       }
                     />
@@ -425,8 +419,8 @@ export default function OnboardingBase({
                     "d:f ai:c jc:c w:8 h:8 bw:0 us:none",
                     CONTROL_SHAPES[shape],
                     allTasksDone
-                      ? "c:slate-6 h:bg:silver-1 h:c:slate-10 c:p"
-                      : "c:slate-3",
+                      ? "c:hint h:bg:well h:c:label c:p"
+                      : "c:hint o:40",
                   )}
                   aria-label="Next"
                 >
