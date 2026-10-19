@@ -10,9 +10,7 @@ export interface KbdProps {
   className?: string;
 }
 
-/**
- * A keyboard shortcut as raised keycaps, for hints in running text.
- */
+/** A keyboard shortcut as raised keycaps, for hints in running text. */
 export default function Kbd({ keys, className }: KbdProps) {
   return (
     <span className="d:if ai:c g:1 va:m">
