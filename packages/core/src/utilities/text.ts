@@ -131,6 +131,7 @@ export const text: Utilities = {
 		prefix: "td",
 		properties: ["text-decoration"],
 		slug: "text-decoration",
+		functions: false,
 		values: {
 			none: "none",
 			u: "underline",
@@ -156,6 +157,7 @@ export const text: Utilities = {
 		prefix: "to",
 		properties: ["text-overflow"],
 		slug: "text-overflow",
+		functions: false,
 		values: {
 			c: "clip",
 			e: "ellipsis",

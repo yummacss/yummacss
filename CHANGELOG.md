@@ -10,6 +10,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - An agent skill, installed with `npx skills add yummacss/yummacss`.
+- **[core]** `fvn:` for `font-variant-numeric`, including `fvn:tn` for tabular numbers.
+
+### Fixed
+
+- **[core]** `var()` on a shared prefix compiles to the utility with the most values, such as `bc:var()` to `border-color`.
+- **[core]** `var()` on blur and grayscale filter utilities keeps the filter function.
 
 ## [4.7.1] - 2026-10-15
 

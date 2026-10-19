@@ -198,8 +198,26 @@ describe("per-axis values", () => {
 		["ts:var(--a)", "transform: skew(var(--a));"],
 		["tsx:var(--a)", "transform: skewX(var(--a));"],
 		["tsy:var(--a)", "transform: skewY(var(--a));"],
+		["f-b:var(--b)", "filter: blur(var(--b));"],
+		["fgr:var(--g)", "filter: grayscale(var(--g));"],
+		["bf-b:var(--b)", "backdrop-filter: blur(var(--b));"],
+		["bf-g:var(--g)", "backdrop-filter: grayscale(var(--g));"],
 	])("%s writes %s", (className, expected) => {
 		expect(css(className)).toContain(expected);
+	});
+
+	it("wraps var() wherever every value is a function call", () => {
+		for (const util of Object.values(coreUtils())) {
+			const names = Object.values(util.values).map(
+				(v) => /^([a-zA-Z]+)\(.*\)$/.exec(v)?.[1],
+			);
+			const [name] = names;
+			if (!name || names.some((n) => n !== name)) continue;
+
+			expect(css(`${util.prefix}:var(--x)`), util.slug).toContain(
+				`${name}(var(--x))`,
+			);
+		}
 	});
 
 	it("leaves s: on both axes", () => {
@@ -212,6 +230,19 @@ describe("shared prefixes", () => {
 		expect(css("s:var(--s)")).toContain("scale: var(--s);");
 		expect(css("s:var(--s)")).not.toContain("stroke");
 		expect(css("s:red")).toContain("stroke: #");
+	});
+
+	it.each([
+		["bc:var(--c)", "border-color: var(--c);"],
+		["br:var(--r)", "border-radius: var(--r);"],
+		["bs:var(--s)", "border-spacing: var(--s);"],
+		["fs:var(--s)", "font-size: var(--s);"],
+		["fw:var(--w)", "font-weight: var(--w);"],
+		["r:var(--r)", "right: var(--r);"],
+		["td:var(--d)", "transition-delay: var(--d);"],
+		["to:var(--o)", "text-orientation: var(--o);"],
+	])("gives %s to %s", (className, expected) => {
+		expect(css(className)).toContain(expected);
 	});
 });
 
@@ -342,6 +373,22 @@ describe("theme.keyframes", () => {
 		["aic:inf", "animation-iteration-count: infinite;"],
 	])("%s writes %s", (className, expected) => {
 		expect(css(className)).toContain(expected);
+	});
+});
+
+describe("font-variant-numeric", () => {
+	it.each([
+		["fvn:tn", "font-variant-numeric: tabular-nums;"],
+		["fvn:pn", "font-variant-numeric: proportional-nums;"],
+		["fvn:sz", "font-variant-numeric: slashed-zero;"],
+		["fvn:n", "font-variant-numeric: normal;"],
+	])("%s writes %s", (className, expected) => {
+		expect(css(className)).toContain(expected);
+	});
+
+	it("is a utility, not the fv: focus-visible variant", () => {
+		expect(invalid(["fvn:tn", "fv:fvn:tn"])).toEqual([]);
+		expect(css("fv:fvn:tn")).toContain(":focus-visible");
 	});
 });
 
