@@ -57,9 +57,10 @@ describe("motion", () => {
     const siteStates = Object.keys(config.theme?.states ?? {});
     const missed: string[] = [];
     for (const { file, source } of registry) {
-      for (const [, name] of source.matchAll(/(?<![\w:@-])([a-z]+):[a-z@]/g)) {
-        if (siteStates.includes(name) && !states.has(name))
-          missed.push(`${file}: ${name}:`);
+      // a state can lead a class or follow another one: opening:from-left:ttx:-12
+      for (const name of siteStates) {
+        const uses = new RegExp(`(?<![\\w@-])${name}:[a-z@-]`).test(source);
+        if (uses && !states.has(name)) missed.push(`${file}: ${name}:`);
       }
       // l, ei, eo and io are the CSS keywords every project has
       for (const [, name] of source.matchAll(
