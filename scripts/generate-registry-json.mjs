@@ -70,7 +70,14 @@ function themeOf(sources) {
       Object.entries(table).filter(([name]) => names.has(name)),
     );
   return {
-    states: pick(states, used(/(?<![\w:@-])([a-z]+):[a-z@]/g)),
+    // a state can lead a class or follow another one: opening:from-left:ttx:-12
+    states: Object.fromEntries(
+      Object.entries(states).filter(([name]) =>
+        sources.some((source) =>
+          new RegExp(`(?<![\\w@-])${name}:[a-z@-]`).test(source),
+        ),
+      ),
+    ),
     easings: pick(easings, used(/\b(?:ttf|atf):([a-z][a-z0-9-]*)/g)),
     keyframes: pick(keyframes, used(/\ban:([a-z]+)/g)),
     colors: pick(
