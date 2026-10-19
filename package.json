@@ -58,7 +58,7 @@
     "tinycolor2": "^1.6.0",
     "unified": "^11.0.5",
     "unist-util-visit": "^5.1.0",
-    "web-features": "^3.42.0",
+    "web-features": "^3.43.0",
     "yummacss": "^4.7.0"
   },
   "devDependencies": {
