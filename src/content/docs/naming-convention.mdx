@@ -3,9 +3,9 @@ title: Naming Convention
 description: "How Yumma CSS class names map to CSS property names."
 ---
 
-## The Rule
+## How does everything work?
 
-A class is the initials of the CSS property, a colon, then the initials of the value.
+A class is made up of three things: first, the initials of the CSS property, then a colon, and then the initials of the value. Each class is connected to only one property.
 
 ```md
 display: flex;                   /* d:f   */
@@ -13,23 +13,21 @@ justify-content: space-between;  /* jc:sb */
 text-transform: uppercase;       /* tt:u  */
 ```
 
-Every class resolves to exactly one property.
-
 ## Values
 
 Numbers & scales keep their position instead of their initials.
+
+:::info
+`none` & `auto` are never abbreviated, so they never collide with another value's initials.
+:::
 
 ```tsx
 <div className="p:4 fs:lg fw:600 zi:10 …"></div>
 ```
 
-`none` & `auto` are never abbreviated, so they never collide with another value's initials.
-
 ```tsx
 <div className="d:none pe:auto ob:none sb:auto …"></div>
 ```
-
-The rule holds everywhere, including `tt:none` for `text-transform: none` & `tl:auto` for `table-layout: auto`.
 
 ## Shared Prefixes
 
@@ -46,13 +44,3 @@ CSS has more properties than there are short letter pairs, so a few prefixes ser
 
 The two value sets never overlap, so no class is ambiguous.
 
-## Exceptions
-
-`block-size` & `inline-size` use their axis, because `bs` & `is` were already taken.
-
-| Class prefix | Property      |
-| ------------ | ------------- |
-| `ys`         | `block-size`  |
-| `xs`         | `inline-size` |
-
-A shared prefix limits new values: `cs:n` is `corner-shape: notch`, so `color-scheme` has no `normal`.
