@@ -5,13 +5,9 @@ description: Install Yumma CSS using a bundler plugin or the CLI.
 
 <Cover product="css" />
 
-## Why Yumma CSS?
+## Setting up a framework
 
-Classes read as the CSS they write: `d:f` is `display: flex`. One scale, only the classes you use, and a lint that catches typos.
-
-## Set Up a Framework
-
-Add Yumma CSS to your framework of choice with a single plugin.
+Add Yumma CSS to your chosen framework with just one plugin.
 
 ### Using Vite
 
@@ -108,31 +104,9 @@ Use the `@yummacss/postcss` plugin with Next.js. It works with both Turbopack & 
   </Step>
 </Stepper>
 
-<Note>
-  The PostCSS plugin works anywhere PostCSS runs, not only Next.js.
-</Note>
+## Setting up a standalone
 
-### Plugin Options
-
-Both plugins read `yumma.config.mjs` unless you pass a config of your own.
-
-| Option | Type | Default | Description |
-| --- | --- | --- | --- |
-| `config` | `Config` | | Inline configuration, read instead of the file. |
-| `configPath` | `string` | `yumma.config.mjs` | Path to the config file. |
-| `cwd` | `string` | `process.cwd()` | PostCSS only. Where the config & `source` globs resolve from. |
-
-```js title="postcss.config.mjs" "cwd"
-export default {
-  plugins: {
-    "@yummacss/postcss": { cwd: import.meta.dirname },
-  },
-};
-```
-
-## Set Up Standalone
-
-Yumma CSS can be used on its own, without a framework.
+Are you not using frameworks? Yumma CSS can run without one!
 
 ### Using the CLI
 
@@ -178,7 +152,7 @@ Prefer generating a plain CSS file? Install Yumma CSS with your favorite package
   </Step>
 </Stepper>
 
-## Reading the Utilities
+## Reading the utilities
 
 `@yummacss/core` returns every utility definition, one function per category.
 
