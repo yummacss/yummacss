@@ -3,15 +3,15 @@ title: Configuration
 description: Configure Yumma CSS for your project.
 ---
 
-## Install the CLI
+## Installing the CLI
 
-Yumma CSS includes the Yumma CLI, which generates production-ready styles.
+Use the Yumma CSS CLI to generate production-ready styles.
 
 ```bash
 pnpm add yummacss -D
 ```
 
-## Set Up
+## Set up
 
 Initialize a configuration file in your project.
 
@@ -32,11 +32,7 @@ export default defineConfig({
 
 ### Source
 
-The files to scan for classes.
-
-<Note>
-  Use glob patterns to include subfolders & specific file types.
-</Note>
+Use glob patterns to include subfolders & specific file types.
 
 ```mjs title="yumma.config.mjs" mark={4}
 import { defineConfig } from "yummacss";
@@ -83,10 +79,6 @@ Extends or overrides default design tokens.
 
 Add color families. Each gets shades `1` to `12` unless you write them out.
 
-<Note>
-  Use `percentage` to control how much the shade is lightened or darkened.
-</Note>
-
 ```mjs title="yumma.config.mjs" mark={4-12}
 import { defineConfig } from "yummacss";
 
@@ -103,8 +95,6 @@ export default defineConfig({
 });
 ```
 
-A color can be a light & dark pair, and so is every shade of it. See [Dark Mode](/docs/dark-mode).
-
 ```mjs title="yumma.config.mjs" mark={6}
 import { defineConfig } from "yummacss";
 
@@ -116,11 +106,6 @@ export default defineConfig({
   },
 });
 ```
-
-<Note>
-  One paired color sets `color-scheme: light dark` on `:root`, so the page
-  follows the system. [Color Scheme](/docs/color-scheme) overrides it.
-</Note>
 
 #### Screens
 
@@ -212,8 +197,8 @@ export default defineConfig({
 Classes to generate even when no file contains them, such as one built at runtime.
 
 <Note>
-  The scanner cannot see a class built at runtime, such as
-  `` `d:${display}` ``, so list it here.
+  The scanner cannot see a class built at runtime, such as `` `d:${display}` ``,
+  so list it here.
 </Note>
 
 ```mjs title="yumma.config.mjs" mark={4}
@@ -224,19 +209,14 @@ export default defineConfig({
 });
 ```
 
-## Generate Styles
+## Generating styles
 
-The CLI scans files specified in `source` & generates a CSS file based on the utilities used.
+The CLI checks the source files you've given it and makes a CSS file using the utilities it finds.
 
-### HTML Input
-
+<CodeGroup>
 ```tsx title="index.tsx"
 <button className="bg:white c:black bw:1">Button</button>
 ```
-
-### CSS Output
-
-Running the `build` or `watch` command generates the following CSS:
 
 ```css title="styles.css"
 .bg\:white {
@@ -252,14 +232,11 @@ Running the `build` or `watch` command generates the following CSS:
 }
 ```
 
-## CLI Commands
+</CodeGroup>
 
-The Yumma CSS CLI provides commands to manage your project.
+## CLI commands
 
-<Note>
-  Create a `yumma.config.mjs` file before running these commands. If there is
-  none, run `yummacss init`.
-</Note>
+But first, you'll need to create a `yumma.config.mjs` file. If there is none, run `yumcass init`.
 
 ### Build
 
@@ -279,23 +256,19 @@ pnpm dlx yummacss watch
 
 ## Lint
 
-:::note[Optional]
-Yumma CSS generates the same CSS with or without it. Reach for it when you want the check, not to get started.
-:::
-
-Whether each class exists, and which one you meant when it does not. Your config's colors, states & `safelist` pass.
+This is completely optional. Use lint only to double-check the CSS generation with Yumma CSS.
 
 ### Oxlint
 
 <Stepper>
-  <Step title="Install the Plugin">
+  <Step title="Install the plugin">
     ```bash
     pnpm add -D oxlint @yummacss/lint
     ```
 
   </Step>
 
-  <Step title="Turn On the Rules">
+  <Step title="Activate the rules">
     Register the plugin & pick a level for each rule.
 
     ```json title=".oxlintrc.json"
@@ -310,27 +283,23 @@ Whether each class exists, and which one you meant when it does not. Your config
 
   </Step>
 
-  <Step title="Run It">
+  <Step title="Run it">
+
+    The plugin is written in the ESLint plugin format, which is the format Oxlint loads, so ESLint runs it too.
+    
     ```bash
     pnpm oxlint
-    ```
-
-    ```text
-    src/app.tsx:4:25: error yummacss(no-unknown-classes): `bg:redd-5` is not a Yumma CSS class, so it generates no CSS. Did you mean `bg:red-5`?
-    src/app.tsx:4:68: warning yummacss(no-inline-styles): `display: flex` is set inline. Use `d:f` instead.
     ```
 
   </Step>
 </Stepper>
 
-The plugin is written in the ESLint plugin format, which is the format Oxlint loads, so ESLint runs it too.
+### Available rules
 
-### Rules
-
-| Rule | Reports |
-| --- | --- |
-| `no-unknown-classes` | A class Yumma CSS does not generate, such as `bg:redd-5`, with the closest class that exists. |
-| `no-inline-styles` | A property in a `style` object, with the class that writes the same declaration, such as `d:f` for `display: "flex"`. |
+| Rule                 | Reports                                                                                                               |
+| -------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| `no-unknown-classes` | A class Yumma CSS does not generate, such as `bg:redd-5`, with the closest class that exists.                         |
+| `no-inline-styles`   | A property in a `style` object, with the class that writes the same declaration, such as `d:f` for `display: "flex"`. |
 
 Both rules read `className`, `class` & the arguments of `cn`, `clsx` & `merge`, including ternaries & template literals.
 
@@ -341,7 +310,7 @@ Both rules read `className`, `class` & the arguments of `cn`, `clsx` & `merge`, 
 ```
 
 :::warning[Runtime classes are invisible]
-A class assembled at runtime cannot be checked. In `` className={`p:4 ${size}`} `` the `p:4` is checked & `${size}` is skipped.
+A class assembled at runtime cannot be checked. In ``className={`p:4 ${size}`}`` the `p:4` is checked & `${size}` is skipped.
 :::
 
 ### Options
@@ -351,18 +320,21 @@ Every rule takes `allow` & `message`.
 ```json title=".oxlintrc.json"
 {
   "rules": {
-    "yummacss/no-unknown-classes": ["error", {
-      "allow": ["brand-logo", "editor-*"],
-      "message": "{{className}} is not on the scale. Did you mean {{suggestions}}?"
-    }]
+    "yummacss/no-unknown-classes": [
+      "error",
+      {
+        "allow": ["brand-logo", "editor-*"],
+        "message": "{{className}} is not on the scale. Did you mean {{suggestions}}?"
+      }
+    ]
   }
 }
 ```
 
-| Option | Type | Description |
-| --- | --- | --- |
-| `allow` | `string[]` | Class names to accept, or CSS property names for `no-inline-styles`. A trailing `*` matches a prefix. |
-| `message` | `string` | Replaces the rule's message. `{{className}}`, `{{property}}` & `{{suggestions}}` are filled in. |
+| Option    | Type       | Description                                                                                           |
+| --------- | ---------- | ----------------------------------------------------------------------------------------------------- |
+| `allow`   | `string[]` | Class names to accept, or CSS property names for `no-inline-styles`. A trailing `*` matches a prefix. |
+| `message` | `string`   | Replaces the rule's message. `{{className}}`, `{{property}}` & `{{suggestions}}` are filled in.       |
 
 Skip a single line with a comment:
 
@@ -371,9 +343,9 @@ Skip a single line with a comment:
 <div className="brand-logo" />
 ```
 
-### One-Off Check
+### One-Off check
 
-`yummacss lint` scans the `source` files from your config & lists every class it does not recognize, with no linter to set up.
+`yummacss lint` scans your source files from your configuration and lists every class that it does not recognize.
 
 ```bash
 pnpm dlx yummacss lint
@@ -389,11 +361,8 @@ Found 2 classes Yumma CSS does not recognize:
 Fix the classes above, or pass --allow "class-a,class-b" for custom classes.
 ```
 
-It exits with `1` when it finds a class it does not recognize, so it works as a CI step on its own.
+| Flag       | Alias | Description                                                                                             |
+| ---------- | ----- | ------------------------------------------------------------------------------------------------------- |
+| `--allow`  | `-a`  | Comma-separated class names to skip. Repeat it to add more.                                             |
+| `--config` | `-c`  | Path to the config file, absolute or relative to the working directory. Defaults to `yumma.config.mjs`. |
 
-| Flag | Alias | Description |
-| --- | --- | --- |
-| `--allow` | `-a` | Comma-separated class names to skip. Repeat it to add more. |
-| `--config` | `-c` | Path to the config file, absolute or relative to the working directory. Defaults to `yumma.config.mjs`. |
-
-It reads class attributes & the first string passed to `cn`, `clsx` & `cva`. The Oxlint rules read more.

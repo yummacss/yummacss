@@ -3,18 +3,7 @@ title: Class Merge
 description: "Resolve two utilities that set the same property so the last one wins."
 ---
 
-## The Problem
-
-When two utilities set the same property, the one later **in the stylesheet** wins, whatever their order in `class`.
-
-```tsx "c:white" "c:accent"
-<span className="c:white c:accent">Accent</span>
-<span className="c:accent c:white">Accent</span>
-```
-
-Both render white, because `c:white` is generated after `c:accent`. So passing `c:accent` to a component that already sets `c:white` does nothing.
-
-## Using Merge
+## Using merge
 
 `merge` takes class strings & returns one with the losers removed, so the last class wins.
 
@@ -23,8 +12,6 @@ import { merge } from "yummacss/merge";
 
 merge("c:white", "c:accent"); // "c:accent"
 ```
-
-It ships with the `yummacss` package, so there is nothing extra to install.
 
 ```tsx
 <span className={merge("c:white", className)}>Accent</span>
@@ -36,7 +23,7 @@ Falsy arguments are skipped, so conditionals read cleanly.
 <div className={merge("d:f ai:c", isOpen && "bg:silver-1", className)}></div>
 ```
 
-## What Gets Dropped
+## What gets dropped
 
 A class is dropped only when a later class sets **everything** it sets.
 
@@ -51,7 +38,7 @@ merge("p:4 px:8"); // "p:4 px:8"
 merge("w:10 h:10", "w:12"); // "h:10 w:12"
 ```
 
-## Shared Prefixes
+## Shared prefixes
 
 `merge` reads the value, so a shared prefix never collides: `c:p` is a cursor, `c:slate-10` a color.
 
@@ -75,7 +62,7 @@ Media queries work the same way.
 merge("@lg:p:4 p:2", "@lg:p:8"); // "p:2 @lg:p:8"
 ```
 
-## Unknown Classes
+## Unknown classes
 
 Anything `merge` does not recognize passes through in place.
 
@@ -87,10 +74,3 @@ merge("card", "bg:white", "card-active"); // "card bg:white card-active"
   A utility newer than your `merge` is kept too, so the worst case is the
   behavior you had before.
 </Note>
-
-## Alternatives
-
-- **`@layer`** ranks a class everywhere it is used, so demoting `c:white` would demote it on every element, not only the one you override.
-- **`!important`** wins everywhere the class appears, and does nothing when both classes carry it.
-
-`merge` removes the losing class instead, so only what you meant reaches the DOM.

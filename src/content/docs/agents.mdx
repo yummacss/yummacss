@@ -1,68 +1,44 @@
 ---
 title: Coding Agents
-description: "A rules file that teaches a coding agent to write Yumma CSS & check its classes."
+description: "A set of rules that can be used to teach a coding agent to write Yumma CSS & check its classes."
 since: "4.3"
 ---
 
 ## Install the Skill
 
-An agent that loads skills, such as Claude Code, gets Yumma CSS & Yumma UI in one:
+An agent that loads skills, such as [Claude Code](https://claude.ai/), provides both Yumma CSS and Yumma UI.
 
 ```bash
 npx skills add yummacss/yummacss
 ```
 
-It reads these rules from this site each time, so it never goes stale.
-
-## Add It to a Project
+## Adding it to a project
 
 Save [agents.md](/agents.md) as the instructions file your agent reads. Most read `AGENTS.md` at the project root.
 
-```bash
+`>>` & `Add-Content` append, so instructions already in the file stay.
+
+<CodeGroup>
+```bash title="Curl"
 curl -s https://www.yummacss.com/agents.md >> AGENTS.md
 ```
 
-In PowerShell:
-
-```powershell
+```powershell title="Powershell"
 irm https://www.yummacss.com/agents.md | Add-Content AGENTS.md
 ```
+</CodeGroup>
 
-`>>` & `Add-Content` append, so instructions already in the file stay.
-
-Claude Code reads `CLAUDE.md`. A `CLAUDE.md` holding this one line brings the rules in:
-
-```md title="CLAUDE.md"
-@AGENTS.md
-```
-
-Other agents that read a file of their own name take the same pointer, or the rules saved there instead.
-
-## What It Covers
-
-| Section | Contents |
-| --- | --- |
-| Migrating From 3.x | How to tell a 3.x project, and the codemod to run before anything else. |
-| Syntax | Property & value initials joined by a colon, variants, opacity, negatives & CSS functions. |
-| Values | The spacing scale, every color family & its shades, breakpoints, states & pseudo-elements. |
-| Examples | Four Yumma UI components to read before building something similar: Button, Field, Tabs & Dialog. |
-| Check | Run `yummacss lint` after editing & use its suggestion, plus the Oxlint rules where a project lints. |
-
-The lists come from the same tables the generator reads, so the file always matches the current release.
-
-## Plain Text
+## Plain text
 
 | File | Contents |
 | --- | --- |
 | [agents.md](/agents.md) | The rules file this page installs. |
 | [llms.txt](/llms.txt) | The syntax & an index of every page, each linked as Markdown. |
 
-## Check the Result
+## Check the result
 
-The file asks the agent to run the check itself, but it is worth running in CI as well:
+Although the file instructs the agent to run the check itself, it is also worth running it in CI.
 
 ```bash
 pnpm dlx yummacss lint
 ```
-
-It exits with `1` when a class does not exist. [Lint](/docs/configuration#lint) covers the command & the Oxlint rules.
