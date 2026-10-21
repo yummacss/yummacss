@@ -57,7 +57,9 @@ export default function Navbar({ className, menu }: NavbarProps) {
                 className="d:none ai:c jc:c g:2 h:8 px:4 bc:border bg:surface a:bg:press c:ink bw:1 fs:sm bf-b:sm @lg:d:f fv:oc:ink fv:ow:2"
               >
                 <Search className="w:4 h:4" />
-                <kbd className="c:ink/70 fs:xs us:none">Ctrl + K</kbd>
+                <kbd className="px:1 bc:border bw:1 c:ink/70 fs:xs us:none">
+                  Ctrl + K
+                </kbd>
               </Button>
 
               {menu && (

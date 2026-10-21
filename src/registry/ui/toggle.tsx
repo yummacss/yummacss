@@ -9,10 +9,10 @@ import { merge } from "yummacss/merge";
 type Shape = "rounded" | "square" | "squircle";
 type Size = "sm" | "md";
 
-const FOCUS = "fv:os:s fv:ow:3 fv:oo:0 fv:oc:slate-4/60 fv:bc:slate-6";
+const FOCUS = "fv:os:s fv:ow:3 fv:oo:0 fv:oc:focus/40 fv:bc:focus";
 
 const SHAPES: Record<Shape, string> = {
-  rounded: "br:9999",
+  rounded: "br:lg",
   square: "",
   squircle: "br:xxl cs:s",
 };
@@ -29,18 +29,23 @@ const SIZES: Record<Size, string> = {
   md: "w:12 h:12",
 };
 
-const DISABLED = "bw:1 bc:silver-2 bg:silver-1 c:slate-4";
+// a labelled toggle fits its text, so only the height is fixed
+const LABELLED: Record<Size, string> = {
+  sm: "h:8 px:2 g:1 fs:xs fw:500",
+  md: "h:9 px:3 g:2 fs:sm fw:500",
+};
+
+const DISABLED = "bw:1 bc:line bg:well c:hint o:60";
 
 // pressed sinks in: the one place an inset shadow belongs
-const PRESSED =
-  "bg:silver-1 bs-i:md btc:slate-4 blc:slate-3 brc:slate-3 bbc:slate-2 c:slate-11";
+const PRESSED = "bg:well bs-i:md btc:shadow blc:line brc:line bbc:rim c:check";
 const UNPRESSED =
-  "bg:white btc:slate-2 blc:slate-2 brc:slate-2 bbc:slate-4 bs-o:xs c:slate-10 h:bg:silver-1";
+  "bg:raised btc:rim blc:rim brc:rim bbc:shadow bs-o:xs c:label h:bg:well";
 
 // in a group, picking one of several: the selected tab's raised chip on the track
 const GROUP_PRESSED =
-  "bg:white btc:silver-2 blc:silver-2 brc:silver-2 bbc:silver-4 bs-o:xs c:slate-10";
-const GROUP_UNPRESSED = "bg:transparent bc:transparent c:slate-8 h:c:slate-10";
+  "bg:raised btc:rim blc:rim brc:rim bbc:shadow bs-o:xs c:label";
+const GROUP_UNPRESSED = "bg:transparent bc:transparent c:hint h:c:label";
 
 export interface ToggleProps
   extends Omit<ComponentProps<"button">, "className" | "value">,
@@ -50,6 +55,11 @@ export interface ToggleProps
 
   /** Shown while pressed. */
   pressedIcon?: ReactNode;
+  /**
+   * Text after the icon. With it the toggle grows to fit its label instead of
+   * staying a square, and the label is its accessible name.
+   */
+  label?: string;
   /**
    * Starting state when you are not controlling it. Pair `pressed` with
    * `onPressedChange` instead if you are.
@@ -110,6 +120,7 @@ function Pop({ on, children }: { on: boolean; children: ReactNode }) {
  */
 export default function ToggleBase({
   icon,
+  label,
   pressedIcon,
   defaultPressed,
   pressed: controlledPressed,
@@ -150,7 +161,7 @@ export default function ToggleBase({
           outline,
           "d:f ai:c jc:c us:none",
           disabled ? "c:na" : "c:p",
-          SIZES[size],
+          label ? LABELLED[size] : SIZES[size],
           grouped ? GROUP_SHAPES[shape] : SHAPES[shape],
           disabled
             ? DISABLED
@@ -178,6 +189,7 @@ export default function ToggleBase({
           ) : (
             (state.pressed && pressedIcon) || icon
           )}
+          {label}
         </Button>
       )}
       {...props}

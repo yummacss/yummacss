@@ -8,7 +8,7 @@ type Side = "top" | "right" | "bottom" | "left";
 type Tone = "light" | "dark" | "danger";
 type Shape = "rounded" | "square" | "squircle";
 
-const FOCUS = "fv:os:s fv:ow:3 fv:oo:0 fv:oc:slate-4/60 fv:bc:slate-6";
+const FOCUS = "fv:os:s fv:ow:3 fv:oo:0 fv:oc:focus/40 fv:bc:focus";
 
 const SHAPES: Record<Shape, string> = {
   rounded: "br:lg",
@@ -17,22 +17,22 @@ const SHAPES: Record<Shape, string> = {
 };
 
 const TONES: Record<Tone, string> = {
-  light: "bg:white bc:black/10 c:slate-10 bw:1",
-  dark: "bg:slate-12 c:white",
+  light: "bg:raised bc:line c:label bw:1",
+  dark: "bg:fill c:on-fill",
   danger: "bg:red-7 c:white",
 };
 
 const DANGER_OUTLINE = "fv:oc:red-2/60 fv:bc:red-3";
 
 const TRIGGER_TONES: Record<Tone, string> = {
-  light: "c:slate-8 h:c:slate-10",
-  dark: "c:slate-8 h:c:slate-10",
+  light: "c:hint h:c:label",
+  dark: "c:hint h:c:label",
   danger: "c:red-7 h:c:red-8",
 };
 
 const ARROW_TONES: Record<Tone, string> = {
-  light: "f:white s:silver-2",
-  dark: "f:slate-12 s:slate-12",
+  light: "f:raised s:line",
+  dark: "f:fill s:fill",
   danger: "f:red-7 s:red-7",
 };
 
@@ -67,6 +67,8 @@ export interface TooltipProps {
   triggerLabel?: string;
   /** The tooltip's text. */
   content: ReactNode;
+  /** A key or chord after the text, drawn as a keycap. */
+  shortcut?: string;
   /**
    * Which side of the trigger the tooltip opens on. It flips automatically if
    * there is no room.
@@ -120,6 +122,7 @@ export default function TooltipBase({
   trigger,
   triggerLabel,
   content,
+  shortcut,
   side = "top",
   sideOffset = 8,
   tone = "light",
@@ -141,13 +144,13 @@ export default function TooltipBase({
 
   const triggerClasses = merge(
     outline,
-    "d:f ai:c jc:c bg:transparent bw:0 c:p",
+    "d:f ai:c jc:c w:8 h:8 br:md bg:transparent bw:0 c:p h:bg:well",
     TRIGGER_TONES[tone],
     className,
   );
 
   const popupClasses = [
-    "px:3 py:2 fs:sm us:none",
+    "d:f ai:c g:2 px:3 py:2 fs:sm us:none",
     TONES[tone],
     SHAPES[shape],
     "bs-o:md",
@@ -174,6 +177,11 @@ export default function TooltipBase({
         </Tooltip.Arrow>
       )}
       {content}
+      {shortcut && (
+        <kbd className="px:1 br:sm bw:1 bc:current fs:xs fw:400 lh:4 ff:d o:70">
+          {shortcut}
+        </kbd>
+      )}
     </Tooltip.Popup>
   );
 

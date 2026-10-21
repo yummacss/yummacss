@@ -30,52 +30,6 @@
       "description": "Merged with the stack's own classes, so a utility you pass wins."
     }
   ],
-  "childrenExample": [
-    {
-      "component": "Avatar",
-      "props": {
-        "size": "sm",
-        "name": "This laptop",
-        "fallback": {
-          "$icon": "LaptopIcon",
-          "size": "w:4 h:4"
-        }
-      }
-    },
-    {
-      "component": "Avatar",
-      "props": {
-        "size": "sm",
-        "name": "Phone",
-        "fallback": {
-          "$icon": "SmartphoneIcon",
-          "size": "w:4 h:4"
-        }
-      }
-    },
-    {
-      "component": "Avatar",
-      "props": {
-        "size": "sm",
-        "name": "Tablet",
-        "fallback": {
-          "$icon": "TabletIcon",
-          "size": "w:4 h:4"
-        }
-      }
-    },
-    {
-      "component": "Avatar",
-      "props": {
-        "size": "sm",
-        "name": "Desktop",
-        "fallback": {
-          "$icon": "MonitorIcon",
-          "size": "w:4 h:4"
-        }
-      }
-    }
-  ],
   "scene": [
     {
       "tag": "div",
@@ -86,18 +40,18 @@
           "children": [
             {
               "component": "Avatar",
-              "className": "bg:slate-11 bc:white bw:2",
+              "className": "bg:fill bc:raised bw:2",
               "props": {
                 "name": "This laptop",
                 "fallback": {
                   "$icon": "LaptopIcon",
-                  "size": "w:6 h:6 c:white"
+                  "size": "w:6 h:6 c:on-fill"
                 }
               }
             },
             {
               "component": "Avatar",
-              "className": "bg:blue-8 bc:white bw:2",
+              "className": "bg:blue-8 bc:raised bw:2",
               "props": {
                 "name": "Phone",
                 "fallback": {
@@ -108,7 +62,7 @@
             },
             {
               "component": "Avatar",
-              "className": "bg:mint-8 bc:white bw:2",
+              "className": "bg:mint-8 bc:raised bw:2",
               "props": {
                 "name": "Tablet",
                 "fallback": {
@@ -119,7 +73,7 @@
             },
             {
               "component": "Avatar",
-              "className": "bc:white bw:2",
+              "className": "bc:raised bw:2",
               "props": {
                 "fallback": "+1"
               }
@@ -128,7 +82,7 @@
         },
         {
           "text": "Synced on 4 devices",
-          "className": "fs:sm c:slate-9"
+          "className": "fs:sm c:hint"
         }
       ]
     }

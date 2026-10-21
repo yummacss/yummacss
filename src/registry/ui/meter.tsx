@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 import { merge } from "yummacss/merge";
 
 const INTENTS = {
-  neutral: "bg:slate",
+  neutral: "bg:fill",
   info: "bg:blue",
   success: "bg:green",
   warning: "bg:yellow",
@@ -14,7 +14,7 @@ type Intent = keyof typeof INTENTS;
 
 // one step lighter per segment, so the first reads as the biggest share
 const SEGMENTS = {
-  neutral: ["bg:slate", "bg:slate-5", "bg:slate-3"],
+  neutral: ["bg:fill", "bg:hint", "bg:line"],
   info: ["bg:blue", "bg:blue-5", "bg:blue-3"],
   success: ["bg:green", "bg:green-5", "bg:green-3"],
   warning: ["bg:yellow", "bg:yellow-5", "bg:yellow-3"],
@@ -104,7 +104,7 @@ export default function MeterBase({
   const reading = unit
     ? (_: string, current: number) => (
         <>
-          <span className="c:slate-10 fw:600">{amount(current)}</span> of{" "}
+          <span className="c:label fw:600">{amount(current)}</span> of{" "}
           {amount(high)} {unit}
         </>
       )
@@ -140,26 +140,22 @@ export default function MeterBase({
     >
       {hasHeader ? (
         <div className="d:f ai:c g:3">
-          <span className="d:f ai:c jc:c fs:0 w:8 h:8 bg:silver-1 c:slate-12">
+          <span className="d:f ai:c jc:c fs:0 w:8 h:8 bg:well c:label">
             {icon}
           </span>
           <div className="d:f fd:c">
-            <Meter.Label className="c:slate-10 fs:sm fw:500">
-              {label}
-            </Meter.Label>
-            {description && (
-              <span className="c:slate-5 fs:xs">{description}</span>
-            )}
+            <Meter.Label className="c:label fs:sm fw:600">{label}</Meter.Label>
+            {description && <span className="c:hint fs:xs">{description}</span>}
           </div>
         </div>
       ) : (
         <div className="d:f jc:sb ai:c">
-          <Meter.Label className="c:slate-10 fs:sm fw:500">{label}</Meter.Label>
-          <Meter.Value className="c:slate-8 fs:sm">{reading}</Meter.Value>
+          <Meter.Label className="c:label fs:sm fw:600">{label}</Meter.Label>
+          <Meter.Value className="c:hint fs:sm">{reading}</Meter.Value>
         </div>
       )}
 
-      <Meter.Track className="d:f o:h h:2 bg:slate-2">
+      <Meter.Track className="d:f g:px o:h h:2 br:9999 bg:rim">
         {segments ? (
           segments.map((segment, index) => (
             <span
@@ -176,7 +172,7 @@ export default function MeterBase({
       </Meter.Track>
 
       {segments && (
-        <div className="d:f fw:w g:4 c:slate-7 fs:xs">
+        <div className="d:f fw:w g:4 c:hint fs:xs">
           {segments.map((segment, index) => (
             <span key={segment.label} className="d:f ai:c g:1">
               <span aria-hidden className={`w:2 h:2 br:9999 ${shade(index)}`} />
@@ -185,7 +181,7 @@ export default function MeterBase({
           ))}
           {rest && (
             <span className="d:f ai:c g:1">
-              <span aria-hidden className="w:2 h:2 br:9999 bg:slate-2" />
+              <span aria-hidden className="w:2 h:2 br:9999 bg:rim" />
               {rest}
             </span>
           )}
@@ -193,9 +189,7 @@ export default function MeterBase({
       )}
 
       {hasHeader && (
-        <Meter.Value className="d:f jc:fe c:slate-5 fs:xs">
-          {reading}
-        </Meter.Value>
+        <Meter.Value className="d:f jc:fe c:hint fs:xs">{reading}</Meter.Value>
       )}
     </Meter.Root>
   );

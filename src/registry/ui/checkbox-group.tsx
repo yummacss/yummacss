@@ -1,7 +1,7 @@
 "use client";
 
 import { CheckboxGroup } from "@base-ui/react/checkbox-group";
-import { type ReactNode, useId } from "react";
+import { type ReactNode, useId, useState } from "react";
 import { merge } from "yummacss/merge";
 import Checkbox from "./checkbox";
 
@@ -33,6 +33,11 @@ export interface CheckboxGroupProps {
   disabled?: boolean;
   /** Form field name for the parent checkbox. */
   name?: string;
+  /**
+   * Names what is counted under the parent, as in "2 of 3 folders". Needs
+   * `parentLabel` and `allValues`.
+   */
+  countLabel?: string;
 }
 
 /**
@@ -50,8 +55,21 @@ export default function CheckboxGroupBase({
   onValueChange,
   disabled,
   name,
+  countLabel,
 }: CheckboxGroupProps) {
   const labelId = useId();
+  const [internal, setInternal] = useState(defaultValue ?? []);
+  const current = value ?? internal;
+
+  const change = (next: string[]) => {
+    setInternal(next);
+    onValueChange?.(next);
+  };
+
+  const count =
+    countLabel && allValues
+      ? `${current.length} of ${allValues.length} ${countLabel}`
+      : undefined;
 
   return (
     <CheckboxGroup
@@ -59,27 +77,21 @@ export default function CheckboxGroupBase({
       aria-label={
         !label && typeof parentLabel === "string" ? parentLabel : undefined
       }
-      value={value}
-      defaultValue={defaultValue}
-      onValueChange={onValueChange}
+      value={current}
+      onValueChange={change}
       allValues={allValues}
       disabled={disabled}
-      className={merge("d:f fd:c g:2 c:slate-10", className)}
+      className={merge("d:f fd:c g:2 w:100 max-w:100% c:label", className)}
     >
       {label && (
-        <div className="c:slate-10 fs:sm fw:500 us:none" id={labelId}>
+        <div className="c:label fs:sm fw:600 us:none" id={labelId}>
           {label}
         </div>
       )}
-      {parentLabel && <Checkbox name={name} parent label={parentLabel} />}
-      <div
-        className={merge(
-          "d:f fd:c g:2 p:3 br:lg bg:silver-1",
-          parentLabel ? "ml:6" : undefined,
-        )}
-      >
-        {children}
-      </div>
+      {parentLabel && (
+        <Checkbox name={name} parent label={parentLabel} description={count} />
+      )}
+      <div className="d:f fd:c g:1 p:1 br:xl bg:well">{children}</div>
     </CheckboxGroup>
   );
 }

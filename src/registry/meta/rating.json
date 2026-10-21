@@ -52,7 +52,7 @@
       "name": "emptyHint",
       "type": "string",
       "default": "Click to rate",
-      "description": "Shown under the stars while nothing is selected. Once a rating is set it reads `3 / 5`."
+      "description": "Shown under the stars while nothing is selected. Once a rating is set it reads `3 of 5`."
     },
     {
       "name": "score",
@@ -62,7 +62,7 @@
     {
       "name": "hint",
       "type": "string",
-      "description": "Replaces the `3 / 5` readout under the marks. A read-only average reports what it is an average of, which a count of filled stars cannot say."
+      "description": "Replaces the `3 of 5` readout under the marks. A read-only average reports what it is an average of, which a count of filled stars cannot say."
     },
     {
       "name": "children",
@@ -94,6 +94,15 @@
       "typeName": "boolean | string",
       "default": true,
       "description": "The focus outline. `true` draws it, `false` removes it along with the danger, error and success tints that ride with it, and a string of Yumma CSS utilities restyles it on every focusable part of the component, which is more than `className` reaches. Removing it outright and putting nothing back fails WCAG 2.4.7."
+    }
+  ],
+  "scene": [
+    {
+      "component": "Rating",
+      "props": {
+        "label": "How useful was this search?",
+        "defaultValue": 4
+      }
     }
   ]
 }

@@ -1,11 +1,7 @@
 "use client";
 
 import { ContextMenu } from "@base-ui/react/context-menu";
-import {
-  AltArrowRightIcon,
-  CheckIcon,
-  CommandIcon,
-} from "@solar-icons/react/outline";
+import { AltArrowRightIcon, CheckIcon } from "@solar-icons/react/outline";
 import type { ReactNode } from "react";
 import { useEffect, useState } from "react";
 import { merge } from "yummacss/merge";
@@ -87,8 +83,10 @@ export interface ContextMenuProps {
    * frame or a container that owns its own stacking context.
    */
   container?: HTMLElement | null;
-  /** The right-clickable area's label. */
+  /** The right-clickable tile's label, such as a file name. */
   trigger: ReactNode;
+  /** A glyph in a well above the label, such as the file's type. */
+  triggerIcon?: ReactNode;
   /**
    * A discriminated union. `{ label }` is a plain action (plus optional `icon`,
    * `shortcut`, `destructive`, `disabled`, `onClick`). `{ type: "separator" }`
@@ -140,6 +138,7 @@ export interface ContextMenuProps {
  */
 export default function ContextMenuBase({
   trigger,
+  triggerIcon,
   items,
   shape = "rounded",
   icon = true,
@@ -165,17 +164,21 @@ export default function ContextMenuBase({
     onOpenChange?.(false);
   }, [disabled, open, onOpenChange]);
 
-  const triggerClasses = merge(
-    "d:f ai:c jc:c h:48 w:60 bg:white bs:d bw:1 fs:sm fw:500 us:none",
-    TRIGGER_SHAPES[shape],
-    disabled
-      ? "bg:silver-1 bc:silver-2 c:slate-4 c:na"
-      : "bc:slate-3 c:slate-10",
-    className,
-  );
+  // a file tile, outlined while its menu is open
+  const triggerClasses = (state: { open: boolean }) =>
+    merge(
+      "d:if fd:c ai:c jc:c g:2 p:3 min-w:24 bg:raised bw:2 fs:sm fw:500 c:label us:none",
+      TRIGGER_SHAPES[shape],
+      disabled
+        ? "o:60 c:na bc:transparent"
+        : state.open
+          ? "bc:check/40"
+          : "bc:transparent",
+      className,
+    );
 
   const popupClasses = [
-    "py:1 w:52 bg:white bc:black/10 c:slate-10 bw:1 os:none bs-o:xl",
+    "py:1 min-w:52 max-h:var(--available-height) oy:auto bg:raised bc:line c:label bw:1 os:none bs-o:xl",
     POPUP_SHAPES[shape],
   ]
     .filter(Boolean)
@@ -191,8 +194,8 @@ export default function ContextMenuBase({
         destructive ? "c:red" : "",
         state.highlighted
           ? destructive
-            ? "bg:red c:white btc:red-5"
-            : "bg:slate-12 c:white btc:white/20"
+            ? "bg:red c:white btc:red-5 blc:red-8 brc:red-8 bbc:red-9"
+            : "bg:check c:white btc:white/25 blc:black/15 brc:black/15 bbc:black/30"
           : "bg:transparent",
       ]
         .filter(Boolean)
@@ -206,7 +209,7 @@ export default function ContextMenuBase({
         return (
           <ContextMenu.Separator
             key={key}
-            className="my:1 w:100% h:px bg:silver-2"
+            className="my:1 w:100% h:0 btw:1 bbw:1 btc:groove bbc:glint"
           />
         );
       }
@@ -215,7 +218,7 @@ export default function ContextMenuBase({
         return (
           <ContextMenu.Group key={key}>
             {item.label && (
-              <div className="px:3 py:1 fs:xs fw:600 c:slate-5 us:none">
+              <div className="px:3 py:1 fs:xs fw:600 c:hint us:none">
                 {item.label}
               </div>
             )}
@@ -233,7 +236,7 @@ export default function ContextMenuBase({
             disabled={item.disabled}
             className={itemClasses(false, false)}
           >
-            <span className="d:f ai:c jc:c fs:0 w:4 h:4 bc:silver-3 br:sm bw:1">
+            <span className="d:f ai:c jc:c fs:0 w:4 h:4 bc:rim br:sm bw:1">
               <ContextMenu.CheckboxItemIndicator>
                 <CheckIcon className="w:3 h:3" />
               </ContextMenu.CheckboxItemIndicator>
@@ -256,7 +259,7 @@ export default function ContextMenuBase({
                 value={option.value}
                 className={itemClasses(false, false)}
               >
-                <span className="d:f ai:c jc:c fs:0 w:4 h:4 bc:silver-3 br:9999 bw:1">
+                <span className="d:f ai:c jc:c fs:0 w:4 h:4 bc:rim br:9999 bw:1">
                   <ContextMenu.RadioItemIndicator>
                     <span className="d:b w:2 h:2 br:9999 bg:current" />
                   </ContextMenu.RadioItemIndicator>
@@ -273,7 +276,7 @@ export default function ContextMenuBase({
           <ContextMenu.SubmenuRoot key={key}>
             <ContextMenu.SubmenuTrigger className={itemClasses(false, true)}>
               <span className="fg:1">{item.label}</span>
-              <AltArrowRightIcon className="fs:0 w:4 h:4 c:slate-4" />
+              <AltArrowRightIcon className="fs:0 w:4 h:4 o:70" />
             </ContextMenu.SubmenuTrigger>
 
             <ContextMenu.Portal container={container}>
@@ -306,7 +309,7 @@ export default function ContextMenuBase({
           className={itemClasses(destructive, trailing)}
         >
           {icon && action.icon && iconPosition === "leading" && (
-            <span className={`d:f fs:0 ${destructive ? "" : "c:slate-5"}`}>
+            <span className={`d:f fs:0 ${destructive ? "" : "o:70"}`}>
               {action.icon}
             </span>
           )}
@@ -316,22 +319,16 @@ export default function ContextMenuBase({
             action.label
           )}
           {icon && action.icon && iconPosition === "trailing" && (
-            <span className={`d:f fs:0 ${destructive ? "" : "c:slate-5"}`}>
+            <span className={`d:f fs:0 ${destructive ? "" : "o:70"}`}>
               {action.icon}
             </span>
           )}
           {action.shortcut && (
-            <span
-              className={[
-                "d:f ai:c g:1 ml:4 fw:400 fs:xs",
-                destructive ? "" : "c:slate-6",
-              ]
-                .filter(Boolean)
-                .join(" ")}
+            <kbd
+              className={`ml:4 px:1 br:sm bw:1 bc:current fs:xs fw:400 lh:4 ff:d ${destructive ? "" : "o:70"}`}
             >
-              <CommandIcon className="w:3 h:3" />
-              <span>{action.shortcut}</span>
-            </span>
+              {action.shortcut}
+            </kbd>
           )}
         </ContextMenu.Item>
       );
@@ -356,6 +353,11 @@ export default function ContextMenuBase({
       disabled={disabled}
     >
       <ContextMenu.Trigger className={triggerClasses}>
+        {triggerIcon && (
+          <span className="d:f ai:c jc:c w:12 h:12 br:lg bg:well">
+            {triggerIcon}
+          </span>
+        )}
         {trigger}
       </ContextMenu.Trigger>
 

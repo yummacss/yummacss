@@ -68,7 +68,7 @@ const BUTTON_SHAPES: Record<Shape, string> = {
 };
 
 const CLOSE_SHAPES: Record<Shape, string> = {
-  rounded: "br:9999",
+  rounded: "br:md",
   square: "",
   squircle: "br:lg cs:s",
 };
@@ -79,10 +79,10 @@ const HANDLE_SHAPES: Record<Shape, string> = {
   squircle: "br:9999 cs:s",
 };
 
-const FOCUS = "fv:os:s fv:ow:3 fv:oo:0 fv:oc:slate-4/60 fv:bc:slate-6";
+const FOCUS = "fv:os:s fv:ow:3 fv:oo:0 fv:oc:focus/40 fv:bc:focus";
 
 const BUTTON =
-  "d:if ai:c jc:c g:2 bw:1 fw:500 tp:c tdu:150 ttf:io us:none bg:white btc:slate-2 blc:slate-2 brc:slate-2 bbc:slate-4 bs-o:xs c:slate-10 h:bg:silver-1";
+  "d:if ai:c jc:c g:2 bw:1 fw:500 tp:c tdu:150 ttf:io us:none bg:raised btc:rim blc:rim brc:rim bbc:shadow bs-o:xs c:label h:bg:well";
 
 const SIZES: Record<Size, string> = {
   sm: "px:3 py:1 fs:xs",
@@ -180,7 +180,7 @@ export default function DrawerBase({
   );
 
   const popupClasses = [
-    "p:r d:f fd:c bg:white bc:black/10 c:slate-10 bw:1 os:none bs-o:xl",
+    "p:r d:f fd:c bg:raised bc:line c:label bw:1 os:none bs-o:xl",
     PLACEMENTS[side],
     EDGE_SHAPES[side][shape],
     "tr:var(--drawer-travel)",
@@ -194,7 +194,7 @@ export default function DrawerBase({
   const grip = vertical && handle && (
     <div
       aria-hidden
-      className={`fs:0 w:12 h:1 mx:auto bg:silver-3 ${HANDLE_SHAPES[shape]}`}
+      className={`fs:0 w:12 h:1 mx:auto bg:rim ${HANDLE_SHAPES[shape]}`}
     />
   );
 
@@ -210,7 +210,7 @@ export default function DrawerBase({
 
       <Drawer.Portal container={container}>
         <Drawer.Backdrop
-          className={`p:f i:0 min-h:dvh bg:black/5 bf-b:xs ${
+          className={`p:f i:0 min-h:dvh bg:shadow/30 bf-b:xs ${
             animated
               ? "tp:o tdu:300 ttf:out-quart opening:o:0 closing:o:0 closing:tdu:200 closing:ttf:eo swiping:tp:none @prm:tp:none"
               : ""
@@ -234,24 +234,24 @@ export default function DrawerBase({
                   <Button
                     className={merge(
                       outline,
-                      "d:f p:a r:3 t:3 ai:c jc:c w:7 h:7 p:0 c:slate-6 bw:0 bg:transparent h:bg:silver-1/50 h:c:slate-7",
+                      "d:f p:a r:4 t:4 ai:c jc:c w:7 h:7 p:0 bw:1 bg:raised btc:rim blc:rim brc:rim bbc:shadow bs-o:xs c:label h:bg:well",
                       CLOSE_SHAPES[shape],
                     )}
                   />
                 }
                 aria-label="Close"
               >
-                <CloseIcon aria-hidden className="w:5 h:5" />
+                <CloseIcon aria-hidden className="w:4 h:4" />
               </Drawer.Close>
             )}
 
             <Drawer.Content className="d:f fd:c g:3 p:6 f:1">
-              <Drawer.Title className="m:0 c:slate-10 fs:md fw:500">
+              <Drawer.Title className="m:0 c:label fs:md fw:500">
                 {title}
               </Drawer.Title>
 
               {description && (
-                <Drawer.Description className="m:0 c:slate-7 fs:sm lh:4">
+                <Drawer.Description className="m:0 c:hint fs:sm lh:4">
                   {description}
                 </Drawer.Description>
               )}

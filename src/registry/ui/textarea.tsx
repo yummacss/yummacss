@@ -1,7 +1,7 @@
 "use client";
 
 import { Field } from "@base-ui/react/field";
-import { DangerTriangleIcon } from "@solar-icons/react/bold-duotone";
+import { DangerTriangleIcon } from "@solar-icons/react/bold";
 import { CheckIcon } from "@solar-icons/react/outline";
 import type { ChangeEvent, ComponentProps } from "react";
 import { useState } from "react";
@@ -10,7 +10,7 @@ import { merge } from "yummacss/merge";
 type Shape = "rounded" | "square" | "squircle";
 type Status = "default" | "error" | "success";
 
-const FOCUS = "fv:os:s fv:ow:3 fv:oo:0 fv:oc:slate-4/60 fv:bc:slate-6";
+const FOCUS = "fv:os:s fv:ow:3 fv:oo:0 fv:oc:focus/40 fv:bc:focus";
 
 const SHAPES: Record<Shape, string> = {
   rounded: "br:lg",
@@ -19,7 +19,7 @@ const SHAPES: Record<Shape, string> = {
 };
 
 const STATUS_BORDER: Record<Status, string> = {
-  default: "btc:slate-4 blc:slate-3 brc:slate-3 bbc:slate-2",
+  default: "btc:shadow blc:line brc:line bbc:rim",
   error: "bc:red-5",
   success: "bc:green-5",
 };
@@ -37,7 +37,7 @@ const STATUS_ICON: Record<Status, string> = {
 };
 
 const STATUS_MESSAGE: Record<Status, string> = {
-  default: "c:slate-6",
+  default: "c:hint",
   error: "c:red-5",
   success: "c:green-6",
 };
@@ -137,15 +137,12 @@ export default function TextareaBase({
 
   const showCounter = maxLength !== undefined && maxLength > 0;
   const remaining = showCounter ? maxLength - value.length : 0;
-  const percent = showCounter
-    ? Math.min((value.length / maxLength) * 100, 100)
-    : 0;
   const warn = showCounter && remaining <= WARN_AT;
 
   const controlClasses = merge(
     outline,
-    "h:24 w:64 py:3 pl:3 bg:white c:slate-10 bw:1 fs:md r:none",
-    showCounter || status !== "default" ? "pr:10" : "pr:3",
+    "h:24 w:100% py:2 pl:3 bg:field c:label bw:1 fs:sm r:none",
+    status !== "default" ? "pr:10" : "pr:3",
     SHAPES[shape],
     STATUS_BORDER[status],
     className,
@@ -154,17 +151,28 @@ export default function TextareaBase({
   return (
     <Field.Root
       disabled={disabled}
-      className={`d:f fd:c g:2 ${disabled ? "o:60 c:na" : ""}`}
+      className={`d:f fd:c g:2 w:80 ${disabled ? "o:60 c:na" : ""}`}
     >
-      {label && (
-        <Field.Label className="c:slate-10 fs:sm fw:500">
-          {label}
-          {required && <span className="c:red-5"> *</span>}
-        </Field.Label>
+      {(label || showCounter) && (
+        <div className="d:f ai:c jc:sb g:2">
+          {label && (
+            <Field.Label className="c:label fs:sm fw:600">
+              {label}
+              {required && <span className="c:red-5"> *</span>}
+            </Field.Label>
+          )}
+          {showCounter && (
+            <span
+              aria-live="polite"
+              className={`ml:auto fs:xs ${warn ? "c:red fw:600" : "c:hint"}`}
+            >
+              {value.length} / {maxLength}
+            </span>
+          )}
+        </div>
       )}
 
       <div className="d:f p:r ai:s">
-        {}
         <Field.Control
           render={<textarea />}
           value={value}
@@ -191,25 +199,6 @@ export default function TextareaBase({
 
       {message && (
         <p className={`m:0 fs:xs ${STATUS_MESSAGE[status]}`}>{message}</p>
-      )}
-
-      {showCounter && (
-        <div className="d:f fd:c g:1">
-          <div className="d:f jc:sb">
-            <span className="c:slate-5 fs:xs">
-              {remaining} characters remaining
-            </span>
-            <span className={`fs:xs fw:500 ${warn ? "c:red" : "c:slate-5"}`}>
-              {value.length} / {maxLength}
-            </span>
-          </div>
-          <div className="w:100% h:1 bg:silver-2 br:9999 o:h">
-            <div
-              className={`h:100% br:9999 ${warn ? "bg:red" : "bg:slate-12"}`}
-              style={{ width: `${percent}%` }}
-            />
-          </div>
-        </div>
       )}
     </Field.Root>
   );

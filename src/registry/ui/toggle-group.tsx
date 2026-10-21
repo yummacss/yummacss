@@ -1,7 +1,7 @@
 "use client";
 
 import { ToggleGroup } from "@base-ui/react/toggle-group";
-import type { ReactNode } from "react";
+import { type ReactNode, useId } from "react";
 import { merge } from "yummacss/merge";
 
 type Shape = "rounded" | "square" | "squircle" | "pill";
@@ -14,9 +14,11 @@ const SHAPES: Record<Shape, string> = {
   pill: "br:9999",
 };
 
-const BASE = "p:r d:f g:1 p:1 w:fc bg:silver-1 bc:silver-2 bw:1";
+const BASE = "p:r d:f g:1 p:1 w:fc bg:well";
 
 export interface ToggleGroupProps {
+  /** A caption above the group, wired to it as its accessible name. */
+  label?: string;
   /** Merged with the group's own classes, so a utility you pass wins. */
   className?: string;
   /** The toggles. */
@@ -47,6 +49,7 @@ export interface ToggleGroupProps {
  * pressing one or several at a time.
  */
 export default function ToggleGroupBase({
+  label,
   className,
   children,
   shape = "rounded",
@@ -57,8 +60,10 @@ export default function ToggleGroupBase({
   defaultValue,
   onValueChange,
 }: ToggleGroupProps) {
-  return (
+  const labelId = useId();
+  const group = (
     <ToggleGroup
+      aria-labelledby={label ? labelId : undefined}
       value={value}
       defaultValue={defaultValue}
       onValueChange={onValueChange}
@@ -74,5 +79,16 @@ export default function ToggleGroupBase({
     >
       {children}
     </ToggleGroup>
+  );
+
+  if (!label) return group;
+
+  return (
+    <div className="d:f fd:c ai:c g:2">
+      <span id={labelId} className="c:label fs:sm fw:600 us:none">
+        {label}
+      </span>
+      {group}
+    </div>
   );
 }

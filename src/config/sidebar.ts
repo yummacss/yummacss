@@ -293,9 +293,11 @@ export const sidebarConfig = {
         "avatar-stack",
         "badge",
         "breadcrumb",
+        "kbd",
         "meter",
         "preview-card",
         "progress",
+        "scroll-area",
         "separator",
       ],
     },
@@ -303,7 +305,10 @@ export const sidebarConfig = {
       title: "Interactive",
       items: ["button", "button-group", "context-menu", "menu", "menubar"],
     },
-    { title: "Navigation", items: ["tabs", "toolbar"] },
+    {
+      title: "Navigation",
+      items: ["file-tree", "navigation-menu", "tabs", "toolbar"],
+    },
     {
       title: "Overlays",
       items: [
@@ -317,7 +322,14 @@ export const sidebarConfig = {
     },
     {
       title: "Application UI",
-      items: ["empty-state", "onboarding", "rating", "skeleton"],
+      items: [
+        "empty-state",
+        "onboarding",
+        "rating",
+        "skeleton",
+        "storage-bar",
+        "theme-switcher",
+      ],
     },
     {
       title: "Blocks",

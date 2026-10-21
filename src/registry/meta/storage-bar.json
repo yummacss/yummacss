@@ -1,0 +1,129 @@
+{
+  "summary": "How full a disk is, split by what fills it, with the total counting up and each share growing into the track.",
+  "props": [
+    {
+      "name": "categories",
+      "type": "none",
+      "typeName": "StorageCategory[]",
+      "example": [
+        {
+          "label": "Videos",
+          "value": 6.4,
+          "icon": {
+            "$icon": "VideoFrameIcon",
+            "size": "w:4 h:4"
+          }
+        },
+        {
+          "label": "Photos",
+          "value": 3.8,
+          "icon": {
+            "$icon": "GalleryIcon",
+            "size": "w:4 h:4"
+          }
+        },
+        {
+          "label": "Documents",
+          "value": 1.9,
+          "icon": {
+            "$icon": "DocumentIcon",
+            "size": "w:4 h:4"
+          }
+        },
+        {
+          "label": "Archives",
+          "value": 0.6,
+          "icon": {
+            "$icon": "ArchiveIcon",
+            "size": "w:4 h:4"
+          }
+        }
+      ],
+      "description": "What fills the space, biggest first reads best. Each one's `label` and `value`, plus an optional `icon`. Up to five colors."
+    },
+    {
+      "name": "max",
+      "type": "number",
+      "example": 20,
+      "description": "The whole space, in `unit`."
+    },
+    {
+      "name": "unit",
+      "type": "string",
+      "default": "GB",
+      "description": "The unit every amount is read in."
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "default": "Storage",
+      "description": "The heading over the total, and the meter's accessible name."
+    },
+    {
+      "name": "rest",
+      "type": "string",
+      "default": "Free",
+      "description": "Names the empty part of the track in the legend."
+    },
+    {
+      "name": "shape",
+      "type": "enum",
+      "values": ["rounded", "square", "squircle"],
+      "default": "rounded",
+      "description": "Corner radius on the card, the track and the icon tiles."
+    },
+    {
+      "name": "animated",
+      "type": "boolean",
+      "default": true,
+      "description": "The numbers counting up and the shares growing in when it first shows. Turn it off for a bar that is simply there; reduced motion does the same."
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "description": "Extra classes. `merge` folds them in last, so one here replaces the component's own class for the same utility."
+    }
+  ],
+  "scene": [
+    {
+      "component": "StorageBar",
+      "props": {
+        "categories": [
+          {
+            "label": "Videos",
+            "value": 6.4,
+            "icon": {
+              "$icon": "VideoFrameIcon",
+              "size": "w:4 h:4"
+            }
+          },
+          {
+            "label": "Photos",
+            "value": 3.8,
+            "icon": {
+              "$icon": "GalleryIcon",
+              "size": "w:4 h:4"
+            }
+          },
+          {
+            "label": "Documents",
+            "value": 1.9,
+            "icon": {
+              "$icon": "DocumentIcon",
+              "size": "w:4 h:4"
+            }
+          },
+          {
+            "label": "Archives",
+            "value": 0.6,
+            "icon": {
+              "$icon": "ArchiveIcon",
+              "size": "w:4 h:4"
+            }
+          }
+        ],
+        "max": 20
+      }
+    }
+  ]
+}

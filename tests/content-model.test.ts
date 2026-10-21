@@ -30,8 +30,6 @@ function strings(value: unknown): string[] {
 
 function examples(meta: {
   props?: { name: string; example?: unknown }[];
-  children?: unknown;
-  childrenExample?: unknown;
   scene?: unknown;
 }): { where: string; text: string }[] {
   const out: { where: string; text: string }[] = [];
@@ -40,11 +38,6 @@ function examples(meta: {
     for (const text of strings(prop.example)) {
       out.push({ where: prop.name, text });
     }
-  }
-  for (const text of strings(meta.children))
-    out.push({ where: "children", text });
-  for (const text of strings(meta.childrenExample)) {
-    out.push({ where: "childrenExample", text });
   }
   for (const text of strings(meta.scene)) out.push({ where: "scene", text });
 

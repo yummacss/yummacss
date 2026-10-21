@@ -57,23 +57,23 @@ export default function ProgressBase({
 
   const rootClasses = merge("d:f fd:c g:2 w:64", className);
 
-  const trackClasses = ["o:h h:2 bg:slate-2", SHAPES[shape]]
+  const trackClasses = ["o:h h:2 bg:rim", SHAPES[shape]]
     .filter(Boolean)
     .join(" ");
 
   return (
     <Progress.Root className={rootClasses} value={value}>
       <div className="d:f jc:sb ai:c">
-        <Progress.Label className="c:slate-10 fs:sm fw:500">
+        <Progress.Label className="c:label fs:sm fw:500">
           {label}
         </Progress.Label>
-        <Progress.Value className="c:slate-8 fs:sm" />
+        <Progress.Value className="c:hint fs:sm" />
       </div>
       <Progress.Track className={trackClasses}>
         {isIndeterminate ? (
           <Progress.Indicator
             className={[
-              "h:100% w:100% bg:slate-12 an:slide adu:1000 atf:io aic:inf @prm:an:none",
+              "h:100% w:100% bg:fill an:slide adu:1000 atf:io aic:inf @prm:an:none",
               SHAPES[shape],
             ]
               .filter(Boolean)
@@ -87,7 +87,7 @@ export default function ProgressBase({
                 sweeps ? "o:h" : "",
                 animated ? "tp:w tdu:500 ttf:eo" : "",
                 SHAPES[shape],
-                state.status === "complete" ? "bg:green" : "bg:slate-12",
+                state.status === "complete" ? "bg:green" : "bg:fill",
               ]
                 .filter(Boolean)
                 .join(" ")

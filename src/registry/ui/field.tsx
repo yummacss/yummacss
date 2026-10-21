@@ -6,7 +6,7 @@ import {
   DangerTriangleIcon,
   EyeClosedIcon,
   EyeIcon,
-} from "@solar-icons/react/bold-duotone";
+} from "@solar-icons/react/bold";
 import { CheckIcon } from "@solar-icons/react/outline";
 import { type ComponentProps, type ReactNode, useState } from "react";
 import { merge } from "yummacss/merge";
@@ -18,11 +18,9 @@ type Status = "default" | "error" | "success";
 
 const SIZES: Record<Size, string> = {
   sm: "h:8 w:56",
-  md: "h:10 w:64",
-  lg: "h:12 w:72",
+  md: "h:9 w:64",
+  lg: "h:11 w:72",
 };
-
-const HEIGHTS: Record<Size, string> = { sm: "h:8", md: "h:10", lg: "h:12" };
 
 const SHAPES: Record<Shape, string> = {
   rounded: "br:lg",
@@ -31,15 +29,16 @@ const SHAPES: Record<Shape, string> = {
 };
 
 const ICON_PADDING: Record<IconSide, string> = {
-  leading: "pl:10 pr:4",
-  trailing: "pl:4 pr:10",
+  leading: "pl:9 pr:3",
+  trailing: "pl:3 pr:9",
 };
 
-const FOCUS = "fv:os:s fv:ow:3 fv:oo:0 fv:oc:slate-4/60 fv:bc:slate-6";
+const FOCUS = "fv:os:s fv:ow:3 fv:oo:0 fv:oc:focus/40 fv:bc:focus";
+const FOCUS_WITHIN = "fw:os:s fw:ow:3 fw:oo:0 fw:oc:focus/40 fw:bc:focus";
 
 const STATUS_BORDER: Record<Status, string> = {
   // recessed: the top edge darker than the bottom
-  default: "btc:slate-4 blc:slate-3 brc:slate-3 bbc:slate-2",
+  default: "btc:shadow blc:line brc:line bbc:rim",
   error: "bc:red-5",
   success: "bc:green-5",
 };
@@ -50,6 +49,12 @@ const STATUS_OUTLINE: Record<Status, string> = {
   success: "fv:oc:green-2/60 fv:bc:green-3",
 };
 
+const STATUS_OUTLINE_WITHIN: Record<Status, string> = {
+  default: "",
+  error: "fw:oc:red-2/60 fw:bc:red-3",
+  success: "fw:oc:green-2/60 fw:bc:green-3",
+};
+
 const STATUS_ICON: Record<Status, string> = {
   default: "",
   error: "c:red-5",
@@ -57,7 +62,7 @@ const STATUS_ICON: Record<Status, string> = {
 };
 
 const STATUS_MESSAGE: Record<Status, string> = {
-  default: "c:slate-6",
+  default: "c:hint",
   error: "c:red-5",
   success: "c:green-6",
 };
@@ -181,7 +186,7 @@ export default function FieldBase({
       disabled={disabled}
       className={merge(
         outline,
-        "d:f ai:c jc:c p:0 bg:transparent bw:0 c:slate-6 c:p us:none",
+        "d:f ai:c jc:c p:0 bg:transparent bw:0 c:hint c:p us:none",
       )}
     >
       {revealed ? (
@@ -201,65 +206,63 @@ export default function FieldBase({
 
   const controlClasses = merge(
     outline,
-    "bg:white c:slate-10 bw:1 fs:md",
+    "bg:field c:label bw:1 fs:sm",
     SIZES[size],
     SHAPES[shape],
     STATUS_BORDER[status],
     showDecorativeIcon || status !== "default"
       ? ICON_PADDING[activeSide]
-      : "px:4",
+      : "px:3",
     className,
   );
 
-  const affixControlClasses = merge(
-    outline,
-    "fg:1 bg:white bc:silver-3 c:slate-10 byw:1 fs:md",
-    HEIGHTS[size],
-    prefixNode && suffix
-      ? "px:3"
-      : prefixNode
-        ? "pl:3 pr:4 brr:lg brw:1"
-        : "pl:4 pr:3 blr:lg blw:1",
+  // the affixes sit inside the box, so the box takes the focus outline
+  const affixBoxClasses = merge(
+    focus
+      ? merge(
+          FOCUS_WITHIN,
+          STATUS_OUTLINE_WITHIN[status],
+          focus === true ? "" : focus.replace(/\bfv:/g, "fw:"),
+        )
+      : "",
+    "d:f ai:c g:2 px:3 bg:field bw:1 fs:sm",
+    SIZES[size],
+    SHAPES[shape],
+    STATUS_BORDER[status],
+    className,
   );
-
-  const affixBoxClasses =
-    "d:f ai:c jc:c px:3 bg:white bc:silver-3 c:slate-6 byw:1 fs:md";
 
   return (
     <Field.Root
       disabled={disabled}
-      className={`d:f fd:c g:2 c:slate-10 fs:sm ${disabled ? "o:60 c:na" : ""}`}
+      className={`d:f fd:c g:2 c:label fs:sm ${disabled ? "o:60 c:na" : ""}`}
     >
       {label && (
-        <Field.Label className="fw:500">
+        <Field.Label className="fw:600">
           {label}
           {required && <span className="c:red-5"> *</span>}
         </Field.Label>
       )}
 
       {hasAffix ? (
-        <div className="d:f ai:c">
+        <div className={affixBoxClasses}>
           {prefixNode && (
-            <div className={`${affixBoxClasses} blr:lg blw:1`}>
-              {prefixNode}
-            </div>
+            <span className="d:f ai:c fs:0 c:hint">{prefixNode}</span>
           )}
           <Field.Control
             required={required}
             type={controlType}
-            className={affixControlClasses}
+            className="f:1 min-w:0 h:100% p:0 bw:0 bg:transparent c:label fs:sm os:none"
             {...props}
           />
-          {suffix && (
-            <div className={`${affixBoxClasses} brr:lg brw:1`}>{suffix}</div>
-          )}
+          {suffix && <span className="d:f ai:c fs:0 c:hint">{suffix}</span>}
         </div>
       ) : (
         <div className="d:f p:r ai:c">
           {showDecorativeIcon && (
             <span
               className={merge(
-                "d:f p:a ai:c c:slate-5",
+                "d:f p:a ai:c c:hint",
                 !(iconInteractive || reveal) && "pe:none",
                 activeSide === "leading" ? "l:3" : "r:3",
               )}

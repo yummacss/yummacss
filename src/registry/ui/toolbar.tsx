@@ -12,7 +12,7 @@ import { merge } from "yummacss/merge";
 
 type Shape = "rounded" | "square" | "squircle";
 
-const FOCUS = "fv:os:s fv:ow:3 fv:oo:0 fv:oc:slate-4/60 fv:bc:slate-6";
+const FOCUS = "fv:os:s fv:ow:3 fv:oo:0 fv:oc:focus/40 fv:bc:focus";
 
 const ROOT_SHAPES: Record<Shape, string> = {
   rounded: "br:xxl",
@@ -52,6 +52,8 @@ export interface ToolbarTogglesItem {
   defaultValue?: string[];
   onValueChange?: (value: string[]) => void;
   label?: string;
+  /** Lets more than one be pressed, as Bold and Italic can be together. */
+  multiple?: boolean;
 }
 
 export interface ToolbarInputItem {
@@ -132,7 +134,7 @@ export default function ToolbarBase({
   const outline = focus ? merge(FOCUS, focus === true ? "" : focus) : "";
 
   const rootClasses = merge(
-    "d:f ai:c g:1 p:2 bg:white btc:slate-2 blc:slate-2 brc:slate-2 bbc:slate-4 bs-o:xs bw:1",
+    "d:f fw:w ai:c g:1 p:2 bg:raised btc:rim blc:rim brc:rim bbc:shadow bs-o:xs bw:1",
     ROOT_SHAPES[shape],
     className,
   );
@@ -148,7 +150,7 @@ export default function ToolbarBase({
           return (
             <Toolbar.Separator
               key={key}
-              className="w:px h:5 mx:1 bg:silver-2"
+              className="w:0 h:5 mx:1 blw:1 brw:1 blc:groove brc:glint"
             />
           );
         }
@@ -182,7 +184,7 @@ export default function ToolbarBase({
 
         if ("type" in item && item.type === "number") {
           const stepClasses = [
-            "d:f ai:c jc:c w:9 h:9 bg:transparent c:slate-7 bw:0 us:none c:p h:bg:silver-1 h:c:slate-10",
+            "d:f ai:c jc:c w:9 h:9 bg:transparent c:hint bw:0 us:none c:p h:bg:well h:c:label",
             control,
           ]
             .filter(Boolean)
@@ -214,7 +216,7 @@ export default function ToolbarBase({
                   render={<NumberField.Input />}
                   className={merge(
                     outline,
-                    "w:16 bg:transparent c:slate-10 bw:0 ta:c fs:sm fw:500",
+                    "w:16 bg:transparent c:label bw:0 ta:c fs:sm fw:500",
                   )}
                 />
                 <NumberField.Increment
@@ -238,7 +240,7 @@ export default function ToolbarBase({
               href={item.href}
               className={merge(
                 outline,
-                "d:f ai:c g:1 h:9 px:3 c:slate-7 fs:sm fw:500 td:none h:c:slate-10",
+                "d:f ai:c g:1 h:9 px:3 c:hint fs:sm fw:500 td:none h:c:label",
                 control,
               )}
             >
@@ -251,12 +253,10 @@ export default function ToolbarBase({
         const button = item as ToolbarButtonItem;
         const buttonClasses = merge(
           outline,
-          "d:f ai:c jc:c ws:nw bg:transparent c:slate-7 bw:0 us:none",
+          "d:f ai:c jc:c ws:nw bg:transparent c:hint bw:0 us:none",
           button.iconOnly ? "w:9 h:9" : "g:1 h:9 px:3 fs:sm fw:500",
           control,
-          button.disabled
-            ? "bg:silver-1 c:slate-4 c:na"
-            : "c:p h:bg:silver-1 h:c:slate-10",
+          button.disabled ? "bg:well c:hint c:na" : "c:p h:bg:well h:c:label",
         );
 
         return (
@@ -321,8 +321,8 @@ function ToolbarToggles({
       "d:f w:9 h:9 ai:c jc:c bw:0 us:none c:p",
       control,
       pressed
-        ? "bg:silver-1 bs-i:md bw:1 btc:slate-4 blc:slate-3 brc:slate-3 bbc:slate-2 c:slate-11"
-        : "bg:transparent bw:1 bc:transparent c:slate-7 h:bg:silver-1 h:c:slate-10",
+        ? "bg:well bs-i:md bw:1 btc:shadow blc:line brc:line bbc:rim c:check"
+        : "bg:transparent bw:1 bc:transparent c:hint h:bg:well h:c:label",
     );
 
   return (
@@ -330,6 +330,7 @@ function ToolbarToggles({
       className="d:f g:1"
       value={value}
       onValueChange={handleChange}
+      multiple={item.multiple}
       aria-label={item.label}
     >
       {item.options.map((option) => (

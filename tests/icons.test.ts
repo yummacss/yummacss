@@ -80,7 +80,7 @@ describe("icons", () => {
       for (const [, block, style] of source.matchAll(
         /import\s*\{([^}]*)\}\s*from\s*["']@solar-icons\/react\/([a-z-]+)["']/g,
       )) {
-        expect(["outline", "bold-duotone"]).toContain(style);
+        expect(["outline", "bold"]).toContain(style);
         for (const entry of block.split(",").map((n) => n.trim())) {
           // an alias is a deliberate second style
           if (!entry || entry.includes(" as ")) continue;

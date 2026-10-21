@@ -8,7 +8,7 @@ import { merge } from "yummacss/merge";
 type Size = "sm" | "md" | "lg";
 type Shape = "rounded" | "square" | "squircle";
 
-const FOCUS = "fv:os:s fv:ow:3 fv:oo:0 fv:oc:slate-4/60 fv:bc:slate-6";
+const FOCUS = "fv:os:s fv:ow:3 fv:oo:0 fv:oc:focus/40 fv:bc:focus";
 
 interface SizeSpec {
   track: string;
@@ -17,9 +17,9 @@ interface SizeSpec {
 }
 
 const SIZES: Record<Size, SizeSpec> = {
-  sm: { track: "h:4 w:7", thumb: "w:3 h:2", travelClass: "ttx:2" },
-  md: { track: "h:5 w:9", thumb: "w:4 h:3", travelClass: "ttx:3" },
-  lg: { track: "h:6 w:11", thumb: "w:5 h:4", travelClass: "ttx:4" },
+  sm: { track: "h:5 w:8", thumb: "w:4 h:4", travelClass: "ttx:3" },
+  md: { track: "h:6 w:10", thumb: "w:5 h:5", travelClass: "ttx:4" },
+  lg: { track: "h:7 w:12", thumb: "w:6 h:6", travelClass: "ttx:5" },
 };
 
 const SHAPES: Record<Shape, string> = {
@@ -113,68 +113,59 @@ export default function SwitchBase({
 
   const trackClasses = merge(
     outline,
-    "p:r d:f ai:c m:0 px:1 tp:c tdu:150 ttf:io",
+    "p:r d:f ai:c fs:0 m:0 p:0 bw:2 bc:transparent tp:c tdu:300 ttf:out-quart",
     track,
     SHAPES[shape],
-    disabled
-      ? "bw:1 bc:silver-2 bg:silver-1"
-      : checked
-        ? "bg:slate-12"
-        : "bg:slate-2",
+    checked ? "bg:on" : "bg:rim",
     disabled ? "" : "c:p",
     className,
   );
 
   const thumbClasses = [
-    disabled
-      ? "bg:silver-3"
-      : "bg:white bw:1 btc:black/5 blc:black/10 brc:black/10 bbc:black/20 bs-o:sm",
+    "bg:knob bw:1 btc:white blc:black/10 brc:black/10 bbc:black/20 bs-o:sm",
     thumb,
     SHAPES[shape],
-  ]
-    .filter(Boolean)
-    .join(" ");
+  ].join(" ");
 
   return (
     <Field.Root
-      className={`d:f fd:c g:1 ${disabled ? "c:na" : ""}`}
+      className={`d:f ai:fs g:3 ${disabled ? "o:60 c:na" : ""}`}
       disabled={disabled}
     >
-      <div className="d:f ai:c g:2">
-        <Switch.Root
-          id={id}
-          checked={checked}
-          onCheckedChange={handleChange}
-          aria-label={ariaLabel}
-          className={trackClasses}
-        >
-          {icon && checked && (
-            <span className="d:f p:a l:1 ai:c jc:c w:3 h:3 c:white">
-              {icon}
-            </span>
-          )}
-          <Switch.Thumb
-            className={merge(
-              thumbClasses,
-              checked ? travelClass : "",
-              animated ? "tp:t tdu:300 ttf:out-back @prm:tp:none" : "",
-            )}
-          />
-        </Switch.Root>
-        {label && (
-          <Field.Label
-            htmlFor={id}
-            className={`fs:sm fw:500 us:none ${
-              disabled ? "c:slate-5" : "c:slate-10 c:p"
-            }`}
-          >
-            {label}
-          </Field.Label>
+      <Switch.Root
+        id={id}
+        checked={checked}
+        onCheckedChange={handleChange}
+        aria-label={ariaLabel}
+        className={trackClasses}
+      >
+        {icon && checked && (
+          <span className="d:f p:a l:1 ai:c jc:c w:3 h:3 c:white">{icon}</span>
         )}
-      </div>
-
-      {description && (
-        <p className="pl:12 m:0 c:slate-6 fs:xs fw:400">{description}</p>
+        <Switch.Thumb
+          className={merge(
+            thumbClasses,
+            checked ? travelClass : "",
+            animated ? "tp:t tdu:400 ttf:out-back @prm:tp:none" : "",
+          )}
+        />
+      </Switch.Root>
+      {(label || description) && (
+        <div className="d:f fd:c">
+          {label && (
+            <Field.Label
+              htmlFor={id}
+              className={`c:label fs:sm fw:600 us:none ${disabled ? "" : "c:p"}`}
+            >
+              {label}
+            </Field.Label>
+          )}
+          {description && (
+            <Field.Description className="m:0 c:hint fs:xs">
+              {description}
+            </Field.Description>
+          )}
+        </div>
       )}
     </Field.Root>
   );

@@ -35,5 +35,153 @@
       "default": true,
       "description": "The pulse. Turn it off for a static placeholder, or when the user has asked for reduced motion."
     }
+  ],
+  "scene": [
+    {
+      "tag": "div",
+      "className": "d:f fd:c g:3",
+      "children": [
+        {
+          "tag": "div",
+          "className": "d:f ai:c g:3",
+          "children": [
+            {
+              "component": "Skeleton",
+              "props": {
+                "shape": "block",
+                "dimensions": "w:8 h:8",
+                "delay": 0.0
+              }
+            },
+            {
+              "tag": "div",
+              "className": "d:f fd:c g:1",
+              "children": [
+                {
+                  "component": "Skeleton",
+                  "props": {
+                    "dimensions": "h:2 w:40",
+                    "delay": 0.0
+                  }
+                },
+                {
+                  "component": "Skeleton",
+                  "props": {
+                    "tone": "subtle",
+                    "dimensions": "h:2 w:20",
+                    "delay": 0.0
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "className": "d:f ai:c g:3",
+          "children": [
+            {
+              "component": "Skeleton",
+              "props": {
+                "shape": "block",
+                "dimensions": "w:8 h:8",
+                "delay": 0.15
+              }
+            },
+            {
+              "tag": "div",
+              "className": "d:f fd:c g:1",
+              "children": [
+                {
+                  "component": "Skeleton",
+                  "props": {
+                    "dimensions": "h:2 w:32",
+                    "delay": 0.15
+                  }
+                },
+                {
+                  "component": "Skeleton",
+                  "props": {
+                    "tone": "subtle",
+                    "dimensions": "h:2 w:20",
+                    "delay": 0.15
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "className": "d:f ai:c g:3",
+          "children": [
+            {
+              "component": "Skeleton",
+              "props": {
+                "shape": "block",
+                "dimensions": "w:8 h:8",
+                "delay": 0.3
+              }
+            },
+            {
+              "tag": "div",
+              "className": "d:f fd:c g:1",
+              "children": [
+                {
+                  "component": "Skeleton",
+                  "props": {
+                    "dimensions": "h:2 w:44",
+                    "delay": 0.3
+                  }
+                },
+                {
+                  "component": "Skeleton",
+                  "props": {
+                    "tone": "subtle",
+                    "dimensions": "h:2 w:20",
+                    "delay": 0.3
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "className": "d:f ai:c g:3",
+          "children": [
+            {
+              "component": "Skeleton",
+              "props": {
+                "shape": "block",
+                "dimensions": "w:8 h:8",
+                "delay": 0.44999999999999996
+              }
+            },
+            {
+              "tag": "div",
+              "className": "d:f fd:c g:1",
+              "children": [
+                {
+                  "component": "Skeleton",
+                  "props": {
+                    "dimensions": "h:2 w:36",
+                    "delay": 0.44999999999999996
+                  }
+                },
+                {
+                  "component": "Skeleton",
+                  "props": {
+                    "tone": "subtle",
+                    "dimensions": "h:2 w:20",
+                    "delay": 0.44999999999999996
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
   ]
 }

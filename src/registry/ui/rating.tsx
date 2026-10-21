@@ -1,12 +1,12 @@
 "use client";
 
 import { Toggle } from "@base-ui/react/toggle";
-import { StarIcon } from "@solar-icons/react/bold-duotone";
+import { StarIcon } from "@solar-icons/react/bold";
 import type { ReactNode } from "react";
 import { useState } from "react";
 import { merge } from "yummacss/merge";
 
-const FOCUS = "fv:os:s fv:ow:3 fv:oo:0 fv:oc:slate-4/60 fv:bc:slate-6";
+const FOCUS = "fv:os:s fv:ow:3 fv:oo:0 fv:oc:focus/40 fv:bc:focus";
 
 export interface RatingIcon {
   icon: ReactNode;
@@ -57,7 +57,7 @@ export interface RatingProps {
   animated?: boolean;
   /**
    * Shown under the stars while nothing is selected. Once a rating is set it
-   * reads `3 / 5`.
+   * reads `3 of 5`.
    */
   emptyHint?: string;
   /**
@@ -66,7 +66,7 @@ export interface RatingProps {
    */
   score?: ReactNode;
   /**
-   * Replaces the `3 / 5` readout under the marks. A read-only average reports
+   * Replaces the `3 of 5` readout under the marks. A read-only average reports
    * what it is an average of, which a count of filled stars cannot say.
    */
   hint?: ReactNode;
@@ -123,21 +123,21 @@ export default function RatingBase({
       "bw:0 bg:transparent",
       disabled ? "c:na o:60" : "",
       !disabled && !readOnly ? `c:p ${outline}` : "",
-      pressed ? "c:slate-11" : "c:slate-4",
-      !disabled && !readOnly && !pressed ? "h:c:slate-6" : "",
+      pressed ? "c:yellow" : "c:rim",
+      !disabled && !readOnly && !pressed ? "h:c:hint" : "",
     );
 
   const iconClasses = (option: RatingIcon, active: boolean) =>
     merge(
       "d:f ai:c jc:c p:0 w:12 h:12 bw:0 br:lg us:none",
       disabled ? "c:na o:60" : `c:p ${outline}`,
-      active ? (option.activeClassName ?? "c:slate-11") : "c:slate-4",
-      !disabled && !active ? "h:c:slate-6" : "",
+      active ? (option.activeClassName ?? "c:yellow") : "c:rim",
+      !disabled && !active ? "h:c:hint" : "",
     );
 
   return (
     <div className={merge("d:f fd:c ai:c jc:c g:4 p:8 h:56", className)}>
-      {label && <span className="c:slate-10 fs:sm fw:500">{label}</span>}
+      {label && <span className="c:label fs:sm fw:500">{label}</span>}
 
       <Scored score={score}>
         <Row
@@ -208,14 +208,14 @@ export default function RatingBase({
         </Row>
       </Scored>
 
-      <span className="c:slate-6 fs:xs">
+      <span className="c:hint fs:xs">
         {hint ??
           (icons
             ? value >= 0
               ? icons[value].label
               : emptyHint
             : value > 0
-              ? `${value} / ${max}`
+              ? `${value} of ${max}`
               : emptyHint)}
       </span>
 
@@ -248,7 +248,7 @@ function Scored({
 
   return (
     <div className="d:f ai:c g:3">
-      <span className="c:slate-10 fs:xxl fw:500">{score}</span>
+      <span className="c:label fs:xxl fw:500">{score}</span>
       {children}
     </div>
   );

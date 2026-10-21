@@ -14,6 +14,7 @@ import {
   KeyboardIcon,
   LaptopIcon,
   ListIcon,
+  LockIcon,
   MagnifierIcon as MagnifierDuotoneIcon,
   MonitorIcon,
   MoonIcon,
@@ -30,7 +31,7 @@ import {
   TabletIcon,
   TrashBinTrashIcon,
   VideoFrameIcon,
-} from "@solar-icons/react/bold-duotone";
+} from "@solar-icons/react/bold";
 import {
   AddIcon,
   AltArrowDownIcon,
@@ -39,6 +40,7 @@ import {
   DownloadIcon,
   Grid2x2Icon,
   LinkIcon,
+  ListOrderedIcon,
   ListIcon as ListOutlineIcon,
   MagnifierIcon,
   MenuDotsIcon,
@@ -49,15 +51,7 @@ import {
   UndoRightIcon,
 } from "@solar-icons/react/outline";
 import { type ComponentType, Fragment, type ReactNode } from "react";
-import {
-  type ChildExample,
-  getRegistryMeta,
-  type RegistryMeta,
-} from "@/registry";
-import Avatar from "@/registry/ui/avatar";
-import Button from "@/registry/ui/button";
-import Checkbox from "@/registry/ui/checkbox";
-import Toggle from "@/registry/ui/toggle";
+import { type ChildExample, getRegistryMeta } from "@/registry";
 import { EXAMPLE_ICON_STYLE, type IconStyle } from "@/utils/icon-style";
 import { componentId, iconMarker } from "@/utils/snippet";
 import { styleProps } from "@/utils/styles.mjs";
@@ -67,7 +61,7 @@ export type DemoProps = Record<string, unknown>;
 type IconComponent = ComponentType<{ className?: string }>;
 
 export const EXAMPLE_ICONS: Record<IconStyle, Record<string, IconComponent>> = {
-  "bold-duotone": {
+  bold: {
     CloudIcon,
     ClockCircleIcon,
     GalleryIcon,
@@ -84,6 +78,7 @@ export const EXAMPLE_ICONS: Record<IconStyle, Record<string, IconComponent>> = {
     KeyboardIcon,
     LaptopIcon,
     ListIcon,
+    LockIcon,
     MonitorIcon,
     MoonIcon,
     MoveToFolderIcon,
@@ -116,6 +111,7 @@ export const EXAMPLE_ICONS: Record<IconStyle, Record<string, IconComponent>> = {
     TextItalicIcon,
     TextUnderlineIcon,
     ListIcon: ListOutlineIcon,
+    ListOrderedIcon,
   },
 };
 
@@ -127,28 +123,6 @@ function iconComponent(name: string, style?: IconStyle) {
 export function exampleIcon(name: string) {
   const Icon = iconComponent(name);
   return Icon ? <Icon className="w:5 h:5" /> : undefined;
-}
-
-export function seedValues(meta: RegistryMeta): DemoProps {
-  const values: DemoProps = {};
-
-  for (const prop of meta.props) {
-    if (prop.example === null) continue;
-
-    if (prop.controlled && !prop.handler) continue;
-
-    if (prop.exampleIcon) {
-      const icon = exampleIcon(prop.exampleIcon);
-      if (icon) {
-        values[prop.name] = icon;
-        continue;
-      }
-    }
-    const value = prop.example ?? prop.default;
-    if (value !== undefined) values[prop.name] = value;
-  }
-
-  return values;
 }
 
 export function resolveIcons(value: unknown): unknown {
@@ -165,18 +139,6 @@ export function resolveIcons(value: unknown): unknown {
     );
   }
   return value;
-}
-
-const CHILD_COMPONENTS: Record<string, ComponentType<DemoProps>> = {
-  Avatar,
-  Button,
-  Checkbox,
-  Toggle,
-};
-
-export function exampleChildren(meta: RegistryMeta): ReactNode {
-  if (!meta.childrenExample) return meta.children;
-  return meta.childrenExample.map((child, index) => renderChild(child, index));
 }
 
 /** The registry ids a scene names, so they can load before it renders. */
@@ -199,34 +161,69 @@ export function renderScene(
   style: string,
   radius: string,
   container: unknown,
+  state: SceneState,
 ): ReactNode {
-  const styled = (component: string) => {
-    const meta = getRegistryMeta(componentId(component));
-    if (!meta) return {};
-    const portals = meta.props.some((prop) => prop.name === "container");
-    return {
-      ...styleProps(meta.props, style, radius),
-      ...(portals ? { container } : {}),
-    };
+  const context: SceneContext = {
+    components,
+    styled: (component) => {
+      const meta = getRegistryMeta(componentId(component));
+      if (!meta) return {};
+      const portals = meta.props.some((prop) => prop.name === "container");
+      return {
+        ...styleProps(meta.props, style, radius),
+        ...(portals ? { container } : {}),
+      };
+    },
+    // a prop with a handler is controlled from the address, by instance
+    wired: (component, path, props) => {
+      const meta = getRegistryMeta(componentId(component));
+      const out: DemoProps = {};
+      for (const prop of meta?.props ?? []) {
+        if (!prop.handler) continue;
+        const initial = `default${prop.name.charAt(0).toUpperCase()}${prop.name.slice(1)}`;
+        const fallback =
+          props[prop.name] ??
+          props[initial] ??
+          prop.default ??
+          (prop.type === "boolean" ? false : undefined);
+        const key = `${path}.${prop.name}`;
+        out[prop.name] = key in state.values ? state.values[key] : fallback;
+        out[initial] = undefined;
+        out[prop.handler] = (value: unknown) => state.set(key, value, fallback);
+      }
+      return out;
+    },
   };
-  return scene.map((child, index) =>
-    renderChild(child, index, styled, components),
-  );
+  return scene.map((child, index) => renderChild(child, index, context));
 }
 
-// position is the identity of a demo's child, so it is the key
+export interface SceneState {
+  values: Record<string, unknown>;
+  set: (key: string, value: unknown, fallback: unknown) => void;
+}
+
+interface SceneContext {
+  components: Record<string, ComponentType<DemoProps>>;
+  styled: (component: string) => DemoProps;
+  wired: (
+    component: string,
+    path: string,
+    props: Record<string, unknown>,
+  ) => DemoProps;
+}
+
+// position is the identity of a demo's child, so it is the key and the path
 function renderChild(
   child: ChildExample,
   index: number,
-  styled?: (component: string) => DemoProps,
-  components?: Record<string, ComponentType<DemoProps>>,
+  scene?: SceneContext,
+  parent = "",
 ): ReactNode {
+  const path = parent ? `${parent}.${index}` : String(index);
   const inner =
     typeof child.children === "string"
       ? child.children
-      : child.children?.map((node, at) =>
-          renderChild(node, at, styled, components),
-        );
+      : child.children?.map((node, at) => renderChild(node, at, scene, path));
 
   if (child.icon !== undefined) {
     return (
@@ -248,16 +245,15 @@ function renderChild(
       </Tag>
     );
   }
-  const Child = child.component
-    ? (components?.[componentId(child.component)] ??
-      CHILD_COMPONENTS[child.component])
-    : null;
-  if (!Child) return null;
+  const component = child.component;
+  const Child = component ? scene?.components[componentId(component)] : null;
+  if (!Child || !component) return null;
   return (
     <Child
       key={index}
-      {...(styled && child.component ? styled(child.component) : {})}
+      {...(scene ? scene.styled(component) : {})}
       {...(resolveIcons(child.props ?? {}) as DemoProps)}
+      {...(scene ? scene.wired(component, path, child.props ?? {}) : {})}
       {...(child.className ? { className: child.className } : {})}
     >
       {inner}

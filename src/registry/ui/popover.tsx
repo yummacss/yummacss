@@ -9,12 +9,12 @@ import { merge } from "yummacss/merge";
 type Side = "top" | "right" | "bottom" | "left";
 type Shape = "rounded" | "square" | "squircle";
 
-const FOCUS = "fv:os:s fv:ow:3 fv:oo:0 fv:oc:slate-4/60 fv:bc:slate-6";
+const FOCUS = "fv:os:s fv:ow:3 fv:oo:0 fv:oc:focus/40 fv:bc:focus";
 type TriggerVariant = "icon" | "label";
 
 const TRIGGER_VARIANTS: Record<TriggerVariant, string> = {
   icon: "w:10 h:10",
-  label: "px:3 py:2 g:2",
+  label: "px:3 py:2 g:2 fs:sm fw:600",
 };
 
 const TRIGGER_SHAPES: Record<Shape, string> = {
@@ -160,15 +160,15 @@ export default function PopoverBase({
 
   const triggerClasses = merge(
     outline,
-    "d:f ai:c jc:c bw:1 bg:white btc:slate-2 blc:slate-2 brc:slate-2 bbc:slate-4 bs-o:xs c:slate-10 us:none c:p h:bg:silver-1",
+    "d:f ai:c jc:c bw:1 bg:raised btc:rim blc:rim brc:rim bbc:shadow bs-o:xs c:label us:none c:p h:bg:well",
     TRIGGER_VARIANTS[triggerVariant],
     TRIGGER_SHAPES[shape],
-    open ? "bg:silver-1" : "",
+    open ? "bg:well" : "",
     className,
   );
 
   const popupClasses = [
-    "px:4 py:3 w:56 bg:white bc:black/10 c:slate-10 bw:1 os:none bs-o:xl",
+    "px:4 py:3 w:56 bg:raised bc:line c:label bw:1 os:none bs-o:xl",
     POPUP_SHAPES[shape],
     arrow ? "p:r" : "",
   ]
@@ -187,21 +187,21 @@ export default function PopoverBase({
             <path
               d="M0 5 L5 0 L10 5"
               strokeWidth="1"
-              className="f:white s:silver-2"
+              className="f:raised s:line"
             />
           </svg>
         </Popover.Arrow>
       )}
 
       <div className="d:f ai:s jc:sb g:3">
-        <Popover.Title className="m:0 mb:1 c:slate-10 fs:sm fw:500">
+        <Popover.Title className="m:0 mb:1 c:label fs:sm fw:500">
           {title}
         </Popover.Title>
         {showClose && (
           <Popover.Close
             className={merge(
               outline,
-              "d:f fs:0 ai:c jc:c w:7 h:7 bg:transparent c:slate-5 bw:0 br:9999 c:p h:bg:silver-1/50 h:c:slate-7",
+              "d:f fs:0 ai:c jc:c w:7 h:7 bg:transparent c:hint bw:0 br:9999 c:p h:bg:well h:c:hint",
             )}
             aria-label="Close"
           >
@@ -211,7 +211,7 @@ export default function PopoverBase({
       </div>
 
       {description && (
-        <Popover.Description className="m:0 c:slate-8 fs:xs">
+        <Popover.Description className="m:0 c:hint fs:xs">
           {description}
         </Popover.Description>
       )}
@@ -239,11 +239,12 @@ export default function PopoverBase({
     <Popover.Root open={open} onOpenChange={setOpen}>
       <Popover.Trigger
         className={triggerClasses}
-        aria-label={triggerLabel}
+        aria-label={triggerVariant === "icon" ? triggerLabel : undefined}
         openOnHover={openOnHover}
         delay={openOnHover ? delay : undefined}
       >
         {trigger}
+        {triggerVariant === "label" && triggerLabel}
       </Popover.Trigger>
 
       {popup}

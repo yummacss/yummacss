@@ -9,7 +9,7 @@ import { merge } from "yummacss/merge";
 type Size = "sm" | "md" | "lg";
 type Shape = "rounded" | "square" | "squircle";
 
-const FOCUS = "fv:os:s fv:ow:3 fv:oo:0 fv:oc:slate-4/60 fv:bc:slate-6";
+const FOCUS = "fv:os:s fv:ow:3 fv:oo:0 fv:oc:focus/40 fv:bc:focus";
 
 const BOX = "d:f ai:c jc:c fs:0";
 
@@ -31,10 +31,11 @@ const LABEL_SIZES: Record<Size, string> = {
   lg: "fs:md",
 };
 
-const DESCRIPTION_INDENT: Record<Size, string> = {
-  sm: "ml:5",
-  md: "ml:6",
-  lg: "ml:7",
+// a box of the label's first line, so the box sits level with it at every size
+const LINE: Record<Size, string> = {
+  sm: "h:4",
+  md: "h:5",
+  lg: "h:6",
 };
 
 const SHAPES: Record<Shape, string> = {
@@ -45,11 +46,8 @@ const SHAPES: Record<Shape, string> = {
 
 // a ticked box is raised and bevelled, an empty one sits recessed
 const CHECKED =
-  "bw:1 bg:slate-12 btc:white/20 blc:black/40 brc:black/40 bbc:black/60";
-const UNCHECKED =
-  "bw:1 bg:white btc:slate-4 blc:slate-3 brc:slate-3 bbc:slate-2";
-
-const DISABLED_BOX = "bw:1 bc:silver-2 bg:silver-1";
+  "bw:1 bg:check btc:white/25 blc:black/15 brc:black/15 bbc:black/30";
+const UNCHECKED = "bw:1 bg:field btc:shadow blc:line brc:line bbc:rim";
 
 export interface CheckboxProps
   extends Omit<ComponentProps<typeof Checkbox.Root>, "className"> {
@@ -64,6 +62,15 @@ export interface CheckboxProps
    * consequence of ticking the box, not for a restatement of the label.
    */
   description?: string;
+  /** A glyph between the box and the label. */
+  icon?: ReactNode;
+  /** Quiet text at the far end of the row, such as a size or a count. */
+  aside?: ReactNode;
+  /**
+   * Draws the checkbox as a full-width row that lifts into a raised chip while
+   * ticked, for a list in a Checkbox Group.
+   */
+  row?: boolean;
   /**
    * Box, tick and label together. The description's indent follows, so it stays
    * aligned with the label at every size.
@@ -101,6 +108,9 @@ export interface CheckboxProps
 export default function CheckboxBase({
   label,
   description,
+  icon,
+  aside,
+  row = false,
   size = "md",
   shape = "rounded",
   disabled = false,
@@ -126,13 +136,69 @@ export default function CheckboxBase({
     setInternalChecked(next);
     onCheckedChange?.(next, details);
   };
+
+  const indicator = (
+    <Checkbox.Indicator
+      className={`d:f c:white ${animated ? "tp:a tdu:350 ttf:out-back opening:o:0 opening:s:40 closing:o:0 closing:s:80 closing:tdu:100 closing:ttf:eo @prm:tp:none" : ""}`}
+      render={(indicatorProps, state) => (
+        <span {...indicatorProps}>
+          {state.indeterminate ? (
+            <MinusIcon className={ICON_SIZES[size]} />
+          ) : (
+            <CheckIcon className={ICON_SIZES[size]} />
+          )}
+        </span>
+      )}
+    />
+  );
+
+  if (row) {
+    // the row is the checkbox, so its chip follows the checked state
+    return (
+      <Checkbox.Root
+        disabled={disabled}
+        checked={checked}
+        onCheckedChange={handleChange}
+        className={(state) =>
+          merge(
+            outline,
+            "d:f ai:c g:3 w:100% px:2 py:2 bw:1 br:lg us:none tp:c tdu:150 ttf:io",
+            disabled ? "o:60 c:na" : "c:p",
+            state.checked
+              ? "bg:raised btc:rim blc:rim brc:rim bbc:shadow bs-o:xs"
+              : "bg:transparent bc:transparent",
+            className,
+          )
+        }
+        render={(rootProps, state) => (
+          <span {...rootProps}>
+            <span
+              className={merge(
+                BOX,
+                SIZES[size],
+                SHAPES[shape],
+                state.checked || state.indeterminate ? CHECKED : UNCHECKED,
+              )}
+            >
+              {indicator}
+            </span>
+            {icon && <span className="d:f fs:0">{icon}</span>}
+            <span className={`c:label fw:500 ${LABEL_SIZES[size]}`}>
+              {label}
+            </span>
+            {aside && <span className="ml:auto c:hint fs:xs">{aside}</span>}
+          </span>
+        )}
+        {...props}
+      />
+    );
+  }
+
   return (
     <label
-      className={`d:f fd:c g:1 us:none ${
-        disabled ? "c:slate-5 c:na" : "c:slate-10 c:p"
-      }`}
+      className={`d:f ai:fs g:2 us:none ${disabled ? "o:60 c:na" : "c:p"}`}
     >
-      <span className={`d:f ai:c g:2 fw:500 ${LABEL_SIZES[size]}`}>
+      <span className={`d:f ai:c fs:0 ${LINE[size]}`}>
         <Checkbox.Root
           disabled={disabled}
           checked={checked}
@@ -143,38 +209,19 @@ export default function CheckboxBase({
               BOX,
               SIZES[size],
               SHAPES[shape],
-
-              disabled
-                ? DISABLED_BOX
-                : state.checked || state.indeterminate
-                  ? CHECKED
-                  : UNCHECKED,
+              state.checked || state.indeterminate ? CHECKED : UNCHECKED,
               className,
             )
           }
           {...props}
         >
-          <Checkbox.Indicator
-            className={`d:f ${disabled ? "c:slate-4" : "c:white"} ${animated ? "tp:a tdu:250 ttf:out-back opening:o:0 opening:s:50 closing:o:0 closing:s:80 closing:tdu:100 closing:ttf:eo @prm:tp:none" : ""}`}
-            render={(indicatorProps, state) => (
-              <span {...indicatorProps}>
-                {state.indeterminate ? (
-                  <MinusIcon className={ICON_SIZES[size]} />
-                ) : (
-                  <CheckIcon className={ICON_SIZES[size]} />
-                )}
-              </span>
-            )}
-          />
+          {indicator}
         </Checkbox.Root>
-        {label}
       </span>
-
-      {description && (
-        <span className={`c:slate-6 fs:xs ${DESCRIPTION_INDENT[size]}`}>
-          {description}
-        </span>
-      )}
+      <span className="d:f fd:c">
+        <span className={`c:label fw:600 ${LABEL_SIZES[size]}`}>{label}</span>
+        {description && <span className="c:hint fs:xs">{description}</span>}
+      </span>
     </label>
   );
 }

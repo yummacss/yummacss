@@ -1,11 +1,7 @@
 "use client";
 
 import { Menu } from "@base-ui/react/menu";
-import {
-  AltArrowRightIcon,
-  CheckIcon,
-  CommandIcon,
-} from "@solar-icons/react/outline";
+import { AltArrowRightIcon, CheckIcon } from "@solar-icons/react/outline";
 import type { ReactNode } from "react";
 import { useEffect, useState } from "react";
 import { merge } from "yummacss/merge";
@@ -14,7 +10,7 @@ type Size = "sm" | "md" | "lg";
 type Shape = "rounded" | "square" | "squircle";
 type IconPosition = "leading" | "trailing";
 
-const FOCUS = "fv:os:s fv:ow:3 fv:oo:0 fv:oc:slate-4/60 fv:bc:slate-6";
+const FOCUS = "fv:os:s fv:ow:3 fv:oo:0 fv:oc:focus/40 fv:bc:focus";
 
 interface SizeSpec {
   trigger: string;
@@ -24,14 +20,24 @@ interface SizeSpec {
 }
 
 const SIZES: Record<Size, SizeSpec> = {
-  sm: { trigger: "px:2 py:1", popup: "w:44", item: "py:1 px:2", text: "fs:xs" },
+  sm: {
+    trigger: "px:2 py:1",
+    popup: "min-w:44",
+    item: "py:1 px:2",
+    text: "fs:xs",
+  },
   md: {
     trigger: "px:3 py:2",
-    popup: "w:52",
+    popup: "min-w:52",
     item: "py:2 pl:2 pr:3",
     text: "fs:sm",
   },
-  lg: { trigger: "px:4 py:3", popup: "w:60", item: "py:3 px:4", text: "fs:md" },
+  lg: {
+    trigger: "px:4 py:3",
+    popup: "min-w:60",
+    item: "py:3 px:4",
+    text: "fs:md",
+  },
 };
 
 const TRIGGER_SHAPES: Record<Shape, string> = {
@@ -208,17 +214,17 @@ export default function MenuBase({
   const spec = SIZES[size];
   const triggerClasses = merge(
     outline,
-    "d:f ai:c g:2 h:fc bg:white btc:slate-2 blc:slate-2 brc:slate-2 bbc:slate-4 bs-o:xs bw:1 fw:500 us:none",
+    "d:f ai:c g:2 h:fc bg:raised btc:rim blc:rim brc:rim bbc:shadow bs-o:xs bw:1 fw:500 us:none",
     spec.trigger,
     spec.text,
     TRIGGER_SHAPES[shape],
     animated ? "tp:c tdu:150 ttf:io" : "",
-    disabled ? "c:slate-4 o:60 c:na" : "c:slate-10 c:p h:bg:silver-1",
+    disabled ? "c:hint o:60 c:na" : "c:label c:p h:bg:well",
     className,
   );
 
   const popupClasses = [
-    "py:1 bg:white bc:black/10 c:slate-10 bw:1 os:none bs-o:xl",
+    "py:1 max-h:var(--available-height) oy:auto bg:raised bc:line c:label bw:1 os:none bs-o:xl",
     spec.popup,
     POPUP_SHAPES[shape],
   ]
@@ -237,8 +243,8 @@ export default function MenuBase({
         destructive ? "c:red" : "",
         state.highlighted
           ? destructive
-            ? "bg:red c:white btc:red-5"
-            : "bg:slate-12 c:white btc:white/20"
+            ? "bg:red c:white btc:red-5 blc:red-8 brc:red-8 bbc:red-9"
+            : "bg:check c:white btc:white/25 blc:black/15 brc:black/15 bbc:black/30"
           : "bg:transparent",
       ]
         .filter(Boolean)
@@ -250,7 +256,10 @@ export default function MenuBase({
 
       if ("type" in item && item.type === "separator") {
         return (
-          <Menu.Separator key={key} className="my:1 w:100% h:px bg:silver-2" />
+          <Menu.Separator
+            key={key}
+            className="my:1 w:100% h:0 btw:1 bbw:1 btc:groove bbc:glint"
+          />
         );
       }
 
@@ -258,7 +267,7 @@ export default function MenuBase({
         return (
           <Menu.Group key={key}>
             {item.label && (
-              <div className="px:3 py:1 fs:xs fw:600 c:slate-5 us:none">
+              <div className="px:3 py:1 fs:xs fw:600 c:hint us:none">
                 {item.label}
               </div>
             )}
@@ -276,7 +285,7 @@ export default function MenuBase({
             disabled={item.disabled}
             className={itemClasses(false, false)}
           >
-            <span className="d:f ai:c jc:c fs:0 w:4 h:4 bc:silver-3 br:sm bw:1">
+            <span className="d:f ai:c jc:c fs:0 w:4 h:4 bc:rim br:sm bw:1">
               <Menu.CheckboxItemIndicator>
                 <CheckIcon className="w:3 h:3" />
               </Menu.CheckboxItemIndicator>
@@ -299,7 +308,7 @@ export default function MenuBase({
                 value={option.value}
                 className={itemClasses(false, false)}
               >
-                <span className="d:f ai:c jc:c fs:0 w:4 h:4 bc:silver-3 br:9999 bw:1">
+                <span className="d:f ai:c jc:c fs:0 w:4 h:4 bc:rim br:9999 bw:1">
                   <Menu.RadioItemIndicator>
                     <span className="d:b w:2 h:2 br:9999 bg:current" />
                   </Menu.RadioItemIndicator>
@@ -316,10 +325,10 @@ export default function MenuBase({
           <Menu.SubmenuRoot key={key}>
             <Menu.SubmenuTrigger className={itemClasses(false, true)}>
               {icon && item.icon && (
-                <span className="d:f fs:0 c:slate-5">{item.icon}</span>
+                <span className="d:f fs:0 o:70">{item.icon}</span>
               )}
               <span className="fg:1">{item.label}</span>
-              <AltArrowRightIcon className="fs:0 w:4 h:4 c:slate-4" />
+              <AltArrowRightIcon className="fs:0 w:4 h:4 o:70" />
             </Menu.SubmenuTrigger>
 
             <Menu.Portal container={container}>
@@ -351,7 +360,7 @@ export default function MenuBase({
           className={itemClasses(destructive, trailing)}
         >
           {icon && action.icon && iconPosition === "leading" && (
-            <span className={`d:f fs:0 ${destructive ? "" : "c:slate-5"}`}>
+            <span className={`d:f fs:0 ${destructive ? "" : "o:70"}`}>
               {action.icon}
             </span>
           )}
@@ -361,22 +370,16 @@ export default function MenuBase({
             action.label
           )}
           {icon && action.icon && iconPosition === "trailing" && (
-            <span className={`d:f fs:0 ${destructive ? "" : "c:slate-5"}`}>
+            <span className={`d:f fs:0 ${destructive ? "" : "o:70"}`}>
               {action.icon}
             </span>
           )}
           {action.shortcut && (
-            <span
-              className={[
-                "d:f ai:c g:1 ml:4 fw:400 fs:xs",
-                destructive ? "" : "c:slate-6",
-              ]
-                .filter(Boolean)
-                .join(" ")}
+            <kbd
+              className={`ml:4 px:1 br:sm bw:1 bc:current fs:xs fw:400 lh:4 ff:d ${destructive ? "" : "o:70"}`}
             >
-              <CommandIcon className="w:3 h:3" />
-              <span>{action.shortcut}</span>
-            </span>
+              {action.shortcut}
+            </kbd>
           )}
         </Menu.Item>
       );

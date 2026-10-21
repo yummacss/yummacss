@@ -5,7 +5,7 @@ import { merge } from "yummacss/merge";
 type Shape = "rounded" | "square" | "squircle";
 type Size = "sm" | "md" | "lg";
 
-const FOCUS = "fv:os:s fv:ow:3 fv:oo:0 fv:oc:slate-4/60 fv:bc:slate-6";
+const FOCUS = "fv:os:s fv:ow:3 fv:oo:0 fv:oc:focus/40 fv:bc:focus";
 type Separator = "chevron" | "slash";
 
 const SIZES: Record<Size, string> = {
@@ -82,14 +82,18 @@ export default function BreadcrumbBase({
   const navClasses = merge(
     "d:f ai:c g:2",
     bordered
-      ? "px:3 py:2 bg:white btc:slate-2 blc:slate-2 brc:slate-2 bbc:slate-4 bs-o:xs bw:1"
+      ? "px:3 py:2 bg:raised btc:rim blc:rim brc:rim bbc:shadow bs-o:xs bw:1"
       : "",
     bordered ? SHAPES[shape] : "",
     className,
   );
 
   const labelClasses = [SIZES[size], "fw:400"].filter(Boolean).join(" ");
-  const currentClasses = [SIZES[size], "fw:500 c:slate-12"]
+  // the current page sits in a raised chip
+  const currentClasses = [
+    SIZES[size],
+    "px:2 py:1 br:md bw:1 bg:raised btc:rim blc:rim brc:rim bbc:shadow bs-o:xs fw:600 c:label",
+  ]
     .filter(Boolean)
     .join(" ");
 
@@ -101,7 +105,7 @@ export default function BreadcrumbBase({
         const linkClasses = merge(
           outline,
           item.icon ? "d:f ai:c g:2" : "",
-          "c:slate-6 h:c:slate-10",
+          "c:hint h:c:label",
         );
 
         return (
@@ -129,11 +133,11 @@ export default function BreadcrumbBase({
             {!isLast &&
               (separator === "chevron" ? (
                 <AltArrowRightIcon
-                  className={`c:slate-4 ${SEPARATOR_SIZES[size]}`}
+                  className={`c:hint ${SEPARATOR_SIZES[size]}`}
                   aria-hidden="true"
                 />
               ) : (
-                <span className={`c:slate-4 ${SIZES[size]}`} aria-hidden="true">
+                <span className={`c:hint ${SIZES[size]}`} aria-hidden="true">
                   /
                 </span>
               ))}

@@ -4,14 +4,55 @@
     {
       "name": "label",
       "type": "string",
-      "default": "Upload files",
-      "description": "The clickable part of the prompt, before \"or drag and drop\"."
+      "default": "Drop files to upload",
+      "description": "The zone's title.",
+      "example": "Drop files to upload"
+    },
+    {
+      "name": "browseLabel",
+      "type": "string",
+      "default": "choose from your computer",
+      "description": "The link in the line under the title that opens the file picker."
     },
     {
       "name": "hint",
       "type": "string",
-      "default": "Drag and drop files here",
-      "description": "The quieter line under the prompt, for what this zone accepts."
+      "description": "The rest of that line, after the link, for what this zone accepts.",
+      "example": "up to 2 GB each"
+    },
+    {
+      "name": "items",
+      "type": "none",
+      "typeName": "FileUploadItem[]",
+      "example": [
+        {
+          "id": "holiday",
+          "name": "holiday-2026.mov",
+          "detail": "1.4 of 2.2 GB",
+          "progress": 0.64,
+          "icon": {
+            "$icon": "VideoFrameIcon",
+            "size": "w:5 h:5 c:red"
+          }
+        },
+        {
+          "id": "notes",
+          "name": "notes.md",
+          "detail": "Uploaded, 12 KB",
+          "done": true,
+          "icon": {
+            "$icon": "DocumentIcon",
+            "size": "w:5 h:5 c:blue"
+          }
+        }
+      ],
+      "description": "Files your app is uploading, each with its own progress, listed under the zone in place of the picked ones. Pair with `onCancel`."
+    },
+    {
+      "name": "onCancel",
+      "type": "none",
+      "typeName": "(id: string) => void",
+      "description": "Called with an item's `id` when its cancel button is pressed."
     },
     {
       "name": "description",
@@ -33,7 +74,8 @@
       "name": "multiple",
       "type": "boolean",
       "default": false,
-      "description": "Lets the zone hold more than one file. Each pick or drop adds to the list, and a file already in it is not added twice; off, the newest file replaces the old one."
+      "description": "Lets the zone hold more than one file. Each pick or drop adds to the list, and a file already in it is not added twice; off, the newest file replaces the old one.",
+      "example": true
     },
     {
       "name": "onFilesChange",
@@ -72,6 +114,38 @@
       "typeName": "boolean | string",
       "default": true,
       "description": "The focus outline. `true` draws it, `false` removes it along with the danger, error and success tints that ride with it, and a string of Yumma CSS utilities restyles it on every focusable part of the component, which is more than `className` reaches. Removing it outright and putting nothing back fails WCAG 2.4.7."
+    }
+  ],
+  "scene": [
+    {
+      "component": "FileUpload",
+      "props": {
+        "label": "Drop files to upload",
+        "hint": "up to 2 GB each",
+        "items": [
+          {
+            "id": "holiday",
+            "name": "holiday-2026.mov",
+            "detail": "1.4 of 2.2 GB",
+            "progress": 0.64,
+            "icon": {
+              "$icon": "VideoFrameIcon",
+              "size": "w:5 h:5 c:red"
+            }
+          },
+          {
+            "id": "notes",
+            "name": "notes.md",
+            "detail": "Uploaded, 12 KB",
+            "done": true,
+            "icon": {
+              "$icon": "DocumentIcon",
+              "size": "w:5 h:5 c:blue"
+            }
+          }
+        ],
+        "multiple": true
+      }
     }
   ]
 }

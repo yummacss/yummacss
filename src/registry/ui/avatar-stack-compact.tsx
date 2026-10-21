@@ -2,12 +2,12 @@ import {
   LaptopIcon,
   SmartphoneIcon,
   TabletIcon,
-} from "@solar-icons/react/bold-duotone";
+} from "@solar-icons/react/bold";
 import Avatar from "./avatar";
 
 export default function AvatarStackCompact() {
   return (
-    <div className="d:f ai:c p:px bg:white btc:slate-2 blc:slate-2 brc:slate-2 bbc:slate-4 bs-o:xs br:9999 bw:1">
+    <div className="d:f ai:c p:px bg:raised btc:rim blc:rim brc:rim bbc:shadow bs-o:xs br:9999 bw:1">
       {devices.map((device, index) => (
         <Avatar
           key={device.name}

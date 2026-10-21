@@ -33,10 +33,10 @@ const CLOSE_SHAPES: Record<Shape, string> = {
   squircle: "br:lg cs:s",
 };
 
-const FOCUS = "fv:os:s fv:ow:3 fv:oo:0 fv:oc:slate-4/60 fv:bc:slate-6";
+const FOCUS = "fv:os:s fv:ow:3 fv:oo:0 fv:oc:focus/40 fv:bc:focus";
 
 const RAISED =
-  "bg:white btc:slate-2 blc:slate-2 brc:slate-2 bbc:slate-4 bs-o:xs c:slate-10 h:bg:silver-1";
+  "bg:raised btc:rim blc:rim brc:rim bbc:shadow bs-o:xs c:label h:bg:well";
 
 const DANGER_OUTLINE = "fv:oc:red-2/60 fv:bc:red-3";
 
@@ -238,7 +238,7 @@ function Stack({
       className={(state) =>
         merge(
           outline,
-          "p:a r:0 b:0 w:100% bg:white bc:black/10 bw:1 bs-o:xl us:none",
+          "p:a r:0 b:0 w:100% bg:raised bc:line bw:1 bs-o:xl us:none",
           TOAST_SHAPES[shape],
           animated ? "tp:a tdu:500 ttf:out-quart @prm:tp:none" : "",
           state.transitionStatus === "ending" || state.limited ? "o:0" : "",
@@ -259,8 +259,8 @@ function Stack({
         }
       >
         <div className="d:f fd:c g:1 f:1 min-w:0">
-          <Toast.Title className="m:0 c:slate-12 fs:sm fw:600" />
-          <Toast.Description className="m:0 c:slate-7 fs:sm" />
+          <Toast.Title className="m:0 c:label fs:sm fw:600" />
+          <Toast.Description className="m:0 c:hint fs:sm" />
         </div>
         <Toast.Action
           className={merge(
@@ -277,7 +277,7 @@ function Stack({
             <Button
               className={merge(
                 outline,
-                "d:f fs:0 ai:c jc:c w:7 h:7 p:0 c:slate-6 bw:0 bg:transparent c:p h:bg:silver-1/50 h:c:slate-7",
+                "d:f fs:0 ai:c jc:c w:7 h:7 p:0 c:hint bw:0 bg:transparent c:p h:bg:well h:c:hint",
                 CLOSE_SHAPES[shape],
               )}
             />

@@ -25,7 +25,7 @@ const POPUP_SHAPES: Record<Shape, string> = {
 };
 
 const BADGE_SHAPES: Record<Shape, string> = {
-  rounded: "br:9999",
+  rounded: "br:lg",
   square: "",
   squircle: "br:xxl cs:s",
 };
@@ -37,12 +37,12 @@ const BUTTON_SHAPES: Record<Shape, string> = {
 };
 
 const CLOSE_SHAPES: Record<Shape, string> = {
-  rounded: "br:9999",
+  rounded: "br:md",
   square: "",
   squircle: "br:lg cs:s",
 };
 
-const FOCUS = "fv:os:s fv:ow:3 fv:oo:0 fv:oc:slate-4/60 fv:bc:slate-6";
+const FOCUS = "fv:os:s fv:ow:3 fv:oo:0 fv:oc:focus/40 fv:bc:focus";
 
 const DANGER_OUTLINE = "fv:oc:red-2/60 fv:bc:red-3";
 
@@ -50,12 +50,12 @@ const TONE_BUTTON: Record<Tone, string> = {
   danger:
     "bg:red h:bg:red-8 btc:red-5 blc:red-8 brc:red-8 bbc:red-9 c:white bs-o:sm",
   neutral:
-    "bg:white btc:slate-2 blc:slate-2 brc:slate-2 bbc:slate-4 bs-o:xs c:slate-10 h:bg:silver-1",
+    "bg:raised btc:rim blc:rim brc:rim bbc:shadow bs-o:xs c:label h:bg:well",
 };
 
 const TONE_BADGE: Record<Tone, string> = {
-  danger: "bg:red-1/50 c:red",
-  neutral: "bg:silver-2 c:slate-7",
+  danger: "bw:1 bg:red btc:red-5 blc:red-8 brc:red-8 bbc:red-9 bs-o:sm c:white",
+  neutral: "bg:well c:hint",
 };
 
 export interface AlertDialogProps {
@@ -172,7 +172,7 @@ export default function AlertDialogBase({
   );
 
   const popupClasses = [
-    "o:h p:r w:96 bg:white bc:black/10 c:slate-10 bw:1 os:none bs-o:xl",
+    "o:h p:r w:96 bg:raised bc:line c:label bw:1 os:none bs-o:xl",
     POPUP_SHAPES[shape],
   ]
     .filter(Boolean)
@@ -203,7 +203,7 @@ export default function AlertDialogBase({
   const popup = (
     <AlertDialog.Portal container={container} keepMounted>
       <AlertDialog.Backdrop
-        className={`p:f i:0 min-h:dvh bg:black/5 bf-b:xs ${
+        className={`p:f i:0 min-h:dvh bg:shadow/30 bf-b:xs ${
           animated
             ? "tp:o tdu:250 ttf:out-quart opening:o:0 closing:o:0 closing:tdu:150 closing:ttf:eo @prm:tp:none"
             : ""
@@ -222,28 +222,28 @@ export default function AlertDialogBase({
                 <Button
                   className={merge(
                     outline,
-                    "d:f p:a r:3 t:3 ai:c jc:c w:7 h:7 p:0 c:slate-6 bw:0 h:bg:silver-1/50 h:c:slate-7",
+                    "d:f p:a r:4 t:4 ai:c jc:c w:7 h:7 p:0 bw:1 bg:raised btc:rim blc:rim brc:rim bbc:shadow bs-o:xs c:label h:bg:well",
                     CLOSE_SHAPES[shape],
                   )}
                 />
               }
               aria-label="Close"
             >
-              <CloseIcon aria-hidden className="w:5 h:5" />
+              <CloseIcon aria-hidden className="w:4 h:4" />
             </AlertDialog.Close>
           )}
 
-          <div className="d:f fd:c ai:c g:3 pt:10 pb:6 px:4">
-            {icon && <span className={badgeClasses}>{icon}</span>}
-            <AlertDialog.Title className="c:slate-10 fs:md fw:500">
+          <div className="d:f fd:c ai:fs g:2 pt:5 pb:4 px:5">
+            {icon && <span className={`mb:2 ${badgeClasses}`}>{icon}</span>}
+            <AlertDialog.Title className="m:0 c:label fs:md fw:600">
               {title}
             </AlertDialog.Title>
-            <AlertDialog.Description className="m:0 c:slate-6 fs:sm lh:4 ta:c">
+            <AlertDialog.Description className="m:0 c:hint fs:sm lh:4">
               {description}
             </AlertDialog.Description>
           </div>
 
-          <div className="d:f jc:c g:3 px:4 pb:4">
+          <div className="d:f jc:fe g:2 px:5 pb:5">
             <AlertDialog.Close render={<Button className={cancelClasses} />}>
               {cancelLabel}
             </AlertDialog.Close>

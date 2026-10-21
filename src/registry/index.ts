@@ -19,11 +19,14 @@ import meta_dialog from "./meta/dialog.json";
 import meta_drawer from "./meta/drawer.json";
 import meta_empty_state from "./meta/empty-state.json";
 import meta_field from "./meta/field.json";
+import meta_file_tree from "./meta/file-tree.json";
 import meta_file_upload from "./meta/file-upload.json";
 import meta_inline_icon_heading from "./meta/inline-icon-heading.json";
+import meta_kbd from "./meta/kbd.json";
 import meta_menu from "./meta/menu.json";
 import meta_menubar from "./meta/menubar.json";
 import meta_meter from "./meta/meter.json";
+import meta_navigation_menu from "./meta/navigation-menu.json";
 import meta_number_field from "./meta/number-field.json";
 import meta_onboarding from "./meta/onboarding.json";
 import meta_otp_field from "./meta/otp-field.json";
@@ -32,13 +35,16 @@ import meta_preview_card from "./meta/preview-card.json";
 import meta_progress from "./meta/progress.json";
 import meta_radio from "./meta/radio.json";
 import meta_rating from "./meta/rating.json";
+import meta_scroll_area from "./meta/scroll-area.json";
 import meta_select from "./meta/select.json";
 import meta_separator from "./meta/separator.json";
 import meta_skeleton from "./meta/skeleton.json";
 import meta_slider from "./meta/slider.json";
+import meta_storage_bar from "./meta/storage-bar.json";
 import meta_switch from "./meta/switch.json";
 import meta_tabs from "./meta/tabs.json";
 import meta_textarea from "./meta/textarea.json";
+import meta_theme_switcher from "./meta/theme-switcher.json";
 import meta_toast from "./meta/toast.json";
 import meta_toggle_group from "./meta/toggle-group.json";
 import meta_toggle from "./meta/toggle.json";
@@ -74,11 +80,14 @@ export const registry = {
   "field-prefix": () => import("./ui/field-prefix"),
   "field-suffix": () => import("./ui/field-suffix"),
   "field": () => import("./ui/field"),
+  "file-tree": () => import("./ui/file-tree"),
   "file-upload": () => import("./ui/file-upload"),
   "inline-icon-heading": () => import("./ui/inline-icon-heading"),
+  "kbd": () => import("./ui/kbd"),
   "menu": () => import("./ui/menu"),
   "menubar": () => import("./ui/menubar"),
   "meter": () => import("./ui/meter"),
+  "navigation-menu": () => import("./ui/navigation-menu"),
   "number-field": () => import("./ui/number-field"),
   "onboarding": () => import("./ui/onboarding"),
   "otp-field": () => import("./ui/otp-field"),
@@ -87,6 +96,7 @@ export const registry = {
   "progress": () => import("./ui/progress"),
   "radio": () => import("./ui/radio"),
   "rating": () => import("./ui/rating"),
+  "scroll-area": () => import("./ui/scroll-area"),
   "select-grouped": () => import("./ui/select-grouped"),
   "select": () => import("./ui/select"),
   "separator": () => import("./ui/separator"),
@@ -96,9 +106,11 @@ export const registry = {
   "skeleton-stats": () => import("./ui/skeleton-stats"),
   "skeleton": () => import("./ui/skeleton"),
   "slider": () => import("./ui/slider"),
+  "storage-bar": () => import("./ui/storage-bar"),
   "switch": () => import("./ui/switch"),
   "tabs": () => import("./ui/tabs"),
   "textarea": () => import("./ui/textarea"),
+  "theme-switcher": () => import("./ui/theme-switcher"),
   "toast": () => import("./ui/toast"),
   "toggle-group": () => import("./ui/toggle-group"),
   "toggle": () => import("./ui/toggle"),
@@ -140,10 +152,8 @@ export interface RegistryProp {
 export interface RegistryMeta {
   summary?: string;
   props: RegistryProp[];
-  children?: string;
-  childrenExample?: ChildExample[];
   /** The Example view: the component in use, often several times over. */
-  scene?: ChildExample[];
+  scene: ChildExample[];
 }
 
 /** One node of a demo's children: a registry component, a plain element, or text. */
@@ -176,11 +186,14 @@ export const registryMeta = {
   "drawer": meta_drawer,
   "empty-state": meta_empty_state,
   "field": meta_field,
+  "file-tree": meta_file_tree,
   "file-upload": meta_file_upload,
   "inline-icon-heading": meta_inline_icon_heading,
+  "kbd": meta_kbd,
   "menu": meta_menu,
   "menubar": meta_menubar,
   "meter": meta_meter,
+  "navigation-menu": meta_navigation_menu,
   "number-field": meta_number_field,
   "onboarding": meta_onboarding,
   "otp-field": meta_otp_field,
@@ -189,13 +202,16 @@ export const registryMeta = {
   "progress": meta_progress,
   "radio": meta_radio,
   "rating": meta_rating,
+  "scroll-area": meta_scroll_area,
   "select": meta_select,
   "separator": meta_separator,
   "skeleton": meta_skeleton,
   "slider": meta_slider,
+  "storage-bar": meta_storage_bar,
   "switch": meta_switch,
   "tabs": meta_tabs,
   "textarea": meta_textarea,
+  "theme-switcher": meta_theme_switcher,
   "toast": meta_toast,
   "toggle-group": meta_toggle_group,
   "toggle": meta_toggle,
@@ -243,11 +259,14 @@ export const registryTargets: Record<string, RegistryTarget> = {
   "field-prefix": { component: "field", variant: "prefix", kind: "example", install: "field" },
   "field-suffix": { component: "field", variant: "suffix", kind: "example", install: "field" },
   "field": { component: "field", variant: "base", kind: "component", install: "field" },
+  "file-tree": { component: "file-tree", variant: "base", kind: "component", install: "file-tree" },
   "file-upload": { component: "file-upload", variant: "base", kind: "component", install: "file-upload" },
   "inline-icon-heading": { component: "inline-icon-heading", variant: "base", kind: "component", install: "inline-icon-heading" },
+  "kbd": { component: "kbd", variant: "base", kind: "component", install: "kbd" },
   "menu": { component: "menu", variant: "base", kind: "component", install: "menu" },
   "menubar": { component: "menubar", variant: "base", kind: "component", install: "menubar" },
   "meter": { component: "meter", variant: "base", kind: "component", install: "meter" },
+  "navigation-menu": { component: "navigation-menu", variant: "base", kind: "component", install: "navigation-menu" },
   "number-field": { component: "number-field", variant: "base", kind: "component", install: "number-field" },
   "onboarding": { component: "onboarding", variant: "base", kind: "component", install: "onboarding" },
   "otp-field": { component: "otp-field", variant: "base", kind: "component", install: "otp-field" },
@@ -256,6 +275,7 @@ export const registryTargets: Record<string, RegistryTarget> = {
   "progress": { component: "progress", variant: "base", kind: "component", install: "progress" },
   "radio": { component: "radio", variant: "base", kind: "component", install: "radio" },
   "rating": { component: "rating", variant: "base", kind: "component", install: "rating" },
+  "scroll-area": { component: "scroll-area", variant: "base", kind: "component", install: "scroll-area" },
   "select-grouped": { component: "select", variant: "grouped", kind: "example", install: "select" },
   "select": { component: "select", variant: "base", kind: "component", install: "select" },
   "separator": { component: "separator", variant: "base", kind: "component", install: "separator" },
@@ -265,9 +285,11 @@ export const registryTargets: Record<string, RegistryTarget> = {
   "skeleton-stats": { component: "skeleton", variant: "stats", kind: "example", install: "skeleton" },
   "skeleton": { component: "skeleton", variant: "base", kind: "component", install: "skeleton" },
   "slider": { component: "slider", variant: "base", kind: "component", install: "slider" },
+  "storage-bar": { component: "storage-bar", variant: "base", kind: "component", install: "storage-bar" },
   "switch": { component: "switch", variant: "base", kind: "component", install: "switch" },
   "tabs": { component: "tabs", variant: "base", kind: "component", install: "tabs" },
   "textarea": { component: "textarea", variant: "base", kind: "component", install: "textarea" },
+  "theme-switcher": { component: "theme-switcher", variant: "base", kind: "component", install: "theme-switcher" },
   "toast": { component: "toast", variant: "base", kind: "component", install: "toast" },
   "toggle-group": { component: "toggle-group", variant: "base", kind: "component", install: "toggle-group" },
   "toggle": { component: "toggle", variant: "base", kind: "component", install: "toggle" },
@@ -291,18 +313,22 @@ export const registryConfig: Record<string, RegistryConfig> = {
   "context-menu": { states: { "opening": "[data-starting-style]", "closing": "[data-ending-style]" }, easings: { "out-quart": "cubic-bezier(0.25, 1, 0.5, 1)" }, keyframes: {} },
   "dialog": { states: { "opening": "[data-starting-style]", "closing": "[data-ending-style]" }, easings: { "out-quart": "cubic-bezier(0.25, 1, 0.5, 1)" }, keyframes: {} },
   "drawer": { states: { "opening": "[data-starting-style]", "closing": "[data-ending-style]", "swiping": "[data-swiping]" }, easings: { "out-quart": "cubic-bezier(0.25, 1, 0.5, 1)" }, keyframes: {} },
+  "file-tree": { states: { "opening": "[data-starting-style]", "closing": "[data-ending-style]" }, easings: { "in-out-cubic": "cubic-bezier(0.65, 0, 0.35, 1)", "out-quart": "cubic-bezier(0.25, 1, 0.5, 1)" }, keyframes: {} },
+  "file-upload": { states: {}, easings: { "out-quart": "cubic-bezier(0.25, 1, 0.5, 1)" }, keyframes: {} },
   "inline-icon-heading": { states: {}, easings: { "out-back": "cubic-bezier(0.34, 1.56, 0.64, 1)" }, keyframes: {} },
   "menu": { states: { "opening": "[data-starting-style]", "closing": "[data-ending-style]" }, easings: { "out-quart": "cubic-bezier(0.25, 1, 0.5, 1)" }, keyframes: {} },
   "menubar": { states: { "opening": "[data-starting-style]", "closing": "[data-ending-style]" }, easings: { "out-quart": "cubic-bezier(0.25, 1, 0.5, 1)" }, keyframes: {} },
+  "navigation-menu": { states: { "opening": "[data-starting-style]", "closing": "[data-ending-style]", "from-left": "[data-activation-direction=left]", "from-right": "[data-activation-direction=right]" }, easings: { "in-out-cubic": "cubic-bezier(0.65, 0, 0.35, 1)", "out-quart": "cubic-bezier(0.25, 1, 0.5, 1)" }, keyframes: {} },
   "onboarding": { states: { "opening": "[data-starting-style]", "closing": "[data-ending-style]" }, easings: { "out-quart": "cubic-bezier(0.25, 1, 0.5, 1)" }, keyframes: {} },
   "popover": { states: { "opening": "[data-starting-style]", "closing": "[data-ending-style]" }, easings: { "out-quart": "cubic-bezier(0.25, 1, 0.5, 1)" }, keyframes: {} },
   "preview-card": { states: { "opening": "[data-starting-style]", "closing": "[data-ending-style]" }, easings: { "out-quart": "cubic-bezier(0.25, 1, 0.5, 1)" }, keyframes: {} },
   "progress": { states: {}, easings: {}, keyframes: { "slide": "from { translate: -100% 0; } to { translate: 100% 0; }" } },
   "radio": { states: {}, easings: { "out-back": "cubic-bezier(0.34, 1.56, 0.64, 1)" }, keyframes: {} },
   "rating": { states: {}, easings: { "out-back": "cubic-bezier(0.34, 1.56, 0.64, 1)" }, keyframes: {} },
+  "scroll-area": { states: { "hovering": "[data-hovering]", "scrolling": "[data-scrolling]" }, easings: {}, keyframes: {} },
   "select": { states: { "opening": "[data-starting-style]", "closing": "[data-ending-style]" }, easings: { "out-quart": "cubic-bezier(0.25, 1, 0.5, 1)" }, keyframes: {} },
   "skeleton": { states: {}, easings: {}, keyframes: { "pulse": "0%, 100% { opacity: .5; } 50% { opacity: 1; }" } },
-  "switch": { states: {}, easings: { "out-back": "cubic-bezier(0.34, 1.56, 0.64, 1)" }, keyframes: {} },
+  "switch": { states: {}, easings: { "out-back": "cubic-bezier(0.34, 1.56, 0.64, 1)", "out-quart": "cubic-bezier(0.25, 1, 0.5, 1)" }, keyframes: {} },
   "tabs": { states: {}, easings: { "out-quart": "cubic-bezier(0.25, 1, 0.5, 1)" }, keyframes: {} },
   "toast": { states: {}, easings: { "out-quart": "cubic-bezier(0.25, 1, 0.5, 1)" }, keyframes: {} },
   "toggle": { states: {}, easings: { "out-back": "cubic-bezier(0.34, 1.56, 0.64, 1)" }, keyframes: {} },

@@ -21,15 +21,15 @@ export interface AutocompleteGroup {
   items: AutocompleteItem[];
 }
 
-const FOCUS = "fv:os:s fv:ow:3 fv:oo:0 fv:oc:slate-4/60 fv:bc:slate-6";
+const FOCUS = "fv:os:s fv:ow:3 fv:oo:0 fv:oc:focus/40 fv:bc:focus";
 
 const INPUT =
-  "bg:white btc:slate-4 blc:slate-3 brc:slate-3 bbc:slate-2 c:slate-10 bw:1 fs:md";
+  "bg:field btc:shadow blc:line brc:line bbc:rim c:label bw:1 fs:sm";
 
 const SIZES: Record<Size, string> = {
   sm: "h:8 w:56",
-  md: "h:10 w:64",
-  lg: "h:12 w:72",
+  md: "h:9 w:64",
+  lg: "h:11 w:72",
 };
 
 const ITEM_SHAPES: Record<Shape, string> = {
@@ -141,7 +141,20 @@ function isGroupEntry(
   return "items" in entry;
 }
 
-function renderItem(item: AutocompleteItem, shape: Shape) {
+// the part of the label the query matched, in bold
+function marked(label: string, query: string): ReactNode {
+  const at = query ? label.toLowerCase().indexOf(query.toLowerCase()) : -1;
+  if (at < 0) return label;
+  return (
+    <>
+      {label.slice(0, at)}
+      <span className="fw:700">{label.slice(at, at + query.length)}</span>
+      {label.slice(at + query.length)}
+    </>
+  );
+}
+
+function renderItem(item: AutocompleteItem, shape: Shape, query: string) {
   return (
     <Autocomplete.Item
       key={item.label}
@@ -149,36 +162,38 @@ function renderItem(item: AutocompleteItem, shape: Shape) {
       render={(props, state) => (
         <div
           {...props}
-          className={`d:f ai:c g:3 py:2 px:3 mx:1 bw:1 bc:transparent c:slate-10 ${ITEM_SHAPES[shape]} fs:sm us:none c:p ${
+          className={`d:f ai:c g:3 py:2 px:3 mx:1 bw:1 bc:transparent c:label ${ITEM_SHAPES[shape]} fs:sm us:none c:p ${
             state.highlighted
-              ? "bg:slate-12 c:white btc:white/20"
+              ? "bg:check c:white btc:white/25 blc:black/15 brc:black/15 bbc:black/30"
               : "bg:transparent"
           }`}
         >
           {item.icon ? (
-            <span className="d:f fs:0 ai:c jc:c w:6 h:6 c:slate-5">
+            <span
+              className={`d:f fs:0 ai:c jc:c w:6 h:6 ${state.highlighted ? "" : "c:hint"}`}
+            >
               {item.icon}
             </span>
           ) : (
             item.avatar && (
-              <Avatar.Root className="fs:0 w:6 h:6 bc:white br:9999 bw:1">
+              <Avatar.Root className="fs:0 w:6 h:6 bc:raised br:9999 bw:1">
                 <Avatar.Image
                   src={item.avatar}
                   alt=""
                   className="of:c w:100% h:100% br:9999"
                 />
-                <Avatar.Fallback className="d:f ai:c jc:c w:100% h:100% bg:silver-2 c:slate-8 fs:xs">
+                <Avatar.Fallback className="d:f ai:c jc:c w:100% h:100% bg:well c:hint fs:xs">
                   {item.label[0]}
                 </Avatar.Fallback>
               </Avatar.Root>
             )
           )}
-          <div className="d:f fd:c min-w:0">
-            <span className="o:h fw:500 to:e ws:nw">{item.label}</span>
-            {item.description && (
-              <span className="c:slate-6 fs:xs">{item.description}</span>
-            )}
-          </div>
+          <span className="f:1 min-w:0 o:h to:e ws:nw">
+            {marked(item.label, query)}
+          </span>
+          {item.description && (
+            <span className="fs:xs o:80 ws:nw">{item.description}</span>
+          )}
         </div>
       )}
     />
@@ -212,6 +227,7 @@ export default function AutocompleteBase({
   const outline = focus ? merge(FOCUS, focus === true ? "" : focus) : "";
 
   const [open, setOpen] = useState(false);
+  const [query, setQuery] = useState("");
 
   useEffect(() => {
     if (disabled) setOpen(false);
@@ -229,16 +245,16 @@ export default function AutocompleteBase({
 
   const popup = (
     <Autocomplete.Popup
-      className={`o:h bg:white bc:black/10 bs-o:xl c:slate-10 bw:1 ${POPUP_SIZES[size]} ${SHAPES[shape]} ${animated ? "tor:var(--transform-origin) tp:a tdu:200 ttf:out-quart opening:o:0 opening:s:95 closing:o:0 closing:s:95 closing:tdu:100 closing:ttf:eo @prm:tp:none" : ""}`}
+      className={`o:h bg:raised bc:line bs-o:xl c:label bw:1 ${POPUP_SIZES[size]} ${SHAPES[shape]} ${animated ? "tor:var(--transform-origin) tp:a tdu:200 ttf:out-quart opening:o:0 opening:s:95 closing:o:0 closing:s:95 closing:tdu:100 closing:ttf:eo @prm:tp:none" : ""}`}
     >
       {loading ? (
         <div
-          className="d:f py:3 px:4 ai:c g:2 c:slate-6 fs:sm us:none"
+          className="d:f py:3 px:4 ai:c g:2 c:hint fs:sm us:none"
           role="status"
         >
           <span
             aria-hidden
-            className={`d:b w:4 h:4 bc:silver-3 btc:slate-8 bw:2 br:9999 ${
+            className={`d:b w:4 h:4 bc:rim btc:hint bw:2 br:9999 ${
               animated ? "an:spin adu:700 atf:l aic:inf" : ""
             }`}
           />
@@ -250,17 +266,17 @@ export default function AutocompleteBase({
             {(entry: AutocompleteItem | AutocompleteGroup) =>
               isGroupEntry(entry) ? (
                 <Autocomplete.Group key={entry.group}>
-                  <Autocomplete.GroupLabel className="px:3 pt:2 pb:1 fs:xs fw:500 c:slate-5 us:none">
+                  <Autocomplete.GroupLabel className="px:3 pt:2 pb:1 fs:xs fw:500 c:hint us:none">
                     {entry.group}
                   </Autocomplete.GroupLabel>
-                  {entry.items.map((entry) => renderItem(entry, shape))}
+                  {entry.items.map((entry) => renderItem(entry, shape, query))}
                 </Autocomplete.Group>
               ) : (
-                renderItem(entry, shape)
+                renderItem(entry, shape, query)
               )
             }
           </Autocomplete.List>
-          <Autocomplete.Empty className="c:slate-6 fs:sm">
+          <Autocomplete.Empty className="c:hint fs:sm">
             <div className="pt:2 pb:3 px:4 us:none">{emptyMessage}</div>
           </Autocomplete.Empty>
         </>
@@ -273,21 +289,24 @@ export default function AutocompleteBase({
       items={items as AutocompleteItem[]}
       open={open}
       onOpenChange={setOpen}
-      onValueChange={onQueryChange}
+      onValueChange={(next: string) => {
+        setQuery(next);
+        onQueryChange?.(next);
+      }}
       disabled={disabled}
       autoHighlight={autoHighlight}
       limit={limit > 0 ? limit : undefined}
     >
       <div className={`d:f fd:c g:2 ${disabled ? "o:60 c:na" : ""}`}>
         {label && (
-          <label htmlFor={id} className="c:slate-10 fs:sm fw:500 us:none">
+          <label htmlFor={id} className="c:label fs:sm fw:600 us:none">
             {label}
           </label>
         )}
         <div className="d:f p:r ai:c">
           {icon && (
             <span
-              className={`d:f p:a ai:c c:slate-5 pe:none ${iconPosition === "leading" ? "l:3" : "r:3"}`}
+              className={`d:f p:a ai:c c:hint pe:none ${iconPosition === "leading" ? "l:3" : "r:3"}`}
             >
               {icon}
             </span>
@@ -298,7 +317,7 @@ export default function AutocompleteBase({
             className={inputClasses}
           />
         </div>
-        {description && <p className="m:0 c:slate-6 fs:xs">{description}</p>}
+        {description && <p className="m:0 c:hint fs:xs">{description}</p>}
       </div>
       <Autocomplete.Portal container={container} keepMounted>
         <Autocomplete.Positioner className="ow:0" sideOffset={8}>

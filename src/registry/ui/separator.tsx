@@ -14,7 +14,7 @@ const SHAPES: Record<Shape, string> = {
 
 type Orientation = "horizontal" | "vertical";
 
-const FOCUS = "fv:os:s fv:ow:3 fv:oo:0 fv:oc:slate-4/60 fv:bc:slate-6";
+const FOCUS = "fv:os:s fv:ow:3 fv:oo:0 fv:oc:focus/40 fv:bc:focus";
 
 export interface SeparatorProps {
   /**
@@ -70,24 +70,28 @@ export default function SeparatorBase({
 
   // a percentage height beats align-self: stretch, so a vertical rule in a row
   // that sizes to its content measures zero
-  const rule = vertical ? "w:px as:s" : "h:px w:100%";
+  const rule = vertical ? "w:0 as:s" : "h:0 w:100%";
+  // a groove: a dark line with a lit one beside it, cut into the surface
+  const groove = vertical
+    ? "blw:1 brw:1 blc:groove brc:glint"
+    : "btw:1 bbw:1 btc:groove bbc:glint";
 
   if (!icon && !label) {
     return (
       <Separator
         orientation={orientation}
-        className={merge(rule, "bg:silver-2", className)}
+        className={merge(rule, groove, className)}
       />
     );
   }
 
   const buttonClasses = merge(
     outline,
-    "d:if ai:c jc:c w:8 h:8 bg:white btc:slate-2 blc:slate-2 brc:slate-2 bbc:slate-4 bs-o:xs c:slate-10 bw:1 tp:c tdu:150 ttf:io us:none c:p h:bg:silver-1/50",
+    "d:if ai:c jc:c w:8 h:8 bg:raised btc:rim blc:rim brc:rim bbc:shadow bs-o:xs c:label bw:1 tp:c tdu:150 ttf:io us:none c:p h:bg:well",
     SHAPES[iconShape],
   );
 
-  const half = `fg:1 bg:silver-2 ${vertical ? "w:px" : "h:px"}`;
+  const half = `fg:1 ${vertical ? "w:0" : "h:0"} ${groove}`;
 
   return (
     <div
@@ -102,7 +106,7 @@ export default function SeparatorBase({
           {icon}
         </Button>
       ) : (
-        <span className="fs:0 c:slate-6 fs:xs fw:500 tt:u ls:3">{label}</span>
+        <span className="fs:0 c:hint fs:xs fw:500 tt:u ls:3">{label}</span>
       )}
       <Separator orientation={orientation} className={half} />
     </div>

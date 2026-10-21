@@ -1,6 +1,6 @@
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
-import { validateClasses } from "@yummacss/nitro";
+import { type Config, validateClasses } from "@yummacss/nitro";
 import { describe, expect, it } from "vitest";
 import { EXAMPLE_ICON_STYLE } from "../src/utils/icon-style";
 import { SHARED_PROP_ORDER } from "../src/utils/props";
@@ -218,33 +218,13 @@ describe("Yumma UI registry", () => {
     expect(missing).toEqual([]);
   });
 
-  it("renders every child the snippet prints", () => {
-    const known = new Set(
-      (
-        readFileSync(join(rootDir, "src/utils/demo.tsx"), "utf-8").match(
-          /const CHILD_COMPONENTS[^{]*\{([^}]*)\}/,
-        )?.[1] ?? ""
-      )
-        .split(",")
-        .map((entry) => entry.trim())
-        .filter(Boolean),
+  it("gives every component an Example", () => {
+    const missing = readdirSync(join(rootDir, "src/registry/meta")).filter(
+      (file) =>
+        !JSON.parse(
+          readFileSync(join(rootDir, "src/registry/meta", file), "utf-8"),
+        ).scene?.length,
     );
-
-    const missing: string[] = [];
-    for (const file of readdirSync(join(rootDir, "src/registry/meta"))) {
-      const meta = JSON.parse(
-        readFileSync(join(rootDir, "src/registry/meta", file), "utf-8"),
-      );
-      const walk = (nodes: { component?: string; children?: unknown }[]) => {
-        for (const child of nodes) {
-          if (child.component && !known.has(child.component))
-            missing.push(`${file}: ${child.component}`);
-          if (Array.isArray(child.children)) walk(child.children);
-        }
-      };
-      walk(meta.childrenExample ?? []);
-    }
-
     expect(missing).toEqual([]);
   });
 
@@ -268,6 +248,22 @@ describe("Yumma UI registry", () => {
     }
 
     expect(missing).toEqual([]);
+  });
+
+  it("leaves a kept-mounted popup's display to Base UI's hidden", () => {
+    // a display class beats `hidden`, so a closed popup would stay on screen, inert
+    const wrong: string[] = [];
+    for (const file of readdirSync(registryDir)) {
+      const source = readFileSync(join(registryDir, file), "utf8");
+      if (!source.includes("keepMounted")) continue;
+      // up to the line that closes the opening tag, past any `=>` inside it
+      for (const tag of source.matchAll(
+        /<\w+\.Popup\b(?:[^\n]*>$|[\s\S]*?\n\s*>$)/gm,
+      )) {
+        if (/(^|[\s"`])d:(f|g|b|if|ib|ig)\b/.test(tag[0])) wrong.push(file);
+      }
+    }
+    expect(wrong).toEqual([]);
   });
 
   it("keeps one meaning per shape name", () => {
@@ -407,6 +403,23 @@ describe("Yumma UI registry", () => {
     expect(source).toMatch(
       /iconOnlyActive \? ICON_ONLY\[size\] : SIZES\[size\]/,
     );
+  });
+
+  it("draws every shortcut as one of the two keycaps", () => {
+    // a row's keycap takes the row's color; Kbd's stands raised in text
+    const IN_ROW = "px:1 br:sm bw:1 bc:current fs:xs fw:400 lh:4 ff:d";
+    const RAISED =
+      "bg:raised c:label btw:1 blw:1 brw:1 bbw:3 btc:rim blc:rim brc:rim bbc:shadow bs-o:xs";
+    const uiDir = join(rootDir, "src/registry/ui");
+    const wrong: string[] = [];
+    for (const file of readdirSync(uiDir).filter((f) => f.endsWith(".tsx"))) {
+      const source = readFileSync(join(uiDir, file), "utf-8");
+      const keycap = file === "kbd.tsx" ? RAISED : IN_ROW;
+      for (const tag of source.matchAll(/<kbd\b[\s\S]*?>/g)) {
+        if (!tag[0].includes(keycap)) wrong.push(file);
+      }
+    }
+    expect(wrong).toEqual([]);
   });
 
   it("puts every focus outline behind the focus gate", () => {
@@ -615,7 +628,9 @@ describe("Yumma UI registry", () => {
       }
     }
     expect(sizes.size).toBeGreaterThan(0);
-    const { invalid } = await validateClasses([...sizes], {});
+    // the roles come from the config the CLI installs
+    const config = (await import("../yumma.config.mjs")).default as Config;
+    const { invalid } = await validateClasses([...sizes], config);
     expect(invalid).toEqual([]);
   });
 });

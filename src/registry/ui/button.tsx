@@ -1,5 +1,14 @@
+"use client";
+
 import { Button } from "@base-ui/react/button";
-import type { ComponentProps, ReactNode } from "react";
+import type {
+  ComponentProps,
+  KeyboardEvent,
+  MouseEvent,
+  PointerEvent,
+  ReactNode,
+} from "react";
+import { useEffect, useRef, useState } from "react";
 import { merge } from "yummacss/merge";
 
 type Variant = "primary" | "secondary" | "subtle" | "ghost" | "danger" | "link";
@@ -7,7 +16,7 @@ type Size = "sm" | "md" | "lg";
 type Shape = "rounded" | "square" | "squircle" | "pill";
 type IconSide = "leading" | "trailing";
 
-const FOCUS = "fv:os:s fv:ow:3 fv:oo:0 fv:oc:slate-4/60 fv:bc:slate-6";
+const FOCUS = "fv:os:s fv:ow:3 fv:oo:0 fv:oc:focus/40 fv:bc:focus";
 
 const BASE = "d:if ai:c jc:c g:2 bw:1 fw:500 us:none";
 
@@ -16,31 +25,41 @@ const MOTION = "tp:a tdu:150 ttf:io a:s:95";
 // a bevel names all four sides: Yumma sorts rules by name, so bc: would beat bbc:
 const VARIANTS: Record<Variant, string> = {
   primary:
-    "bg:slate-12 h:bg:slate-11 btc:white/20 blc:black/40 brc:black/40 bbc:black/60 c:white bs-o:sm",
+    "bg:fill h:o:90 btc:white/20 blc:black/40 brc:black/40 bbc:black/60 c:on-fill bs-o:sm",
   secondary:
-    "bg:white btc:slate-2 blc:slate-2 brc:slate-2 bbc:slate-4 c:slate-10 h:bg:silver-1 bs-o:xs",
-  subtle: "bg:silver-1 bc:transparent c:slate-7 h:bg:silver-2",
-  ghost:
-    "bg:transparent bc:transparent c:slate-10 h:bg:silver-1/50 h:c:slate-7",
+    "bg:raised btc:rim blc:rim brc:rim bbc:shadow c:label h:bg:well bs-o:xs",
+  subtle: "bg:well bc:transparent c:hint h:bg:rim",
+  ghost: "bg:transparent bc:transparent c:label h:bg:well",
   danger:
     "bg:red h:bg:red-8 btc:red-5 blc:red-8 brc:red-8 bbc:red-9 c:white bs-o:sm",
-  link: "bg:transparent bc:transparent c:slate-10 tuo:2 h:td:u",
+  link: "bg:transparent bc:transparent c:label tuo:2 h:td:u",
 };
 
 const VARIANT_OUTLINE: Partial<Record<Variant, string>> = {
   danger: "fv:oc:red-2/60 fv:bc:red-3",
 };
 
+// held, the button's content again in a stronger color sweeps across it
+const HOLD_FILL: Record<Variant, string> = {
+  primary: "bg:check c:white",
+  secondary: "bg:fill c:on-fill",
+  subtle: "bg:fill c:on-fill",
+  ghost: "bg:fill c:on-fill",
+  danger: "bg:red-9 c:white",
+  link: "bg:fill c:on-fill",
+};
+
+// a fixed height per size, so a row of buttons lines up whatever they hold
 const SIZES: Record<Size, string> = {
-  sm: "px:3 py:1 fs:xs",
-  md: "px:4 py:2 fs:sm",
-  lg: "px:6 py:3 fs:md",
+  sm: "h:8 px:3 fs:xs",
+  md: "h:9 px:4 fs:sm",
+  lg: "h:11 px:5 fs:md",
 };
 
 const ICON_ONLY: Record<Size, string> = {
-  sm: "p:1",
-  md: "p:2",
-  lg: "p:3",
+  sm: "w:8 h:8",
+  md: "w:9 h:9",
+  lg: "w:11 h:11",
 };
 
 const SHAPES: Record<Shape, string> = {
@@ -61,7 +80,10 @@ export interface ButtonProps extends ComponentProps<typeof Button> {
    * destructive ones.
    */
   variant?: Variant;
-  /** Padding and text size. */
+  /**
+   * Height, padding and text size. Every size is a fixed height, so a row of
+   * buttons lines up.
+   */
   size?: Size;
   /**
    * Corner radius. `squircle` uses `corner-shape`, which degrades to a rounded
@@ -90,6 +112,16 @@ export interface ButtonProps extends ComponentProps<typeof Button> {
    */
   iconOnly?: boolean;
   /**
+   * Acts only once the button has been held down, for `true` 1.5 seconds or for
+   * this many milliseconds. A stronger color sweeps across while it is held and
+   * drains back if it is let go early. Space and Enter hold too.
+   */
+  hold?: boolean | number;
+  /** What the button says for a moment once a hold completes. */
+  holdLabel?: string;
+  /** Called once a hold completes. A held button never calls `onClick`. */
+  onHold?: () => void;
+  /**
    * The hover and focus transition. Turn it off for a static button, or when
    * the user has asked for reduced motion.
    */
@@ -107,8 +139,8 @@ export interface ButtonProps extends ComponentProps<typeof Button> {
 }
 
 /**
- * A primary action, in six variants, three sizes and four shapes, with loading
- * and icon-only states.
+ * A primary action, in six variants, three sizes and four shapes, with loading,
+ * icon-only and hold-to-confirm states.
  */
 export default function ButtonBase({
   variant = "primary",
@@ -118,11 +150,15 @@ export default function ButtonBase({
   icon,
   iconPosition = "leading",
   iconOnly = false,
+  hold,
+  holdLabel,
+  onHold,
   transition = true,
   disabled,
   className,
   focus = true,
   children,
+  onClick,
   ...props
 }: ButtonProps) {
   const outline = focus
@@ -149,9 +185,20 @@ export default function ButtonBase({
     icon
   );
 
+  const held = useHold(hold, onHold, transition);
+  const label =
+    holdLabel && held.done ? (
+      <Swap shown={holdLabel} hidden={children} />
+    ) : holdLabel ? (
+      <Swap shown={children} hidden={holdLabel} />
+    ) : (
+      children
+    );
+
   const classes = merge(
     outline,
     BASE,
+    hold ? "p:r o:h ta:none" : "",
     transition ? MOTION : "",
     VARIANTS[variant],
     iconOnlyActive ? ICON_ONLY[size] : SIZES[size],
@@ -169,6 +216,8 @@ export default function ButtonBase({
       aria-label={
         iconOnlyActive && typeof children === "string" ? children : undefined
       }
+      onClick={hold ? undefined : onClick}
+      {...(hold && !inactive ? held.handlers : {})}
       {...props}
     >
       {iconOnlyActive ? (
@@ -176,10 +225,123 @@ export default function ButtonBase({
       ) : (
         <>
           {!trailing && glyph}
-          {children}
+          {label}
           {trailing && glyph}
         </>
       )}
+      {hold && (
+        <span
+          aria-hidden
+          style={held.style}
+          className={merge("p:a i:0 d:f ai:c jc:c g:2", HOLD_FILL[variant])}
+        >
+          {iconOnlyActive ? (
+            glyph
+          ) : (
+            <>
+              {!trailing && glyph}
+              {label}
+              {trailing && glyph}
+            </>
+          )}
+        </span>
+      )}
+      {hold && holdLabel && (
+        <span aria-live="polite" className="p:a w:px h:px o:h">
+          {held.done ? holdLabel : ""}
+        </span>
+      )}
     </Button>
   );
+}
+
+// both labels share one grid cell, so the button keeps the wider one's width
+function Swap({ shown, hidden }: { shown: ReactNode; hidden: ReactNode }) {
+  return (
+    <span className="d:ig ji:c">
+      <span className="gcs:1 grs:1">{shown}</span>
+      <span aria-hidden className="gcs:1 grs:1 v:h">
+        {hidden}
+      </span>
+    </span>
+  );
+}
+
+function useHold(
+  hold: boolean | number | undefined,
+  onHold: (() => void) | undefined,
+  animated: boolean,
+) {
+  const duration = typeof hold === "number" ? hold : 1500;
+  const [phase, setPhase] = useState<"idle" | "holding" | "done">("idle");
+  const [still, setStill] = useState(!animated);
+  const timer = useRef<ReturnType<typeof setTimeout>>(undefined);
+
+  // reduced motion fades the fill in over the same time, rather than sweeping it
+  useEffect(() => {
+    const query = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const update = () => setStill(!animated || query.matches);
+    update();
+    query.addEventListener("change", update);
+    return () => query.removeEventListener("change", update);
+  }, [animated]);
+
+  useEffect(() => () => clearTimeout(timer.current), []);
+
+  const start = () => {
+    if (phase !== "idle") return;
+    setPhase("holding");
+    timer.current = setTimeout(() => {
+      setPhase("done");
+      onHold?.();
+      timer.current = setTimeout(() => setPhase("idle"), 2400);
+    }, duration);
+  };
+
+  const stop = () => {
+    if (phase !== "holding") return;
+    clearTimeout(timer.current);
+    setPhase("idle");
+  };
+
+  const isKey = (event: KeyboardEvent) =>
+    event.key === " " || event.key === "Enter";
+
+  const full = phase !== "idle";
+  const timing =
+    phase === "holding"
+      ? `${duration}ms linear`
+      : `${still ? 200 : 350}ms cubic-bezier(0.25, 1, 0.5, 1)`;
+
+  return {
+    done: phase === "done",
+    style: still
+      ? { opacity: full ? 1 : 0, transition: `opacity ${timing}` }
+      : {
+          clipPath: full ? "inset(0 0 0 0)" : "inset(0 100% 0 0)",
+          transition: `clip-path ${timing}`,
+        },
+    handlers: {
+      onPointerDown: (event: PointerEvent<HTMLElement>) => {
+        if (event.button !== 0) return;
+        event.currentTarget.setPointerCapture(event.pointerId);
+        start();
+      },
+      onPointerUp: stop,
+      onPointerCancel: stop,
+      onLostPointerCapture: stop,
+      onBlur: stop,
+      onContextMenu: (event: MouseEvent) => event.preventDefault(),
+      onKeyDown: (event: KeyboardEvent) => {
+        if (!isKey(event)) return;
+        event.preventDefault();
+        if (!event.repeat) start();
+      },
+      onKeyUp: (event: KeyboardEvent) => {
+        if (!isKey(event)) return;
+        event.preventDefault();
+        stop();
+      },
+    },
+  };
 }

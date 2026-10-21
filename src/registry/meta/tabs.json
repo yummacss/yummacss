@@ -9,26 +9,17 @@
         {
           "value": "general",
           "label": "General",
-          "icon": {
-            "$icon": "SettingsIcon",
-            "size": "w:4 h:4"
-          }
+          "panel": "New windows open in Documents, with hidden files shown."
         },
         {
-          "value": "appearance",
-          "label": "Appearance",
-          "icon": {
-            "$icon": "PaletteIcon",
-            "size": "w:4 h:4"
-          }
+          "value": "storage",
+          "label": "Storage",
+          "panel": "Trash holds 1.8 GB in 214 files and empties itself after 30 days."
         },
         {
           "value": "shortcuts",
           "label": "Shortcuts",
-          "icon": {
-            "$icon": "KeyboardIcon",
-            "size": "w:4 h:4"
-          }
+          "panel": "Press ? anywhere to see every shortcut."
         }
       ],
       "description": "Each tab's `value` and `label`, plus optional `icon`, `iconOnly`, `count`, `disabled` and `panel`. `label` stays the accessible name when `iconOnly` hides it."
@@ -36,7 +27,8 @@
     {
       "name": "defaultValue",
       "type": "string",
-      "description": "The tab selected on first render. Falls back to the first item. Pair `value` with `onValueChange` instead if you are controlling it."
+      "description": "The tab selected on first render. Falls back to the first item. Pair `value` with `onValueChange` instead if you are controlling it.",
+      "example": "storage"
     },
     {
       "name": "value",
@@ -60,7 +52,8 @@
       "name": "icon",
       "type": "boolean",
       "default": true,
-      "description": "Draws each tab's icon. `false` drops them, so every tab shows its label, including one set to `iconOnly`."
+      "description": "Draws each tab's icon. `false` drops them, so every tab shows its label, including one set to `iconOnly`.",
+      "example": false
     },
     {
       "name": "iconPosition",
@@ -101,6 +94,32 @@
       "typeName": "boolean | string",
       "default": true,
       "description": "The focus outline. `true` draws it, `false` removes it along with the danger, error and success tints that ride with it, and a string of Yumma CSS utilities restyles it on every focusable part of the component, which is more than `className` reaches. Removing it outright and putting nothing back fails WCAG 2.4.7."
+    }
+  ],
+  "scene": [
+    {
+      "component": "Tabs",
+      "props": {
+        "items": [
+          {
+            "value": "general",
+            "label": "General",
+            "panel": "New windows open in Documents, with hidden files shown."
+          },
+          {
+            "value": "storage",
+            "label": "Storage",
+            "panel": "Trash holds 1.8 GB in 214 files and empties itself after 30 days."
+          },
+          {
+            "value": "shortcuts",
+            "label": "Shortcuts",
+            "panel": "Press ? anywhere to see every shortcut."
+          }
+        ],
+        "defaultValue": "storage",
+        "icon": false
+      }
     }
   ]
 }

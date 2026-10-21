@@ -1,5 +1,5 @@
 {
-  "summary": "A paged product tour in a dialog, one step at a time, with a count or a progress bar.",
+  "summary": "A paged setup in a dialog, one step at a time, with a step bar and choices to pick on the way.",
   "props": [
     {
       "name": "trigger",
@@ -28,69 +28,73 @@
       "typeName": "OnboardingStep[]",
       "example": [
         {
-          "icon": {
-            "$icon": "StarsIcon"
-          },
-          "title": "Welcome",
-          "description": "A short tour of what you can do here, three screens long."
+          "title": "Welcome to your files",
+          "description": "Three quick steps to set up where your files live and how they sync."
         },
         {
-          "icon": {
-            "$icon": "DocumentAddIcon"
-          },
-          "title": "Build your first page",
-          "description": "Drop in a component, adjust its props, and watch it update. Everything on the page is a real control, so what you see is what the snippet says.",
-          "tasks": [
+          "title": "Choose what to keep in sync",
+          "description": "Pick folders now; you can change this any time in Settings.",
+          "choices": [
             {
-              "id": "drop",
-              "label": "Drop a component onto the page"
+              "id": "documents",
+              "label": "Documents",
+              "icon": {
+                "$icon": "FolderIcon",
+                "size": "w:4 h:4"
+              },
+              "picked": true
             },
             {
-              "id": "props",
-              "label": "Change one of its props"
+              "id": "photos",
+              "label": "Photos",
+              "icon": {
+                "$icon": "FolderIcon",
+                "size": "w:4 h:4"
+              },
+              "picked": true
+            },
+            {
+              "id": "downloads",
+              "label": "Downloads",
+              "icon": {
+                "$icon": "FolderIcon",
+                "size": "w:4 h:4"
+              }
+            },
+            {
+              "id": "desktop",
+              "label": "Desktop",
+              "icon": {
+                "$icon": "FolderIcon",
+                "size": "w:4 h:4"
+              }
             }
           ]
         },
         {
-          "icon": {
-            "$icon": "FolderIcon"
-          },
-          "title": "Keep it somewhere",
-          "description": "Pick the folder your files live in. You can move it later.",
-          "tasks": [
-            {
-              "id": "folder",
-              "label": "Choose a folder"
-            }
-          ]
+          "title": "You are all set",
+          "description": "Your folders sync in the background. Change any of this later in Settings."
         }
       ],
-      "description": "Each step's `icon`, `title` and `description`. Steps advance one at a time and the dialog resets to the first when it closes."
+      "description": "Each step's `title`, `description` and optional `choices`. Steps advance one at a time and the dialog resets to the first when it closes."
     },
     {
-      "name": "indicator",
-      "type": "enum",
-      "values": ["count", "progress", "dots", "checklist"],
-      "default": "count",
-      "description": "`count` reads \"1 / 3\" in the header. `progress` draws a filling bar under the slide. `dots` moves navigation to a bottom row of step dots between prev/next arrows. `checklist` counts the current step's `tasks` instead of the steps, and falls back to the step count on a step with none."
+      "name": "onFinish",
+      "type": "none",
+      "typeName": "(picked: string[]) => void",
+      "description": "Called on the last step's Done with the id of every picked choice."
+    },
+    {
+      "name": "finishLabel",
+      "type": "string",
+      "default": "Done",
+      "description": "The last step's button."
     },
     {
       "name": "closeOnEscape",
       "type": "boolean",
       "default": true,
       "description": "Esc closes the tour, as it does any dialog. Turn it off for a tour that must be finished or closed from its last step."
-    },
-    {
-      "name": "animatedResize",
-      "type": "boolean",
-      "default": true,
-      "description": "The popup's grow and shrink as steps of different heights come and go. Only steps with `tasks` change height, so this does nothing without them.",
-      "conflictsWith": [
-        {
-          "prop": "animated",
-          "set": false
-        }
-      ]
     },
     {
       "name": "shape",
@@ -117,6 +121,68 @@
       "type": "none",
       "typeName": "HTMLElement | null",
       "description": "Where the popup is rendered. Defaults to `document.body`, which is right almost always; pass an element to portal somewhere else, such as inside a frame or a container that owns its own stacking context."
+    }
+  ],
+  "scene": [
+    {
+      "component": "Onboarding",
+      "props": {
+        "trigger": "Take the tour",
+        "triggerIcon": {
+          "$icon": "StarsIcon",
+          "size": "w:5 h:5"
+        },
+        "steps": [
+          {
+            "title": "Welcome to your files",
+            "description": "Three quick steps to set up where your files live and how they sync."
+          },
+          {
+            "title": "Choose what to keep in sync",
+            "description": "Pick folders now; you can change this any time in Settings.",
+            "choices": [
+              {
+                "id": "documents",
+                "label": "Documents",
+                "icon": {
+                  "$icon": "FolderIcon",
+                  "size": "w:4 h:4"
+                },
+                "picked": true
+              },
+              {
+                "id": "photos",
+                "label": "Photos",
+                "icon": {
+                  "$icon": "FolderIcon",
+                  "size": "w:4 h:4"
+                },
+                "picked": true
+              },
+              {
+                "id": "downloads",
+                "label": "Downloads",
+                "icon": {
+                  "$icon": "FolderIcon",
+                  "size": "w:4 h:4"
+                }
+              },
+              {
+                "id": "desktop",
+                "label": "Desktop",
+                "icon": {
+                  "$icon": "FolderIcon",
+                  "size": "w:4 h:4"
+                }
+              }
+            ]
+          },
+          {
+            "title": "You are all set",
+            "description": "Your folders sync in the background. Change any of this later in Settings."
+          }
+        ]
+      }
     }
   ]
 }

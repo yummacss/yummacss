@@ -86,19 +86,40 @@ is written.
 
 # Tactile
 
+- Colors are roles, not palette shades: `raised`, `well`, `field`, `fill`,
+  `on-fill`, `label`, `hint`, `rim`, `shadow`, `line`, `check`, `on`,
+  `knob`, `groove`, `glint` and `focus`, each a light and a Graphite pair in `src/utils/roles.mjs`. A
+  reworked component names roles only, so dark mode follows `color-scheme`
+  with no class of its own. Role values are opaque: a pair drops hex alpha.
+- Ticked and picked are `check` with `btc:white/25 blc:black/15 brc:black/15
+  bbc:black/30`. An on switch is `on`, its thumb `knob`.
 - Raised things (buttons, triggers, tiles, bars) are lighter on top and darker
-  below: `bg:white btc:slate-2 blc:slate-2 brc:slate-2 bbc:slate-4 bs-o:xs`.
-  Filled ones: `bg:slate-12 btc:white/20 blc:black/40 brc:black/40
-  bbc:black/60 bs-o:sm`, so the bevel works on any accent.
-- Recessed things (inputs, wells) reverse it: `btc:slate-4 blc:slate-3
-  brc:slate-3 bbc:slate-2`.
-- Popups float on `bc:black/10 bs-o:xl`. A highlighted row is filled,
-  `bg:slate-12 c:white btc:white/20`, on a `bw:1 bc:transparent` row.
+  below: `bg:raised btc:rim blc:rim brc:rim bbc:shadow bs-o:xs`. Filled ones:
+  `bg:fill c:on-fill btc:white/20 blc:black/40 brc:black/40 bbc:black/60
+  bs-o:sm`, so the bevel works on any accent.
+- Recessed things (inputs, wells) reverse it: `bg:field btc:shadow blc:line
+  brc:line bbc:rim`.
+- Popups float on `bg:raised bc:line bs-o:xl`. A highlighted row is
+  `check` with its bevel and `c:white`, on a `bw:1 bc:transparent` row.
+  Icons and shortcuts in a row are `o:70` of its color, so they turn white
+  with it.
+- Focus is `fv:os:s fv:ow:3 fv:oo:0 fv:oc:focus/40 fv:bc:focus`: a soft
+  outline and a darker border, both from the one role.
+- A divider is a groove, a dark line over a lit one: the two borders of an
+  element with no height, `h:0 btw:1 bbw:1 btc:groove bbc:glint`, or
+  `w:0 blw:1 brw:1 blc:groove brc:glint` standing up.
+  Popups stay white, so in light mode the lit line only shows on a well.
 - No inset shadow, except a pressed toggle (Toggle, Toolbar). No `shadow` prop.
 - Pressed in is an on/off that stays on by itself (Toggle, Toolbar). Picking
   one of several is a raised chip on a track (Tabs, Toggle Group).
-- A bevel names all four sides and never mixes in `bc:`. Yumma sorts its rules
-  by name, so `bc:` would beat `bbc:`.
+- A bevel names all four sides and never mixes in `bc:` or `bw:`. Yumma sorts
+  its rules by name, so `bc:` would beat `bbc:` and `bw:` would beat `bbw:`.
+- Numbers that change in place (counters, values, sizes) are `fvn:tn`.
+- A shortcut in a row (menus, tooltips) is an outlined keycap in the row's
+  color, so it turns white with a highlighted row: `px:1 br:sm bw:1
+  bc:current fs:xs fw:400 lh:4 ff:d`, at `o:70`. In running text, Kbd draws
+  a raised key: the raised bevel on `btw:1 blw:1 brw:1 bbw:3`. `tests/registry.test.ts`
+  holds both.
 
 # Prop order
 
@@ -118,14 +139,9 @@ is written.
   pair in an address falls back to the nearest allowed radius.
 - `size`, `shape` and `iconShape` belong to the style: the rail
   never shows or sets them.
-- `animated` and `focus` follow you from one component page to the next.
-  `src/utils/sticky.ts` owns that list.
-- `variant`, `tone` and `intent` are deliberately not carried: they share a
-  name across components and nothing else.
-- A value is carried only if the next component declares that prop.
-- The address wins over what was carried, so a link someone was sent renders
-  what it says. Carrying writes into the URL on arrival rather than changing
-  what a parser defaults to, which would make a clean address lie.
+- Every component page shows its Example, a `scene` in its meta, and the
+  rail lists the props without setting them. `tests/registry.test.ts` fails a
+  meta without one.
 
 # Accent
 
@@ -154,6 +170,8 @@ is written.
   grows to its content and never scrolls.
 - The scrollbar is 12px and square, sits above sticky headers (`zi:20`), and
   fades with `hovering:` and `scrolling:`, two states in `yumma.config.mjs`.
+- Registry icons are Solar: Bold for objects, Outline for marks, arrows and
+  operators. Never Duotone.
 - Site icons come from `src/icons.tsx`, Phosphor regular. Duotone blurs at
   16px; the notes, "Icons at 16px", have the measurements.
 

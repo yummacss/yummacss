@@ -1,7 +1,7 @@
 "use client";
 
 import { Accordion } from "@base-ui/react/accordion";
-import { LockIcon } from "@solar-icons/react/bold-duotone";
+import { LockIcon } from "@solar-icons/react/bold";
 import {
   AddIcon,
   AltArrowDownIcon,
@@ -16,7 +16,7 @@ type Shape = "rounded" | "square" | "squircle";
 
 const TURN = "tp:t tdu:300 ttf:out-quart @prm:tp:none";
 
-const FOCUS = "fv:os:s fv:ow:3 fv:oo:0 fv:oc:slate-4/60 fv:bc:slate-6";
+const FOCUS = "fv:os:s fv:ow:3 fv:oo:0 fv:oc:focus/40 fv:bc:focus";
 type Indicator = "chevron" | "plus-minus";
 type IndicatorPosition = "leading" | "trailing";
 
@@ -134,7 +134,7 @@ export default function AccordionBase({
     "d:f fd:c w:100% max-w:96",
     variant === "bordered" || variant === "subtle" ? "g:2" : "",
     isCard
-      ? "bg:white bw:1 btc:slate-2 blc:slate-2 brc:slate-2 bbc:slate-4 bs-o:xs br:lg"
+      ? "bg:raised bw:1 btc:rim blc:rim brc:rim bbc:shadow bs-o:xs br:lg"
       : "",
     className,
   );
@@ -152,24 +152,21 @@ export default function AccordionBase({
 
         const itemClasses =
           variant === "bordered"
-            ? `bg:white bw:1 btc:slate-2 blc:slate-2 brc:slate-2 bbc:slate-4 bs-o:xs ${SHAPES[shape].item}`
+            ? `bg:raised bw:1 btc:rim blc:rim brc:rim bbc:shadow bs-o:xs ${SHAPES[shape].item}`
             : variant === "ghost"
               ? [
                   "blw:2 pl:4",
-                  isOpen ? "blc:slate-12" : "blc:silver-3",
+                  isOpen ? "blc:label" : "blc:line",
                   isLast ? "" : "mb:3",
                 ]
                   .filter(Boolean)
                   .join(" ")
               : variant === "subtle"
-                ? [
-                    SHAPES[shape].item,
-                    isOpen ? "bg:silver-1" : "bg:silver-1 h:bg:silver-2",
-                  ]
+                ? [SHAPES[shape].item, isOpen ? "bg:well" : "bg:well h:bg:rim"]
                     .filter(Boolean)
                     .join(" ")
                 : separated && !isLast
-                  ? "bbw:1 bc:silver-2"
+                  ? "bbw:1 bc:line"
                   : "";
 
         const triggerRadius =
@@ -185,30 +182,30 @@ export default function AccordionBase({
         const panelPadX = inset ? "px:4" : "";
 
         const titleColor = item.disabled
-          ? "c:slate-4"
+          ? "c:hint o:60"
           : variant === "ghost"
             ? isOpen
-              ? "c:slate-12"
-              : "c:slate-8"
+              ? "c:label"
+              : "c:hint"
             : variant === "subtle"
               ? isOpen
-                ? "c:slate-12"
-                : "c:slate-8"
-              : "c:slate-8";
+                ? "c:label"
+                : "c:hint"
+              : "c:label";
         const contentColor =
-          variant === "subtle" && isOpen ? "c:slate-12" : "c:slate-6";
+          variant === "subtle" && isOpen ? "c:label" : "c:hint";
         const panelClasses = ["m:0 pb:4", panelPadX, "fs:sm lh:4", contentColor]
           .filter(Boolean)
           .join(" ");
         const glyphColor = item.disabled
-          ? "c:slate-4"
+          ? "c:hint o:60"
           : variant === "ghost"
             ? isOpen
-              ? "c:slate-10"
-              : "c:slate-6"
+              ? "c:label"
+              : "c:hint"
             : variant === "subtle" && isOpen
-              ? "c:slate-10"
-              : "c:slate-6";
+              ? "c:label"
+              : "c:hint";
 
         return (
           <Accordion.Item
@@ -242,14 +239,14 @@ export default function AccordionBase({
                   )}
                 <div className="d:f ai:c g:3">
                   <span
-                    className={["fs:sm fw:500", titleColor]
+                    className={["fs:sm fw:600", titleColor]
                       .filter(Boolean)
                       .join(" ")}
                   >
                     {item.title}
                   </span>
                   {item.disabled && (
-                    <LockIcon className="w:3 h:3 c:slate-4" aria-hidden />
+                    <LockIcon className="w:3 h:3 c:hint" aria-hidden />
                   )}
                 </div>
                 {indicator === "chevron" ? (

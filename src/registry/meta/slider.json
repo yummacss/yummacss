@@ -17,7 +17,7 @@
       "name": "defaultValue",
       "type": "none",
       "typeName": "number | number[]",
-      "example": 50,
+      "example": 120,
       "description": "A single number for one thumb, or a two-item array for a range with two. Whichever shape you start with is the shape the slider keeps. It does not switch thumb count at runtime."
     },
     {
@@ -39,7 +39,8 @@
       "description": "Lower bound.",
       "min": 0,
       "max": 100,
-      "step": 10
+      "step": 10,
+      "example": 40
     },
     {
       "name": "max",
@@ -48,7 +49,8 @@
       "description": "Upper bound.",
       "min": 0,
       "max": 200,
-      "step": 10
+      "step": 10,
+      "example": 200
     },
     {
       "name": "step",
@@ -64,6 +66,19 @@
       "type": "none",
       "typeName": "(value: number | number[]) => ReactNode",
       "description": "How the value is shown beside the label. Defaults to `50%` for one thumb, `20 - 80` for a range; override for currency, units, or anything else."
+    },
+    {
+      "name": "unit",
+      "type": "string",
+      "example": "px",
+      "description": "A unit after the value, such as `px`. The number reads bold and the unit quiet. Ignored when `formatValue` is set."
+    },
+    {
+      "name": "marks",
+      "type": "none",
+      "typeName": "string[]",
+      "example": ["Small", "Medium", "Large"],
+      "description": "Labels spread evenly under the track, first at the start, last at the end."
     },
     {
       "name": "shape",
@@ -90,6 +105,19 @@
       "typeName": "boolean | string",
       "default": true,
       "description": "The focus outline. `true` draws it, `false` removes it along with the danger, error and success tints that ride with it, and a string of Yumma CSS utilities restyles it on every focusable part of the component, which is more than `className` reaches. Removing it outright and putting nothing back fails WCAG 2.4.7."
+    }
+  ],
+  "scene": [
+    {
+      "component": "Slider",
+      "props": {
+        "label": "Thumbnail size",
+        "defaultValue": 120,
+        "min": 40,
+        "max": 200,
+        "unit": "px",
+        "marks": ["Small", "Medium", "Large"]
+      }
     }
   ]
 }

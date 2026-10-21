@@ -3,6 +3,7 @@ import { join, relative } from "node:path";
 import { type Config, validateClasses } from "@yummacss/nitro";
 import { describe, expect, it } from "vitest";
 import { extractClasses } from "../scripts/extract-classes.mjs";
+import { ROLES } from "../src/utils/roles.mjs";
 import { rootDir, tsxFilesIn } from "./helpers";
 
 const config = (await import("../yumma.config.mjs")).default as Config;
@@ -18,8 +19,9 @@ const siteFiles = [
 // a class the site's own stylesheet defines
 const ALLOWED = new Set(["footer-version"]);
 
+// the roles travel with the components: the CLI writes them into the config
 const docsOnlyColors = Object.keys(config.theme?.colors ?? {}).filter(
-  (color) => color !== "percentage",
+  (color) => color !== "percentage" && !(color in ROLES),
 );
 
 function bare(className: string): string {

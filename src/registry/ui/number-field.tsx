@@ -1,7 +1,7 @@
 "use client";
 
 import { NumberField } from "@base-ui/react/number-field";
-import { AltArrowDownIcon, AltArrowUpIcon } from "@solar-icons/react/outline";
+import { AddIcon, MinusIcon } from "@solar-icons/react/outline";
 import type { ComponentProps } from "react";
 import { useId } from "react";
 import { merge } from "yummacss/merge";
@@ -9,22 +9,32 @@ import { merge } from "yummacss/merge";
 type Size = "sm" | "md" | "lg";
 type Shape = "rounded" | "square" | "squircle";
 
-// the group draws focus, so the outline wraps the input and both buttons
-const GROUP_FOCUS = "fw:os:s fw:ow:3 fw:oo:0 fw:oc:slate-4/60 fw:bc:slate-6";
+const FOCUS = "fv:os:s fv:ow:3 fv:oo:0 fv:oc:focus/40 fv:bc:focus";
 
+// the box draws focus for its input, so the outline wraps the value
+const BOX_FOCUS = "fw:os:s fw:ow:3 fw:oo:0 fw:oc:focus/40 fw:bc:focus";
+
+// minus and plus are raised, the value between them sits recessed
 const STEP =
-  "d:f ai:c jc:c bg:white c:slate-10 us:none c:p h:bg:silver-1/50 a:bg:silver-2";
+  "d:f ai:c jc:c fs:0 p:0 bw:1 bg:raised btc:rim blc:rim brc:rim bbc:shadow bs-o:xs c:label us:none c:p h:bg:well";
+const BOX = "d:f bw:1 bg:field btc:shadow blc:line brc:line bbc:rim";
+
+const SIZES: Record<Size, string> = {
+  sm: "h:8",
+  md: "h:9",
+  lg: "h:11",
+};
 
 const STEP_SIZES: Record<Size, string> = {
-  sm: "w:6 h:4",
-  md: "w:7 h:5",
-  lg: "w:8 h:6",
+  sm: "w:8",
+  md: "w:9",
+  lg: "w:11",
 };
 
 const INPUT_SIZES: Record<Size, string> = {
-  sm: "h:8 w:28 pl:3 fs:sm",
-  md: "h:10 w:32 pl:3 fs:md",
-  lg: "h:12 w:36 pl:4 fs:lg",
+  sm: "w:16 fs:sm",
+  md: "w:20 fs:sm",
+  lg: "w:24 fs:md",
 };
 
 const ICON_SIZES: Record<Size, string> = {
@@ -33,10 +43,16 @@ const ICON_SIZES: Record<Size, string> = {
   lg: "w:4 h:4",
 };
 
-const GROUP_SHAPES: Record<Shape, string> = {
-  rounded: "br:lg",
+const START_SHAPES: Record<Shape, string> = {
+  rounded: "blr:lg",
   square: "",
-  squircle: "br:xxl cs:s",
+  squircle: "blr:xxl cs:s",
+};
+
+const END_SHAPES: Record<Shape, string> = {
+  rounded: "brr:lg",
+  square: "",
+  squircle: "brr:xxl cs:s",
 };
 
 export interface NumberFieldProps
@@ -97,15 +113,13 @@ export default function NumberFieldBase({
 }: NumberFieldProps) {
   const id = useId();
 
-  const outline = focus ? merge(GROUP_FOCUS, focus === true ? "" : focus) : "";
+  const outline = focus ? merge(FOCUS, focus === true ? "" : focus) : "";
+  const boxOutline = focus
+    ? merge(BOX_FOCUS, focus === true ? "" : focus.replace(/\bfv:/g, "fw:"))
+    : "";
 
-  const stepClasses = merge("os:none", STEP, STEP_SIZES[size]);
-
-  const inputClasses = merge(
-    "os:none bg:white bc:transparent c:slate-10 bw:1 ta:l",
-    INPUT_SIZES[size],
-    className,
-  );
+  const stepClasses = (side: string) =>
+    merge(outline, STEP, SIZES[size], STEP_SIZES[size], side);
 
   return (
     <NumberField.Root
@@ -116,34 +130,33 @@ export default function NumberFieldBase({
     >
       {label && (
         <NumberField.ScrubArea className="c:er">
-          <label htmlFor={id} className="c:slate-10 fs:sm fw:500 c:er">
+          <label htmlFor={id} className="c:label fs:sm fw:600 c:er">
             {label}
             {required && <span className="c:red-5"> *</span>}
           </label>
         </NumberField.ScrubArea>
       )}
 
-      <NumberField.Group
-        className={merge(
-          "d:f o:h btc:slate-4 blc:slate-3 brc:slate-3 bbc:slate-2 bw:1",
-          GROUP_SHAPES[shape],
-          outline,
-        )}
-      >
-        <NumberField.Input required={required} className={inputClasses} />
-        <span className="d:f fd:c blc:silver-3 blw:1">
-          <NumberField.Increment className={stepClasses}>
-            <AltArrowUpIcon className={ICON_SIZES[size]} />
-          </NumberField.Increment>
-          <NumberField.Decrement
-            className={`${stepClasses} btc:silver-3 btw:1`}
-          >
-            <AltArrowDownIcon className={ICON_SIZES[size]} />
-          </NumberField.Decrement>
+      <NumberField.Group className="d:f">
+        <NumberField.Decrement className={stepClasses(START_SHAPES[shape])}>
+          <MinusIcon className={ICON_SIZES[size]} />
+        </NumberField.Decrement>
+        <span className={merge(BOX, "blw:0 brw:0", SIZES[size], boxOutline)}>
+          <NumberField.Input
+            required={required}
+            className={merge(
+              "os:none p:0 bw:0 bg:transparent c:label fw:600 ta:c",
+              INPUT_SIZES[size],
+              className,
+            )}
+          />
         </span>
+        <NumberField.Increment className={stepClasses(END_SHAPES[shape])}>
+          <AddIcon className={ICON_SIZES[size]} />
+        </NumberField.Increment>
       </NumberField.Group>
 
-      {description && <p className="m:0 c:slate-6 fs:xs">{description}</p>}
+      {description && <p className="m:0 c:hint fs:xs">{description}</p>}
     </NumberField.Root>
   );
 }

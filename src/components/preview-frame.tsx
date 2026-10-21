@@ -18,7 +18,7 @@ const RESET = `
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #fff;
+    background: light-dark(#fff, #1f2023);
     font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica,
       Arial, sans-serif;
   }
@@ -124,6 +124,34 @@ export default function PreviewFrame({
       const accent = target.createElement("style");
       accent.id = "accent";
       target.head.append(accent);
+
+      // a preview never leaves the page: links and forms do nothing
+      target.addEventListener(
+        "click",
+        (event) => {
+          const link = (event.target as Element | null)?.closest?.("a[href]");
+          if (link) event.preventDefault();
+        },
+        true,
+      );
+      target.addEventListener(
+        "submit",
+        (event) => event.preventDefault(),
+        true,
+      );
+
+      // a press brings the whole frame into view, so what it opens fits without
+      // a scroll, whose touch would land outside a popup and close it
+      target.addEventListener(
+        "pointerdown",
+        () => {
+          const box = element.getBoundingClientRect();
+          const top = 64;
+          if (box.top >= top && box.bottom <= window.innerHeight) return;
+          window.scrollBy({ top: box.top - top, behavior: "smooth" });
+        },
+        true,
+      );
 
       const root = target.createElement("div");
       root.id = "root";

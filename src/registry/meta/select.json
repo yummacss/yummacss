@@ -11,12 +11,12 @@
           "label": "Name"
         },
         {
-          "value": "size",
-          "label": "Size"
-        },
-        {
           "value": "modified",
           "label": "Date modified"
+        },
+        {
+          "value": "size",
+          "label": "Size"
         },
         {
           "value": "kind",
@@ -120,6 +120,33 @@
       "type": "none",
       "typeName": "HTMLElement | null",
       "description": "Where the popup is rendered. Defaults to `document.body`, which is right almost always; pass an element to portal somewhere else, such as inside a frame or a container that owns its own stacking context."
+    }
+  ],
+  "scene": [
+    {
+      "component": "Select",
+      "props": {
+        "options": [
+          {
+            "value": "name",
+            "label": "Name"
+          },
+          {
+            "value": "modified",
+            "label": "Date modified"
+          },
+          {
+            "value": "size",
+            "label": "Size"
+          },
+          {
+            "value": "kind",
+            "label": "Kind"
+          }
+        ],
+        "label": "Sort by",
+        "defaultValue": "modified"
+      }
     }
   ]
 }
