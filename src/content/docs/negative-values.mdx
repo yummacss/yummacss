@@ -3,13 +3,7 @@ title: Negative Values
 description: "Apply a negative value with a minus sign after the colon, which toggles the sign."
 ---
 
-## Using Negative Values
-
-Put a minus sign in front of the value, after the colon: `ml:-4` is a margin of `-1rem`.
-
-Only properties CSS lets go negative take one, such as margins, positioning, `z-index` & transforms. `p:-4` & `w:-4` produce nothing.
-
-## Margin
+## With Margin utilities
 
 Every margin utility takes a negative value, to overlap elements.
 
@@ -19,7 +13,7 @@ Every margin utility takes a negative value, to overlap elements.
 <div className="ml:-4 zi:30 …">C</div>
 ```
 
-## Positioning
+## With Positioning utilities
 
 `t:`, `r:`, `b:`, `l:` & `i:` take a negative value, to place an element outside its parent.
 
@@ -29,7 +23,7 @@ Every margin utility takes a negative value, to overlap elements.
 </div>
 ```
 
-## Z-Index
+## With Z-Index utilities
 
 Negative z-index values allow you to place elements behind their siblings or parents. Use `zi:-(value)` to target negative stack levels.
 
@@ -40,27 +34,13 @@ Negative z-index values allow you to place elements behind their siblings or par
 </div>
 ```
 
-## Sign Toggle
+## Changing the polarity
 
-The minus sign flips the sign of the utility's value, which matters for utilities whose value is already negative.
+The minus sign reverses the polarity of a utility's value. This is important for utilities whose value is already negative like [Letter Spacing](/docs/letter-spacing)
 
 ### Letter Spacing
 
 `ls:1` & `ls:2` are already negative, so `ls:-1` & `ls:-2` flip them to wider spacing.
-
-| Class  | Standard Value | Negated Class | Negated Value |
-| ------ | -------------- | ------------- | ------------- |
-| `ls:0` | `0`            | `ls:-0`       | `0`           |
-| `ls:1` | `-0.05 em`     | `ls:-1`       | `0.05 em`     |
-| `ls:2` | `-0.025 em`    | `ls:-2`       | `0.025 em`    |
-| `ls:3` | `0.025 em`     | `ls:-3`       | `-0.025 em`   |
-| `ls:4` | `0.05 em`      | `ls:-4`       | `-0.05 em`    |
-| `ls:5` | `0.1 em`       | `ls:-5`       | `-0.1 em`     |
-
-<Note>
-  Sign-toggle behavior applies to any utility where the defined CSS value
-  already starts with a negative number.
-</Note>
 
 ```tsx "ls:1" "ls:-1"
 <p className="ls:1 …">Standard (Tight)</p>
