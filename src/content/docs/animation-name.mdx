@@ -8,19 +8,15 @@ since: "4.2"
 
 <Reference category="animation" name="animation-name" />
 
-<Note>
-  `an:none` is the only built-in name. Every other name comes from
-  `theme.keyframes` in your config.
-</Note>
-
 ## Variants
 
 <Variants category="animation" name="animation-name" />
 
-## Define Keyframes
+## Working with keyframes
 
 Name an animation once in `theme.keyframes` & write its body as plain CSS. Each name becomes an `an:` class.
 
+<CodeGroup>
 ```mjs title="yumma.config.mjs" mark={5-8}
 import { defineConfig } from "yummacss";
 
@@ -33,12 +29,6 @@ export default defineConfig({
   },
 });
 ```
-
-## Using Keyframes
-
-Combine a name with [Animation Duration](/docs/animation-duration), [Animation Timing Function](/docs/animation-timing-function) & [Animation Iteration Count](/docs/animation-iteration-count).
-
-<CodeGroup>
 
 ```tsx title="page.tsx" "an:spin"
 <span className="d:b w:4 h:4 bw:2 br:9999 an:spin adu:700 atf:l aic:inf"></span>
@@ -53,10 +43,7 @@ Combine a name with [Animation Duration](/docs/animation-duration), [Animation T
   to { rotate: 360deg; }
 }
 ```
-
 </CodeGroup>
-
-Only the keyframes a class uses are written to the output, once, however many variants use them.
 
 ## Reduced Motion
 
