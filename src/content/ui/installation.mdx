@@ -9,7 +9,7 @@ description: Set up Yumma UI in a Vite or Next.js project.
 
 Accessible React components built on [Base UI](https://base-ui.com/) & styled with Yumma CSS. You copy each one into your project & own every class.
 
-## Getting Started
+## Getting started
 
 Components are copied in, not installed, and `init` sets up Yumma CSS in a Vite or Next.js project.
 
@@ -52,9 +52,13 @@ Components are copied in, not installed, and `init` sets up Yumma CSS in a Vite 
   </Step>
 </Stepper>
 
-## The Config It Writes
+## Default configuration
 
 `yumma.config.mjs` holds the states, curves & keyframes the components animate with, and the colors they paint with, light & dark.
+
+<Note>
+  A project that already has a `yumma.config.mjs` keeps it. `init` & `add` add what it lacks and leave what it defines, its own colors included.
+</Note>
 
 ```js title="yumma.config.mjs"
 import { defineConfig } from "yummacss";
@@ -102,14 +106,6 @@ export default defineConfig({
   },
 });
 ```
-
-<Note>
-  A project that already has a `yumma.config.mjs` keeps it. `init` & `add` add what it lacks and leave what it defines, its own colors included.
-</Note>
-
-Dark applies where the page's `color-scheme` allows it, such as `cs:ld` on `<html>`. Without it, the components stay light.
-
-To set up the plugin by hand instead, follow [Installation](/docs/installation), then add the `theme` above.
 
 ## Icons
 

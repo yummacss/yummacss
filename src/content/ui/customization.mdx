@@ -3,7 +3,7 @@ title: Customization
 description: Props, className & the file you own.
 ---
 
-## Using Props
+## Using props
 
 Try a prop first: the component applies it itself.
 
@@ -53,18 +53,3 @@ Set the color, width & offset with `fv:oc:*`, `fv:ow:*` & `fv:oo:*`. It reaches 
   Delete
 </Button>
 ```
-
-<Warning>
-  `focus={false}` alone leaves nothing marking where the keyboard is, which
-  fails WCAG 2.4.7. Put something back.
-</Warning>
-
-## Own Your Components
-
-When props & `className` are not enough, edit the file. `yummaui add` copies it into your project & nothing overwrites it later.
-
-[Base UI](https://base-ui.com) documents the primitive underneath.
-
-## Colors & Theme
-
-Colors come from Yumma CSS, so you change them in `yumma.config.mjs`. See [Color System](/docs/color-system) & [Configuration](/docs/configuration).

@@ -3,7 +3,7 @@ title: Configuration
 description: Every yummaui command, flag & config field.
 ---
 
-## Set Up a Project
+## Setting up a project
 
 Detects your framework, package manager & import alias before asking where components live.
 
@@ -16,7 +16,7 @@ pnpm dlx yummaui init
 | `--force`   | Replace an existing `yummaui.json` |
 | `-y, --yes` | Skip prompts & take the defaults |
 
-## Add Components
+## Adding components
 
 Copies one or more components in. With no names, it opens a list to search & pick from.
 
@@ -38,15 +38,15 @@ pnpm dlx yummaui add button --style compact --radius small
 
 It asks before installing what a component needs from npm, and offers the same Yumma CSS setup as `init` when it is missing.
 
-## List Components
+## List components
+
+Prints every component.
 
 ```bash
 pnpm dlx yummaui list
 ```
 
-Prints every component.
-
-## Remove Unused Components
+## Removing unused components
 
 Finds component files nothing in your project reaches.
 
@@ -60,14 +60,7 @@ pnpm dlx yummaui prune --write
 | `--write`   | Delete, instead of only listing |
 | `-y, --yes` | Skip the confirmation           |
 
-<Note>
-  Only files `add` wrote are ever candidates. Your own components in the same
-  folder are never touched.
-</Note>
-
-A file counts as used only when something **outside** your components folder reaches it.
-
-## Configuration File
+## Configuration file
 
 ```json title="yummaui.json"
 {
