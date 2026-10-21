@@ -4,7 +4,7 @@ description: "Use calc(), clamp(), min(), max() & var() as utility values."
 since: "4.2"
 ---
 
-## Using CSS Functions
+## Using CSS functions
 
 Write a value off the scale as the CSS function it is.
 
@@ -22,9 +22,9 @@ Write a value off the scale as the CSS function it is.
 
 </CodeGroup>
 
-A class cannot hold spaces, so write the function without them. The spaces CSS needs around `+` & `-` are added in the output.
-
 ## Functions
+
+`var()` reads a custom property, for values known only at run time: `c:var(--brand)`.
 
 | Function  | Where it works           | Example                               |
 | --------- | ------------------------ | ------------------------------------- |
@@ -34,11 +34,9 @@ A class cannot hold spaces, so write the function without them. The spaces CSS n
 | `max()`   | Utilities that take a length | `w:max(min-content,10rem)`        |
 | `var()`   | Every utility            | `h:var(--accordion-panel-height)`     |
 
-`var()` reads a custom property, for values known only at run time: `c:var(--brand)`.
+## Refused values
 
-## Refused Values
-
-A function is the one way off a scale. A plain value is refused, and so is math where no length fits.
+A function is a one-way scale. Plain values are refused, as are mathematical operations where no length fits.
 
 | Class           | Why                            |
 | --------------- | ------------------------------ |
