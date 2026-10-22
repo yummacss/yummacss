@@ -1,0 +1,151 @@
+{
+  "summary": "A drop zone for files, in three shapes, dashed or solid, that picks by click or by drop and lists what it holds.",
+  "props": [
+    {
+      "name": "label",
+      "type": "string",
+      "default": "Drop files to upload",
+      "description": "The zone's title.",
+      "example": "Drop files to upload"
+    },
+    {
+      "name": "browseLabel",
+      "type": "string",
+      "default": "choose from your computer",
+      "description": "The link in the line under the title that opens the file picker."
+    },
+    {
+      "name": "hint",
+      "type": "string",
+      "description": "The rest of that line, after the link, for what this zone accepts.",
+      "example": "up to 2 GB each"
+    },
+    {
+      "name": "items",
+      "type": "none",
+      "typeName": "FileUploadItem[]",
+      "example": [
+        {
+          "id": "holiday",
+          "name": "holiday-2026.mov",
+          "detail": "1.4 of 2.2 GB",
+          "progress": 0.64,
+          "icon": {
+            "$icon": "VideoFrameIcon",
+            "size": "w:5 h:5 c:red"
+          }
+        },
+        {
+          "id": "notes",
+          "name": "notes.md",
+          "detail": "Uploaded, 12 KB",
+          "done": true,
+          "icon": {
+            "$icon": "DocumentIcon",
+            "size": "w:5 h:5 c:blue"
+          }
+        }
+      ],
+      "description": "Files your app is uploading, each with its own progress, listed under the zone in place of the picked ones. Pair with `onCancel`."
+    },
+    {
+      "name": "onCancel",
+      "type": "none",
+      "typeName": "(id: string) => void",
+      "description": "Called with an item's `id` when its cancel button is pressed."
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "description": "A line outside the zone, for formats and limits. Replaced by `error`'s message when it is set."
+    },
+    {
+      "name": "icon",
+      "type": "none",
+      "typeName": "ReactNode",
+      "description": "Replaces the cloud glyph in the tile. It is sized and colored by the zone, so pass the glyph and nothing else."
+    },
+    {
+      "name": "accept",
+      "type": "string",
+      "description": "Passed to the file input, so the picker filters by it. A comma separated list of extensions or MIME types, `image/*,.pdf`. A drop is not filtered: the browser only applies this to the picker, so check the type yourself in `onFilesChange`."
+    },
+    {
+      "name": "multiple",
+      "type": "boolean",
+      "default": false,
+      "description": "Lets the zone hold more than one file. Each pick or drop adds to the list, and a file already in it is not added twice; off, the newest file replaces the old one.",
+      "example": true
+    },
+    {
+      "name": "onFilesChange",
+      "type": "none",
+      "typeName": "(files: File[]) => void",
+      "description": "Called with the whole list whenever it changes, on a pick, a drop or a removal."
+    },
+    {
+      "name": "border",
+      "type": "enum",
+      "values": ["dashed", "solid", "none"],
+      "default": "dashed",
+      "description": "`dashed` is the drop-zone convention and carries the extra width it needs to read as one. `solid` is a heavier, more permanent box, so it stays thin. `none` leaves the zone to its background."
+    },
+    {
+      "name": "error",
+      "type": "string",
+      "description": "Turns the border, tile and text red & shows this message in place of `description`. Crosses with `border`, so a solid zone can be in error too."
+    },
+    {
+      "name": "shape",
+      "type": "enum",
+      "values": ["rounded", "square", "squircle"],
+      "default": "rounded",
+      "description": "Corner radius. `squircle` uses `corner-shape`, which degrades to a rounded square where that is unsupported."
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "default": false,
+      "description": "Blocks the picker and refuses drops, dims the zone and fills it, so it reads as unavailable rather than merely empty."
+    },
+    {
+      "name": "focus",
+      "type": "boolean",
+      "typeName": "boolean | string",
+      "default": true,
+      "description": "The focus outline. `true` draws it, `false` removes it along with the danger, error and success tints that ride with it, and a string of Yumma CSS utilities restyles it on every focusable part of the component, which is more than `className` reaches. Removing it outright and putting nothing back fails WCAG 2.4.7."
+    }
+  ],
+  "scene": [
+    {
+      "component": "FileUpload",
+      "props": {
+        "label": "Drop files to upload",
+        "hint": "up to 2 GB each",
+        "items": [
+          {
+            "id": "holiday",
+            "name": "holiday-2026.mov",
+            "detail": "1.4 of 2.2 GB",
+            "progress": 0.64,
+            "icon": {
+              "$icon": "VideoFrameIcon",
+              "size": "w:5 h:5 c:red"
+            }
+          },
+          {
+            "id": "notes",
+            "name": "notes.md",
+            "detail": "Uploaded, 12 KB",
+            "done": true,
+            "icon": {
+              "$icon": "DocumentIcon",
+              "size": "w:5 h:5 c:blue"
+            }
+          }
+        ],
+        "multiple": true
+      }
+    }
+  ]
+}

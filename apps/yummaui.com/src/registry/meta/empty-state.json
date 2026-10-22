@@ -1,0 +1,117 @@
+{
+  "summary": "A placeholder for an empty list, with an optional badge icon and up to two actions.",
+  "props": [
+    {
+      "name": "icon",
+      "type": "none",
+      "typeName": "ReactNode",
+      "description": "The glyph in the badge. No badge renders without one.",
+      "example": {
+        "$icon": "FolderIcon",
+        "size": "w:6 h:6 c:yellow"
+      }
+    },
+    {
+      "name": "title",
+      "type": "string",
+      "example": "This folder is empty",
+      "description": "The heading."
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "example": "Drop files here, or start a new document. Everything you add syncs to your other devices.",
+      "description": "A line under the title."
+    },
+    {
+      "name": "primaryLabel",
+      "type": "string",
+      "example": "New document",
+      "description": "The filled button. Omit it for a state with nothing to do."
+    },
+    {
+      "name": "primaryIcon",
+      "type": "none",
+      "typeName": "ReactNode",
+      "description": "A glyph before the primary label.",
+      "example": {
+        "$icon": "AddIcon",
+        "size": "w:4 h:4",
+        "style": "outline"
+      }
+    },
+    {
+      "name": "onPrimary",
+      "type": "none",
+      "typeName": "() => void",
+      "description": "Called when the primary button is pressed."
+    },
+    {
+      "name": "secondaryLabel",
+      "type": "string",
+      "example": "Upload",
+      "description": "The outlined button beside the primary one."
+    },
+    {
+      "name": "secondaryIcon",
+      "type": "none",
+      "typeName": "ReactNode",
+      "description": "A glyph before the secondary action's label.",
+      "example": {
+        "$icon": "CloudIcon",
+        "size": "w:4 h:4"
+      }
+    },
+    {
+      "name": "onSecondary",
+      "type": "none",
+      "typeName": "() => void",
+      "description": "Called when the secondary button is pressed."
+    },
+    {
+      "name": "iconTone",
+      "type": "enum",
+      "values": ["accent", "neutral"],
+      "default": "accent",
+      "description": "`accent` for an invitation to act, `neutral` for a plain absence: nothing found, nothing to do."
+    },
+    {
+      "name": "iconShape",
+      "type": "enum",
+      "values": ["rounded", "square", "squircle"],
+      "default": "rounded",
+      "description": "Corner radius on the badge."
+    },
+    {
+      "name": "focus",
+      "type": "boolean",
+      "typeName": "boolean | string",
+      "default": true,
+      "description": "The focus outline. `true` draws it, `false` removes it along with the danger, error and success tints that ride with it, and a string of Yumma CSS utilities restyles it on every focusable part of the component, which is more than `className` reaches. Removing it outright and putting nothing back fails WCAG 2.4.7."
+    }
+  ],
+  "scene": [
+    {
+      "component": "EmptyState",
+      "props": {
+        "icon": {
+          "$icon": "FolderIcon",
+          "size": "w:6 h:6 c:yellow"
+        },
+        "title": "This folder is empty",
+        "description": "Drop files here, or start a new document. Everything you add syncs to your other devices.",
+        "primaryLabel": "New document",
+        "primaryIcon": {
+          "$icon": "AddIcon",
+          "size": "w:4 h:4",
+          "style": "outline"
+        },
+        "secondaryLabel": "Upload",
+        "secondaryIcon": {
+          "$icon": "CloudIcon",
+          "size": "w:4 h:4"
+        }
+      }
+    }
+  ]
+}

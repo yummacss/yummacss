@@ -1,0 +1,104 @@
+{
+  "summary": "A single choice from a short list, always round, with an optional icon and description on each option.",
+  "props": [
+    {
+      "name": "options",
+      "type": "none",
+      "typeName": "RadioOption[]",
+      "example": [
+        {
+          "value": "keep",
+          "label": "Keep both",
+          "description": "Adds a number to the new one"
+        },
+        {
+          "value": "replace",
+          "label": "Replace",
+          "description": "The old file moves to Trash"
+        },
+        {
+          "value": "skip",
+          "label": "Skip",
+          "description": "Leaves the old file as it is"
+        }
+      ],
+      "description": "The choices. `value` and `label` are required; `description` and `icon` are optional per option. The shape is fixed rather than generic because you own the file: data that does not fit is an edit to the option body, not an API."
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "example": "When a file already exists",
+      "description": "A caption above the group, correctly wired to it via `aria-labelledby`. Without one the group has no accessible name at all.",
+      "optional": true
+    },
+    {
+      "name": "defaultValue",
+      "type": "string",
+      "example": "keep",
+      "description": "The option selected when you are not controlling the group. Pair `value` with `onValueChange` instead if you are."
+    },
+    {
+      "name": "value",
+      "type": "string",
+      "description": "Controlled selection."
+    },
+    {
+      "name": "onValueChange",
+      "type": "none",
+      "typeName": "(value: string) => void",
+      "description": "Called with the newly selected value. Required for a controlled group."
+    },
+    {
+      "name": "size",
+      "type": "enum",
+      "values": ["sm", "md", "lg"],
+      "default": "md",
+      "description": "The circle, the dot and the label together."
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "default": false,
+      "description": "Blocks interaction and dims every option."
+    },
+    {
+      "name": "animated",
+      "type": "boolean",
+      "default": true,
+      "description": "The dot's transition when selection changes. Turn it off for a static group, or when the user has asked for reduced motion."
+    },
+    {
+      "name": "focus",
+      "type": "boolean",
+      "typeName": "boolean | string",
+      "default": true,
+      "description": "The focus outline. `true` draws it, `false` removes it along with the danger, error and success tints that ride with it, and a string of Yumma CSS utilities restyles it on every focusable part of the component, which is more than `className` reaches. Removing it outright and putting nothing back fails WCAG 2.4.7."
+    }
+  ],
+  "scene": [
+    {
+      "component": "Radio",
+      "props": {
+        "label": "When a file already exists",
+        "defaultValue": "keep",
+        "options": [
+          {
+            "value": "keep",
+            "label": "Keep both",
+            "description": "Adds a number to the new one"
+          },
+          {
+            "value": "replace",
+            "label": "Replace",
+            "description": "The old file moves to Trash"
+          },
+          {
+            "value": "skip",
+            "label": "Skip",
+            "description": "Leaves the old file as it is"
+          }
+        ]
+      }
+    }
+  ]
+}

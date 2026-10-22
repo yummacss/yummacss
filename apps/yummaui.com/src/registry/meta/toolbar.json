@@ -1,0 +1,190 @@
+{
+  "summary": "A toolbar with roving focus, built from an item list: buttons, icon toggles, separators, an input and links.",
+  "props": [
+    {
+      "name": "items",
+      "type": "none",
+      "typeName": "ToolbarItem[]",
+      "example": [
+        {
+          "type": "toggles",
+          "multiple": true,
+          "defaultValue": ["bold"],
+          "options": [
+            {
+              "value": "bold",
+              "label": "Bold",
+              "icon": {
+                "$icon": "TextBoldIcon",
+                "size": "w:4 h:4"
+              }
+            },
+            {
+              "value": "italic",
+              "label": "Italic",
+              "icon": {
+                "$icon": "TextItalicIcon",
+                "size": "w:4 h:4"
+              }
+            },
+            {
+              "value": "underline",
+              "label": "Underline",
+              "icon": {
+                "$icon": "TextUnderlineIcon",
+                "size": "w:4 h:4"
+              }
+            }
+          ]
+        },
+        {
+          "type": "separator"
+        },
+        {
+          "type": "toggles",
+          "defaultValue": ["bullets"],
+          "options": [
+            {
+              "value": "bullets",
+              "label": "Bulleted list",
+              "icon": {
+                "$icon": "ListIcon",
+                "size": "w:4 h:4",
+                "style": "outline"
+              }
+            },
+            {
+              "value": "numbers",
+              "label": "Numbered list",
+              "icon": {
+                "$icon": "ListOrderedIcon",
+                "size": "w:4 h:4",
+                "style": "outline"
+              }
+            }
+          ]
+        },
+        {
+          "type": "separator"
+        },
+        {
+          "type": "toggles",
+          "options": [
+            {
+              "value": "link",
+              "label": "Link",
+              "icon": {
+                "$icon": "LinkIcon",
+                "size": "w:4 h:4"
+              }
+            }
+          ]
+        }
+      ],
+      "description": "A discriminated union. `{ label }` is a button (plus optional `icon`, `iconOnly`, `disabled`, `onClick`). `{ type: \"separator\" }` divides. `{ type: \"toggles\", options }` is an icon toggle group. `{ type: \"input\", label }` and `{ type: \"link\", label, href }` are the remaining kinds."
+    },
+    {
+      "name": "shape",
+      "type": "enum",
+      "values": ["rounded", "square", "squircle"],
+      "default": "rounded",
+      "description": "Corner radius on the bar and every control inside it. The bar takes one step more than its controls."
+    },
+    {
+      "name": "animated",
+      "type": "boolean",
+      "default": true,
+      "description": "The press-scale on buttons and toggles. Turn it off for static controls, or when the user has asked for reduced motion."
+    },
+    {
+      "name": "focus",
+      "type": "boolean",
+      "typeName": "boolean | string",
+      "default": true,
+      "description": "The focus outline. `true` draws it, `false` removes it along with the danger, error and success tints that ride with it, and a string of Yumma CSS utilities restyles it on every focusable part of the component, which is more than `className` reaches. Removing it outright and putting nothing back fails WCAG 2.4.7."
+    }
+  ],
+  "scene": [
+    {
+      "component": "Toolbar",
+      "props": {
+        "items": [
+          {
+            "type": "toggles",
+            "multiple": true,
+            "defaultValue": ["bold"],
+            "options": [
+              {
+                "value": "bold",
+                "label": "Bold",
+                "icon": {
+                  "$icon": "TextBoldIcon",
+                  "size": "w:4 h:4"
+                }
+              },
+              {
+                "value": "italic",
+                "label": "Italic",
+                "icon": {
+                  "$icon": "TextItalicIcon",
+                  "size": "w:4 h:4"
+                }
+              },
+              {
+                "value": "underline",
+                "label": "Underline",
+                "icon": {
+                  "$icon": "TextUnderlineIcon",
+                  "size": "w:4 h:4"
+                }
+              }
+            ]
+          },
+          {
+            "type": "separator"
+          },
+          {
+            "type": "toggles",
+            "defaultValue": ["bullets"],
+            "options": [
+              {
+                "value": "bullets",
+                "label": "Bulleted list",
+                "icon": {
+                  "$icon": "ListIcon",
+                  "size": "w:4 h:4",
+                  "style": "outline"
+                }
+              },
+              {
+                "value": "numbers",
+                "label": "Numbered list",
+                "icon": {
+                  "$icon": "ListOrderedIcon",
+                  "size": "w:4 h:4",
+                  "style": "outline"
+                }
+              }
+            ]
+          },
+          {
+            "type": "separator"
+          },
+          {
+            "type": "toggles",
+            "options": [
+              {
+                "value": "link",
+                "label": "Link",
+                "icon": {
+                  "$icon": "LinkIcon",
+                  "size": "w:4 h:4"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

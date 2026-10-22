@@ -1,0 +1,152 @@
+{
+  "summary": "A choice from a closed list, in three sizes and three shapes, with an optional icon on the trigger and an avatar per option.",
+  "props": [
+    {
+      "name": "options",
+      "type": "none",
+      "typeName": "SelectOption[]",
+      "example": [
+        {
+          "value": "name",
+          "label": "Name"
+        },
+        {
+          "value": "modified",
+          "label": "Date modified"
+        },
+        {
+          "value": "size",
+          "label": "Size"
+        },
+        {
+          "value": "kind",
+          "label": "Kind"
+        }
+      ],
+      "description": "The choices. `value` and `label` are required; `description` and `avatar` are optional per option. The shape is fixed rather than generic because you own the file: data that does not fit is an edit to the option body, not an API."
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "example": "Sort by",
+      "description": "Text above the trigger.",
+      "optional": true
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "description": "A line under the control, for context on what the choice means."
+    },
+    {
+      "name": "placeholder",
+      "type": "string",
+      "default": "Select…",
+      "description": "Shown on the trigger before anything is selected."
+    },
+    {
+      "name": "defaultValue",
+      "type": "string",
+      "description": "The option selected when you are not controlling it. Pair `value` with `onValueChange` instead if you are.",
+      "example": "modified"
+    },
+    {
+      "name": "value",
+      "type": "string",
+      "description": "Controlled selection."
+    },
+    {
+      "name": "onValueChange",
+      "type": "none",
+      "typeName": "(value: string | null) => void",
+      "description": "Called with the newly selected value, or `null` if the selection was cleared. Required for a controlled select."
+    },
+    {
+      "name": "icon",
+      "type": "none",
+      "typeName": "ReactNode",
+      "example": null,
+      "exampleIcon": "SortIcon",
+      "description": "A single icon fixed on the trigger, not per option. For the per-option kind, give an option an `avatar` instead."
+    },
+    {
+      "name": "iconPosition",
+      "type": "enum",
+      "values": ["leading", "trailing"],
+      "default": "leading",
+      "description": "Which side `icon` sits on. Trailing sits just before the chevron.",
+      "dependsOn": "icon"
+    },
+    {
+      "name": "size",
+      "type": "enum",
+      "values": ["sm", "md", "lg"],
+      "default": "md",
+      "description": "Height and width of the trigger. The popup follows it."
+    },
+    {
+      "name": "shape",
+      "type": "enum",
+      "values": ["rounded", "square", "squircle"],
+      "default": "rounded",
+      "description": "Corner radius, applied to the trigger and the popup together. `squircle` uses `corner-shape`."
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "default": false,
+      "description": "Blocks interaction and dims the whole control, label included."
+    },
+    {
+      "name": "required",
+      "type": "boolean",
+      "default": false,
+      "description": "Appends a red asterisk to the label & sets the trigger's native `required` attribute."
+    },
+    {
+      "name": "animated",
+      "type": "boolean",
+      "default": true,
+      "description": "Fades and scales the popup in and out. Turn it off for a static popup, or when the user has asked for reduced motion."
+    },
+    {
+      "name": "focus",
+      "type": "boolean",
+      "typeName": "boolean | string",
+      "default": true,
+      "description": "The focus outline. `true` draws it, `false` removes it along with the danger, error and success tints that ride with it, and a string of Yumma CSS utilities restyles it on every focusable part of the component, which is more than `className` reaches. Removing it outright and putting nothing back fails WCAG 2.4.7."
+    },
+    {
+      "name": "container",
+      "type": "none",
+      "typeName": "HTMLElement | null",
+      "description": "Where the popup is rendered. Defaults to `document.body`, which is right almost always; pass an element to portal somewhere else, such as inside a frame or a container that owns its own stacking context."
+    }
+  ],
+  "scene": [
+    {
+      "component": "Select",
+      "props": {
+        "options": [
+          {
+            "value": "name",
+            "label": "Name"
+          },
+          {
+            "value": "modified",
+            "label": "Date modified"
+          },
+          {
+            "value": "size",
+            "label": "Size"
+          },
+          {
+            "value": "kind",
+            "label": "Kind"
+          }
+        ],
+        "label": "Sort by",
+        "defaultValue": "modified"
+      }
+    }
+  ]
+}

@@ -1,0 +1,188 @@
+{
+  "summary": "A paged setup in a dialog, one step at a time, with a step bar and choices to pick on the way.",
+  "props": [
+    {
+      "name": "trigger",
+      "type": "none",
+      "typeName": "ReactNode",
+      "example": "Take the tour",
+      "description": "The trigger button's label."
+    },
+    {
+      "name": "triggerIcon",
+      "type": "none",
+      "typeName": "ReactNode",
+      "exampleIcon": "StarsIcon",
+      "description": "A glyph beside the trigger's label."
+    },
+    {
+      "name": "iconPosition",
+      "type": "enum",
+      "values": ["leading", "trailing"],
+      "default": "leading",
+      "description": "Which end of the trigger its `triggerIcon` sits at."
+    },
+    {
+      "name": "steps",
+      "type": "none",
+      "typeName": "OnboardingStep[]",
+      "example": [
+        {
+          "title": "Welcome to your files",
+          "description": "Three quick steps to set up where your files live and how they sync."
+        },
+        {
+          "title": "Choose what to keep in sync",
+          "description": "Pick folders now; you can change this any time in Settings.",
+          "choices": [
+            {
+              "id": "documents",
+              "label": "Documents",
+              "icon": {
+                "$icon": "FolderIcon",
+                "size": "w:4 h:4"
+              },
+              "picked": true
+            },
+            {
+              "id": "photos",
+              "label": "Photos",
+              "icon": {
+                "$icon": "FolderIcon",
+                "size": "w:4 h:4"
+              },
+              "picked": true
+            },
+            {
+              "id": "downloads",
+              "label": "Downloads",
+              "icon": {
+                "$icon": "FolderIcon",
+                "size": "w:4 h:4"
+              }
+            },
+            {
+              "id": "desktop",
+              "label": "Desktop",
+              "icon": {
+                "$icon": "FolderIcon",
+                "size": "w:4 h:4"
+              }
+            }
+          ]
+        },
+        {
+          "title": "You are all set",
+          "description": "Your folders sync in the background. Change any of this later in Settings."
+        }
+      ],
+      "description": "Each step's `title`, `description` and optional `choices`. Steps advance one at a time and the dialog resets to the first when it closes."
+    },
+    {
+      "name": "onFinish",
+      "type": "none",
+      "typeName": "(picked: string[]) => void",
+      "description": "Called on the last step's Done with the id of every picked choice."
+    },
+    {
+      "name": "finishLabel",
+      "type": "string",
+      "default": "Done",
+      "description": "The last step's button."
+    },
+    {
+      "name": "closeOnEscape",
+      "type": "boolean",
+      "default": true,
+      "description": "Esc closes the tour, as it does any dialog. Turn it off for a tour that must be finished or closed from its last step."
+    },
+    {
+      "name": "shape",
+      "type": "enum",
+      "values": ["rounded", "square", "squircle"],
+      "default": "rounded",
+      "description": "Corner radius on the trigger, the popup and its controls."
+    },
+    {
+      "name": "animated",
+      "type": "boolean",
+      "default": true,
+      "description": "The slide transition between steps and the popup's scale-in. Turn it off for an instant tour, or when the user has asked for reduced motion."
+    },
+    {
+      "name": "focus",
+      "type": "boolean",
+      "typeName": "boolean | string",
+      "default": true,
+      "description": "The focus outline. `true` draws it, `false` removes it along with the danger, error and success tints that ride with it, and a string of Yumma CSS utilities restyles it on every focusable part of the component, which is more than `className` reaches. Removing it outright and putting nothing back fails WCAG 2.4.7."
+    },
+    {
+      "name": "container",
+      "type": "none",
+      "typeName": "HTMLElement | null",
+      "description": "Where the popup is rendered. Defaults to `document.body`, which is right almost always; pass an element to portal somewhere else, such as inside a frame or a container that owns its own stacking context."
+    }
+  ],
+  "scene": [
+    {
+      "component": "Onboarding",
+      "props": {
+        "trigger": "Take the tour",
+        "triggerIcon": {
+          "$icon": "StarsIcon",
+          "size": "w:5 h:5"
+        },
+        "steps": [
+          {
+            "title": "Welcome to your files",
+            "description": "Three quick steps to set up where your files live and how they sync."
+          },
+          {
+            "title": "Choose what to keep in sync",
+            "description": "Pick folders now; you can change this any time in Settings.",
+            "choices": [
+              {
+                "id": "documents",
+                "label": "Documents",
+                "icon": {
+                  "$icon": "FolderIcon",
+                  "size": "w:4 h:4"
+                },
+                "picked": true
+              },
+              {
+                "id": "photos",
+                "label": "Photos",
+                "icon": {
+                  "$icon": "FolderIcon",
+                  "size": "w:4 h:4"
+                },
+                "picked": true
+              },
+              {
+                "id": "downloads",
+                "label": "Downloads",
+                "icon": {
+                  "$icon": "FolderIcon",
+                  "size": "w:4 h:4"
+                }
+              },
+              {
+                "id": "desktop",
+                "label": "Desktop",
+                "icon": {
+                  "$icon": "FolderIcon",
+                  "size": "w:4 h:4"
+                }
+              }
+            ]
+          },
+          {
+            "title": "You are all set",
+            "description": "Your folders sync in the background. Change any of this later in Settings."
+          }
+        ]
+      }
+    }
+  ]
+}

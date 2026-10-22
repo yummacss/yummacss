@@ -1,0 +1,143 @@
+{
+  "summary": "A hover tooltip, light or dark, positionable on any side, with an optional arrow.",
+  "props": [
+    {
+      "name": "trigger",
+      "type": "none",
+      "typeName": "ReactNode",
+      "exampleIcon": "TrashBinTrashIcon",
+      "description": "The trigger's content, an icon usually. Pair it with `triggerLabel` when there is no text."
+    },
+    {
+      "name": "triggerLabel",
+      "type": "string",
+      "example": "Move to Trash",
+      "description": "The trigger's `aria-label`. An icon-only trigger has no accessible name without it."
+    },
+    {
+      "name": "content",
+      "type": "none",
+      "typeName": "ReactNode",
+      "example": "Move to Trash",
+      "description": "The tooltip's text."
+    },
+    {
+      "name": "shortcut",
+      "type": "string",
+      "example": "Del",
+      "description": "A key or chord after the text, drawn as a keycap."
+    },
+    {
+      "name": "side",
+      "type": "enum",
+      "values": ["top", "right", "bottom", "left"],
+      "default": "top",
+      "description": "Which side of the trigger the tooltip opens on. It flips automatically if there is no room."
+    },
+    {
+      "name": "sideOffset",
+      "type": "number",
+      "default": 8,
+      "description": "Gap between the trigger and the tooltip, or its arrow tip, in pixels.",
+      "min": 0,
+      "max": 24,
+      "step": 2
+    },
+    {
+      "name": "arrow",
+      "type": "boolean",
+      "default": true,
+      "description": "A pointer notched into the tooltip's edge, aimed back at the trigger. It re-aims itself when `side` changes."
+    },
+    {
+      "name": "delay",
+      "type": "number",
+      "default": 300,
+      "description": "How long a hover must rest before it opens, in ms. Set to `0` to open on contact.",
+      "min": 0,
+      "max": 1000,
+      "step": 100
+    },
+    {
+      "name": "tone",
+      "type": "enum",
+      "values": ["light", "dark", "danger"],
+      "default": "light",
+      "description": "The tooltip's surface and its trigger together. `light` and `dark` are the two neutral surfaces; `danger` reads red at both ends, for a destructive action.",
+      "example": "dark"
+    },
+    {
+      "name": "shape",
+      "type": "enum",
+      "values": ["rounded", "square", "squircle"],
+      "default": "rounded",
+      "description": "Corner radius on the tooltip."
+    },
+    {
+      "name": "animated",
+      "type": "boolean",
+      "default": true,
+      "description": "The tooltip's fade and rise. Turn it off for an instant tooltip, or when the user has asked for reduced motion."
+    },
+    {
+      "name": "focus",
+      "type": "boolean",
+      "typeName": "boolean | string",
+      "default": true,
+      "description": "The focus outline. `true` draws it, `false` removes it along with the danger, error and success tints that ride with it, and a string of Yumma CSS utilities restyles it on every focusable part of the component, which is more than `className` reaches. Removing it outright and putting nothing back fails WCAG 2.4.7."
+    },
+    {
+      "name": "container",
+      "type": "none",
+      "typeName": "HTMLElement | null",
+      "description": "Where the popup is rendered. Defaults to `document.body`, which is right almost always; pass an element to portal somewhere else, such as inside a frame or a container that owns its own stacking context."
+    }
+  ],
+  "scene": [
+    {
+      "tag": "div",
+      "className": "d:f g:1 p:1 br:lg bw:1 bg:raised btc:rim blc:rim brc:rim bbc:shadow bs-o:xs",
+      "children": [
+        {
+          "component": "Tooltip",
+          "props": {
+            "trigger": {
+              "$icon": "PenIcon",
+              "size": "w:4 h:4"
+            },
+            "triggerLabel": "Rename",
+            "content": "Rename",
+            "shortcut": "F2",
+            "tone": "dark"
+          }
+        },
+        {
+          "component": "Tooltip",
+          "props": {
+            "trigger": {
+              "$icon": "CopyIcon",
+              "size": "w:4 h:4"
+            },
+            "triggerLabel": "Duplicate",
+            "content": "Duplicate",
+            "shortcut": "Ctrl D",
+            "tone": "dark"
+          }
+        },
+        {
+          "component": "Tooltip",
+          "props": {
+            "trigger": {
+              "$icon": "TrashBinTrashIcon",
+              "size": "w:4 h:4"
+            },
+            "triggerLabel": "Move to Trash",
+            "content": "Move to Trash",
+            "shortcut": "Del",
+            "tone": "dark"
+          }
+        }
+      ]
+    }
+  ]
+}

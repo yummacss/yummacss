@@ -1,0 +1,100 @@
+{
+  "summary": "An on/off control, in three sizes and three shapes, with an optional icon revealed on the track.",
+  "props": [
+    {
+      "name": "label",
+      "type": "string",
+      "example": "Autosave",
+      "description": "Text beside the track.",
+      "optional": true
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "description": "A line under the label, for the consequence of turning it on.",
+      "example": "Every change, as you type"
+    },
+    {
+      "name": "defaultChecked",
+      "type": "boolean",
+      "default": false,
+      "description": "Starting state when you are not controlling it. Pair `checked` with `onCheckedChange` instead if you are.",
+      "controlled": true
+    },
+    {
+      "name": "checked",
+      "type": "boolean",
+      "description": "Controlled state.",
+      "controlled": true,
+      "handler": "onCheckedChange"
+    },
+    {
+      "name": "onCheckedChange",
+      "type": "none",
+      "typeName": "(checked: boolean) => void",
+      "description": "Called with the new state. Required for a controlled switch."
+    },
+    {
+      "name": "icon",
+      "type": "none",
+      "typeName": "ReactNode",
+      "description": "Shown on the track, revealed as the thumb slides past it once checked. Absent from the DOM while unchecked, not just hidden."
+    },
+    {
+      "name": "size",
+      "type": "enum",
+      "values": ["sm", "md", "lg"],
+      "default": "md",
+      "description": "Track and thumb together."
+    },
+    {
+      "name": "shape",
+      "type": "enum",
+      "values": ["rounded", "square", "squircle"],
+      "default": "rounded",
+      "description": "Corner radius, applied to the track and the thumb together. `squircle` uses `corner-shape`."
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "default": false,
+      "description": "Blocks interaction and dims the whole control, label included."
+    },
+    {
+      "name": "animated",
+      "type": "boolean",
+      "default": true,
+      "description": "The thumb's slide when the state changes. Turn it off for an instant jump, or when the user has asked for reduced motion."
+    },
+    {
+      "name": "focus",
+      "type": "boolean",
+      "typeName": "boolean | string",
+      "default": true,
+      "description": "The focus outline. `true` draws it, `false` removes it along with the danger, error and success tints that ride with it, and a string of Yumma CSS utilities restyles it on every focusable part of the component, which is more than `className` reaches. Removing it outright and putting nothing back fails WCAG 2.4.7."
+    }
+  ],
+  "scene": [
+    {
+      "tag": "div",
+      "className": "d:g g:4",
+      "children": [
+        {
+          "component": "Switch",
+          "props": {
+            "label": "Autosave",
+            "description": "Every change, as you type",
+            "defaultChecked": true
+          }
+        },
+        {
+          "component": "Switch",
+          "props": {
+            "label": "Show file extensions",
+            "description": "report.pdf rather than report"
+          }
+        }
+      ]
+    }
+  ]
+}
