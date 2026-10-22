@@ -1,0 +1,42 @@
+---
+title: Naming Convention
+description: "How Yumma CSS class names map to CSS property names."
+---
+
+## How class names work
+
+A class is made up of the initials of the CSS property, a colon, and the initials of the value. Each class sets only one property.
+
+```md
+display: flex;                   /* d:f   */
+justify-content: space-between;  /* jc:sb */
+text-transform: uppercase;       /* tt:u  */
+```
+
+## Values
+
+Numbers & scales keep their position instead of their initials.
+
+:::info
+`none` & `auto` are never abbreviated, so they never collide with another value's initials.
+:::
+
+```tsx
+<div className="p:4 fs:lg fw:600 zi:10 pe:auto …"></div>
+```
+
+## Shared prefixes
+
+CSS has more properties than there are short letter pairs, so a few prefixes serve more than one property. The value tells them apart.
+
+| Class     | Property   |
+| --------- | ---------- |
+| `o:50`    | `opacity`  |
+| `o:h`     | `overflow` |
+| `p:4`     | `padding`  |
+| `p:a`     | `position` |
+| `c:white` | `color`    |
+| `c:p`     | `cursor`   |
+
+The two value sets never overlap, so no class is ambiguous.
+

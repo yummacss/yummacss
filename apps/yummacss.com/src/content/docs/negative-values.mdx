@@ -1,0 +1,48 @@
+---
+title: Negative Values
+description: "Apply a negative value with a minus sign after the colon, which toggles the sign."
+---
+
+## With Margin utilities
+
+Every margin utility takes a negative value, to overlap elements.
+
+```tsx "ml:-4"
+<div className="zi:10 …">A</div>
+<div className="ml:-4 zi:20 …">B</div>
+<div className="ml:-4 zi:30 …">C</div>
+```
+
+## With Positioning utilities
+
+`t:`, `r:`, `b:`, `l:` & `i:` take a negative value, to place an element outside its parent.
+
+```tsx "t:-4" "l:-4"
+<div className="p:r …">
+  <div className="p:a t:-4 l:-4 …"></div>
+</div>
+```
+
+## With Z-Index utilities
+
+Negative z-index values allow you to place elements behind their siblings or parents. Use `zi:-(value)` to target negative stack levels.
+
+```tsx "zi:-10"
+<div className="p:r …">
+  <div className="p:a zi:-10 …"></div>
+  <span>Background Layer</span>
+</div>
+```
+
+## Changing the polarity
+
+The minus sign reverses the polarity of a utility's value. This is important for utilities whose value is already negative like [Letter Spacing](/docs/letter-spacing).
+
+### Letter Spacing
+
+`ls:1` & `ls:2` are already negative, so `ls:-1` & `ls:-2` flip them to wider spacing.
+
+```tsx "ls:1" "ls:-1"
+<p className="ls:1 …">Standard (Tight)</p>
+<p className="ls:-1 …">Negated (Wide)</p>
+```

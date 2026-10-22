@@ -1,0 +1,368 @@
+---
+title: Configuration
+description: Configure Yumma CSS for your project.
+---
+
+## Installing the CLI
+
+Use the Yumma CSS CLI to generate production-ready styles.
+
+```bash
+pnpm add yummacss -D
+```
+
+## Setting up a project
+
+Initialize a configuration file in your project.
+
+```bash
+pnpm dlx yummacss init
+```
+
+Creates `yumma.config.mjs` at your project root, read by the CLI & both plugins.
+
+```mjs title="yumma.config.mjs" mark={4-5}
+import { defineConfig } from "yummacss";
+
+export default defineConfig({
+  source: ["./src/**/*.{js,jsx,ts,tsx,mdx,html}"],
+  output: "./src/styles.css",
+});
+```
+
+### `source`
+
+Use glob patterns to include subfolders & specific file types.
+
+```mjs title="yumma.config.mjs" mark={4}
+import { defineConfig } from "yummacss";
+
+export default defineConfig({
+  source: ["./src/**/*.html"],
+});
+```
+
+### `output`
+
+Specifies the output path for the compiled CSS file.
+
+<Note>
+  Only the CLI uses `output`. The bundler plugins ignore it & inject the
+  generated CSS through the `@yummacss;` marker instead.
+</Note>
+
+```mjs title="yumma.config.mjs" mark={4}
+import { defineConfig } from "yummacss";
+
+export default defineConfig({
+  output: "./src/styles.css",
+});
+```
+
+### `normalize`
+
+Determines whether to include base styles normalization.
+
+```mjs title="yumma.config.mjs" mark={4}
+import { defineConfig } from "yummacss";
+
+export default defineConfig({
+  normalize: true, // default: true
+});
+```
+
+### Theme
+
+Extends or overrides default design tokens.
+
+#### `theme.colors`
+
+Add color families. Each gets shades `1` to `12` unless you write them out.
+
+```mjs title="yumma.config.mjs" mark={4-12}
+import { defineConfig } from "yummacss";
+
+export default defineConfig({
+  theme: {
+    colors: {
+      brand: "#9333EA",
+      percentage: {
+        light: 14,
+        dark: 14,
+      },
+    },
+  },
+});
+```
+
+```mjs title="yumma.config.mjs" mark={6}
+import { defineConfig } from "yummacss";
+
+export default defineConfig({
+  theme: {
+    colors: {
+      surface: { light: "#ffffff", dark: "#111214" },
+    },
+  },
+});
+```
+
+#### `theme.screens`
+
+Define custom media query breakpoints or override existing ones.
+
+```mjs title="yumma.config.mjs" mark={4-13}
+import { defineConfig } from "yummacss";
+
+export default defineConfig({
+  theme: {
+    screens: {
+      sm: "40rem",
+      md: "48rem",
+      lg: "64rem",
+      xl: "80rem",
+      xxl: "96rem",
+      "3xl": "112rem",
+    },
+  },
+});
+```
+
+#### `theme.states`
+
+Name your own variants for attributes your components set. Each name becomes a prefix like `h:`. See [States](/docs/states).
+
+```mjs title="yumma.config.mjs" mark={4-7}
+import { defineConfig } from "yummacss";
+
+export default defineConfig({
+  theme: {
+    states: {
+      closing: "[data-ending-style]",
+    },
+  },
+});
+```
+
+#### `theme.fonts`
+
+Add font stacks, each an `ff:` class. See [Font Family](/docs/font-family).
+
+```mjs title="yumma.config.mjs" mark={4-7}
+import { defineConfig } from "yummacss";
+
+export default defineConfig({
+  theme: {
+    fonts: {
+      display: '"Esteban", serif',
+    },
+  },
+});
+```
+
+#### `theme.keyframes`
+
+Add keyframes, each an `an:` class. See [Animation Name](/docs/animation-name).
+
+```mjs title="yumma.config.mjs" mark={4-7}
+import { defineConfig } from "yummacss";
+
+export default defineConfig({
+  theme: {
+    keyframes: {
+      spin: "to { rotate: 360deg; }",
+    },
+  },
+});
+```
+
+#### `theme.easings`
+
+Add easing curves, each a `ttf:` & an `atf:` class. See [Transition Timing Function](/docs/transition-timing-function).
+
+```mjs title="yumma.config.mjs" mark={4-7}
+import { defineConfig } from "yummacss";
+
+export default defineConfig({
+  theme: {
+    easings: {
+      "out-quart": "cubic-bezier(0.25, 1, 0.5, 1)",
+    },
+  },
+});
+```
+
+### `safelist`
+
+Classes to generate even when no file contains them, such as one built at runtime.
+
+<Note>
+  The scanner cannot see a class built at runtime, such as `` `d:${display}` ``,
+  so list it here.
+</Note>
+
+```mjs title="yumma.config.mjs" mark={4}
+import { defineConfig } from "yummacss";
+
+export default defineConfig({
+  safelist: ["bg:red", "c:white", "fw:700"],
+});
+```
+
+## Generating styles
+
+The CLI checks the source files you've given it and makes a CSS file using the utilities it finds.
+
+<CodeGroup>
+```tsx title="index.tsx"
+<button className="bg:white c:black bw:1">Button</button>
+```
+
+```css title="styles.css"
+.bg\:white {
+  background-color: #ffffff;
+}
+
+.bw\:1 {
+  border-width: 1px;
+}
+
+.c\:black {
+  color: #000000;
+}
+```
+
+</CodeGroup>
+
+## CLI commands
+
+First, you'll need a `yumma.config.mjs` file. If there is none, run `yummacss init`.
+
+### Build
+
+Compile your Yumma CSS files once.
+
+```bash
+pnpm dlx yummacss build
+```
+
+### Watch
+
+Watch for file changes & recompile automatically.
+
+```bash
+pnpm dlx yummacss watch
+```
+
+## Lint
+
+This is completely optional. Use lint only to double-check the CSS generation with Yumma CSS.
+
+### Oxlint
+
+<Stepper>
+  <Step title="Install the plugin">
+    ```bash
+    pnpm add -D oxlint @yummacss/lint
+    ```
+
+  </Step>
+
+  <Step title="Activate the rules">
+    Register the plugin & pick a level for each rule.
+
+    ```json title=".oxlintrc.json"
+    {
+      "jsPlugins": ["@yummacss/lint"],
+      "rules": {
+        "yummacss/no-unknown-classes": "error",
+        "yummacss/no-inline-styles": "warn"
+      }
+    }
+    ```
+
+  </Step>
+
+  <Step title="Run it">
+
+    The plugin is written in the ESLint plugin format, which is the format Oxlint loads, so ESLint runs it too.
+
+    ```bash
+    pnpm oxlint
+    ```
+
+  </Step>
+</Stepper>
+
+### Available rules
+
+| Rule                 | Reports                                                                                                               |
+| -------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| `no-unknown-classes` | A class Yumma CSS does not generate, such as `bg:redd-5`, with the closest class that exists.                         |
+| `no-inline-styles`   | A property in a `style` object, with the class that writes the same declaration, such as `d:f` for `display: "flex"`. |
+
+Both rules read `className`, `class` & the arguments of `cn`, `clsx` & `merge`, including ternaries & template literals.
+
+`no-inline-styles` skips custom properties, so a value that changes at runtime goes through one:
+
+```tsx
+<div className="w:var(--progress)" style={{ "--progress": `${value}%` }} />
+```
+
+:::warning[Runtime classes are invisible]
+A class assembled at runtime cannot be checked. In ``className={`p:4 ${size}`}`` the `p:4` is checked & `${size}` is skipped.
+:::
+
+### Options
+
+Every rule takes `allow` & `message`.
+
+```json title=".oxlintrc.json"
+{
+  "rules": {
+    "yummacss/no-unknown-classes": [
+      "error",
+      {
+        "allow": ["brand-logo", "editor-*"],
+        "message": "{{className}} is not on the scale. Did you mean {{suggestions}}?"
+      }
+    ]
+  }
+}
+```
+
+| Option    | Type       | Description                                                                                           |
+| --------- | ---------- | ----------------------------------------------------------------------------------------------------- |
+| `allow`   | `string[]` | Class names to accept, or CSS property names for `no-inline-styles`. A trailing `*` matches a prefix. |
+| `message` | `string`   | Replaces the rule's message. `{{className}}`, `{{property}}` & `{{suggestions}}` are filled in.       |
+
+Skip a single line with a comment:
+
+```tsx
+// oxlint-disable-next-line yummacss/no-unknown-classes
+<div className="brand-logo" />
+```
+
+### One-off check
+
+`yummacss lint` scans your source files from your configuration and lists every class that it does not recognize.
+
+```bash
+pnpm dlx yummacss lint
+```
+
+```text
+Scanned 128 files and found 214 unique classes.
+Found 2 classes Yumma CSS does not recognize:
+ "ai:st" - did you mean "ai:s"?
+  - src/components/hero.tsx
+ "flex-center"
+  - src/components/layout.tsx
+Fix the classes above, or pass --allow "class-a,class-b" for custom classes.
+```
+
+| Flag       | Alias | Description                                                                                             |
+| ---------- | ----- | ------------------------------------------------------------------------------------------------------- |
+| `--allow`  | `-a`  | Comma-separated class names to skip. Repeat it to add more.                                             |
+| `--config` | `-c`  | Path to the config file, absolute or relative to the working directory. Defaults to `yumma.config.mjs`. |
+

@@ -1,0 +1,45 @@
+---
+title: CSS Functions
+description: "Use calc(), clamp(), min(), max() & var() as utility values."
+since: "4.2"
+---
+
+## Using CSS functions
+
+Write a value off the scale as the CSS function it is.
+
+<CodeGroup>
+
+```tsx title="page.tsx" "max-h:calc(100dvh-5rem)"
+<nav className="p:st t:20 max-h:calc(100dvh-5rem)"></nav>
+```
+
+```css title="output.css"
+.max-h\:calc\(100dvh-5rem\) {
+  max-height: calc(100dvh - 5rem);
+}
+```
+
+</CodeGroup>
+
+## Functions
+
+`var()` reads a custom property, for values known only at run time: `c:var(--brand)`.
+
+| Function  | Where it works           | Example                               |
+| --------- | ------------------------ | ------------------------------------- |
+| `calc()`  | Utilities that take a length | `max-h:calc(100dvh-5rem)`         |
+| `clamp()` | Utilities that take a length | `max-w:clamp(40rem,80vw,96rem)`   |
+| `min()`   | Utilities that take a length | `w:min(100%,calc(100vw-2rem))`    |
+| `max()`   | Utilities that take a length | `w:max(min-content,10rem)`        |
+| `var()`   | Every utility            | `h:var(--accordion-panel-height)`     |
+
+## Refused values
+
+A function is the only way off the scale. Plain values are refused, as are mathematical operations where no length fits.
+
+| Class           | Why                            |
+| --------------- | ------------------------------ |
+| `w:37px`        | Not on the scale               |
+| `d:calc(1+1)`   | Display takes no length        |
+| `w:attr(width)` | Not one of the five functions  |

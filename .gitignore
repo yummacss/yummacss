@@ -37,3 +37,14 @@ Thumbs.db
 
 # playground
 playground/
+
+# the docs site
+.next/
+next-env.d.ts
+.vercel/
+.vercel
+.env*.local
+.content-collections/
+.opencode/
+.claude/*
+!.claude/settings.json

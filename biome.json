@@ -5,7 +5,8 @@
 		"useIgnoreFile": true
 	},
 	"files": {
-		"ignoreUnknown": false
+		"ignoreUnknown": false,
+		"includes": ["**", "!apps"]
 	},
 	"formatter": {
 		"enabled": true,

@@ -1,0 +1,37 @@
+---
+title: Font Family
+description: Set the font family for an element.
+---
+
+<Baseline path="css.properties.font-family" />
+
+<Note>
+  The reset sets a system font stack on `html`. See
+  [Normalization](/docs/normalize#document).
+</Note>
+
+<Reference category="font" name="font-family" />
+
+## Variants
+
+<Variants category="font" name="font-family" />
+
+## Custom fonts
+
+Add a font stack in `theme.fonts` & use it by name. A name that matches a built-in family (`d`, `m`, `s`) replaces it.
+
+```mjs title="yumma.config.mjs" mark={4-7}
+import { defineConfig } from "yummacss";
+
+export default defineConfig({
+  theme: {
+    fonts: {
+      display: '"Esteban", serif',
+    },
+  },
+});
+```
+
+```tsx "ff:display"
+<h1 className="ff:display fs:3xl">Documents</h1>
+```

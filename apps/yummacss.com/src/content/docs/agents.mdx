@@ -1,0 +1,44 @@
+---
+title: Coding Agents
+description: "A set of rules that can be used to teach a coding agent to write Yumma CSS & check its classes."
+since: "4.3"
+---
+
+## Installing the skill
+
+An agent that loads skills, such as [Claude Code](https://claude.ai/), provides both Yumma CSS and Yumma UI.
+
+```bash
+npx skills add yummacss/yummacss
+```
+
+## Adding it to a project
+
+Save [agents.md](/agents.md) as the instructions file your agent reads. Most read `AGENTS.md` at the project root.
+
+`>>` & `Add-Content` append, so instructions already in the file stay.
+
+<CodeGroup>
+```bash title="macOS & Linux"
+curl -s https://www.yummacss.com/agents.md >> AGENTS.md
+```
+
+```powershell title="Windows"
+irm https://www.yummacss.com/agents.md | Add-Content AGENTS.md
+```
+</CodeGroup>
+
+## Plain text
+
+| File | Contents |
+| --- | --- |
+| [agents.md](/agents.md) | The rules file this page installs. |
+| [llms.txt](/llms.txt) | The syntax & an index of every page, each linked as Markdown. |
+
+## Checking the result
+
+Although the file instructs the agent to run the check itself, it is also worth running it in CI.
+
+```bash
+pnpm dlx yummacss lint
+```

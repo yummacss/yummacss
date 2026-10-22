@@ -1,0 +1,76 @@
+---
+title: Class Merge
+description: "Resolve two utilities that set the same property so the last one wins."
+---
+
+## Using merge
+
+`merge` takes class strings & returns one with the losers removed, so the last class wins.
+
+```tsx
+import { merge } from "yummacss/merge";
+
+merge("c:white", "c:accent"); // "c:accent"
+```
+
+```tsx
+<span className={merge("c:white", className)}>Accent</span>
+```
+
+Falsy arguments are skipped, so conditionals read cleanly.
+
+```tsx
+<div className={merge("d:f ai:c", isOpen && "bg:silver-1", className)}></div>
+```
+
+## What gets dropped
+
+A class is dropped only when a later class sets **everything** it sets.
+
+```tsx
+merge("px:8 p:4"); // "p:4"
+merge("p:4 px:8"); // "p:4 px:8"
+```
+
+`p:4` covers `px:8`, so `px:8` goes. Reversed, both stay, since `p:4` still sets the block axis.
+
+```tsx
+merge("w:10 h:10", "w:12"); // "h:10 w:12"
+```
+
+## Shared prefixes
+
+`merge` reads the value, so a shared prefix never collides: `c:p` is a cursor, `c:slate-10` a color.
+
+```tsx
+merge("c:p c:slate-10"); // "c:p c:slate-10"
+merge("p:a p:4"); // "p:a p:4"
+```
+
+## Variants
+
+Classes are compared within their own variant, so a hover class never covers a base class.
+
+```tsx
+merge("h:bg:silver-2", "bg:white"); // "h:bg:silver-2 bg:white"
+merge("h:bg:silver-2", "h:bg:indigo-2"); // "h:bg:indigo-2"
+```
+
+Media queries work the same way.
+
+```tsx
+merge("@lg:p:4 p:2", "@lg:p:8"); // "p:2 @lg:p:8"
+```
+
+## Unknown classes
+
+Anything `merge` does not recognize passes through in place.
+
+```tsx
+merge("card", "bg:white", "card-active"); // "card bg:white card-active"
+```
+
+<Note>
+  A utility newer than your `merge` is kept too, so the worst case is the
+  behavior you had before.
+</Note>

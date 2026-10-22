@@ -5,6 +5,8 @@ export default defineConfig({
 	test: {
 		globals: true,
 		environment: "node",
+		// the site runs its own tests, test:site
+		exclude: ["**/node_modules/**", "apps/**"],
 	},
 	resolve: {
 		alias: {

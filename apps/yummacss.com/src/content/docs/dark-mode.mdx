@@ -1,0 +1,54 @@
+---
+title: Dark Mode
+description: "Opt into dark mode per color with light/dark pairs."
+---
+
+## Pairing a color
+
+A color applies in both schemes until you give it a light & a dark value, which compiles to CSS `light-dark()`.
+
+<CodeGroup>
+
+```mjs title="yumma.config.mjs" mark={6}
+import { defineConfig } from "yummacss";
+
+export default defineConfig({
+  theme: {
+    colors: {
+      surface: { light: "#ffffff", dark: "#111214" },
+    },
+  },
+});
+```
+
+```tsx title="page.tsx" "bg:surface"
+<div className="bg:surface"></div>
+```
+
+```css title="output.css"
+.bg\:surface {
+  background-color: light-dark(#ffffff, #111214);
+}
+```
+
+</CodeGroup>
+
+Every shade is paired too, so `bg:surface-3` follows the scheme.
+
+## Opacity
+
+Opacity modifiers work on paired colors through `color-mix()`.
+
+<CodeGroup>
+
+```tsx title="page.tsx" "bg:surface/50"
+<div className="bg:surface/50"></div>
+```
+
+```css title="output.css"
+.bg\:surface\/50 {
+  background-color: color-mix(in srgb, light-dark(#ffffff, #111214) 50%, transparent);
+}
+```
+
+</CodeGroup>
