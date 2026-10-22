@@ -5,7 +5,6 @@ import Admonition, { Note, Warning } from "@/components/admonition";
 import Baseline from "@/components/baseline";
 import { BrandColors, BrandMarks } from "@/components/brand";
 import Cover from "@/components/cover";
-import FileTree from "@/components/file-tree";
 import {
   Cursor,
   VisualStudioCode,
@@ -13,7 +12,6 @@ import {
   Zed,
 } from "@/components/icons/icons";
 import Palette from "@/components/palette";
-import Preview from "@/components/preview";
 import Reference, { Variants } from "@/components/reference";
 import Stepper, { Step } from "@/components/stepper";
 import { Tabs, TabsList, TabsPanel, TabsTab } from "@/components/tabs";
@@ -81,11 +79,9 @@ const components: MDXComponents = {
   // the UI shell renders the stage, so it stays mounted from one page to the next
   ComponentPlayground: () => null,
   Cursor,
-  FileTree,
   Note,
   Warning,
   Palette,
-  Preview,
   Reference,
   Variants,
   Step,
