@@ -8,7 +8,7 @@ Short. These were said out loud enough times to belong in a file.
   the bold heading itself. While a branch is open the link is that branch's
   Vercel preview, so the page shows what the PR changed rather than what is
   already live:
-  `https://docs-git-<branch>-rrenildopereiraas-projects.vercel.app/components/<id>`,
+  `https://yummacsscom-git-<branch>-rrenildopereiraas-projects.vercel.app/components/<id>`,
   where `<branch>` is the branch name with `/` as `-`. Vercel reports it as
   `branchAlias` on any deployment of the branch, and it follows the latest
   push, unlike the per-deployment hash URL. Same for anything else on the docs
