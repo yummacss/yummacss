@@ -236,7 +236,7 @@ The CLI checks the source files you've given it and makes a CSS file using the u
 
 ## CLI commands
 
-But first, you'll need to create a `yumma.config.mjs` file. If there is none, run `yumcass init`.
+First, you'll need a `yumma.config.mjs` file. If there is none, run `yummacss init`.
 
 ### Build
 
@@ -286,7 +286,7 @@ This is completely optional. Use lint only to double-check the CSS generation wi
   <Step title="Run it">
 
     The plugin is written in the ESLint plugin format, which is the format Oxlint loads, so ESLint runs it too.
-    
+
     ```bash
     pnpm oxlint
     ```
@@ -343,7 +343,7 @@ Skip a single line with a comment:
 <div className="brand-logo" />
 ```
 
-### One-Off check
+### One-off check
 
 `yummacss lint` scans your source files from your configuration and lists every class that it does not recognize.
 

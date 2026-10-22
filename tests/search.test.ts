@@ -10,7 +10,7 @@ describe("search reference", () => {
     expect(entries).toContainEqual({
       title: "-a, --all",
       description: "Add every component · yummaui add",
-      anchor: "add-components",
+      anchor: "adding-components",
     });
     expect(entries).toContainEqual({
       title: "componentsDir",
@@ -34,7 +34,7 @@ describe("search reference", () => {
     ).toEqual(expect.arrayContaining(["config", "configPath", "cwd"]));
   });
 
-  it("names every yumma.config.mjs key under Set Up", () => {
+  it("names every yumma.config.mjs key under Setting up a project", () => {
     const keys = extractConfigKeys(page("docs/configuration")).map(
       (entry) => entry.title,
     );

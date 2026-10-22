@@ -4,7 +4,7 @@ description: "A set of rules that can be used to teach a coding agent to write Y
 since: "4.3"
 ---
 
-## Install the Skill
+## Install the skill
 
 An agent that loads skills, such as [Claude Code](https://claude.ai/), provides both Yumma CSS and Yumma UI.
 
@@ -19,11 +19,11 @@ Save [agents.md](/agents.md) as the instructions file your agent reads. Most rea
 `>>` & `Add-Content` append, so instructions already in the file stay.
 
 <CodeGroup>
-```bash title="Curl"
+```bash title="macOS & Linux"
 curl -s https://www.yummacss.com/agents.md >> AGENTS.md
 ```
 
-```powershell title="Powershell"
+```powershell title="Windows"
 irm https://www.yummacss.com/agents.md | Add-Content AGENTS.md
 ```
 </CodeGroup>

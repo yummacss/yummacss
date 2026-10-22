@@ -43,6 +43,9 @@ Short. These were said out loud enough times to belong in a file.
   with a heading, a reference table or a hint, never a paragraph. A paragraph
   stays under 30 words. `&` joins words in a list, `and` joins clauses.
   `tests/copywriting.test.ts` holds the first two.
+- **Headings are sentence case**, and so are Step and admonition titles.
+  Page titles stay Title Case, and so does a page title named inside a
+  heading: "With Margin utilities". Contractions are fine.
 - **Docs describe the current version only.** Present tense, no comparison with
   a past one: no "now", "no longer", "used to", "still" or "instead of the old".
   What changed between versions belongs in the CHANGELOG and the GitHub releases.

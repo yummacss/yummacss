@@ -3,7 +3,7 @@ title: Media Queries
 description: Use media queries to create responsive layouts.
 ---
 
-## Mobile-First Approach
+## Mobile-first approach
 
 Every utility takes a breakpoint prefix, from `@xs:` to `@xxl:`, and applies from that width up.
 
@@ -23,7 +23,7 @@ Yumma CSS breakpoints reference:
 | `@xl`  | `80 rem` (1280 px) | `@media (min-width: 80 rem)`   |
 | `@xxl` | `96 rem` (1536 px) | `@media (min-width: 96 rem)`   |
 
-### Customize Breakpoints
+### Customize breakpoints
 
 You can extend or override the default media query breakpoints using the `theme.screens` configuration option in your `yumma.config.mjs` file.
 
@@ -42,7 +42,7 @@ You can extend or override the default media query breakpoints using the `theme.
     ```
   </Step>
 
-  <Step title="Use Custom Breakpoints">
+  <Step title="Use custom breakpoints">
     The bundler plugins & `yummacss watch` pick up config changes automatically.
     ```tsx "@3xl:d:b"
     <div className="d:none @3xl:d:b"></div>
@@ -62,7 +62,7 @@ Resize your browser window to see how these elements respond to viewport width.
 <p className="d:none … @xxl:d:b">Double extra large screen</p>
 ```
 
-## Touch Devices
+## Touch devices
 
 The `@pc:*` variant targets devices with a coarse pointer (typically touch screens). Use this to apply larger tap targets & touch-friendly spacing.
 
@@ -82,7 +82,7 @@ Touch Device Reference:
 | ------ | -------------------------- | ------------- |
 | `@pc:`  | `@media (pointer: coarse)` | Touch devices |
 
-## Reduced Motion
+## Reduced motion
 
 The `@prm:*` variant applies when someone has asked their system for less motion. Use it to stop an animation or a transition.
 

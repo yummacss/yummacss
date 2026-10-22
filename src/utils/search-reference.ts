@@ -118,12 +118,13 @@ export function extractConfigKeys(content: string): ReferenceEntry[] {
       section = name;
       continue;
     }
-    if (section !== "Set Up") continue;
+    if (section !== "Setting up a project") continue;
 
     const key = name.toLowerCase().replace(/\s+/g, "");
     if (hashes === "###") parent = key;
     out.push({
-      title: hashes === "####" ? `${parent}.${key}` : key,
+      // a `####` heading already names its parent, as in `theme.colors`
+      title: hashes === "####" && !key.includes(".") ? `${parent}.${key}` : key,
       description: "yumma.config.mjs",
       anchor: generateId(name),
     });
