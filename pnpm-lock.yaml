@@ -164,7 +164,9 @@ settings:
 
 importers:
 
-  .:
+  .: {}
+
+  apps/yummacss.com:
     dependencies:
       '@base-ui/react':
         specifier: ^1.9.0
