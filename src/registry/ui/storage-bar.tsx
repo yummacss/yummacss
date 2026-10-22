@@ -121,7 +121,7 @@ export default function StorageBar({
       max={max}
       getAriaValueText={() => `${amount(used)} of ${amount(max)} ${unit} used`}
       className={merge(
-        "d:f fd:c g:4 w:80 max-w:100% p:5 bg:raised c:label bw:1 btc:rim blc:rim brc:rim bbc:shadow bs-o:xs",
+        "d:f fd:c g:4 w:80 max-w:100% p:5 bg:raised c:label fvn:tn bw:1 btc:rim blc:rim brc:rim bbc:shadow bs-o:xs",
         CARD_SHAPES[shape],
         className,
       )}

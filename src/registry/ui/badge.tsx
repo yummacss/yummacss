@@ -218,7 +218,7 @@ export default function BadgeBase({
     .join(" ");
 
   const countClasses = [
-    "d:if ai:c jc:c w:4 h:4 br:9999 fs:xs fw:500",
+    "d:if ai:c jc:c w:4 h:4 br:9999 fs:xs fw:500 fvn:tn",
     tone === "outline"
       ? "bg:red c:white"
       : tone === "subtle"

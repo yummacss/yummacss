@@ -200,7 +200,7 @@ export default function TabsBase({
                 <span className="d:f p:r zi:10">{glyph}</span>
               )}
               {item.count !== undefined && (
-                <span className="d:f p:r zi:10 ai:c jc:c h:5 px:2 br:9999 fs:xs fw:500 bg:fill c:on-fill">
+                <span className="d:f p:r zi:10 ai:c jc:c h:5 px:2 br:9999 fs:xs fw:500 fvn:tn bg:fill c:on-fill">
                   {item.count}
                 </span>
               )}

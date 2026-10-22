@@ -67,7 +67,7 @@ export default function ProgressBase({
         <Progress.Label className="c:label fs:sm fw:500">
           {label}
         </Progress.Label>
-        <Progress.Value className="c:hint fs:sm" />
+        <Progress.Value className="c:hint fs:sm fvn:tn" />
       </div>
       <Progress.Track className={trackClasses}>
         {isIndeterminate ? (

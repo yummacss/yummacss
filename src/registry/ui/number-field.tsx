@@ -145,7 +145,7 @@ export default function NumberFieldBase({
           <NumberField.Input
             required={required}
             className={merge(
-              "os:none p:0 bw:0 bg:transparent c:label fw:600 ta:c",
+              "os:none p:0 bw:0 bg:transparent c:label fw:600 ta:c fvn:tn",
               INPUT_SIZES[size],
               className,
             )}

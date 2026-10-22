@@ -216,7 +216,7 @@ export default function ToolbarBase({
                   render={<NumberField.Input />}
                   className={merge(
                     outline,
-                    "w:16 bg:transparent c:label bw:0 ta:c fs:sm fw:500",
+                    "w:16 bg:transparent c:label bw:0 ta:c fs:sm fw:500 fvn:tn",
                   )}
                 />
                 <NumberField.Increment

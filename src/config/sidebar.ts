@@ -230,7 +230,13 @@ export const sidebarConfig = {
       items: [
         {
           title: "Fonts",
-          items: ["font-family", "font-size", "font-style", "font-weight"],
+          items: [
+            "font-family",
+            "font-size",
+            "font-style",
+            "font-variant-numeric",
+            "font-weight",
+          ],
         },
         {
           title: "Text",
