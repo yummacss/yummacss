@@ -1,9 +1,10 @@
 import { existsSync } from "node:fs";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
-import { allDocs, allUis } from "content-collections";
+import { allUis } from "content-collections";
 import { ImageResponse } from "next/og";
 import OgImage, { type OgSpec, type OgTheme } from "@/components/og-image";
+import { docs } from "@/utils/docs";
 import { type Category, getReferenceData } from "@/utils/yummacss";
 
 export const HOME_OG: Record<"css" | "ui", OgSpec> = {
@@ -34,7 +35,7 @@ function pageClasses(content = ""): string[] {
 }
 
 export function docsOg(slug: string): OgSpec | null {
-  const doc = allDocs.find((d) => d._meta.path === slug);
+  const doc = docs.find((d) => d._meta.path === slug);
   if (!doc) return null;
   return {
     kind: "title",

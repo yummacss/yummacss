@@ -2,6 +2,7 @@ import { readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import * as core from "@yummacss/core";
 import { describe, expect, it } from "vitest";
+import { utilityPages } from "../src/utils/utility-pages.mjs";
 import { rootDir } from "./helpers";
 
 const CATEGORIES = {
@@ -52,6 +53,9 @@ function referenced(): Set<string> {
         : [...(match[3] ?? "").matchAll(/"([^"]+)"/g)].map((m) => m[1]);
       for (const name of names) out.add(`${match[1]}:${name}`);
     }
+  }
+  for (const page of utilityPages) {
+    for (const name of page.tables.flat()) out.add(`${page.category}:${name}`);
   }
   return out;
 }

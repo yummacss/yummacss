@@ -1,9 +1,9 @@
-import { allDocs } from "content-collections";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import JsonLd from "@/components/json-ld";
 import Pagination from "@/components/ui/pagination";
 import ViewMarkdown from "@/components/ui/view-markdown";
+import { docs } from "@/utils/docs";
 import { getDocsNavigation } from "@/utils/pagination";
 
 export async function generateMetadata({
@@ -12,7 +12,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const doc = allDocs.find((d) => d._meta.path === slug);
+  const doc = docs.find((d) => d._meta.path === slug);
   const url = `https://yummacss.com/docs/${slug}`;
 
   return {
@@ -47,7 +47,7 @@ export default async function Page({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const doc = allDocs.find((d) => d._meta.path === slug);
+  const doc = docs.find((d) => d._meta.path === slug);
   if (!doc) notFound();
   const MDXContent = doc.mdx;
   const navigation = getDocsNavigation(slug);
@@ -113,7 +113,7 @@ export default async function Page({
 }
 
 export function generateStaticParams() {
-  return allDocs.map((doc) => ({ slug: doc._meta.path }));
+  return docs.map((doc) => ({ slug: doc._meta.path }));
 }
 
 export const dynamicParams = false;

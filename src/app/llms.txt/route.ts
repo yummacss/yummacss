@@ -1,6 +1,7 @@
-import { allDocs, allUis } from "content-collections";
+import { allUis } from "content-collections";
 import { sidebarConfig } from "@/config/sidebar";
 import { EXAMPLES, LEGACY, SITE, SYNTAX } from "@/utils/agent-rules";
+import { docs } from "@/utils/docs";
 import { UI_ORIGIN } from "@/utils/hosts";
 
 export const dynamic = "force-static";
@@ -8,7 +9,7 @@ export const dynamic = "force-static";
 const BASE = SITE;
 
 export function GET() {
-  const docMap = new Map(allDocs.map((d) => [d._meta.path, d]));
+  const docMap = new Map(docs.map((d) => [d._meta.path, d]));
   const uiMap = new Map(allUis.map((u) => [u._meta.path, u]));
 
   const lines: string[] = [

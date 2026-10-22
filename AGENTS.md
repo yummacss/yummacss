@@ -46,6 +46,10 @@ Short. These were said out loud enough times to belong in a file.
 - **Headings are sentence case**, and so are Step and admonition titles.
   Page titles stay Title Case, and so does a page title named inside a
   heading: "With Margin utilities". Contractions are fine.
+- **Utility pages are rows**, not files: `src/utils/utility-pages.mjs` holds
+  one per page and the docs route renders them. A page with prose of its own
+  is an MDX file instead. `tests/reference.test.ts` fails when a property in
+  core has neither.
 - **Docs describe the current version only.** Present tense, no comparison with
   a past one: no "now", "no longer", "used to", "still" or "instead of the old".
   What changed between versions belongs in the CHANGELOG and the GitHub releases.
