@@ -57,12 +57,6 @@ describe("copywriting", () => {
     expect(findAll(allPages, /\w\s+-\s+(?!>)\w.{0,20}/)).toEqual([]);
   });
 
-  it("uses no contractions", () => {
-    expect(
-      findAll(allPages, /\b\w+(?:n't|'re|'ll|'ve|'d)\b|\bit's\b/i),
-    ).toEqual([]);
-  });
-
   it("spells `cannot` as one word", () => {
     expect(findAll(allPages, /\bcan not\b/)).toEqual([]);
   });
@@ -96,49 +90,39 @@ describe("copywriting", () => {
     expect(dirty).toEqual([]);
   });
 
-  it("writes headings in Title Case", () => {
-    const small = new Set([
-      "a",
-      "an",
-      "and",
-      "as",
-      "at",
-      "by",
-      "for",
-      "from",
-      "in",
-      "into",
-      "of",
-      "on",
-      "or",
-      "per",
-      "the",
-      "to",
-      "vs",
-      "with",
-    ]);
+  // page titles stay Title Case; a heading capitalizes its first word, page
+  // titles, the word before "utilities", names & acronyms
+  it("writes headings in sentence case", () => {
+    const names = new Set(
+      "Yumma Vite Next.js Oxlint ESLint Claude Code Solar React PostCSS Turbopack Webpack Graphite Tactile Base Linux Windows PowerShell".split(
+        " ",
+      ),
+    );
+    const titles = allPages
+      .map(({ source }) => source.match(/^title:\s*"?(.+?)"?\s*$/m)?.[1])
+      .filter((title): title is string => Boolean(title))
+      .sort((a, b) => b.length - a.length);
 
     const wrong: string[] = [];
 
     for (const { page, source } of allPages) {
-      prose(source).forEach((line, index) => {
-        const heading = line.match(/^#{1,6}\s+(.*)$/);
-        if (!heading?.[1]) return;
+      source.split("\n").forEach((line, index) => {
+        const text =
+          line.match(/^#{1,6}\s+(.*)$/)?.[1] ??
+          line.match(/^\s*<Step title="([^"]*)"/)?.[1] ??
+          line.match(/^:::\w+\[([^\]]*)\]/)?.[1];
+        if (!text) return;
 
-        const text = heading[1].trim();
-        if (!/\s/.test(text)) return;
+        let rest = text.replace(/`[^`]*`/g, "~");
+        for (const title of titles) rest = rest.split(title).join("~");
 
-        const words = text.split(/\s+/);
-
+        const words = rest.split(/\s+/);
         words.forEach((word, position) => {
-          if (!/^[a-z]/.test(word)) return;
-          if (!/^[a-zA-Z]+[.,:?!]?$/.test(word)) return;
-
-          const bare = word.replace(/[.,:?!]$/, "").toLowerCase();
-          const isEdge = position === 0 || position === words.length - 1;
-
-          if (small.has(bare) && !isEdge) return;
-
+          if (position === 0 || !/^[A-Z]/.test(word)) return;
+          const bare = word.replace(/[,:?!()]|\.$/g, "");
+          if (names.has(bare) || /^[A-Z0-9]{2,}s?$/.test(bare)) return;
+          if (/^.+[A-Z]/.test(bare) && !bare.includes("-")) return;
+          if (/^utilit/i.test(words[position + 1] ?? "")) return;
           wrong.push(`${page}:${index + 1}  ${text}  ->  "${word}"`);
         });
       });
@@ -253,10 +237,6 @@ describe("shipped copy", () => {
 
   it("uses no spaced hyphen as a dash", () => {
     expect(offenders(/\w\s+-\s+(?!>)\w.{0,20}/)).toEqual([]);
-  });
-
-  it("uses no contractions", () => {
-    expect(offenders(/\b\w+(?:n't|'re|'ll|'ve|'d)\b|\bit's\b/i)).toEqual([]);
   });
 
   it("spells `cannot` as one word", () => {

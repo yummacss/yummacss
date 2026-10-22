@@ -20,7 +20,7 @@ Use the `@yummacss/vite` plugin with Vite & Vite-based frameworks like SvelteKit
     ```
   </Step>
 
-  <Step title="Add the Plugin">
+  <Step title="Add the plugin">
     Register the plugin in your Vite configuration.
 
     ```ts title="vite.config.ts" mark={2,5}
@@ -34,7 +34,7 @@ Use the `@yummacss/vite` plugin with Vite & Vite-based frameworks like SvelteKit
 
   </Step>
 
-  <Step title="Configure Sources">
+  <Step title="Configure sources">
     Specify the locations/paths of your project files in the config file.
 
     ```mjs title="yumma.config.mjs" mark={4}
@@ -47,7 +47,7 @@ Use the `@yummacss/vite` plugin with Vite & Vite-based frameworks like SvelteKit
 
   </Step>
 
-  <Step title="Add the Marker">
+  <Step title="Add the marker">
     Add the `@yummacss;` marker to your CSS entry file. The plugin replaces it with generated CSS.
 
     ```css title="src/styles.css"
@@ -81,7 +81,7 @@ Use the `@yummacss/postcss` plugin with Next.js. It works with both Turbopack & 
 
   </Step>
 
-  <Step title="Configure Sources">
+  <Step title="Configure sources">
     Specify the locations/paths of your project files in the config file.
 
     ```mjs title="yumma.config.mjs" mark={4}
@@ -94,7 +94,7 @@ Use the `@yummacss/postcss` plugin with Next.js. It works with both Turbopack & 
 
   </Step>
 
-  <Step title="Add the Marker">
+  <Step title="Add the marker">
     Add the `@yummacss;` marker to your global CSS file. The plugin replaces it with generated CSS.
 
     ```css title="globals.css"
@@ -104,9 +104,29 @@ Use the `@yummacss/postcss` plugin with Next.js. It works with both Turbopack & 
   </Step>
 </Stepper>
 
-## Setting up a standalone
+### Plugin options
 
-Are you not using frameworks? Yumma CSS can run without one!
+Both plugins read `yumma.config.mjs` from where the build runs. Use these options when the config lives elsewhere.
+
+In a monorepo, PostCSS often runs from the repo root, so `cwd` points it at your app.
+
+| Option | Type | Default | Description |
+| --- | --- | --- | --- |
+| `config` | `Config` | | Inline configuration, read instead of the file. |
+| `configPath` | `string` | `yumma.config.mjs` | Path to the config file. |
+| `cwd` | `string` | `process.cwd()` | PostCSS only. Where the config & `source` globs resolve from. |
+
+```js title="postcss.config.mjs" "cwd"
+export default {
+  plugins: {
+    "@yummacss/postcss": { cwd: import.meta.dirname },
+  },
+};
+```
+
+## Running without a framework
+
+Not using a framework? Yumma CSS runs without one.
 
 ### Using the CLI
 
@@ -119,7 +139,7 @@ Prefer generating a plain CSS file? Install Yumma CSS with your favorite package
     ```
   </Step>
 
-  <Step title="Initialize Configuration">
+  <Step title="Initialize configuration">
     Create a configuration file in your project.
 
     ```bash
@@ -128,7 +148,7 @@ Prefer generating a plain CSS file? Install Yumma CSS with your favorite package
 
   </Step>
 
-  <Step title="Configure Sources">
+  <Step title="Configure sources">
     Specify the locations/paths of your project files in the config file.
 
     ```mjs title="yumma.config.mjs" mark={4-5}

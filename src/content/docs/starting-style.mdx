@@ -6,7 +6,7 @@ since: "4.2"
 
 <Baseline path="css.at-rules.starting-style" />
 
-## Animate In
+## Animating in
 
 `@st:` gives an element that appears a style to transition from, so an enter animation is just classes.
 
@@ -28,7 +28,7 @@ since: "4.2"
 
 The element renders at `opacity: 0`, then transitions to its normal opacity over `150ms`.
 
-## Fade & Grow
+## Fade & grow
 
 Stack several starting values, with a [Transition Property](/docs/transition-property) that covers each.
 
@@ -36,7 +36,7 @@ Stack several starting values, with a [Transition Property](/docs/transition-pro
 <div className="tp:a tdu:150 ttf:eo @st:o:0 @st:s:90">Settings</div>
 ```
 
-## With Breakpoints
+## With breakpoints
 
 `@st:` is an at-rule, so it nests inside a breakpoint.
 
