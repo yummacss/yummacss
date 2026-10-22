@@ -1,20 +1,21 @@
 import { existsSync } from "node:fs";
 import { join } from "node:path";
-import { allDocs, allUis } from "content-collections";
+import { allUis } from "content-collections";
 import { extractProperties } from "@/utils/doc-properties";
+import { docs } from "@/utils/docs";
 import type { SearchIndex } from "@/utils/search-data";
 
 export const dynamic = "force-static";
 
 export function GET() {
   const index: SearchIndex = {
-    docs: allDocs.map((doc) => ({
+    docs: docs.map((doc) => ({
       title: doc.title,
       description: doc.description,
       path: `/docs/${doc._meta.path}`,
       category: "docs",
     })),
-    properties: allDocs.flatMap((doc) =>
+    properties: docs.flatMap((doc) =>
       extractProperties(doc.content ?? "")
         .filter((p) => p.name !== doc.slug)
         .map((p) => ({
@@ -48,7 +49,7 @@ export function GET() {
       })),
     ),
     reference: [
-      ...allDocs.map((doc) => ({ doc, base: `/docs/${doc._meta.path}` })),
+      ...docs.map((doc) => ({ doc, base: `/docs/${doc._meta.path}` })),
       ...allUis.map((doc) => ({
         doc,
         base: `/components/${doc._meta.path}`,

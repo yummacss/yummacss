@@ -1,10 +1,10 @@
-import { allDocs } from "content-collections";
+import { docs } from "@/utils/docs";
 import { docsOg, ogImage } from "@/utils/og-image";
 
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return allDocs.map((doc) => ({ slug: doc._meta.path }));
+  return docs.map((doc) => ({ slug: doc._meta.path }));
 }
 
 export async function GET(

@@ -1,6 +1,7 @@
 import { readdirSync, readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
+import { utilityPages } from "../src/utils/utility-pages.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -16,9 +17,13 @@ function slugsFor(source, key, nextKey) {
 }
 
 function pagesIn(directory) {
-  return readdirSync(join(root, directory))
+  const files = readdirSync(join(root, directory))
     .filter((file) => file.endsWith(".mdx"))
     .map((file) => file.replace(/\.mdx$/, ""));
+  // the utility pages are rows in a table rather than files
+  return directory === "src/content/docs"
+    ? [...files, ...utilityPages.map((page) => page.slug)]
+    : files;
 }
 
 const source = readFileSync(join(root, "src/config/sidebar.ts"), "utf-8");
@@ -59,7 +64,7 @@ for (const { name, dir, slugs } of collections) {
   for (const slug of slugs) {
     if (!pages.includes(slug)) {
       problems.push(
-        `${name}: sidebar lists "${slug}" but ${dir}/${slug}.mdx does not exist.`,
+        `${name}: sidebar lists "${slug}" but no page has that slug.`,
       );
     }
   }

@@ -1,4 +1,4 @@
-import { allDocs } from "content-collections";
+import { docs } from "@/utils/docs";
 import { mdxToMarkdown } from "@/utils/mdx-markdown";
 
 export const dynamic = "force-dynamic";
@@ -22,7 +22,7 @@ export async function GET(
   { params }: { params: Promise<{ slug: string }> },
 ) {
   const { slug } = await params;
-  const doc = allDocs.find((d) => d._meta.path === slug);
+  const doc = docs.find((d) => d._meta.path === slug);
 
   if (!doc) {
     return new Response("Not found", { status: 404 });

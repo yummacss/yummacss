@@ -1,5 +1,6 @@
-import { allDocs, allUis } from "content-collections";
+import { allUis } from "content-collections";
 import { sidebarConfig } from "@/config/sidebar";
+import { docs } from "@/utils/docs";
 import type { Menus, NavSection } from "./mobile-sheet";
 import SidebarNav from "./sidebar-nav";
 
@@ -10,7 +11,7 @@ interface Props {
 }
 
 function pageFor(variant: Variant) {
-  const collection = variant === "ui" ? allUis : allDocs;
+  const collection = variant === "ui" ? allUis : docs;
   return (slug: string) => {
     const doc = collection.find((c) => c._meta.path === slug);
     return { slug, title: doc?.title ?? slug, since: doc?.badge };

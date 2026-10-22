@@ -1,4 +1,5 @@
-import { allDocs, allUis } from "content-collections";
+import { allUis } from "content-collections";
+import { docs } from "@/utils/docs";
 import { getAllSlugs, getAllUISlugs } from "@/utils/sidebar";
 
 function inSidebarOrder<T extends { _meta: { path: string }; title: string }>(
@@ -11,7 +12,7 @@ function inSidebarOrder<T extends { _meta: { path: string }; title: string }>(
     .filter((doc): doc is T => doc !== undefined);
 }
 
-const sortedDocs = inSidebarOrder(allDocs, getAllSlugs());
+const sortedDocs = inSidebarOrder(docs, getAllSlugs());
 const sortedUis = inSidebarOrder(allUis, getAllUISlugs());
 
 function getNavigation<T extends { _meta: { path: string }; title: string }>(
