@@ -34,33 +34,20 @@ type Palette = (typeof PALETTES)[OgTheme];
 const BAR = 28;
 const LEFT = 84;
 
-export type OgProduct = "css" | "ui";
-
 export type OgSpec =
   | {
       // two lines with one word selected, for a product's home
       kind: "home";
-      product: OgProduct;
       before: string;
       word: string;
       second: string;
     }
   | {
-      // the page title selected, for docs pages and components without a picture
+      // the page title selected, for docs pages
       kind: "title";
-      product: OgProduct;
       title: string;
       description?: string;
       classes?: string[];
-    }
-  | {
-      // the component itself selected, from its screenshot
-      kind: "component";
-      title: string;
-      description?: string;
-      image: string;
-      width: number;
-      height: number;
     };
 
 const box = (
@@ -334,70 +321,6 @@ function Title({
   );
 }
 
-function Component({
-  c,
-  spec,
-}: {
-  c: Palette;
-  spec: Extract<OgSpec, { kind: "component" }>;
-}) {
-  // the screenshot fills at most a 400 by 290 box on the right
-  const scale = Math.min(400 / spec.width, 290 / spec.height, 2.2);
-  const width = Math.round(spec.width * scale);
-  const height = Math.round(spec.height * scale);
-  return (
-    <>
-      <div
-        style={{
-          position: "absolute",
-          left: LEFT,
-          top: 290,
-          display: "flex",
-          flexDirection: "column",
-          gap: 30,
-          width: 580,
-        }}
-      >
-        <span
-          style={{
-            fontFamily: "Esteban",
-            fontSize: titleSize(spec.title, 560, 104),
-            lineHeight: 1.1,
-            color: c.ink,
-          }}
-        >
-          {spec.title}
-        </span>
-        {spec.description && (
-          <span
-            style={{
-              fontFamily: "Quattro",
-              fontSize: 26,
-              lineHeight: 1.4,
-              color: c.muted,
-            }}
-          >
-            {spec.description}
-          </span>
-        )}
-      </div>
-      <div
-        style={{
-          position: "absolute",
-          left: 1116 - width - 34,
-          top: Math.max(110, 340 - height / 2),
-          display: "flex",
-        }}
-      >
-        <Selected c={c} tag={spec.title} kind="component" pad={14}>
-          {/* biome-ignore lint/performance/noImgElement: ImageResponse draws a plain img */}
-          <img src={spec.image} width={width} height={height} alt="" />
-        </Selected>
-      </div>
-    </>
-  );
-}
-
 export default function OgImage({
   spec,
   theme = "light",
@@ -428,7 +351,6 @@ export default function OgImage({
       </div>
       {spec.kind === "home" && <Home c={c} spec={spec} />}
       {spec.kind === "title" && <Title c={c} spec={spec} />}
-      {spec.kind === "component" && <Component c={c} spec={spec} />}
     </div>
   );
 }

@@ -6,7 +6,6 @@
     "build": "pnpm -r build",
     "check-types": "pnpm -r check-types",
     "dev": "pnpm --filter yummacss-docs dev",
-    "dev:ui": "pnpm --filter yummaui-docs dev",
     "lint": "pnpm -r lint",
     "test": "pnpm -r test",
     "upd": "pnpm -r upd"

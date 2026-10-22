@@ -1,4 +1,3 @@
-import { allUis } from "content-collections";
 import { sidebarConfig } from "@/config/sidebar";
 import { EXAMPLES, LEGACY, SITE, SYNTAX } from "@/utils/agent-rules";
 import { docs } from "@/utils/docs";
@@ -10,7 +9,6 @@ const BASE = SITE;
 
 export function GET() {
   const docMap = new Map(docs.map((d) => [d._meta.path, d]));
-  const uiMap = new Map(allUis.map((u) => [u._meta.path, u]));
 
   const lines: string[] = [
     "# Yumma CSS",
@@ -37,12 +35,11 @@ export function GET() {
     `Worked examples, real components in these classes: ${EXAMPLES.map(({ id }) => `${UI_ORIGIN}/components/${id}.md`).join(", ")}`,
     "",
     `Docs: ${BASE}/docs`,
-    `UI Components: ${UI_ORIGIN}/components/installation`,
+    `Yumma UI, components in these classes: ${UI_ORIGIN}/llms.txt`,
     "",
-    "Every page below has a `.md` twin carrying its full text, and for a UI",
-    "component its source and its API. Fetch the ones you need rather than a",
-    "whole-site dump: the index is ~5k tokens and a page is ~4k, where the dump",
-    "this used to advertise was ~594k.",
+    "Every page below has a `.md` twin carrying its full text. Fetch the ones",
+    "you need rather than a whole-site dump: the index is ~5k tokens and a page",
+    "is ~4k.",
     "",
   ];
 
@@ -63,21 +60,6 @@ export function GET() {
           lines.push(`- [${title}](${BASE}/docs/${slug}.md)${desc}`);
         }
         lines.push("");
-      }
-    }
-    lines.push("");
-  }
-
-  lines.push("## UI Components", "");
-
-  for (const section of sidebarConfig.ui) {
-    lines.push(`### ${section.title}`, "");
-    for (const item of section.items) {
-      if (typeof item === "string") {
-        const ui = uiMap.get(item);
-        const title = ui?.title ?? item;
-        const desc = ui?.description ? `: ${ui.description}` : "";
-        lines.push(`- [${title}](${UI_ORIGIN}/components/${item}.md)${desc}`);
       }
     }
     lines.push("");

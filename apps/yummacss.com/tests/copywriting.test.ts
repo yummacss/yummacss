@@ -1,9 +1,7 @@
-import { readdirSync, readFileSync } from "node:fs";
-import { join } from "node:path";
 import { describe, expect, it } from "vitest";
-import { contentPages, rootDir } from "./helpers";
+import { contentPages } from "./helpers";
 
-const collections = ["docs", "ui"] as const;
+const collections = ["docs"] as const;
 
 const allPages = collections.flatMap((collection) =>
   contentPages(collection).map(({ slug, source }) => ({
@@ -183,81 +181,5 @@ describe("copywriting", () => {
     }
 
     expect(bad).toEqual([]);
-  });
-});
-
-describe("shipped copy", () => {
-  const registryDir = join(rootDir, "src/registry/ui");
-  const metaDir = join(rootDir, "src/registry/meta");
-
-  const strings: { where: string; text: string }[] = [];
-
-  for (const file of readdirSync(registryDir).filter((f) =>
-    f.endsWith(".tsx"),
-  )) {
-    const source = readFileSync(join(registryDir, file), "utf8");
-    for (const [, prop, text] of source.matchAll(
-      /^\s+([a-zA-Z]+) = "([^"]{3,})",?$/gm,
-    )) {
-      strings.push({ where: `${file}:${prop}`, text });
-    }
-  }
-
-  for (const file of readdirSync(metaDir).filter((f) => f.endsWith(".json"))) {
-    const meta = JSON.parse(readFileSync(join(metaDir, file), "utf8"));
-    if (meta.summary)
-      strings.push({ where: `${file}:summary`, text: meta.summary });
-    for (const prop of meta.props ?? []) {
-      if (prop.description) {
-        strings.push({ where: `${file}:${prop.name}`, text: prop.description });
-      }
-      if (typeof prop.default === "string" && prop.default.length > 2) {
-        strings.push({
-          where: `${file}:${prop.name} default`,
-          text: prop.default,
-        });
-      }
-    }
-  }
-
-  function offenders(pattern: RegExp): string[] {
-    return strings.flatMap(({ where, text }) => {
-      const match = text.replace(/`[^`]*`/g, "~").match(pattern);
-      return match ? [`${where}  ->  "${match[0]}"`] : [];
-    });
-  }
-
-  it("has copy to check", () => {
-    expect(strings.length).toBeGreaterThan(400);
-  });
-
-  it("uses no em dashes", () => {
-    expect(offenders(/.{0,30}—.{0,30}/)).toEqual([]);
-  });
-
-  it("uses no spaced hyphen as a dash", () => {
-    expect(offenders(/\w\s+-\s+(?!>)\w.{0,20}/)).toEqual([]);
-  });
-
-  it("spells `cannot` as one word", () => {
-    expect(offenders(/\bcan not\b/)).toEqual([]);
-  });
-
-  it("uses US spelling", () => {
-    expect(
-      offenders(/\b\w*(?:behaviour|colour|recognis|normalis|centre)\w*/i),
-    ).toEqual([]);
-  });
-
-  it("never mentions Tailwind", () => {
-    expect(offenders(/\btailwind\b/i)).toEqual([]);
-  });
-
-  it("calls the focus indicator an outline", () => {
-    expect(offenders(/\brings?\b/i)).toEqual([]);
-  });
-
-  it("spells an ellipsis as one character", () => {
-    expect(offenders(/\.{3}/)).toEqual([]);
   });
 });

@@ -1,11 +1,9 @@
 import { defineConfig } from "yummacss";
-import { ROLES } from "./src/utils/roles.mjs";
 
 export default defineConfig({
-  source: ["./src/**/*.{ts,tsx,mdx,mjs}", "./src/registry/meta/*.json"],
+  source: ["./src/**/*.{ts,tsx,mdx,mjs}"],
   theme: {
     colors: {
-      ...ROLES,
       "accent-dim": { light: "#8892c2", dark: "#9aa5ef" },
       "diff-add": { light: "#2e7d5b", dark: "#a8e1ad" },
       "diff-remove": { light: "#a8372b", dark: "#e1a8a8" },
@@ -26,21 +24,15 @@ export default defineConfig({
     },
     states: {
       closing: "[data-ending-style]",
-      "from-left": "[data-activation-direction=left]",
-      "from-right": "[data-activation-direction=right]",
       hovering: "[data-hovering]",
       opening: "[data-starting-style]",
       scrolling: "[data-scrolling]",
       swiping: "[data-swiping]",
     },
     easings: {
-      "in-out-cubic": "cubic-bezier(0.65, 0, 0.35, 1)",
-      "out-back": "cubic-bezier(0.34, 1.56, 0.64, 1)",
       "out-quart": "cubic-bezier(0.25, 1, 0.5, 1)",
     },
     keyframes: {
-      pulse: "0%, 100% { opacity: .5; } 50% { opacity: 1; }",
-      slide: "from { translate: -100% 0; } to { translate: 100% 0; }",
       spin: "to { rotate: 360deg; }",
     },
   },

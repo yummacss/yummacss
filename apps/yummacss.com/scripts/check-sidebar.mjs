@@ -39,9 +39,8 @@ const collections = [
   {
     name: "docs",
     dir: "src/content/docs",
-    slugs: slugsFor(config, "docs", "ui"),
+    slugs: slugsFor(config, "docs", null),
   },
-  { name: "ui", dir: "src/content/ui", slugs: slugsFor(config, "ui", null) },
 ];
 
 // pages reached from the footer rather than the reading order
