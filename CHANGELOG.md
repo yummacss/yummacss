@@ -7,17 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [4.8.0] - 2026-10-22
+
 ### Added
 
 - An agent skill, installed with `npx skills add yummacss/yummacss`.
 - **[core]** `fvn:` for `font-variant-numeric`, including `fvn:tn` for tabular numbers.
-
-### Fixed
-
-- **[core]** `var()` on a shared prefix compiles to the utility with the most values, such as `bc:var()` to `border-color`.
-- **[core]** `var()` on blur and grayscale filter utilities keeps the filter function.
-
-## [4.7.1] - 2026-10-15
 
 ### Changed
 
@@ -27,6 +22,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - **[core]** `sx:`, `sy:` and `sz:` scale one axis, and `var()` keeps the axis on scale, skew and translate utilities.
 - **[core]** `s:var()` compiles to `scale` rather than `stroke`, and `merge` reads it the same way.
+- **[core]** `var()` on a shared prefix compiles to the utility with the most values, such as `bc:var()` to `border-color`.
+- **[core]** `var()` on blur and grayscale filter utilities keeps the filter function.
 
 ## [4.7.0] - 2026-10-15
 
@@ -1417,8 +1414,8 @@ No notable changes.
 
 - Initial release.
 
-[Unreleased]: https://github.com/yummacss/yummacss/compare/v4.7.1...HEAD
-[4.7.1]: https://github.com/yummacss/yummacss/compare/v4.7.0...v4.7.1
+[Unreleased]: https://github.com/yummacss/yummacss/compare/v4.8.0...HEAD
+[4.8.0]: https://github.com/yummacss/yummacss/compare/v4.7.0...v4.8.0
 [4.7.0]: https://github.com/yummacss/yummacss/compare/v4.6.1...v4.7.0
 [4.6.1]: https://github.com/yummacss/yummacss/compare/v4.6.0...v4.6.1
 [4.6.0]: https://github.com/yummacss/yummacss/compare/v4.5.0...v4.6.0
