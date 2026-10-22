@@ -28,7 +28,7 @@ jobs:
         id: version
         run: |
           if git diff --quiet; then exit 0; fi
-          echo "version=$(node -p 'require("./node_modules/yummacss/package.json").version')" >> "$GITHUB_OUTPUT"
+          echo "version=$(node -p 'require("./apps/yummacss.com/node_modules/yummacss/package.json").version')" >> "$GITHUB_OUTPUT"
 
       # the types and the class tests check the site against the new version
       - if: steps.version.outputs.version

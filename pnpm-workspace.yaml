@@ -1,3 +1,5 @@
+packages:
+  - apps/*
 # pnpm 11 refuses to finish an install while a dependency's build script is
 # neither allowed nor denied, so these have to be real booleans - the scaffold
 # it writes leaves them as placeholder strings, which reads as "not allowed"
