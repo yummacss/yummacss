@@ -143,7 +143,7 @@ export default function SliderBase({
             {required && <span className="c:red-5"> *</span>}
           </label>
         )}
-        <span className="c:hint fs:sm">
+        <span className="c:hint fs:sm fvn:tn">
           {formatValue ? (
             formatValue(value)
           ) : unit ? (

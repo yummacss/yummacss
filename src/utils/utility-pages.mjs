@@ -325,6 +325,11 @@ export const UTILITY_PAGES = {
   font: [
     { slug: "font-size", description: "Set the font size for an element." },
     { slug: "font-style", description: "Set the font style for an element." },
+    {
+      slug: "font-variant-numeric",
+      description: "Set how numbers are drawn for an element.",
+      since: "4.8",
+    },
   ],
   grid: [
     {

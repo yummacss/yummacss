@@ -151,7 +151,7 @@ export default function MeterBase({
       ) : (
         <div className="d:f jc:sb ai:c">
           <Meter.Label className="c:label fs:sm fw:600">{label}</Meter.Label>
-          <Meter.Value className="c:hint fs:sm">{reading}</Meter.Value>
+          <Meter.Value className="c:hint fs:sm fvn:tn">{reading}</Meter.Value>
         </div>
       )}
 
@@ -189,7 +189,9 @@ export default function MeterBase({
       )}
 
       {hasHeader && (
-        <Meter.Value className="d:f jc:fe c:hint fs:xs">{reading}</Meter.Value>
+        <Meter.Value className="d:f jc:fe c:hint fs:xs fvn:tn">
+          {reading}
+        </Meter.Value>
       )}
     </Meter.Root>
   );
