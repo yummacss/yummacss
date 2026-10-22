@@ -1,0 +1,89 @@
+{
+  "summary": "A number input with increment and decrement buttons, in three sizes and three shapes.",
+  "props": [
+    {
+      "name": "label",
+      "type": "string",
+      "example": "Keep deleted files for",
+      "description": "Text above the control. Also a scrub area: drag left or right on it to change the value.",
+      "optional": true
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "description": "A line under the control, for context on what the number means.",
+      "example": "Days, then the files are deleted for good."
+    },
+    {
+      "name": "defaultValue",
+      "type": "number",
+      "example": 30,
+      "description": "Starting value when you are not controlling it. Pair `value` with `onValueChange` instead if you are.",
+      "min": 0,
+      "max": 20,
+      "step": 1
+    },
+    {
+      "name": "min",
+      "type": "number",
+      "description": "Lower bound. The decrement button disables at it."
+    },
+    {
+      "name": "max",
+      "type": "number",
+      "description": "Upper bound. The increment button disables at it."
+    },
+    {
+      "name": "step",
+      "type": "number",
+      "default": 1,
+      "description": "Amount each click of increment or decrement changes the value by.",
+      "min": 1,
+      "max": 10,
+      "step": 1
+    },
+    {
+      "name": "size",
+      "type": "enum",
+      "values": ["sm", "md", "lg"],
+      "default": "md",
+      "description": "Height of the buttons and the input together. The icon inside the buttons grows only at `lg`."
+    },
+    {
+      "name": "shape",
+      "type": "enum",
+      "values": ["rounded", "square", "squircle"],
+      "default": "rounded",
+      "description": "Corner radius on the group's outer edges. `squircle` uses `corner-shape`, which degrades to a rounded square where that is unsupported."
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "default": false,
+      "description": "Blocks interaction and dims the whole control, label included."
+    },
+    {
+      "name": "required",
+      "type": "boolean",
+      "default": false,
+      "description": "Appends a red asterisk to the label & sets the input's native `required` attribute."
+    },
+    {
+      "name": "focus",
+      "type": "boolean",
+      "typeName": "boolean | string",
+      "default": true,
+      "description": "The focus outline, drawn around the input and both buttons together. `true` draws it, `false` removes it, and a string of Yumma CSS utilities restyles it; write them with `fw:`, since the group draws it while anything inside has focus. Removing it outright and putting nothing back fails WCAG 2.4.7."
+    }
+  ],
+  "scene": [
+    {
+      "component": "NumberField",
+      "props": {
+        "label": "Keep deleted files for",
+        "description": "Days, then the files are deleted for good.",
+        "defaultValue": 30
+      }
+    }
+  ]
+}

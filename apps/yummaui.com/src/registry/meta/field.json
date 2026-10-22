@@ -1,0 +1,137 @@
+{
+  "summary": "A labelled input, in three sizes and three shapes, with an optional icon and error or success states.",
+  "props": [
+    {
+      "name": "label",
+      "type": "none",
+      "example": "File name",
+      "description": "Text above the control. `Field.Root` and `Field.Label` associate it automatically, so no `id`/`htmlFor` bookkeeping is needed.",
+      "typeName": "string",
+      "optional": true
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "description": "A line under the control, for format or context. Replaced by `error` or `success` when either is set.",
+      "example": "Letters, numbers and dashes. No spaces."
+    },
+    {
+      "name": "error",
+      "type": "string",
+      "description": "Red border, a warning icon & this message in place of `description`. Wins over `success` if both are set."
+    },
+    {
+      "name": "success",
+      "type": "string",
+      "description": "Green border, a check icon & this message in place of `description`."
+    },
+    {
+      "name": "icon",
+      "type": "none",
+      "typeName": "ReactNode",
+      "example": null,
+      "exampleIcon": "DocumentIcon",
+      "description": "Any icon. It is positioned over the control, so pass the glyph and nothing else. Hidden once `error` or `success` is set, which claim the trailing slot for their own icon."
+    },
+    {
+      "name": "iconPosition",
+      "type": "enum",
+      "values": ["leading", "trailing"],
+      "default": "leading",
+      "description": "Which end `icon` sits at.",
+      "dependsOn": "icon",
+      "conflictsWith": [
+        {
+          "prop": "revealable",
+          "is": true
+        }
+      ]
+    },
+    {
+      "name": "iconInteractive",
+      "type": "boolean",
+      "default": false,
+      "description": "Lets `icon` receive pointer events, for an inline button, a clear or reveal toggle, instead of a decorative glyph.",
+      "conflictsWith": [
+        {
+          "prop": "revealable",
+          "is": true
+        }
+      ]
+    },
+    {
+      "name": "prefixNode",
+      "type": "none",
+      "typeName": "ReactNode",
+      "description": "Static content flush against the control's leading edge, like a URL scheme. Mutually exclusive with `icon`/`suffix` in practice: each claims the same row."
+    },
+    {
+      "name": "suffix",
+      "type": "none",
+      "typeName": "ReactNode",
+      "description": "Static content flush against the control's trailing edge, like a domain suffix."
+    },
+    {
+      "name": "placeholder",
+      "type": "string",
+      "example": "quarterly-report.pdf",
+      "description": "Placeholder text."
+    },
+    {
+      "name": "type",
+      "type": "string",
+      "default": "text",
+      "description": "Native input type. For a password field with a visibility toggle, see the Password recipe rather than `type=\"password\"` here."
+    },
+    {
+      "name": "revealable",
+      "type": "boolean",
+      "default": false,
+      "description": "Adds a trailing button that shows and hides the value, for password fields. Always trailing and always interactive, so it overrides `iconPosition` and `icon`."
+    },
+    {
+      "name": "size",
+      "type": "enum",
+      "values": ["sm", "md", "lg"],
+      "default": "md",
+      "description": "Height and width of the control."
+    },
+    {
+      "name": "shape",
+      "type": "enum",
+      "values": ["rounded", "square", "squircle"],
+      "default": "rounded",
+      "description": "Corner radius. `squircle` uses `corner-shape`, which degrades to a rounded square where that is unsupported."
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "default": false,
+      "description": "Blocks interaction and dims the whole field, label included."
+    },
+    {
+      "name": "required",
+      "type": "boolean",
+      "default": false,
+      "description": "Appends a red asterisk to the label & sets the control's native `required` attribute."
+    },
+    {
+      "name": "focus",
+      "type": "boolean",
+      "typeName": "boolean | string",
+      "default": true,
+      "description": "The focus outline. `true` draws it, `false` removes it along with the danger, error and success tints that ride with it, and a string of Yumma CSS utilities restyles it on every focusable part of the component, which is more than `className` reaches. Removing it outright and putting nothing back fails WCAG 2.4.7."
+    }
+  ],
+  "scene": [
+    {
+      "component": "Field",
+      "props": {
+        "label": "File name",
+        "defaultValue": "quarterly-report",
+        "suffix": ".pdf",
+        "description": "Letters, numbers and dashes. No spaces."
+      }
+    }
+  ]
+}

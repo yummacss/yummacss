@@ -1,0 +1,95 @@
+{
+  "summary": "A one-time code input, one slot per character, in three sizes and three shapes.",
+  "props": [
+    {
+      "name": "label",
+      "type": "string",
+      "example": "Verification code",
+      "description": "Text above the slots, wired to the first one through Base UI's `Field.Label`.",
+      "optional": true
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "example": "Sent to your phone, ending in 42.",
+      "description": "A line under the slots, for where the code comes from.",
+      "optional": true
+    },
+    {
+      "name": "length",
+      "type": "number",
+      "default": 6,
+      "description": "How many characters the code has, one slot each.",
+      "min": 4,
+      "max": 8,
+      "step": 1
+    },
+    {
+      "name": "groupSize",
+      "type": "number",
+      "default": 3,
+      "description": "Slots per group, with a dash between groups. `0` draws one unbroken row.",
+      "min": 0,
+      "max": 4,
+      "step": 1
+    },
+    {
+      "name": "validationType",
+      "type": "enum",
+      "values": ["numeric", "alpha", "alphanumeric"],
+      "default": "numeric",
+      "description": "Which characters a slot accepts. Anything else is dropped as it is typed or pasted, and the mobile keyboard follows it."
+    },
+    {
+      "name": "mask",
+      "type": "boolean",
+      "default": false,
+      "description": "Draws each character as a dot, as a password field does."
+    },
+    {
+      "name": "size",
+      "type": "enum",
+      "values": ["sm", "md", "lg"],
+      "default": "md",
+      "description": "Width, height and type size of every slot."
+    },
+    {
+      "name": "shape",
+      "type": "enum",
+      "values": ["rounded", "square", "squircle"],
+      "default": "rounded",
+      "description": "Corner radius on each slot. `squircle` uses `corner-shape`, which degrades to a rounded square where that is unsupported."
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "default": false,
+      "description": "Blocks input and dims the whole field, label included."
+    },
+    {
+      "name": "required",
+      "type": "boolean",
+      "default": false,
+      "description": "Appends a red asterisk to the label and makes the code required when a form submits."
+    },
+    {
+      "name": "focus",
+      "type": "boolean",
+      "typeName": "boolean | string",
+      "default": true,
+      "description": "The focus outline on the slot being typed in. `true` draws it, `false` removes it, and a string of Yumma CSS utilities restyles it. Removing it outright and putting nothing back fails WCAG 2.4.7."
+    }
+  ],
+  "scene": [
+    {
+      "component": "OtpField",
+      "props": {
+        "label": "Verification code",
+        "description": "Sent to your phone, ending in 42",
+        "length": 6,
+        "groupSize": 3,
+        "defaultValue": "4817"
+      }
+    }
+  ]
+}

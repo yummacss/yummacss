@@ -1,0 +1,173 @@
+{
+  "summary": "A panel that slides in from any edge and closes by swipe, with a title, description and body.",
+  "props": [
+    {
+      "name": "trigger",
+      "type": "none",
+      "typeName": "ReactNode",
+      "example": "File details",
+      "description": "The trigger button's label."
+    },
+    {
+      "name": "triggerIcon",
+      "type": "none",
+      "typeName": "ReactNode",
+      "exampleIcon": "DocumentIcon",
+      "description": "A glyph beside the trigger's label."
+    },
+    {
+      "name": "triggerIconPosition",
+      "type": "enum",
+      "values": ["leading", "trailing"],
+      "default": "leading",
+      "description": "Which end of the trigger `triggerIcon` sits at.",
+      "dependsOn": "triggerIcon"
+    },
+    {
+      "name": "title",
+      "type": "string",
+      "example": "readme.md",
+      "description": "The drawer's heading, wired up by Base UI's own Drawer.Title."
+    },
+    {
+      "name": "description",
+      "type": "none",
+      "typeName": "ReactNode",
+      "example": "Markdown, 4 KB. Edited today and kept in Documents.",
+      "description": "The body text, wired up by Base UI's own Drawer.Description."
+    },
+    {
+      "name": "children",
+      "type": "none",
+      "typeName": "ReactNode",
+      "description": "The body, below the description. Style it yourself."
+    },
+    {
+      "name": "closeLabel",
+      "type": "string",
+      "example": "Done",
+      "description": "A full-width button at the end that closes the drawer. None renders without it.",
+      "optional": true
+    },
+    {
+      "name": "side",
+      "type": "enum",
+      "values": ["bottom", "top", "left", "right"],
+      "default": "bottom",
+      "description": "The edge it slides in from, and the direction a swipe closes it."
+    },
+    {
+      "name": "handle",
+      "type": "boolean",
+      "default": true,
+      "description": "A grab bar on the edge facing the page, for a `bottom` or `top` drawer.",
+      "conflictsWith": [
+        {
+          "prop": "side",
+          "is": "left"
+        },
+        {
+          "prop": "side",
+          "is": "right"
+        }
+      ]
+    },
+    {
+      "name": "showClose",
+      "type": "boolean",
+      "default": false,
+      "description": "An X in the corner. A swipe, a click outside and Esc close it either way."
+    },
+    {
+      "name": "size",
+      "type": "enum",
+      "values": ["sm", "md", "lg"],
+      "default": "md",
+      "description": "Padding and text size of the trigger and the close button, on the same scale as Button."
+    },
+    {
+      "name": "shape",
+      "type": "enum",
+      "values": ["rounded", "square", "squircle"],
+      "default": "rounded",
+      "description": "Corner radius on the edge that faces the page, and on the buttons."
+    },
+    {
+      "name": "animated",
+      "type": "boolean",
+      "default": true,
+      "description": "The slide in and out and the backdrop's fade. A swipe follows the finger either way."
+    },
+    {
+      "name": "focus",
+      "type": "boolean",
+      "typeName": "boolean | string",
+      "default": true,
+      "description": "The focus outline. `true` draws it, `false` removes it, and a string of Yumma CSS utilities restyles it on every focusable part of the component, which is more than `className` reaches. Removing it outright and putting nothing back fails WCAG 2.4.7."
+    },
+    {
+      "name": "container",
+      "type": "none",
+      "typeName": "HTMLElement | null",
+      "description": "Where the drawer is rendered. Defaults to `document.body`; pass an element to portal somewhere else, such as inside a frame."
+    }
+  ],
+  "scene": [
+    {
+      "component": "Drawer",
+      "props": {
+        "trigger": "File details",
+        "triggerIcon": {
+          "$icon": "DocumentIcon",
+          "size": "w:4 h:4"
+        },
+        "title": "budget.xlsx",
+        "description": "Spreadsheet, kept in Documents / Taxes.",
+        "side": "right",
+        "handle": false,
+        "showClose": true,
+        "closeLabel": "Done"
+      },
+      "children": [
+        {
+          "tag": "div",
+          "className": "d:g gtc:2 g:2 fs:sm",
+          "children": [
+            {
+              "text": "Size",
+              "className": "c:hint"
+            },
+            {
+              "text": "84 KB",
+              "className": "c:label fw:500 ta:r"
+            },
+            {
+              "text": "Modified",
+              "className": "c:hint"
+            },
+            {
+              "text": "Today, 10:42",
+              "className": "c:label fw:500 ta:r"
+            },
+            {
+              "text": "Where",
+              "className": "c:hint"
+            },
+            {
+              "text": "Documents / Taxes",
+              "className": "c:label fw:500 ta:r"
+            },
+            {
+              "text": "Versions",
+              "className": "c:hint"
+            },
+            {
+              "text": "12",
+              "className": "c:label fw:500 ta:r"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

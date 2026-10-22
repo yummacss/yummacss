@@ -1,0 +1,76 @@
+/* biome-ignore lint/suspicious/noUnknownAtRules: Yumma CSS is being injected here */
+@yummacss;
+
+[data-base-ui-portal] > * {
+  z-index: 20;
+}
+
+/* the site's own popups carry data-chrome and follow the site theme */
+[data-preview],
+[data-preview] *,
+[class*="-popup"]:not([data-chrome], [data-chrome] *),
+[class*="-popup"]:not([data-chrome], [data-chrome] *) *,
+[class*="-backdrop"]:not([data-chrome], [data-chrome] *),
+[class*="-backdrop"]:not([data-chrome], [data-chrome] *) *,
+[role="dialog"]:not([data-chrome], [data-chrome] *),
+[role="dialog"]:not([data-chrome], [data-chrome] *) *,
+[role="alertdialog"]:not([data-chrome], [data-chrome] *),
+[role="alertdialog"]:not([data-chrome], [data-chrome] *) *,
+[role="listbox"]:not([data-chrome], [data-chrome] *),
+[role="listbox"]:not([data-chrome], [data-chrome] *) *,
+[role="menu"]:not([data-chrome], [data-chrome] *),
+[role="menu"]:not([data-chrome], [data-chrome] *) *,
+[role="menubar"]:not([data-chrome], [data-chrome] *),
+[role="menubar"]:not([data-chrome], [data-chrome] *) *,
+[role="navigation"]:not([data-chrome], [data-chrome] *),
+[role="navigation"]:not([data-chrome], [data-chrome] *) * {
+  color-scheme: light;
+  font-family:
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+
+[data-preview]::selection,
+[data-preview] *::selection,
+[class*="-popup"]:not([data-chrome], [data-chrome] *)::selection,
+[class*="-popup"]:not([data-chrome], [data-chrome] *) *::selection,
+[class*="-backdrop"]:not([data-chrome], [data-chrome] *)::selection,
+[class*="-backdrop"]:not([data-chrome], [data-chrome] *) *::selection,
+[role="dialog"]:not([data-chrome], [data-chrome] *)::selection,
+[role="dialog"]:not([data-chrome], [data-chrome] *) *::selection,
+[role="alertdialog"]:not([data-chrome], [data-chrome] *)::selection,
+[role="alertdialog"]:not([data-chrome], [data-chrome] *) *::selection,
+[role="listbox"]:not([data-chrome], [data-chrome] *)::selection,
+[role="listbox"]:not([data-chrome], [data-chrome] *) *::selection,
+[role="menu"]:not([data-chrome], [data-chrome] *)::selection,
+[role="menu"]:not([data-chrome], [data-chrome] *) *::selection,
+[role="menubar"]:not([data-chrome], [data-chrome] *)::selection,
+[role="menubar"]:not([data-chrome], [data-chrome] *) *::selection,
+[role="navigation"]:not([data-chrome], [data-chrome] *)::selection,
+[role="navigation"]:not([data-chrome], [data-chrome] *) *::selection {
+  background-color: Highlight;
+  color: HighlightText;
+}
+
+/* No line-height step reaches .74, and a theme colour drops its alpha. */
+.footer-version {
+  line-height: 0.74;
+  color: light-dark(rgb(76 95 199 / 0.45), rgb(190 198 242 / 0.32));
+}
+
+[data-fold] > summary {
+  list-style: none;
+}
+
+[data-fold] > summary::-webkit-details-marker {
+  display: none;
+}
+
+[data-fold]:not([open]) > summary {
+  display: inline;
+}

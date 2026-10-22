@@ -3,12 +3,13 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "pnpm --filter yummacss-docs build",
-    "check-types": "pnpm --filter yummacss-docs check-types",
+    "build": "pnpm -r build",
+    "check-types": "pnpm -r check-types",
     "dev": "pnpm --filter yummacss-docs dev",
-    "lint": "pnpm --filter yummacss-docs lint",
-    "test": "pnpm --filter yummacss-docs test",
-    "upd": "pnpm --filter yummacss-docs upd"
+    "dev:ui": "pnpm --filter yummaui-docs dev",
+    "lint": "pnpm -r lint",
+    "test": "pnpm -r test",
+    "upd": "pnpm -r upd"
   },
   "packageManager": "pnpm@12.4.1+sha512.2e81e399d73fe8390dab25e06aa788ab7a5908248d2f5a370f82b481147a6a7a367bf8048f9a6fdb6460f21a66f0542dedb8b94ca2c8723596741920b1656d4c"
 }

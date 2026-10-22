@@ -1,0 +1,108 @@
+{
+  "summary": "A star rating input.",
+  "props": [
+    {
+      "name": "label",
+      "type": "string",
+      "example": "How useful was this search?",
+      "description": "Text above the stars."
+    },
+    {
+      "name": "max",
+      "type": "number",
+      "default": 5,
+      "description": "How many marks to draw, and the top of the scale. Ignored when `icons` is set.",
+      "conflictsWith": [
+        {
+          "prop": "icons",
+          "set": true
+        }
+      ],
+      "min": 3,
+      "max": 10,
+      "step": 1
+    },
+    {
+      "name": "icons",
+      "type": "none",
+      "typeName": "RatingIcon[]",
+      "description": "A custom icon set, for a single-choice picker instead of N stars. When set, `value`/`defaultValue` index into it (0-based, `-1` for none) rather than counting filled stars, and `count` is ignored."
+    },
+    {
+      "name": "defaultValue",
+      "type": "number",
+      "description": "The rating on first render. Pair `value` with `onValueChange` instead if you are controlling it.",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "example": 4
+    },
+    {
+      "name": "value",
+      "type": "number",
+      "description": "Controlled rating."
+    },
+    {
+      "name": "onValueChange",
+      "type": "none",
+      "typeName": "(value: number) => void",
+      "description": "Called with the new rating. Pressing the current rating again clears it to 0."
+    },
+    {
+      "name": "emptyHint",
+      "type": "string",
+      "default": "Click to rate",
+      "description": "Shown under the stars while nothing is selected. Once a rating is set it reads `3 of 5`."
+    },
+    {
+      "name": "score",
+      "type": "string",
+      "description": "A figure beside the marks rather than under them: an average, where the marks round it."
+    },
+    {
+      "name": "hint",
+      "type": "string",
+      "description": "Replaces the `3 of 5` readout under the marks. A read-only average reports what it is an average of, which a count of filled stars cannot say."
+    },
+    {
+      "name": "children",
+      "type": "none",
+      "typeName": "ReactNode",
+      "description": "Extra content below the hint text, like a feedback field."
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "default": false,
+      "description": "Blocks interaction and dims the stars."
+    },
+    {
+      "name": "readOnly",
+      "type": "boolean",
+      "default": false,
+      "description": "A rating that only reports one: an average, someone else's score. It draws at full strength and stays out of the tab order, announced once as a single value rather than as five controls. That is the difference from `disabled`, which dims, because it means \"you could, but not now\"."
+    },
+    {
+      "name": "animated",
+      "type": "boolean",
+      "default": true,
+      "description": "The pop each mark makes as it fills, and the press-scale under the pointer. Turn it off for static stars, or when the user has asked for reduced motion."
+    },
+    {
+      "name": "focus",
+      "type": "boolean",
+      "typeName": "boolean | string",
+      "default": true,
+      "description": "The focus outline. `true` draws it, `false` removes it along with the danger, error and success tints that ride with it, and a string of Yumma CSS utilities restyles it on every focusable part of the component, which is more than `className` reaches. Removing it outright and putting nothing back fails WCAG 2.4.7."
+    }
+  ],
+  "scene": [
+    {
+      "component": "Rating",
+      "props": {
+        "label": "How useful was this search?",
+        "defaultValue": 4
+      }
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "summary": "A confirmation dialog with a badge, title, description and a cancel/confirm pair, in two tones.",
+  "props": [
+    {
+      "name": "trigger",
+      "type": "none",
+      "typeName": "ReactNode",
+      "example": "Delete 12 files",
+      "description": "The trigger button's label."
+    },
+    {
+      "name": "triggerIcon",
+      "type": "none",
+      "typeName": "ReactNode",
+      "example": null,
+      "exampleIcon": "TrashBinTrashIcon",
+      "description": "A glyph beside the trigger's label."
+    },
+    {
+      "name": "triggerIconPosition",
+      "type": "enum",
+      "values": ["leading", "trailing"],
+      "default": "leading",
+      "description": "Which end of the trigger `triggerIcon` sits at.",
+      "dependsOn": "triggerIcon"
+    },
+    {
+      "name": "icon",
+      "type": "none",
+      "typeName": "ReactNode",
+      "description": "The glyph in the badge above the title. No badge renders without one.",
+      "exampleIcon": "TrashBinTrashIcon"
+    },
+    {
+      "name": "title",
+      "type": "string",
+      "example": "Delete 12 files?",
+      "description": "The dialog's heading, wired up by Base UI's own AlertDialog.Title."
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "example": "They move to Trash and are deleted for good after 30 days.",
+      "description": "The body text, wired up by Base UI's own AlertDialog.Description."
+    },
+    {
+      "name": "cancelLabel",
+      "type": "string",
+      "default": "Cancel",
+      "description": "The dismissing button's label."
+    },
+    {
+      "name": "confirmLabel",
+      "type": "string",
+      "example": "Delete",
+      "description": "The confirming button's label."
+    },
+    {
+      "name": "onConfirm",
+      "type": "none",
+      "typeName": "() => void",
+      "description": "Called when the confirm button is pressed. The dialog closes either way."
+    },
+    {
+      "name": "showClose",
+      "type": "boolean",
+      "default": true,
+      "description": "The X in the corner. The Cancel button remains either way, so turning this off never traps anyone.",
+      "example": false
+    },
+    {
+      "name": "tone",
+      "type": "enum",
+      "values": ["danger", "neutral"],
+      "default": "danger",
+      "description": "Colors the badge and the confirm button together."
+    },
+    {
+      "name": "triggerTone",
+      "type": "enum",
+      "values": ["danger", "neutral"],
+      "default": "danger",
+      "description": "The trigger's own color, independent of the dialog's `tone` - a neutral button can still open a destructive dialog."
+    },
+    {
+      "name": "size",
+      "type": "enum",
+      "values": ["sm", "md", "lg"],
+      "default": "md",
+      "description": "Padding and text size of the trigger and the popup's buttons, on the same scale as Button, so a dialog matches the buttons beside it."
+    },
+    {
+      "name": "shape",
+      "type": "enum",
+      "values": ["rounded", "square", "squircle"],
+      "default": "rounded",
+      "description": "Corner radius on the popup, the badge and the buttons. `square` squares off the badge too."
+    },
+    {
+      "name": "animated",
+      "type": "boolean",
+      "default": true,
+      "description": "The backdrop's fade and the popup's scale-in. Turn it off for an instant dialog, or when the user has asked for reduced motion."
+    },
+    {
+      "name": "focus",
+      "type": "boolean",
+      "typeName": "boolean | string",
+      "default": true,
+      "description": "The focus outline. `true` draws it, `false` removes it along with the danger, error and success tints that ride with it, and a string of Yumma CSS utilities restyles it on every focusable part of the component, which is more than `className` reaches. Removing it outright and putting nothing back fails WCAG 2.4.7."
+    },
+    {
+      "name": "container",
+      "type": "none",
+      "typeName": "HTMLElement | null",
+      "description": "Where the popup is rendered. Defaults to `document.body`, which is right almost always; pass an element to portal somewhere else, such as inside a frame or a container that owns its own stacking context."
+    }
+  ],
+  "scene": [
+    {
+      "component": "AlertDialog",
+      "props": {
+        "trigger": "Delete 12 files",
+        "icon": {
+          "$icon": "TrashBinTrashIcon",
+          "size": "w:5 h:5"
+        },
+        "title": "Delete 12 files?",
+        "description": "They move to Trash and are deleted for good after 30 days.",
+        "confirmLabel": "Delete",
+        "showClose": false
+      }
+    }
+  ]
+}

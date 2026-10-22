@@ -1,0 +1,122 @@
+{
+  "summary": "A labelled meter in five intents, split into shares or read as an amount, with an optional icon and description.",
+  "props": [
+    {
+      "name": "value",
+      "type": "number",
+      "example": 12.7,
+      "description": "The current value. With `segments`, their sum takes its place.",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "conflictsWith": [
+        {
+          "prop": "segments",
+          "set": true
+        }
+      ]
+    },
+    {
+      "name": "min",
+      "type": "number",
+      "description": "Defaults to Base UI's own Meter minimum (0).",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "example": 0
+    },
+    {
+      "name": "max",
+      "type": "number",
+      "description": "Defaults to Base UI's own Meter maximum (100).",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "example": 20
+    },
+    {
+      "name": "label",
+      "type": "none",
+      "typeName": "ReactNode",
+      "example": "Storage",
+      "description": "Text above the track, correctly wired to it via Base UI's own Meter.Label."
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "description": "A line under the label. Only shown alongside `icon` - without one there is no header block for it to sit in."
+    },
+    {
+      "name": "icon",
+      "type": "none",
+      "typeName": "ReactNode",
+      "description": "A leading avatar. Setting this switches the header to a grouped icon+label+description block & moves the value display below the track instead of beside the label. It sits in a fixed 32px tile that colors the glyph but does not resize it, so pass one sized to fit (`w:4 h:4`)."
+    },
+    {
+      "name": "segments",
+      "type": "none",
+      "typeName": "MeterSegment[]",
+      "example": [
+        {
+          "label": "Photos",
+          "value": 8.4
+        },
+        {
+          "label": "Documents",
+          "value": 4.3
+        }
+      ],
+      "description": "Splits the bar into shares, each a lighter step of the intent, with a legend under the track. Up to three; a fourth repeats the last color."
+    },
+    {
+      "name": "unit",
+      "type": "string",
+      "example": "GB",
+      "description": "Reads the value as an amount, `12.7 of 20 GB`, in place of a percentage."
+    },
+    {
+      "name": "rest",
+      "type": "string",
+      "example": "Free",
+      "optional": true,
+      "dependsOn": "segments",
+      "description": "Names the empty part of the track in the legend, `Free` for storage."
+    },
+    {
+      "name": "intent",
+      "type": "enum",
+      "values": ["neutral", "info", "success", "warning", "danger"],
+      "default": "info",
+      "description": "What the reading means, not which hue it is. The five map to Yumma families in the shipped `INTENTS` table; point one somewhere else and the type follows."
+    },
+    {
+      "name": "animated",
+      "type": "boolean",
+      "default": true,
+      "description": "The indicator's width transition as `value` changes."
+    }
+  ],
+  "scene": [
+    {
+      "component": "Meter",
+      "props": {
+        "value": 12.7,
+        "min": 0,
+        "max": 20,
+        "label": "Storage",
+        "segments": [
+          {
+            "label": "Photos",
+            "value": 8.4
+          },
+          {
+            "label": "Documents",
+            "value": 4.3
+          }
+        ],
+        "unit": "GB",
+        "rest": "Free"
+      }
+    }
+  ]
+}

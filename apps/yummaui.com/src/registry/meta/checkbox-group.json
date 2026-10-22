@@ -1,0 +1,113 @@
+{
+  "summary": "A labelled group of checkboxes, optionally led by a parent checkbox that checks and clears every one and sits indeterminate in between.",
+  "props": [
+    {
+      "name": "label",
+      "type": "ReactNode",
+      "description": "Names the group for screen readers and is shown above it."
+    },
+    {
+      "name": "parentLabel",
+      "type": "ReactNode",
+      "description": "Renders a checkbox above the group that checks and clears all of them, and is indeterminate while only some are checked. Needs `allValues`, and indents the group under it.",
+      "example": "Sync these folders",
+      "optional": true
+    },
+    {
+      "name": "allValues",
+      "type": "string[]",
+      "description": "Every value in the group. Without it the parent cannot tell all-checked from some-checked.",
+      "example": ["documents", "photos", "downloads"]
+    },
+    {
+      "name": "value",
+      "type": "string[]",
+      "description": "The checked values, controlled. Pair with `onValueChange`."
+    },
+    {
+      "name": "defaultValue",
+      "type": "string[]",
+      "description": "The checked values on first render, uncontrolled.",
+      "example": ["documents", "photos"]
+    },
+    {
+      "name": "onValueChange",
+      "type": "(value: string[]) => void",
+      "description": "Called with the checked values whenever they change."
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "description": "Form field name for the parent checkbox."
+    },
+    {
+      "name": "countLabel",
+      "type": "string",
+      "example": "folders",
+      "description": "Names what is counted under the parent, as in \"2 of 3 folders\". Needs `parentLabel` and `allValues`."
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "default": false,
+      "description": "Ignores interaction on every checkbox in the group."
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "description": "Merged with the group's own classes, so a utility you pass wins."
+    }
+  ],
+  "scene": [
+    {
+      "component": "CheckboxGroup",
+      "props": {
+        "parentLabel": "Sync these folders",
+        "allValues": ["documents", "photos", "downloads"],
+        "defaultValue": ["documents", "photos"],
+        "countLabel": "folders"
+      },
+      "children": [
+        {
+          "component": "Checkbox",
+          "props": {
+            "value": "documents",
+            "label": "Documents",
+            "row": true,
+            "aside": "1.2 GB",
+            "icon": {
+              "$icon": "FolderIcon",
+              "size": "w:4 h:4 c:blue"
+            }
+          }
+        },
+        {
+          "component": "Checkbox",
+          "props": {
+            "value": "photos",
+            "label": "Photos",
+            "row": true,
+            "aside": "8.4 GB",
+            "icon": {
+              "$icon": "FolderIcon",
+              "size": "w:4 h:4 c:mint"
+            }
+          }
+        },
+        {
+          "component": "Checkbox",
+          "props": {
+            "value": "downloads",
+            "label": "Downloads",
+            "row": true,
+            "aside": "3.1 GB",
+            "icon": {
+              "$icon": "FolderIcon",
+              "size": "w:4 h:4 c:yellow"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

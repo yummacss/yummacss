@@ -1,0 +1,105 @@
+{
+  "summary": "A set of toggles sharing one container, in four shapes and both orientations, pressing one or several at a time.",
+  "props": [
+    {
+      "name": "label",
+      "type": "string",
+      "example": "View as",
+      "description": "A caption above the group, wired to it as its accessible name."
+    },
+    {
+      "name": "orientation",
+      "type": "enum",
+      "values": ["horizontal", "vertical"],
+      "default": "horizontal",
+      "description": "Stacks the toggles and switches the arrow keys that move focus."
+    },
+    {
+      "name": "multiple",
+      "type": "boolean",
+      "default": false,
+      "description": "More than one toggle can be pressed at a time. Off by default, matching Base UI, so a group is single-choice unless you say otherwise."
+    },
+    {
+      "name": "value",
+      "type": "string[]",
+      "description": "The pressed toggles, controlled. Pair with `onValueChange`."
+    },
+    {
+      "name": "defaultValue",
+      "type": "string[]",
+      "description": "The pressed toggles on first render, uncontrolled.",
+      "example": ["grid"]
+    },
+    {
+      "name": "onValueChange",
+      "type": "(value: string[]) => void",
+      "description": "Called with the pressed values whenever they change."
+    },
+    {
+      "name": "shape",
+      "type": "enum",
+      "values": ["rounded", "square", "squircle", "pill"],
+      "default": "rounded",
+      "description": "Corner radius of the container. The toggles inside carry their own `shape`."
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "default": false,
+      "description": "Ignores interaction on every toggle in the group."
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "description": "Merged with the group's own classes, so a utility you pass wins."
+    }
+  ],
+  "scene": [
+    {
+      "component": "ToggleGroup",
+      "props": {
+        "label": "View as",
+        "defaultValue": ["grid"]
+      },
+      "children": [
+        {
+          "component": "Toggle",
+          "props": {
+            "value": "list",
+            "icon": {
+              "$icon": "ListIcon",
+              "size": "w:4 h:4",
+              "style": "outline"
+            },
+            "label": "List"
+          }
+        },
+        {
+          "component": "Toggle",
+          "props": {
+            "value": "grid",
+            "icon": {
+              "$icon": "Grid2x2Icon",
+              "size": "w:4 h:4",
+              "style": "outline"
+            },
+            "label": "Grid"
+          }
+        },
+        {
+          "component": "Toggle",
+          "props": {
+            "value": "columns",
+            "icon": {
+              "$icon": "Columns3Icon",
+              "size": "w:4 h:4",
+              "style": "outline"
+            },
+            "label": "Columns"
+          }
+        }
+      ]
+    }
+  ]
+}

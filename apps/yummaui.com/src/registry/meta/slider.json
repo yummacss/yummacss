@@ -1,0 +1,123 @@
+{
+  "summary": "A value between a min and a max, one thumb or two for a range, in three shapes.",
+  "props": [
+    {
+      "name": "label",
+      "type": "string",
+      "example": "Thumbnail size",
+      "description": "Text beside the value, above the track.",
+      "optional": true
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "description": "A line under the control, for context on what the value means."
+    },
+    {
+      "name": "defaultValue",
+      "type": "none",
+      "typeName": "number | number[]",
+      "example": 120,
+      "description": "A single number for one thumb, or a two-item array for a range with two. Whichever shape you start with is the shape the slider keeps. It does not switch thumb count at runtime."
+    },
+    {
+      "name": "value",
+      "type": "none",
+      "typeName": "number | number[]",
+      "description": "Controlled value, same shape rule as `defaultValue`."
+    },
+    {
+      "name": "onValueChange",
+      "type": "none",
+      "typeName": "(value: number | number[]) => void",
+      "description": "Called with the new value on every change. Required for a controlled slider."
+    },
+    {
+      "name": "min",
+      "type": "number",
+      "default": 0,
+      "description": "Lower bound.",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "example": 40
+    },
+    {
+      "name": "max",
+      "type": "number",
+      "default": 100,
+      "description": "Upper bound.",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "example": 200
+    },
+    {
+      "name": "step",
+      "type": "number",
+      "default": 1,
+      "description": "Amount each keyboard press or drag increment changes the value by.",
+      "min": 1,
+      "max": 25,
+      "step": 1
+    },
+    {
+      "name": "formatValue",
+      "type": "none",
+      "typeName": "(value: number | number[]) => ReactNode",
+      "description": "How the value is shown beside the label. Defaults to `50%` for one thumb, `20 - 80` for a range; override for currency, units, or anything else."
+    },
+    {
+      "name": "unit",
+      "type": "string",
+      "example": "px",
+      "description": "A unit after the value, such as `px`. The number reads bold and the unit quiet. Ignored when `formatValue` is set."
+    },
+    {
+      "name": "marks",
+      "type": "none",
+      "typeName": "string[]",
+      "example": ["Small", "Medium", "Large"],
+      "description": "Labels spread evenly under the track, first at the start, last at the end."
+    },
+    {
+      "name": "shape",
+      "type": "enum",
+      "values": ["rounded", "square", "squircle"],
+      "default": "rounded",
+      "description": "Corner radius, applied to the track, the indicator and the thumb together. `squircle` uses `corner-shape`."
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "default": false,
+      "description": "Blocks interaction and dims the control."
+    },
+    {
+      "name": "required",
+      "type": "boolean",
+      "default": false,
+      "description": "Appends a red asterisk to the label."
+    },
+    {
+      "name": "focus",
+      "type": "boolean",
+      "typeName": "boolean | string",
+      "default": true,
+      "description": "The focus outline. `true` draws it, `false` removes it along with the danger, error and success tints that ride with it, and a string of Yumma CSS utilities restyles it on every focusable part of the component, which is more than `className` reaches. Removing it outright and putting nothing back fails WCAG 2.4.7."
+    }
+  ],
+  "scene": [
+    {
+      "component": "Slider",
+      "props": {
+        "label": "Thumbnail size",
+        "defaultValue": 120,
+        "min": 40,
+        "max": 200,
+        "unit": "px",
+        "marks": ["Small", "Medium", "Large"]
+      }
+    }
+  ]
+}

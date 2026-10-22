@@ -1,4 +1,7 @@
 Paths below are inside `apps/yummacss.com` unless they say otherwise.
+`apps/yummaui.com` is yummaui.com on its own, guides under `/docs` and
+components under `/components`. Until `apps/yummacss.com` drops its Yumma UI
+half, a change to `src/registry` or `src/content/ui` goes in both apps.
 
 # Writing
 
