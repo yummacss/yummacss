@@ -76,8 +76,6 @@ const components: MDXComponents = {
   Code,
   CodeGroup,
   Cover,
-  // the UI shell renders the stage, so it stays mounted from one page to the next
-  ComponentPlayground: () => null,
   Cursor,
   Note,
   Warning,

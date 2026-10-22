@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { CSSProperties } from "react";
+import { UI_ORIGIN } from "@/utils/hosts";
 import { ver } from "@/utils/version";
 import HomeMark from "./home-mark";
 
@@ -22,12 +23,12 @@ const COLUMNS = [
   {
     title: "Yumma UI",
     links: [
-      { label: "Installation", href: "/components/installation" },
-      { label: "Forms", href: "/components/autocomplete" },
-      { label: "Display", href: "/components/accordion" },
-      { label: "Interactive", href: "/components/button" },
-      { label: "Overlays", href: "/components/alert-dialog" },
-      { label: "Application UI", href: "/components/empty-state" },
+      { label: "Installation", href: `${UI_ORIGIN}/docs/installation` },
+      { label: "Forms", href: `${UI_ORIGIN}/components/autocomplete` },
+      { label: "Display", href: `${UI_ORIGIN}/components/accordion` },
+      { label: "Interactive", href: `${UI_ORIGIN}/components/button` },
+      { label: "Overlays", href: `${UI_ORIGIN}/components/alert-dialog` },
+      { label: "Application UI", href: `${UI_ORIGIN}/components/empty-state` },
     ],
   },
   {

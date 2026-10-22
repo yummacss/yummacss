@@ -6,7 +6,7 @@ import { lazy, Suspense, useEffect, useState } from "react";
 import { Search } from "@/icons";
 import { loadSearchIndex } from "@/utils/search-data";
 import HomeMark from "./home-mark";
-import type { Menus } from "./mobile-sheet";
+import type { NavSection } from "./mobile-sheet";
 import { SearchDialog } from "./search-dialog";
 
 const preloadSearch = () => {
@@ -21,7 +21,7 @@ const BASE = "p:f ix:0 t:0 zi:10 bg:page bc:border @lg:bbw:1 @lg:bf-b:md";
 interface NavbarProps {
   className?: string;
   /** The phone menu's sections, built on the server; without them there is no menu button. */
-  menu?: Menus;
+  menu?: NavSection[];
 }
 
 export default function Navbar({ className, menu }: NavbarProps) {
@@ -85,7 +85,7 @@ export default function Navbar({ className, menu }: NavbarProps) {
           <MobileSheet
             isOpen={isSidebarOpen}
             onClose={() => setIsSidebarOpen(false)}
-            menus={menu}
+            menu={menu}
           />
         </Suspense>
       )}

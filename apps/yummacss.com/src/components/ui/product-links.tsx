@@ -1,18 +1,12 @@
-"use client";
-
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { UI_ORIGIN } from "@/utils/hosts";
 
 const PRODUCTS = [
-  { title: "Yumma CSS", href: "/docs/installation", prefix: "/docs" },
-  {
-    title: "Yumma UI",
-    href: "/components/installation",
-    prefix: "/components",
-  },
+  { title: "Yumma CSS", href: "/docs/installation", current: true },
+  { title: "Yumma UI", href: `${UI_ORIGIN}/docs/installation` },
 ];
 
-/** The two products as a section, the one the route is in marked active. */
+/** The two products as a section, this site's marked active. */
 export default function ProductLinks({
   heading,
   list,
@@ -25,14 +19,12 @@ export default function ProductLinks({
   link: string;
   onNavigate?: () => void;
 }) {
-  const pathname = usePathname();
-
   return (
     <section className="d:f fd:c">
       <h3 className={heading}>Products</h3>
       <ul className={list}>
-        {PRODUCTS.map(({ title, href, prefix }) => {
-          const isActive = pathname.startsWith(prefix);
+        {PRODUCTS.map(({ title, href, current }) => {
+          const isActive = current === true;
           return (
             <li key={href} className="d:f ai:c">
               <Link

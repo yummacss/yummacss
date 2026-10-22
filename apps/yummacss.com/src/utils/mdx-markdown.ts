@@ -7,11 +7,9 @@ import remarkMdx from "remark-mdx";
 import remarkParse from "remark-parse";
 import remarkStringify from "remark-stringify";
 import { unified } from "unified";
-import type { RegistryMeta } from "@/registry";
 import { baselineFor } from "@/utils/baseline";
 import { BRAND_COLORS, type BrandProduct, brandFiles } from "@/utils/brand";
 import { COLOR_FAMILIES, SHADE_LABELS } from "@/utils/colors";
-import { targetPath } from "@/utils/install.mjs";
 import { fillNormalizeFences } from "@/utils/normalize-rules.mjs";
 import {
   type Category,
@@ -19,10 +17,6 @@ import {
   variantGroups,
   variantsLead,
 } from "@/utils/yummacss";
-
-export type RegistryResolver = (registryId: string) => string | null;
-
-export type MetaResolver = (registryId: string) => RegistryMeta | null;
 
 // Note & Warning, and the Admonition the ::: directives become
 const CALLOUTS: Record<string, string> = {
@@ -33,29 +27,6 @@ const LABELS: Record<string, string> = {
   note: "Note",
   warning: "Warning",
 };
-function buildPropsTable(meta: RegistryMeta): string[] {
-  if (!meta.props?.length) return [];
-
-  const rows = meta.props.map((prop) => {
-    const type = prop.typeName
-      ? `\`${prop.typeName.replaceAll("|", "\\|")}\``
-      : prop.type === "enum" && prop.values
-        ? prop.values.map((value) => `\`"${value}"\``).join(" \\| ")
-        : `\`${prop.type}\``;
-    const fallback =
-      prop.default === undefined ? "-" : `\`${JSON.stringify(prop.default)}\``;
-    const description = (prop.description ?? "").replaceAll("|", "\\|");
-    return `| \`${prop.name}\` | ${type} | ${fallback} | ${description} |`;
-  });
-
-  return [
-    ...(meta.summary ? [meta.summary, ""] : []),
-    "| Prop | Type | Default | Description |",
-    "|------|------|---------|-------------|",
-    ...rows,
-  ];
-}
-
 function buildReferenceTable(category: Category, name: string): string[] {
   try {
     const getter = categoryGetters[category];
@@ -104,27 +75,6 @@ function buildPalette(): string[] {
     "|--------|------|",
     ...COLOR_FAMILIES.map((f) => `| ${f.name} | \`${f.color}\` |`),
   ];
-}
-
-function fencedBlock(source: string, lang: string, meta?: string): string[] {
-  const body = source.replace(/\r\n/g, "\n").replace(/\s+$/, "");
-  const longest = Math.max(
-    0,
-    ...[...body.matchAll(/^\s*(`{3,})/gm)].map((m) => m[1].length),
-  );
-  const fence = "`".repeat(Math.max(3, longest + 1));
-
-  return [
-    `${fence}${lang}${meta ? ` ${meta}` : ""}`,
-    ...body.split("\n"),
-    fence,
-  ];
-}
-
-interface RenderOptions {
-  resolveRegistry?: RegistryResolver;
-  resolveMeta?: MetaResolver;
-  registryId?: string;
 }
 
 type Element = MdxJsxFlowElement | MdxJsxTextElement;
@@ -214,11 +164,7 @@ const titleCase = (name: string) =>
     .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
     .join(" ");
 
-function component(
-  node: Element,
-  options: RenderOptions,
-  source: string,
-): RootContent[] {
+function component(node: Element, source: string): RootContent[] {
   const name = node.name ?? "";
   const a = attrs(node);
 
@@ -298,25 +244,7 @@ function component(
     ]);
   }
 
-  const registryId =
-    a.registryId ??
-    (name === "ComponentPlayground" ? options.registryId : undefined);
-  if (registryId) {
-    const lines: string[] = [];
-    const code = options.resolveRegistry?.(registryId);
-    if (code) {
-      lines.push(
-        ...fencedBlock(code, "tsx", `title="${targetPath(registryId)}"`),
-      );
-    }
-    const meta = options.resolveMeta?.(registryId);
-    if (meta) lines.push("", ...buildPropsTable(meta));
-    return markdown(lines);
-  }
-
-  const children = blocks(
-    convert(node.children as RootContent[], options, source),
-  );
+  const children = blocks(convert(node.children as RootContent[], source));
 
   if (name === "Stepper") {
     let step = 0;
@@ -358,11 +286,7 @@ function component(
     : children;
 }
 
-function convert(
-  nodes: RootContent[],
-  options: RenderOptions,
-  source: string,
-): RootContent[] {
+function convert(nodes: RootContent[], source: string): RootContent[] {
   return nodes.flatMap((node): RootContent[] => {
     if (node.type === "mdxjsEsm" || node.type === "yaml") return [];
     if (
@@ -376,13 +300,13 @@ function convert(
       node.type === "mdxJsxFlowElement" ||
       node.type === "mdxJsxTextElement"
     ) {
-      return component(node, options, source);
+      return component(node, source);
     }
     if ("children" in node) {
       return [
         {
           ...node,
-          children: convert(node.children as RootContent[], options, source),
+          children: convert(node.children as RootContent[], source),
         } as RootContent,
       ];
     }
@@ -390,14 +314,11 @@ function convert(
   });
 }
 
-export function mdxToMarkdown(
-  content: string,
-  options: RenderOptions = {},
-): string {
+export function mdxToMarkdown(content: string): string {
   const source = fillNormalizeFences(content.replace(/\r\n/g, "\n"));
   const tree = mdx.parse(source) as Root;
 
-  const children = convert(tree.children, options, source);
+  const children = convert(tree.children, source);
 
   return out.stringify({ type: "root", children }).trim();
 }

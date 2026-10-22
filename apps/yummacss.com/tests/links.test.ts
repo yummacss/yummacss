@@ -12,7 +12,6 @@ const routes = new Set([
   "/robots.txt",
   "/sitemap.xml",
   ...contentPages("docs").map(({ slug }) => `/docs/${slug}`),
-  ...contentPages("ui").map(({ slug }) => `/components/${slug}`),
   ...redirects.map(({ source }) => source),
 ]);
 

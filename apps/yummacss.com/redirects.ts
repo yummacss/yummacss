@@ -1,33 +1,53 @@
 import { readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { extractProperties } from "./src/utils/doc-properties";
-import { CSS_ORIGIN, UI_ORIGIN } from "./src/utils/hosts";
+import { UI_ORIGIN } from "./src/utils/hosts";
 
-// each product answers on its own domain; preview and local hosts match neither
-const UI_HOST = [{ type: "host" as const, value: "(?:www\\.)?yummaui\\.com" }];
-const CSS_HOST = [
-  { type: "host" as const, value: "(?:www\\.)?yummacss\\.com" },
-];
+// Yumma UI lives on its own site; every address it had here goes there
+const GUIDES = ["installation", "configuration", "customization"];
 
-const hostRedirects = [
+const uiRedirects = [
+  // every install and yummaui.json names the registry here
   {
-    source: "/",
-    has: UI_HOST,
-    destination: "/components/installation",
-    permanent: false,
+    source: "/ui/registry/:path*",
+    destination: `${UI_ORIGIN}/ui/registry/:path*`,
+    permanent: true,
   },
-  ...["/docs/:path*", "/llms.txt", "/agents.md"].map((source) => ({
-    source,
-    has: UI_HOST,
-    destination: `${CSS_ORIGIN}${source}`,
+  {
+    source: "/ui/r/:path*",
+    destination: `${UI_ORIGIN}/ui/registry/:path*`,
     permanent: true,
-  })),
-  ...["/components/:path*", "/ui/components/:path*"].map((source) => ({
-    source,
-    has: CSS_HOST,
-    destination: `${UI_ORIGIN}/components/:path*`,
+  },
+  // pages that moved before the split
+  {
+    source: "/components/cli",
+    destination: `${UI_ORIGIN}/docs/configuration`,
     permanent: true,
-  })),
+  },
+  {
+    source: "/ui/theming",
+    destination: `${UI_ORIGIN}/docs/customization`,
+    permanent: true,
+  },
+  ...GUIDES.flatMap((slug) =>
+    ["/components", "/ui/components", "/ui"].map((base) => ({
+      source: `${base}/${slug}`,
+      destination: `${UI_ORIGIN}/docs/${slug}`,
+      permanent: true,
+    })),
+  ),
+  ...["/components", "/ui/components", "/ui"].flatMap((base) => [
+    {
+      source: base,
+      destination: `${UI_ORIGIN}/docs/installation`,
+      permanent: true,
+    },
+    {
+      source: `${base}/:path*`,
+      destination: `${UI_ORIGIN}/components/:path*`,
+      permanent: true,
+    },
+  ]),
 ];
 
 const docsRedirects = [
@@ -241,99 +261,9 @@ const blogRedirects = [
   },
 ];
 
-const uiRedirects = [
-  {
-    source: "/components/cli",
-    destination: "/components/configuration",
-    permanent: true,
-  },
-  // installs before yummaui 0.6 store this address in yummaui.json
-  {
-    source: "/ui/r/:path*",
-    destination: "/ui/registry/:path*",
-    permanent: true,
-  },
-  {
-    source: "/ui/theming",
-    destination: "/components/customization",
-    permanent: true,
-  },
-  {
-    source: "/ui/components",
-    destination: "/components/installation",
-    permanent: true,
-  },
-  {
-    source: "/components",
-    destination: "/components/installation",
-    permanent: true,
-  },
-  {
-    source: "/ui",
-    destination: "/components/installation",
-    permanent: true,
-  },
-  ...[
-    "installation",
-    "customization",
-    "accordion",
-    "autocomplete",
-    "avatar",
-    "button",
-    "checkbox",
-    "collapsible",
-    "combobox",
-    "context-menu",
-    "dialog",
-    "input",
-    "menu",
-    "menubar",
-    "meter",
-    "navigation-menu",
-    "number-field",
-    "popover",
-    "preview-card",
-    "progress",
-    "radio",
-    "select",
-    "separator",
-    "slider",
-    "switch",
-    "tabs",
-    "toggle",
-    "toolbar",
-    "tooltip",
-  ].map((slug) => ({
-    source: `/ui/${slug}`,
-    destination: `/components/${slug}`,
-    permanent: true,
-  })),
-];
-
-const removedComponents = [
-  {
-    source: "/components/collapsible",
-    destination: "/components/accordion",
-    permanent: true,
-  },
-  {
-    source: "/components/command-palette",
-    destination: "/components/combobox",
-    permanent: true,
-  },
-  // the pages lived under /ui before they moved to their own domain
-  {
-    source: "/ui/components/:slug",
-    destination: "/components/:slug",
-    permanent: true,
-  },
-];
-
 export const redirects = [
-  ...hostRedirects,
   ...docsRedirects,
   ...mergedRedirects,
   ...blogRedirects,
   ...uiRedirects,
-  ...removedComponents,
 ];

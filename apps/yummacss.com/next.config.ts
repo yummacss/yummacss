@@ -19,10 +19,6 @@ const nextConfig = {
         source: "/docs/:slug.md",
         destination: "/api/docs-md/:slug",
       },
-      {
-        source: "/ui/components/:slug.md",
-        destination: "/api/ui-md/:slug",
-      },
     ];
   },
 };
@@ -37,7 +33,6 @@ const withMDX = createMDX({
     ],
     rehypePlugins: [
       path.resolve("src/plugins/rehype-normalize.mjs"),
-      [path.resolve("src/plugins/rehype-registry.mjs"), {}],
       path.resolve("src/plugins/rehype-code.mjs"),
     ],
   },

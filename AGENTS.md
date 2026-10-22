@@ -1,23 +1,16 @@
 Paths below are inside `apps/yummacss.com` unless they say otherwise.
-`apps/yummaui.com` is yummaui.com on its own, guides under `/docs` and
-components under `/components`. Until `apps/yummacss.com` drops its Yumma UI
-half, a change to `src/registry` or `src/content/ui` goes in both apps.
+Yumma UI and its site live in the yummaui repo, along with their rules.
 
 # Writing
 
 Short. These were said out loud enough times to belong in a file.
 
-- **PR bodies**: link every component you name to its page, with the link on
-  the bold heading itself. While a branch is open the link is that branch's
-  Vercel preview, so the page shows what the PR changed rather than what is
-  already live:
-  `https://yummacsscom-git-<branch>-rrenildopereiraas-projects.vercel.app/components/<id>`,
-  where `<branch>` is the branch name with `/` as `-`. Vercel reports it as
-  `branchAlias` on any deployment of the branch, and it follows the latest
-  push, unlike the per-deployment hash URL. Same for anything else on the docs
-  site the PR touches. Once a branch is merged its alias dies, so a link to
-  shipped work is `https://www.yummacss.com/...` again, or
-  `https://www.yummaui.com/components/<id>` for a component.
+- **PR bodies**: link every page you name, with the link on the bold heading
+  itself. While a branch is open the link is that branch's Vercel preview:
+  `https://yummacsscom-git-<branch>-rrenildopereiraas-projects.vercel.app/docs/<page>`,
+  where `<branch>` is the branch name with `/` as `-`. Once a branch is
+  merged its alias dies, so a link to shipped work is
+  `https://www.yummacss.com/...` again.
 - The same link rule applies in chat, not only in PR bodies.
 - **PR bodies**: one short block per topic, each under its own bold heading,
   then the checks line (`tsc`, test count, biome, `next build`). A sentence or
@@ -56,107 +49,6 @@ Short. These were said out loud enough times to belong in a file.
   `os-`, `ow-`, `oo-` and `oc-`, so a box-shadow word for it describes a
   workaround the library does not need.
 
-# Content model
-
-What the examples are *about*, which is a separate question from how the copy
-is written.
-
-- One world: a person looking after their own files and settings. Files,
-  folders, documents, search, themes, shortcuts, formatting.
-- No organisations. No teams, members, roles, invitations, plans, billing,
-  invoices, subscriptions, sprints or boards. A component demo that needs a
-  second person to make sense is the wrong demo.
-- People appear only where the component is about a person: Avatar, Avatar
-  Stack, Preview Card. One person, not a cast, and nowhere else.
-- Icons name the thing they sit beside. An icon chosen for decoration is a
-  content decision, not a visual one, and belongs to this list.
-- `tests/content-model.test.ts` holds the mechanical half.
-
-# Shape
-
-- `square` is no radius, `squircle` is `br-xxl cs-s`, and `rounded` is the
-  natural round for that control: `br-sm` on a checkbox, `br-lg` on a panel,
-  `br-9999` on a switch or a track, which is already a capsule at that height.
-- `rounded` is the default wherever a component has a shape. `square` is a
-  choice, never the default.
-- `pill` appears only where a smaller `rounded` also makes sense, so a
-  component offering both keeps them different. Never add `pill` as a synonym.
-- Shape is not a style axis where it is the affordance. A radio is round
-  because round means *one of these* and square means *any of these*, so it
-  has no `shape` prop at all. Ask that question before adding one.
-- `tests/registry.test.ts` holds the mechanical half.
-
-# Tactile
-
-- Colors are roles, not palette shades: `raised`, `well`, `field`, `fill`,
-  `on-fill`, `label`, `hint`, `rim`, `shadow`, `line`, `check`, `on`,
-  `knob`, `groove`, `glint` and `focus`, each a light and a Graphite pair in `src/utils/roles.mjs`. A
-  reworked component names roles only, so dark mode follows `color-scheme`
-  with no class of its own. Role values are opaque: a pair drops hex alpha.
-- Ticked and picked are `check` with `btc:white/25 blc:black/15 brc:black/15
-  bbc:black/30`. An on switch is `on`, its thumb `knob`.
-- Raised things (buttons, triggers, tiles, bars) are lighter on top and darker
-  below: `bg:raised btc:rim blc:rim brc:rim bbc:shadow bs-o:xs`. Filled ones:
-  `bg:fill c:on-fill btc:white/20 blc:black/40 brc:black/40 bbc:black/60
-  bs-o:sm`, so the bevel works on any accent.
-- Recessed things (inputs, wells) reverse it: `bg:field btc:shadow blc:line
-  brc:line bbc:rim`.
-- Popups float on `bg:raised bc:line bs-o:xl`. A highlighted row is
-  `check` with its bevel and `c:white`, on a `bw:1 bc:transparent` row.
-  Icons and shortcuts in a row are `o:70` of its color, so they turn white
-  with it.
-- Focus is `fv:os:s fv:ow:3 fv:oo:0 fv:oc:focus/40 fv:bc:focus`: a soft
-  outline and a darker border, both from the one role.
-- A divider is a groove, a dark line over a lit one: the two borders of an
-  element with no height, `h:0 btw:1 bbw:1 btc:groove bbc:glint`, or
-  `w:0 blw:1 brw:1 blc:groove brc:glint` standing up.
-  Popups stay white, so in light mode the lit line only shows on a well.
-- No inset shadow, except a pressed toggle (Toggle, Toolbar). No `shadow` prop.
-- Pressed in is an on/off that stays on by itself (Toggle, Toolbar). Picking
-  one of several is a raised chip on a track (Tabs, Toggle Group).
-- A bevel names all four sides and never mixes in `bc:` or `bw:`. Yumma sorts
-  its rules by name, so `bc:` would beat `bbc:` and `bw:` would beat `bbw:`.
-- Numbers that change in place (counters, values, sizes) are `fvn:tn`.
-- A shortcut in a row (menus, tooltips) is an outlined keycap in the row's
-  color, so it turns white with a highlighted row: `px:1 br:sm bw:1
-  bc:current fs:xs fw:400 lh:4 ff:d`, at `o:70`. In running text, Kbd draws
-  a raised key: the raised bevel on `btw:1 blw:1 brw:1 bbw:3`. `tests/registry.test.ts`
-  holds both.
-
-# Prop order
-
-- A component's own props come first, in whatever order reads best for that
-  component. The props every component shares follow, in one fixed sequence:
-  style, then state, then behavior, then the escape hatches. `shape` sits
-  after `size` on all 33 components that have it.
-- The sequence lives in `SHARED_PROP_ORDER` in `src/utils/props.ts`, the only
-  place to change it. `node scripts/order-props.mjs` re-sorts every schema to
-  match, and `tests/registry.test.ts` fails when one drifts.
-
-# Carried styles
-
-- Style and Radius set the look of every component and of the code copied:
-  `style` and `radius` in the URL, remembered in `localStorage` for the next
-  page, and the address wins. `src/utils/styles.mjs` owns them. A blocked
-  pair in an address falls back to the nearest allowed radius.
-- `size`, `shape` and `iconShape` belong to the style: the rail
-  never shows or sets them.
-- Every component page shows its Example, a `scene` in its meta, and the
-  rail lists the props without setting them. `tests/registry.test.ts` fails a
-  meta without one.
-
-# Accent
-
-- The accent recolours the **preview** and nothing anyone installs. It works by
-  redefining the classes the components name, inside the preview frame only, so
-  the Code tab stays byte-identical when it changes.
-- `src/utils/accent.ts` holds the one table that drives both the CSS and the
-  guard. A component that names a new `slate-11` or `slate-12` class fails
-  `tests/accent.test.ts` until the table covers it.
-- `c-slate-12` is a label on white, not a control, so it is never part of it.
-- It lives in `localStorage`, never the URL: an address states what the
-  component is, and the accent changes nothing about it.
-
 # Page chrome
 
 - Every page opens with `SkipLink` and has one `<main id="main">`, so the first
@@ -172,19 +64,8 @@ is written.
   grows to its content and never scrolls.
 - The scrollbar is 12px and square, sits above sticky headers (`zi:20`), and
   fades with `hovering:` and `scrolling:`, two states in `yumma.config.mjs`.
-- Registry icons are Solar: Bold for objects, Outline for marks, arrows and
-  operators. Never Duotone.
 - Site icons come from `src/icons.tsx`, Phosphor regular. Duotone blurs at
   16px; the notes, "Icons at 16px", have the measurements.
-
-# Motion
-
-- The registry animates with Yumma classes and ships no CSS of its own.
-  `opening:` and `closing:` for what Base UI marks, `@st:` for an element
-  that is inserted or re-keyed, `an:` for a loop, and `@prm:` to stop each.
-- Every state and keyframe a component uses is one the Yumma UI installation
-  page tells people to add. `tests/motion.test.ts` holds the page, the site
-  config and the registry to the same names.
 
 # Working
 

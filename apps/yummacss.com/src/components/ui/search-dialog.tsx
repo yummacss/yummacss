@@ -3,7 +3,7 @@
 import { Button } from "@base-ui/react";
 import { Dialog } from "@base-ui/react/dialog";
 import { Input } from "@base-ui/react/input";
-import { usePathname, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Scroller from "@/components/ui/scroller";
 import {
@@ -21,7 +21,6 @@ import {
   filterSearchResults,
   groupByCategory,
   loadSearchIndex,
-  type Product,
   type SearchCategory,
   type SearchIndex,
   type SearchItem,
@@ -36,7 +35,6 @@ interface SearchDialogProps {
 
 const KBD = "d:if ai:c jc:c h:5 px:1 bc:border bw:1 c:ink/60 fs:xs";
 const LABEL = "px:3 py:1 c:ink/50 fs:xs ls:2 tt:u";
-const PRODUCT: Record<Product, string> = { css: "Yumma CSS", ui: "Yumma UI" };
 
 /** The title with the typed text in the accent. */
 /** The highlighted page's details, shown once, on the right. */
@@ -89,7 +87,6 @@ function Details({
 
 export function SearchDialog({ open, onClose }: SearchDialogProps) {
   const router = useRouter();
-  const pathname = usePathname();
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState<SearchCategory | null>(null);
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -97,9 +94,6 @@ export function SearchDialog({ open, onClose }: SearchDialogProps) {
   const [index, setIndex] = useState<SearchIndex | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const listRef = useRef<HTMLDivElement>(null);
-
-  // the page you are on decides which product comes first
-  const first: Product = pathname?.startsWith("/components") ? "ui" : "css";
 
   // the navbar starts the fetch on hover or focus; opening loads it otherwise, and retries a failure
   useEffect(() => {
@@ -114,10 +108,7 @@ export function SearchDialog({ open, onClose }: SearchDialogProps) {
     };
   }, [index, open]);
 
-  const categories = useMemo(
-    () => searchCategories(index, first),
-    [index, first],
-  );
+  const categories = useMemo(() => searchCategories(index), [index]);
 
   const searching = query.trim() !== "";
   const browsing = !searching && !category;
@@ -131,7 +122,7 @@ export function SearchDialog({ open, onClose }: SearchDialogProps) {
   }, [query, index, category]);
 
   const groupedResults = useMemo(() => groupByCategory(results), [results]);
-  const order = useMemo(() => categoryOrder(first, query), [first, query]);
+  const order = useMemo(() => categoryOrder(query), [query]);
 
   // what the arrow keys walk through, in the order it is drawn
   const rows: (SearchItem | SearchCategory)[] = useMemo(() => {
@@ -354,7 +345,7 @@ export function SearchDialog({ open, onClose }: SearchDialogProps) {
                 placeholder={
                   category
                     ? `Search ${category.title}`
-                    : "Search classes, components, colors"
+                    : "Search classes, options, colors"
                 }
                 value={query}
                 onChange={(e) => {
@@ -381,16 +372,8 @@ export function SearchDialog({ open, onClose }: SearchDialogProps) {
                 {browsing &&
                   categories.map((section, at) => {
                     const selected = selectedIndex === at;
-                    const head =
-                      at === 0 ||
-                      categories[at - 1].product !== section.product;
                     return (
-                      <div key={`${section.product}-${section.title}`}>
-                        {head && (
-                          <div className={`${LABEL} ${at ? "mt:3" : ""}`}>
-                            {PRODUCT[section.product]}
-                          </div>
-                        )}
+                      <div key={section.title}>
                         <Button
                           data-search-item
                           type="button"

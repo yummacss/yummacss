@@ -2,7 +2,7 @@ import { readdirSync, readFileSync } from "node:fs";
 import { join, relative } from "node:path";
 import { type Config, validateClasses } from "@yummacss/nitro";
 import { describe, expect, it } from "vitest";
-import { agentRules, EXAMPLES, SYNTAX } from "@/utils/agent-rules";
+import { agentRules, SYNTAX } from "@/utils/agent-rules";
 import { rootDir } from "./helpers";
 
 const config = (await import("../yumma.config.mjs")).default as Config;
@@ -11,7 +11,7 @@ const llms = join(rootDir, "src/app/llms.txt/route.ts");
 
 // the docs describe 4.x
 const files = [
-  ...["src/content/docs", "src/content/ui"].flatMap((dir) =>
+  ...["src/content/docs"].flatMap((dir) =>
     readdirSync(join(rootDir, dir), { recursive: true })
       .map(String)
       .filter((file) => file.endsWith(".mdx"))
@@ -71,14 +71,5 @@ describe("Class syntax", () => {
   it("gives llms.txt and agents.md the same syntax", () => {
     expect(readFileSync(llms, "utf-8")).toContain("...SYNTAX");
     expect(agentRules()).toContain(SYNTAX.join("\n"));
-  });
-
-  it("points agents only at components that exist", () => {
-    for (const { id } of EXAMPLES) {
-      expect(
-        readdirSync(join(rootDir, "src/content/ui")),
-        `src/content/ui/${id}.mdx`,
-      ).toContain(`${id}.mdx`);
-    }
   });
 });

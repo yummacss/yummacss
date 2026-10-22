@@ -20,17 +20,11 @@ interface NavItem {
 
 export interface NavSection {
   title: string;
-  _key?: string;
   items: NavItem[];
 }
 
-export interface Menus {
-  docs: NavSection[];
-  ui: NavSection[];
-}
-
 interface Props {
-  menus: Menus;
+  menu: NavSection[];
   isOpen: boolean;
   onClose: () => void;
 }
@@ -43,29 +37,18 @@ const MOTION = {
   "--sheet-offstage": "0 calc(100% - 3rem + 2px)",
 } as CSSProperties;
 
-const PRODUCT = { docs: "Yumma CSS", ui: "Yumma UI" };
-
 /** The phone menu: a sheet from the bottom with a filter and the area's links. */
-export default function MobileSheet({ menus, isOpen, onClose }: Props) {
+export default function MobileSheet({ menu, isOpen, onClose }: Props) {
   const pathname = usePathname();
-  const here = pathname.startsWith("/components") ? "ui" : "docs";
-  const there = here === "ui" ? "docs" : "ui";
   const [query, setQuery] = useState("");
   const popup = useRef<HTMLDivElement>(null);
   const { viewport, active } = useReveal(`${pathname} ${isOpen}`);
 
   const typed = query.trim();
   const sections = useMemo(() => {
-    if (!typed) return menus[here];
+    if (!typed) return menu;
     const needle = typed.toLowerCase();
-    // a filter reaches both areas, the other one's sections named by product
-    return [
-      ...menus[here],
-      ...menus[there].map((section) => ({
-        ...section,
-        title: `${PRODUCT[there]} · ${section.title}`,
-      })),
-    ]
+    return menu
       .map((section) => ({
         ...section,
         items: section.items.filter((item) =>
@@ -73,7 +56,7 @@ export default function MobileSheet({ menus, isOpen, onClose }: Props) {
         ),
       }))
       .filter((section) => section.items.length > 0);
-  }, [menus, here, there, typed]);
+  }, [menu, typed]);
 
   return (
     <Drawer.Root
@@ -133,10 +116,7 @@ export default function MobileSheet({ menus, isOpen, onClose }: Props) {
                   </p>
                 )}
                 {sections.map((section) => (
-                  <section
-                    key={`${section.title}-${section._key ?? ""}`}
-                    className="d:f fd:c"
-                  >
+                  <section key={section.title} className="d:f fd:c">
                     <h3 className="mb:2 px:7 c:ink/50 fs:sm fw:400">
                       {section.title}
                     </h3>

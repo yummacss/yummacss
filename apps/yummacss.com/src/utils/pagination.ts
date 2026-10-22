@@ -1,6 +1,5 @@
-import { allUis } from "content-collections";
 import { docs } from "@/utils/docs";
-import { getAllSlugs, getAllUISlugs } from "@/utils/sidebar";
+import { getAllSlugs } from "@/utils/sidebar";
 
 function inSidebarOrder<T extends { _meta: { path: string }; title: string }>(
   docs: T[],
@@ -13,7 +12,6 @@ function inSidebarOrder<T extends { _meta: { path: string }; title: string }>(
 }
 
 const sortedDocs = inSidebarOrder(docs, getAllSlugs());
-const sortedUis = inSidebarOrder(allUis, getAllUISlugs());
 
 function getNavigation<T extends { _meta: { path: string }; title: string }>(
   sorted: T[],
@@ -44,4 +42,3 @@ function getNavigation<T extends { _meta: { path: string }; title: string }>(
 
 export const getDocsNavigation = (slug: string) =>
   getNavigation(sortedDocs, slug);
-export const getUINavigation = (slug: string) => getNavigation(sortedUis, slug);

@@ -5,20 +5,14 @@ export interface SearchItem {
   title: string;
   description?: string;
   path: string;
-  category: "docs" | "colors" | "ui-components" | "props" | "reference";
+  category: "docs" | "colors" | "reference";
   color?: string;
-  /** What a query is matched against, when that is not the title and description. */
-  terms?: string;
-  /** A component's screenshot, shown beside the results. */
-  preview?: string;
 }
 
 /** What `/api/search` serves: the pages, fetched so their collections stay off the client. */
 export interface SearchIndex {
   docs: SearchItem[];
   properties: SearchItem[];
-  components: SearchItem[];
-  props: SearchItem[];
   reference: SearchItem[];
 }
 
@@ -59,40 +53,23 @@ function generateColorItems(): SearchItem[] {
 
 const COLOR_ITEMS = generateColorItems();
 
-/** A product's sidebar section, as a place to browse when nothing is typed. */
+/** A sidebar section, as a place to browse when nothing is typed. */
 export interface SearchCategory {
-  product: Product;
   title: string;
   pages: SearchItem[];
 }
 
-export type Product = "css" | "ui";
-
-/** The sidebar's sections with their pages, the current product's first. */
-export function searchCategories(
-  index: SearchIndex | null,
-  first: Product,
-): SearchCategory[] {
+/** The sidebar's sections with their pages. */
+export function searchCategories(index: SearchIndex | null): SearchCategory[] {
   if (!index) return [];
-  const pages = new Map(
-    [...index.docs, ...index.components].map((page) => [page.path, page]),
-  );
-  const build = (product: Product): SearchCategory[] =>
-    sidebarConfig[product === "css" ? "docs" : "ui"].map((section) => ({
-      product,
-      title: section.title,
-      pages: section.items
-        .flatMap((item) => (typeof item === "string" ? [item] : item.items))
-        .map((slug) =>
-          pages.get(
-            product === "css" ? `/docs/${slug}` : `/components/${slug}`,
-          ),
-        )
-        .filter((page): page is SearchItem => page !== undefined),
-    }));
-  return first === "css"
-    ? [...build("css"), ...build("ui")]
-    : [...build("ui"), ...build("css")];
+  const pages = new Map(index.docs.map((page) => [page.path, page]));
+  return sidebarConfig.docs.map((section) => ({
+    title: section.title,
+    pages: section.items
+      .flatMap((item) => (typeof item === "string" ? [item] : item.items))
+      .map((slug) => pages.get(`/docs/${slug}`))
+      .filter((page): page is SearchItem => page !== undefined),
+  }));
 }
 
 /** Whether the query names a color family, like "red" or "indi". */
@@ -104,15 +81,9 @@ function namesColor(query: string): boolean {
   );
 }
 
-/** The result groups in order: the current product's first, colors first when the query names one. */
-export function categoryOrder(
-  first: Product,
-  query = "",
-): SearchItem["category"][] {
-  const groups: SearchItem["category"][] =
-    first === "css"
-      ? ["docs", "reference", "ui-components", "props"]
-      : ["ui-components", "props", "docs", "reference"];
+/** The result groups in order, colors first when the query names one. */
+export function categoryOrder(query = ""): SearchItem["category"][] {
+  const groups: SearchItem["category"][] = ["docs", "reference"];
   return namesColor(query) ? ["colors", ...groups] : [...groups, "colors"];
 }
 
@@ -124,20 +95,12 @@ export function filterSearchResults(
 
   const lowerQuery = query.toLowerCase();
   const pages = index
-    ? [
-        ...index.docs,
-        ...index.properties,
-        ...index.components,
-        ...index.props,
-        ...index.reference,
-      ]
+    ? [...index.docs, ...index.properties, ...index.reference]
     : [];
-  const matches = [...pages, ...COLOR_ITEMS].filter((item) =>
-    item.terms === undefined
-      ? item.title.toLowerCase().includes(lowerQuery) ||
-        item.description?.toLowerCase().includes(lowerQuery)
-      : // a prop matches from its start, so "red" is not every `required`
-        item.terms.toLowerCase().startsWith(lowerQuery),
+  const matches = [...pages, ...COLOR_ITEMS].filter(
+    (item) =>
+      item.title.toLowerCase().includes(lowerQuery) ||
+      item.description?.toLowerCase().includes(lowerQuery),
   );
 
   const colors = matches.filter((item) => item.category === "colors");
@@ -145,8 +108,7 @@ export function filterSearchResults(
 
   const leadsWith = (item: SearchItem) =>
     item.title.toLowerCase().startsWith(lowerQuery) ||
-    (item.terms === undefined &&
-      (item.description?.toLowerCase().startsWith(lowerQuery) ?? false));
+    (item.description?.toLowerCase().startsWith(lowerQuery) ?? false);
 
   // "-a, --all" names two things; typing either one exactly puts it first
   const names = (item: SearchItem) => item.title.toLowerCase().split(/,\s*/);
@@ -181,9 +143,7 @@ export function groupByCategory(
 }
 
 export const CATEGORY_LABELS: Record<string, string> = {
-  docs: "Yumma CSS",
-  "ui-components": "Yumma UI",
-  props: "Props",
+  docs: "Pages",
   reference: "Options",
   colors: "Colors",
 };
