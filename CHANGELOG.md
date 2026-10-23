@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- **[lint]** Each file uses the `yumma.config.mjs` nearest to it, so a monorepo linted from its root gets each package's config.
+- **[lint]** `no-inline-styles` reports only properties Yumma CSS has a utility for.
+- **[lint]** Requires Node 20.19 or 22.12 and later.
+
 ## [4.8.0] - 2026-10-22
 
 ### Added
