@@ -1,10 +1,15 @@
 "use client";
 
 import { Button } from "@base-ui/react";
-import { useState } from "react";
+import { type CSSProperties, useState } from "react";
 import tinycolor from "tinycolor2";
 import { Check } from "@/icons";
-import { generateShades, getBorderColor, SHADE_LABELS } from "@/utils/colors";
+import {
+	generateShades,
+	SHADE_LABELS,
+	SWATCH,
+	swatchStyle,
+} from "@/utils/colors";
 
 interface ColorItem {
 	name: string;
@@ -18,6 +23,10 @@ interface Props {
 	blackPercentage?: number;
 }
 
+// one column per shade, however many the palette has
+const columns = (count: number) =>
+	({ "--shades": `repeat(${count}, minmax(0, 1fr))` }) as CSSProperties;
+
 export default function Palette({
 	data,
 	scale = SHADE_LABELS,
@@ -29,10 +38,8 @@ export default function Palette({
 			<div className="d:none @lg:d:f fd:c g:1 @md:fd:r @md:ai:c">
 				<div className="d:f ai:c ws:nw ta:c @md:w:24 @md:min-w:24 @md:mr:2" />
 				<div
-					className="d:g g:1 f:1 my:2 w:100%"
-					style={{
-						gridTemplateColumns: `repeat(${scale.length}, minmax(0, 1fr))`,
-					}}
+					className="d:g g:1 f:1 my:2 w:100% gtc:var(--shades)"
+					style={columns(scale.length)}
 				>
 					{scale.map((label) => (
 						<div key={`header-${label}`} className="d:f ai:c jc:c c:ink fs:sm">
@@ -57,10 +64,8 @@ export default function Palette({
 							{colorItem.name}
 						</p>
 						<div
-							className="d:g g:1 f:1 w:100%"
-							style={{
-								gridTemplateColumns: `repeat(${scale.length}, minmax(0, 1fr))`,
-							}}
+							className="d:g g:1 f:1 w:100% gtc:var(--shades)"
+							style={columns(scale.length)}
 						>
 							{shades.map((shade, index) => (
 								<ColorSwatch
@@ -101,8 +106,8 @@ function ColorSwatch({
 		<Button
 			onClick={handleClick}
 			aria-label={`${name} ${label}: ${shade}${copied ? ", copied" : ""}`}
-			className="d:f ai:c jc:c w:100% ar:1/1 p:0 c:p fv:oc:ink fv:oo:2 fv:ow:2"
-			style={{ backgroundColor: shade, border: getBorderColor(shade) }}
+			className={`d:f ai:c jc:c w:100% ar:1/1 p:0 c:p fv:oc:ink fv:oo:2 fv:ow:2 ${SWATCH}`}
+			style={swatchStyle(shade)}
 		>
 			{copied && (
 				<Check

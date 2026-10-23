@@ -14,7 +14,7 @@ import {
 	NavArrowUp,
 	Search,
 } from "@/icons";
-import { getBorderColor } from "@/utils/colors";
+import { SWATCH, swatchStyle } from "@/utils/colors";
 import {
 	CATEGORY_LABELS,
 	categoryOrder,
@@ -50,13 +50,7 @@ function Details({
 	if (item.category === "colors" && item.color) {
 		return (
 			<div className="d:f fd:c g:4 p:5">
-				<div
-					className="h:40"
-					style={{
-						backgroundColor: item.color,
-						border: getBorderColor(item.color),
-					}}
-				/>
+				<div className={`h:40 ${SWATCH}`} style={swatchStyle(item.color)} />
 				<div className="d:f fd:c g:1">
 					<span className="c:ink ff:display fs:xl">{item.title}</span>
 					<span className="c:ink/70">{item.description}</span>
@@ -435,11 +429,8 @@ export function SearchDialog({ open, onClose }: SearchDialogProps) {
 																	className={`d:f fd:c g:1 p:1 bw:1 bg:transparent c:p ${selected ? "bc:ink/60" : "bc:transparent"}`}
 																>
 																	<span
-																		className="d:b h:8"
-																		style={{
-																			backgroundColor: item.color,
-																			border: getBorderColor(item.color ?? ""),
-																		}}
+																		className={`d:b h:8 ${SWATCH}`}
+																		style={swatchStyle(item.color ?? "")}
 																	/>
 																	<span className="c:ink/60 fs:xs">
 																		{copiedColor === item.title
@@ -501,6 +492,7 @@ export function SearchDialog({ open, onClose }: SearchDialogProps) {
 									<span
 										aria-hidden="true"
 										className="p:a l:5 ff:display ws:nw us:none pe:none footer-version"
+										// oxlint-disable-next-line yummacss/no-inline-styles -- sized to the panel, off the scale like the footer's version
 										style={{ bottom: "-0.18em", fontSize: "9rem" }}
 									>
 										{wash}
