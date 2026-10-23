@@ -1,0 +1,42 @@
+---
+title: Transition Timing Function
+description: Set the speed curve for a transition effect.
+---
+
+<Baseline path="css.properties.transition-timing-function" />
+
+<Reference category="transition" name="transition-timing-function" />
+
+## Variants
+
+<Variants category="transition" name="transition-timing-function" />
+
+## Working with easings
+
+Name a curve once in `theme.easings`, written as any CSS timing function. Each name becomes a `ttf:` & an `atf:` class.
+
+<CodeGroup>
+
+```mjs title="yumma.config.mjs" mark={5-7}
+import { defineConfig } from "yummacss";
+
+export default defineConfig({
+  theme: {
+    easings: {
+      "out-quart": "cubic-bezier(0.25, 1, 0.5, 1)",
+    },
+  },
+});
+```
+
+```tsx title="page.tsx" "ttf:out-quart"
+<div className="tp:t tdu:250 ttf:out-quart h:s:95"></div>
+```
+
+```css title="output.css"
+.ttf\:out-quart {
+  transition-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+}
+```
+
+</CodeGroup>

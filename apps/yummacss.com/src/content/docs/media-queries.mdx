@@ -1,0 +1,95 @@
+---
+title: Media Queries
+description: Use media queries to create responsive layouts.
+---
+
+## Mobile-first approach
+
+Every utility takes a breakpoint prefix, from `@xs:` to `@xxl:`, and applies from that width up.
+
+```tsx ins={2} del={1}
+<h1 className="… @sm:ta:c">Good evening!</h1>
+<h1 className="ta:c … @sm:ta:l">Good evening!</h1>
+```
+
+Yumma CSS breakpoints reference:
+
+| Prefix | Min Width          | CSS Rule                       |
+| ------ | ------------------ | ------------------------------ |
+| `@xs`  | `32 rem` (512 px)  | `@media (min-width: 32 rem)`   |
+| `@sm`  | `40 rem` (640 px)  | `@media (min-width: 40 rem)`   |
+| `@md`  | `48 rem` (768 px)  | `@media (min-width: 48 rem)`   |
+| `@lg`  | `64 rem` (1024 px) | `@media (min-width: 64 rem)`   |
+| `@xl`  | `80 rem` (1280 px) | `@media (min-width: 80 rem)`   |
+| `@xxl` | `96 rem` (1536 px) | `@media (min-width: 96 rem)`   |
+
+### Customize breakpoints
+
+You can extend or override the default media query breakpoints using the `theme.screens` configuration option in your `yumma.config.mjs` file.
+
+<Stepper>
+  <Step title="Create a config file">
+    ```mjs title="yumma.config.mjs" mark={4-8}
+    import { defineConfig } from "yummacss";
+
+    export default defineConfig({
+      theme: {
+        screens: {
+          "3xl": "112rem",
+        },
+      },
+    });
+    ```
+  </Step>
+
+  <Step title="Use custom breakpoints">
+    The bundler plugins & `yummacss watch` pick up config changes automatically.
+    ```tsx "@3xl:d:b"
+    <div className="d:none @3xl:d:b"></div>
+    ```
+  </Step>
+</Stepper>
+
+## Using Media Queries
+
+Resize your browser window to see how these elements respond to viewport width.
+
+```tsx "@sm:d:b" "@md:d:b" "@lg:d:b" "@xl:d:b" "@xxl:d:b"
+<p className="d:b … @sm:d:none">Small screen</p>
+<p className="d:none @md:d:none … @sm:d:b">Medium screen</p>
+<p className="d:none @lg:d:none … @md:d:b">Large screen</p>
+<p className="d:none @xl:d:none … @lg:d:b">Extra large screen</p>
+<p className="d:none … @xxl:d:b">Double extra large screen</p>
+```
+
+## Touch devices
+
+The `@pc:*` variant targets devices with a coarse pointer (typically touch screens). Use this to apply larger tap targets & touch-friendly spacing.
+
+<Note>
+  Activates on touch-enabled devices with coarse pointer input.
+</Note>
+
+```tsx "@pc:p:6"
+<button type="button" className="p:4 bg:indigo c:white @pc:p:6">
+  Larger padding on touch devices
+</button>
+```
+
+Touch Device Reference:
+
+| Prefix | Media Query                | Description   |
+| ------ | -------------------------- | ------------- |
+| `@pc:`  | `@media (pointer: coarse)` | Touch devices |
+
+## Reduced motion
+
+The `@prm:*` variant applies when someone has asked their system for less motion. Use it to stop an animation or a transition.
+
+```tsx "@prm:tp:none"
+<div className="tp:o tdu:150 @st:o:0 @prm:tp:none">Saved</div>
+```
+
+## Container Queries
+
+To follow a parent's width instead, use [Container Queries](/docs/container-queries).

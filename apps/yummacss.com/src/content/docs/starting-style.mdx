@@ -1,0 +1,65 @@
+---
+title: Starting Style
+description: Set where a transition starts when an element appears.
+since: "4.2"
+---
+
+<Baseline path="css.at-rules.starting-style" />
+
+## Animating in
+
+`@st:` gives an element that appears a style to transition from, so an enter animation is just classes.
+
+<CodeGroup>
+
+```tsx title="page.tsx" "@st:o:0"
+<div className="tp:o tdu:150 @st:o:0">Saved to Documents</div>
+```
+
+```css title="output.css"
+@starting-style {
+  .\@st\:o\:0 {
+    opacity: 0;
+  }
+}
+```
+
+</CodeGroup>
+
+The element renders at `opacity: 0`, then transitions to its normal opacity over `150ms`.
+
+## Fade & grow
+
+Stack several starting values, with a [Transition Property](/docs/transition-property) that covers each.
+
+```tsx "@st:o:0" "@st:s:90"
+<div className="tp:a tdu:150 ttf:eo @st:o:0 @st:s:90">Settings</div>
+```
+
+## With breakpoints
+
+`@st:` is an at-rule, so it nests inside a breakpoint.
+
+<CodeGroup>
+
+```tsx title="page.tsx" "@md:@st:o:0"
+<div className="tp:o tdu:150 @md:@st:o:0"></div>
+```
+
+```css title="output.css"
+@media (min-width: 48rem) {
+  @starting-style {
+    .\@md\:\@st\:o\:0 {
+      opacity: 0;
+    }
+  }
+}
+```
+
+</CodeGroup>
+
+<Note>
+  `@st:` only covers the way in. To animate an element on its way out, style
+  the state your component library sets while it leaves with
+  [States](/docs/states).
+</Note>

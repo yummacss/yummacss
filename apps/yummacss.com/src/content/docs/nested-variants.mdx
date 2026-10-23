@@ -1,0 +1,125 @@
+---
+title: Nested Variants
+description: "Stack variants to apply a utility under more than one condition."
+---
+
+## Stacking variants
+
+Chain prefixes on one utility, and every condition must hold.
+
+<CodeGroup>
+
+```tsx title="page.tsx" "@sm:h:bg:red"
+<button type="button" className="bg:indigo @sm:h:bg:red">Hover me</button>
+```
+
+```css title="output.css"
+@media (min-width: 40rem) {
+  .\@sm\:h\:bg\:red:hover {
+    background-color: #e63946;
+  }
+}
+```
+
+</CodeGroup>
+
+The background changes on hover, and only above `40rem`.
+
+## Order does not matter
+
+`@sm:h:bg:red` & `h:@sm:bg:red` compile to the same rule.
+
+Pick one order & keep to it. Both class names generate their own rule, so mixing them across a project ships the same declaration twice.
+
+## Useful combinations
+
+### Media query & pseudo class
+
+The most valuable pairing. Hover is unreliable on touch, so gating a hover style behind a breakpoint is a normal thing to want.
+
+```tsx "@lg:h:td:u"
+<a href="/docs" className="c:blue @lg:h:td:u">Documentation</a>
+```
+
+`@pc:` composes the same way, which lets you target coarse pointers directly instead of inferring them from width.
+
+```tsx "@pc:a:bg:indigo-7"
+<button type="button" className="p:4 bg:indigo @pc:a:bg:indigo-7">Tap me</button>
+```
+
+### Pseudo class & pseudo element
+
+<CodeGroup>
+
+```tsx title="page.tsx" "h:s::bg:indigo"
+<p className="h:s::bg:indigo">Hover this text, then select it.</p>
+```
+
+```css title="output.css"
+.h\:s\:\:bg\:indigo:hover::selection {
+  background-color: #6366f1;
+}
+```
+
+</CodeGroup>
+
+### Media query & pseudo element
+
+```tsx "@sm:p::c:silver"
+<input className="@sm:p::c:silver" placeholder="Enter your email…" />
+```
+
+### Opacity on top
+
+An opacity modifier is a suffix rather than a prefix, so it combines with any stack.
+
+<CodeGroup>
+
+```tsx title="page.tsx" "@sm:h:bg:red/50"
+<div className="@sm:h:bg:red/50 …"></div>
+```
+
+```css title="output.css"
+@media (min-width: 40rem) {
+  .\@sm\:h\:bg\:red\/50:hover {
+    background-color: color-mix(in srgb, #e63946 50%, transparent);
+  }
+}
+```
+
+</CodeGroup>
+
+## At-rules nest
+
+A class can carry several at-rules, such as a breakpoint & `@prm:`. Each wraps the next.
+
+<CodeGroup>
+
+```tsx title="page.tsx" "@md:@st:o:0"
+<div className="tp:o tdu:150 @md:@st:o:0"></div>
+```
+
+```css title="output.css"
+@media (min-width: 48rem) {
+  @starting-style {
+    .\@md\:\@st\:o\:0 {
+      opacity: 0;
+    }
+  }
+}
+```
+
+</CodeGroup>
+
+`@sm:@lg:bg:red` applies only from `64rem`, so write `@lg:bg:red`.
+
+## Two Pseudo Classes
+
+Two pseudo classes must both match: `f:h:bg:red` applies only while focused *and* hovered.
+
+That is a different rule from styling either state, not a shorter way of writing it. Pick the one that says what you mean.
+
+```tsx ins={2} del={1}
+<button type="button" className="f:h:bg:red">Both at once</button>
+<button type="button" className="f:bg:red h:bg:red">Either one</button>
+```

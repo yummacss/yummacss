@@ -1,0 +1,184 @@
+---
+title: Installation
+description: Install Yumma CSS using a bundler plugin or the CLI.
+---
+
+<Cover />
+
+## Setting up a framework
+
+Add Yumma CSS to your chosen framework with just one plugin.
+
+### Using Vite
+
+Use the `@yummacss/vite` plugin with Vite & Vite-based frameworks like SvelteKit, Astro, Nuxt, and Solid. Generated CSS is rebuilt automatically as you work.
+
+<Stepper>
+  <Step title="Install Yumma CSS">
+    ```bash
+    pnpm add yummacss @yummacss/vite -D
+    ```
+  </Step>
+
+  <Step title="Add the plugin">
+    Register the plugin in your Vite configuration.
+
+    ```ts title="vite.config.ts" mark={2,5}
+    import { defineConfig } from "vite";
+    import yummacss from "@yummacss/vite";
+
+    export default defineConfig({
+      plugins: [yummacss()],
+    });
+    ```
+
+  </Step>
+
+  <Step title="Configure sources">
+    Specify the locations/paths of your project files in the config file.
+
+    ```mjs title="yumma.config.mjs" mark={4}
+    import { defineConfig } from "yummacss";
+
+    export default defineConfig({
+      source: ["./src/**/*.{ts,tsx}"],
+    });
+    ```
+
+  </Step>
+
+  <Step title="Add the marker">
+    Add the `@yummacss;` marker to your CSS entry file. The plugin replaces it with generated CSS.
+
+    ```css title="src/styles.css"
+    @yummacss;
+    ```
+
+  </Step>
+</Stepper>
+
+### Using Next.js
+
+Use the `@yummacss/postcss` plugin with Next.js. It works with both Turbopack & Webpack through the built-in PostCSS support.
+
+<Stepper>
+  <Step title="Install Yumma CSS">
+    ```bash
+    pnpm add yummacss @yummacss/postcss -D
+    ```
+  </Step>
+
+  <Step title="Configure PostCSS">
+    Register the plugin in your PostCSS configuration.
+
+    ```mjs title="postcss.config.mjs" mark={3}
+    export default {
+      plugins: {
+        "@yummacss/postcss": {},
+      },
+    };
+    ```
+
+  </Step>
+
+  <Step title="Configure sources">
+    Specify the locations/paths of your project files in the config file.
+
+    ```mjs title="yumma.config.mjs" mark={4}
+    import { defineConfig } from "yummacss";
+
+    export default defineConfig({
+      source: ["./src/**/*.{ts,tsx}"],
+    });
+    ```
+
+  </Step>
+
+  <Step title="Add the marker">
+    Add the `@yummacss;` marker to your global CSS file. The plugin replaces it with generated CSS.
+
+    ```css title="globals.css"
+    @yummacss;
+    ```
+
+  </Step>
+</Stepper>
+
+### Plugin options
+
+Both plugins read `yumma.config.mjs` from where the build runs. Use these options when the config lives elsewhere.
+
+In a monorepo, PostCSS often runs from the repo root, so `cwd` points it at your app.
+
+| Option | Type | Default | Description |
+| --- | --- | --- | --- |
+| `config` | `Config` | | Inline configuration, read instead of the file. |
+| `configPath` | `string` | `yumma.config.mjs` | Path to the config file. |
+| `cwd` | `string` | `process.cwd()` | PostCSS only. Where the config & `source` globs resolve from. |
+
+```js title="postcss.config.mjs" "cwd"
+export default {
+  plugins: {
+    "@yummacss/postcss": { cwd: import.meta.dirname },
+  },
+};
+```
+
+## Running without a framework
+
+Not using a framework? Yumma CSS runs without one.
+
+### Using the CLI
+
+Prefer generating a plain CSS file? Install Yumma CSS with your favorite package manager & use the CLI:
+
+<Stepper>
+  <Step title="Install Yumma CSS">
+    ```bash
+    pnpm add yummacss -D
+    ```
+  </Step>
+
+  <Step title="Initialize configuration">
+    Create a configuration file in your project.
+
+    ```bash
+    pnpm dlx yummacss init
+    ```
+
+  </Step>
+
+  <Step title="Configure sources">
+    Specify the locations/paths of your project files in the config file.
+
+    ```mjs title="yumma.config.mjs" mark={4-5}
+    import { defineConfig } from "yummacss";
+
+    export default defineConfig({
+      source: ["./src/**/*.{ts,tsx}"],
+      output: "./src/styles.css",
+    });
+    ```
+
+  </Step>
+
+  <Step title="Build styles">
+    Start using Yumma CSS classes, then generate your styles.
+
+    ```bash
+    pnpm dlx yummacss build
+    ```
+
+  </Step>
+</Stepper>
+
+## Reading the utilities
+
+`@yummacss/core` returns every utility definition, one function per category.
+
+```js "coreUtils"
+import { boxModelUtils, coreUtils } from "@yummacss/core";
+
+const boxModel = boxModelUtils();
+const everything = coreUtils();
+```

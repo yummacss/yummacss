@@ -1,0 +1,62 @@
+---
+title: States
+description: Name your own variants for the attributes your components set.
+since: "4.2"
+---
+
+## Defining a state
+
+Name an attribute your components set, such as `[open]`, in `theme.states`, and it becomes a variant like `h:`.
+
+```mjs title="yumma.config.mjs" mark={5-8}
+import { defineConfig } from "yummacss";
+
+export default defineConfig({
+  theme: {
+    states: {
+      closing: "[data-ending-style]",
+      open: "[open]",
+    },
+  },
+});
+```
+
+## Using states
+
+<CodeGroup>
+
+```tsx title="page.tsx" "closing:o:0"
+<div className="tp:o tdu:150 closing:o:0">Rename file</div>
+```
+
+```css title="output.css"
+.closing\:o\:0[data-ending-style] {
+  opacity: 0;
+}
+```
+
+</CodeGroup>
+
+A state stacks with other variants: `@md:h:open:bg:silver-1`.
+
+## Animating out
+
+Pair it with [Starting Style](/docs/starting-style) to animate a popup in and out.
+
+```tsx "@st:o:0" "closing:o:0"
+<div className="tp:a tdu:150 @st:o:0 @st:s:90 closing:o:0 closing:s:90">
+  Settings
+</div>
+```
+
+## Rules
+
+- Nothing is built in. Every state is one you name.
+- A name is lower case letters, digits & dashes.
+- A selector starts with `[` or `:`, since it is appended to the class.
+- A name cannot reuse a variant (`h`, `f`) or a utility (`o`, `bg`). The config refuses it when it loads, with a message saying which.
+
+<Note>
+  [Class Merge](/docs/class-merge) does not know your states, so two
+  conflicting classes under the same state are both kept.
+</Note>

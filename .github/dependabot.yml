@@ -1,5 +1,16 @@
 version: 2
 updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    open-pull-requests-limit: 10
+    labels:
+      - "dependencies"
+    # the site moves to new Yumma CSS releases through yummacss.yml
+    allow:
+      - dependency-name: "web-features"
+
   # Without this, action versions never move - they drifted two to three majors
   # behind & only surfaced as a Node 20 deprecation warning. Grouped into a
   # single weekly PR so it stays quiet.

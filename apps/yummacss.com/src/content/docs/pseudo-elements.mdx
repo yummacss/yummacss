@@ -1,0 +1,56 @@
+---
+title: Pseudo Elements
+description: "Style ::before, ::after, ::selection & ::placeholder with a prefix."
+---
+
+## Before
+
+Creates a pseudo-element that is the first child of the selected element.
+
+<Note>
+  Pseudo Elements require content to be visible. Make sure to set content via
+  CSS or inline styles when using `::before`.
+</Note>
+
+```tsx "b::p:a" "b::bg:indigo/10"
+<div className="p:r p:8 b::p:a b::i:0 b::bg:indigo/10">Styled content</div>
+```
+
+## After
+
+Creates a pseudo-element that is the last child of the selected element.
+
+<Note>
+  Like `::before`, the `::after` pseudo-element requires content to be visible.
+</Note>
+
+```tsx "a::p:a" "a::c:indigo"
+<div className="p:r a::p:a a::c:indigo">Styled content</div>
+```
+
+## Selection
+
+Applies styles to highlighted/selected text.
+
+```tsx "s::bg:indigo"
+<p className="… s::bg:indigo">
+  Select this text to see custom selection colors!
+</p>
+```
+
+## Placeholder
+
+Styles the placeholder text for `input` or `textarea` elements.
+
+```tsx "p::c:silver"
+<input className="… p::c:silver" placeholder="Enter your email…" />
+```
+
+Here's a reference for all the pseudo-element variants available in Yumma CSS:
+
+| Pseudo-element  | Prefix | Description                                     |
+| --------------- | ------ | ----------------------------------------------- |
+| `::after`       | `a::*` | Styles the last child pseudo-element            |
+| `::before`      | `b::*` | Styles the first child pseudo-element           |
+| `::selection`   | `s::*` | Styles the portion of text that is selected     |
+| `::placeholder` | `p::*` | Styles placeholder text in inputs & textareas |

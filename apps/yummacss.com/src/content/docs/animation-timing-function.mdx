@@ -1,0 +1,41 @@
+---
+title: Animation Timing Function
+description: Set how an animation progresses through each cycle.
+since: "4.2"
+---
+
+<Baseline path="css.properties.animation-timing-function" />
+
+<Reference category="animation" name="animation-timing-function" />
+
+## Variants
+
+<Variants category="animation" name="animation-timing-function" />
+
+## Working with easings
+
+Name a curve once in `theme.easings`, written as any CSS timing function. Each name becomes a `ttf:` & an `atf:` class.
+
+<CodeGroup>
+```mjs title="yumma.config.mjs" mark={5-7}
+import { defineConfig } from "yummacss";
+
+export default defineConfig({
+  theme: {
+    easings: {
+      "out-quart": "cubic-bezier(0.25, 1, 0.5, 1)",
+    },
+  },
+});
+```
+
+```tsx title="page.tsx" "atf:out-quart"
+<span className="d:b an:spin adu:700 atf:out-quart aic:inf"></span>
+```
+
+```css title="output.css"
+.atf\:out-quart {
+  animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+}
+```
+</CodeGroup>

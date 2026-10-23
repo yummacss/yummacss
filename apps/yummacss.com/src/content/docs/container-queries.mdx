@@ -1,0 +1,56 @@
+---
+title: Container Queries
+description: Style an element by the width of its container instead of the viewport.
+since: "4.2"
+---
+
+<Baseline path="css.at-rules.container" />
+
+## Using Container Queries
+
+Mark the parent with [`ct:is`](/docs/container-type) and prefix a child's class with `@c:`. It applies once the container reaches that width.
+
+<CodeGroup>
+
+```tsx title="page.tsx" "ct:is" "@c:sm:fs:xl"
+<div className="ct:is">
+  <h2 className="fs:md @c:sm:fs:xl">Recent files</h2>
+</div>
+```
+
+```css title="output.css"
+.ct\:is {
+  container-type: inline-size;
+}
+
+@container (min-width: 40rem) {
+  .\@c\:sm\:fs\:xl {
+    font-size: 1.25rem;
+  }
+}
+```
+
+</CodeGroup>
+
+The same card can sit in a narrow sidebar & a wide page & lay itself out for each, because it measures the space it is given.
+
+## Breakpoints
+
+`@c:` takes every breakpoint name, including the ones you add with `theme.screens`.
+
+| Prefix     | Container Width    | CSS Rule                             |
+| ---------- | ------------------ | ------------------------------------ |
+| `@c:xs`    | `32 rem` (512 px)  | `@container (min-width: 32rem)`      |
+| `@c:sm`    | `40 rem` (640 px)  | `@container (min-width: 40rem)`      |
+| `@c:md`    | `48 rem` (768 px)  | `@container (min-width: 48rem)`      |
+| `@c:lg`    | `64 rem` (1024 px) | `@container (min-width: 64rem)`      |
+| `@c:xl`    | `80 rem` (1280 px) | `@container (min-width: 80rem)`      |
+| `@c:xxl`   | `96 rem` (1536 px) | `@container (min-width: 96rem)`      |
+
+## Stacking
+
+A container query stacks with any other variant, like every at-rule.
+
+```tsx "@c:md:h:o:80"
+<a className="o:100 @c:md:h:o:80">Open folder</a>
+```

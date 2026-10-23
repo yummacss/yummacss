@@ -1,0 +1,90 @@
+---
+title: Normalization
+description: Normalize CSS styles across browsers.
+---
+
+## Box Sizing
+
+Apply a modern box model & remove browser defaults to simplify layout consistency.
+
+```css normalize="*, :before, :after; *"
+```
+
+## Document
+
+Set a default system font, improve rendering, and apply accessible line-height.
+
+```css normalize="html; body"
+```
+
+## Media elements
+
+Ensure images & videos behave predictably in all layouts.
+
+```css normalize="canvas, img, picture, svg, video"
+```
+
+## Form elements
+
+Form controls take the surrounding font & drop the browser's background, so their look comes from classes.
+
+```css normalize="button, input, optgroup, select, textarea"
+```
+
+Buttons have a pointer cursor.
+
+```css normalize="button"
+```
+
+Disabled controls are dimmed & show a not-allowed cursor. The rule weighs as much as one class, so a utility on the control wins.
+
+```css normalize=":where(button, input, select, textarea):disabled"
+```
+
+## Typography
+
+Headings balance their lines, paragraphs avoid a lone last word, and headings inherit their size & weight.
+
+```css normalize="h1, h2, h3, h4, h5, h6, p; h1, h2, h3, h4, h5, h6; p"
+```
+
+Chrome, Edge, and Safari bold weight correction:
+
+```css normalize="b, strong"
+```
+
+Monospace elements keep the browser's own font stack at the surrounding size:
+
+```css normalize="pre, code, kbd, samp"
+```
+
+Links inherit their color & carry no underline, so a class decides both:
+
+```css normalize="a"
+```
+
+## Lists
+
+Lists have no markers or indent.
+
+```css normalize="ol, ul"
+```
+
+## Rules
+
+A horizontal rule is a single line in the text color.
+
+```css normalize="hr"
+```
+
+## Disabling base styles
+
+Base styles are enabled by default to disable it set `normalize` to `false` in `yumma.config.mjs`.
+
+```mjs title="yumma.config.mjs" mark={4}
+import { defineConfig } from "yummacss";
+
+export default defineConfig({
+  normalize: false,
+});
+```

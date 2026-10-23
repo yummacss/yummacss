@@ -1,0 +1,122 @@
+---
+title: Color System
+description: "Reference for all built-in color families & shades."
+---
+
+import { COLOR_FAMILIES, SHADE_LABELS } from "@/utils/colors";
+
+## Default palette
+
+Yumma CSS provides {COLOR_FAMILIES.length} color families, each with {SHADE_LABELS.length} shades.
+
+<Palette data={COLOR_FAMILIES} />
+
+## Using Color utilities
+
+Apply color system utilities to style your elements.
+
+```tsx
+<div className="bg:red …"></div>
+<div className="bg:green …"></div>
+<div className="bg:blue …"></div>
+```
+
+## Using color shades
+
+Each family is one base color plus 12 shades: `1–6` lighter, `7–12` darker.
+
+| Suffix    | Direction |
+| --------- | --------- |
+| `1 to 6`  | Lightest  |
+| (none)    | Base      |
+| `7 to 12` | Darkest   |
+
+The step size is controlled by `percentage.light` & `percentage.dark` in your config. Both default to `14`.
+
+```tsx
+<div className="bg:red-5 …"></div>
+<div className="bg:green-5 …"></div>
+<div className="bg:blue-5 …"></div>
+```
+
+## Using opacity modifiers
+
+Target specific opacity values across color utilities. Opacity variants range from `0` to `95` in increments of `5`.
+
+```tsx
+<div className="bg:indigo-3/80 …"></div>
+<div className="bg:indigo/60 …"></div>
+<div className="bg:indigo-9/40 …"></div>
+```
+
+## Custom colors
+
+Extend or override the default palette using the `theme.colors` configuration option.
+
+<Stepper>
+  <Step title="Configure custom colors">
+    ```mjs title="yumma.config.mjs" mark={4-9}
+    import { defineConfig } from "yummacss";
+
+    export default defineConfig({
+      theme: {
+        colors: {
+          background: "#f5f6f7", // add new color family
+          blue: "#1a73e8", // overrides the default blue.
+        },
+      },
+    });
+    ```
+
+  </Step>
+
+  <Step title="Use custom colors">
+    The bundler plugins & `yummacss watch` pick up config changes automatically.
+
+    ```tsx "bg:background" "c:blue"
+    <div className="bg:background …">
+      <h1 className="c:blue …">Good evening</h1>
+    </div>
+    ```
+
+  </Step>
+</Stepper>
+
+Dark mode is opt-in per color. See [Dark Mode](/docs/dark-mode).
+
+## Custom color shades
+
+Set `theme.colors.percentage` to change how far each shade steps from the base.
+
+<Stepper>
+  <Step title="Configure custom colors">
+    ```mjs title="yumma.config.mjs" mark={8-11}
+    import { defineConfig } from "yummacss";
+
+    export default defineConfig({
+      theme: {
+        colors: {
+          background: "#f5f6f7",
+          blue: "#1a73e8",
+          percentage: {
+            light: 16, // default is 14
+            dark: 16, // default is 14
+          },
+        },
+      },
+    });
+    ```
+
+  </Step>
+
+  <Step title="Use custom colors">
+    The bundler plugins & `yummacss watch` pick up config changes automatically.
+
+    ```tsx title="page.tsx"
+    <div className="bg:background-6 …">
+      <h1 className="c:blue-5 …">Good evening</h1>
+    </div>
+    ```
+
+  </Step>
+</Stepper>

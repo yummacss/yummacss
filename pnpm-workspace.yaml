@@ -1,3 +1,15 @@
 packages:
   - 'packages/*'
-
+  - 'apps/*'
+# pnpm 11 refuses to finish an install while a dependency's build script is
+# neither allowed nor denied, so these have to be real booleans - the scaffold
+# it writes leaves them as placeholder strings, which reads as "not allowed"
+# and exits 1 before Next.js is ever reached.
+allowBuilds:
+  esbuild: true
+  sharp: true
+# Our own packages, so the release-age wait buys nothing. A bare name covers
+# every version, so a release needs no new line here.
+minimumReleaseAgeExclude:
+  - '@yummacss/*'
+  - yummacss

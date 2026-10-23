@@ -1,0 +1,96 @@
+---
+title: Pseudo Classes
+description: "Use pseudo classes to style elements."
+---
+
+## Active
+
+Represents an element activated by the user (e.g., clicking a button).
+
+```tsx "a:bg:indigo-7"
+<button className="… a:bg:indigo-7">
+  Press me
+</button>
+```
+
+## Focus
+
+Represents an element that received focus via click, tap, or the **Tab** key.
+
+```tsx "f:oc:indigo-4" "f:oo:2" "f:os:s" "f:ow:2"
+<button className="… f:oc:indigo-4 f:oo:2 f:os:s f:ow:2">
+  Click me
+</button>
+```
+
+## Hover
+
+Matches an element when the user interacts with it using a pointing device.
+
+```tsx "h:bg:indigo-7"
+<button className="… h:bg:indigo-7">
+  Hover me
+</button>
+```
+
+## Focus visible
+
+Triggers when an element matches `:focus` & the browser determines focus should be evident.
+
+```tsx "fv:ow:2" "fv:oc:indigo-2"
+<button className="… fv:ow:2 fv:oc:indigo-2">
+  Focus me
+</button>
+```
+
+## Focus within
+
+Matches an element if the element or any of its descendants are focused.
+
+```tsx "fw:oc:indigo-6"
+<div className="… fw:oc:indigo-6">
+  <input placeholder="Focus me" />
+</div>
+```
+
+## Checked
+
+Represents radio, checkbox, or option elements toggled to an "on" state.
+
+```tsx "c:bg:indigo-4"
+<input type="checkbox" checked />
+<label className="… c:bg:indigo-4">
+  Checked checkbox
+</label>
+```
+
+## Disabled
+
+Represents disabled elements that cannot be activated or receive focus.
+
+```tsx "d:bg:silver-4" "d:c:silver-9"
+<button className="… d:bg:silver-4 d:c:silver-9" disabled>
+  Disabled
+</button>
+```
+
+Here's a reference for all the pseudo-variants available in Yumma CSS.
+
+| Pseudo-class     | Prefix | Description                                 |
+| ---------------- | ------ | ------------------------------------------- |
+| `:active`        | `a:*`  | Applied when the element is being pressed   |
+| `:checked`       | `c:*`  | Applied when a radio or checkbox is checked |
+| `:disabled`      | `d:*`  | Applied when the element is disabled        |
+| `:empty`         | `e:*`  | Applied when the element has no children    |
+| `:focus`         | `f:*`  | Applied when the element receives focus     |
+| `:focus-visible` | `fv:*` | Applied when focused via keyboard           |
+| `:focus-within`  | `fw:*` | Applied when element or child has focus     |
+| `:hover`         | `h:*`  | Applied when the element is hovered         |
+| `:first-child`   | `fc:*` | Applied when it's the first child           |
+| `:invalid`       | `i:*`  | Applied when the element value is invalid   |
+| `:indeterminate` | `in:*` | Applied when state is indeterminate         |
+| `:last-child`    | `lc:*` | Applied when it's the last child            |
+| `:nth-child`     | `nc:*` | Applied when matches nth-child(n)           |
+| `:required`      | `r:*`  | Applied when the element is required        |
+| `:read-only`     | `ro:*` | Applied when the element is read-only       |
+| `:valid`         | `v:*`  | Applied when the element value is valid     |
