@@ -1,8 +1,8 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it } from "vite-plus/test";
 import { normalizeCSS } from "../packages/nitro/src/normalize";
 
 // [ids, classes, elements] for the selector forms the reset uses
-const specificity = (selector: string) => {
+const specificity = (selector: string): [number, number, number] => {
 	const s = selector.replace(/:where\((?:[^()]|\([^()]*\))*\)/g, "");
 	const ids = (s.match(/#[\w-]+/g) ?? []).length;
 	const classes = (
@@ -13,7 +13,7 @@ const specificity = (selector: string) => {
 };
 
 const selectors = [...normalizeCSS.matchAll(/([^{}]+)\{/g)].flatMap(
-	([, list]) =>
+	([, list = ""]) =>
 		list
 			.trim()
 			.split(/,(?![^(]*\))/)

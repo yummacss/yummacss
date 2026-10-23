@@ -5,7 +5,7 @@ Core utility definitions for Yumma CSS.
 ## Usage
 
 ```typescript
-import { coreUtils, colorUtils, boxModelUtils } from '@yummacss/core';
+import { coreUtils, colorUtils, boxModelUtils } from "@yummacss/core";
 
 const allUtils = coreUtils();
 const colors = colorUtils();

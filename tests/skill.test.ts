@@ -1,7 +1,7 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { validateClasses } from "@yummacss/nitro";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it } from "vite-plus/test";
 
 const skill = readFileSync(
 	join(import.meta.dirname, "../skills/yummacss/SKILL.md"),
@@ -10,7 +10,7 @@ const skill = readFileSync(
 
 // the classes the skill shows, as `code` with a colon and no space or slash prefix
 const shown = [...skill.matchAll(/`([^`\s]+)`/g)]
-	.map(([, code]) => code)
+	.map(([, code = ""]) => code)
 	.filter((code) => /^[@a-z][^:]*::?[^:]/.test(code) && !code.includes("//"));
 
 // the skill shows these as what not to write

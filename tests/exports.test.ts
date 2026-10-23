@@ -4,7 +4,7 @@ import {
 	pseudoClasses,
 	pseudoElements,
 } from "@yummacss/core";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it } from "vite-plus/test";
 
 describe("Variant Exports", () => {
 	it("should export mediaQueries as an array", () => {

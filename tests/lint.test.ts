@@ -1,6 +1,6 @@
 import { join } from "node:path";
 import { validateClasses } from "@yummacss/nitro";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it } from "vite-plus/test";
 import { extractClasses, lintProject } from "yummacss/services/lint";
 
 const fixtureDir = join(__dirname, "fixtures", "lint-app");

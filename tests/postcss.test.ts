@@ -1,7 +1,7 @@
 import { join } from "node:path";
 import yummacss from "@yummacss/postcss";
 import postcss from "postcss";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it } from "vite-plus/test";
 
 const fixtureDir = join(__dirname, "fixtures", "plugin-app");
 

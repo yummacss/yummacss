@@ -15,7 +15,7 @@ import yummacss from "@yummacss/vite";
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  plugins: [yummacss()],
+	plugins: [yummacss()],
 });
 ```
 

@@ -8,14 +8,19 @@
 		"yummacss"
 	],
 	"homepage": "https://yummacss.com",
+	"license": "MIT",
+	"author": "Renildo Pereira",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/yummacss/yummacss.git",
 		"directory": "packages/nitro"
 	},
-	"license": "MIT",
-	"author": "Renildo Pereira",
+	"files": [
+		"dist"
+	],
 	"type": "module",
+	"module": "dist/index.mjs",
+	"types": "dist/index.d.mts",
 	"exports": {
 		".": {
 			"types": "./dist/index.d.mts",
@@ -26,16 +31,13 @@
 			"default": "./dist/browser.mjs"
 		}
 	},
-	"module": "dist/index.mjs",
-	"types": "dist/index.d.mts",
-	"files": [
-		"dist"
-	],
+	"publishConfig": {
+		"access": "public",
+		"provenance": true
+	},
 	"scripts": {
-		"build": "tsdown",
-		"check": "tsc --noEmit",
-		"dev": "tsdown --watch",
-		"lint": "biome check --write",
+		"build": "vp pack",
+		"dev": "vp pack --watch",
 		"prepublishOnly": "pnpm build"
 	},
 	"dependencies": {
@@ -43,9 +45,5 @@
 		"fastest-levenshtein": "^1.0.16",
 		"tinyglobby": "^0.2.15",
 		"zod": "^4.3.4"
-	},
-	"publishConfig": {
-		"access": "public",
-		"provenance": true
 	}
 }

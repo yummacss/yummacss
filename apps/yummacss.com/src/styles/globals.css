@@ -2,7 +2,7 @@
 @yummacss;
 
 [data-base-ui-portal] > * {
-  z-index: 20;
+	z-index: 20;
 }
 
 /* the site's own popups carry data-chrome and follow the site theme */
@@ -24,15 +24,15 @@
 [role="menubar"]:not([data-chrome], [data-chrome] *) *,
 [role="navigation"]:not([data-chrome], [data-chrome] *),
 [role="navigation"]:not([data-chrome], [data-chrome] *) * {
-  color-scheme: light;
-  font-family:
-    system-ui,
-    -apple-system,
-    Segoe UI,
-    Roboto,
-    Helvetica,
-    Arial,
-    sans-serif;
+	color-scheme: light;
+	font-family:
+		system-ui,
+		-apple-system,
+		Segoe UI,
+		Roboto,
+		Helvetica,
+		Arial,
+		sans-serif;
 }
 
 [data-preview]::selection,
@@ -53,24 +53,24 @@
 [role="menubar"]:not([data-chrome], [data-chrome] *) *::selection,
 [role="navigation"]:not([data-chrome], [data-chrome] *)::selection,
 [role="navigation"]:not([data-chrome], [data-chrome] *) *::selection {
-  background-color: Highlight;
-  color: HighlightText;
+	background-color: Highlight;
+	color: HighlightText;
 }
 
 /* No line-height step reaches .74, and a theme colour drops its alpha. */
 .footer-version {
-  line-height: 0.74;
-  color: light-dark(rgb(76 95 199 / 0.45), rgb(190 198 242 / 0.32));
+	line-height: 0.74;
+	color: light-dark(rgb(76 95 199 / 0.45), rgb(190 198 242 / 0.32));
 }
 
 [data-fold] > summary {
-  list-style: none;
+	list-style: none;
 }
 
 [data-fold] > summary::-webkit-details-marker {
-  display: none;
+	display: none;
 }
 
 [data-fold]:not([open]) > summary {
-  display: inline;
+	display: inline;
 }

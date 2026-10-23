@@ -47,7 +47,7 @@ export async function migrate(options: MigrateOptions = {}): Promise<number> {
 
 		if (skipped.size > 0) {
 			const lines = [...skipped]
-				.sort()
+				.sort((a, b) => (String(a) < String(b) ? -1 : 1))
 				.map(([token, reason]) => m.migrate.skipped(token, reason));
 			say.warn("skipped", `${m.migrate.skippedNote}\n${lines.join("\n")}`);
 		}

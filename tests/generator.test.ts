@@ -5,7 +5,7 @@ import {
 	generator,
 	validateClasses,
 } from "@yummacss/nitro";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it } from "vite-plus/test";
 import { normalizeCSS } from "../packages/nitro/src/normalize";
 import { tokenizer } from "../packages/nitro/src/tokenizer";
 
@@ -22,11 +22,11 @@ const parses = (theme: Config["theme"]) =>
 	ConfigSchema.safeParse({ theme }).success;
 
 const mediaPrefixes = () =>
-	(coreUtils().display.variants?.mediaQueries ?? []).map((q) => q.prefix);
+	(coreUtils().display?.variants?.mediaQueries ?? []).map((q) => q.prefix);
 
 describe("breakpoints", () => {
 	it("has a query for every t-shirt width alias", () => {
-		const widths = (coreUtils().display.variants?.mediaQueries ?? [])
+		const widths = (coreUtils().display?.variants?.mediaQueries ?? [])
 			.filter((query) => query.value.startsWith("@media (min-width"))
 			.map((query) => query.prefix);
 

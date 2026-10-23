@@ -23,11 +23,13 @@ const GROUPS = [
 	"transition",
 ];
 
+// the order a plain sort() gives
+const byCode = (a, b) => (a < b ? -1 : a > b ? 1 : 0);
+
 export function buildMap() {
 	const byPrefix = new Map();
 
 	for (const group of GROUPS) {
-		// biome-ignore lint/performance/noDynamicNamespaceImportAccess: a build script, never bundled
 		const utils = core[`${group}Utils`];
 		const resolved =
 			typeof utils === "function" ? utils({ colors: core.colorTheme }) : utils;
@@ -50,12 +52,13 @@ export function buildMap() {
 				Object.keys(b.values ?? {}).length - Object.keys(a.values ?? {}).length,
 		);
 		const [fallback, ...rest] = sorted;
-		prefixes.set(prefix, [...fallback.properties].sort());
+		prefixes.set(prefix, [...fallback.properties].sort(byCode));
 
 		for (const util of rest) {
 			for (const value of Object.keys(util.values ?? {})) {
 				const table = byValue.get(prefix) ?? new Map();
-				if (!table.has(value)) table.set(value, [...util.properties].sort());
+				if (!table.has(value))
+					table.set(value, [...util.properties].sort(byCode));
 				byValue.set(prefix, table);
 			}
 		}
@@ -63,7 +66,7 @@ export function buildMap() {
 		// var() goes to the first utility, in declaration order, that takes it
 		const owner = candidates.find((util) => util.functions !== false);
 		if (owner && owner !== fallback) {
-			byVar.set(prefix, [...owner.properties].sort());
+			byVar.set(prefix, [...owner.properties].sort(byCode));
 		}
 	}
 
@@ -71,7 +74,7 @@ export function buildMap() {
 		...core.pseudoClasses.map((v) => `${v.prefix}:`),
 		...core.pseudoElements.map((v) => `${v.prefix}::`),
 		...core.mediaQueries.map((v) => `@${v.prefix}:`),
-	].sort();
+	].sort(byCode);
 
 	return { prefixes, byValue, byVar, variants };
 }
@@ -121,7 +124,7 @@ ${variants.map((v) => `\t${JSON.stringify(v)},`).join("\n")}
 export function format(source) {
 	return execFileSync(
 		"pnpm",
-		["exec", "biome", "format", "--stdin-file-path=merge-map.ts"],
+		["exec", "vp", "fmt", "--stdin-filepath=merge-map.ts"],
 		{ input: source, encoding: "utf8", cwd: root },
 	);
 }

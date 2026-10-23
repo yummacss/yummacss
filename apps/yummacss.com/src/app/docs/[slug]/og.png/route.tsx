@@ -4,12 +4,12 @@ import { docsOg, ogImage } from "@/utils/og-image";
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return docs.map((doc) => ({ slug: doc._meta.path }));
+	return docs.map((doc) => ({ slug: doc._meta.path }));
 }
 
 export async function GET(
-  _: Request,
-  { params }: { params: Promise<{ slug: string }> },
+	_: Request,
+	{ params }: { params: Promise<{ slug: string }> },
 ) {
-  return ogImage(docsOg((await params).slug));
+	return ogImage(docsOg((await params).slug));
 }

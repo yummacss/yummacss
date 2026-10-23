@@ -49,7 +49,7 @@ export const boxShadowInsetValues: Record<string, string> = {
 };
 
 export const grayscaleValues: Record<string, string> = {
-	0: `grayscale(${grayscale * 0}%)`,
+	0: "grayscale(0%)",
 	10: `grayscale(${grayscale}%)`,
 	20: `grayscale(${grayscale * 2}%)`,
 	30: `grayscale(${grayscale * 3}%)`,
