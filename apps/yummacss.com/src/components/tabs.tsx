@@ -50,15 +50,7 @@ export function TabsList({
 			{...props}
 		>
 			{children}
-			<BaseTabs.Indicator
-				className="p:a l:0 t:50% h:6 bc:border bg:surface bw:1 tdu:200 ttf:io"
-				style={{
-					zIndex: -1,
-					translate: "var(--active-tab-left) -50%",
-					width: "var(--active-tab-width)",
-					transitionProperty: "translate, width",
-				}}
-			/>
+			<BaseTabs.Indicator className="p:a l:0 t:0 b:0 my:auto h:6 zi:-10 w:var(--active-tab-width) ttx:var(--active-tab-left) bc:border bg:surface bw:1 tp:a tdu:200 ttf:io" />
 		</BaseTabs.List>
 	);
 }
@@ -81,10 +73,7 @@ export function TabsTab({
 		<BaseTabs.Tab
 			value={value}
 			className={`d:f ai:c jc:c bw:0 m:0 px:2 py:0 c:ink/80 fs:sm fw:500 us:none ws:nw h:8 a:none os:none bg:transparent ${className}`}
-			style={{
-				fontFamily: "inherit",
-				...style,
-			}}
+			style={style}
 			{...props}
 		>
 			{children}
