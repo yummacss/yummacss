@@ -1,7 +1,7 @@
 import { execFileSync } from "node:child_process";
-import { mkdtempSync, rmSync, writeFileSync } from "node:fs";
+import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
-import { join, resolve } from "node:path";
+import { dirname, join, resolve } from "node:path";
 import { describe, expect, it } from "vite-plus/test";
 
 const oxlint = resolve(__dirname, "../node_modules/.bin/oxlint");
@@ -139,6 +139,17 @@ describe("yummacss/no-inline-styles", () => {
 		]);
 	});
 
+	it("should leave properties no utility writes alone", () => {
+		const messages = lint(
+			'const a = <stop style={{ stopColor: "light-dark(#fff, #000)", fontSize: "9rem" }} />;',
+			{ "yummacss/no-inline-styles": "error" },
+		);
+
+		expect(messages.map((m) => m.message)).toEqual([
+			"`font-size: 9rem` is set inline. Use a class from the scale, or pass a value that changes at runtime through a custom property.",
+		]);
+	});
+
 	it("should skip allowed properties", () => {
 		const messages = lint(
 			'const a = <div style={{ width: "37px", gridTemplateAreas: "a b" }} />;',
@@ -148,5 +159,91 @@ describe("yummacss/no-inline-styles", () => {
 		);
 
 		expect(messages).toEqual([]);
+	});
+});
+
+// lints a project of several files from its root, as a monorepo's lint does
+function lintTree(
+	files: Record<string, string>,
+	rules: Record<string, unknown>,
+): { output: string; reported: string[] } {
+	const dir = mkdtempSync(join(tmpdir(), "yummacss-lint-"));
+	try {
+		for (const [path, source] of Object.entries(files)) {
+			mkdirSync(dirname(join(dir, path)), { recursive: true });
+			writeFileSync(join(dir, path), source);
+		}
+		writeFileSync(
+			join(dir, ".oxlintrc.json"),
+			JSON.stringify({ plugins: [], jsPlugins: [plugin], rules }),
+		);
+		let output: string;
+		try {
+			output = execFileSync(
+				oxlint,
+				["-c", ".oxlintrc.json", "--format", "json"],
+				{
+					cwd: dir,
+					encoding: "utf8",
+					stdio: ["ignore", "pipe", "pipe"],
+				},
+			);
+		} catch (error) {
+			const failed = error as { stdout: string; stderr: string };
+			output = `${failed.stdout}${failed.stderr}`;
+		}
+		const json = output.slice(output.indexOf("{"));
+		const reported = json.startsWith("{")
+			? (
+					JSON.parse(json) as {
+						diagnostics: { code?: string; filename: string; message: string }[];
+					}
+				).diagnostics
+					.filter((d) => d.code?.startsWith("yummacss("))
+					.map((d) => `${d.filename}: ${d.message.split("`")[1]}`)
+					.sort()
+			: [];
+		return { output, reported };
+	} finally {
+		rmSync(dir, { recursive: true, force: true });
+	}
+}
+
+describe("config lookup", () => {
+	const brand = 'export default { theme: { colors: { brand: "#4c5fc7" } } };';
+	const row = 'const a = <div className="c:brand d:f" />;';
+
+	it("should give each file the nearest yumma.config.mjs above it", () => {
+		const { reported } = lintTree(
+			{
+				"apps/site/yumma.config.mjs": brand,
+				"apps/site/src/ui/row.jsx": row,
+				"apps/other/row.jsx": row,
+			},
+			{ "yummacss/no-unknown-classes": "error" },
+		);
+
+		expect(reported).toEqual(["apps/other/row.jsx: c:brand"]);
+	});
+
+	it("should find a shared config at the root from any folder", () => {
+		const { reported } = lintTree(
+			{ "yumma.config.mjs": brand, "packages/a/src/row.jsx": row },
+			{ "yummacss/no-unknown-classes": "error" },
+		);
+
+		expect(reported).toEqual([]);
+	});
+
+	it("should name a config that does not load", () => {
+		const { output } = lintTree(
+			{
+				"apps/site/yumma.config.mjs": "export default {",
+				"apps/site/row.jsx": row,
+			},
+			{ "yummacss/no-unknown-classes": "error" },
+		);
+
+		expect(output).toMatch(/could not load .*apps\/site\/yumma\.config\.mjs/);
 	});
 });

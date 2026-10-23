@@ -1,10 +1,11 @@
 import { existsSync } from "node:fs";
-import { join } from "node:path";
+import { createRequire } from "node:module";
+import { dirname, join, resolve } from "node:path";
 import { coreUtils } from "@yummacss/core";
 import {
 	type Config,
+	ConfigSchema,
 	configName,
-	loadConfig,
 	suggestClasses,
 	validateClasses,
 } from "@yummacss/nitro";
@@ -17,6 +18,7 @@ interface Node {
 
 interface Context {
 	options: unknown[];
+	physicalFilename: string;
 	report(descriptor: {
 		node: Node;
 		messageId: string;
@@ -88,15 +90,59 @@ function policy(context: Context) {
 	};
 }
 
-// a project without a config file gets the defaults
-const config: Config = existsSync(join(process.cwd(), configName))
-	? (await loadConfig({ cwd: process.cwd() })).config
-	: {};
+// a config and the verdicts it gave, since a class can pass in one package and fail in another
+interface Scope {
+	config: Config;
+	verdicts: Map<string, { suggestion?: string } | null>;
+}
 
-// nitro rebuilds its tables on every call, so each class is checked once
-const verdicts = new Map<string, { suggestion?: string } | null>();
+const defaults: Scope = { config: {}, verdicts: new Map() };
+const byFolder = new Map<string, Scope>();
 
-function check(classNames: string[]): void {
+// rules run synchronously, so the config is required rather than imported
+const requireConfig = createRequire(import.meta.url);
+
+function load(path: string): Scope {
+	try {
+		const module = requireConfig(path) as { default?: unknown };
+		return {
+			config: ConfigSchema.parse(module.default ?? module),
+			verdicts: new Map(),
+		};
+	} catch (error) {
+		const reason = error instanceof Error ? error.message : String(error);
+		throw new Error(`@yummacss/lint could not load ${path}: ${reason}`, {
+			cause: error,
+		});
+	}
+}
+
+// the nearest yumma.config.mjs above a file; a file with none gets the defaults
+function scopeFor(file: string): Scope {
+	const walked: string[] = [];
+	let folder = dirname(resolve(file));
+	let scope = byFolder.get(folder);
+	while (!scope) {
+		walked.push(folder);
+		const path = join(folder, configName);
+		if (existsSync(path)) {
+			scope = load(path);
+			break;
+		}
+		const parent = dirname(folder);
+		if (parent === folder) {
+			scope = defaults;
+			break;
+		}
+		folder = parent;
+		scope = byFolder.get(folder);
+	}
+	for (const seen of walked) byFolder.set(seen, scope);
+	return scope;
+}
+
+// nitro rebuilds its tables on every call, so each class is checked once per config
+function check(classNames: string[], { config, verdicts }: Scope): void {
 	const fresh = [...new Set(classNames)].filter((name) => !verdicts.has(name));
 	if (fresh.length === 0) return;
 
@@ -198,9 +244,13 @@ const noUnknownClasses: Rule = {
 				for (const argument of node.arguments as Node[]) collect(argument);
 			},
 			"Program:exit"() {
-				check(found.map((entry) => entry.name));
+				const scope = scopeFor(context.physicalFilename);
+				check(
+					found.map((entry) => entry.name),
+					scope,
+				);
 				for (const { name, node } of found) {
-					const verdict = verdicts.get(name);
+					const verdict = scope.verdicts.get(name);
 					if (!verdict) continue;
 					const suggestion = verdict.suggestion ?? "";
 					rule.report(node, suggestion ? "didYouMean" : "unknown", {
@@ -215,7 +265,10 @@ const noUnknownClasses: Rule = {
 
 // one class per single-property declaration, read from core's own tables
 const byDeclaration = new Map<string, string>();
+// every property some utility writes; the rest have no class to point to
+const writable = new Set<string>();
 for (const utility of Object.values(coreUtils())) {
+	for (const property of utility.properties) writable.add(property);
 	if (utility.properties.length !== 1) continue;
 	const [property] = utility.properties;
 	for (const [key, value] of Object.entries(utility.values)) {
@@ -236,7 +289,7 @@ const noInlineStyles: Rule = {
 		type: "suggestion",
 		docs: {
 			description:
-				"Report inline styles, naming the Yumma CSS class that writes the same declaration.",
+				"Report inline styles Yumma CSS can write, naming the class that writes the same declaration.",
 		},
 		messages: {
 			useClass: "`{{property}}` is set inline. Use `{{suggestions}}` instead.",
@@ -263,6 +316,7 @@ const noInlineStyles: Rule = {
 					if (typeof raw !== "string" || raw.startsWith("--")) continue;
 
 					const name = kebab(raw);
+					if (!writable.has(name)) continue;
 					if (rule.allows(name) || rule.allows(raw)) continue;
 
 					const value = (property.value as Node).value;

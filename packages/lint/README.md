@@ -10,7 +10,7 @@ pnpm add -D oxlint @yummacss/lint
 
 ## Usage
 
-A JS plugin for Oxlint. It reads `yumma.config.mjs` from where the linter runs, so your own colors and states pass.
+A JS plugin for Oxlint. Each file uses the `yumma.config.mjs` nearest to it, so your own colors and states pass, in every package of a monorepo too.
 
 ```json
 // .oxlintrc.json
@@ -25,10 +25,10 @@ A JS plugin for Oxlint. It reads `yumma.config.mjs` from where the linter runs, 
 
 The plugin uses the ESLint plugin format, which is what Oxlint loads, so ESLint can run it too.
 
-| Rule                 | What it reports                                                                                                                               |
-| -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| `no-unknown-classes` | A class Yumma CSS does not generate, such as `bg:redd-5`, with the closest class that exists.                                                 |
-| `no-inline-styles`   | A property in a `style` object, with the class that writes the same declaration, such as `d:f` for `display: "flex"`. Custom properties pass. |
+| Rule                 | What it reports                                                                                                                                                       |
+| -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `no-unknown-classes` | A class Yumma CSS does not generate, such as `bg:redd-5`, with the closest class that exists.                                                                         |
+| `no-inline-styles`   | A property in a `style` object that a Yumma CSS utility writes, with the class for the same declaration, such as `d:f` for `display: "flex"`. Custom properties pass. |
 
 Both rules read `className` and `class`, and the arguments of `cn`, `cx`, `clsx`, `classNames` and `merge` from `yummacss/merge`.
 
