@@ -1,7 +1,7 @@
 import type { Utility } from "@yummacss/core";
 import { coreUtils } from "@yummacss/core";
 import { generator } from "@yummacss/nitro";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it } from "vite-plus/test";
 import { merge } from "yummacss/merge";
 
 describe("Check for class name collisions", () => {

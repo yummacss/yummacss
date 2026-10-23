@@ -48,3 +48,4 @@ next-env.d.ts
 .opencode/
 .claude/*
 !.claude/settings.json
+.vitest/

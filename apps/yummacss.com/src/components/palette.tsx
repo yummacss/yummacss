@@ -7,109 +7,109 @@ import { Check } from "@/icons";
 import { generateShades, getBorderColor, SHADE_LABELS } from "@/utils/colors";
 
 interface ColorItem {
-  name: string;
-  color: string;
+	name: string;
+	color: string;
 }
 
 interface Props {
-  data: ColorItem[];
-  scale?: string[];
-  whitePercentage?: number;
-  blackPercentage?: number;
+	data: ColorItem[];
+	scale?: string[];
+	whitePercentage?: number;
+	blackPercentage?: number;
 }
 
 export default function Palette({
-  data,
-  scale = SHADE_LABELS,
-  whitePercentage = 14,
-  blackPercentage = 14,
+	data,
+	scale = SHADE_LABELS,
+	whitePercentage = 14,
+	blackPercentage = 14,
 }: Props) {
-  return (
-    <div className="d:f fd:c g:1">
-      <div className="d:none @lg:d:f fd:c g:1 @md:fd:r @md:ai:c">
-        <div className="d:f ai:c ws:nw ta:c @md:w:24 @md:min-w:24 @md:mr:2" />
-        <div
-          className="d:g g:1 f:1 my:2 w:100%"
-          style={{
-            gridTemplateColumns: `repeat(${scale.length}, minmax(0, 1fr))`,
-          }}
-        >
-          {scale.map((label) => (
-            <div key={`header-${label}`} className="d:f ai:c jc:c c:ink fs:sm">
-              {label}
-            </div>
-          ))}
-        </div>
-      </div>
+	return (
+		<div className="d:f fd:c g:1">
+			<div className="d:none @lg:d:f fd:c g:1 @md:fd:r @md:ai:c">
+				<div className="d:f ai:c ws:nw ta:c @md:w:24 @md:min-w:24 @md:mr:2" />
+				<div
+					className="d:g g:1 f:1 my:2 w:100%"
+					style={{
+						gridTemplateColumns: `repeat(${scale.length}, minmax(0, 1fr))`,
+					}}
+				>
+					{scale.map((label) => (
+						<div key={`header-${label}`} className="d:f ai:c jc:c c:ink fs:sm">
+							{label}
+						</div>
+					))}
+				</div>
+			</div>
 
-      {data.map((colorItem) => {
-        const shades = generateShades(
-          colorItem.color,
-          whitePercentage,
-          blackPercentage,
-        );
-        return (
-          <div
-            key={colorItem.name}
-            className="d:f fd:c g:1 ai:c @md:ai:c @md:fd:r"
-          >
-            <p className="d:f ai:c c:ink ws:nw o:h fs:sm @md:w:24 @md:min-w:24 @md:mr:2">
-              {colorItem.name}
-            </p>
-            <div
-              className="d:g g:1 f:1 w:100%"
-              style={{
-                gridTemplateColumns: `repeat(${scale.length}, minmax(0, 1fr))`,
-              }}
-            >
-              {shades.map((shade, index) => (
-                <ColorSwatch
-                  key={`${colorItem.name}-${scale[index]}`}
-                  name={colorItem.name}
-                  shade={shade}
-                  label={scale[index]}
-                />
-              ))}
-            </div>
-          </div>
-        );
-      })}
-    </div>
-  );
+			{data.map((colorItem) => {
+				const shades = generateShades(
+					colorItem.color,
+					whitePercentage,
+					blackPercentage,
+				);
+				return (
+					<div
+						key={colorItem.name}
+						className="d:f fd:c g:1 ai:c @md:ai:c @md:fd:r"
+					>
+						<p className="d:f ai:c c:ink ws:nw o:h fs:sm @md:w:24 @md:min-w:24 @md:mr:2">
+							{colorItem.name}
+						</p>
+						<div
+							className="d:g g:1 f:1 w:100%"
+							style={{
+								gridTemplateColumns: `repeat(${scale.length}, minmax(0, 1fr))`,
+							}}
+						>
+							{shades.map((shade, index) => (
+								<ColorSwatch
+									key={`${colorItem.name}-${scale[index]}`}
+									name={colorItem.name}
+									shade={shade}
+									label={scale[index]}
+								/>
+							))}
+						</div>
+					</div>
+				);
+			})}
+		</div>
+	);
 }
 
 function ColorSwatch({
-  name,
-  shade,
-  label,
+	name,
+	shade,
+	label,
 }: {
-  name: string;
-  shade: string;
-  label: string;
+	name: string;
+	shade: string;
+	label: string;
 }) {
-  const [copied, setCopied] = useState(false);
+	const [copied, setCopied] = useState(false);
 
-  const handleClick = async () => {
-    await navigator.clipboard.writeText(
-      tinycolor(shade).toHexString().toUpperCase(),
-    );
-    setCopied(true);
-    setTimeout(() => setCopied(false), 1500);
-  };
+	const handleClick = async () => {
+		await navigator.clipboard.writeText(
+			tinycolor(shade).toHexString().toUpperCase(),
+		);
+		setCopied(true);
+		setTimeout(() => setCopied(false), 1500);
+	};
 
-  return (
-    <Button
-      onClick={handleClick}
-      aria-label={`${name} ${label}: ${shade}${copied ? ", copied" : ""}`}
-      className="d:f ai:c jc:c w:100% ar:1/1 p:0 c:p fv:oc:ink fv:oo:2 fv:ow:2"
-      style={{ backgroundColor: shade, border: getBorderColor(shade) }}
-    >
-      {copied && (
-        <Check
-          aria-hidden
-          className={`w:4 h:4 ${tinycolor(shade).isLight() ? "c:black" : "c:white"}`}
-        />
-      )}
-    </Button>
-  );
+	return (
+		<Button
+			onClick={handleClick}
+			aria-label={`${name} ${label}: ${shade}${copied ? ", copied" : ""}`}
+			className="d:f ai:c jc:c w:100% ar:1/1 p:0 c:p fv:oc:ink fv:oo:2 fv:ow:2"
+			style={{ backgroundColor: shade, border: getBorderColor(shade) }}
+		>
+			{copied && (
+				<Check
+					aria-hidden
+					className={`w:4 h:4 ${tinycolor(shade).isLight() ? "c:black" : "c:white"}`}
+				/>
+			)}
+		</Button>
+	);
 }

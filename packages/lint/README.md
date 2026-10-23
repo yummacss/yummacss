@@ -15,20 +15,20 @@ A JS plugin for Oxlint. It reads `yumma.config.mjs` from where the linter runs, 
 ```json
 // .oxlintrc.json
 {
-  "jsPlugins": ["@yummacss/lint"],
-  "rules": {
-    "yummacss/no-unknown-classes": "error",
-    "yummacss/no-inline-styles": "warn"
-  }
+	"jsPlugins": ["@yummacss/lint"],
+	"rules": {
+		"yummacss/no-unknown-classes": "error",
+		"yummacss/no-inline-styles": "warn"
+	}
 }
 ```
 
 The plugin uses the ESLint plugin format, which is what Oxlint loads, so ESLint can run it too.
 
-| Rule | What it reports |
-| --- | --- |
-| `no-unknown-classes` | A class Yumma CSS does not generate, such as `bg:redd-5`, with the closest class that exists. |
-| `no-inline-styles` | A property in a `style` object, with the class that writes the same declaration, such as `d:f` for `display: "flex"`. Custom properties pass. |
+| Rule                 | What it reports                                                                                                                               |
+| -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| `no-unknown-classes` | A class Yumma CSS does not generate, such as `bg:redd-5`, with the closest class that exists.                                                 |
+| `no-inline-styles`   | A property in a `style` object, with the class that writes the same declaration, such as `d:f` for `display: "flex"`. Custom properties pass. |
 
 Both rules read `className` and `class`, and the arguments of `cn`, `cx`, `clsx`, `classNames` and `merge` from `yummacss/merge`.
 

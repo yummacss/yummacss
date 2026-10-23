@@ -78,7 +78,7 @@ export default function yummacss(options: Options = {}): Plugin {
 
 				for (const id of markerModules) {
 					const mod = devServer.moduleGraph.getModuleById(id);
-					if (mod) devServer.reloadModule(mod);
+					if (mod) void devServer.reloadModule(mod);
 				}
 			});
 		},

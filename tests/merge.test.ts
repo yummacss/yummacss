@@ -1,6 +1,6 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it } from "vite-plus/test";
 import { merge } from "yummacss/merge";
 import {
 	buildMap,
@@ -35,8 +35,9 @@ describe("merge", () => {
 
 	it("drops the falsy values a condition leaves behind", () => {
 		const count = 0;
+		const many = count < 1;
 		expect(merge("p:4", count && "ml:6", false, null, undefined)).toBe("p:4");
-		expect(merge("p:4", 3 > 1 && "ml:6")).toBe("p:4 ml:6");
+		expect(merge("p:4", many && "ml:6")).toBe("p:4 ml:6");
 	});
 
 	it("keeps variants apart", () => {

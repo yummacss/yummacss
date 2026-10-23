@@ -10,30 +10,32 @@
 		"yummacss"
 	],
 	"homepage": "https://yummacss.com",
+	"license": "MIT",
+	"author": "Renildo Pereira",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/yummacss/yummacss.git",
 		"directory": "packages/vite"
 	},
-	"license": "MIT",
-	"author": "Renildo Pereira",
+	"files": [
+		"dist"
+	],
 	"type": "module",
+	"module": "dist/index.mjs",
+	"types": "dist/index.d.mts",
 	"exports": {
 		".": {
 			"types": "./dist/index.d.mts",
 			"default": "./dist/index.mjs"
 		}
 	},
-	"module": "dist/index.mjs",
-	"types": "dist/index.d.mts",
-	"files": [
-		"dist"
-	],
+	"publishConfig": {
+		"access": "public",
+		"provenance": true
+	},
 	"scripts": {
-		"build": "tsdown",
-		"check": "tsc --noEmit",
-		"dev": "tsdown --watch",
-		"lint": "biome check --write",
+		"build": "vp pack",
+		"dev": "vp pack --watch",
 		"prepublishOnly": "pnpm build"
 	},
 	"dependencies": {
@@ -42,13 +44,10 @@
 	},
 	"devDependencies": {
 		"@types/picomatch": "^4.0.2",
-		"vite": "^8.3.3"
+		"vite": "catalog:",
+		"vite-plus": "catalog:"
 	},
 	"peerDependencies": {
 		"vite": "^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0"
-	},
-	"publishConfig": {
-		"access": "public",
-		"provenance": true
 	}
 }

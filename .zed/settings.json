@@ -1,22 +1,47 @@
 {
-  "languages": {
-    "TypeScript": {
-      "formatter": {
-        "language_server": {
-          "name": "biome",
-        },
-      },
-      "code_actions_on_format": {
-        "source.fixAll.biome": true,
-        "source.organizeImports.biome": true,
-      },
-    },
-    "JSON": {
-      "formatter": {
-        "language_server": {
-          "name": "biome",
-        },
-      },
-    },
-  },
+	"lsp": {
+		"oxlint": {
+			"initialization_options": {
+				"settings": {
+					"run": "onType",
+					"fixKind": "safe_fix",
+					"typeAware": true,
+					"unusedDisableDirectives": "deny"
+				}
+			}
+		},
+		"oxfmt": {
+			"initialization_options": {
+				"settings": {
+					"fmt.configPath": "./vite.config.ts",
+					"run": "onSave"
+				}
+			}
+		}
+	},
+	"languages": {
+		"JavaScript": {
+			"format_on_save": "on",
+			"prettier": { "allowed": false },
+			"formatter": [
+				{ "language_server": { "name": "oxfmt" } },
+				{ "code_action": "source.fixAll.oxc" }
+			]
+		},
+		"TypeScript": {
+			"format_on_save": "on",
+			"prettier": { "allowed": false },
+			"formatter": [{ "language_server": { "name": "oxfmt" } }]
+		},
+		"TSX": {
+			"format_on_save": "on",
+			"prettier": { "allowed": false },
+			"formatter": [{ "language_server": { "name": "oxfmt" } }]
+		},
+		"JSON": {
+			"format_on_save": "on",
+			"prettier": { "allowed": false },
+			"formatter": [{ "language_server": { "name": "oxfmt" } }]
+		}
+	}
 }

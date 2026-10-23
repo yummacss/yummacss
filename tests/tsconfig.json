@@ -4,12 +4,14 @@
 		"paths": {
 			"@yummacss/core": ["../packages/core/src"],
 			"@yummacss/nitro": ["../packages/nitro/src"],
+			"@yummacss/nitro/browser": ["../packages/nitro/src/browser"],
 			"@yummacss/lint": ["../packages/lint/src"],
 			"@yummacss/postcss": ["../packages/postcss/src"],
 			"@yummacss/vite": ["../packages/vite/src"],
+			"yummacss/*": ["../packages/cli/src/*"],
 			"@/*": ["../packages/core/src/*"]
 		},
-		"types": ["vitest/globals"]
+		"types": ["vite-plus/test/globals", "node"]
 	},
 	"include": ["./**/*.ts"]
 }

@@ -1,6 +1,6 @@
 import { acceptsNegative, coreUtils } from "@yummacss/core";
 import { generator, validateClasses } from "@yummacss/nitro";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it } from "vite-plus/test";
 
 const config = { buildOptions: { reset: false } };
 
@@ -84,15 +84,12 @@ describe("Negative values", () => {
 		expect(css("s:-10")).toContain("scale: -.1");
 	});
 
-	it.each([
-		"m:-auto",
-		"w:-auto",
-		"bg:-red-1",
-		"h:-dvh",
-		"m:-100%",
-	])("%s is not a silent alias of its positive form", (className) => {
-		expect(css(className)).toBeNull();
-	});
+	it.each(["m:-auto", "w:-auto", "bg:-red-1", "h:-dvh", "m:-100%"])(
+		"%s is not a silent alias of its positive form",
+		(className) => {
+			expect(css(className)).toBeNull();
+		},
+	);
 
 	it("leaves the positive forms of those alone", () => {
 		expect(css("m:auto")).toContain("margin: auto");

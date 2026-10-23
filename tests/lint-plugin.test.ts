@@ -2,7 +2,7 @@ import { execFileSync } from "node:child_process";
 import { mkdtempSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join, resolve } from "node:path";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it } from "vite-plus/test";
 
 const oxlint = resolve(__dirname, "../node_modules/.bin/oxlint");
 const plugin = resolve(__dirname, "../packages/lint/src/index.ts");
@@ -27,7 +27,10 @@ function lint(code: string, rules: Record<string, unknown>): Message[] {
 			output = execFileSync(
 				oxlint,
 				["-c", ".oxlintrc.json", "--format", "json", "row.jsx"],
-				{ cwd: dir, encoding: "utf8" },
+				{
+					cwd: dir,
+					encoding: "utf8",
+				},
 			);
 		} catch (error) {
 			output = (error as { stdout: string }).stdout;
@@ -41,7 +44,7 @@ function lint(code: string, rules: Record<string, unknown>): Message[] {
 		};
 		return diagnostics
 			.filter((d) => d.code.startsWith("yummacss("))
-			.map((d) => ({ message: d.message, ...d.labels[0].span }))
+			.map((d) => ({ message: d.message, ...d.labels[0]!.span }))
 			.sort((a, b) => a.line - b.line || a.column - b.column)
 			.map(({ message, line, column }) => ({ message, line, column }));
 	} finally {
@@ -66,7 +69,6 @@ describe("yummacss/no-unknown-classes", () => {
 	it("should read ternaries, template chunks and class functions", () => {
 		const messages = lint(
 			"const a = <span className={on ? 'c:indigo fw:600' : 'fw:66'} />;\n" +
-				// biome-ignore lint/suspicious/noTemplateCurlyInString: JSX source under test
 				"const b = <kbd className={`px:2 ${x} zz:9`} />;\n" +
 				"const c = cn('d:f', on && 'qq:1', ['p:4', 'xx:2'], { 'yy:3': on });",
 			{ "yummacss/no-unknown-classes": "error" },

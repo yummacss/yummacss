@@ -64,7 +64,7 @@ Short. These were said out loud enough times to belong in a file.
   `https://www.yummacss.com/...` again.
 - The same link rule applies in chat, not only in PR bodies.
 - **PR bodies**: one short block per topic, each under its own bold heading,
-  then the checks line (`tsc`, test count, biome, `next build`). A sentence or
+  then the checks line (`vp check`, test count, `next build`). A sentence or
   two per topic saying **what changed**, and nothing else. No cause, no
   history, no justification: a reader outside the project does not care why a
   thing was renamed from A to B. The why goes in the notes.

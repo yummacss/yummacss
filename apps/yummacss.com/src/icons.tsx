@@ -1,27 +1,27 @@
 import type { Icon, IconProps } from "@phosphor-icons/react";
 import {
-  ArrowCounterClockwiseIcon,
-  ArrowElbowDownLeftIcon,
-  ArrowUpRightIcon,
-  BookOpenIcon,
-  CaretDownIcon,
-  CaretLeftIcon,
-  CaretRightIcon,
-  CaretUpIcon,
-  CheckIcon,
-  CopyIcon,
-  CubeIcon,
-  DiamondIcon,
-  FileIcon,
-  FileMdIcon,
-  FolderIcon,
-  MagnifyingGlassIcon,
-  PlusIcon,
-  SignOutIcon,
-  SlidersHorizontalIcon,
-  TerminalWindowIcon,
-  TextTIcon,
-  TwitterLogoIcon,
+	ArrowCounterClockwiseIcon,
+	ArrowElbowDownLeftIcon,
+	ArrowUpRightIcon,
+	BookOpenIcon,
+	CaretDownIcon,
+	CaretLeftIcon,
+	CaretRightIcon,
+	CaretUpIcon,
+	CheckIcon,
+	CopyIcon,
+	CubeIcon,
+	DiamondIcon,
+	FileIcon,
+	FileMdIcon,
+	FolderIcon,
+	MagnifyingGlassIcon,
+	PlusIcon,
+	SignOutIcon,
+	SlidersHorizontalIcon,
+	TerminalWindowIcon,
+	TextTIcon,
+	TwitterLogoIcon,
 } from "@phosphor-icons/react/ssr";
 
 type Props = Omit<IconProps, "weight">;
@@ -29,8 +29,8 @@ type Props = Omit<IconProps, "weight">;
 // Regular weight: at 16px its 1px strokes sit on the pixel grid, where duotone's
 // fill blurs every edge. See the notes, "Icons at 16px".
 const regular = (Glyph: Icon) => {
-  const Regular = (props: Props) => <Glyph weight="regular" {...props} />;
-  return Regular;
+	const Regular = (props: Props) => <Glyph weight="regular" {...props} />;
+	return Regular;
 };
 
 export const ArrowUpRight = regular(ArrowUpRightIcon);

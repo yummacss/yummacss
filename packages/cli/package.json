@@ -8,14 +8,21 @@
 		"yummacss"
 	],
 	"homepage": "https://yummacss.com",
+	"license": "MIT",
+	"author": "Renildo Pereira",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/yummacss/yummacss.git",
 		"directory": "packages/cli"
 	},
-	"license": "MIT",
-	"author": "Renildo Pereira",
+	"bin": {
+		"yummacss": "./dist/cli.mjs"
+	},
+	"files": [
+		"dist"
+	],
 	"type": "module",
+	"module": "./dist/index.mjs",
 	"exports": {
 		".": {
 			"default": "./dist/index.mjs"
@@ -25,18 +32,13 @@
 			"default": "./dist/merge.mjs"
 		}
 	},
-	"module": "./dist/index.mjs",
-	"bin": {
-		"yummacss": "./dist/cli.mjs"
+	"publishConfig": {
+		"access": "public",
+		"provenance": true
 	},
-	"files": [
-		"dist"
-	],
 	"scripts": {
-		"build": "node scripts/generate-merge-map.mjs && tsdown",
-		"check": "tsc --noEmit",
-		"dev": "tsdown --watch",
-		"lint": "biome check --write",
+		"build": "node scripts/generate-merge-map.mjs && vp pack",
+		"dev": "vp pack --watch",
 		"prepublishOnly": "pnpm build"
 	},
 	"dependencies": {
@@ -49,9 +51,5 @@
 		"picomatch": "^4.0.7",
 		"tinyglobby": "^0.2.15"
 	},
-	"packageManager": "pnpm@10.27.0",
-	"publishConfig": {
-		"access": "public",
-		"provenance": true
-	}
+	"packageManager": "pnpm@10.27.0"
 }

@@ -2,7 +2,7 @@ import { mkdtempSync, rmSync, utimesSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { isAbsolute, join } from "node:path";
 import { loadConfig, scan } from "@yummacss/nitro";
-import { afterAll, describe, expect, it } from "vitest";
+import { afterAll, describe, expect, it } from "vite-plus/test";
 
 const fixtureDir = join(__dirname, "fixtures", "plugin-app");
 const tempDirs: string[] = [];

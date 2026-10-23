@@ -1419,7 +1419,6 @@ No notable changes.
 [4.7.0]: https://github.com/yummacss/yummacss/compare/v4.6.1...v4.7.0
 [4.6.1]: https://github.com/yummacss/yummacss/compare/v4.6.0...v4.6.1
 [4.6.0]: https://github.com/yummacss/yummacss/compare/v4.5.0...v4.6.0
-
 [4.5.0]: https://github.com/yummacss/yummacss/compare/v4.4.0...v4.5.0
 [4.4.0]: https://github.com/yummacss/yummacss/compare/v4.3.0...v4.4.0
 [4.3.0]: https://github.com/yummacss/yummacss/compare/v4.2.2...v4.3.0

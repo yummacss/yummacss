@@ -1,6 +1,6 @@
 import { coreUtils } from "@yummacss/core";
 import { generator } from "@yummacss/nitro";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it } from "vite-plus/test";
 
 describe("Utility Generation", () => {
 	const utils = coreUtils();

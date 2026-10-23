@@ -1,5 +1,5 @@
 import { suggestClasses } from "@yummacss/nitro";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it } from "vite-plus/test";
 
 const suggest = (className: string) =>
 	suggestClasses([className], {}).get(className);
