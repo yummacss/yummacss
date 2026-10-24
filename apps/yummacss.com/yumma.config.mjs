@@ -21,7 +21,8 @@ export default defineConfig({
 			body: '"iA Writer Quattro", sans-serif',
 			display: '"Esteban", serif',
 			system: "system-ui, sans-serif",
-		},
+    },
+		// base ui related
 		states: {
 			closing: "[data-ending-style]",
 			hovering: "[data-hovering]",
