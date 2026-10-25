@@ -8,6 +8,8 @@ export default defineConfig({
 			"diff-add": { light: "#2e7d5b", dark: "#a8e1ad" },
 			"diff-remove": { light: "#a8372b", dark: "#e1a8a8" },
 			accent: { light: "#4c5fc7", dark: "#bec6f2" },
+			// indigo in both schemes, where accent turns pale in the dark
+			brand: "#4c5fc7",
 			border: { light: "#dde1eb", dark: "#232741" },
 			code: { light: "#3e4a80", dark: "#dda2f6" },
 			ink: { light: "#14171f", dark: "#ffffff" },
