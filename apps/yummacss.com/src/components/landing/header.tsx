@@ -1,35 +1,27 @@
 "use client";
 
 import { Button } from "@base-ui/react";
+import { useHotkey } from "@tanstack/react-hotkeys";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { GitHub, Search } from "@/icons";
 import { loadSearchIndex } from "@/utils/search-data";
 import { YummaCSSMark } from "../icons/yummacss-mark";
 import { SearchDialog } from "../ui/search-dialog";
+import { HotkeyLink } from "./keys";
 
 const preloadSearch = () => {
 	loadSearchIndex().catch(() => {});
 };
 
 const SQUARE =
-	"d:f ai:c jc:c w:9 h:9 bc:border bg:surface a:bg:press c:ink bw:1 bbw:2 fv:oc:ink fv:ow:2";
+	"d:f ai:c jc:c w:9 h:9 bc:border bg:surface a:bg:press c:ink bw:1 fv:oc:ink fv:ow:2";
 
 /** The landing page's bar: the mark, search, GitHub and Get started, with no links in between. */
 export default function LandingHeader() {
 	const [searchOpen, setSearchOpen] = useState(false);
 
-	useEffect(() => {
-		const handleKeyDown = (e: KeyboardEvent) => {
-			if ((e.ctrlKey || e.metaKey) && e.key === "k") {
-				e.preventDefault();
-				setSearchOpen(true);
-			}
-		};
-
-		document.addEventListener("keydown", handleKeyDown);
-		return () => document.removeEventListener("keydown", handleKeyDown);
-	}, []);
+	useHotkey("Mod+K", () => setSearchOpen(true));
 
 	return (
 		<>
@@ -60,12 +52,14 @@ export default function LandingHeader() {
 					>
 						<GitHub className="w:4 h:4" />
 					</a>
-					<Link
+					<HotkeyLink
 						href="/docs/installation"
-						className="d:none ai:c h:9 px:4 bg:brand c:white fs:sm td:none bbw:2 bc:black/20 fv:oc:ink fv:ow:2 @sm:d:f"
+						hotkey="G"
+						primary
+						className="d:none ai:c g:3 h:9 px:4 fs:sm td:none bw:1 fv:oc:ink fv:ow:2 @sm:d:if"
 					>
 						Get started
-					</Link>
+					</HotkeyLink>
 				</div>
 			</header>
 
