@@ -2,13 +2,14 @@
 
 import { Button } from "@base-ui/react";
 import { type CSSProperties, useState } from "react";
-import tinycolor from "tinycolor2";
 import { Check } from "@/icons";
 import {
 	generateShades,
+	isLight,
 	SHADE_LABELS,
 	SWATCH,
 	swatchStyle,
+	toHex,
 } from "@/utils/colors";
 
 interface ColorItem {
@@ -95,9 +96,7 @@ function ColorSwatch({
 	const [copied, setCopied] = useState(false);
 
 	const handleClick = async () => {
-		await navigator.clipboard.writeText(
-			tinycolor(shade).toHexString().toUpperCase(),
-		);
+		await navigator.clipboard.writeText(toHex(shade));
 		setCopied(true);
 		setTimeout(() => setCopied(false), 1500);
 	};
@@ -112,7 +111,7 @@ function ColorSwatch({
 			{copied && (
 				<Check
 					aria-hidden
-					className={`w:4 h:4 ${tinycolor(shade).isLight() ? "c:black" : "c:white"}`}
+					className={`w:4 h:4 ${isLight(shade) ? "c:black" : "c:white"}`}
 				/>
 			)}
 		</Button>
