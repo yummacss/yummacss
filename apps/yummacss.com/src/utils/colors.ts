@@ -1,6 +1,32 @@
 import type { CSSProperties } from "react";
 import { colorTheme, generateShades } from "@yummacss/core";
-import tinycolor from "tinycolor2";
+import {
+	formatHex,
+	modeHsl,
+	modeHwb,
+	modeLab,
+	modeLch,
+	modeLrgb,
+	modeOklab,
+	modeOklch,
+	modeRgb,
+	useMode,
+	wcagLuminance,
+} from "culori/fn";
+
+// the CSS color spaces, plus linear RGB for luminance
+for (const mode of [
+	modeRgb,
+	modeLrgb,
+	modeHsl,
+	modeHwb,
+	modeLab,
+	modeLch,
+	modeOklab,
+	modeOklch,
+]) {
+	useMode(mode);
+}
 
 export { generateShades };
 
@@ -43,9 +69,16 @@ export const COLOR_FAMILIES: { name: string; color: string }[] = Object.entries(
 	color,
 }));
 
+/** A color as uppercase hex, for copying. */
+export const toHex = (color: string): string =>
+	(formatHex(color) ?? color).toUpperCase();
+
+/** Whether dark text reads better than white on the color. */
+export const isLight = (color: string): boolean => wcagLuminance(color) > 0.179;
+
 /** A swatch's color and edge as custom properties, for `bg:var(--swatch) bc:var(--edge)`. */
 export function swatchStyle(color: string): CSSProperties {
-	const luminance = tinycolor(color).getLuminance();
+	const luminance = wcagLuminance(color);
 
 	// an edge only where the swatch would melt into the page: a pale one on the
 	// light theme, a dark one on the dark theme
