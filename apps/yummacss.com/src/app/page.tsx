@@ -48,12 +48,10 @@ export default function Home() {
 				className="f:1 d:f fd:c w:100% mx:auto max-w:280 blw:1 brw:1 bc:border @lg:p:r"
 			>
 				<section className="p:r zi:10 d:f fd:c jc:sb g:10 px:6 py:10 bg:page @lg:p:a @lg:t:0 @lg:b:0 @lg:r:0 @lg:w:115 @lg:px:10 @lg:py:12 @lg:blw:1 @lg:bc:border">
-					<p className="m:0 fs:xs ls:5 tt:u c:ink/60">
-						Atomic CSS · Vite · PostCSS · CLI
-					</p>
+					<p className="m:0 fs:xs ls:5 tt:u c:ink/60">Vite · PostCSS · CLI</p>
 					<div className="d:f fd:c g:6">
-						<h1 className="m:0 ff:display fw:400 fs:4xl lh:1 c:ink @sm:fs:5xl @lg:fs:6xl">
-							Get faster at CSS while you use it.
+						<h1 className="m:0 ff:display fw:400 fs:4xl lh:1 c:ink @sm:fs:5xl">
+							An atomic CSS framework.
 						</h1>
 						<p className="m:0 fs:sm lh:5 ls:3 c:ink/70">
 							Every class is a property and its value, by their initials. d:f is
