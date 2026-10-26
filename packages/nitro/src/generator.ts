@@ -589,12 +589,12 @@ function tryGenerateRule(
 }
 
 function isColorValue(value: string): boolean {
-	return /^#[0-9a-f]{6}$/i.test(value) || value.startsWith("light-dark(");
+	return /^(#[0-9a-f]{6}|oklch\(|light-dark\()/i.test(value);
 }
 
 function applyOpacity(value: string, percentage: string): string {
 	if (!isColorValue(value)) return value;
-	return `color-mix(in srgb, ${value} ${percentage}, transparent)`;
+	return `color-mix(in oklch, ${value} ${percentage}, transparent)`;
 }
 
 function negateValue(value: string): string | null {

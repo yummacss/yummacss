@@ -37,7 +37,7 @@
 		"prepublishOnly": "pnpm build"
 	},
 	"devDependencies": {
-		"@types/tinycolor2": "^1.4.6",
-		"tinycolor2": "^1.6.0"
+		"@types/culori": "^4.0.1",
+		"culori": "4.0.2"
 	}
 }

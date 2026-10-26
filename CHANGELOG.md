@@ -7,7 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- **[core]** A theme color can be any CSS color, `oklch()` included.
+
+### Fixed
+
+- **[core]** A theme color keeps its alpha, so `transparent` no longer compiles to black.
+
 ### Changed
+
+- **[core]** Shades are built in OKLCH, evenly spaced in lightness, and output as `oklch()`.
+- **[core]** Green, mint, cyan & sky move apart in hue and lightness.
+- **[core]** The opacity suffix mixes in OKLCH.
 
 - **[lint]** Each file uses the `yumma.config.mjs` nearest to it, so a monorepo linted from its root gets each package's config.
 - **[lint]** `no-inline-styles` reports only properties Yumma CSS has a utility for.

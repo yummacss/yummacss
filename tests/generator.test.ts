@@ -229,7 +229,7 @@ describe("shared prefixes", () => {
 	it("gives s:var() to scale and named colors to stroke", () => {
 		expect(css("s:var(--s)")).toContain("scale: var(--s);");
 		expect(css("s:var(--s)")).not.toContain("stroke");
-		expect(css("s:red")).toContain("stroke: #");
+		expect(css("s:red")).toContain("stroke: oklch(");
 	});
 
 	it.each([
@@ -249,7 +249,7 @@ describe("shared prefixes", () => {
 describe("opacity suffix", () => {
 	const mix = (percent: number) =>
 		new RegExp(
-			`background-color:\\s*color-mix\\(in srgb, #[0-9a-f]{6} ${percent}%, transparent\\);`,
+			`background-color:\\s*color-mix\\(in oklch, oklch\\([^)]*\\) ${percent}%, transparent\\);`,
 			"i",
 		);
 
@@ -280,7 +280,7 @@ describe("opacity suffix", () => {
 				colors: { surface: { light: "#ffffff", dark: "#111214" } },
 			}),
 		).toContain(
-			"color-mix(in srgb, light-dark(#ffffff, #111214) 50%, transparent)",
+			"color-mix(in oklch, light-dark(oklch(1 0 0), oklch(.182 .004 264)) 50%, transparent)",
 		);
 	});
 });
