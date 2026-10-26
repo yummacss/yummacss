@@ -1,6 +1,8 @@
 import {
 	clampChroma,
 	converter,
+	formatCss,
+	interpolate,
 	modeHsl,
 	modeHwb,
 	modeLab,
@@ -9,6 +11,8 @@ import {
 	modeOklch,
 	modeRgb,
 	type Oklch,
+	round,
+	samples,
 	useMode,
 } from "culori/fn";
 import { colorTheme } from "@/defaults/theme";
@@ -42,24 +46,24 @@ const oklch = converter("oklch");
 const LIGHTEST = 0.97;
 const DARKEST = 0.22;
 
-const trim = (n: number): string =>
-	n
-		.toFixed(3)
-		.replace(/\.?0+$/, "")
-		.replace(/^0\./, ".")
-		.replace(/^-0\./, "-.") || "0";
+const toThousandths = round(3);
 
-/** Writes a color as a short `oklch()`, with alpha only when it is not opaque. */
-const format = ({ l, c, h, alpha }: Oklch): string => {
-	const hue = c < 0.0005 || h === undefined ? 0 : Math.round(h);
-	const a = alpha !== undefined && alpha < 1 ? ` / ${trim(alpha)}` : "";
-	return `oklch(${trim(l)} ${trim(c)} ${hue}${a})`;
+/** A shade as CSS, rounded to what a screen can show and held inside sRGB. */
+const toCss = (color: Oklch): string => {
+	const { l, c, h, alpha } = clampChroma(color, "oklch") as Oklch;
+	return formatCss({
+		mode: "oklch",
+		l: toThousandths(l),
+		c: toThousandths(c),
+		h: h === undefined ? undefined : Math.round(h),
+		alpha,
+	}) as string;
 };
 
 /**
  * Builds the 13 shades for a color in OKLCH: six lighter, the color itself,
- * six darker, each half evenly spaced in lightness, with chroma easing toward
- * the ends. The percentages scale how far the ends travel; 14 is the default.
+ * six darker, each half evenly spaced in lightness, with chroma held until
+ * sRGB cannot show it. The percentages scale how far the ends travel; 14 is the default.
  */
 export const generateShades = (
 	color: string,
@@ -77,22 +81,12 @@ export const generateShades = (
 		0,
 	);
 
-	return Array.from({ length: 13 }, (_, i) => {
-		if (i === 6) return format(base);
-		const t = i < 6 ? (6 - i) / 6 : (i - 6) / 6;
-		const end = i < 6 ? lightest : darkest;
-		const shade = clampChroma(
-			{
-				mode: "oklch",
-				l: base.l + (end - base.l) * t,
-				c: (base.c ?? 0) * (1 - 0.75 * t * t),
-				h: base.h,
-				alpha: base.alpha,
-			},
-			"oklch",
-		);
-		return format(shade);
-	});
+	// each half is a straight OKLCH ramp from the base; toCss lowers chroma only where sRGB runs out
+	const toward = (l: number) => interpolate([base, { ...base, l }], "oklch");
+	const lighter = samples(7).slice(1).reverse().map(toward(lightest));
+	const darker = samples(7).slice(1).map(toward(darkest));
+
+	return [...lighter, base, ...darker].map(toCss);
 };
 
 /** Builds both sides of a pair step for step, so shade N is a `light-dark()`. */
