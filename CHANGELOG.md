@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [4.9.0] - 2026-10-26
+
 ### Added
 
 - **[core]** A theme color can be any CSS color, `oklch()` included.
@@ -20,7 +22,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **[core]** Shades are built in OKLCH, evenly spaced in lightness, and output as `oklch()`.
 - **[core]** Green, mint, cyan & sky move apart in hue and lightness.
 - **[core]** The opacity suffix mixes in OKLCH.
-
 - **[lint]** Each file uses the `yumma.config.mjs` nearest to it, so a monorepo linted from its root gets each package's config.
 - **[lint]** `no-inline-styles` reports only properties Yumma CSS has a utility for.
 - **[lint]** Requires Node 20.19 or 22.12 and later.
@@ -1432,7 +1433,8 @@ No notable changes.
 
 - Initial release.
 
-[Unreleased]: https://github.com/yummacss/yummacss/compare/v4.8.0...HEAD
+[Unreleased]: https://github.com/yummacss/yummacss/compare/v4.9.0...HEAD
+[4.9.0]: https://github.com/yummacss/yummacss/compare/v4.8.0...v4.9.0
 [4.8.0]: https://github.com/yummacss/yummacss/compare/v4.7.0...v4.8.0
 [4.7.0]: https://github.com/yummacss/yummacss/compare/v4.6.1...v4.7.0
 [4.6.1]: https://github.com/yummacss/yummacss/compare/v4.6.0...v4.6.1
