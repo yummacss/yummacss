@@ -29,11 +29,12 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: Build packages
+        run: pnpm build
+
+      # the lint plugin loads @yummacss/lint from its build
       - name: Check format, lint & types
         run: pnpm check
-
-      - name: Build package
-        run: pnpm build
 
       - name: Run tests
         run: pnpm test
