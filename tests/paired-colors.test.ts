@@ -14,7 +14,7 @@ describe("Paired theme colors", () => {
 	it("emits light-dark() for the base of a paired color", () => {
 		const colors = createColors({ surface: pair });
 		expect(colors.surface).toBe(
-			"light-dark(oklch(1 0 0), oklch(.182 .004 264))",
+			"light-dark(oklch(1 0 180), oklch(0.182 0.004 264))",
 		);
 	});
 
@@ -42,12 +42,14 @@ describe("Paired theme colors", () => {
 		const colors = createColors({
 			wash: { light: "rgb(255 255 255 / 0.6)", dark: "transparent" },
 		});
-		expect(colors.wash).toBe("light-dark(oklch(1 0 0 / .6), oklch(0 0 0 / 0))");
+		expect(colors.wash).toBe(
+			"light-dark(oklch(1 0 180 / 0.6), oklch(0 0 none / 0))",
+		);
 	});
 
 	it("reads an oklch() theme color", () => {
 		expect(createColors({ brand: "oklch(.6 .2 264)" }).brand).toBe(
-			"oklch(.6 .2 264)",
+			"oklch(0.6 0.2 264)",
 		);
 	});
 
@@ -70,7 +72,7 @@ describe("Paired theme colors", () => {
 
 	it("leaves plain string colors exactly as they were", () => {
 		const colors = createColors({ brand: "#bec6f2" });
-		expect(colors.brand).toBe("oklch(.835 .062 277)");
+		expect(colors.brand).toBe("oklch(0.835 0.062 277)");
 		expect(colors["brand-1"]).toMatch(/^oklch\([.\d]+ [.\d]+ \d+\)$/);
 		const withPair = createColors({ brand: "#bec6f2", surface: pair });
 		expect(withPair.brand).toBe(colors.brand);
@@ -83,7 +85,7 @@ describe("Paired theme colors", () => {
 			theme: { colors: { surface: pair } },
 		} as never);
 		expect(css).toContain(
-			"background-color: light-dark(oklch(1 0 0), oklch(.182 .004 264));",
+			"background-color: light-dark(oklch(1 0 180), oklch(0.182 0.004 264));",
 		);
 		expect(css).toMatch(
 			/color:\s*light-dark\(oklch\([^)]*\), oklch\([^)]*\)\);/,

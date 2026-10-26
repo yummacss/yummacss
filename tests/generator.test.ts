@@ -280,7 +280,7 @@ describe("opacity suffix", () => {
 				colors: { surface: { light: "#ffffff", dark: "#111214" } },
 			}),
 		).toContain(
-			"color-mix(in oklch, light-dark(oklch(1 0 0), oklch(.182 .004 264)) 50%, transparent)",
+			"color-mix(in oklch, light-dark(oklch(1 0 180), oklch(0.182 0.004 264)) 50%, transparent)",
 		);
 	});
 });
