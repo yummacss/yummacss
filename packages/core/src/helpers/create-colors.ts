@@ -13,6 +13,22 @@ export const isColorPair = (value: ColorValue): value is ColorPair =>
 	typeof (value as ColorPair).light === "string" &&
 	typeof (value as ColorPair).dark === "string";
 
+// tinycolor reads alpha only in the comma form: rgb(0 0 0 / 0.5) -> rgba(0, 0, 0, 0.5)
+const SLASH =
+	/^(rgb|hsl)a?\(\s*(\S+?)[\s,]+(\S+?)[\s,]+(\S+?)\s*\/\s*([\d.]+%?)\s*\)$/i;
+
+const parse = (color: string): tinycolor.Instance => {
+	const match = color.trim().match(SLASH);
+	if (!match) return tinycolor(color);
+	const [, fn, a, b, c, alpha = "1"] = match;
+	const value = alpha.endsWith("%") ? Number.parseFloat(alpha) / 100 : alpha;
+	return tinycolor(`${fn}a(${a}, ${b}, ${c}, ${value})`);
+};
+
+// toHexString() drops alpha, which turns `transparent` into black
+const toHex = (color: tinycolor.Instance): string =>
+	color.getAlpha() < 1 ? color.toHex8String() : color.toHexString();
+
 /**
  * Builds the 13 shades for a color: six mixed toward white, the color itself,
  * then six toward black. The percentages tune how far each end travels.
@@ -26,16 +42,16 @@ export const generateShades = (
 
 	for (let i = 1; i <= 6; i++) {
 		const weight = (7 - i) * lightPercentage;
-		const mixedColor = tinycolor.mix(color, "white", weight);
-		shades.push(mixedColor.toHexString());
+		const mixedColor = tinycolor.mix(parse(color), "white", weight);
+		shades.push(toHex(mixedColor));
 	}
 
-	shades.push(tinycolor(color).toHexString());
+	shades.push(toHex(parse(color)));
 
 	for (let i = 1; i <= 6; i++) {
 		const weight = i * darkPercentage;
-		const mixedColor = tinycolor.mix(color, "black", weight);
-		shades.push(mixedColor.toHexString());
+		const mixedColor = tinycolor.mix(parse(color), "black", weight);
+		shades.push(toHex(mixedColor));
 	}
 
 	return shades;

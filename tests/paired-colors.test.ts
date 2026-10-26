@@ -36,6 +36,29 @@ describe("Paired theme colors", () => {
 		}
 	});
 
+	it("keeps transparent and alpha on either side of a pair", () => {
+		const colors = createColors({
+			wash: { light: "rgb(255 255 255 / 0.6)", dark: "transparent" },
+			tint: { light: "#ffffff1a", dark: "#0000001a" },
+		});
+		expect(colors.wash).toBe("light-dark(#ffffff99, #00000000)");
+		expect(colors.tint).toBe("light-dark(#ffffff1a, #0000001a)");
+	});
+
+	it("keeps alpha on a plain color", () => {
+		expect(createColors({ glass: "#ffffff1a" }).glass).toBe("#ffffff1a");
+	});
+
+	it("applies an opacity modifier to a color with alpha", () => {
+		const css = generator(new Set(["bg:glass/50"]), {
+			buildOptions: { reset: false },
+			theme: { colors: { glass: "#ffffff1a" } },
+		} as never);
+		expect(css).toContain(
+			"background-color: color-mix(in srgb, #ffffff1a 50%, transparent);",
+		);
+	});
+
 	it("leaves plain string colors exactly as they were", () => {
 		const colors = createColors({ brand: "#bec6f2" });
 		expect(colors.brand).toBe("#bec6f2");

@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- **[core]** A theme color keeps its alpha, so `transparent` no longer compiles to black.
+
 ### Changed
 
 - **[lint]** Each file uses the `yumma.config.mjs` nearest to it, so a monorepo linted from its root gets each package's config.
