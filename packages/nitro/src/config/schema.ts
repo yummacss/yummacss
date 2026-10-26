@@ -44,10 +44,10 @@ export interface Config {
 		colors?: Record<string, string | { light: string; dark: string }> & {
 			/** Tunes how far shades travel toward white and black. */
 			percentage?: {
-				/** @default 10 */
+				/** @default 14 */
 				light?: number;
 
-				/** @default 10 */
+				/** @default 14 */
 				dark?: number;
 			};
 		};

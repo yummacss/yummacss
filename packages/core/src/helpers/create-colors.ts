@@ -1,4 +1,16 @@
-import tinycolor from "tinycolor2";
+import {
+	clampChroma,
+	converter,
+	modeHsl,
+	modeHwb,
+	modeLab,
+	modeLch,
+	modeOklab,
+	modeOklch,
+	modeRgb,
+	type Oklch,
+	useMode,
+} from "culori/fn";
 import { colorTheme } from "@/defaults/theme";
 
 /** A theme color that differs per color scheme, compiled to `light-dark()`. */
@@ -13,32 +25,74 @@ export const isColorPair = (value: ColorValue): value is ColorPair =>
 	typeof (value as ColorPair).light === "string" &&
 	typeof (value as ColorPair).dark === "string";
 
+// only the color spaces a CSS color can be written in, so the rest stay out of the bundle
+for (const mode of [
+	modeRgb,
+	modeHsl,
+	modeHwb,
+	modeLab,
+	modeLch,
+	modeOklab,
+	modeOklch,
+]) {
+	useMode(mode);
+}
+const oklch = converter("oklch");
+
+const LIGHTEST = 0.97;
+const DARKEST = 0.22;
+
+const trim = (n: number): string =>
+	n
+		.toFixed(3)
+		.replace(/\.?0+$/, "")
+		.replace(/^0\./, ".")
+		.replace(/^-0\./, "-.") || "0";
+
+/** Writes a color as a short `oklch()`, with alpha only when it is not opaque. */
+const format = ({ l, c, h, alpha }: Oklch): string => {
+	const hue = c < 0.0005 || h === undefined ? 0 : Math.round(h);
+	const a = alpha !== undefined && alpha < 1 ? ` / ${trim(alpha)}` : "";
+	return `oklch(${trim(l)} ${trim(c)} ${hue}${a})`;
+};
+
 /**
- * Builds the 13 shades for a color: six mixed toward white, the color itself,
- * then six toward black. The percentages tune how far each end travels.
+ * Builds the 13 shades for a color in OKLCH: six lighter, the color itself,
+ * six darker, each half evenly spaced in lightness, with chroma easing toward
+ * the ends. The percentages scale how far the ends travel; 14 is the default.
  */
 export const generateShades = (
 	color: string,
 	lightPercentage: number = 14,
 	darkPercentage: number = 14,
 ): string[] => {
-	const shades: string[] = [];
+	const base = oklch(color);
+	if (!base) throw new Error(`Yumma CSS could not read the color "${color}"`);
+	const lightest = Math.min(
+		base.l + (LIGHTEST - base.l) * (lightPercentage / 14),
+		1,
+	);
+	const darkest = Math.max(
+		base.l + (DARKEST - base.l) * (darkPercentage / 14),
+		0,
+	);
 
-	for (let i = 1; i <= 6; i++) {
-		const weight = (7 - i) * lightPercentage;
-		const mixedColor = tinycolor.mix(color, "white", weight);
-		shades.push(mixedColor.toHexString());
-	}
-
-	shades.push(tinycolor(color).toHexString());
-
-	for (let i = 1; i <= 6; i++) {
-		const weight = i * darkPercentage;
-		const mixedColor = tinycolor.mix(color, "black", weight);
-		shades.push(mixedColor.toHexString());
-	}
-
-	return shades;
+	return Array.from({ length: 13 }, (_, i) => {
+		if (i === 6) return format(base);
+		const t = i < 6 ? (6 - i) / 6 : (i - 6) / 6;
+		const end = i < 6 ? lightest : darkest;
+		const shade = clampChroma(
+			{
+				mode: "oklch",
+				l: base.l + (end - base.l) * t,
+				c: (base.c ?? 0) * (1 - 0.75 * t * t),
+				h: base.h,
+				alpha: base.alpha,
+			},
+			"oklch",
+		);
+		return format(shade);
+	});
 };
 
 /** Builds both sides of a pair step for step, so shade N is a `light-dark()`. */
