@@ -74,11 +74,6 @@ const docsRedirects = [
 	},
 	// no landing page: the site opens on Installation
 	{
-		source: "/",
-		destination: "/docs/installation",
-		permanent: false,
-	},
-	{
 		source: "/brand",
 		destination: "/docs/brand",
 		permanent: true,

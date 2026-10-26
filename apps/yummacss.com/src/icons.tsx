@@ -15,6 +15,7 @@ import {
 	FileIcon,
 	FileMdIcon,
 	FolderIcon,
+	GithubLogoIcon,
 	MagnifyingGlassIcon,
 	PlusIcon,
 	SignOutIcon,
@@ -40,6 +41,7 @@ export const Copy = regular(CopyIcon);
 export const Diamond = regular(DiamondIcon);
 export const FileMd = regular(FileMdIcon);
 export const Folder = regular(FolderIcon);
+export const GitHub = regular(GithubLogoIcon);
 export const LogOut = regular(SignOutIcon);
 export const LongArrowDownLeftSolid = regular(ArrowElbowDownLeftIcon);
 export const NavArrowDown = regular(CaretDownIcon);
