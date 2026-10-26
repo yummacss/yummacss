@@ -2,7 +2,8 @@
 
 import { Button } from "@base-ui/react";
 import { clsx } from "clsx";
-import { lazy, Suspense, useEffect, useState } from "react";
+import { useHotkey } from "@tanstack/react-hotkeys";
+import { lazy, Suspense, useState } from "react";
 import { Search } from "@/icons";
 import { loadSearchIndex } from "@/utils/search-data";
 import HomeMark from "./home-mark";
@@ -28,17 +29,7 @@ export default function Navbar({ className, menu }: NavbarProps) {
 	const [searchOpen, setSearchOpen] = useState(false);
 	const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-	useEffect(() => {
-		const handleKeyDown = (e: KeyboardEvent) => {
-			if ((e.ctrlKey || e.metaKey) && e.key === "k") {
-				e.preventDefault();
-				setSearchOpen(true);
-			}
-		};
-
-		document.addEventListener("keydown", handleKeyDown);
-		return () => document.removeEventListener("keydown", handleKeyDown);
-	}, []);
+	useHotkey("Mod+K", () => setSearchOpen(true));
 
 	return (
 		<>
