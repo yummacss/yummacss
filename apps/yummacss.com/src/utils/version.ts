@@ -1,4 +1,4 @@
-import { dependencies } from "../../package.json";
+import { version } from "../../../../packages/cli/package.json";
 
-// The version the site is built against. `pnpm upd` moves it.
-export const ver = dependencies.yummacss.replace(/^\D+/, "");
+// The version of Yumma CSS in this repo, which the site is built on.
+export const ver = version;
