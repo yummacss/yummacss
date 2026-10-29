@@ -14,7 +14,7 @@ const description =
 
 export const metadata: Metadata = {
 	title: {
-		default: "Yumma CSS - Get faster at CSS while you use it",
+		default: "Yumma CSS - An atomic CSS framework",
 		template: "%s · Yumma CSS",
 	},
 	description,
@@ -40,13 +40,13 @@ export const metadata: Metadata = {
 				url: "/og.png",
 				width: 1200,
 				height: 630,
-				alt: "Yumma CSS - Get faster at CSS while you use it",
+				alt: "Yumma CSS - An atomic CSS framework",
 			},
 		],
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Yumma CSS - Get faster at CSS while you use it",
+		title: "Yumma CSS - An atomic CSS framework",
 		description,
 		images: ["/og.png"],
 	},
