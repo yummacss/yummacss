@@ -8,16 +8,15 @@
 	"author": "Renildo Pereira",
 	"type": "module",
 	"scripts": {
-		"build": "node scripts/check-sidebar.mjs && next build",
+		"build": "pnpm -w build && node scripts/check-sidebar.mjs && next build",
 		"check-sidebar": "node scripts/check-sidebar.mjs",
 		"check-types": "tsc --noEmit",
-		"dev": "next dev",
+		"dev": "pnpm -w build && next dev",
 		"postinstall": "content-collections build",
 		"sort": "sort-package-json",
 		"start": "next start",
 		"test": "vp test run",
-		"test:watch": "vp test",
-		"upd": "pnpm up yummacss \"@yummacss/*\" --latest"
+		"test:watch": "vp test"
 	},
 	"dependencies": {
 		"@base-ui/react": "^1.9.0",
@@ -36,8 +35,8 @@
 		"@tanstack/react-hotkeys": "0.17.0",
 		"@vercel/analytics": "^2.0.1",
 		"@vercel/speed-insights": "^2.0.0",
-		"@yummacss/core": "^4.9.0",
-		"@yummacss/nitro": "^4.9.0",
+		"@yummacss/core": "workspace:*",
+		"@yummacss/nitro": "workspace:*",
 		"clsx": "^2.1.1",
 		"culori": "4.0.2",
 		"next": "16.4.1",
@@ -53,7 +52,7 @@
 		"unified": "^11.0.5",
 		"unist-util-visit": "^5.1.0",
 		"web-features": "^3.43.0",
-		"yummacss": "^4.9.0"
+		"yummacss": "workspace:*"
 	},
 	"devDependencies": {
 		"@content-collections/cli": "^0.1.9",
@@ -67,7 +66,7 @@
 		"@types/react": "^19.3.0",
 		"@types/react-dom": "^19.3.0",
 		"@types/three": "^0.186.0",
-		"@yummacss/postcss": "^4.9.0",
+		"@yummacss/postcss": "workspace:*",
 		"mdast-util-mdx-jsx": "^3.2.0",
 		"remark-code-preview": "^1.2.6",
 		"sort-package-json": "^4.0.0",
