@@ -7,9 +7,9 @@ import { type Category, getReferenceData } from "@/utils/yummacss";
 
 export const HOME_OG: OgSpec = {
 	kind: "home",
-	before: "Get faster at",
+	before: "An atomic",
 	word: "CSS",
-	second: "while you use it.",
+	second: "framework.",
 };
 
 /** The first classes a utility page lists, read from its first Reference. */
