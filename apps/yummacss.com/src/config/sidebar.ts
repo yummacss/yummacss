@@ -176,6 +176,7 @@ export const sidebarConfig = {
 				"scroll-snap-type",
 				"touch-action",
 				"user-select",
+				"will-change",
 			],
 		},
 		{
