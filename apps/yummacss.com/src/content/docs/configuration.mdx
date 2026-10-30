@@ -30,7 +30,7 @@ export default defineConfig({
 });
 ```
 
-### `source`
+### source
 
 Use glob patterns to include subfolders & specific file types.
 
@@ -42,7 +42,7 @@ export default defineConfig({
 });
 ```
 
-### `output`
+### output
 
 Specifies the output path for the compiled CSS file.
 
@@ -59,7 +59,7 @@ export default defineConfig({
 });
 ```
 
-### `normalize`
+### normalize
 
 Determines whether to include base styles normalization.
 
@@ -75,7 +75,7 @@ export default defineConfig({
 
 Extends or overrides default design tokens.
 
-#### `theme.colors`
+#### theme.colors
 
 Add color families. Each gets shades `1` to `12` unless you write them out.
 
@@ -107,7 +107,7 @@ export default defineConfig({
 });
 ```
 
-#### `theme.screens`
+#### theme.screens
 
 Define custom media query breakpoints or override existing ones.
 
@@ -128,7 +128,7 @@ export default defineConfig({
 });
 ```
 
-#### `theme.states`
+#### theme.states
 
 Name your own variants for attributes your components set. Each name becomes a prefix like `h:`. See [States](/docs/states).
 
@@ -144,7 +144,7 @@ export default defineConfig({
 });
 ```
 
-#### `theme.fonts`
+#### theme.fonts
 
 Add font stacks, each an `ff:` class. See [Font Family](/docs/font-family).
 
@@ -160,7 +160,7 @@ export default defineConfig({
 });
 ```
 
-#### `theme.keyframes`
+#### theme.keyframes
 
 Add keyframes, each an `an:` class. See [Animation Name](/docs/animation-name).
 
@@ -176,7 +176,7 @@ export default defineConfig({
 });
 ```
 
-#### `theme.easings`
+#### theme.easings
 
 Add easing curves, each a `ttf:` & an `atf:` class. See [Transition Timing Function](/docs/transition-timing-function).
 
@@ -192,7 +192,23 @@ export default defineConfig({
 });
 ```
 
-### `safelist`
+#### theme.boxShadow
+
+Add shadows, each a `bs-o:` class. A shadow can stack several layers & use `light-dark()` for its colors. See [Box Shadow](/docs/box-shadow).
+
+```mjs title="yummacss.config.mjs" mark={4-7}
+import { defineConfig } from "yummacss";
+
+export default defineConfig({
+  theme: {
+    boxShadow: {
+      key: "0 0 0 1px light-dark(#0000001a, #000), 0 1px 2px #00000012",
+    },
+  },
+});
+```
+
+### safelist
 
 Classes to generate even when no file contains them, such as one built at runtime.
 

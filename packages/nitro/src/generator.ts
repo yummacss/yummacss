@@ -117,6 +117,11 @@ function buildUtils(config: Config): Record<string, Utility> {
 			modified = true;
 		}
 
+		if (config.theme?.boxShadow && key === "box-shadow-outset") {
+			newUtil.values = { ...newUtil.values, ...config.theme.boxShadow };
+			modified = true;
+		}
+
 		if (config.theme?.keyframes && key === "animation-name") {
 			const names = Object.fromEntries(
 				Object.keys(config.theme.keyframes).map((name) => [name, name]),

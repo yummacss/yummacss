@@ -97,6 +97,15 @@ export interface Config {
 		 * @example { smooth: "cubic-bezier(0.25, 1, 0.5, 1)" }
 		 */
 		easings?: Record<string, string>;
+
+		/**
+		 * Shadows to generate `bs-o:` utilities for, keyed by name, each a CSS
+		 * `box-shadow` value. A value can layer several shadows, inset ones
+		 * included, and use `light-dark()` for its colors.
+		 *
+		 * @example { key: "0 0 0 1px #0000001a, inset 0 1px 0 #ffffff, 0 1px 2px #00000012" }
+		 */
+		boxShadow?: Record<string, string>;
 	};
 }
 
@@ -106,6 +115,10 @@ const BUILT_IN_VARIANTS = new Set<string>(
 
 const BUILT_IN_EASINGS = new Set<string>(
 	Object.keys(coreUtils()["transition-timing-function"]?.values ?? {}),
+);
+
+const BUILT_IN_SHADOWS = new Set<string>(
+	Object.keys(coreUtils()["box-shadow-outset"]?.values ?? {}),
 );
 
 const UTILITY_PREFIXES = new Set<string>(
@@ -173,6 +186,20 @@ export const ConfigSchema = z.object({
 						)
 						.refine((name) => !BUILT_IN_EASINGS.has(name), {
 							message: "an easing name cannot reuse a built-in timing function",
+						}),
+					z.string().min(1),
+				)
+				.optional(),
+			boxShadow: z
+				.record(
+					z
+						.string()
+						.regex(
+							/^[a-z][a-z0-9-]*$/,
+							"a shadow name is lower case letters, digits and dashes",
+						)
+						.refine((name) => !BUILT_IN_SHADOWS.has(name), {
+							message: "a shadow name cannot reuse a built-in box-shadow",
 						}),
 					z.string().min(1),
 				)
