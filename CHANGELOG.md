@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- **[core]** Linear Gradient utilities, `bi-lg:`.
+- **[core]** `lst:none`.
+- **[core]** Scale values 96 to 99, 101 to 104, and 105 to 150 in steps of 5.
+
 ## [4.10.0] - 2026-10-30
 
 ### Added
