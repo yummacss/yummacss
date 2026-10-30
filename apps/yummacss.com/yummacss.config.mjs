@@ -21,7 +21,7 @@ export default defineConfig({
 		},
 		fonts: {
 			body: '"iA Writer Quattro", sans-serif',
-			display: '"Esteban", serif',
+			display: "var(--font-geist-serif-square), serif",
 			system: "system-ui, sans-serif",
 		},
 		// base ui related

@@ -1,4 +1,3 @@
-import "@fontsource/esteban";
 import "@fontsource/ia-writer-quattro/latin-400.css";
 import "@fontsource/ia-writer-quattro/latin-400-italic.css";
 import "@fontsource/ia-writer-quattro/latin-700.css";
@@ -6,6 +5,7 @@ import "@fontsource/ia-writer-quattro/latin-700-italic.css";
 import "@/styles/globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { GeistSerifSquare } from "geist/font/serif/square";
 import type { Metadata } from "next";
 import JsonLd from "@/components/json-ld";
 
@@ -62,7 +62,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html
-			className="sb:s spt:20 cs:ld s::bg:accent-dim/10"
+			className={`sb:s spt:20 cs:ld s::bg:accent-dim/10 ${GeistSerifSquare.variable}`}
 			lang="en"
 			data-scroll-behavior="smooth"
 		>
