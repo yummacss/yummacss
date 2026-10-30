@@ -31,7 +31,7 @@ export default function SidebarNav({ sections, basePath }: Props) {
 	const { viewport, active } = useReveal(pathname);
 
 	return (
-		<aside className="d:none bc:border brw:1 @lg:d:b @lg:gc-s:3 @lg:pt:20">
+		<aside className="d:none @lg:d:b @lg:gc-s:3 @lg:pt:20">
 			<Scroller
 				viewportRef={viewport}
 				className="p:st t:20 max-h:calc(100dvh-5rem)"
