@@ -5,7 +5,7 @@ import SidebarNav from "./sidebar-nav";
 
 function page(slug: string) {
 	const doc = docs.find((c) => c._meta.path === slug);
-	return { slug, title: doc?.title ?? slug, since: doc?.badge };
+	return { slug, title: doc?.title ?? slug };
 }
 
 export default function Sidebar() {
@@ -21,15 +21,14 @@ export default function Sidebar() {
 	return <SidebarNav sections={sections} basePath="/docs" />;
 }
 
-/** The phone menu's sections, built on the server so the client gets titles and badges, not the collection. */
+/** The phone menu's sections, built on the server so the client gets titles, not the collection. */
 export function menu(): NavSection[] {
 	return sidebarConfig.docs.map((section) => ({
 		title: section.title,
 		items: section.items
 			.flatMap((item) => (typeof item === "string" ? item : item.items))
 			.map((slug) => {
-				const { title, since } = page(slug);
-				return { title, href: `/docs/${slug}`, since };
+				return { title: page(slug).title, href: `/docs/${slug}` };
 			}),
 	}));
 }

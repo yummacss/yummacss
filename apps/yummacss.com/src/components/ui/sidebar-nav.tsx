@@ -4,13 +4,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Scroller from "@/components/ui/scroller";
 import { useReveal } from "@/utils/reveal";
-import NewBadge, { NewLabel } from "./new-badge";
 import ProductLinks from "./product-links";
 
 interface NavItem {
 	slug: string;
 	title: string;
-	since?: string;
 }
 
 interface NavGroup {
@@ -33,7 +31,7 @@ export default function SidebarNav({ sections, basePath }: Props) {
 	const { viewport, active } = useReveal(pathname);
 
 	return (
-		<aside className="d:none @lg:d:b @lg:gc-s:3 @lg:pt:20">
+		<aside className="d:none bc:border brw:1 @lg:d:b @lg:gc-s:3 @lg:pt:20">
 			<Scroller
 				viewportRef={viewport}
 				className="p:st t:20 max-h:calc(100dvh-5rem)"
@@ -65,9 +63,7 @@ export default function SidebarNav({ sections, basePath }: Props) {
 												className={`p:r d:if ai:c g:3 fs:sm us:none fv:oc:ink fv:oo:2 fv:ow:2 ${isActive ? "c:accent td:u tds:d" : "c:ink/70 h:c:accent"}`}
 											>
 												{entry.title}
-												<NewLabel since={entry.since} />
 											</Link>
-											<NewBadge since={entry.since} />
 										</li>
 									);
 								}
@@ -91,9 +87,7 @@ export default function SidebarNav({ sections, basePath }: Props) {
 															className={`p:r d:if ai:c g:3 fs:sm us:none fv:oc:ink fv:oo:2 fv:ow:2 ${isActive ? "c:accent td:u tds:d" : "c:ink/70 h:c:accent"}`}
 														>
 															{child.title}
-															<NewLabel since={child.since} />
 														</Link>
-														<NewBadge since={child.since} />
 													</li>
 												);
 											})}

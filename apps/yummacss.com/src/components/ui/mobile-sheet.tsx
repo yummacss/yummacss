@@ -9,13 +9,11 @@ import Scroller from "@/components/ui/scroller";
 import { Search } from "@/icons";
 import { useReveal } from "@/utils/reveal";
 import Match from "./match";
-import NewBadge, { NewLabel } from "./new-badge";
 import ProductLinks from "./product-links";
 
 interface NavItem {
 	title: string;
 	href: string;
-	since?: string;
 }
 
 export interface NavSection {
@@ -138,8 +136,6 @@ export default function MobileSheet({ menu, isOpen, onClose }: Props) {
 															}`}
 														>
 															<Match text={item.title} query={typed} />
-															<NewLabel since={item.since} />
-															<NewBadge since={item.since} />
 														</Drawer.Close>
 													</li>
 												);
