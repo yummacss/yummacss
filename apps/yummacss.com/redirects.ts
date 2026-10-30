@@ -84,6 +84,11 @@ const docsRedirects = [
 		permanent: true,
 	},
 	{
+		source: "/docs/linear-gradient",
+		destination: "/docs/background-image",
+		permanent: true,
+	},
+	{
 		source: "/docs/base-styles",
 		destination: "/docs/normalize",
 		permanent: true,
