@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [4.11.0] - 2026-10-30
+
 ### Added
 
 - **[core]** Linear Gradient utilities, `bi-lg:`.
@@ -1454,7 +1456,8 @@ No notable changes.
 
 - Initial release.
 
-[Unreleased]: https://github.com/yummacss/yummacss/compare/v4.10.0...HEAD
+[Unreleased]: https://github.com/yummacss/yummacss/compare/v4.11.0...HEAD
+[4.11.0]: https://github.com/yummacss/yummacss/compare/v4.10.0...v4.11.0
 [4.10.0]: https://github.com/yummacss/yummacss/compare/v4.9.0...v4.10.0
 [4.9.0]: https://github.com/yummacss/yummacss/compare/v4.8.0...v4.9.0
 [4.8.0]: https://github.com/yummacss/yummacss/compare/v4.7.0...v4.8.0
