@@ -52,6 +52,7 @@ export const text: Utilities = {
 		values: {
 			c: "circle",
 			d: "disc",
+			none: "none",
 			s: "square",
 		},
 		variants,

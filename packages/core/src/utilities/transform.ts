@@ -2,29 +2,24 @@ import { variants } from "@/defaults/variants/stacks";
 import { createValues } from "@/helpers/create-values";
 import type { Utilities } from "@/interfaces";
 
-const ratios: Record<string, string> = {
-	"0": "0",
-	"5": ".05",
-	"10": ".1",
-	"15": ".15",
-	"20": ".2",
-	"25": ".25",
-	"30": ".3",
-	"35": ".35",
-	"40": ".4",
-	"45": ".45",
-	"50": ".5",
-	"55": ".55",
-	"60": ".6",
-	"65": ".65",
-	"70": ".7",
-	"75": ".75",
-	"80": ".8",
-	"85": ".85",
-	"90": ".9",
-	"95": ".95",
-	"100": "1",
-};
+// steps of 5, plus single steps either side of 1 for presses and hovers
+const steps = [
+	...Array.from({ length: 20 }, (_, i) => i * 5),
+	96,
+	97,
+	98,
+	99,
+	100,
+	101,
+	102,
+	103,
+	104,
+	...Array.from({ length: 10 }, (_, i) => 105 + i * 5),
+];
+
+const ratios: Record<string, string> = Object.fromEntries(
+	steps.map((n) => [String(n), String(n / 100).replace(/^0\./, ".")]),
+);
 
 const scaleX = (v: string) => `${v} 1`;
 const scaleY = (v: string) => `1 ${v}`;

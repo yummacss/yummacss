@@ -1,6 +1,11 @@
 import { variants } from "@/defaults/variants/stacks";
 import type { Utilities } from "@/interfaces";
 
+// a light-to-dark layer, so it shades whatever background-color is set
+const shade = (to: string) =>
+	`linear-gradient(to ${to}, oklch(1 0 0 / .18), oklch(0 0 0 / .14))`;
+const linearGradient = (v: string) => `linear-gradient(${v})`;
+
 export const background: Utilities = {
 	"background-attachment": {
 		prefix: "ba",
@@ -83,6 +88,21 @@ export const background: Utilities = {
 			auto: "auto",
 			c: "cover",
 			co: "contain",
+		},
+		variants,
+	},
+
+	"linear-gradient": {
+		prefix: "bi-lg",
+		properties: ["background-image"],
+		slug: "linear-gradient",
+		wrap: linearGradient,
+		values: {
+			b: shade("bottom"),
+			l: shade("left"),
+			none: "none",
+			r: shade("right"),
+			t: shade("top"),
 		},
 		variants,
 	},
