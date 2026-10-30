@@ -57,6 +57,12 @@ export const UTILITY_PAGES = {
 			slug: "background-size",
 			description: "Set the background image size within an element.",
 		},
+		{
+			slug: "shade",
+			description: "Light one side of an element and darken the other.",
+			baseline: "css.properties.background-image",
+			since: "4.11",
+		},
 	],
 	border: [
 		{

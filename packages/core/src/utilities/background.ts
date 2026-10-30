@@ -1,6 +1,10 @@
 import { variants } from "@/defaults/variants/stacks";
 import type { Utilities } from "@/interfaces";
 
+// lit at one side, darker at the other, over whatever background-color is set
+const shade = (to: string) =>
+	`linear-gradient(to ${to}, oklch(1 0 0 / .18), oklch(0 0 0 / .14))`;
+
 export const background: Utilities = {
 	"background-attachment": {
 		prefix: "ba",
@@ -83,6 +87,20 @@ export const background: Utilities = {
 			auto: "auto",
 			c: "cover",
 			co: "contain",
+		},
+		variants,
+	},
+
+	shade: {
+		prefix: "sh",
+		properties: ["background-image"],
+		slug: "shade",
+		values: {
+			b: shade("top"),
+			l: shade("right"),
+			none: "none",
+			r: shade("left"),
+			t: shade("bottom"),
 		},
 		variants,
 	},

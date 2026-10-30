@@ -54,6 +54,7 @@ export const sidebarConfig = {
 				"background-position",
 				"background-repeat",
 				"background-size",
+				"shade",
 			],
 		},
 		{

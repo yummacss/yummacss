@@ -502,3 +502,20 @@ describe("normalize", () => {
 		expect(rule).toContain("font: inherit;");
 	});
 });
+
+describe("4.11 values", () => {
+	it.each([
+		["s:98", "scale: .98;"],
+		["s:102", "scale: 1.02;"],
+		["s:150", "scale: 1.5;"],
+		["sx:97", "scale: .97 1;"],
+		["lst:none", "list-style-type: none;"],
+		["sh:none", "background-image: none;"],
+		[
+			"sh:t",
+			"background-image: linear-gradient(to bottom, oklch(1 0 0 / .18), oklch(0 0 0 / .14));",
+		],
+	])("%s writes %s", (className, expected) => {
+		expect(css(className)).toContain(expected);
+	});
+});
