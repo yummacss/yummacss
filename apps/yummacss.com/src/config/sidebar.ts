@@ -50,11 +50,11 @@ export const sidebarConfig = {
 			items: [
 				"background-attachment",
 				"background-clip",
+				"background-image",
 				"background-origin",
 				"background-position",
 				"background-repeat",
 				"background-size",
-				"linear-gradient",
 			],
 		},
 		{
