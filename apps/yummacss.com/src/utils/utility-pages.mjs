@@ -58,8 +58,9 @@ export const UTILITY_PAGES = {
 			description: "Set the background image size within an element.",
 		},
 		{
-			slug: "shade",
-			description: "Light one side of an element and darken the other.",
+			slug: "linear-gradient",
+			description:
+				"Set a linear gradient as the background image of an element.",
 			baseline: "css.properties.background-image",
 			since: "4.11",
 		},

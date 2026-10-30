@@ -510,11 +510,12 @@ describe("4.11 values", () => {
 		["s:150", "scale: 1.5;"],
 		["sx:97", "scale: .97 1;"],
 		["lst:none", "list-style-type: none;"],
-		["sh:none", "background-image: none;"],
+		["bi-lg:none", "background-image: none;"],
 		[
-			"sh:t",
+			"bi-lg:b",
 			"background-image: linear-gradient(to bottom, oklch(1 0 0 / .18), oklch(0 0 0 / .14));",
 		],
+		["bi-lg:var(--g)", "background-image: linear-gradient(var(--g));"],
 	])("%s writes %s", (className, expected) => {
 		expect(css(className)).toContain(expected);
 	});
