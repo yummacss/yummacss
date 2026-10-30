@@ -1,6 +1,8 @@
 export interface PseudoClass {
 	readonly prefix: string;
 	readonly value: string;
+	/** An at-rule the selector sits inside, such as a media query. */
+	readonly media?: string;
 }
 
 export interface PseudoElement {

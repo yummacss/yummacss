@@ -386,6 +386,20 @@ describe("will-change", () => {
 	});
 });
 
+describe("hover", () => {
+	it("applies only where a pointer can hover", () => {
+		expect(css("h:o:0")).toMatch(
+			/@media \(hover: hover\) \{\s*\.h\\:o\\:0:hover/,
+		);
+	});
+
+	it("nests inside a breakpoint", () => {
+		const out = css("@md:h:o:0");
+		expect(out).toContain("@media (hover: hover)");
+		expect(out).toContain("@media (min-width: 48rem)");
+	});
+});
+
 describe("font-variant-numeric", () => {
 	it.each([
 		["fvn:tn", "font-variant-numeric: tabular-nums;"],
