@@ -7,7 +7,8 @@ export const pseudoClasses = [
 	{ prefix: "fc", value: ":first-child" },
 	{ prefix: "fv", value: ":focus-visible" },
 	{ prefix: "fw", value: ":focus-within" },
-	{ prefix: "h", value: ":hover" },
+	// a tap leaves :hover stuck on a touch screen, so only a pointer that hovers gets it
+	{ prefix: "h", value: ":hover", media: "@media (hover: hover)" },
 	{ prefix: "i", value: ":invalid" },
 	{ prefix: "in", value: ":indeterminate" },
 	{ prefix: "lc", value: ":last-child" },

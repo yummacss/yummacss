@@ -429,6 +429,8 @@ function peelVariant(
 				!className.startsWith(`${pc.prefix}::`)
 			) {
 				acc.pseudoClasses += pc.value;
+				if ("media" in pc && pc.media && !acc.mediaQueries.includes(pc.media))
+					acc.mediaQueries.push(pc.media);
 				return className.slice(pc.prefix.length + 1);
 			}
 		}
