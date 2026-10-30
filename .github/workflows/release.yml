@@ -1,0 +1,26 @@
+name: Release
+
+# run from the Actions tab once the version bump is on main; it drafts the
+# GitHub release from CHANGELOG.md, and publishing the draft runs publish.yml
+on:
+  workflow_dispatch:
+
+jobs:
+  draft:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Install Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: 22
+
+      - name: Draft the release
+        run: node scripts/release.mjs
+        env:
+          GH_TOKEN: ${{ github.token }}
