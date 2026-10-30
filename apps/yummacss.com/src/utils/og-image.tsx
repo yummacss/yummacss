@@ -1,6 +1,7 @@
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { ImageResponse } from "next/og";
+import decompress from "wawoff2/decompress";
 import OgImage, { type OgSpec, type OgTheme } from "@/components/og-image";
 import { docs } from "@/utils/docs";
 import { type Category, getReferenceData } from "@/utils/yummacss";
@@ -46,17 +47,27 @@ export async function ogImage(spec: OgSpec | null, theme: OgTheme = "light") {
 	const mark = `data:image/svg+xml;base64,${svg.toString("base64")}`;
 
 	const font = (file: string) =>
-		readFile(join(process.cwd(), "node_modules/@fontsource", file));
-	const [esteban, quattro] = await Promise.all([
-		font("esteban/files/esteban-latin-400-normal.woff"),
-		font("ia-writer-quattro/files/ia-writer-quattro-latin-400-normal.woff"),
+		readFile(join(process.cwd(), "node_modules", file));
+	// the image renderer reads no woff2, which is all Geist ships
+	const [serif, quattro] = await Promise.all([
+		font("geist/dist/fonts/geist-serif/GeistSerif-Square.woff2").then(
+			decompress,
+		),
+		font(
+			"@fontsource/ia-writer-quattro/files/ia-writer-quattro-latin-400-normal.woff",
+		),
 	]);
 
 	return new ImageResponse(<OgImage spec={spec} theme={theme} mark={mark} />, {
 		width: 1200,
 		height: 630,
 		fonts: [
-			{ name: "Esteban", data: esteban, weight: 400, style: "normal" },
+			{
+				name: "Geist Serif",
+				data: Buffer.from(serif),
+				weight: 400,
+				style: "normal",
+			},
 			{ name: "Quattro", data: quattro, weight: 400, style: "normal" },
 		],
 	});

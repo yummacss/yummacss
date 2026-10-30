@@ -4,12 +4,12 @@ import { UI_ORIGIN } from "@/utils/hosts";
 import { ver } from "@/utils/version";
 import HomeMark from "./home-mark";
 
-// Esteban's widest glyph and its dot, at 1em, so the display version is sized to
-// the band it sits in rather than to a guess that only holds for 4.1.2.
+// Geist Serif Square's widest digit and its dot, at 1em, so the display version is
+// sized to the band it sits in rather than to a guess that only holds for one version.
 const label = `v${ver}`;
 const span = label
 	.split("")
-	.reduce((w, c) => w + (c === "." ? 0.135 : 0.55), 0);
+	.reduce((w, c) => w + (c === "." ? 0.21 : 0.592), 0);
 
 const COLUMNS = [
 	{
