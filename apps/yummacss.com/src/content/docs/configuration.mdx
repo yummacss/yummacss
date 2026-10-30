@@ -192,6 +192,22 @@ export default defineConfig({
 });
 ```
 
+#### `theme.shadows`
+
+Add shadows, each a `bs-o:` class. A shadow can stack several layers & use `light-dark()` for its colors. See [Box Shadow](/docs/box-shadow).
+
+```mjs title="yummacss.config.mjs" mark={4-7}
+import { defineConfig } from "yummacss";
+
+export default defineConfig({
+  theme: {
+    shadows: {
+      key: "0 0 0 1px light-dark(#0000001a, #000), 0 1px 2px #00000012",
+    },
+  },
+});
+```
+
 ### `safelist`
 
 Classes to generate even when no file contains them, such as one built at runtime.
