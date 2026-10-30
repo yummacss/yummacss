@@ -9,7 +9,6 @@ import {
 	extractConfigKeys,
 	extractReference,
 } from "./src/utils/search-reference";
-import { badgeFor } from "./src/utils/since";
 
 const docs = defineCollection({
 	name: "docs",
@@ -18,7 +17,6 @@ const docs = defineCollection({
 	schema: z.object({
 		title: z.string(),
 		description: z.string().optional(),
-		since: z.string().optional(),
 		content: z.string().optional(),
 	}),
 	transform: (doc) => ({
@@ -28,8 +26,6 @@ const docs = defineCollection({
 		),
 		slug: doc._meta.path,
 		wordCount: doc.content?.split(/\s+/).length ?? 0,
-		// worked out here so the client gets a string, not the version lookup behind it
-		badge: badgeFor(doc),
 		reference: [
 			...extractReference(doc.content ?? ""),
 			...(doc._meta.path === "configuration"

@@ -9,7 +9,6 @@
  * @property {string[]} [tables] One Reference table per property, in place of `reference`.
  * @property {boolean} [negative] Its Variants list negative values.
  * @property {string} [baseline] The web-features path. Defaults to `css.properties.<first property>`.
- * @property {string} [since] The minor it arrived in.
  */
 
 /** @type {Record<string, UtilityPage[]>} */
@@ -18,17 +17,14 @@ export const UTILITY_PAGES = {
 		{
 			slug: "animation-delay",
 			description: "Set how long an animation waits before it starts.",
-			since: "4.2",
 		},
 		{
 			slug: "animation-duration",
 			description: "Set how long one cycle of an animation takes.",
-			since: "4.2",
 		},
 		{
 			slug: "animation-iteration-count",
 			description: "Set how many times an animation runs.",
-			since: "4.2",
 		},
 	],
 	background: [
@@ -62,7 +58,6 @@ export const UTILITY_PAGES = {
 			description: "Set the background image of an element.",
 			reference: "linear-gradient",
 			baseline: "css.properties.background-image",
-			since: "4.11",
 		},
 	],
 	border: [
@@ -335,7 +330,6 @@ export const UTILITY_PAGES = {
 		{
 			slug: "font-variant-numeric",
 			description: "Set how numbers are drawn for an element.",
-			since: "4.8",
 		},
 	],
 	grid: [
@@ -479,7 +473,6 @@ export const UTILITY_PAGES = {
 		{
 			slug: "will-change",
 			description: "Hint which properties of an element are about to animate.",
-			since: "4.10",
 		},
 	],
 	layout: [
@@ -491,7 +484,6 @@ export const UTILITY_PAGES = {
 		{
 			slug: "container-type",
 			description: "Make an element a container its children can query.",
-			since: "4.2",
 		},
 		{ slug: "display", description: "Set the display box type of an element." },
 		{
@@ -749,7 +741,6 @@ export function utilitySource(page) {
 		"---",
 		`title: ${page.title}`,
 		`description: ${JSON.stringify(page.description)}`,
-		...(page.since ? [`since: "${page.since}"`] : []),
 		"---",
 		"",
 		utilityBody(page),
