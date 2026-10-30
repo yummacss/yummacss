@@ -344,6 +344,22 @@ export const interactivity: Utilities = {
 		variants,
 	},
 
+	"will-change": {
+		prefix: "wc",
+		properties: ["will-change"],
+		slug: "will-change",
+		values: {
+			auto: "auto",
+			c: "contents",
+			o: "opacity",
+			s: "scale",
+			sp: "scroll-position",
+			t: "transform",
+			tr: "translate",
+		},
+		variants,
+	},
+
 	"touch-action": {
 		prefix: "ta",
 		properties: ["touch-action"],
