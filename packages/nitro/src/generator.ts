@@ -117,8 +117,8 @@ function buildUtils(config: Config): Record<string, Utility> {
 			modified = true;
 		}
 
-		if (config.theme?.shadows && key === "box-shadow-outset") {
-			newUtil.values = { ...newUtil.values, ...config.theme.shadows };
+		if (config.theme?.boxShadow && key === "box-shadow-outset") {
+			newUtil.values = { ...newUtil.values, ...config.theme.boxShadow };
 			modified = true;
 		}
 

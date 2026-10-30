@@ -442,26 +442,26 @@ describe("theme.easings", () => {
 	});
 });
 
-describe("theme.shadows", () => {
-	const shadows = {
+describe("theme.boxShadow", () => {
+	const boxShadow = {
 		key: "0 0 0 1px light-dark(#0000001a, #000), inset 0 1px 0 #ffffff1a",
 	};
 
 	it("generates bs-o:<name>", () => {
-		expect(css("bs-o:key", { shadows })).toContain(
+		expect(css("bs-o:key", { boxShadow })).toContain(
 			"box-shadow: 0 0 0 1px light-dark(#0000001a, #000), inset 0 1px 0 #ffffff1a;",
 		);
 	});
 
 	it("is valid only when configured", () => {
-		expect(invalid(["bs-o:key"], { shadows })).toEqual([]);
+		expect(invalid(["bs-o:key"], { boxShadow })).toEqual([]);
 		expect(invalid(["bs-o:key"])).toEqual(["bs-o:key"]);
 	});
 
 	it("keeps the presets, and refuses their names", () => {
-		expect(css("bs-o:sm", { shadows })).toContain("box-shadow:");
-		expect(parses({ shadows: { sm: "none" } })).toBe(false);
-		expect(parses({ shadows: { Key: "none" } })).toBe(false);
+		expect(css("bs-o:sm", { boxShadow })).toContain("box-shadow:");
+		expect(parses({ boxShadow: { sm: "none" } })).toBe(false);
+		expect(parses({ boxShadow: { Key: "none" } })).toBe(false);
 	});
 });
 

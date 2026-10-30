@@ -105,7 +105,7 @@ export interface Config {
 		 *
 		 * @example { key: "0 0 0 1px #0000001a, inset 0 1px 0 #ffffff, 0 1px 2px #00000012" }
 		 */
-		shadows?: Record<string, string>;
+		boxShadow?: Record<string, string>;
 	};
 }
 
@@ -190,7 +190,7 @@ export const ConfigSchema = z.object({
 					z.string().min(1),
 				)
 				.optional(),
-			shadows: z
+			boxShadow: z
 				.record(
 					z
 						.string()
