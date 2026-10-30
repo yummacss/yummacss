@@ -17,7 +17,7 @@ export interface LintOptions {
 	 */
 	cwd?: string;
 
-	/** Path to a config file, when it is not `yumma.config.mjs` beside `cwd`. */
+	/** Path to a config file, when it is not `yummacss.config.mjs` beside `cwd`. */
 	configPath?: string;
 
 	/** A config to use directly, instead of reading one from disk. */

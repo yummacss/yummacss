@@ -8,7 +8,7 @@ export interface Options {
 	/** A config to use directly, instead of reading one from disk. */
 	config?: Config;
 
-	/** Path to a config file, when it is not `yumma.config.mjs` beside `cwd`. */
+	/** Path to a config file, when it is not `yummacss.config.mjs` beside `cwd`. */
 	configPath?: string;
 
 	/**

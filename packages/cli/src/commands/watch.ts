@@ -1,6 +1,6 @@
 import { watch as watchFiles } from "node:fs";
 import { join, relative, resolve } from "node:path";
-import { configName } from "@yummacss/nitro";
+import { configName, findConfig } from "@yummacss/nitro";
 import picomatch from "picomatch";
 import { m } from "../messages";
 import { build, readConfig } from "../services/build";
@@ -29,7 +29,9 @@ export async function watch(configPath?: string): Promise<number> {
 		return fail(error);
 	}
 
-	const configFile = resolve(configPath ?? configName);
+	const configFile = resolve(
+		configPath ?? findConfig(process.cwd()) ?? configName,
+	);
 	let timer: NodeJS.Timeout | undefined;
 	let changed = "";
 

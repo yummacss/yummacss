@@ -5,7 +5,7 @@ import { describe, expect, it } from "vite-plus/test";
 import { agentRules, SYNTAX } from "@/utils/agent-rules";
 import { rootDir } from "./helpers";
 
-const config = (await import("../yumma.config.mjs")).default as Config;
+const config = (await import("../yummacss.config.mjs")).default as Config;
 
 const llms = join(rootDir, "src/app/llms.txt/route.ts");
 

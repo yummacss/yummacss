@@ -1,9 +1,13 @@
 import { coreUtils, pseudoClasses, pseudoElements } from "@yummacss/core";
 import { z } from "zod";
 
-export const configName = "yumma.config.mjs";
+/** The config file Yumma CSS reads from a project's root. */
+export const configName = "yummacss.config.mjs";
 
-/** Configures Yumma CSS. Pass it to `defineConfig` in `yumma.config.mjs`. */
+/** The config file name before 4.11, read with a warning until 5.0. */
+export const legacyConfigName = "yumma.config.mjs";
+
+/** Configures Yumma CSS. Pass it to `defineConfig` in `yummacss.config.mjs`. */
 export interface Config {
 	/**
 	 * Files to scan for Yumma CSS classes. Only classes found here are generated.

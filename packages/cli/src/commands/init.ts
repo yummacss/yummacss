@@ -1,5 +1,5 @@
 import { existsSync, writeFileSync } from "node:fs";
-import { configName } from "@yummacss/nitro";
+import { configName, legacyConfigName } from "@yummacss/nitro";
 import { m } from "../messages";
 import { fail, intro, outro, say } from "../ui";
 
@@ -26,8 +26,11 @@ export default defineConfig({
 
 export function init(force = false): number {
 	intro();
-	if (existsSync(configName) && !force) {
-		outro("next", m.init.exists(configName));
+	const existing = [configName, legacyConfigName].find((name) =>
+		existsSync(name),
+	);
+	if (existing && !force) {
+		outro("next", m.init.exists(existing));
 		return 0;
 	}
 	try {

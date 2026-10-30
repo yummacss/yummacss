@@ -96,7 +96,7 @@ export function extractReference(content: string): ReferenceEntry[] {
 }
 
 /**
- * `yumma.config.mjs` keys, from the headings under Set Up on the configuration
+ * `yummacss.config.mjs` keys, from the headings under Set Up on the configuration
  * page: `### Source` is `source`, and a `####` under `### Theme` is `theme.*`.
  */
 export function extractConfigKeys(content: string): ReferenceEntry[] {
@@ -125,7 +125,7 @@ export function extractConfigKeys(content: string): ReferenceEntry[] {
 		out.push({
 			// a `####` heading already names its parent, as in `theme.colors`
 			title: hashes === "####" && !key.includes(".") ? `${parent}.${key}` : key,
-			description: "yumma.config.mjs",
+			description: "yummacss.config.mjs",
 			anchor: generateId(name),
 		});
 	}

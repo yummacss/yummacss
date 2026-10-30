@@ -1,9 +1,10 @@
 import { createHash } from "node:crypto";
-import { relative, resolve } from "node:path";
+import { dirname, relative, resolve } from "node:path";
 import {
 	type Config,
 	configName,
 	generator,
+	legacyConfigName,
 	loadConfig,
 	scan,
 } from "@yummacss/nitro";
@@ -15,7 +16,7 @@ export interface Options {
 	/** A config to use directly, instead of reading one from disk. */
 	config?: Config;
 
-	/** Path to a config file, when it is not `yumma.config.mjs` beside the root. */
+	/** Path to a config file, when it is not `yummacss.config.mjs` beside the root. */
 	configPath?: string;
 }
 
@@ -63,14 +64,20 @@ export default function yummacss(options: Options = {}): Plugin {
 
 		configureServer(devServer) {
 			server = devServer;
-			const configFile = resolve(root, options.configPath ?? configName);
+			const isConfig = (file: string) =>
+				options.configPath
+					? resolve(file) === resolve(root, options.configPath)
+					: dirname(resolve(file)) === resolve(root) &&
+						[configName, legacyConfigName].some(
+							(name) => resolve(file) === resolve(root, name),
+						);
 
 			devServer.watcher.on("all", async (event, file) => {
 				if (event !== "add" && event !== "change" && event !== "unlink") {
 					return;
 				}
 
-				if (resolve(file) === configFile) {
+				if (isConfig(file)) {
 					await reloadConfig();
 				} else if (!isSourceFile(file)) {
 					return;

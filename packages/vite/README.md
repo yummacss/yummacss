@@ -23,10 +23,10 @@ Add `@yummacss;` to your CSS entry file.
 
 ## Options
 
-| Option       | Type     | Default            | Description                                  |
-| ------------ | -------- | ------------------ | -------------------------------------------- |
-| `config`     | `Config` | -                  | Inline configuration; skips the config file. |
-| `configPath` | `string` | `yumma.config.mjs` | Path to the config file.                     |
+| Option       | Type     | Default               | Description                                  |
+| ------------ | -------- | --------------------- | -------------------------------------------- |
+| `config`     | `Config` | -                     | Inline configuration; skips the config file. |
+| `configPath` | `string` | `yummacss.config.mjs` | Path to the config file.                     |
 
 ## Documentation
 

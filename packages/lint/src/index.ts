@@ -1,11 +1,10 @@
-import { existsSync } from "node:fs";
 import { createRequire } from "node:module";
-import { dirname, join, resolve } from "node:path";
+import { dirname, resolve } from "node:path";
 import { coreUtils } from "@yummacss/core";
 import {
 	type Config,
 	ConfigSchema,
-	configName,
+	findConfig,
 	suggestClasses,
 	validateClasses,
 } from "@yummacss/nitro";
@@ -50,7 +49,7 @@ export interface RuleOptions {
 	 * Replaces the rule's message. `{{className}}`, `{{property}}` and
 	 * `{{suggestions}}` are filled in, and left empty where they do not apply.
 	 *
-	 * @example "Use a class from the scale for {{property}}. See yumma.config.mjs."
+	 * @example "Use a class from the scale for {{property}}. See yummacss.config.mjs."
 	 */
 	message?: string;
 }
@@ -117,15 +116,15 @@ function load(path: string): Scope {
 	}
 }
 
-// the nearest yumma.config.mjs above a file; a file with none gets the defaults
+// the nearest yummacss.config.mjs above a file; a file with none gets the defaults
 function scopeFor(file: string): Scope {
 	const walked: string[] = [];
 	let folder = dirname(resolve(file));
 	let scope = byFolder.get(folder);
 	while (!scope) {
 		walked.push(folder);
-		const path = join(folder, configName);
-		if (existsSync(path)) {
+		const path = findConfig(folder);
+		if (path) {
 			scope = load(path);
 			break;
 		}

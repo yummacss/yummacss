@@ -5,7 +5,7 @@ import { describe, expect, it } from "vite-plus/test";
 import { extractClasses } from "../scripts/extract-classes.mjs";
 import { rootDir, tsxFilesIn } from "./helpers";
 
-const config = (await import("../yumma.config.mjs")).default as Config;
+const config = (await import("../yummacss.config.mjs")).default as Config;
 
 const siteFiles = [
 	...tsxFilesIn(join(rootDir, "src/app")),

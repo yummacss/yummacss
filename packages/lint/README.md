@@ -10,7 +10,7 @@ pnpm add -D oxlint @yummacss/lint
 
 ## Usage
 
-A JS plugin for Oxlint. Each file uses the `yumma.config.mjs` nearest to it, so your own colors and states pass, in every package of a monorepo too.
+A JS plugin for Oxlint. Each file uses the `yummacss.config.mjs` nearest to it, so your own colors and states pass, in every package of a monorepo too.
 
 ```json
 // .oxlintrc.json

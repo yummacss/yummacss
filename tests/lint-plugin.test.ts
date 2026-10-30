@@ -213,10 +213,10 @@ describe("config lookup", () => {
 	const brand = 'export default { theme: { colors: { brand: "#4c5fc7" } } };';
 	const row = 'const a = <div className="c:brand d:f" />;';
 
-	it("should give each file the nearest yumma.config.mjs above it", () => {
+	it("should give each file the nearest yummacss.config.mjs above it", () => {
 		const { reported } = lintTree(
 			{
-				"apps/site/yumma.config.mjs": brand,
+				"apps/site/yummacss.config.mjs": brand,
 				"apps/site/src/ui/row.jsx": row,
 				"apps/other/row.jsx": row,
 			},
@@ -228,7 +228,7 @@ describe("config lookup", () => {
 
 	it("should find a shared config at the root from any folder", () => {
 		const { reported } = lintTree(
-			{ "yumma.config.mjs": brand, "packages/a/src/row.jsx": row },
+			{ "yummacss.config.mjs": brand, "packages/a/src/row.jsx": row },
 			{ "yummacss/no-unknown-classes": "error" },
 		);
 
@@ -238,12 +238,14 @@ describe("config lookup", () => {
 	it("should name a config that does not load", () => {
 		const { output } = lintTree(
 			{
-				"apps/site/yumma.config.mjs": "export default {",
+				"apps/site/yummacss.config.mjs": "export default {",
 				"apps/site/row.jsx": row,
 			},
 			{ "yummacss/no-unknown-classes": "error" },
 		);
 
-		expect(output).toMatch(/could not load .*apps\/site\/yumma\.config\.mjs/);
+		expect(output).toMatch(
+			/could not load .*apps\/site\/yummacss\.config\.mjs/,
+		);
 	});
 });

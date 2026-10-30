@@ -19,9 +19,9 @@ Initialize a configuration file in your project.
 pnpm dlx yummacss init
 ```
 
-Creates `yumma.config.mjs` at your project root, read by the CLI & both plugins.
+Creates `yummacss.config.mjs` at your project root, read by the CLI & both plugins.
 
-```mjs title="yumma.config.mjs" mark={4-5}
+```mjs title="yummacss.config.mjs" mark={4-5}
 import { defineConfig } from "yummacss";
 
 export default defineConfig({
@@ -34,7 +34,7 @@ export default defineConfig({
 
 Use glob patterns to include subfolders & specific file types.
 
-```mjs title="yumma.config.mjs" mark={4}
+```mjs title="yummacss.config.mjs" mark={4}
 import { defineConfig } from "yummacss";
 
 export default defineConfig({
@@ -51,7 +51,7 @@ Specifies the output path for the compiled CSS file.
   generated CSS through the `@yummacss;` marker instead.
 </Note>
 
-```mjs title="yumma.config.mjs" mark={4}
+```mjs title="yummacss.config.mjs" mark={4}
 import { defineConfig } from "yummacss";
 
 export default defineConfig({
@@ -63,7 +63,7 @@ export default defineConfig({
 
 Determines whether to include base styles normalization.
 
-```mjs title="yumma.config.mjs" mark={4}
+```mjs title="yummacss.config.mjs" mark={4}
 import { defineConfig } from "yummacss";
 
 export default defineConfig({
@@ -79,7 +79,7 @@ Extends or overrides default design tokens.
 
 Add color families. Each gets shades `1` to `12` unless you write them out.
 
-```mjs title="yumma.config.mjs" mark={4-12}
+```mjs title="yummacss.config.mjs" mark={4-12}
 import { defineConfig } from "yummacss";
 
 export default defineConfig({
@@ -95,7 +95,7 @@ export default defineConfig({
 });
 ```
 
-```mjs title="yumma.config.mjs" mark={6}
+```mjs title="yummacss.config.mjs" mark={6}
 import { defineConfig } from "yummacss";
 
 export default defineConfig({
@@ -111,7 +111,7 @@ export default defineConfig({
 
 Define custom media query breakpoints or override existing ones.
 
-```mjs title="yumma.config.mjs" mark={4-13}
+```mjs title="yummacss.config.mjs" mark={4-13}
 import { defineConfig } from "yummacss";
 
 export default defineConfig({
@@ -132,7 +132,7 @@ export default defineConfig({
 
 Name your own variants for attributes your components set. Each name becomes a prefix like `h:`. See [States](/docs/states).
 
-```mjs title="yumma.config.mjs" mark={4-7}
+```mjs title="yummacss.config.mjs" mark={4-7}
 import { defineConfig } from "yummacss";
 
 export default defineConfig({
@@ -148,7 +148,7 @@ export default defineConfig({
 
 Add font stacks, each an `ff:` class. See [Font Family](/docs/font-family).
 
-```mjs title="yumma.config.mjs" mark={4-7}
+```mjs title="yummacss.config.mjs" mark={4-7}
 import { defineConfig } from "yummacss";
 
 export default defineConfig({
@@ -164,7 +164,7 @@ export default defineConfig({
 
 Add keyframes, each an `an:` class. See [Animation Name](/docs/animation-name).
 
-```mjs title="yumma.config.mjs" mark={4-7}
+```mjs title="yummacss.config.mjs" mark={4-7}
 import { defineConfig } from "yummacss";
 
 export default defineConfig({
@@ -180,7 +180,7 @@ export default defineConfig({
 
 Add easing curves, each a `ttf:` & an `atf:` class. See [Transition Timing Function](/docs/transition-timing-function).
 
-```mjs title="yumma.config.mjs" mark={4-7}
+```mjs title="yummacss.config.mjs" mark={4-7}
 import { defineConfig } from "yummacss";
 
 export default defineConfig({
@@ -201,7 +201,7 @@ Classes to generate even when no file contains them, such as one built at runtim
   so list it here.
 </Note>
 
-```mjs title="yumma.config.mjs" mark={4}
+```mjs title="yummacss.config.mjs" mark={4}
 import { defineConfig } from "yummacss";
 
 export default defineConfig({
@@ -236,7 +236,7 @@ The CLI checks the source files you've given it and makes a CSS file using the u
 
 ## CLI commands
 
-First, you'll need a `yumma.config.mjs` file. If there is none, run `yummacss init`.
+First, you'll need a `yummacss.config.mjs` file. If there is none, run `yummacss init`.
 
 ### Build
 
@@ -364,5 +364,5 @@ Fix the classes above, or pass --allow "class-a,class-b" for custom classes.
 | Flag       | Alias | Description                                                                                             |
 | ---------- | ----- | ------------------------------------------------------------------------------------------------------- |
 | `--allow`  | `-a`  | Comma-separated class names to skip. Repeat it to add more.                                             |
-| `--config` | `-c`  | Path to the config file, absolute or relative to the working directory. Defaults to `yumma.config.mjs`. |
+| `--config` | `-c`  | Path to the config file, absolute or relative to the working directory. Defaults to `yummacss.config.mjs`. |
 
