@@ -469,6 +469,10 @@ export const UTILITY_PAGES = {
 			slug: "user-select",
 			description: "Set the ability for users to select text in an element.",
 		},
+		{
+			slug: "will-change",
+			description: "Hint which properties of an element are about to animate.",
+		},
 	],
 	layout: [
 		{

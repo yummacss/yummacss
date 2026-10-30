@@ -27,7 +27,7 @@ export const animation: Utilities = {
 			1: "1",
 			2: "2",
 			3: "3",
-			inf: "infinite",
+			i: "infinite",
 		},
 		variants,
 	},

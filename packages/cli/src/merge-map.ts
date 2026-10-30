@@ -222,6 +222,7 @@ export const PREFIXES: Record<string, string[]> = {
 	va: ["vertical-align"],
 	w: ["width"],
 	wb: ["word-break"],
+	wc: ["will-change"],
 	wm: ["writing-mode"],
 	ws: ["white-space"],
 	xs: ["inline-size"],

@@ -370,7 +370,17 @@ describe("theme.keyframes", () => {
 		["adu:250", "animation-duration: 250ms;"],
 		["ad:100", "animation-delay: 100ms;"],
 		["atf:l", "animation-timing-function: linear;"],
-		["aic:inf", "animation-iteration-count: infinite;"],
+		["aic:i", "animation-iteration-count: infinite;"],
+	])("%s writes %s", (className, expected) => {
+		expect(css(className)).toContain(expected);
+	});
+});
+
+describe("will-change", () => {
+	it.each([
+		["wc:auto", "will-change: auto;"],
+		["wc:s", "will-change: scale;"],
+		["wc:sp", "will-change: scroll-position;"],
 	])("%s writes %s", (className, expected) => {
 		expect(css(className)).toContain(expected);
 	});
