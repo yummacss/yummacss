@@ -472,6 +472,7 @@ export const UTILITY_PAGES = {
 		{
 			slug: "will-change",
 			description: "Hint which properties of an element are about to animate.",
+			since: "4.10",
 		},
 	],
 	layout: [
