@@ -20,17 +20,17 @@ ${c.bold("yummacss")} ${c.dim(`v${version}`)}  Builds the CSS your classes use.
 ${c.bold("Usage")}  yummacss <command> [options]
 
 ${c.bold("Commands")}
-${row("init, i", "Write yumma.config.mjs")}
+${row("init, i", "Write yummacss.config.mjs")}
 ${row("build, b", "Build the CSS once")}
 ${row("watch, w", "Build, then rebuild on every change")}
 ${row("lint, l", "Find classes Yumma CSS does not generate")}
 ${row("migrate, m", "Rewrite 3.x classes into the 4.x syntax")}
 
 ${c.bold("Options")}
-${row("-c, --config <path>", "A config other than yumma.config.mjs")}
+${row("-c, --config <path>", "A config other than yummacss.config.mjs")}
 ${row("-a, --allow <classes>", "lint: classes to accept, comma separated")}
 ${row("--dry-run", "migrate: report, without writing")}
-${row("--force", "init: replace yumma.config.mjs")}
+${row("--force", "init: replace yummacss.config.mjs")}
 `;
 	},
 

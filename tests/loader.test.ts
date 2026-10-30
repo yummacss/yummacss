@@ -2,7 +2,7 @@ import { mkdtempSync, rmSync, utimesSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { isAbsolute, join } from "node:path";
 import { loadConfig, scan } from "@yummacss/nitro";
-import { afterAll, describe, expect, it } from "vite-plus/test";
+import { afterAll, describe, expect, it, vi } from "vite-plus/test";
 
 const fixtureDir = join(__dirname, "fixtures", "plugin-app");
 const tempDirs: string[] = [];
@@ -31,10 +31,10 @@ describe("loadConfig", () => {
 		expect(config.normalize).toBe(true);
 	});
 
-	it("should load yumma.config.mjs from cwd", async () => {
+	it("should load yummacss.config.mjs from cwd", async () => {
 		const { config, path } = await loadConfig({ cwd: fixtureDir });
 
-		expect(path).toBe(join(fixtureDir, "yumma.config.mjs"));
+		expect(path).toBe(join(fixtureDir, "yummacss.config.mjs"));
 		expect(config.source).toEqual(["src/**/*.tsx"]);
 		expect(config.safelist).toEqual(["c:white"]);
 	});
@@ -42,7 +42,7 @@ describe("loadConfig", () => {
 	it("should load a config from an explicit relative path", async () => {
 		const { config } = await loadConfig({
 			cwd: join(fixtureDir, "src"),
-			path: "../yumma.config.mjs",
+			path: "../yummacss.config.mjs",
 		});
 
 		expect(config.source).toEqual(["src/**/*.tsx"]);
@@ -55,7 +55,7 @@ describe("loadConfig", () => {
 	it("should throw when the config file is invalid", async () => {
 		const dir = makeTempDir();
 		writeFileSync(
-			join(dir, "yumma.config.mjs"),
+			join(dir, "yummacss.config.mjs"),
 			"export default { source: 'not-an-array' };",
 		);
 
@@ -64,7 +64,7 @@ describe("loadConfig", () => {
 
 	it("should pick up config edits in long-running processes", async () => {
 		const dir = makeTempDir();
-		const configPath = join(dir, "yumma.config.mjs");
+		const configPath = join(dir, "yummacss.config.mjs");
 
 		writeFileSync(configPath, "export default { output: 'a.css' };");
 		const first = await loadConfig({ cwd: dir });
@@ -97,5 +97,37 @@ describe("scan", () => {
 		}
 		expect(files.some((file) => file.endsWith("App.tsx"))).toBe(true);
 		expect(files.some((file) => file.endsWith("Button.tsx"))).toBe(true);
+	});
+});
+
+describe("the legacy config name", () => {
+	const legacy = "export default { source: ['old/**'] };";
+
+	it("reads yumma.config.mjs and warns once", async () => {
+		const dir = makeTempDir();
+		writeFileSync(join(dir, "yumma.config.mjs"), legacy);
+		const warn = vi.spyOn(console, "warn").mockImplementation(() => {});
+
+		const { config, path } = await loadConfig({ cwd: dir });
+		await loadConfig({ cwd: dir });
+
+		expect(path).toBe(join(dir, "yumma.config.mjs"));
+		expect(config.source).toEqual(["old/**"]);
+		expect(warn).toHaveBeenCalledTimes(1);
+		expect(warn.mock.calls[0]?.[0]).toContain("yummacss.config.mjs");
+		warn.mockRestore();
+	});
+
+	it("prefers yummacss.config.mjs when both exist", async () => {
+		const dir = makeTempDir();
+		writeFileSync(join(dir, "yumma.config.mjs"), legacy);
+		writeFileSync(
+			join(dir, "yummacss.config.mjs"),
+			"export default { source: ['new/**'] };",
+		);
+
+		const { config } = await loadConfig({ cwd: dir });
+
+		expect(config.source).toEqual(["new/**"]);
 	});
 });

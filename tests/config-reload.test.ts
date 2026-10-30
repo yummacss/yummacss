@@ -5,7 +5,7 @@ import { loadConfig } from "@yummacss/nitro";
 import { afterAll, describe, expect, it } from "vite-plus/test";
 
 const dir = mkdtempSync(join(tmpdir(), "yumma-reload-"));
-const configPath = join(dir, "yumma.config.mjs");
+const configPath = join(dir, "yummacss.config.mjs");
 
 const write = (colors: Record<string, string>) =>
 	writeFileSync(

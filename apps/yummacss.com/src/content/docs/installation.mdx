@@ -37,7 +37,7 @@ Use the `@yummacss/vite` plugin with Vite & Vite-based frameworks like SvelteKit
   <Step title="Configure sources">
     Specify the locations/paths of your project files in the config file.
 
-    ```mjs title="yumma.config.mjs" mark={4}
+    ```mjs title="yummacss.config.mjs" mark={4}
     import { defineConfig } from "yummacss";
 
     export default defineConfig({
@@ -84,7 +84,7 @@ Use the `@yummacss/postcss` plugin with Next.js. It works with both Turbopack & 
   <Step title="Configure sources">
     Specify the locations/paths of your project files in the config file.
 
-    ```mjs title="yumma.config.mjs" mark={4}
+    ```mjs title="yummacss.config.mjs" mark={4}
     import { defineConfig } from "yummacss";
 
     export default defineConfig({
@@ -106,14 +106,14 @@ Use the `@yummacss/postcss` plugin with Next.js. It works with both Turbopack & 
 
 ### Plugin options
 
-Both plugins read `yumma.config.mjs` from where the build runs. Use these options when the config lives elsewhere.
+Both plugins read `yummacss.config.mjs` from where the build runs. Use these options when the config lives elsewhere.
 
 In a monorepo, PostCSS often runs from the repo root, so `cwd` points it at your app.
 
 | Option | Type | Default | Description |
 | --- | --- | --- | --- |
 | `config` | `Config` | | Inline configuration, read instead of the file. |
-| `configPath` | `string` | `yumma.config.mjs` | Path to the config file. |
+| `configPath` | `string` | `yummacss.config.mjs` | Path to the config file. |
 | `cwd` | `string` | `process.cwd()` | PostCSS only. Where the config & `source` globs resolve from. |
 
 ```js title="postcss.config.mjs" "cwd"
@@ -151,7 +151,7 @@ Prefer generating a plain CSS file? Install Yumma CSS with your favorite package
   <Step title="Configure sources">
     Specify the locations/paths of your project files in the config file.
 
-    ```mjs title="yumma.config.mjs" mark={4-5}
+    ```mjs title="yummacss.config.mjs" mark={4-5}
     import { defineConfig } from "yummacss";
 
     export default defineConfig({

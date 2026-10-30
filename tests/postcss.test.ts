@@ -45,7 +45,7 @@ describe("@yummacss/postcss", () => {
 		);
 
 		const files = dependencies.map((message) => message.file as string);
-		expect(files).toContain(join(fixtureDir, "yumma.config.mjs"));
+		expect(files).toContain(join(fixtureDir, "yummacss.config.mjs"));
 		expect(files.some((file) => file.endsWith("App.tsx"))).toBe(true);
 		expect(files.some((file) => file.endsWith("Button.tsx"))).toBe(true);
 
@@ -76,6 +76,6 @@ describe("@yummacss/postcss", () => {
 		const files = result.messages
 			.filter((message) => message.type === "dependency")
 			.map((message) => message.file as string);
-		expect(files).not.toContain(join(fixtureDir, "yumma.config.mjs"));
+		expect(files).not.toContain(join(fixtureDir, "yummacss.config.mjs"));
 	});
 });

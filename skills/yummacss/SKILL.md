@@ -1,6 +1,6 @@
 ---
 name: yummacss
-description: Write Yumma CSS classes and use Yumma UI components correctly. Use when a project depends on `yummacss`, has a `yumma.config.mjs`, or uses classes such as `d:f`, `p:4`, `bg:indigo-7` or `h:bg:red`. Triggers on "Yumma CSS", "Yumma UI", "yummacss", "yummaui", "style this with Yumma", "add a Yumma UI component", "migrate Yumma CSS from 3.x", "yummacss lint", and on editing `className` in a project that styles with Yumma CSS.
+description: Write Yumma CSS classes and use Yumma UI components correctly. Use when a project depends on `yummacss`, has a `yummacss.config.mjs`, or uses classes such as `d:f`, `p:4`, `bg:indigo-7` or `h:bg:red`. Triggers on "Yumma CSS", "Yumma UI", "yummacss", "yummaui", "style this with Yumma", "add a Yumma UI component", "migrate Yumma CSS from 3.x", "yummacss lint", and on editing `className` in a project that styles with Yumma CSS.
 license: MIT
 ---
 
@@ -31,7 +31,7 @@ If they cannot be fetched, the rules below hold for every 4.x release.
 
 ## The config
 
-`yumma.config.mjs` holds what a project adds under `theme`: colors, breakpoints, fonts, states such as `opening:`, easings for `ttf:` and `atf:`, and keyframes for `an:`. Read it before using a name the live rules do not list.
+`yummacss.config.mjs` holds what a project adds under `theme`: colors, breakpoints, fonts, states such as `opening:`, easings for `ttf:` and `atf:`, and keyframes for `an:`. Read it before using a name the live rules do not list.
 
 ## Yumma UI
 

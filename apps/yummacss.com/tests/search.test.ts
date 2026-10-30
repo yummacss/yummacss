@@ -22,7 +22,7 @@ describe("search reference", () => {
 		).toEqual(expect.arrayContaining(["config", "configPath", "cwd"]));
 	});
 
-	it("names every yumma.config.mjs key under Setting up a project", () => {
+	it("names every yummacss.config.mjs key under Setting up a project", () => {
 		const keys = extractConfigKeys(page("docs/configuration")).map(
 			(entry) => entry.title,
 		);
