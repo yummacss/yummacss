@@ -1,9 +1,9 @@
-import Image from "next/image";
 import {
 	BRAND_COLORS,
 	BRAND_PRODUCTS,
 	BRAND_VARIANTS,
 	type BrandProduct,
+	brandFiles,
 } from "@/utils/brand";
 
 function Download({ base }: { base: string }) {
@@ -19,42 +19,36 @@ function Download({ base }: { base: string }) {
 	);
 }
 
-/** A product's marks, light on the light page and dark on the dark one, whatever the theme. */
+/** The shared mark or a product's logo, light on the light page and dark on the dark one, whatever the theme. */
 export function BrandMarks({ product }: { product: BrandProduct }) {
 	const name = BRAND_PRODUCTS[product];
+	const files = brandFiles(product);
 	return (
 		<div className="d:g gtc:1 g:6 my:6 @sm:gtc:2">
 			{BRAND_VARIANTS.map((variant) => {
-				const theme = variant.label.toLowerCase();
+				const own = files.filter((file) => file.variant === variant.label);
 				return (
 					<div key={variant.label} className="d:f fd:c g:3">
 						<div
-							className="d:f ai:c jc:c g:10 p:8 bw:1 bc:ink/10"
+							className="d:f ai:c jc:c g:10 h:40 p:8 bw:1 bc:ink/10"
 							style={{ background: variant.page }}
 						>
-							<Image
-								src={`/brand/${product}${variant.suffix}.svg`}
-								alt={`${name} mark on its tile, ${theme}`}
-								width={96}
-								height={96}
-								unoptimized
-							/>
-							<Image
-								src={`/brand/${product}-mark${variant.suffix}.svg`}
-								alt={`${name} mark, ${theme}`}
-								width={72}
-								height={81}
-								unoptimized
-							/>
+							{own.map(({ base, label }) => (
+								// biome-ignore lint/performance/noImgElement: a plain SVG at its own ratio
+								<img
+									key={base}
+									src={`/brand/${base}.svg`}
+									alt={`${name}, ${label.toLowerCase()}`}
+									className={product === "yumma" ? "h:18" : "h:10"}
+								/>
+							))}
 						</div>
-						<div className="d:f fw:w jc:sb g:2 c:ink/70 fs:sm">
-							<span>{variant.label}, on its tile</span>
-							<Download base={`${product}${variant.suffix}`} />
-						</div>
-						<div className="d:f fw:w jc:sb g:2 c:ink/70 fs:sm">
-							<span>{variant.label}, without the tile</span>
-							<Download base={`${product}-mark${variant.suffix}`} />
-						</div>
+						{own.map(({ base, label }) => (
+							<div key={base} className="d:f fw:w jc:sb g:2 c:ink/70 fs:sm">
+								<span>{label}</span>
+								<Download base={base} />
+							</div>
+						))}
 					</div>
 				);
 			})}

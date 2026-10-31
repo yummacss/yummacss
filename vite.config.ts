@@ -30,12 +30,8 @@ export default defineConfig({
 				},
 			},
 			{
-				// the preview renderer reads inline styles only, and the mark matches the
-				// brand files, whose translucent light-dark() colors a color pair cannot hold
-				files: [
-					"apps/yummacss.com/src/components/og-image.tsx",
-					"apps/yummacss.com/src/components/icons/yummacss-mark.tsx",
-				],
+				// the preview renderer reads inline styles only
+				files: ["apps/yummacss.com/src/components/og-image.tsx"],
 				rules: { "yummacss/no-inline-styles": "off" },
 			},
 		],

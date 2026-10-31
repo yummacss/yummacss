@@ -70,7 +70,7 @@ export default function Footer() {
 			<div className="mx:auto px:6 max-w:clamp(40rem,80vw,96rem)">
 				<div className="d:f fd:c g:12 pt:14 @lg:fd:r @lg:g:18">
 					<div className="d:f fd:c g:5 @lg:w:80">
-						<HomeMark className="d:b w:10 h:10" />
+						<HomeMark className="d:b h:6 w:auto c:ink" />
 
 						<div className="d:f fd:c g:2">
 							<p className="m:0 c:ink/60 fs:sm">
