@@ -175,7 +175,10 @@ ${jsxLockup("yummacss", WORDS.yummacss)}${jsxLockup("yummaui", WORDS.yummaui)}`,
 // PNGs, the .ico and the touch icon, drawn by the browser
 // required, not imported, so the globally installed Playwright resolves too
 const { chromium } = createRequire(import.meta.url)("playwright");
-const browser = await chromium.launch();
+// CHROMIUM_PATH points at a browser when Playwright has none of its own
+const browser = await chromium.launch({
+	executablePath: process.env.CHROMIUM_PATH,
+});
 const page = await browser.newPage();
 async function png(body, width, height, opaque = false) {
 	await page.setViewportSize({ width, height });
