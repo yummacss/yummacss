@@ -31,7 +31,7 @@ export default function LandingHeader() {
 					aria-label="Yumma CSS"
 					className="d:b w:fc fv:oc:ink fv:ow:2"
 				>
-					<YummaCSSLogo className="d:b h:7 w:auto c:ink" />
+					<YummaCSSLogo className="d:b h:6 w:auto c:ink" />
 				</Link>
 
 				<div className="d:f ai:c g:2">

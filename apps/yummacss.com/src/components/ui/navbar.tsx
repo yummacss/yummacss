@@ -36,7 +36,7 @@ export default function Navbar({ className, menu }: NavbarProps) {
 			<header className={clsx(BASE, className)}>
 				<div className="mx:auto px:6 py:2 max-w:clamp(40rem,80vw,96rem)">
 					<nav className="d:f ai:c jc:sb">
-						<HomeMark className="d:b h:7 w:auto c:ink" />
+						<HomeMark className="d:b h:6 w:auto c:ink" />
 
 						<div className="d:f ai:c g:2 @sm:g:4">
 							<Button
