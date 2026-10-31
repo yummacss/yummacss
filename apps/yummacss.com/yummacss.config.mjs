@@ -10,6 +10,9 @@ export default defineConfig({
 			accent: { light: "#4c5fc7", dark: "#bec6f2" },
 			// indigo in both schemes, where accent turns pale in the dark
 			brand: "#4c5fc7",
+			// the logo's two squares
+			"mark-back": { light: "#a4b0ff", dark: "#6366f1" },
+			"mark-front": { light: "#6366f1", dark: "#453ec7" },
 			border: { light: "#dde1eb", dark: "#232741" },
 			code: { light: "#3e4a80", dark: "#dda2f6" },
 			ink: { light: "#14171f", dark: "#ffffff" },

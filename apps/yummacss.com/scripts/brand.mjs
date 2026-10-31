@@ -10,6 +10,9 @@ import opentype from "opentype.js";
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const HEADER = "written by apps/yummacss.com/scripts/brand.mjs, do not edit";
 
+// back and front square, light and dark
+const LIGHT = ["#A4B0FF", "#6366F1"];
+const DARK = ["#6366F1", "#453EC7"];
 const INK = "#2B2B2B";
 const PAPER = "#FFFFFF";
 const NIGHT = "#000000";
@@ -19,10 +22,10 @@ const SQUARES = [
 	{ x: 28.1481, y: 6, opacity: 0.85 },
 	{ x: 36.7783, y: 10.9827, opacity: 0.95 },
 ];
-const squares = (fill) =>
+const squares = (fills) =>
 	SQUARES.map(
-		({ x, y, opacity }) =>
-			`<rect opacity="${opacity}" x="${x}" y="${y}" width="25" height="25" rx="4" transform="rotate(75 ${x} ${y})" fill="${fill}"/>`,
+		({ x, y, opacity }, i) =>
+			`<rect opacity="${opacity}" x="${x}" y="${y}" width="25" height="25" rx="4" transform="rotate(75 ${x} ${y})" fill="${fills[i]}"/>`,
 	).join("");
 
 // the squares' outer edge, so the bare mark has no empty margin
@@ -59,11 +62,11 @@ const MARK_BOX = `${bounds.x} ${bounds.y} ${bounds.w} ${bounds.h}`;
 
 const svg = (viewBox, body) =>
 	`<!-- ${HEADER} -->\n<svg xmlns="http://www.w3.org/2000/svg" viewBox="${viewBox}" fill="none">${body}</svg>\n`;
-const bare = (ink) => svg(MARK_BOX, squares(ink));
-const tile = (page, ink) =>
+const bare = (fills) => svg(MARK_BOX, squares(fills));
+const tile = (page, fills) =>
 	svg(
 		"0 0 48 48",
-		`<rect width="48" height="48" rx="8" fill="${page}"/>${squares(ink)}`,
+		`<rect width="48" height="48" rx="8" fill="${page}"/>${squares(fills)}`,
 	);
 
 // the wordmark in Outfit Medium, with the mark centered on the lowercase height
@@ -92,7 +95,8 @@ function wordmark(word) {
 		d += glyph.getPath(x, 0, SIZE).toPathData(2);
 		x += (glyph.advanceWidth / font.unitsPerEm) * SIZE + TRACK;
 	}
-	const text = font.getPath(word, 0, 0, SIZE).getBoundingBox();
+	// one frame for every product, so the logos match in size whatever their letters
+	const text = font.getPath("yummacssui", 0, 0, SIZE).getBoundingBox();
 	const markTop = -XH / 2 - MARK_H / 2;
 	const top = Math.min(markTop, text.y1);
 	const bottom = Math.max(markTop + MARK_H, text.y2);
@@ -106,21 +110,21 @@ function wordmark(word) {
 }
 
 const WORDS = { yummacss: wordmark("yummacss"), yummaui: wordmark("yummaui") };
-const lockup = ({ viewBox, mark, text, d }, ink) =>
+const lockup = ({ viewBox, mark, text, d }, fills, ink) =>
 	svg(
 		viewBox,
-		`<g transform="${mark}">${squares(ink)}</g><path transform="${text}" d="${d}" fill="${ink}"/>`,
+		`<g transform="${mark}">${squares(fills)}</g><path transform="${text}" d="${d}" fill="${ink}"/>`,
 	);
 
 const files = {
-	"yumma-mark": bare(INK),
-	"yumma-mark-dark": bare(PAPER),
-	"yumma-tile": tile(PAPER, INK),
-	"yumma-tile-dark": tile(NIGHT, PAPER),
-	yummacss: lockup(WORDS.yummacss, INK),
-	"yummacss-dark": lockup(WORDS.yummacss, PAPER),
-	yummaui: lockup(WORDS.yummaui, INK),
-	"yummaui-dark": lockup(WORDS.yummaui, PAPER),
+	"yumma-mark": bare(LIGHT),
+	"yumma-mark-dark": bare(DARK),
+	"yumma-tile": tile(PAPER, LIGHT),
+	"yumma-tile-dark": tile(NIGHT, DARK),
+	yummacss: lockup(WORDS.yummacss, LIGHT, INK),
+	"yummacss-dark": lockup(WORDS.yummacss, DARK, PAPER),
+	yummaui: lockup(WORDS.yummaui, LIGHT, INK),
+	"yummaui-dark": lockup(WORDS.yummaui, DARK, PAPER),
 };
 
 await mkdir(join(root, "public/brand"), { recursive: true });
@@ -131,17 +135,17 @@ await writeFile(
 	join(root, "public/favicon.svg"),
 	svg(
 		MARK_BOX,
-		`<style>rect{fill:${INK}}@media (prefers-color-scheme:dark){rect{fill:${PAPER}}}</style>${squares(INK)}`,
+		`<style>rect+rect{fill:${LIGHT[1]}}@media (prefers-color-scheme:dark){rect{fill:${DARK[0]}}rect+rect{fill:${DARK[1]}}}</style>${squares(LIGHT)}`,
 	),
 );
 
-// the React marks paint in currentColor, so they follow the page's ink
+// the squares paint in the site's mark-back and mark-front colors, the wordmark in currentColor
 const jsxSquares = SQUARES.map(
-	({ x, y, opacity }) =>
-		`<rect opacity={${opacity}} x={${x}} y={${y}} width={25} height={25} rx={4} transform="rotate(75 ${x} ${y})" />`,
+	({ x, y, opacity }, i) =>
+		`<rect opacity={${opacity}} x={${x}} y={${y}} width={25} height={25} rx={4} transform="rotate(75 ${x} ${y})" className="${i ? "f:mark-front" : "f:mark-back"}" />`,
 ).join("\n\t\t\t");
 const jsxLockup = (name, { viewBox, mark, text, d }) => `
-/** The ${name === "yummacss" ? "Yumma CSS" : "Yumma UI"} logo, the mark and the wordmark, in the current text color. */
+/** The ${name === "yummacss" ? "Yumma CSS" : "Yumma UI"} logo: the mark, and the wordmark in the current text color. */
 export function ${name === "yummacss" ? "YummaCSSLogo" : "YummaUILogo"}(props: ComponentProps<"svg">) {
 	return (
 		<svg viewBox="${viewBox}" fill="currentColor" aria-hidden="true" {...props}>
@@ -161,7 +165,7 @@ import type { ComponentProps } from "react";
 /** Width over height of the bare mark. */
 export const MARK_RATIO = ${Math.round((bounds.w / bounds.h) * 10000) / 10000};
 
-/** The Yumma mark on its own, in the current text color. */
+/** The Yumma mark on its own. */
 export function YummaMark(props: ComponentProps<"svg">) {
 	return (
 		<svg viewBox="${MARK_BOX}" fill="currentColor" aria-hidden="true" {...props}>
@@ -205,7 +209,7 @@ for (const [name, body] of Object.entries(files)) {
 // iOS rounds the corners itself, so the touch icon is a full square
 const touch = svg(
 	"0 0 48 48",
-	`<rect width="48" height="48" fill="${PAPER}"/>${squares(INK)}`,
+	`<rect width="48" height="48" fill="${PAPER}"/>${squares(LIGHT)}`,
 );
 await writeFile(
 	join(root, "public/apple-touch-icon.png"),

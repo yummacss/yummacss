@@ -15,9 +15,10 @@ export const BRAND_VARIANTS = [
 ] as const;
 
 export const BRAND_COLORS = [
+	{ name: "Indigo light", hex: "#a4b0ff" },
+	{ name: "Indigo", hex: "#6366f1" },
+	{ name: "Indigo deep", hex: "#453ec7" },
 	{ name: "Ink", hex: "#2b2b2b" },
-	{ name: "Paper", hex: "#ffffff" },
-	{ name: "Night", hex: "#000000" },
 ] as const;
 
 /** Every file an entry offers: the mark on its tile and without it, or a logo, light and dark. */
