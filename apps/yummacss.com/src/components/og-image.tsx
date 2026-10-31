@@ -1,6 +1,6 @@
 import type { CSSProperties, ReactNode } from "react";
 
-// The link preview for every page: a canvas, the product's mark, and one
+// The link preview for every page: a canvas, the product's logo, and one
 // selected layer. Drawn by ImageResponse at 1200 by 630. the notes, "OG images".
 
 export type OgTheme = "light" | "dark";
@@ -325,11 +325,14 @@ export default function OgImage({
 	spec,
 	theme = "light",
 	mark,
+	markRatio,
 }: {
 	spec: OgSpec;
 	theme?: OgTheme;
-	/** The product's mark for this theme, as a data URL. */
+	/** The product's logo for this theme, as a data URL. */
 	mark: string;
+	/** The logo's width over its height. */
+	markRatio: number;
 }) {
 	const c = PALETTES[theme];
 	return (
@@ -347,7 +350,7 @@ export default function OgImage({
 				style={{ position: "absolute", left: LEFT, top: 64, display: "flex" }}
 			>
 				{/* biome-ignore lint/performance/noImgElement: ImageResponse draws a plain img */}
-				<img src={mark} width={140} height={(140 * 72) / 64} alt="" />
+				<img src={mark} width={64 * markRatio} height={64} alt="" />
 			</div>
 			{spec.kind === "home" && <Home c={c} spec={spec} />}
 			{spec.kind === "title" && <Title c={c} spec={spec} />}
