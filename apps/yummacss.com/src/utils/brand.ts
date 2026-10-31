@@ -15,9 +15,8 @@ export const BRAND_VARIANTS = [
 ] as const;
 
 export const BRAND_COLORS = [
-	{ name: "Indigo light", hex: "#a4b0ff" },
-	{ name: "Indigo", hex: "#6366f1" },
-	{ name: "Indigo deep", hex: "#453ec7" },
+	{ name: "Pale indigo", hex: "#bec6f2" },
+	{ name: "Indigo", hex: "#4c5fc7" },
 	{ name: "Ink", hex: "#2b2b2b" },
 ] as const;
 

@@ -10,9 +10,9 @@ import opentype from "opentype.js";
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const HEADER = "written by apps/yummacss.com/scripts/brand.mjs, do not edit";
 
-// back and front square, light and dark
-const LIGHT = ["#A4B0FF", "#6366F1"];
-const DARK = ["#6366F1", "#453EC7"];
+// back and front square: the pale accent behind the brand indigo, in both schemes
+const LIGHT = ["#BEC6F2", "#4C5FC7"];
+const DARK = LIGHT;
 const INK = "#2B2B2B";
 const PAPER = "#FFFFFF";
 const NIGHT = "#000000";
