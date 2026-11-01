@@ -1,59 +1,57 @@
-import type { Icon, IconProps } from "@phosphor-icons/react";
 import {
-	ArrowCounterClockwiseIcon,
-	ArrowElbowDownLeftIcon,
-	ArrowUpRightIcon,
-	BookOpenIcon,
-	CaretDownIcon,
-	CaretLeftIcon,
-	CaretRightIcon,
-	CaretUpIcon,
-	CheckIcon,
-	CopyIcon,
-	CubeIcon,
-	DiamondIcon,
-	FileIcon,
-	FileMdIcon,
-	FolderIcon,
-	GithubLogoIcon,
-	MagnifyingGlassIcon,
-	PlusIcon,
-	SignOutIcon,
-	SlidersHorizontalIcon,
-	TerminalWindowIcon,
-	TextTIcon,
-	TwitterLogoIcon,
-} from "@phosphor-icons/react/ssr";
+	IconArrowBackUp,
+	IconArrowUpRight,
+	IconBook,
+	IconBrandGithub,
+	IconBrandX,
+	IconCheck,
+	IconChevronDown,
+	IconChevronLeft,
+	IconChevronRight,
+	IconChevronUp,
+	IconCopy,
+	IconCornerDownLeft,
+	IconCube,
+	IconDiamond,
+	IconFile,
+	IconFolder,
+	IconLetterT,
+	IconLogout,
+	IconMarkdown,
+	IconPlus,
+	IconSearch,
+	IconSettings2,
+	IconTerminal2,
+	type Icon,
+	type IconProps,
+} from "@tabler/icons-react";
 
-type Props = Omit<IconProps, "weight">;
-
-// Regular weight: at 16px its 1px strokes sit on the pixel grid, where duotone's
-// fill blurs every edge. See the notes, "Icons at 16px".
-const regular = (Glyph: Icon) => {
-	const Regular = (props: Props) => <Glyph weight="regular" {...props} />;
-	return Regular;
+// a 1.5 stroke: Tabler's 2 reads heavy at 16px. See the notes, "Icons at 16px".
+const line = (Glyph: Icon) => {
+	const Line = (props: IconProps) => <Glyph stroke={1.5} {...props} />;
+	return Line;
 };
 
-export const ArrowUpRight = regular(ArrowUpRightIcon);
-export const Check = regular(CheckIcon);
-export const ComponentSolid = regular(CubeIcon);
-export const Copy = regular(CopyIcon);
-export const Diamond = regular(DiamondIcon);
-export const FileMd = regular(FileMdIcon);
-export const Folder = regular(FolderIcon);
-export const GitHub = regular(GithubLogoIcon);
-export const LogOut = regular(SignOutIcon);
-export const LongArrowDownLeftSolid = regular(ArrowElbowDownLeftIcon);
-export const NavArrowDown = regular(CaretDownIcon);
-export const NavArrowLeft = regular(CaretLeftIcon);
-export const NavArrowRight = regular(CaretRightIcon);
-export const NavArrowUp = regular(CaretUpIcon);
-export const OpenBook = regular(BookOpenIcon);
-export const Page = regular(FileIcon);
-export const Plus = regular(PlusIcon);
-export const Search = regular(MagnifyingGlassIcon);
-export const Sliders = regular(SlidersHorizontalIcon);
-export const Terminal = regular(TerminalWindowIcon);
-export const TextLayer = regular(TextTIcon);
-export const Twitter = regular(TwitterLogoIcon);
-export const Undo = regular(ArrowCounterClockwiseIcon);
+export const ArrowUpRight = line(IconArrowUpRight);
+export const Check = line(IconCheck);
+export const ComponentSolid = line(IconCube);
+export const Copy = line(IconCopy);
+export const Diamond = line(IconDiamond);
+export const FileMd = line(IconMarkdown);
+export const Folder = line(IconFolder);
+export const GitHub = line(IconBrandGithub);
+export const LogOut = line(IconLogout);
+export const LongArrowDownLeftSolid = line(IconCornerDownLeft);
+export const NavArrowDown = line(IconChevronDown);
+export const NavArrowLeft = line(IconChevronLeft);
+export const NavArrowRight = line(IconChevronRight);
+export const NavArrowUp = line(IconChevronUp);
+export const OpenBook = line(IconBook);
+export const Page = line(IconFile);
+export const Plus = line(IconPlus);
+export const Search = line(IconSearch);
+export const Settings = line(IconSettings2);
+export const Terminal = line(IconTerminal2);
+export const TextLayer = line(IconLetterT);
+export const Twitter = line(IconBrandX);
+export const Undo = line(IconArrowBackUp);

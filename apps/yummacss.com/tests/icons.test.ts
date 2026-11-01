@@ -3,7 +3,7 @@ import { join, relative } from "node:path";
 import { describe, expect, it } from "vite-plus/test";
 import { rootDir } from "./helpers";
 
-const DIRECT = /from\s+["']@phosphor-icons\/react/;
+const DIRECT = /from\s+["']@tabler\/icons-react/;
 
 function sources(dir: string): string[] {
 	const out: string[] = [];
@@ -31,7 +31,7 @@ describe("icons", () => {
 	it("re-exports every icon the site asks for", () => {
 		const exported = new Set(
 			readFileSync(module, "utf8").matchAll(
-				/^export const ([A-Z][A-Za-z0-9]*) = (?:duotone|regular)\(/gm,
+				/^export const ([A-Z][A-Za-z0-9]*) = line\(/gm,
 			),
 		);
 		const names = new Set([...exported].map((match) => match[1]));
