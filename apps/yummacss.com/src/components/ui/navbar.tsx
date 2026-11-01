@@ -44,7 +44,8 @@ export default function Navbar({ className, menu }: NavbarProps) {
 								onClick={() => setSearchOpen(true)}
 								onPointerEnter={preloadSearch}
 								onFocus={preloadSearch}
-								aria-label="Search"
+								aria-label="Search, Ctrl + K"
+								aria-keyshortcuts="Control+K Meta+K"
 								className="d:none ai:c jc:c g:2 h:8 px:4 bc:border bg:surface a:bg:press c:ink bw:1 fs:sm bf-b:sm @lg:d:f fv:oc:ink fv:ow:2"
 							>
 								<Search className="w:4 h:4" />
