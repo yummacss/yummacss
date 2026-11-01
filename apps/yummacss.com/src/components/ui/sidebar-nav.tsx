@@ -71,7 +71,7 @@ export default function SidebarNav({ sections, basePath }: Props) {
 								const group = entry as NavGroup;
 								return (
 									<li key={group.title} className="d:f fd:c g:2">
-										<span className="c:ink/50 fs:sm">{group.title}</span>
+										<span className="c:ink/60 fs:sm">{group.title}</span>
 										<ul className="d:f fd:c g:1">
 											{group.items.map((child) => {
 												const href = `${basePath}/${child.slug}`;

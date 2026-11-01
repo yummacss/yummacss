@@ -34,7 +34,7 @@ interface SearchDialogProps {
 }
 
 const KBD = "d:if ai:c jc:c h:5 px:1 bc:border bw:1 c:ink/60 fs:xs";
-const LABEL = "px:3 py:1 c:ink/50 fs:xs ls:2 tt:u";
+const LABEL = "px:3 py:1 c:ink/60 fs:xs ls:2 tt:u";
 
 /** The title with the typed text in the accent. */
 /** The highlighted page's details, shown once, on the right. */
@@ -67,14 +67,14 @@ function Details({
 	}
 	return (
 		<div className="d:f fd:c g:3 p:5">
-			<span className="c:ink/50 fs:xs ls:2 tt:u">
+			<span className="c:ink/60 fs:xs ls:2 tt:u">
 				{CATEGORY_LABELS[item.category]}
 			</span>
 			<span className="c:ink ff:display fs:xxl">{item.title}</span>
 			{item.description && (
 				<span className="c:ink/70 fs:sm lh:5">{item.description}</span>
 			)}
-			<span className="mt:2 c:ink/40 fs:xs">{item.path}</span>
+			<span className="mt:2 c:ink/60 fs:xs">{item.path}</span>
 		</div>
 	);
 }
@@ -296,7 +296,7 @@ export function SearchDialog({ open, onClose }: SearchDialogProps) {
 						<Match text={item.title} query={query} />
 					</span>
 					{description && item.description && (
-						<span className="o:h c:ink/50 fs:sm to:e ws:nw @md:d:none">
+						<span className="o:h c:ink/60 fs:sm to:e ws:nw @md:d:none">
 							{item.description}
 						</span>
 					)}
@@ -381,7 +381,7 @@ export function SearchDialog({ open, onClose }: SearchDialogProps) {
 													<span className="f:1 c:ink fs:md">
 														{section.title}
 													</span>
-													<span className="d:f ai:c g:2 c:ink/40 fs:sm">
+													<span className="d:f ai:c g:2 c:ink/60 fs:sm">
 														{section.pages.length}
 														<NavArrowRight
 															className={`w:4 h:4 ${selected ? "" : "@md:o:0"}`}
@@ -454,7 +454,7 @@ export function SearchDialog({ open, onClose }: SearchDialogProps) {
 									})}
 
 								{searching && rows.length === 0 && (
-									<div className="px:4 py:8 c:ink/50 ta:c fs:md">
+									<div className="px:4 py:8 c:ink/60 ta:c fs:md">
 										No results for "{query}"
 										{category ? ` in ${category.title}` : ""}
 									</div>
@@ -474,7 +474,7 @@ export function SearchDialog({ open, onClose }: SearchDialogProps) {
 												</div>
 											))}
 											{highlighted.pages.length > 12 && (
-												<div className="px:3 py:1 c:ink/50 fs:sm">
+												<div className="px:3 py:1 c:ink/60 fs:sm">
 													{highlighted.pages.length - 12} more
 												</div>
 											)}
@@ -502,7 +502,7 @@ export function SearchDialog({ open, onClose }: SearchDialogProps) {
 						</div>
 
 						{/* keys to press, so only where a keyboard is likely: the navbar's Ctrl K hint shows from the same width */}
-						<div className="d:none fs:0 ai:c g:4 px:4 h:10 bc:border c:ink/50 btw:1 fs:xs @lg:d:f">
+						<div className="d:none fs:0 ai:c g:4 px:4 h:10 bc:border c:ink/60 btw:1 fs:xs @lg:d:f">
 							<span className="d:f ai:c g:1">
 								<kbd className={KBD}>
 									<NavArrowUp className="w:3 h:3" />

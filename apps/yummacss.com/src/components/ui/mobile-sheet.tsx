@@ -82,7 +82,7 @@ export default function MobileSheet({ menu, isOpen, onClose }: Props) {
 								aria-hidden
 								className="p:a t:2 l:0 r:0 w:14 h:1 mx:auto bg:border"
 							/>
-							<div className="d:f ai:c g:3 h:10 px:3 bc:border bg:surface c:ink/50 bw:1 fw:oc:ink fw:ow:2">
+							<div className="d:f ai:c g:3 h:10 px:3 bc:border bg:surface c:ink/60 bw:1 fw:oc:ink fw:ow:2">
 								<Search className="fs:0 w:4 h:4" />
 								<Input
 									type="text"
@@ -103,19 +103,19 @@ export default function MobileSheet({ menu, isOpen, onClose }: Props) {
 							>
 								{!typed && (
 									<ProductLinks
-										heading="mb:2 px:7 c:ink/50 fs:sm fw:400"
+										heading="mb:2 px:7 c:ink/60 fs:sm fw:400"
 										link="p:r d:f ai:c g:2 h:10 px:7 fs:md us:none a:bg:surface fv:oc:ink fv:oo:-2 fv:ow:2"
 										onNavigate={onClose}
 									/>
 								)}
 								{sections.length === 0 && (
-									<p className="px:4 py:8 c:ink/50 ta:c">
+									<p className="px:4 py:8 c:ink/60 ta:c">
 										No pages match "{typed}"
 									</p>
 								)}
 								{sections.map((section) => (
 									<section key={section.title} className="d:f fd:c">
-										<h3 className="mb:2 px:7 c:ink/50 fs:sm fw:400">
+										<h3 className="mb:2 px:7 c:ink/60 fs:sm fw:400">
 											{section.title}
 										</h3>
 										<ul>
