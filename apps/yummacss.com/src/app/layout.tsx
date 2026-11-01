@@ -1,13 +1,10 @@
-import "@fontsource/ia-writer-quattro/latin-400.css";
-import "@fontsource/ia-writer-quattro/latin-400-italic.css";
-import "@fontsource/ia-writer-quattro/latin-700.css";
-import "@fontsource/ia-writer-quattro/latin-700-italic.css";
 import "@/styles/globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { GeistSerifSquare } from "geist/font/serif/square";
 import type { Metadata } from "next";
 import JsonLd from "@/components/json-ld";
+import "@/fonts";
 
 const description =
 	"Fixed scales for spacing, colors, type and radius without arbitrary utilities.";

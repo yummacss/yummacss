@@ -15,6 +15,7 @@ const SECONDARY = "bg:surface bc:border c:ink";
 function Key({ hotkey, primary }: { hotkey: LetterKey; primary?: boolean }) {
 	return (
 		<kbd
+			aria-hidden="true"
 			className={`d:none ai:c jc:c w:5 h:5 bw:1 ff:body fs:xs @sm:d:if ${primary ? "bc:white/40 c:white/80" : "bc:border c:ink/60"}`}
 		>
 			{hotkey}
@@ -74,7 +75,6 @@ export function CopyCommand({
 			type="button"
 			onClick={copy}
 			aria-keyshortcuts={hotkey}
-			aria-label={`Copy ${command}`}
 			className={`${BUTTON} ${SECONDARY} ff:body`}
 		>
 			{copied ? "Copied" : command}
