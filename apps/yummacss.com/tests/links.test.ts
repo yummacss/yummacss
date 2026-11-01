@@ -9,6 +9,7 @@ import { contentPages, rootDir, tsxFilesIn } from "./helpers";
 const routes = new Set([
 	"/",
 	"/agents.md",
+	"/cemetery",
 	"/llms.txt",
 	"/robots.txt",
 	"/sitemap.xml",

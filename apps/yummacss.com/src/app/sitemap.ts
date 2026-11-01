@@ -12,10 +12,18 @@ function getFileDate(slug: string): Date {
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
-	return docs.map((doc) => ({
-		url: `https://yummacss.com/docs/${doc._meta.path}`,
-		lastModified: getFileDate(doc._meta.path),
-		changeFrequency: "weekly" as const,
-		priority: 0.8,
-	}));
+	return [
+		...docs.map((doc) => ({
+			url: `https://yummacss.com/docs/${doc._meta.path}`,
+			lastModified: getFileDate(doc._meta.path),
+			changeFrequency: "weekly" as const,
+			priority: 0.8,
+		})),
+		{
+			url: "https://yummacss.com/cemetery",
+			lastModified: statSync("src/utils/cemetery.ts").mtime,
+			changeFrequency: "monthly" as const,
+			priority: 0.3,
+		},
+	];
 }

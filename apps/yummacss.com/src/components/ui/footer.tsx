@@ -88,6 +88,13 @@ export default function Footer() {
 								>
 									Brand
 								</Link>
+								<Dot />
+								<Link
+									href="/cemetery"
+									className="c:ink/60 td:u h:c:accent fv:oc:ink fv:ow:2"
+								>
+									Cemetery
+								</Link>
 							</p>
 						</div>
 					</div>
