@@ -3,9 +3,13 @@ export interface Grave {
 	name: string;
 	/** What took its place, or what it became. */
 	note: string;
-	born: string;
-	died: string;
-	/** How long it lived, in words. */
+	/** The day it shipped, or `null` when nobody remembers. */
+	born: string | null;
+	/** The day it was retired, or `null` when nobody remembers. */
+	died: string | null;
+	/** A day it was known to be alive, which anchors a bar with an unknown end. */
+	seen?: string;
+	/** How long it lived, in words, or `?`. */
 	lived: string;
 	/** Lives on under another name. */
 	reborn?: boolean;
@@ -15,21 +19,22 @@ export interface Grave {
 export const CEMETERY_START = "2023-09-01";
 export const CEMETERY_END = "2026-11-01";
 
-// Helper's death, the Editor's birth and the docs playground's death are estimates
 export const GRAVES: Grave[] = [
 	{
 		name: "Yumma CSS Helper",
 		note: "VS Code snippets → IntelliSense",
 		born: "2023-09-18",
-		died: "2024-04-18",
-		lived: "months",
+		died: null,
+		lived: "?",
 	},
 	{
 		name: "Yumma CSS Editor",
 		note: "the first playground",
-		born: "2023-11-01",
-		died: "2024-02-15",
-		lived: "months",
+		born: null,
+		died: null,
+		// left beta that day
+		seen: "2024-01-10",
+		lived: "?",
 	},
 	{
 		name: "The blog",
@@ -42,8 +47,8 @@ export const GRAVES: Grave[] = [
 		name: "Docs playground",
 		note: "→ Yumma CSS Play",
 		born: "2024-02-15",
-		died: "2024-04-08",
-		lived: "weeks",
+		died: null,
+		lived: "?",
 	},
 	{
 		name: "IntelliSense for VS Code",

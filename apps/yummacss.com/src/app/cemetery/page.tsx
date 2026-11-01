@@ -27,14 +27,17 @@ const YEARS = ["2024", "2025", "2026"].map((year) => ({
 }));
 
 const ROWS = GRAVES.map((grave) => {
-	const left = at(grave.born);
-	const right = at(grave.died);
+	const anchor = grave.seen ?? grave.born ?? grave.died ?? CEMETERY_START;
+	const left = at(grave.born ?? anchor);
+	const right = at(grave.died ?? anchor);
 	// a life that ends near today puts its label before the bar
 	const late = right > 72;
+	const day = (date: string | null) =>
+		date ? month.format(Date.parse(date)) : "?";
 	return {
 		...grave,
 		late,
-		dates: `${month.format(Date.parse(grave.born))} to ${month.format(Date.parse(grave.died))}`,
+		dates: `${day(grave.born)} to ${day(grave.died)}`,
 		style: {
 			"--l": pct(left),
 			"--w": pct(right - left),
@@ -44,12 +47,13 @@ const ROWS = GRAVES.map((grave) => {
 	};
 });
 
-const shortest = GRAVES.reduce((a, b) =>
-	Date.parse(b.died) - Date.parse(b.born) <
-	Date.parse(a.died) - Date.parse(a.born)
-		? b
-		: a,
+const known = GRAVES.filter(
+	(grave): grave is typeof grave & { born: string; died: string } =>
+		grave.born !== null && grave.died !== null,
 );
+const life = (grave: { born: string; died: string }) =>
+	Date.parse(grave.died) - Date.parse(grave.born);
+const shortest = known.reduce((a, b) => (life(b) < life(a) ? b : a));
 
 export default function Cemetery() {
 	return (
@@ -122,6 +126,18 @@ export default function Cemetery() {
 											aria-hidden="true"
 											className={`p:a t:50% mt:-1 h:2 l:var(--l) w:var(--w) min-w:1 ${row.name === shortest.name ? "bg:brand" : "bg:ink"}`}
 										/>
+										{row.born === null && (
+											<span
+												aria-hidden="true"
+												className="p:a t:50% r:calc(100%-var(--l)) w:8 btw:2 bs:d bc:ink/40"
+											/>
+										)}
+										{row.died === null && (
+											<span
+												aria-hidden="true"
+												className="p:a t:50% l:var(--r) w:8 btw:2 bs:d bc:ink/40"
+											/>
+										)}
 										{row.reborn && (
 											<span
 												aria-hidden="true"
@@ -130,7 +146,7 @@ export default function Cemetery() {
 										)}
 										<span
 											aria-hidden="true"
-											className={`p:a t:50% mt:-2 fs:xs ws:nw c:ink/80 fvn:tn ${row.late ? "r:var(--tr) pr:2" : "l:var(--r) pl:2"}`}
+											className={`p:a t:50% mt:-2 fs:xs ws:nw c:ink/80 fvn:tn ${row.late ? "r:var(--tr) pr:2" : row.died === null ? "l:var(--r) pl:10" : "l:var(--r) pl:2"}`}
 										>
 											{row.lived}
 										</span>
@@ -149,6 +165,13 @@ export default function Cemetery() {
 									className="w:5 h:0 btw:2 bs:d bc:brand"
 								/>
 								Lives on under another name
+							</span>
+							<span className="d:f ai:c g:2">
+								<span
+									aria-hidden="true"
+									className="w:5 h:0 btw:2 bs:d bc:ink/40"
+								/>
+								Date unknown
 							</span>
 						</div>
 					</div>
