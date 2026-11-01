@@ -187,7 +187,10 @@ const components: MDXComponents = {
 		props.className ? (
 			<a {...props}>{children}</a>
 		) : (
-			<a className="c:accent h:td:u fv:oc:ink fv:ow:2" {...props}>
+			<a
+				className="c:accent td:u tdc:accent-dim tuo:2 h:c:ink fv:oc:ink fv:ow:2"
+				{...props}
+			>
 				{children}
 			</a>
 		),

@@ -77,7 +77,7 @@ export default function Footer() {
 								An atomic CSS framework with fixed scales for spacing, colors,
 								type and radius. No arbitrary values.
 							</p>
-							<p className="m:0 c:ink/40 fs:xs">
+							<p className="m:0 c:ink/60 fs:xs">
 								MIT licensed
 								<Dot />
 								&copy; {new Date().getFullYear()} Yumma CSS
