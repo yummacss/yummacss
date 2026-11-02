@@ -139,6 +139,18 @@ describe("yummacss/no-inline-styles", () => {
 		]);
 	});
 
+	it("should name the class that takes a custom property", () => {
+		const messages = lint(
+			'const a = <div style={{ width: "var(--panel)", marginTop: "var(--gap)" }} />;',
+			{ "yummacss/no-inline-styles": "error" },
+		);
+
+		expect(messages.map((m) => m.message)).toEqual([
+			"`width: var(--panel)` is set inline. Use `w:var(--panel)` instead.",
+			"`margin-top: var(--gap)` is set inline. Use `mt:var(--gap)` instead.",
+		]);
+	});
+
 	it("should leave properties no utility writes alone", () => {
 		const messages = lint(
 			'const a = <stop style={{ stopColor: "light-dark(#fff, #000)", fontSize: "9rem" }} />;',

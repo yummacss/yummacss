@@ -266,10 +266,16 @@ const noUnknownClasses: Rule = {
 const byDeclaration = new Map<string, string>();
 // every property some utility writes; the rest have no class to point to
 const writable = new Set<string>();
+// the shortest prefix that writes a property on its own, for `var()` values
+const byProperty = new Map<string, string>();
 for (const utility of Object.values(coreUtils())) {
 	for (const property of utility.properties) writable.add(property);
 	if (utility.properties.length !== 1) continue;
 	const [property] = utility.properties;
+	const prefix = byProperty.get(property);
+	if (!prefix || utility.prefix.length < prefix.length) {
+		byProperty.set(property, utility.prefix);
+	}
 	for (const [key, value] of Object.entries(utility.values)) {
 		const declaration = `${property}: ${value}`;
 		const className = `${utility.prefix}:${key}`;
@@ -319,10 +325,13 @@ const noInlineStyles: Rule = {
 					if (rule.allows(name) || rule.allows(raw)) continue;
 
 					const value = (property.value as Node).value;
+					const prefix = byProperty.get(name);
 					const className =
-						typeof value === "string"
-							? byDeclaration.get(`${name}: ${value}`)
-							: undefined;
+						typeof value !== "string"
+							? undefined
+							: /^var\(--[\w-]+\)$/.test(value) && prefix
+								? `${prefix}:${value}`
+								: byDeclaration.get(`${name}: ${value}`);
 					rule.report(property, className ? "useClass" : "inline", {
 						property: typeof value === "string" ? `${name}: ${value}` : name,
 						suggestions: className ?? "",
