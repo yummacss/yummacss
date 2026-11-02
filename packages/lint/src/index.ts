@@ -272,6 +272,7 @@ for (const utility of Object.values(coreUtils())) {
 	for (const property of utility.properties) writable.add(property);
 	if (utility.properties.length !== 1) continue;
 	const [property] = utility.properties;
+	if (!property) continue;
 	const prefix = byProperty.get(property);
 	if (!prefix || utility.prefix.length < prefix.length) {
 		byProperty.set(property, utility.prefix);
