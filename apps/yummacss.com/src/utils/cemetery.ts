@@ -37,18 +37,11 @@ export const GRAVES: Grave[] = [
 		lived: "?",
 	},
 	{
-		name: "The blog",
+		name: "yummacss.com/blog",
 		note: "→ GitHub releases",
 		born: "2024-01-10",
 		died: "2026-10-11",
 		lived: "2 years",
-	},
-	{
-		name: "Docs playground",
-		note: "→ Yumma CSS Play",
-		born: "2024-02-15",
-		died: null,
-		lived: "?",
 	},
 	{
 		name: "IntelliSense for VS Code",
