@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- **[lint]** `no-inline-styles` names the class for a `var()` value, such as `w:var(--x)`.
+
 ## [4.12.0] - 2026-10-30
 
 ### Added
