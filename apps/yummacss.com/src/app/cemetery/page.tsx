@@ -107,7 +107,6 @@ export default function Cemetery() {
 								>
 									<div className="d:f fd:c g:1 fs:0 w:64 min-w:0 py:3">
 										<span className="ff:display fs:lg c:ink">{row.name}</span>
-										<span className="fs:xs c:ink/70">{row.note}</span>
 									</div>
 									<div
 										role="img"
