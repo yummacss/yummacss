@@ -1,12 +1,13 @@
 import localFont from "next/font/local";
 
-/** The body face's regular weight, preloaded so the first paint does not rewrap when it lands. */
+/** The body face's regular weight: preloaded, and used only if it lands before the first paint, so the page never rewraps. */
 export const quattro = localFont({
 	src: "../node_modules/@fontsource/ia-writer-quattro/files/ia-writer-quattro-latin-400-normal.woff2",
 	weight: "400",
 	style: "normal",
 	declarations: [{ prop: "font-family", value: "iA Writer Quattro" }],
 	adjustFontFallback: false,
+	display: "optional",
 });
 
 /** Its italic and bold faces, fetched only when text uses them. */
