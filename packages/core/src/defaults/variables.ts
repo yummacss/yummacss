@@ -11,6 +11,7 @@ export const borderSpacing = 0.25;
 export const outlineOffset = 1;
 export const outlineWidth = 1;
 
+export const magenta = "#d946ef";
 export const pink = "#ec4899";
 export const coral = "#ff6f91";
 export const red = "#e63946";
@@ -25,7 +26,6 @@ export const blue = "#2563eb";
 export const indigo = "#6366f1";
 export const violet = "#8b5cf6";
 export const lavender = "#a78bfa";
-export const magenta = "#d946ef";
 export const zinc = "#52525b";
 export const gray = "#6b7280";
 export const slate = "#64748b";

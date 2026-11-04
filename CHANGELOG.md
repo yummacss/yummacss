@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - **[lint]** `no-inline-styles` names the class for a `var()` value, such as `w:var(--x)`.
-- **[core]** The default colors are ordered by hue, from `pink` to `magenta`, then the grays.
+- **[core]** The default colors are ordered warm, cool, then neutral, each by hue.
 
 ## [4.12.0] - 2026-10-30
 
