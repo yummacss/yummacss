@@ -1,12 +1,14 @@
 import * as variables from "./variables";
 
 export const colorTheme = {
+	pink: variables.pink,
+	coral: variables.coral,
 	red: variables.red,
 	orange: variables.orange,
 	yellow: variables.yellow,
 	lime: variables.lime,
-	mint: variables.mint,
 	green: variables.green,
+	mint: variables.mint,
 	cyan: variables.cyan,
 	sky: variables.sky,
 	blue: variables.blue,
@@ -14,8 +16,6 @@ export const colorTheme = {
 	violet: variables.violet,
 	lavender: variables.lavender,
 	magenta: variables.magenta,
-	pink: variables.pink,
-	coral: variables.coral,
 	zinc: variables.zinc,
 	gray: variables.gray,
 	slate: variables.slate,
