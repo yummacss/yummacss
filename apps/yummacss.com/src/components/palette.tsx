@@ -35,7 +35,7 @@ export default function Palette({
 		<div data-wide className="d:f fd:c g:10 my:6">
 			{COLOR_GROUPS.map((group) => (
 				<section key={group.name} className="d:f fd:c g:1">
-					<h3 className="m:0 mb:3 pb:2 bbw:1 bc:border fs:md fw:600 c:ink">
+					<h3 className="m:0 mb:3 pb:2 bbw:1 bc:border ff:display fs:xl fw:400 lh:1 c:ink">
 						{group.name}
 					</h3>
 					{group.families.map((family) => {
