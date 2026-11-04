@@ -69,6 +69,29 @@ export const COLOR_FAMILIES: { name: string; color: string }[] = Object.entries(
 	color,
 }));
 
+/** The palette's families as warm, cool & neutral, in core's order. */
+export const COLOR_GROUPS: { name: string; families: string[] }[] = [
+	{
+		name: "Warm",
+		families: ["magenta", "pink", "coral", "red", "orange", "yellow"],
+	},
+	{
+		name: "Cool",
+		families: [
+			"lime",
+			"green",
+			"mint",
+			"cyan",
+			"sky",
+			"blue",
+			"indigo",
+			"violet",
+			"lavender",
+		],
+	},
+	{ name: "Neutral", families: ["zinc", "gray", "slate", "silver"] },
+];
+
 /** A color as uppercase hex, for copying. */
 export const toHex = (color: string): string =>
 	(formatHex(color) ?? color).toUpperCase();

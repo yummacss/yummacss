@@ -1,9 +1,10 @@
 "use client";
 
 import { Button } from "@base-ui/react";
-import { type CSSProperties, useState } from "react";
+import { useState } from "react";
 import { Check } from "@/icons";
 import {
+	COLOR_GROUPS,
 	generateShades,
 	isLight,
 	SHADE_LABELS,
@@ -19,67 +20,55 @@ interface ColorItem {
 
 interface Props {
 	data: ColorItem[];
-	scale?: string[];
 	whitePercentage?: number;
 	blackPercentage?: number;
 }
 
-// one column per shade, however many the palette has
-const columns = (count: number) =>
-	({ "--shades": `repeat(${count}, minmax(0, 1fr))` }) as CSSProperties;
-
 export default function Palette({
 	data,
-	scale = SHADE_LABELS,
 	whitePercentage = 14,
 	blackPercentage = 14,
 }: Props) {
-	return (
-		<div className="d:f fd:c g:1">
-			<div className="d:none @lg:d:f fd:c g:1 @md:fd:r @md:ai:c">
-				<div className="d:f ai:c ws:nw ta:c @md:w:24 @md:min-w:24 @md:mr:2" />
-				<div
-					className="d:g g:1 f:1 my:2 w:100% gtc:var(--shades)"
-					style={columns(scale.length)}
-				>
-					{scale.map((label) => (
-						<div key={`header-${label}`} className="d:f ai:c jc:c c:ink fs:sm">
-							{label}
-						</div>
-					))}
-				</div>
-			</div>
+	const byName = new Map(data.map((item) => [item.name.toLowerCase(), item]));
 
-			{data.map((colorItem) => {
-				const shades = generateShades(
-					colorItem.color,
-					whitePercentage,
-					blackPercentage,
-				);
-				return (
-					<div
-						key={colorItem.name}
-						className="d:f fd:c g:1 ai:c @md:ai:c @md:fd:r"
-					>
-						<p className="d:f ai:c c:ink ws:nw o:h fs:sm @md:w:24 @md:min-w:24 @md:mr:2">
-							{colorItem.name}
-						</p>
-						<div
-							className="d:g g:1 f:1 w:100% gtc:var(--shades)"
-							style={columns(scale.length)}
-						>
-							{shades.map((shade, index) => (
-								<ColorSwatch
-									key={`${colorItem.name}-${scale[index]}`}
-									name={colorItem.name}
-									shade={shade}
-									label={scale[index]}
-								/>
-							))}
-						</div>
-					</div>
-				);
-			})}
+	return (
+		<div className="d:f fd:c g:10 my:6">
+			{COLOR_GROUPS.map((group) => (
+				<section key={group.name} className="d:f fd:c g:1">
+					<h3 className="m:0 mb:3 pb:2 bbw:1 bc:border fs:md fw:600 c:ink">
+						{group.name}
+					</h3>
+					{group.families.map((family) => {
+						const item = byName.get(family);
+						if (!item) return null;
+						const shades = generateShades(
+							item.color,
+							whitePercentage,
+							blackPercentage,
+						);
+						return (
+							<div
+								key={item.name}
+								className="d:f fd:c g:1 @md:fd:r @md:ai:c @md:g:3"
+							>
+								<p className="m:0 ff:m fs:sm c:ink/60 @md:w:20 @md:min-w:20">
+									{family}
+								</p>
+								<div className="d:f g:px f:1 min-w:0">
+									{shades.map((shade, index) => (
+										<ColorSwatch
+											key={`${family}-${SHADE_LABELS[index]}`}
+											name={family}
+											shade={shade}
+											label={SHADE_LABELS[index]}
+										/>
+									))}
+								</div>
+							</div>
+						);
+					})}
+				</section>
+			))}
 		</div>
 	);
 }
@@ -94,6 +83,7 @@ function ColorSwatch({
 	label: string;
 }) {
 	const [copied, setCopied] = useState(false);
+	const ink = isLight(shade) ? "c:black" : "c:white";
 
 	const handleClick = async () => {
 		await navigator.clipboard.writeText(toHex(shade));
@@ -105,15 +95,19 @@ function ColorSwatch({
 		<Button
 			onClick={handleClick}
 			aria-label={`${name} ${label}: ${shade}${copied ? ", copied" : ""}`}
-			className={`d:f ai:c jc:c w:100% ar:1/1 p:0 c:p fv:oc:ink fv:oo:2 fv:ow:2 ${SWATCH}`}
+			className={`d:f fd:c jc:sb ai:fs f:1 min-w:0 h:10 p:1 c:p ff:m fs:xs lh:1 fv:oc:ink fv:oo:2 fv:ow:2 ${ink} ${SWATCH}`}
 			style={swatchStyle(shade)}
 		>
-			{copied && (
-				<Check
-					aria-hidden
-					className={`w:4 h:4 ${isLight(shade) ? "c:black" : "c:white"}`}
-				/>
+			{copied ? (
+				<Check aria-hidden className="w:3 h:3" />
+			) : (
+				<span aria-hidden className="fs:sm fw:500">
+					Aa
+				</span>
 			)}
+			<span aria-hidden className="o:80">
+				{label === "Base" ? "" : label}
+			</span>
 		</Button>
 	);
 }
