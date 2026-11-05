@@ -74,6 +74,7 @@ export function CopyCommand({
 		<Button
 			type="button"
 			onClick={copy}
+			aria-label={copied ? "Copied" : `Copy ${command}`}
 			aria-keyshortcuts={hotkey}
 			className={`${BUTTON} ${SECONDARY} ff:body`}
 		>
