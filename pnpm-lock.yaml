@@ -221,9 +221,6 @@ importers:
       '@next/mdx':
         specifier: ^16.3.8
         version: 16.4.2(@mdx-js/loader@3.1.1)(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.0))
-      '@ridemountainpig/svgl-react':
-        specifier: ^1.0.17
-        version: 1.0.18(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
       '@shikijs/core':
         specifier: 4.4.3
         version: 4.4.3
@@ -1461,12 +1458,6 @@ packages:
 
   '@polka/url@1.0.0-next.29':
     resolution: {integrity: sha512-wwQAWhWSuHaag8c4q/KN/vCoeOJYshAIvMQwD4GpSb3OiZklFfvAgmj0VCBBImRpuF/aFgIRzllXlVX93Jevww==}
-
-  '@ridemountainpig/svgl-react@1.0.18':
-    resolution: {integrity: sha512-XdhPdkH4OfcEete2lyjHATeTcz/6DCUkh77hys6oB50xGLEq7tYoKxCCk3y5Ozqmw6Zc8j+PA7VfjB1MpPjGMw==}
-    peerDependencies:
-      react: ^16.8 || ^17.0 || ^18.0 || ^19.0
-      react-dom: ^16.8 || ^17.0 || ^18.0 || ^19.0
 
   '@rolldown/binding-android-arm64@1.0.0-beta.57':
     resolution: {integrity: sha512-GoOVDy8bjw9z1K30Oo803nSzXJS/vWhFijFsW3kzvZCO8IZwFnNa6pGctmbbJstKl3Fv6UBwyjJQN6msejW0IQ==}
@@ -3905,11 +3896,6 @@ snapshots:
   '@oxlint/plugins@1.88.0': {}
 
   '@polka/url@1.0.0-next.29': {}
-
-  '@ridemountainpig/svgl-react@1.0.18(react-dom@19.3.0(react@19.3.0))(react@19.3.0)':
-    dependencies:
-      react: 19.3.0
-      react-dom: 19.3.0(react@19.3.0)
 
   '@rolldown/binding-android-arm64@1.0.0-beta.57':
     optional: true

@@ -1,17 +1,9 @@
-import { Chrome, Edge, Firefox, Safari } from "@ridemountainpig/svgl-react";
 import { baselineFor } from "../utils/baseline";
 
-const ICONS = {
-	chrome: Chrome,
-	edge: Edge,
-	firefox: Firefox,
-	safari: Safari,
-} as const;
-
 const TONE = {
-	high: { text: "c:diff-add", bg: "bg:diff-add/5" },
-	low: { text: "c:accent", bg: "bg:accent/5" },
-	none: { text: "c:warning", bg: "bg:warning/5" },
+	high: { text: "c:diff-add", bar: "bg:diff-add" },
+	low: { text: "c:accent", bar: "bg:accent" },
+	none: { text: "c:warning", bar: "bg:warning" },
 } as const;
 
 interface Props {
@@ -26,26 +18,31 @@ export default function Baseline({ path }: Props) {
 	const tone = TONE[level || "none"];
 
 	return (
-		<div className="mb:6 bc:border bg:surface bw:1">
-			<div
-				className={`d:f fw:w ai:c jc:sb g:3 py:3 px:4 ff:m fs:sm ${tone.bg}`}
-			>
-				<code className={tone.text}>baseline</code>
-				<span className="d:f ai:c g:2 c:ink/60">
-					{label.split(" ")[0].toLowerCase()}
-					{browsers.map((browser) => {
-						const Icon = ICONS[browser.key as keyof typeof ICONS];
-						return (
-							<Icon
-								key={browser.key}
-								aria-label={`${browser.name} ${browser.version ?? "unsupported"}`}
-								role="img"
-								className={`w:4 h:4 ${browser.supported ? "" : "fgr:100 o:40"}`}
-							/>
-						);
-					})}
-				</span>
-			</div>
+		<div className="mb:6 d:f fd:c g:3">
+			<p className="m:0 d:f ai:c g:3 fs:sm">
+				<code className="ff:m c:ink/60">baseline</code>
+				<span className={`fw:500 ${tone.text}`}>{label}</span>
+			</p>
+			<ul className="d:g gtc:2 g:3 m:0 p:0 lst:none @sm:gtc:4 @sm:g:1">
+				{browsers.map((browser) => (
+					<li key={browser.key} className="d:f fd:c g:2">
+						<span
+							aria-hidden
+							className={`d:b h:2 ${browser.supported ? tone.bar : "bg:border"}`}
+						/>
+						<span
+							className={`d:f fd:c g:1 ff:m fs:xs ${browser.supported ? "c:ink/80" : "c:ink/50"}`}
+						>
+							<span className="c:ink/60">{browser.name}</span>
+							<span>
+								{browser.supported
+									? `${browser.version}${browser.desktopOnly ? ", desktop only" : ""}`
+									: "No"}
+							</span>
+						</span>
+					</li>
+				))}
+			</ul>
 		</div>
 	);
 }
