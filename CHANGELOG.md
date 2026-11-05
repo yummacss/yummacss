@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- **[core]** `tp:ct` and `tp:ot` transition color or opacity together with transform.
+
 ### Changed
 
 - **[lint]** `no-inline-styles` names the class for a `var()` value, such as `w:var(--x)`.
