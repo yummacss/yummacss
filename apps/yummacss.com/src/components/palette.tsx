@@ -32,7 +32,7 @@ export default function Palette({
 	const byName = new Map(data.map((item) => [item.name.toLowerCase(), item]));
 
 	return (
-		<div data-wide className="d:f fd:c g:10 my:6">
+		<div className="d:f fd:c g:10 my:6">
 			{COLOR_GROUPS.map((group) => (
 				<section key={group.name} className="d:f fd:c g:1">
 					<h3 className="m:0 mb:3 pb:2 bbw:1 bc:border ff:display fs:xl fw:400 lh:1 c:ink">

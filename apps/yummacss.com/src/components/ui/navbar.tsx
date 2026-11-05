@@ -17,7 +17,7 @@ const preloadSearch = () => {
 const MobileSheet = lazy(() => import("./mobile-sheet"));
 
 // below @lg the page runs up to the navbar with no line between
-const BASE = "p:f ix:0 t:0 zi:10 bg:page bc:border @lg:bbw:1 @lg:bf-b:md";
+const BASE = "p:f ix:0 t:0 zi:10 bg:page/70 bf-b:md bc:border @lg:bbw:1";
 
 interface NavbarProps {
 	className?: string;

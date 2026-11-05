@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { type FocusEvent, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Scroller from "@/components/ui/scroller";
 
 interface TocItem {
@@ -12,16 +12,11 @@ interface TocItem {
 	level: number;
 }
 
-// a heading's line is shorter the deeper it sits
-const LINE: Record<number, string> = { 2: "w:6", 3: "w:4", 4: "w:3" };
+const INDENT: Record<number, string> = { 3: "ml:4", 4: "ml:8" };
 
 export default function TableOfContents() {
 	const pathname = usePathname();
 	const [headings, setHeadings] = useState<TocItem[]>([]);
-	const [active, setActive] = useState<string | null>(null);
-	const [hovered, setHovered] = useState(false);
-	const [focused, setFocused] = useState(false);
-	const open = hovered || focused;
 	// biome-ignore lint/correctness/useExhaustiveDependencies: need this useEffect to re-run this on route change to update the headings
 	useEffect(() => {
 		const timer = setTimeout(() => {
@@ -48,89 +43,40 @@ export default function TableOfContents() {
 		};
 	}, [pathname]);
 
-	// the current section is the last heading scrolled past the navbar
-	useEffect(() => {
-		if (headings.length === 0) return;
-		let frame = 0;
-		const update = () => {
-			frame = 0;
-			let current = headings[0].id;
-			for (const heading of headings) {
-				const el = document.getElementById(heading.id);
-				if (el && el.getBoundingClientRect().top < 120) current = heading.id;
-			}
-			setActive(current);
-		};
-		const onScroll = () => {
-			if (!frame) frame = requestAnimationFrame(update);
-		};
-		update();
-		window.addEventListener("scroll", onScroll, { passive: true });
-		return () => {
-			window.removeEventListener("scroll", onScroll);
-			cancelAnimationFrame(frame);
-		};
-	}, [headings]);
-
-	const onBlur = (event: FocusEvent<HTMLElement>) => {
-		if (!event.currentTarget.contains(event.relatedTarget)) setFocused(false);
-	};
-
 	if (headings.length === 0) {
 		return null;
 	}
 
 	return (
-		<aside className="d:none @lg:d:b @lg:gc-s:3">
-			<div className="p:st t:20 h:0">
-				<nav
-					aria-label="On this page"
-					onMouseEnter={() => setHovered(true)}
-					onMouseLeave={() => setHovered(false)}
-					onFocus={() => setFocused(true)}
-					onBlur={onBlur}
-					className={`p:a t:0 r:0 zi:10 d:f fd:c max-h:calc(100dvh-6rem) ${open ? "w:72 bg:page bw:1 bc:border" : ""}`}
-				>
-					<Scroller className="f:1 min-h:0">
-						<ul className={`d:f fd:c g:1 ${open ? "p:4" : "py:4"}`}>
-							{headings.map((heading) => {
-								const label = heading.parts.map((part) => part.text).join("");
-								const current = heading.id === active;
-								return (
-									<li key={heading.id}>
-										<Link
-											href={`#${heading.id}`}
-											aria-label={label}
-											aria-current={current ? "location" : undefined}
-											className={`d:f ai:c jc:fe g:3 py:1 fs:sm fv:oc:ink fv:ow:2 ${current ? "c:accent" : "c:ink/70 h:c:ink"}`}
-										>
-											<span
-												aria-hidden
-												className={`f:1 min-w:0 ${open ? "d:b" : "d:none"}`}
-											>
-												{heading.parts.map((part, index) =>
-													part.code ? (
-														// biome-ignore lint/suspicious/noArrayIndexKey: parts never reorder
-														<code key={index} className="ff:m c:code">
-															{part.text}
-														</code>
-													) : (
-														part.text
-													),
-												)}
-											</span>
-											<span
-												aria-hidden
-												className={`d:b fs:0 bbw:2 ${LINE[heading.level] ?? "w:3"} ${current ? "bc:accent" : "bc:border"}`}
-											/>
-										</Link>
-									</li>
-								);
-							})}
-						</ul>
-					</Scroller>
-				</nav>
-			</div>
+		<aside className="d:none bc:border blw:1 @lg:d:b @lg:gc-s:3">
+			<Scroller className="p:st t:20 max-h:calc(100dvh-5rem)">
+				<div className="px:8 pb:12">
+					<h3 className="ff:system mb:4 c:silver-8 fs:xs fw:600 ls:2 tt:u">
+						On this page
+					</h3>
+					<ul className="d:f fd:c g:2 fs:sm">
+						{headings.map((heading) => (
+							<li key={heading.id}>
+								<Link
+									href={`#${heading.id}`}
+									className={`c:ink/70 h:c:ink fv:oc:ink fv:ow:2 ${INDENT[heading.level] ?? ""}`}
+								>
+									{heading.parts.map((part, index) =>
+										part.code ? (
+											// biome-ignore lint/suspicious/noArrayIndexKey: parts never reorder
+											<code key={index} className="ff:m c:code">
+												{part.text}
+											</code>
+										) : (
+											part.text
+										),
+									)}
+								</Link>
+							</li>
+						))}
+					</ul>
+				</div>
+			</Scroller>
 		</aside>
 	);
 }
