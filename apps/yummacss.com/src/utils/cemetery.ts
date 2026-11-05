@@ -1,37 +1,19 @@
-/** A project Yumma CSS outlived, with the dates the timeline draws it between. */
+/** A discontinued project, with the dates its bar runs between. */
 export interface Grave {
 	name: string;
-	/** The day it shipped, or `null` when nobody remembers. */
-	born: string | null;
-	/** The day it was retired, or `null` when nobody remembers. */
-	died: string | null;
-	/** A day it was known to be alive, which anchors a bar with an unknown end. */
-	seen?: string;
-	/** How long it lived, in words, or `?`. */
+	/** The day it shipped. */
+	born: string;
+	/** The day it was retired. */
+	died: string;
+	/** How long it lived, in words. */
 	lived: string;
-	/** Lives on under another name. */
-	reborn?: boolean;
 }
 
 /** The timeline's first and last day. */
-export const CEMETERY_START = "2023-09-01";
+export const CEMETERY_START = "2024-01-01";
 export const CEMETERY_END = "2026-11-01";
 
 export const GRAVES: Grave[] = [
-	{
-		name: "Yumma CSS Helper",
-		born: "2023-09-18",
-		died: null,
-		lived: "?",
-	},
-	{
-		name: "Yumma CSS Editor",
-		born: null,
-		died: null,
-		// left beta that day
-		seen: "2024-01-10",
-		lived: "?",
-	},
 	{
 		name: "yummacss.com/blog",
 		born: "2024-01-10",
@@ -67,7 +49,6 @@ export const GRAVES: Grave[] = [
 		born: "2026-07-03",
 		died: "2026-09-18",
 		lived: "11 weeks",
-		reborn: true,
 	},
 	{
 		name: "@yummacss/language-server",
