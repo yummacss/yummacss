@@ -6,7 +6,7 @@ import { CEMETERY_END, CEMETERY_START, GRAVES } from "@/utils/cemetery";
 
 export const metadata: Metadata = {
 	title: "Cemetery",
-	description: "Every project Yumma CSS outlived, drawn to scale.",
+	description: "Here are all the projects that have been discontinued.",
 	alternates: { canonical: "/cemetery" },
 };
 
@@ -27,13 +27,11 @@ const YEARS = ["2024", "2025", "2026"].map((year) => ({
 }));
 
 const ROWS = GRAVES.map((grave) => {
-	const anchor = grave.seen ?? grave.born ?? grave.died ?? CEMETERY_START;
-	const left = at(grave.born ?? anchor);
-	const right = at(grave.died ?? anchor);
+	const left = at(grave.born);
+	const right = at(grave.died);
 	// a life that ends near today puts its label before the bar
 	const late = right > 72;
-	const day = (date: string | null) =>
-		date ? month.format(Date.parse(date)) : "?";
+	const day = (date: string) => month.format(Date.parse(date));
 	return {
 		...grave,
 		late,
@@ -46,14 +44,6 @@ const ROWS = GRAVES.map((grave) => {
 		} as CSSProperties,
 	};
 });
-
-const known = GRAVES.filter(
-	(grave): grave is typeof grave & { born: string; died: string } =>
-		grave.born !== null && grave.died !== null,
-);
-const life = (grave: { born: string; died: string }) =>
-	Date.parse(grave.died) - Date.parse(grave.born);
-const shortest = known.reduce((a, b) => (life(b) < life(a) ? b : a));
 
 export default function Cemetery() {
 	return (
@@ -71,13 +61,12 @@ export default function Cemetery() {
 				className="f:1 w:100% mx:auto max-w:280 blw:1 brw:1 bc:border"
 			>
 				<section className="d:f fd:c g:4 px:6 pt:14 pb:10 bbw:1 bc:border @lg:px:10 @lg:pt:18 @lg:pb:12">
-					<p className="m:0 fs:xs ls:5 tt:u c:ink/70">2023 – 2026</p>
+					<p className="m:0 fs:xs ls:5 tt:u c:ink/70">2024 – 2026</p>
 					<h1 className="m:0 ff:display fw:400 fs:4xl lh:1 c:ink @sm:fs:5xl">
 						Cemetery
 					</h1>
 					<p className="m:0 max-w:130 fs:sm lh:5 ls:3 c:ink/80">
-						Everything Yumma CSS outlived, drawn to scale. The shortest bar is{" "}
-						{shortest.lived}.
+						Here are all the projects that have been discontinued.
 					</p>
 				</section>
 
@@ -123,29 +112,11 @@ export default function Cemetery() {
 										))}
 										<span
 											aria-hidden="true"
-											className={`p:a t:50% mt:-1 h:2 l:var(--l) w:var(--w) min-w:1 ${row.name === shortest.name ? "bg:brand" : "bg:ink"}`}
+											className={`p:a t:50% mt:-1 h:2 l:var(--l) w:var(--w) min-w:1 bg:ink`}
 										/>
-										{row.born === null && (
-											<span
-												aria-hidden="true"
-												className="p:a t:50% r:calc(100%-var(--l)) w:8 btw:2 bs:d bc:ink/40"
-											/>
-										)}
-										{row.died === null && (
-											<span
-												aria-hidden="true"
-												className="p:a t:50% l:var(--r) w:8 btw:2 bs:d bc:ink/40"
-											/>
-										)}
-										{row.reborn && (
-											<span
-												aria-hidden="true"
-												className="p:a t:50% l:var(--r) r:0 btw:2 bs:d bc:brand"
-											/>
-										)}
 										<span
 											aria-hidden="true"
-											className={`p:a t:50% mt:-2 fs:xs ws:nw c:ink/80 fvn:tn ${row.late ? "r:var(--tr) pr:2" : row.died === null ? "l:var(--r) pl:10" : "l:var(--r) pl:2"}`}
+											className={`p:a t:50% mt:-2 fs:xs ws:nw c:ink/80 fvn:tn ${row.late ? "r:var(--tr) pr:2" : "l:var(--r) pl:2"}`}
 										>
 											{row.lived}
 										</span>
@@ -153,39 +124,8 @@ export default function Cemetery() {
 								</li>
 							))}
 						</ol>
-
-						<div className="d:f fw:w g:6 pt:5 fs:xs c:ink/80">
-							<span className="d:f ai:c g:2">
-								<span aria-hidden="true" className="w:5 h:2 bg:ink" />A life
-							</span>
-							<span className="d:f ai:c g:2">
-								<span
-									aria-hidden="true"
-									className="w:5 h:0 btw:2 bs:d bc:brand"
-								/>
-								Lives on under another name
-							</span>
-							<span className="d:f ai:c g:2">
-								<span
-									aria-hidden="true"
-									className="w:5 h:0 btw:2 bs:d bc:ink/40"
-								/>
-								Date unknown
-							</span>
-						</div>
 					</div>
 				</div>
-
-				<p className="m:0 px:6 pt:6 pb:18 fs:sm c:ink/70 @lg:px:10">
-					Missing one? Graves are added in{" "}
-					<a
-						href="https://github.com/yummacss/yummacss/blob/main/apps/yummacss.com/src/utils/cemetery.ts"
-						className="c:accent td:u tdc:accent-dim tuo:2 h:c:ink fv:oc:ink fv:ow:2"
-					>
-						cemetery.ts
-					</a>
-					.
-				</p>
 			</main>
 		</div>
 	);
