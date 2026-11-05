@@ -74,10 +74,3 @@
 [data-fold]:not([open]) > summary {
 	display: inline;
 }
-
-/* a wide block spans the article & the TOC column, short of the rail */
-@media (min-width: 64rem) {
-	[data-wide] {
-		width: calc(150% - 2.5rem);
-	}
-}
