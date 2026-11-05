@@ -57,9 +57,9 @@ UI and its site live in the yummaui repo, along with their rules.
 Short. These were said out loud enough times to belong in a file.
 
 - **PR bodies**: link every page you name, with the link on the bold heading
-  itself. While a branch is open the link is that branch's Vercel preview:
-  `https://yummacsscom-git-<branch>-rrenildopereiraas-projects.vercel.app/docs/<page>`,
-  where `<branch>` is the branch name with `/` as `-`. Once a branch is
+  itself. While a branch is open the link is that branch's Vercel preview,
+  taken from the Vercel bot's comment on the PR. Never build it from the
+  branch name: a long one is cut and hashed in the host. Once a branch is
   merged its alias dies, so a link to shipped work is
   `https://www.yummacss.com/...` again.
 - The same link rule applies in chat, not only in PR bodies.
