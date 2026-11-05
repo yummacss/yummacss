@@ -286,6 +286,15 @@ describe("opacity suffix", () => {
 });
 
 describe("transitions", () => {
+	it("tp:ct and tp:ot pair color or opacity with transform", () => {
+		expect(css("tp:ct")).toContain(
+			"transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, transform, translate, scale, rotate;",
+		);
+		expect(css("tp:ot")).toContain(
+			"transition-property: opacity, transform, translate, scale, rotate;",
+		);
+	});
+
 	it("tp:c carries the painted colors but not outline-color", () => {
 		const out = css("tp:c");
 

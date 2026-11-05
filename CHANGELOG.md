@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [4.13.0] - 2026-11-05
+
+### Added
+
+- **[core]** `tp:ct` and `tp:ot` transition color or opacity together with transform.
+
 ### Changed
 
 - **[lint]** `no-inline-styles` names the class for a `var()` value, such as `w:var(--x)`.
@@ -1467,7 +1473,8 @@ No notable changes.
 
 - Initial release.
 
-[Unreleased]: https://github.com/yummacss/yummacss/compare/v4.12.0...HEAD
+[Unreleased]: https://github.com/yummacss/yummacss/compare/v4.13.0...HEAD
+[4.13.0]: https://github.com/yummacss/yummacss/compare/v4.12.0...v4.13.0
 [4.12.0]: https://github.com/yummacss/yummacss/compare/v4.11.0...v4.12.0
 [4.11.0]: https://github.com/yummacss/yummacss/compare/v4.10.0...v4.11.0
 [4.10.0]: https://github.com/yummacss/yummacss/compare/v4.9.0...v4.10.0
