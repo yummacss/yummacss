@@ -22,7 +22,7 @@ export default function Cover() {
 			<source media="(prefers-color-scheme: dark)" srcSet={dark} />
 			<img
 				{...props}
-				className="d:b w:100% h:auto mb:4 bc:border bg:surface bw:1"
+				className="d:b w:100% h:auto mb:4 bg:surface os:s ow:1 oo:-1 oc:black/10"
 			/>
 		</picture>
 	);
