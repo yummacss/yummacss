@@ -13,6 +13,7 @@ export const docs = [
 			description: page.description,
 			content,
 			slug: page.slug,
+			since: page.since,
 			_meta: { path: page.slug },
 			mdx: () => UtilityPage({ page }),
 			wordCount: content.split(/\s+/).length,

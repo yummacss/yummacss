@@ -9,6 +9,20 @@ import ProductLinks from "./product-links";
 interface NavItem {
 	slug: string;
 	title: string;
+	/** The release that added the page, when it is the newest one. */
+	since?: string;
+}
+
+// the release that added a page, on its right, while that release is the newest
+function Since({ version }: { version: string }) {
+	return (
+		<span
+			aria-hidden
+			className="ml:auto d:if ai:c h:5 px:2 bg:hover bc:border bw:1 c:ink/70 fs:xs fvn:tn"
+		>
+			{version}
+		</span>
+	);
 }
 
 interface NavGroup {
@@ -63,7 +77,13 @@ export default function SidebarNav({ sections, basePath }: Props) {
 												className={`p:r d:if ai:c g:3 fs:sm fv:oc:ink fv:oo:2 fv:ow:2 ${isActive ? "c:accent td:u tds:d" : "c:ink/70 h:c:accent"}`}
 											>
 												{entry.title}
+												{entry.since && (
+													<span className="p:a w:px h:px o:h">
+														, new in {entry.since}
+													</span>
+												)}
 											</Link>
+											{entry.since && <Since version={entry.since} />}
 										</li>
 									);
 								}
@@ -87,7 +107,13 @@ export default function SidebarNav({ sections, basePath }: Props) {
 															className={`p:r d:if ai:c g:3 fs:sm fv:oc:ink fv:oo:2 fv:ow:2 ${isActive ? "c:accent td:u tds:d" : "c:ink/70 h:c:accent"}`}
 														>
 															{child.title}
+															{child.since && (
+																<span className="p:a w:px h:px o:h">
+																	, new in {child.since}
+																</span>
+															)}
 														</Link>
+														{child.since && <Since version={child.since} />}
 													</li>
 												);
 											})}

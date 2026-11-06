@@ -9,6 +9,7 @@
  * @property {string[]} [tables] One Reference table per property, in place of `reference`.
  * @property {boolean} [negative] Its Variants list negative values.
  * @property {string} [baseline] The web-features path. Defaults to `css.properties.<first property>`.
+ * @property {string} [since] The release that added the page, `4.12`; the newest one listed shows its chip in the sidebar.
  */
 
 /** @type {Record<string, UtilityPage[]>} */
@@ -55,6 +56,7 @@ export const UTILITY_PAGES = {
 		},
 		{
 			slug: "background-image",
+			since: "4.12",
 			description: "Set the background image of an element.",
 			reference: "linear-gradient",
 			baseline: "css.properties.background-image",
@@ -746,3 +748,10 @@ export function utilitySource(page) {
 		utilityBody(page),
 	].join("\n");
 }
+
+/** The newest release any page names, whose pages the sidebar marks with it. */
+export const NEWEST = utilityPages
+	.map((page) => page.since)
+	.filter(Boolean)
+	.sort((a, b) => a.localeCompare(b, undefined, { numeric: true }))
+	.at(-1);
