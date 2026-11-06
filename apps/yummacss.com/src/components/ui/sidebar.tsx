@@ -1,11 +1,17 @@
 import { sidebarConfig } from "@/config/sidebar";
 import { docs } from "@/utils/docs";
+import { NEWEST } from "@/utils/utility-pages.mjs";
 import type { NavSection } from "./mobile-sheet";
 import SidebarNav from "./sidebar-nav";
 
 function page(slug: string) {
 	const doc = docs.find((c) => c._meta.path === slug);
-	return { slug, title: doc?.title ?? slug };
+	const since = doc && "since" in doc ? doc.since : undefined;
+	return {
+		slug,
+		title: doc?.title ?? slug,
+		since: since && since === NEWEST ? since : undefined,
+	};
 }
 
 export default function Sidebar() {
