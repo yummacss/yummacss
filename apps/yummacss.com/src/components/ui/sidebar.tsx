@@ -34,7 +34,8 @@ export function menu(): NavSection[] {
 		items: section.items
 			.flatMap((item) => (typeof item === "string" ? item : item.items))
 			.map((slug) => {
-				return { title: page(slug).title, href: `/docs/${slug}` };
+				const { title, since } = page(slug);
+				return { title, href: `/docs/${slug}`, since };
 			}),
 	}));
 }
