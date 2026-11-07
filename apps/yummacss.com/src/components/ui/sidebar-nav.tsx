@@ -14,7 +14,7 @@ interface NavItem {
 }
 
 // the release that added a page, on its right, while that release is the newest
-function Since({ version }: { version: string }) {
+export function Since({ version }: { version: string }) {
 	return (
 		<span
 			aria-hidden

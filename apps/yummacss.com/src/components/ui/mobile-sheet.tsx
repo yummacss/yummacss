@@ -10,10 +10,13 @@ import { Search } from "@/icons";
 import { useReveal } from "@/utils/reveal";
 import Match from "./match";
 import ProductLinks from "./product-links";
+import { Since } from "./sidebar-nav";
 
 interface NavItem {
 	title: string;
 	href: string;
+	/** The release that added the page, when it is the newest one. */
+	since?: string;
 }
 
 export interface NavSection {
@@ -136,6 +139,17 @@ export default function MobileSheet({ menu, isOpen, onClose }: Props) {
 															}`}
 														>
 															<Match text={item.title} query={typed} />
+															{item.since && (
+																<>
+																	<span className="p:a w:px h:px o:h">
+																		, new in {item.since}
+																	</span>
+																	{/* positioned, so the row's underline stops at the title */}
+																	<span className="p:a t:0 r:7 b:0 d:f ai:c">
+																		<Since version={item.since} />
+																	</span>
+																</>
+															)}
 														</Drawer.Close>
 													</li>
 												);
