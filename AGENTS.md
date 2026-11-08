@@ -38,6 +38,13 @@
 - Each repo owns its copy of the rules rather than importing them. This repo
   has no icons, so it has no icons module either.
 
+# Focus
+
+- The order of work is the notes' `docs/TODO.md`, phase by phase. Before
+  starting an idea that is not on it, say in one line which listed item it
+  pushes back, and start only on a yes.
+- A new idea goes on the list first; building it waits for its turn.
+
 # Working
 
 - PRs, never direct commits to `main`.
