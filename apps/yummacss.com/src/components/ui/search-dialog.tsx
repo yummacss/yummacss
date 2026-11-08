@@ -33,7 +33,8 @@ interface SearchDialogProps {
 	onClose: () => void;
 }
 
-const KBD = "d:if ai:c jc:c h:5 px:1 bc:border bw:1 c:ink/60 fs:xs";
+const KBD =
+	"d:if ai:c jc:c h:5 px:1 bc:border bw:1 bg:transparent c:ink/60 fs:xs c:p h:bg:hover h:c:ink fv:oc:ink fv:ow:2";
 const LABEL = "px:3 py:1 c:ink/60 fs:xs ls:2 tt:u";
 
 /** The title with the typed text in the accent. */
@@ -255,6 +256,16 @@ export function SearchDialog({ open, onClose }: SearchDialogProps) {
 			onClose,
 		],
 	);
+
+	// the footer's keys are buttons too, pressing the key they show
+	const press = (key: string) => {
+		handleKeyDown({
+			key,
+			target: null,
+			preventDefault: () => {},
+		} as unknown as React.KeyboardEvent);
+		inputRef.current?.focus();
+	};
 
 	useEffect(() => {
 		if (listRef.current && rows.length > 0) {
@@ -504,45 +515,73 @@ export function SearchDialog({ open, onClose }: SearchDialogProps) {
 						{/* keys to press, so only where a keyboard is likely: the navbar's Ctrl K hint shows from the same width */}
 						<div className="d:none fs:0 ai:c g:4 px:4 h:10 bc:border c:ink/60 btw:1 fs:xs @lg:d:f">
 							<span className="d:f ai:c g:1">
-								<kbd className={KBD}>
-									<NavArrowUp className="w:3 h:3" />
-								</kbd>
-								<kbd className={KBD}>
-									<NavArrowDown className="w:3 h:3" />
-								</kbd>
+								<Button
+									aria-label="Move up"
+									onClick={() => press("ArrowUp")}
+									className={KBD}
+								>
+									<NavArrowUp aria-hidden className="w:3 h:3" />
+								</Button>
+								<Button
+									aria-label="Move down"
+									onClick={() => press("ArrowDown")}
+									className={KBD}
+								>
+									<NavArrowDown aria-hidden className="w:3 h:3" />
+								</Button>
 								{onSwatch && (
 									<>
-										<kbd className={KBD}>
-											<NavArrowLeft className="w:3 h:3" />
-										</kbd>
-										<kbd className={KBD}>
-											<NavArrowRight className="w:3 h:3" />
-										</kbd>
+										<Button
+											aria-label="Move left"
+											onClick={() => press("ArrowLeft")}
+											className={KBD}
+										>
+											<NavArrowLeft aria-hidden className="w:3 h:3" />
+										</Button>
+										<Button
+											aria-label="Move right"
+											onClick={() => press("ArrowRight")}
+											className={KBD}
+										>
+											<NavArrowRight aria-hidden className="w:3 h:3" />
+										</Button>
 									</>
 								)}
 								<span className="ml:1">to move</span>
 							</span>
 							{browsing && (
 								<span className="d:f ai:c g:1">
-									<kbd className={KBD}>
-										<NavArrowRight className="w:3 h:3" />
-									</kbd>
+									<Button
+										aria-label="Open the category"
+										onClick={() => press("ArrowRight")}
+										className={KBD}
+									>
+										<NavArrowRight aria-hidden className="w:3 h:3" />
+									</Button>
 									<span className="ml:1">to open a category</span>
 								</span>
 							)}
 							{category && !searching && (
 								<span className="d:f ai:c g:1">
-									<kbd className={KBD}>
-										<NavArrowLeft className="w:3 h:3" />
-									</kbd>
+									<Button
+										aria-label="Go back"
+										onClick={() => press("ArrowLeft")}
+										className={KBD}
+									>
+										<NavArrowLeft aria-hidden className="w:3 h:3" />
+									</Button>
 									<span className="ml:1">to go back</span>
 								</span>
 							)}
 							{!browsing && (
 								<span className="d:f ai:c g:1">
-									<kbd className={KBD}>
-										<LongArrowDownLeftSolid className="w:3 h:3" />
-									</kbd>
+									<Button
+										aria-label="Open or copy"
+										onClick={() => press("Enter")}
+										className={KBD}
+									>
+										<LongArrowDownLeftSolid aria-hidden className="w:3 h:3" />
+									</Button>
 									<span className="ml:1">to open, or copy a color</span>
 								</span>
 							)}
