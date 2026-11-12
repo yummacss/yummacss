@@ -30,12 +30,12 @@ interface Props {
 	onClose: () => void;
 }
 
-// Base UI's sheet motion; the notes, "Phone menu", has the reasoning
+// Base UI's sheet motion; the notes, "Phone menu", has the reasoning. It moves by transform, the one tp:t animates
 const MOTION = {
 	"--sheet-ease": "cubic-bezier(0.32, 0.72, 0, 1)",
 	"--sheet-close": "calc(var(--drawer-swipe-strength, 1) * 400ms)",
 	"--sheet-fade": "calc(1 - var(--drawer-swipe-progress, 0))",
-	"--sheet-offstage": "0 calc(100% - 3rem + 2px)",
+	"--sheet-offstage": "calc(100% - 3rem + 2px)",
 } as CSSProperties;
 
 /** The phone menu: a sheet from the bottom with a filter and the area's links. */
@@ -78,7 +78,7 @@ export default function MobileSheet({ menu, isOpen, onClose }: Props) {
 						aria-label="Menu"
 						initialFocus={popup}
 						style={MOTION}
-						className="p:r d:f fd:c o:h w:100% max-w:sm h:calc(100dvh-4rem+3rem) mb:-12 bc:border bg:page c:ink btw:1 os:none ta:none tp:t tdu:300 ttf:var(--sheet-ease) opening:tr:var(--sheet-offstage) closing:tr:var(--sheet-offstage) closing:tdu:var(--sheet-close) swiping:tdu:0 swiping:us:none @prm:tp:none @sm:blw:1 @sm:brw:1"
+						className="p:r d:f fd:c o:h w:100% max-w:sm h:calc(100dvh-4rem+3rem) mb:-12 bc:border bg:page c:ink btw:1 os:none ta:none tp:t tdu:300 ttf:var(--sheet-ease) opening:tty:var(--sheet-offstage) closing:tty:var(--sheet-offstage) closing:tdu:var(--sheet-close) swiping:tdu:0 swiping:us:none @prm:tp:none @sm:blw:1 @sm:brw:1"
 					>
 						<div className="p:r fs:0 px:4 pt:6 pb:3 bc:border bbw:1 ta:none us:none">
 							<div
