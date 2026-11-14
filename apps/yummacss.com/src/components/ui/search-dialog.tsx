@@ -322,7 +322,7 @@ export function SearchDialog({ open, onClose }: SearchDialogProps) {
 	return (
 		<Dialog.Root open={open} onOpenChange={(isOpen) => !isOpen && onClose()}>
 			<Dialog.Portal>
-				<Dialog.Backdrop className="tp:o tdu:150 ttf:eo opening:o:0 closing:o:0 @prm:tp:none p:f zi:10 t:0 l:0 r:0 b:0 bg:black/60 bf-b:sm fgr:90" />
+				<Dialog.Backdrop className="tp:o tdu:150 ttf:eo opening:o:0 closing:o:0 @prm:tp:none p:f zi:10 t:0 l:0 r:0 b:0 bg:black/60" />
 				<div className="d:f p:f zi:10 t:0 l:0 r:0 b:0 ai:fs jc:c pe:none @md:pt:24">
 					<Dialog.Popup
 						data-chrome
