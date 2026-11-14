@@ -1,10 +1,9 @@
 # Writing
 
-- **PR bodies**: one short block per topic under a bold heading, then the
-  checks line. Say **what changed**, and nothing else. No cause, no history,
-  no justification: a reader outside the project does not care why a thing was
-  renamed from A to B. The why goes in the notes, the private `yummacss/notes`
-  repo.
+- **PR bodies**: one sentence saying what the PR does, then the checks line.
+  `This PR adds the **[Margin](link)** utility page.` No blocks, no detail:
+  the diff and the CHANGELOG carry it. No cause, no history, no
+  justification; the why goes in the notes, the private `yummacss/notes` repo.
 - **Commit messages**: a subject and a couple of lines. No essays.
 - **CHANGELOG entries**: one line each, saying what was added, changed or
   fixed. No examples, no reasons, no behaviour details: the docs explain.
@@ -63,18 +62,16 @@ UI and its site live in the yummaui repo, along with their rules.
 
 Short. These were said out loud enough times to belong in a file.
 
-- **PR bodies**: link every page you name, with the link on the bold heading
-  itself. While a branch is open the link is that branch's Vercel preview,
+- **PR bodies**: link every page you name, bold, in the sentence. While a
+  branch is open the link is that branch's Vercel preview,
   taken from the Vercel bot's comment on the PR. Never build it from the
   branch name: a long one is cut and hashed in the host. Once a branch is
   merged its alias dies, so a link to shipped work is
   `https://www.yummacss.com/...` again.
 - The same link rule applies in chat, not only in PR bodies.
-- **PR bodies**: one short block per topic, each under its own bold heading,
-  then the checks line (`vp check`, test count, `next build`). A sentence or
-  two per topic saying **what changed**, and nothing else. No cause, no
-  history, no justification: a reader outside the project does not care why a
-  thing was renamed from A to B. The why goes in the notes.
+- **PR bodies**: one sentence saying what the PR does, then the checks line
+  (`vp check`, test count, `next build`). No blocks, no detail, no cause, no
+  history, no justification. The why goes in the notes.
 - **Commit messages**: a subject and a couple of lines. No essays.
 - **Code comments**: one or two lines. A comment earns its length only where
   the code is genuinely surprising, and never by repeating the same paragraph
