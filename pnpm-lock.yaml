@@ -306,8 +306,8 @@ importers:
         specifier: ^2.0.1
         version: 2.0.1
       web-features:
-        specifier: ^3.45.0
-        version: 3.45.0
+        specifier: ^3.46.0
+        version: 3.46.0
       yummacss:
         specifier: workspace:*
         version: link:../../packages/cli
@@ -3204,8 +3204,8 @@ packages:
     resolution: {integrity: sha512-r0CEmvpH63r4T15ebFqeOjGqU4+EgTx4I510NtK35EMciSdcTxCw3Byy3JnBonz7iyIFZ0AbVo0bbFpEVuhCYA==}
     hasBin: true
 
-  web-features@3.45.0:
-    resolution: {integrity: sha512-Atp/v77aPEuVIPsw7tYz9IrID8CztDcIleh8n/Z8r7HEkvNt7eYWHF8s4hlWQ0QskFzTPDjq81vjubXXCnBMSg==}
+  web-features@3.46.0:
+    resolution: {integrity: sha512-UXJz08ycij5sVoOL97e8kvzhnC/3kbo3SCGC1j84G5pqx7XXStbqPVNVli+BHwo8Gcb6SquKUGk5TJYsl0oRYw==}
 
   why-is-node-running@3.2.1:
     resolution: {integrity: sha512-Tb2FUhB4vUsGQlfSquQLYkApkuPAFQXGFzxWKHHumVz2dK+X1RUm/HnID4+TfIGYJ1kTcwOaCk/buYCEJr6YjQ==}
@@ -6304,7 +6304,7 @@ snapshots:
     dependencies:
       argparse: 2.0.1
 
-  web-features@3.45.0: {}
+  web-features@3.46.0: {}
 
   why-is-node-running@3.2.1: {}
 
