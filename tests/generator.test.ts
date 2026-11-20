@@ -158,6 +158,10 @@ describe("CSS functions", () => {
 		["w:max(min-content,10rem)", "width: max(min-content,10rem);"],
 		["m:calc(-1*var(--gap))", "margin: calc(-1*var(--gap));"],
 		["c:var(--brand)", "color: var(--brand);"],
+		[
+			"tty:calc(var(--a)+var(--b))",
+			"transform: translateY(calc(var(--a) + var(--b)));",
+		],
 		["max-h:calc(100dvh-5rem)", ".max-h\\:calc\\(100dvh-5rem\\)"],
 	])("%s writes %s", (className, expected) => {
 		expect(css(className)).toContain(expected);
