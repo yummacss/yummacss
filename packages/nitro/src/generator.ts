@@ -489,7 +489,8 @@ function matchValue(
 }
 
 const FUNCTION = /^(calc|clamp|min|max|var)\((.*)\)$/;
-const LENGTH = /\d(?:rem|px|em|%|vw|vh|dvh|svh|lvh|ch)$/;
+// a wrapped value, such as translateY(1rem), ends on its closing paren
+const LENGTH = /\d(?:rem|px|em|%|vw|vh|dvh|svh|lvh|ch)\)?$/;
 const takesLength = new WeakMap<Utility, boolean>();
 
 /** A `calc()`, `clamp()`, `min()`, `max()` or `var()` value, as CSS writes it. */
