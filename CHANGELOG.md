@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- **[nitro]** A negative `tr:` negates both axes, so `tr:-half` builds `translate: -50% -50%`.
 - **[nitro]** `calc()`, `clamp()`, `min()` and `max()` build on the translate utilities, such as `tty:calc(var(--a)+var(--b))`.
 
 ## [4.13.0] - 2026-11-05

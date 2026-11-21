@@ -80,6 +80,11 @@ describe("Negative values", () => {
 		expect(css("gre:-1")).toContain("grid-row-end: -1");
 	});
 
+	it("negates both axes of a two-value translate", () => {
+		expect(css("tr:-half")).toContain("translate: -50% -50%");
+		expect(css("tr:-4")).toContain("translate: -1rem -1rem");
+	});
+
 	it("keeps negative scale, which mirrors", () => {
 		expect(css("s:-10")).toContain("scale: -.1");
 	});

@@ -605,9 +605,14 @@ function applyOpacity(value: string, percentage: string): string {
 	return `color-mix(in oklch, ${value} ${percentage}, transparent)`;
 }
 
+const flip = (part: string) =>
+	part.startsWith("-") ? part.slice(1) : `-${part}`;
+
 function negateValue(value: string): string | null {
-	if (/^-?[\d.]/.test(value)) {
-		return value.startsWith("-") ? value.slice(1) : `-${value}`;
+	// a two-value translate, such as 50% 50%, turns on both axes
+	const parts = value.split(" ");
+	if (parts.every((part) => /^-?[\d.]/.test(part))) {
+		return parts.map(flip).join(" ");
 	}
 
 	const functionMatch = value.match(/^([a-zA-Z]+\()(-?[\d.]+)(.*)$/);
