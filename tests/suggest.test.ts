@@ -31,7 +31,9 @@ describe("Suggestions", () => {
 	it.each([
 		["tt-n", "tt:none"],
 		["tl-a", "tl:auto"],
-	])("answers %s with %s when 4.0 renamed the value", (from, to) => {
+		["tr:half", "tr:50%"],
+		["tty:full", "tty:100%"],
+	])("answers %s with %s when the value was renamed", (from, to) => {
 		expect(suggest(from)).toBe(to);
 	});
 

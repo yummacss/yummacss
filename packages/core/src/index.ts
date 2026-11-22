@@ -116,4 +116,7 @@ export function splitVariants(className: string): {
 export const valueRenames: Record<string, Record<string, string>> = {
 	tt: { n: "none" },
 	tl: { a: "auto" },
+	tr: { full: "100%", half: "50%" },
+	ttx: { full: "100%", half: "50%" },
+	tty: { full: "100%", half: "50%" },
 };

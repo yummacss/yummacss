@@ -79,6 +79,12 @@ describe("migrateClass", () => {
 		expect(migrated("tl-a")).toBe("tl:auto");
 	});
 
+	it("spells out half & full as percentages on translate", () => {
+		expect(migrated("tr-half")).toBe("tr:50%");
+		expect(migrated("ttx-full")).toBe("ttx:100%");
+		expect(migrated("tty--half")).toBe("tty:-50%");
+	});
+
 	it("refuses anything it does not recognize", () => {
 		expect(migrateClass("flex-center").ok).toBe(false);
 		expect(migrateClass("my-custom-class").ok).toBe(false);

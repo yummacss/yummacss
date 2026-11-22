@@ -81,8 +81,13 @@ describe("Negative values", () => {
 	});
 
 	it("negates both axes of a two-value translate", () => {
-		expect(css("tr:-half")).toContain("translate: -50% -50%");
+		expect(css("tr:-50%")).toContain("translate: -50% -50%");
 		expect(css("tr:-4")).toContain("translate: -1rem -1rem");
+	});
+
+	it("builds no half or full on translate", () => {
+		expect(css("tr:half")).toBeNull();
+		expect(css("ttx:-full")).toBeNull();
 	});
 
 	it("keeps negative scale, which mirrors", () => {
