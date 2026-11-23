@@ -43,12 +43,20 @@
   starting an idea that is not on it, say in one line which listed item it
   pushes back, and start only on a yes.
 - A new idea goes on the list first; building it waits for its turn.
+- An issue is titled `Phase {N}: {Title}`, its phase on the list, so the
+  open issues sort in the order of work.
+- One issue per session. When its PR is merged or closed, name the open
+  issue with the lowest phase and wait for a yes.
 
 # Working
 
 - PRs, never direct commits to `main`.
-- How a session runs, from the first PR check to the hand-off, is in the
-  notes under "Cloud sessions".
+- A PR stays yours until it is merged or closed. Subscribe to its activity
+  once it is open, fix every failing check, and answer every review comment:
+  push the fix and resolve the thread, or reply saying why not.
+- Sessions are cleared between PRs, so a new one starts by listing open PRs
+  with a red check or an unanswered thread. It reports them and works on one
+  only when told.
 - Verify an issue or a note against the code before acting on it. Most are
   right about the symptom and wrong about the cause.
 - A generated file opens with a comment naming the script that writes it.
