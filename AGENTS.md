@@ -43,6 +43,10 @@
   starting an idea that is not on it, say in one line which listed item it
   pushes back, and start only on a yes.
 - A new idea goes on the list first; building it waits for its turn.
+- An issue is titled `Phase {N}: {Title}`, its phase on the list, so the
+  open issues sort in the order of work.
+- One issue per session. When its PR is merged or closed, name the open
+  issue with the lowest phase and wait for a yes.
 
 # Working
 
